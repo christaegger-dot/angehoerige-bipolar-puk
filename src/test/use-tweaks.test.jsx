@@ -28,7 +28,7 @@ describe('useTweaks', () => {
     expect(screen.getByTestId('palette')).toHaveTextContent('blue');
     expect(postMessageSpy).toHaveBeenCalledWith(
       { type: '__edit_mode_set_keys', edits: { palette: 'blue' } },
-      '*',
+      window.location.origin,
     );
   });
 });

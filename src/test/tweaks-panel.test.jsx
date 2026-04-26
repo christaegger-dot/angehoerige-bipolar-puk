@@ -10,7 +10,7 @@ describe('TweaksPanel protocol behavior', () => {
 
     render(<TweaksPanel title="Editor"><div>Panel content</div></TweaksPanel>);
 
-    expect(postMessageSpy).toHaveBeenCalledWith({ type: '__edit_mode_available' }, '*');
+    expect(postMessageSpy).toHaveBeenCalledWith({ type: '__edit_mode_available' }, window.location.origin);
     expect(screen.queryByText('Panel content')).not.toBeInTheDocument();
 
     window.dispatchEvent(new MessageEvent('message', { data: { type: '__activate_edit_mode' } }));
@@ -18,7 +18,7 @@ describe('TweaksPanel protocol behavior', () => {
 
     await user.click(screen.getByRole('button', { name: 'Close tweaks' }));
 
-    expect(postMessageSpy).toHaveBeenCalledWith({ type: '__edit_mode_dismissed' }, '*');
+    expect(postMessageSpy).toHaveBeenCalledWith({ type: '__edit_mode_dismissed' }, window.location.origin);
     expect(screen.queryByText('Panel content')).not.toBeInTheDocument();
   });
 });
@@ -80,5 +80,25 @@ describe('Tweaks controls', () => {
     fireEvent.pointerUp(window);
 
     expect(onChange).toHaveBeenCalledWith('c');
+  });
+
+  it('supports keyboard selection for radio options', async () => {
+    const user = userEvent.setup();
+    const onChange = vi.fn();
+    render(
+      <TweakRadio
+        label="Theme"
+        value="a"
+        options={[{ value: 'a', label: 'A' }, { value: 'b', label: 'B' }, { value: 'c', label: 'C' }]}
+        onChange={onChange}
+      />,
+    );
+
+    await user.tab();
+    expect(screen.getByRole('radio', { name: 'A' })).toHaveFocus();
+
+    await user.keyboard('{ArrowRight}');
+
+    expect(onChange).toHaveBeenCalledWith('b');
   });
 });

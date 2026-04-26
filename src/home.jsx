@@ -138,8 +138,8 @@ function HomePage({ onNavigate }) {
             <a className="tools-teaser-link" href="#werkzeuge" onClick={navHandler('werkzeuge', onNavigate)}>Alle neun Werkzeuge →</a>
           </div>
           <div className="tools-row">
-            {[TOOLS[0], TOOLS[3], TOOLS[1]].map((t, i) =>
-            <a key={i} className="tools-row-item" href="#werkzeuge" onClick={navHandler('werkzeuge', onNavigate)}>
+            {[TOOLS[0], TOOLS[3], TOOLS[1]].map((t) =>
+            <a key={t.tool} className="tools-row-item" href="#werkzeuge" onClick={navHandler('werkzeuge', onNavigate)}>
                 <span className="tools-row-tag">{t.tag}</span>
                 <h3>{t.title}</h3>
                 <p>{t.desc}</p>
