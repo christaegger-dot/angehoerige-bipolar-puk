@@ -24,13 +24,13 @@ describe('KrisenplanTool storage', () => {
 
     render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
 
-    await user.type(screen.getByLabelText('Plan für'), 'M. & Christine');
+    await user.type(screen.getByRole('textbox', { name: /Plan für/i }), 'M. & Christine');
 
     expect(window.sessionStorage.getItem('puk-krisenplan-v1')).toContain('M. & Christine');
     expect(window.localStorage.getItem('puk-krisenplan-v1')).toBeNull();
 
     await user.click(screen.getByLabelText('Auf diesem Gerät dauerhaft behalten'));
-    await user.type(screen.getByLabelText('Klinikwunsch (falls stationär nötig)'), 'PUK Zürich');
+    await user.type(screen.getByRole('textbox', { name: /Klinikwunsch/i }), 'PUK Zürich');
 
     expect(window.localStorage.getItem('puk-krisenplan-v1')).toContain('PUK Zürich');
     expect(window.sessionStorage.getItem('puk-krisenplan-v1')).toBeNull();

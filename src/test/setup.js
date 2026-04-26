@@ -13,9 +13,7 @@ if (!window.requestAnimationFrame) {
   window.requestAnimationFrame = (cb) => cb();
 }
 
-if (!window.scrollTo) {
-  window.scrollTo = () => {};
-}
+window.scrollTo = () => {};
 
 if (!Element.prototype.scrollIntoView) {
   Element.prototype.scrollIntoView = () => {};
