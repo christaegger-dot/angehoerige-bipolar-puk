@@ -3342,7 +3342,8 @@ section + section { padding-top: 0; }
 @media (prefers-reduced-motion: reduce) {
   .atem-circle { transition-duration: 0.2s !important; }
   .tool-overlay,
-  .tool-overlay-card { animation: none; }
+  .tool-overlay-card,
+  .animate-in { animation: none !important; }
 }
 
 /* SELBSTTEST */

@@ -332,6 +332,7 @@ const KRISENPLAN_NOTFALLNUMMERN = [
   { num: '144', label: 'Sanität · Lebensgefahr · 24 h' },
   { num: '117', label: 'Polizei · Gewalt · Bedrohung' },
   { num: '143', label: 'Dargebotene Hand · anonym · 24 h' },
+  { num: '147', label: 'Pro Juventute · Kinder & Jugendliche · 24 h' },
   { num: '0800 33 66 55', label: 'Ärztefon ZH · Notfalldienst · 24 h' },
   { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h' },
   { num: '058 384 38 00', label: 'Fachstelle Angehörigenarbeit PUK · werktags' },
@@ -384,7 +385,7 @@ function KrisenplanTool({ onClose, onNavigate }) {
           <h2>Mein Krisenplan</h2>
           <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln. Standardmässig bleibt der Entwurf nur bis zum Schliessen dieses Tabs erhalten und wird nicht versendet. Auf gemeinsam genutzten Geräten können Sie ihn unten zusätzlich dauerhaft löschen.</p>
           {lastUpdate && (
-            <p className="krisenplan-meta no-print">Zuletzt bearbeitet: {lastUpdate}</p>
+            <p className="krisenplan-meta">Zuletzt bearbeitet: {lastUpdate}</p>
           )}
           <label className="storage-toggle no-print">
             <input type="checkbox" checked={remember} onChange={toggleRemember} />
