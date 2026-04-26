@@ -2,10 +2,9 @@
 // Zentrales Bild: Eisberg-Figur (sichtbar / verborgen) in der Bildmarke der Seite.
 
 import React from 'react';
-import { navHandler } from './shared.jsx';
-import { Ill } from './illustrations.jsx';
+import { navHandler } from './nav-handler.js';
 
-function Eisberg({ size = 520 }) {
+function Eisberg() {
   // viewBox 520 x 640 — Wasserlinie bei y=240
   // Sichtbarer Teil: Spitze über Wasser. Verborgener Teil: grosse Masse darunter.
   const w = 520, h = 640;
@@ -122,7 +121,7 @@ function EisbergFigur() {
   );
 }
 
-function Hypervigilanz({ size = 520 }) {
+function Hypervigilanz() {
   // Editorial illustration: ein zentraler Mensch mit feinen "Aufmerksamkeitsfäden"
   // zu Alltagssignalen — Tür, Telefon, Uhr, Stimme, Tablette, Handy.
   // Monoline-Stil, gleiche Sprache wie der Eisberg (dünne Linien, Sand-Füllung).

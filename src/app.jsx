@@ -3,7 +3,8 @@
 import React from 'react';
 import { CrisisBar, Nav, Footer } from './shared.jsx';
 import { HomePage } from './home.jsx';
-import { useTweaks, TweaksPanel, TweakSection, TweakRadio } from './tweaks-panel.jsx';
+import { useTweaks } from './use-tweaks.js';
+import { TweaksPanel, TweakSection, TweakRadio } from './tweaks-panel.jsx';
 
 const ModulePage = React.lazy(() => import('./module.jsx').then(m => ({ default: m.ModulePage })));
 const WerkzeugePage = React.lazy(() => import('./werkzeuge.jsx').then(m => ({ default: m.WerkzeugePage })));
@@ -63,8 +64,8 @@ const TYPE_PAIRS = {
 
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-  const [page, setPage] = React.useState('start');
-  const pendingAnchor = React.useRef(null);
+  const [nav, setNav] = React.useState({ page: 'start', anchor: null });
+  const page = nav.page;
 
   React.useEffect(() => {
     const root = document.documentElement;
@@ -78,8 +79,7 @@ function App() {
   // Bei Page-Wechsel: zum Anchor scrollen falls gesetzt, sonst zum Seitenanfang.
   // requestAnimationFrame gibt React eine Frame Zeit, das neue Layout aufzubauen.
   React.useEffect(() => {
-    const id = pendingAnchor.current;
-    pendingAnchor.current = null;
+    const id = nav.anchor;
     requestAnimationFrame(() => {
       if (id) {
         const el = document.getElementById(id);
@@ -90,11 +90,10 @@ function App() {
       }
       window.scrollTo({ top: 0, behavior: 'instant' });
     });
-  }, [page]);
+  }, [nav]);
 
   const onNavigate = React.useCallback((p, anchor) => {
-    pendingAnchor.current = anchor || null;
-    setPage(p);
+    setNav({ page: p, anchor: anchor || null });
   }, []);
   React.useEffect(() => { window.__navigate = onNavigate; }, [onNavigate]);
 

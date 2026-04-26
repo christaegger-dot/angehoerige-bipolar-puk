@@ -2,10 +2,9 @@
 // Zentrales Bild: Zwei Linien, die unter Druck Form verändern.
 
 import React from 'react';
-import { navHandler } from './shared.jsx';
-import { Ill } from './illustrations.jsx';
+import { navHandler } from './nav-handler.js';
 
-function ZweiLinien({ size = 520 }) {
+function ZweiLinien() {
   // Konzept: Zwei Linien beginnen ruhig parallel, geraten unter Druck,
   // kreuzen sich, finden teilweise wieder zusammen.
   // Editorial, monoline — gleiche Sprache wie Eisberg & Hypervigilanz.

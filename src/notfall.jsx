@@ -1,7 +1,7 @@
 // SOS Krise — editorial Notfallweg
 
 import React from 'react';
-import { navHandler } from './shared.jsx';
+import { navHandler } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 
 function NotfallPage({ onNavigate }) {

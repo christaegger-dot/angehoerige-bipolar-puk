@@ -2,7 +2,6 @@
 // Two colors only: var(--ill-ink) for line, var(--ill-fill) for accent fill
 // All viewBox 200x160 unless noted
 
-import React from 'react';
 
 const Ill = {};
 

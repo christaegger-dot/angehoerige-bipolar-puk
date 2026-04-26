@@ -2,8 +2,7 @@
 // Zentrales Bild: Vier Säulen als Tragwerk.
 
 import React from 'react';
-import { navHandler } from './shared.jsx';
-import { Ill } from './illustrations.jsx';
+import { navHandler } from './nav-handler.js';
 
 function SaeulenFigur() {
   const w = 600, h = 400;

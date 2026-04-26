@@ -1,7 +1,7 @@
 // Home — editorial single column, one triage flow, modules as nummerierte Liste
 
 import React from 'react';
-import { navHandler } from './shared.jsx';
+import { navHandler } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 
 const MODULES = [

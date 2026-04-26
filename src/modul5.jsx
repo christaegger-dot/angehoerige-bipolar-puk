@@ -2,8 +2,7 @@
 // Zentrales Bild: Zwei sich ziehende Linien (Knoten) als Metapher.
 
 import React from 'react';
-import { navHandler } from './shared.jsx';
-import { Ill } from './illustrations.jsx';
+import { navHandler } from './nav-handler.js';
 
 function KnotenFigur() {
   const w = 560, h = 360;

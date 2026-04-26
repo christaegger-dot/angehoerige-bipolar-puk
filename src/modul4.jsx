@@ -2,8 +2,7 @@
 // Zentrales Bild: Reservoir-Skala mit Erschöpfungs-Stufen.
 
 import React from 'react';
-import { navHandler } from './shared.jsx';
-import { Ill } from './illustrations.jsx';
+import { navHandler } from './nav-handler.js';
 
 function Reservoir() {
   const w = 560, h = 380;
