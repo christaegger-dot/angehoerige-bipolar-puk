@@ -3454,6 +3454,8 @@ section + section { padding-top: 0; }
   color: var(--ink-soft);
   margin: 0 !important;
 }
+/* Nur die zwei stärkeren Zonen bekommen eine Akzentfarbe.
+   Getragen und Schmal bleiben absichtlich neutral (kein Alarm-Signal). */
 .selbsttest-zone-notlage h2 { color: var(--alert); }
 .selbsttest-zone-reserve h2 { color: var(--accent); }
 
