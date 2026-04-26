@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { KrisenplanTool, WerkzeugePage } from '../werkzeuge.jsx';
+import { WerkzeugePage } from '../werkzeuge.jsx';
+import { KrisenplanTool } from '../werkzeuge-tools.jsx';
 
 describe('WerkzeugePage', () => {
   it('renders tool cards as dialog-trigger buttons', async () => {

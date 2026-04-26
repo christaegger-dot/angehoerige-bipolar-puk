@@ -1,7 +1,8 @@
 // Anlaufstellen — Beratung, Materialien, Handouts (Schnellstart, kein Lesemodul).
 
 import React from 'react';
-import { KrisenplanTool, ToolOverlay } from './werkzeuge.jsx';
+import { ToolOverlay } from './tool-overlay.jsx';
+import { KrisenplanTool } from './werkzeuge-tools.jsx';
 
 const HANDOUTS = {
   'DL-01': {
