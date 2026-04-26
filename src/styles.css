@@ -506,6 +506,14 @@ section + section { padding-top: 0; }
   margin: 0;
   max-width: 56ch;
 }
+.module-row-numlabel {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 8px;
+}
 .module-meta {
   font-family: var(--sans);
   font-size: 11px;
@@ -521,6 +529,11 @@ section + section { padding-top: 0; }
   flex-shrink: 0;
   align-self: start;
   opacity: 0.85;
+}
+.module-row-arrow {
+  align-self: center;
+  color: var(--ink-mute);
+  font-family: var(--sans);
 }
 .module-row:hover .module-illu { opacity: 1; }
 

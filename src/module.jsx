@@ -2,6 +2,8 @@ import { navHandler } from './nav-handler.js';
 import { MODULES, ANLAUFSTELLEN_ENTRY } from './home.jsx';
 import { TriageFlow } from './triage-flow.jsx';
 
+const DEFAULT_OVERVIEW_META = 'Lesen →';
+
 function ModulePage({ onNavigate }) {
   return (
     <>
@@ -25,7 +27,7 @@ function ModulePage({ onNavigate }) {
                   <p>{m.desc}</p>
                   <div className="module-meta">
                     <span>⏱ {m.time}</span>
-                    <span>· {m.overviewMeta || 'Lesen →'}</span>
+                    <span>· {m.overviewMeta || DEFAULT_OVERVIEW_META}</span>
                   </div>
                 </div>
                 <div className="module-row-arrow" aria-hidden="true">→</div>

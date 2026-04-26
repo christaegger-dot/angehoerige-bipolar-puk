@@ -67,7 +67,7 @@ function TriageFlow({ onNavigate }) {
   const [step, setStep] = React.useState('q1');
   const [result, setResult] = React.useState(null);
 
-  const handle = React.useCallback((action) => {
+  const handleAction = React.useCallback((action) => {
     if (TRIAGE_RESULTS[action]) {
       setResult(TRIAGE_RESULTS[action]);
       return;
@@ -98,7 +98,7 @@ function TriageFlow({ onNavigate }) {
                 key={option.action}
                 type="button"
                 className={['triage-opt', option.variant === 'yes' && 'triage-opt-yes'].filter(Boolean).join(' ')}
-                onClick={() => handle(option.action)}
+                onClick={() => handleAction(option.action)}
               >
                 {option.label}
               </button>
