@@ -1,7 +1,7 @@
 // Modul 1 — Die bipolare Störung verstehen · Volles Lese-Layout
 
 import React from 'react';
-import { navHandler } from './shared.jsx';
+import { navHandler } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 
 function Modul1Page({ onNavigate }) {

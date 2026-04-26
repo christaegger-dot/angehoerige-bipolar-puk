@@ -7,7 +7,7 @@
 // Beim Schliessen: Fokus zur Trigger-Komponente zurückgeben.
 
 import React from 'react';
-import { navHandler } from './shared.jsx';
+import { navHandler } from './nav-handler.js';
 import { TOOLS } from './home.jsx';
 import { Eisberg } from './modul2.jsx';
 
@@ -428,7 +428,7 @@ function loadKrisenplan() {
     if (!raw) return {};
     const parsed = JSON.parse(raw);
     return parsed && typeof parsed === 'object' ? parsed : {};
-  } catch (err) { return {}; }
+  } catch { return {}; }
 }
 
 function KrisenplanTool({ onClose, onNavigate }) {
@@ -449,13 +449,13 @@ function KrisenplanTool({ onClose, onNavigate }) {
       setSavedHint('Gespeichert');
       if (savedTimer.current) window.clearTimeout(savedTimer.current);
       savedTimer.current = window.setTimeout(() => setSavedHint(''), 1600);
-    } catch (err) { /* ignore */ }
+    } catch { /* ignore */ }
   };
 
   const reset = () => {
     if (window.confirm('Krisenplan zurücksetzen? Alle Eingaben gehen verloren.')) {
       setData({});
-      try { localStorage.removeItem(KRISENPLAN_STORAGE_KEY); } catch (err) { /* ignore */ }
+      try { localStorage.removeItem(KRISENPLAN_STORAGE_KEY); } catch { /* ignore */ }
     }
   };
 
@@ -1043,7 +1043,7 @@ function loadKommunikation() {
     return parsed && typeof parsed === 'object'
       ? { ...KOMMUNIKATION_DEFAULT, ...parsed }
       : KOMMUNIKATION_DEFAULT;
-  } catch (err) { return KOMMUNIKATION_DEFAULT; }
+  } catch { return KOMMUNIKATION_DEFAULT; }
 }
 
 function KommunikationsTrainerTool({ onClose, onNavigate }) {
@@ -1054,7 +1054,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
   const updateField = (key, value) => {
     setData((d) => {
       const next = { ...d, [key]: value };
-      try { localStorage.setItem(KOMMUNIKATION_STORAGE_KEY, JSON.stringify(next)); } catch (err) { /* ignore */ }
+      try { localStorage.setItem(KOMMUNIKATION_STORAGE_KEY, JSON.stringify(next)); } catch { /* ignore */ }
       return next;
     });
   };
@@ -1063,7 +1063,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
   const reset = () => {
     if (window.confirm('Skript zurücksetzen? Alle Eingaben gehen verloren.')) {
       setData(KOMMUNIKATION_DEFAULT);
-      try { localStorage.removeItem(KOMMUNIKATION_STORAGE_KEY); } catch (err) { /* ignore */ }
+      try { localStorage.removeItem(KOMMUNIKATION_STORAGE_KEY); } catch { /* ignore */ }
       setStep('anlass');
     }
   };
@@ -1650,7 +1650,7 @@ function WerkzeugePage({ onNavigate }) {
           </div>
 
           <div className="tools-grid">
-            {TOOLS.map((t, i) => {
+            {TOOLS.map((t) => {
               const handleClick = () => setOpenTool(t.tool);
               return (
                 <div

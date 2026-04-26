@@ -2,8 +2,7 @@
 // Werkzeug-orientiert: Gespräche, Vereinbarungen, Krisenplan.
 
 import React from 'react';
-import { navHandler } from './shared.jsx';
-import { Ill } from './illustrations.jsx';
+import { navHandler } from './nav-handler.js';
 
 function HandlungsfelderGrid() {
   const felder = [

@@ -2,11 +2,7 @@
 
 // Helper: navigationaler Link mit Tastatur-Support (Tab + Enter/Space) durch echtes href.
 
-import React from 'react';
-
-function navHandler(target, onNavigate) {
-  return (e) => { e.preventDefault(); onNavigate(target); };
-}
+import { navHandler } from './nav-handler.js';
 
 function CrisisBar({ onNavigate }) {
   return (
@@ -62,4 +58,4 @@ function Footer({ onNavigate }) {
   );
 }
 
-export { CrisisBar, Nav, Footer, navHandler };
+export { CrisisBar, Nav, Footer };

@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { MODULES, ANLAUFSTELLEN_ENTRY } from './home.jsx';
 
 function ModulePage({ onNavigate }) {
