@@ -21,7 +21,8 @@ function BarrierefreiheitPage() {
             <p>
               Die Lese-Begleitung wurde an den <strong>Web Content Accessibility Guidelines (WCAG) 2.1 auf
               Konformitätsstufe AA</strong> ausgerichtet und intern mit Tastatur, Screenreader-Semantik und
-              responsiven Layouts geprüft. Eine formale externe Konformitätsprüfung liegt derzeit nicht vor.
+              responsiven Layouts geprüft. Eine formale externe Konformitätsprüfung mit dokumentierter Freigabe
+              liegt derzeit nicht vor.
             </p>
 
             <h2>Was umgesetzt ist</h2>
@@ -37,7 +38,7 @@ function BarrierefreiheitPage() {
 
             <h2>Bekannte Einschränkungen</h2>
             <ul>
-              <li>Die Anwendung wurde intern getestet, aber noch nicht mit einer vollständigen externen WCAG-AA-Prüfung abgenommen.</li>
+              <li>Die Anwendung wurde intern getestet, aber noch nicht in einer vollständigen externen WCAG-AA-Prüfung bewertet.</li>
               <li>Einzelne interaktive Visualisierungen werden laufend auf noch stärkere Tastatur- und Screenreader-Unterstützung nachgerüstet.</li>
               <li>Kontrastwerte werden bei jeder Farb- oder Typografie-Anpassung erneut überprüft, sind aber noch nicht separat dokumentiert veröffentlicht.</li>
             </ul>
