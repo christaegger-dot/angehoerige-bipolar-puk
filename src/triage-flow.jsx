@@ -66,6 +66,9 @@ const TRIAGE_NEXT_STEPS = {
 function TriageFlow({ onNavigate }) {
   const [step, setStep] = React.useState('q1');
   const [result, setResult] = React.useState(null);
+  const stepRef = React.useRef(null);
+  const resultRef = React.useRef(null);
+  const isFirstRender = React.useRef(true);
 
   const handleAction = React.useCallback((action) => {
     if (TRIAGE_RESULTS[action]) {
@@ -84,15 +87,34 @@ function TriageFlow({ onNavigate }) {
     setStep('q1');
   }, []);
 
+  React.useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    if (result && resultRef.current) {
+      resultRef.current.focus();
+    } else if (!result && stepRef.current) {
+      const firstButton = stepRef.current.querySelector('button');
+      firstButton?.focus();
+    }
+  }, [step, result]);
+
   const currentStep = TRIAGE_STEPS[step];
 
   return (
     <div className="triage-step">
       {!result && currentStep && (
-        <>
+        <div
+          ref={stepRef}
+          role="group"
+          aria-live="polite"
+          aria-atomic="true"
+          aria-label={currentStep.question}
+        >
           <div className="triage-progress">{currentStep.progress}</div>
           <div className="triage-q">{currentStep.question}</div>
-          <div className="triage-options">
+          <div className="triage-options" role="group" aria-label="Antwort wählen">
             {currentStep.options.map((option) => (
               <button
                 key={option.action}
@@ -104,11 +126,17 @@ function TriageFlow({ onNavigate }) {
               </button>
             ))}
           </div>
-        </>
+        </div>
       )}
 
       {result && (
-        <div className={`triage-result ${result.urgent ? 'triage-result-urgent' : ''}`}>
+        <div
+          ref={resultRef}
+          tabIndex={-1}
+          role="status"
+          aria-live="polite"
+          className={`triage-result ${result.urgent ? 'triage-result-urgent' : ''}`}
+        >
           <span className="triage-result-label">{result.label}</span>
           <a
             className="triage-result-link"

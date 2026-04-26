@@ -421,7 +421,7 @@ function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) 
   return (
     <div className="twk-num">
       <span className="twk-num-lbl" onPointerDown={onScrubStart}>{label}</span>
-      <input type="number" value={value} min={min} max={max} step={step}
+      <input type="number" aria-label={label} value={value} min={min} max={max} step={step}
              onChange={(e) => onChange(clamp(Number(e.target.value)))} />
       {unit && <span className="twk-num-unit">{unit}</span>}
     </div>
@@ -432,7 +432,7 @@ function TweakColor({ label, value, onChange }) {
   return (
     <div className="twk-row twk-row-h">
       <div className="twk-lbl"><span>{label}</span></div>
-      <input type="color" className="twk-swatch" value={value}
+      <input type="color" className="twk-swatch" aria-label={label} value={value}
              onChange={(e) => onChange(e.target.value)} />
     </div>
   );

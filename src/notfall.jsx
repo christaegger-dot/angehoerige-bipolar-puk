@@ -117,26 +117,44 @@ function NotfallPage({ onNavigate }) {
           <p style={{color: 'var(--ink-soft)', marginBottom: 24}}>Klappen Sie auf, was gerade zutrifft. Sie müssen die anderen nicht lesen.</p>
 
           <div className="guides">
-            {guides.map((g, i) => (
-              <div key={i} className={`guide ${g.cls} ${openGuide === i ? 'open' : ''}`}>
-                <button className="guide-head" onClick={() => setOpenGuide(openGuide === i ? -1 : i)}>
-                  <span className="guide-letter">{g.letter}</span>
-                  <div>
-                    <div className="guide-title">{g.title}</div>
-                    <div className="guide-sub">{g.sub}</div>
+            {guides.map((g, i) => {
+              const open = openGuide === i;
+              const panelId = `guide-panel-${i}`;
+              const buttonId = `guide-trigger-${i}`;
+              return (
+                <div key={i} className={`guide ${g.cls} ${open ? 'open' : ''}`}>
+                  <button
+                    id={buttonId}
+                    type="button"
+                    className="guide-head"
+                    onClick={() => setOpenGuide(open ? -1 : i)}
+                    aria-expanded={open}
+                    aria-controls={panelId}
+                  >
+                    <span className="guide-letter" aria-hidden="true">{g.letter}</span>
+                    <div>
+                      <div className="guide-title">{g.title}</div>
+                      <div className="guide-sub">{g.sub}</div>
+                    </div>
+                    <span className="guide-toggle">{open ? 'schliessen' : 'öffnen'}</span>
+                  </button>
+                  <div
+                    id={panelId}
+                    className="guide-body"
+                    role="region"
+                    aria-labelledby={buttonId}
+                    hidden={!open}
+                  >
+                    <div className="guide-do"><strong>Erster Schritt: </strong>{g.do}</div>
+                    <ul>
+                      {g.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                    </ul>
+                    <div className="guide-dont"><strong>Vermeiden: </strong>{g.dont}</div>
+                    <div className="guide-sos"><strong>Wenn akut: </strong>{g.sos}</div>
                   </div>
-                  <span className="guide-toggle">{openGuide === i ? 'schliessen' : 'öffnen'}</span>
-                </button>
-                <div className="guide-body">
-                  <div className="guide-do"><strong>Erster Schritt: </strong>{g.do}</div>
-                  <ul>
-                    {g.bullets.map((b, j) => <li key={j}>{b}</li>)}
-                  </ul>
-                  <div className="guide-dont"><strong>Vermeiden: </strong>{g.dont}</div>
-                  <div className="guide-sos"><strong>Wenn akut: </strong>{g.sos}</div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="grauzone">
