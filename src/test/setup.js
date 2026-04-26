@@ -5,15 +5,16 @@ import { cleanup } from '@testing-library/react';
 afterEach(() => {
   cleanup();
   vi.restoreAllMocks();
+  window.localStorage.clear();
+  window.sessionStorage.clear();
+  window.history.replaceState({}, '', '/');
 });
 
 if (!window.requestAnimationFrame) {
   window.requestAnimationFrame = (cb) => cb();
 }
 
-if (!window.scrollTo) {
-  window.scrollTo = () => {};
-}
+window.scrollTo = () => {};
 
 if (!Element.prototype.scrollIntoView) {
   Element.prototype.scrollIntoView = () => {};

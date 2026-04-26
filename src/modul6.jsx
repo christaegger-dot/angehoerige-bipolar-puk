@@ -2,7 +2,7 @@
 // Werkzeug-orientiert: Gespräche, Vereinbarungen, Krisenplan.
 
 import React from 'react';
-import { navHandler } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 
 function HandlungsfelderGrid() {
   const felder = [
@@ -229,9 +229,9 @@ function Modul6Page({ onNavigate }) {
         <header className="module-detail-header">
           <div className="col">
             <div className="breadcrumb">
-              <a href="#start" onClick={navHandler('start', onNavigate)}>Start</a>
+              <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
               <span className="sep">/</span>
-              <a href="#module" onClick={navHandler('module', onNavigate)}>Module</a>
+              <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
               <span className="sep">/</span>
               <span>Modul 6</span>
             </div>
@@ -259,7 +259,7 @@ function Modul6Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href="#module" onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
             </div>
           </aside>
 
@@ -272,7 +272,7 @@ function Modul6Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Was in belastenden Situationen zuerst hilft</h2>
-              <p className="dropcap">Dieses Modul ordnet, statt Druck zu erzeugen. Je nach Lage braucht es Vorbereitung, Deeskalation oder sofortiges Handeln — nicht alles auf einmal. <strong>Wenn Sie nur eines klären:</strong> Geht es gerade noch um Gespräch oder schon um Schutz? Für akute Gefährdung gilt immer: <a href="#notfall" onClick={navHandler('notfall', onNavigate)}>Notfallseite</a> öffnen.</p>
+              <p className="dropcap">Dieses Modul ordnet, statt Druck zu erzeugen. Je nach Lage braucht es Vorbereitung, Deeskalation oder sofortiges Handeln — nicht alles auf einmal. <strong>Wenn Sie nur eines klären:</strong> Geht es gerade noch um Gespräch oder schon um Schutz? Für akute Gefährdung gilt immer: <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a> öffnen.</p>
 
               <HandlungsfelderGrid />
 
@@ -407,7 +407,7 @@ function Modul6Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Bei Suizidgedanken</span>
-                <p>Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» Diese Frage löst Suizidgedanken <em>nicht</em> aus. Wenn konkrete Pläne, Mittel oder ein Termin im Raum stehen, ist es eine medizinische Notfallsituation: <strong>tödliche Mittel — Medikamente, Waffen — wenn möglich aus Reichweite bringen, ohne Eskalation</strong>, und gemeinsam zur Notfallaufnahme. Wenn das nicht geht: <strong>144</strong> oder <strong>0800 33 66 55</strong>. Vollständiger Ablauf auf der <a href="#notfall" onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
+                <p>Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» Diese Frage löst Suizidgedanken <em>nicht</em> aus. Wenn konkrete Pläne, Mittel oder ein Termin im Raum stehen, ist es eine medizinische Notfallsituation: <strong>tödliche Mittel — Medikamente, Waffen — wenn möglich aus Reichweite bringen, ohne Eskalation</strong>, und gemeinsam zur Notfallaufnahme. Wenn das nicht geht: <strong>144</strong> oder <strong>0800 33 66 55</strong>. Vollständiger Ablauf auf der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
               </aside>
 
               <blockquote className="module-quote">
@@ -442,7 +442,7 @@ function Modul6Page({ onNavigate }) {
 
               <p>Daneben gibt es weniger akute Situationen, in denen Behandlung ambivalent, brüchig oder konflikthaft wird. Nebenwirkungen, Scham, Müdigkeit oder das Erleben, dass Hypomanie sich subjektiv nach Kraft anfühlt — all das macht Behandlungstreue zu einem schwierigen Thema. In stabileren Phasen ruhig sprechen, Sorgen als Ich-Botschaft formulieren, Beobachtungen benennen — und das Behandlungsteam informieren, auch ohne Rückmeldung.</p>
 
-              <p>Wenn Ablehnung mit akuter Gefährdung zusammenfällt, endet der Gesprächsrahmen. Dann zählt Schutz: <a href="#notfall" onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
+              <p>Wenn Ablehnung mit akuter Gefährdung zusammenfällt, endet der Gesprächsrahmen. Dann zählt Schutz: <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
             </section>
 
             <section id="s7">
@@ -522,14 +522,14 @@ function Modul6Page({ onNavigate }) {
               </aside>
 
               <div className="next-modules">
-                <a className="next-module" href="#werkzeuge" onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeuge und druckbare Materialien</h3>
                     <p>Krisenplan-Tool, Notfallkarte fürs Portemonnaie, Fragen fürs Arztgespräch — direkt einsatzbereit.</p>
                   </div>
                 </a>
-                <a className="next-module" href="#modul7" onClick={navHandler('modul7', onNavigate)}>
+                <a className="next-module" href={navHref('modul7')} onClick={navHandler('modul7', onNavigate)}>
                   <span className="next-module-num">07</span>
                   <div>
                     <h3>Langfristige Tragfähigkeit</h3>
@@ -559,10 +559,10 @@ function Modul6Page({ onNavigate }) {
               <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href="#modul5" onClick={navHandler('modul5', onNavigate)}>
+                <a className="module-nav-btn" href={navHref('modul5')} onClick={navHandler('modul5', onNavigate)}>
                   ← Modul 05 — Loyalitätskonflikte
                 </a>
-                <a className="module-nav-btn module-nav-next" href="#modul7" onClick={navHandler('modul7', onNavigate)}>
+                <a className="module-nav-btn module-nav-next" href={navHref('modul7')} onClick={navHandler('modul7', onNavigate)}>
                   Modul 07 — Langfristige Tragfähigkeit →
                 </a>
               </div>

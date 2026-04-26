@@ -1,7 +1,7 @@
 // SOS Krise — editorial Notfallweg
 
 import React from 'react';
-import { navHandler } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 
 function NotfallPage({ onNavigate }) {
@@ -84,7 +84,7 @@ function NotfallPage({ onNavigate }) {
     <>
       <header className="notfall-hero">
         <div className="col">
-          <div className="breadcrumb"><a href="#start" onClick={navHandler('start', onNavigate)}>Start</a><span className="sep">/</span><span>SOS Krise</span></div>
+          <div className="breadcrumb"><a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a><span className="sep">/</span><span>SOS Krise</span></div>
           <div className="notfall-illu"><Ill.Crisis size={180} /></div>
           <span className="kicker">Notfallweg</span>
           <h1>SOS Krise — wenn jetzt nichts anderes Vorrang hat.</h1>

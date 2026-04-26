@@ -13,6 +13,12 @@ export default defineConfig({
       all: true,
       include: ['src/**/*.{js,jsx}'],
       exclude: ['src/main.jsx', 'src/styles.css', 'src/illustrations.jsx'],
+      thresholds: {
+        lines: 50,
+        functions: 50,
+        branches: 45,
+        statements: 50,
+      },
     },
   },
 })

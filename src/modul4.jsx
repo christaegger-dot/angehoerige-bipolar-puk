@@ -2,7 +2,7 @@
 // Zentrales Bild: Reservoir-Skala mit Erschöpfungs-Stufen.
 
 import React from 'react';
-import { navHandler } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 
 function Reservoir() {
   const w = 560, h = 380;
@@ -159,9 +159,9 @@ function Modul4Page({ onNavigate }) {
         <header className="module-detail-header">
           <div className="col">
             <div className="breadcrumb">
-              <a href="#start" onClick={navHandler('start', onNavigate)}>Start</a>
+              <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
               <span className="sep">/</span>
-              <a href="#module" onClick={navHandler('module', onNavigate)}>Module</a>
+              <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
               <span className="sep">/</span>
               <span>Modul 4</span>
             </div>
@@ -189,7 +189,7 @@ function Modul4Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href="#module" onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
             </div>
           </aside>
 
@@ -213,7 +213,7 @@ function Modul4Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Wenn diese Trauer gross wird</span>
-                <p>Unterstützung kann helfen — sei es über Einzel- oder Paartherapie, eine Angehörigengruppe (VASK Zürich, Selbsthilfe Zürich) oder bei anhaltend komplizierter Trauer eine Fachperson für Trauerbegleitung. Kontaktdaten und weitere Anlaufstellen finden Sie in der <a className="link-underline" href="#unterstuetzung" onClick={navHandler('unterstuetzung', onNavigate)}>Schnellstart-Übersicht</a>.</p>
+                <p>Unterstützung kann helfen — sei es über Einzel- oder Paartherapie, eine Angehörigengruppe (VASK Zürich, Selbsthilfe Zürich) oder bei anhaltend komplizierter Trauer eine Fachperson für Trauerbegleitung. Kontaktdaten und weitere Anlaufstellen finden Sie in der <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Schnellstart-Übersicht</a>.</p>
               </aside>
 
               <p>Zwischen schweren Zeiten gibt es auch Inseln: ein ruhiger Sonntag, ein gutes Gespräch, das Gefühl, dass es sich doch lohnt. Diese Inseln sind klein, aber sie tragen.</p>
@@ -377,7 +377,7 @@ function Modul4Page({ onNavigate }) {
               <p>Chronische Belastung hat körperliche Folgen — Blutdruck, Immunsystem, Schlaf. Ihr Hausarzt kann helfen, diese früh zu erkennen.</p>
 
               <h3>5. Peer-Kontakt suchen</h3>
-              <p>Andere Angehörige verstehen, ohne dass Sie erklären müssen. Anlaufstellen finden Sie in der <a className="link-underline" href="#unterstuetzung" onClick={navHandler('unterstuetzung', onNavigate)}>Schnellstart-Übersicht</a>.</p>
+              <p>Andere Angehörige verstehen, ohne dass Sie erklären müssen. Anlaufstellen finden Sie in der <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Schnellstart-Übersicht</a>.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Reflexion</span>
@@ -385,14 +385,14 @@ function Modul4Page({ onNavigate }) {
               </aside>
 
               <div className="next-modules">
-                <a className="next-module" href="#werkzeuge" onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeuge — Belastungs-Selbstcheck</h3>
                     <p>Ein Fragebogen, der Ihren aktuellen Stand auf der Reservoir-Skala genauer einordnet. Anonym, im Browser.</p>
                   </div>
                 </a>
-                <a className="next-module" href="#modul6" onClick={navHandler('modul6', onNavigate)}>
+                <a className="next-module" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
                   <span className="next-module-num">06</span>
                   <div>
                     <h3>Was Sie konkret tun können</h3>
@@ -421,10 +421,10 @@ function Modul4Page({ onNavigate }) {
               <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert und keine reale Einzelperson.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href="#modul3" onClick={navHandler('modul3', onNavigate)}>
+                <a className="module-nav-btn" href={navHref('modul3')} onClick={navHandler('modul3', onNavigate)}>
                   ← Modul 03 — Wie Beziehungen unter Druck geraten
                 </a>
-                <a className="module-nav-btn module-nav-next" href="#modul5" onClick={navHandler('modul5', onNavigate)}>
+                <a className="module-nav-btn module-nav-next" href={navHref('modul5')} onClick={navHandler('modul5', onNavigate)}>
                   Modul 05 — Loyalitätskonflikte →
                 </a>
               </div>

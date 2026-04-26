@@ -19,9 +19,10 @@ function BarrierefreiheitPage() {
 
             <h2>Stand der Vereinbarkeit</h2>
             <p>
-              Die Lese-Begleitung wurde nach den <strong>Web Content Accessibility Guidelines (WCAG) 2.1 auf
-              Konformitätsstufe AA</strong> entwickelt und auf dieser Basis selbst geprüft. Sie ist mit den
-              Anforderungen weitgehend vereinbar.
+              Die Lese-Begleitung wurde an den <strong>Web Content Accessibility Guidelines (WCAG) 2.1 auf
+              Konformitätsstufe AA</strong> ausgerichtet und intern mit Tastatur, Screenreader-Semantik und
+              responsiven Layouts geprüft. Eine formale externe Konformitätsprüfung mit dokumentierter Freigabe
+              liegt derzeit nicht vor.
             </p>
 
             <h2>Was umgesetzt ist</h2>
@@ -36,14 +37,12 @@ function BarrierefreiheitPage() {
             </ul>
 
             <h2>Bekannte Einschränkungen</h2>
-            <p>
-              Es sind aktuell keine bekannten Verstösse gegen WCAG 2.1 AA dokumentiert. Sollten Sie auf eine
-              Barriere stossen — etwa einen unleserlichen Bereich, eine nicht erreichbare Funktion oder einen
-              vom Screenreader falsch ausgesprochenen Text — melden Sie es uns bitte.
-            </p>
-            <p>
-              Eine externe, unabhängige Konformitätsprüfung wurde bisher nicht durchgeführt.
-            </p>
+            <ul>
+              <li>Die Anwendung wurde intern getestet, aber noch nicht in einer vollständigen externen WCAG-AA-Prüfung bewertet.</li>
+              <li>Einzelne interaktive Visualisierungen werden laufend auf noch stärkere Tastatur- und Screenreader-Unterstützung nachgerüstet.</li>
+              <li>Kontrastwerte werden bei jeder Farb- oder Typografie-Anpassung erneut überprüft, sind aber noch nicht separat dokumentiert oder veröffentlicht.</li>
+            </ul>
+            <p>Sollten Sie auf eine Barriere stossen — etwa einen unleserlichen Bereich, eine nicht erreichbare Funktion oder einen vom Screenreader falsch ausgesprochenen Text — melden Sie es uns bitte.</p>
 
             <h2>Feedback &amp; Kontakt</h2>
             <p>

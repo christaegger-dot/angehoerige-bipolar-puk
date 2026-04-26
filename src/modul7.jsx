@@ -2,7 +2,7 @@
 // Zentrales Bild: Vier Säulen als Tragwerk.
 
 import React from 'react';
-import { navHandler } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 
 function SaeulenFigur() {
   const w = 600, h = 400;
@@ -215,9 +215,9 @@ function Modul7Page({ onNavigate }) {
         <header className="module-detail-header">
           <div className="col">
             <div className="breadcrumb">
-              <a href="#start" onClick={navHandler('start', onNavigate)}>Start</a>
+              <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
               <span className="sep">/</span>
-              <a href="#module" onClick={navHandler('module', onNavigate)}>Module</a>
+              <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
               <span className="sep">/</span>
               <span>Modul 7</span>
             </div>
@@ -245,7 +245,7 @@ function Modul7Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href="#module" onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
             </div>
           </aside>
 
@@ -448,14 +448,14 @@ function Modul7Page({ onNavigate }) {
               </ul>
 
               <div className="next-modules">
-                <a className="next-module" href="#unterstuetzung" onClick={navHandler('unterstuetzung', onNavigate)}>
+                <a className="next-module" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
                   <span className="next-module-num next-module-num-resource">→</span>
                   <div>
                     <h3>Anlaufstellen — Unterstützung und Ressourcen</h3>
                     <p>Anlaufstellen nach Situation, Materialien und konkrete nächste Schritte.</p>
                   </div>
                 </a>
-                <a className="next-module" href="#werkzeuge" onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Säulen-Check</h3>
@@ -472,10 +472,10 @@ function Modul7Page({ onNavigate }) {
               <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href="#modul6" onClick={navHandler('modul6', onNavigate)}>
+                <a className="module-nav-btn" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
                   ← Modul 06 — Was Sie konkret tun können
                 </a>
-                <a className="module-nav-btn module-nav-next" href="#unterstuetzung" onClick={navHandler('unterstuetzung', onNavigate)}>
+                <a className="module-nav-btn module-nav-next" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
                   Anlaufstellen — Unterstützung und Ressourcen →
                 </a>
               </div>

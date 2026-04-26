@@ -2,14 +2,14 @@
 
 // Helper: navigationaler Link mit Tastatur-Support (Tab + Enter/Space) durch echtes href.
 
-import { navHandler } from './nav-handler.js';
+import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
 
 function CrisisBar({ onNavigate }) {
   return (
     <div className="crisis-bar">
       <span>In akuten Lagen hat der Notfallweg Vorrang.</span>
       <span className="sep">·</span>
-      <a href="#notfall" onClick={navHandler('notfall', onNavigate)}>SOS Krise — 144 / 117 / 143 →</a>
+      <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>SOS Krise — 144 / 117 / 143 →</a>
     </div>
   );
 }
@@ -18,15 +18,15 @@ function Nav({ page, onNavigate }) {
   return (
     <nav className="nav" aria-label="Hauptnavigation">
       <div className="col-wide nav-inner">
-        <a className="nav-brand" href="#start" onClick={navHandler('start', onNavigate)} aria-label="Startseite — Bipolar &amp; Angehörige · PUK Zürich">
+        <a className="nav-brand" href={navHref('start')} onClick={navHandler('start', onNavigate)} {...navPreloadProps('start')} aria-label="Startseite — Bipolar &amp; Angehörige · PUK Zürich">
           <span className="nav-brand-mark">Bipolar &amp; Angehörige</span>
           <span className="nav-brand-sub">PUK Zürich</span>
         </a>
         <div className="nav-links">
-          <a href="#module" className={page === 'module' ? 'active' : ''} onClick={navHandler('module', onNavigate)} aria-current={page === 'module' ? 'page' : undefined}>Module</a>
-          <a href="#werkzeuge" className={page === 'werkzeuge' ? 'active' : ''} onClick={navHandler('werkzeuge', onNavigate)} aria-current={page === 'werkzeuge' ? 'page' : undefined}>Werkzeuge</a>
-          <a href="#unterstuetzung" className={page === 'unterstuetzung' ? 'active' : ''} onClick={navHandler('unterstuetzung', onNavigate)} aria-current={page === 'unterstuetzung' ? 'page' : undefined}>Anlaufstellen</a>
-          <a href="#notfall" className="nav-sos" onClick={navHandler('notfall', onNavigate)}>SOS Krise</a>
+          <a href={navHref('module')} className={page === 'module' ? 'active' : ''} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')} aria-current={page === 'module' ? 'page' : undefined}>Module</a>
+          <a href={navHref('werkzeuge')} className={page === 'werkzeuge' ? 'active' : ''} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')} aria-current={page === 'werkzeuge' ? 'page' : undefined}>Werkzeuge</a>
+          <a href={navHref('unterstuetzung')} className={page === 'unterstuetzung' ? 'active' : ''} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')} aria-current={page === 'unterstuetzung' ? 'page' : undefined}>Anlaufstellen</a>
+          <a href={navHref('notfall')} className="nav-sos" onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>SOS Krise</a>
         </div>
       </div>
     </nav>
@@ -44,10 +44,10 @@ function Footer({ onNavigate }) {
             <span className="footer-credit-attr">Inhaltliche Verantwortung: Ch. Egger · Stand: April 2026</span>
           </div>
           <div className="footer-links">
-            <a href="#impressum" onClick={navHandler('impressum', onNavigate)}>Impressum</a>
-            <a href="#datenschutz" onClick={navHandler('datenschutz', onNavigate)}>Datenschutz</a>
-            <a href="#barrierefreiheit" onClick={navHandler('barrierefreiheit', onNavigate)}>Barrierefreiheit</a>
-            <a className="footer-link-alert" href="#notfall" onClick={navHandler('notfall', onNavigate)}>Notfall &amp; Krisenhilfe</a>
+            <a href={navHref('impressum')} onClick={navHandler('impressum', onNavigate)} {...navPreloadProps('impressum')}>Impressum</a>
+            <a href={navHref('datenschutz')} onClick={navHandler('datenschutz', onNavigate)} {...navPreloadProps('datenschutz')}>Datenschutz</a>
+            <a href={navHref('barrierefreiheit')} onClick={navHandler('barrierefreiheit', onNavigate)} {...navPreloadProps('barrierefreiheit')}>Barrierefreiheit</a>
+            <a className="footer-link-alert" href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>Notfall &amp; Krisenhilfe</a>
           </div>
         </div>
         <p className="footer-disclaimer">

@@ -13,12 +13,26 @@ describe('TweaksPanel protocol behavior', () => {
     expect(postMessageSpy).toHaveBeenCalledWith({ type: '__edit_mode_available' }, window.location.origin);
     expect(screen.queryByText('Panel content')).not.toBeInTheDocument();
 
-    window.dispatchEvent(new MessageEvent('message', { data: { type: '__activate_edit_mode' } }));
+    window.dispatchEvent(new MessageEvent('message', {
+      data: { type: '__activate_edit_mode' },
+      origin: window.location.origin,
+    }));
     expect(await screen.findByText('Panel content')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Close tweaks' }));
 
     expect(postMessageSpy).toHaveBeenCalledWith({ type: '__edit_mode_dismissed' }, window.location.origin);
+    expect(screen.queryByText('Panel content')).not.toBeInTheDocument();
+  });
+
+  it('ignores edit-mode messages from untrusted origins', () => {
+    render(<TweaksPanel title="Editor"><div>Panel content</div></TweaksPanel>);
+
+    window.dispatchEvent(new MessageEvent('message', {
+      data: { type: '__activate_edit_mode' },
+      origin: 'https://example.invalid',
+    }));
+
     expect(screen.queryByText('Panel content')).not.toBeInTheDocument();
   });
 });

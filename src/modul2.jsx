@@ -2,7 +2,7 @@
 // Zentrales Bild: Eisberg-Figur (sichtbar / verborgen) in der Bildmarke der Seite.
 
 import React from 'react';
-import { navHandler } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 
 function Eisberg() {
   // viewBox 520 x 640 — Wasserlinie bei y=240
@@ -285,9 +285,9 @@ function Modul2Page({ onNavigate }) {
         <header className="module-detail-header">
           <div className="col">
             <div className="breadcrumb">
-              <a href="#start" onClick={navHandler('start', onNavigate)}>Start</a>
+              <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
               <span className="sep">/</span>
-              <a href="#module" onClick={navHandler('module', onNavigate)}>Module</a>
+              <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
               <span className="sep">/</span>
               <span>Modul 2</span>
             </div>
@@ -315,7 +315,7 @@ function Modul2Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href="#module" onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
             </div>
           </aside>
 
@@ -440,7 +440,7 @@ function Modul2Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Bei akuter Suizidgefahr</span>
-                <p><strong>0800 33 66 55</strong> — Ärztefon Notfalldienst ZH (24/7, kostenlos). Konkrete Schritte zur Vorbereitung finden Sie in Modul 6. Alle Notrufnummern: <a href="#notfall" onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
+                <p><strong>0800 33 66 55</strong> — Ärztefon Notfalldienst ZH (24/7, kostenlos). Konkrete Schritte zur Vorbereitung finden Sie in Modul 6. Alle Notrufnummern: <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
               </aside>
 
               <p>Wichtig zu wissen: Konsequente Behandlung — insbesondere mit Lithium — senkt das Suizidrisiko nachweislich. Die Erkrankung ist behandelbar, und Behandlung kann deutlich entlasten.</p>
@@ -458,14 +458,14 @@ function Modul2Page({ onNavigate }) {
               <SchritteBlock />
 
               <div className="next-modules">
-                <a className="next-module" href="#modul4" onClick={navHandler('modul4', onNavigate)}>
+                <a className="next-module" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
                   <span className="next-module-num">04</span>
                   <div>
                     <h3>Wenn die Kraft nachlässt</h3>
                     <p>Burnout-Risiko, Erschöpfungszeichen und was hilft, wenn man selbst an der Grenze ist.</p>
                   </div>
                 </a>
-                <a className="next-module" href="#werkzeuge" onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeuge — Belastungs-Selbstcheck</h3>
@@ -492,10 +492,10 @@ function Modul2Page({ onNavigate }) {
               <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert und keine reale Einzelperson.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href="#modul1" onClick={navHandler('modul1', onNavigate)}>
+                <a className="module-nav-btn" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)}>
                   ← Modul 01 — Die bipolare Störung verstehen
                 </a>
-                <a className="module-nav-btn module-nav-next" href="#modul3" onClick={navHandler('modul3', onNavigate)}>
+                <a className="module-nav-btn module-nav-next" href={navHref('modul3')} onClick={navHandler('modul3', onNavigate)}>
                   Modul 03 — Wie Beziehungen unter Druck geraten →
                 </a>
               </div>

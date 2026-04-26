@@ -2,7 +2,7 @@
 // Zentrales Bild: Zwei sich ziehende Linien (Knoten) als Metapher.
 
 import React from 'react';
-import { navHandler } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 
 function KnotenFigur() {
   const w = 560, h = 360;
@@ -177,9 +177,9 @@ function Modul5Page({ onNavigate }) {
         <header className="module-detail-header">
           <div className="col">
             <div className="breadcrumb">
-              <a href="#start" onClick={navHandler('start', onNavigate)}>Start</a>
+              <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
               <span className="sep">/</span>
-              <a href="#module" onClick={navHandler('module', onNavigate)}>Module</a>
+              <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
               <span className="sep">/</span>
               <span>Modul 5</span>
             </div>
@@ -207,7 +207,7 @@ function Modul5Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href="#module" onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
             </div>
           </aside>
 
@@ -374,14 +374,14 @@ function Modul5Page({ onNavigate }) {
               <p><strong>Rechtliche Schritte während einer Episode.</strong> Verträge und Entscheidungen, die während einer manischen Episode getroffen werden, können juristisch anfechtbar sein. Wenn Sie sich trennen, während Ihr Partner in einer Episode ist: Schützen Sie gemeinsame Finanzen, dokumentieren Sie den Zustand und lassen Sie sich beraten, bevor Sie Fakten schaffen. Die KESB kann bei Bedarf eine Beistandschaft einrichten.</p>
 
               <div className="next-modules">
-                <a className="next-module" href="#modul4" onClick={navHandler('modul4', onNavigate)}>
+                <a className="next-module" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
                   <span className="next-module-num">04</span>
                   <div>
                     <h3>Wenn die Kraft nachlässt</h3>
                     <p>Loyalitätskonflikte und Erschöpfung verstärken sich gegenseitig. Wer den eigenen Pegel kennt, kann früher gegensteuern.</p>
                   </div>
                 </a>
-                <a className="next-module" href="#modul6" onClick={navHandler('modul6', onNavigate)}>
+                <a className="next-module" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
                   <span className="next-module-num">06</span>
                   <div>
                     <h3>Was Sie konkret tun können</h3>
@@ -409,10 +409,10 @@ function Modul5Page({ onNavigate }) {
               <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href="#modul4" onClick={navHandler('modul4', onNavigate)}>
+                <a className="module-nav-btn" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
                   ← Modul 04 — Wenn die Kraft nachlässt
                 </a>
-                <a className="module-nav-btn module-nav-next" href="#modul6" onClick={navHandler('modul6', onNavigate)}>
+                <a className="module-nav-btn module-nav-next" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
                   Modul 06 — Was Sie konkret tun können →
                 </a>
               </div>
