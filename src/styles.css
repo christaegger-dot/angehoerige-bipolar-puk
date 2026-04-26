@@ -3128,14 +3128,14 @@ section + section { padding-top: 0; }
 .faq-list { margin-top: 16px; border-top: 1px solid var(--paper-edge); }
 .faq-item {
   border-bottom: 1px solid var(--paper-edge);
-  padding: 22px 0;
 }
 .faq-q {
   appearance: none;
   background: transparent;
   border: 0;
   width: 100%;
-  padding: 0;
+  padding: 22px 0;
+  min-height: 44px;
   text-align: left;
   display: flex;
   justify-content: space-between;
@@ -3145,6 +3145,7 @@ section + section { padding-top: 0; }
   font-style: italic;
   font-size: 1.12rem;
   color: var(--ink);
+  cursor: pointer;
   transition: color 0.15s;
 }
 .faq-item:hover .faq-q { color: var(--accent); }
@@ -3163,6 +3164,7 @@ section + section { padding-top: 0; }
 .faq-a {
   display: none;
   padding-top: 16px;
+  padding-bottom: 22px;
 }
 .faq-item.open .faq-a { display: block; }
 .faq-a p {
@@ -3318,7 +3320,9 @@ section + section { padding-top: 0; }
   cursor: pointer;
   background: none;
   border: 0;
-  padding: 8px 14px;
+  padding: 12px 18px;
+  min-height: 44px;
+  min-width: 44px;
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-color: var(--paper-edge);
@@ -3626,7 +3630,9 @@ section + section { padding-top: 0; }
   text-align: center;
   background: transparent;
   border: 0;
-  padding: 4px 14px;
+  padding: 12px 18px;
+  min-height: 44px;
+  min-width: 44px;
   cursor: pointer;
   transition: color 0.15s, background 0.15s, transform 0.18s;
   border-radius: 100px;
@@ -3747,7 +3753,7 @@ section + section { padding-top: 0; }
 
 @media (max-width: 600px) {
   .eisberg-tool-stage { max-width: 360px; }
-  .eisberg-tool-btn { font-size: 0.85em !important; padding: 8px 12px; }
+  .eisberg-tool-btn { font-size: 0.85em !important; padding: 12px 14px; min-height: 44px; min-width: 44px; }
   .eisberg-tool-foot { flex-direction: column; align-items: stretch; }
   .eisberg-tool-foot .btn { width: 100%; justify-content: center; }
 }
@@ -3923,6 +3929,25 @@ section + section { padding-top: 0; }
   left: 4px;
   color: var(--accent);
   font-weight: 700;
+}
+.kommunikation-copy-hint {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  border-radius: 4px;
+  max-width: 56ch;
+}
+.kommunikation-copy-hint-ok {
+  color: var(--accent);
+  background: var(--accent-bg);
+  border-left: 2px solid var(--accent);
+}
+.kommunikation-copy-hint-warn {
+  color: var(--ink);
+  background: var(--bg-alt);
+  border-left: 2px solid var(--alert);
 }
 
 /* EE-KREISLAUF — interaktive 4-Phasen-Visualisierung */

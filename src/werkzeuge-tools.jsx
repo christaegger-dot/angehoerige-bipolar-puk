@@ -354,12 +354,10 @@ function KrisenplanTool({ onClose, onNavigate }) {
   const update = (id, value) => {
     const next = { ...data, [id]: value, _updated: new Date().toISOString() };
     setData(next);
-    try {
-      saveStoredDraft(KRISENPLAN_STORAGE_KEY, next, remember);
-      setSavedHint('Gespeichert');
-      if (savedTimer.current) window.clearTimeout(savedTimer.current);
-      savedTimer.current = window.setTimeout(() => setSavedHint(''), 1600);
-    } catch { /* ignore */ }
+    saveStoredDraft(KRISENPLAN_STORAGE_KEY, next, remember);
+    setSavedHint('Gespeichert');
+    if (savedTimer.current) window.clearTimeout(savedTimer.current);
+    savedTimer.current = window.setTimeout(() => setSavedHint(''), 1600);
   };
 
   const reset = () => {
@@ -824,6 +822,7 @@ function EisbergTool({ onClose, onNavigate }) {
                   className={`eisberg-word eisberg-${item.kind} eisberg-above-word eisberg-tool-btn ${selected === item.key ? 'is-selected' : ''} ${marked.has(item.key) ? 'is-marked' : ''}`}
                   style={{ left: `${item.x}%`, top: `${item.y}%` }}
                   onClick={() => setSelected(item.key)}
+                  aria-pressed={selected === item.key}
                 >
                   {item.label}
                 </button>
@@ -834,6 +833,7 @@ function EisbergTool({ onClose, onNavigate }) {
                   className={`eisberg-word eisberg-${item.kind} eisberg-below-word eisberg-tool-btn ${selected === item.key ? 'is-selected' : ''} ${marked.has(item.key) ? 'is-marked' : ''}`}
                   style={{ left: `${item.x}%`, top: `${item.y}%` }}
                   onClick={() => setSelected(item.key)}
+                  aria-pressed={selected === item.key}
                 >
                   {item.label}
                 </button>
@@ -854,6 +854,7 @@ function EisbergTool({ onClose, onNavigate }) {
                   <button
                     className={`eisberg-tool-mark ${marked.has(sel.key) ? 'is-marked' : ''}`}
                     onClick={() => toggleMark(sel.key)}
+                    aria-pressed={marked.has(sel.key)}
                   >
                     {marked.has(sel.key) ? '✓ markiert' : 'Trifft auf mich zu'}
                   </button>
@@ -963,6 +964,18 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
   const [step, setStep] = React.useState('intro'); // intro | anlass | beobachtung | wirkung | bitte | result
   const [data, setData] = React.useState(initialState.data);
   const [remember, setRemember] = React.useState(initialState.remember);
+  const [copyHint, setCopyHint] = React.useState({ tone: '', text: '' });
+  const copyHintTimer = React.useRef(null);
+
+  React.useEffect(() => () => {
+    if (copyHintTimer.current) window.clearTimeout(copyHintTimer.current);
+  }, []);
+
+  const showCopyHint = (tone, text) => {
+    setCopyHint({ tone, text });
+    if (copyHintTimer.current) window.clearTimeout(copyHintTimer.current);
+    copyHintTimer.current = window.setTimeout(() => setCopyHint({ tone: '', text: '' }), 4000);
+  };
 
 
   const updateField = (key, value) => {
@@ -994,11 +1007,13 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
   const skript = `${eroeffnung}\n\n${data.beobachtung || '[Ihre Beobachtung]'}\n\n${data.wirkung || '[Wirkung auf Sie]'}\n\n${data.bitte || '[Ihre Bitte]'}`;
 
   const copyToClipboard = () => {
-    if (navigator.clipboard) {
+    if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(skript).then(
-        () => { window.alert('Skript kopiert.'); },
-        () => { /* ignore */ }
+        () => { showCopyHint('ok', 'Skript kopiert.'); },
+        () => { showCopyHint('warn', 'Konnte nicht in die Zwischenablage kopieren — bitte das Skript manuell markieren und kopieren.'); },
       );
+    } else {
+      showCopyHint('warn', 'Kopieren nicht verfügbar — bitte das Skript manuell markieren und kopieren.');
     }
   };
 
@@ -1031,6 +1046,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
                   key={a.key}
                   className={`kommunikation-anlass ${data.anlass === a.key ? 'is-selected' : ''}`}
                   onClick={() => updateField('anlass', a.key)}
+                  aria-pressed={data.anlass === a.key}
                 >
                   <strong>{a.label}</strong>
                   <span>{a.sub}</span>
@@ -1147,6 +1163,15 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
                 Modul 6 — Was Sie konkret tun können →
               </button>
             </div>
+            {copyHint.text && (
+              <p
+                className={`kommunikation-copy-hint kommunikation-copy-hint-${copyHint.tone}`}
+                role="status"
+                aria-live="polite"
+              >
+                {copyHint.text}
+              </p>
+            )}
 
             <div className="selbsttest-foot">
               <button className="tool-quiet-btn" onClick={() => setStep('anlass')}>Skript bearbeiten</button>
@@ -1400,7 +1425,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
 
 function BelastungsverlaufTool({ onClose, onNavigate }) {
   const [showSupport, setShowSupport] = React.useState(false);
-  const [hoveredEpisode, setHoveredEpisode] = React.useState(null);
+  const [activeEpisode, setActiveEpisode] = React.useState(null);
 
 
   // Drei Episoden mit Erklärungen
@@ -1410,7 +1435,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
     { x: 330, y: 130, label: 'Chronische Phase', text: 'Dauer-Alarm. Die Belastung wird zu einem Hintergrundzustand. Schlafprobleme, Gereiztheit, Rückzug bleiben auch dann spürbar, wenn keine akute Krise sichtbar ist.' },
   ];
   const activateEpisode = React.useCallback((index) => {
-    setHoveredEpisode(index);
+    setActiveEpisode(index);
   }, []);
 
   return (
@@ -1502,9 +1527,11 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
                 tabIndex={0}
                 role="button"
                 aria-label={ep.label}
+                aria-pressed={activeEpisode === i}
               >
-                <circle cx={ep.x} cy={ep.y} r="14" fill="var(--bg)" stroke={hoveredEpisode === i ? 'var(--accent)' : 'var(--ink-mute)'} strokeWidth={hoveredEpisode === i ? 2 : 1.2} />
-                <text x={ep.x} y={ep.y + 4} textAnchor="middle" fontFamily="var(--mono)" fontSize="11" fill={hoveredEpisode === i ? 'var(--accent)' : 'var(--ink)'} fontWeight={hoveredEpisode === i ? 600 : 400}>
+                <circle cx={ep.x} cy={ep.y} r="22" fill="transparent" pointerEvents="all" />
+                <circle cx={ep.x} cy={ep.y} r="14" fill="var(--bg)" stroke={activeEpisode === i ? 'var(--accent)' : 'var(--ink-mute)'} strokeWidth={activeEpisode === i ? 2 : 1.2} />
+                <text x={ep.x} y={ep.y + 4} textAnchor="middle" fontFamily="var(--mono)" fontSize="11" fill={activeEpisode === i ? 'var(--accent)' : 'var(--ink)'} fontWeight={activeEpisode === i ? 600 : 400}>
                   {i + 1}
                 </text>
               </g>
@@ -1513,14 +1540,14 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
           <figcaption>Schematisches Modell — basierend auf Perlick et al. (2007), Reinares et al. (2016).</figcaption>
         </figure>
 
-        {hoveredEpisode !== null && (
+        {activeEpisode !== null && (
           <div className="ee-detail">
             <div className="ee-detail-head">
-              <span className="ee-detail-num">Phase {hoveredEpisode + 1}</span>
-              <h3>{episoden[hoveredEpisode].label}</h3>
+              <span className="ee-detail-num">Phase {activeEpisode + 1}</span>
+              <h3>{episoden[activeEpisode].label}</h3>
             </div>
             <div className="ee-detail-body">
-              <p>{episoden[hoveredEpisode].text}</p>
+              <p>{episoden[activeEpisode].text}</p>
             </div>
           </div>
         )}

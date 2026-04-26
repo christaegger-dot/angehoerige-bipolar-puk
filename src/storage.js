@@ -1,3 +1,11 @@
+function safeStorage(getStorage) {
+  try {
+    return getStorage();
+  } catch {
+    return null;
+  }
+}
+
 function readJson(storage, key) {
   try {
     const raw = storage?.getItem(key);
@@ -34,30 +42,47 @@ function loadStoredDraft(storageKey, defaults = {}) {
     };
   }
 
-  const local = readJson(window.localStorage, storageKey);
-  const session = readJson(window.sessionStorage, storageKey);
-  const remember = Boolean(local);
-  const draft = local || session;
+  try {
+    const localStorage = safeStorage(() => window.localStorage);
+    const sessionStorage = safeStorage(() => window.sessionStorage);
+    const local = readJson(localStorage, storageKey);
+    const session = readJson(sessionStorage, storageKey);
+    const remember = Boolean(local);
+    const draft = local || session;
 
-  return {
-    remember,
-    data: draft ? { ...defaults, ...draft } : { ...defaults },
-  };
+    return {
+      remember,
+      data: draft ? { ...defaults, ...draft } : { ...defaults },
+    };
+  } catch {
+    return {
+      remember: false,
+      data: { ...defaults },
+    };
+  }
 }
 
 function saveStoredDraft(storageKey, value, remember) {
   if (typeof window === 'undefined') return false;
-  const targetStorage = remember ? window.localStorage : window.sessionStorage;
-  const fallbackStorage = remember ? window.sessionStorage : window.localStorage;
-  const written = writeJson(targetStorage, storageKey, value);
-  removeItem(fallbackStorage, storageKey);
-  return written;
+  try {
+    const targetStorage = safeStorage(() => (remember ? window.localStorage : window.sessionStorage));
+    const fallbackStorage = safeStorage(() => (remember ? window.sessionStorage : window.localStorage));
+    const written = writeJson(targetStorage, storageKey, value);
+    removeItem(fallbackStorage, storageKey);
+    return written;
+  } catch {
+    return false;
+  }
 }
 
 function clearStoredDraft(storageKey) {
   if (typeof window === 'undefined') return;
-  removeItem(window.localStorage, storageKey);
-  removeItem(window.sessionStorage, storageKey);
+  try {
+    removeItem(safeStorage(() => window.localStorage), storageKey);
+    removeItem(safeStorage(() => window.sessionStorage), storageKey);
+  } catch {
+    // Ignore blocked storage access.
+  }
 }
 
 export { clearStoredDraft, loadStoredDraft, saveStoredDraft };
