@@ -1,4 +1,3 @@
-import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -31,8 +30,9 @@ describe('HomePage triage flow', () => {
     await user.click(screen.getByRole('button', { name: 'Nein, eher Werkzeuge' }));
     await user.click(screen.getByRole('button', { name: 'Konkret handeln, Grenzen, Gespräche' }));
 
-    expect(screen.getByText('Modul 6 — Was Sie konkret tun können')).toBeInTheDocument();
-    await user.click(screen.getByRole('link', { name: /Modul 6 — Was Sie konkret tun können/i }));
+    const recommendationLink = await screen.findByRole('link', { name: /Modul 6 — Was Sie konkret tun können/i });
+    expect(recommendationLink).toBeInTheDocument();
+    await user.click(recommendationLink);
     expect(onNavigate).toHaveBeenCalledWith('modul6');
   });
 });
