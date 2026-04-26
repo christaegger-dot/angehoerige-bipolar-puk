@@ -229,7 +229,7 @@ function Modul5Page({ onNavigate }) {
 
               <div className="do-dont">
                 <div className="do-col">
-                  <h4>Verpflichtung</h4>
+                  <h3>Verpflichtung</h3>
                   <ul>
                     <li>«Ich darf ihn/sie nicht im Stich lassen.»</li>
                     <li>«Er/sie kann nichts für die Erkrankung.»</li>
@@ -238,7 +238,7 @@ function Modul5Page({ onNavigate }) {
                   </ul>
                 </div>
                 <div className="dont-col">
-                  <h4>Selbstschutz</h4>
+                  <h3>Selbstschutz</h3>
                   <ul>
                     <li>«Ich kann nicht mehr.»</li>
                     <li>«Meine eigene Gesundheit leidet.»</li>

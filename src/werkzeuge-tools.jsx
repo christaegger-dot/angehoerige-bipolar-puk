@@ -1019,7 +1019,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
   };
 
   return (
-    <ToolOverlay onClose={onClose} ariaLabel="Kommunikations-Trainer" cardClass="kommunikation-card">
+    <ToolOverlay onClose={onClose} ariaLabel="Kommunikations-Trainer" cardClass="kommunikation-card" noPrint={true}>
       <span className="kicker">Werkzeug · Kommunikation</span>
 
         {step === 'intro' && (
@@ -1276,6 +1276,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
             <button
               role="tab"
               aria-selected={view === 'was'}
+              tabIndex={view === 'was' ? 0 : -1}
               className={`ee-detail-tab ${view === 'was' ? 'is-active' : ''}`}
               onClick={() => setView('was')}
             >
@@ -1284,6 +1285,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
             <button
               role="tab"
               aria-selected={view === 'unterbrechen'}
+              tabIndex={view === 'unterbrechen' ? 0 : -1}
               className={`ee-detail-tab ${view === 'unterbrechen' ? 'is-active' : ''}`}
               onClick={() => setView('unterbrechen')}
             >
@@ -1364,6 +1366,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
               key={p.key}
               role="tab"
               aria-selected={active === p.key}
+              tabIndex={active === p.key ? 0 : -1}
               className={`phasen-tab ${active === p.key ? 'is-active' : ''}`}
               onClick={() => setActive(p.key)}
             >

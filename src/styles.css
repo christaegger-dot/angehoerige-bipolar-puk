@@ -1354,6 +1354,7 @@ section + section { padding-top: 0; }
   border-top: 1px solid var(--paper-edge);
   border-bottom: 1px solid var(--paper-edge);
 }
+.do-col h3, .dont-col h3,
 .do-col h4, .dont-col h4 {
   font-family: var(--sans);
   font-size: 11px;
@@ -1362,8 +1363,8 @@ section + section { padding-top: 0; }
   font-weight: 600;
   margin-bottom: 14px;
 }
-.do-col h4 { color: var(--accent); }
-.dont-col h4 { color: var(--ink-mute); }
+.do-col h3, .do-col h4 { color: var(--accent); }
+.dont-col h3, .dont-col h4 { color: var(--ink-mute); }
 .do-dont ul {
   list-style: none;
   padding: 0;

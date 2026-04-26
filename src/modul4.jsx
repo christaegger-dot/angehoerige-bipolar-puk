@@ -202,7 +202,7 @@ function Modul4Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Da und doch nicht da — Trauer ohne klaren Abschied</h2>
-              <p className="dropcap">Pauline Boss nennt das «Ambiguous Loss»: eine Trauer ohne Abschluss, weil der Verlust nicht endgültig ist und sich deshalb nicht einfach verarbeiten lässt. Alltagsnäher gesagt: Jemand ist noch da, und gleichzeitig ist vieles nicht mehr so, wie es einmal war.</p>
+              <p className="dropcap">Pauline Boss nennt das «<span lang="en">Ambiguous Loss</span>»: eine Trauer ohne Abschluss, weil der Verlust nicht endgültig ist und sich deshalb nicht einfach verarbeiten lässt. Alltagsnäher gesagt: Jemand ist noch da, und gleichzeitig ist vieles nicht mehr so, wie es einmal war.</p>
               <p>Da der Verlust nicht endgültig ist, kommt auch die Trauer oft nicht zu einem klaren Abschluss. Angehörige bleiben in einer merkwürdigen Zwischenlage: verbunden und doch einsam, loyal und doch erschöpft, hoffnungsvoll und doch ständig vorsichtig. Diese Trauer ist normal und berechtigt — auch wenn die erkrankte Person noch da ist. Kenneth Doka beschreibt dafür den Begriff «nicht anerkannte Trauer»: eine Trauer, die real und tief ist, aber gesellschaftlich oft keinen klaren Platz hat.</p>
 
               <h3>Worüber Angehörige typischerweise trauern</h3>
@@ -315,7 +315,7 @@ function Modul4Page({ onNavigate }) {
 
               <div className="do-dont">
                 <div className="dont-col">
-                  <h4>Was Kinder wahrnehmen</h4>
+                  <h3>Was Kinder wahrnehmen</h3>
                   <ul>
                     <li>Stimmungsschwankungen und Unberechenbarkeit</li>
                     <li>Überlastung des betreuenden Elternteils</li>
@@ -324,7 +324,7 @@ function Modul4Page({ onNavigate }) {
                   </ul>
                 </div>
                 <div className="do-col">
-                  <h4>Was Kinder brauchen</h4>
+                  <h3>Was Kinder brauchen</h3>
                   <ul>
                     <li>Ehrliche Erklärung: «Mama/Papa ist krank — nicht wegen dir.»</li>
                     <li>Stabilität durch Routinen: Schulweg, Mahlzeiten, Schlafzeiten</li>
@@ -416,7 +416,7 @@ function Modul4Page({ onNavigate }) {
 
             <footer className="module-article-footer">
               <p className="module-credits">
-                Quellen: Boss, P. (1999) «Ambiguous Loss» · Doka, K. J. (2002) «Disenfranchised Grief» · Perlick, D. A. et al. (2007) «Caregiver burden and health in bipolar disorder» · Hooper, L. M. et al. (2011) «Parentification, self-esteem, and psychological distress» · Craddock &amp; Sklar (2013) «Genetics of bipolar disorder» · Beratungsmaterial der Fachstelle Angehörigenarbeit der PUK Zürich.
+                Quellen: Boss, P. (1999) «<span lang="en">Ambiguous Loss</span>» · Doka, K. J. (2002) «<span lang="en">Disenfranchised Grief</span>» · Perlick, D. A. et al. (2007) «<span lang="en">Caregiver burden and health in bipolar disorder</span>» · Hooper, L. M. et al. (2011) «<span lang="en">Parentification, self-esteem, and psychological distress</span>» · Craddock &amp; Sklar (2013) «<span lang="en">Genetics of bipolar disorder</span>» · Beratungsmaterial der Fachstelle Angehörigenarbeit der PUK Zürich.
               </p>
               <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert und keine reale Einzelperson.</p>
 

@@ -354,7 +354,7 @@ function Modul6Page({ onNavigate }) {
 
               <div className="do-dont">
                 <div className="do-col">
-                  <h4>Was hilft</h4>
+                  <h3>Was hilft</h3>
                   <ul>
                     <li>Einen ruhigen, bewusst gewählten Moment — nicht direkt nach einer Episode</li>
                     <li>Konkrete, offene Fragen: «Was hat dir beim letzten Mal geholfen?»</li>
@@ -364,7 +364,7 @@ function Modul6Page({ onNavigate }) {
                   </ul>
                 </div>
                 <div className="dont-col">
-                  <h4>Was eher nicht hilft</h4>
+                  <h3>Was eher nicht hilft</h3>
                   <ul>
                     <li>Alle Verletzungen aus der letzten Episode auf einmal ansprechen</li>
                     <li>Die stabile Phase nutzen, um eigene aufgestaute Erschöpfung zu entladen</li>
@@ -422,7 +422,7 @@ function Modul6Page({ onNavigate }) {
 
               <div className="do-dont">
                 <div className="do-col">
-                  <h4>Was hilft, wenn Einsicht fehlt</h4>
+                  <h3>Was hilft, wenn Einsicht fehlt</h3>
                   <ul>
                     <li>Sachlich dokumentieren, was Sie beobachten</li>
                     <li>Behandlungsteam informieren (auch ohne Zustimmung)</li>
@@ -431,7 +431,7 @@ function Modul6Page({ onNavigate }) {
                   </ul>
                 </div>
                 <div className="dont-col">
-                  <h4>Was nicht funktioniert</h4>
+                  <h3>Was nicht funktioniert</h3>
                   <ul>
                     <li>Überzeugen wollen (in akuter Manie kaum möglich)</li>
                     <li>Argumente und Beweise anführen</li>
