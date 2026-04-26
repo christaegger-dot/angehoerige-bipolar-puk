@@ -4,6 +4,23 @@ import { Eisberg } from './modul2.jsx';
 import { clearStoredDraft, loadStoredDraft, saveStoredDraft } from './storage.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 
+// WAI-ARIA-konforme Pfeil-Navigation für role="tablist": ArrowLeft/Right
+// wechseln + aktivieren den Nachbartab, Home/End springen an die Enden.
+// Voraussetzung: Tab-Buttons haben tabIndex roving (selected=0, sonst -1).
+function handleTabKeyDown(e) {
+  if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) return;
+  e.preventDefault();
+  const tabs = Array.from(e.currentTarget.parentElement.querySelectorAll('[role="tab"]'));
+  const i = tabs.indexOf(e.currentTarget);
+  const next =
+    e.key === 'ArrowRight' ? tabs[(i + 1) % tabs.length] :
+    e.key === 'ArrowLeft' ? tabs[(i - 1 + tabs.length) % tabs.length] :
+    e.key === 'Home' ? tabs[0] :
+    tabs[tabs.length - 1];
+  next.focus();
+  next.click();
+}
+
 const ATEM_PHASEN = [
   { name: 'einatmen', label: 'Einatmen', duration: 4000, scale: 1 },
   { name: 'halten',   label: 'Halten',   duration: 2000, scale: 1 },
@@ -1279,6 +1296,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
               tabIndex={view === 'was' ? 0 : -1}
               className={`ee-detail-tab ${view === 'was' ? 'is-active' : ''}`}
               onClick={() => setView('was')}
+              onKeyDown={handleTabKeyDown}
             >
               Was passiert
             </button>
@@ -1288,6 +1306,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
               tabIndex={view === 'unterbrechen' ? 0 : -1}
               className={`ee-detail-tab ${view === 'unterbrechen' ? 'is-active' : ''}`}
               onClick={() => setView('unterbrechen')}
+              onKeyDown={handleTabKeyDown}
             >
               Wo unterbrechen
             </button>
@@ -1369,6 +1388,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
               tabIndex={active === p.key ? 0 : -1}
               className={`phasen-tab ${active === p.key ? 'is-active' : ''}`}
               onClick={() => setActive(p.key)}
+              onKeyDown={handleTabKeyDown}
             >
               <strong>{p.label}</strong>
               <span>{p.sub}</span>
