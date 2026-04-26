@@ -1,6 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 
-const preloadPage = vi.fn();
+const { preloadPage } = vi.hoisted(() => ({
+  preloadPage: vi.fn(),
+}));
 
 vi.mock('../page-loader.js', () => ({
   preloadPage,
