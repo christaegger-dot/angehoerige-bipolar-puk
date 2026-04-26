@@ -15,9 +15,23 @@ function getEditModeTargetOrigin() {
   return window.location.origin;
 }
 
+function getAllowedEditModeOrigins() {
+  if (typeof window === 'undefined') return new Set();
+
+  return new Set([
+    window.location.origin,
+    getEditModeTargetOrigin(),
+  ].filter(Boolean));
+}
+
+function isTrustedEditModeMessage(event) {
+  if (!event?.data || typeof event.data.type !== 'string') return false;
+  return getAllowedEditModeOrigins().has(event.origin);
+}
+
 function postEditModeMessage(message) {
   if (typeof window === 'undefined' || !window.parent?.postMessage) return;
   window.parent.postMessage(message, getEditModeTargetOrigin());
 }
 
-export { getEditModeTargetOrigin, postEditModeMessage };
+export { getAllowedEditModeOrigins, getEditModeTargetOrigin, isTrustedEditModeMessage, postEditModeMessage };

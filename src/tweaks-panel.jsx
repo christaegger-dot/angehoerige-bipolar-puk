@@ -41,7 +41,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import React from 'react';
-import { postEditModeMessage } from './edit-mode-messaging.js';
+import { isTrustedEditModeMessage, postEditModeMessage } from './edit-mode-messaging.js';
 
 const __TWEAKS_STYLE = `
   .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
@@ -177,6 +177,7 @@ function TweaksPanel({ title = 'Tweaks', children }) {
 
   React.useEffect(() => {
     const onMsg = (e) => {
+      if (!isTrustedEditModeMessage(e)) return;
       const t = e?.data?.type;
       if (t === '__activate_edit_mode') setOpen(true);
       else if (t === '__deactivate_edit_mode') setOpen(false);

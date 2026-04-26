@@ -658,14 +658,12 @@ function UnterstuetzungPage({ onNavigate }) {
             {MATERIAL_CARDS.map(d => {
               const meta = KIND_META[d.kind];
               return (
-                <div
+                <button
+                  type="button"
                   key={d.id}
                   className="download-card"
-                  style={{ cursor: 'pointer' }}
                   onClick={() => handleDownload(d)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleDownload(d); } }}
+                  aria-haspopup={d.kind === 'tool' ? 'dialog' : undefined}
                 >
                   <div className="download-meta">
                     <span className="mono">{d.id} · core_v01 · 2026-04-25</span>
@@ -676,7 +674,7 @@ function UnterstuetzungPage({ onNavigate }) {
                   <div className="download-actions">
                     <span className="btn-arrow">{meta.cta}</span>
                   </div>
-                </div>
+                </button>
               );
             })}
           </div>
@@ -736,21 +734,28 @@ function UnterstuetzungPage({ onNavigate }) {
             {FAQS.map((f, i) => {
               const open = openFaq === i;
               const toggle = () => setOpenFaq(open ? null : i);
+              const panelId = `faq-panel-${i}`;
+              const buttonId = `faq-trigger-${i}`;
               return (
-                <div
-                  key={i}
-                  className={`faq-item ${open ? 'open' : ''}`}
-                  onClick={toggle}
-                  role="button"
-                  tabIndex={0}
-                  aria-expanded={open}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } }}
-                >
-                  <div className="faq-q">
+                <div key={i} className={`faq-item ${open ? 'open' : ''}`}>
+                  <button
+                    id={buttonId}
+                    type="button"
+                    className="faq-q"
+                    onClick={toggle}
+                    aria-expanded={open}
+                    aria-controls={panelId}
+                  >
                     <span>{f.q}</span>
                     <span className="toggle" aria-hidden="true">+</span>
-                  </div>
-                  <div className="faq-a">
+                  </button>
+                  <div
+                    id={panelId}
+                    className="faq-a"
+                    role="region"
+                    aria-labelledby={buttonId}
+                    hidden={!open}
+                  >
                     <p>{f.a}</p>
                   </div>
                 </div>

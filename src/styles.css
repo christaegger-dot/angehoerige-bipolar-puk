@@ -741,6 +741,26 @@ section + section { padding-top: 0; }
 }
 .page-header .lede { max-width: 50ch; }
 
+.page-loading {
+  max-width: var(--col-width);
+  margin: 0 auto;
+  padding: 72px var(--pad-x);
+  text-align: center;
+}
+.page-loading-kicker {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 12px;
+}
+.page-loading p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
 /* PROSE — long-form sections */
 .prose {
   max-width: var(--col-width);
@@ -2827,9 +2847,17 @@ section + section { padding-top: 0; }
   border-top: 1px solid var(--paper-edge);
 }
 .tool-card-lg {
+  appearance: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  width: 100%;
   padding: 28px 28px 28px 0;
   border-bottom: 1px solid var(--paper-edge);
   border-right: 1px solid var(--paper-edge);
+  border-top: 0;
+  border-left: 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -2927,9 +2955,17 @@ section + section { padding-top: 0; }
   border-top: 1px solid var(--paper-edge);
 }
 .download-card {
+  appearance: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  width: 100%;
   padding: 24px 24px 24px 0;
   border-bottom: 1px solid var(--paper-edge);
   border-right: 1px solid var(--paper-edge);
+  border-top: 0;
+  border-left: 0;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -3092,10 +3128,15 @@ section + section { padding-top: 0; }
 .faq-list { margin-top: 16px; border-top: 1px solid var(--paper-edge); }
 .faq-item {
   border-bottom: 1px solid var(--paper-edge);
-  cursor: pointer;
   padding: 22px 0;
 }
 .faq-q {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  width: 100%;
+  padding: 0;
+  text-align: left;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -3107,6 +3148,10 @@ section + section { padding-top: 0; }
   transition: color 0.15s;
 }
 .faq-item:hover .faq-q { color: var(--accent); }
+.faq-q:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
 .faq-q .toggle {
   font-family: var(--sans);
   font-size: 1.4rem;
@@ -3127,6 +3172,21 @@ section + section { padding-top: 0; }
   color: var(--ink);
   margin: 0;
   max-width: 64ch;
+}
+
+.storage-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+}
+.storage-toggle input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
 
 /* Tool-Karten als interaktive Buttons */

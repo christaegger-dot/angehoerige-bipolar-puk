@@ -1,0 +1,38 @@
+import { describe, it, expect } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { KrisenplanTool, WerkzeugePage } from '../werkzeuge.jsx';
+
+describe('WerkzeugePage', () => {
+  it('renders tool cards as dialog-trigger buttons', async () => {
+    const user = userEvent.setup();
+
+    render(<WerkzeugePage onNavigate={() => {}} />);
+
+    const toolButton = screen.getByRole('button', { name: /Belastungs-Selbsttest/i });
+    expect(toolButton).toHaveAttribute('aria-haspopup', 'dialog');
+
+    await user.click(screen.getByRole('button', { name: /Krisenplan-Werkzeug/i }));
+
+    expect(await screen.findByRole('dialog', { name: 'Krisenplan-Werkzeug' })).toBeInTheDocument();
+  });
+});
+
+describe('KrisenplanTool storage', () => {
+  it('stores drafts in session storage by default and only persists locally after opt-in', async () => {
+    const user = userEvent.setup();
+
+    render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
+
+    await user.type(screen.getByLabelText('Plan für'), 'M. & Christine');
+
+    expect(window.sessionStorage.getItem('puk-krisenplan-v1')).toContain('M. & Christine');
+    expect(window.localStorage.getItem('puk-krisenplan-v1')).toBeNull();
+
+    await user.click(screen.getByLabelText('Auf diesem Gerät dauerhaft behalten'));
+    await user.type(screen.getByLabelText('Klinikwunsch (falls stationär nötig)'), 'PUK Zürich');
+
+    expect(window.localStorage.getItem('puk-krisenplan-v1')).toContain('PUK Zürich');
+    expect(window.sessionStorage.getItem('puk-krisenplan-v1')).toBeNull();
+  });
+});

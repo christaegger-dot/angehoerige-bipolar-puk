@@ -62,6 +62,15 @@ const TYPE_PAIRS = {
   editorial: { serif: '"Source Serif 4 Variable", "Source Serif 4", Georgia, serif', sans: '"Inter Tight Variable", "Inter Tight", system-ui, sans-serif' },
 };
 
+function PageLoadingFallback() {
+  return (
+    <div className="page-loading" role="status" aria-live="polite">
+      <span className="page-loading-kicker">Seite wird geladen</span>
+      <p>Inhalt wird vorbereitet …</p>
+    </div>
+  );
+}
+
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [nav, setNav] = React.useState({ page: 'start', anchor: null });
@@ -117,7 +126,7 @@ function App() {
       <CrisisBar onNavigate={onNavigate} />
       <Nav page={page} onNavigate={onNavigate} />
       <main id="main-content" tabIndex={-1}>
-        <React.Suspense fallback={null}>{content}</React.Suspense>
+        <React.Suspense fallback={<PageLoadingFallback />}>{content}</React.Suspense>
       </main>
       <Footer onNavigate={onNavigate} />
 

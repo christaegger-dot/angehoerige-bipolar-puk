@@ -10,6 +10,7 @@ import React from 'react';
 import { navHandler } from './nav-handler.js';
 import { TOOLS } from './home.jsx';
 import { Eisberg } from './modul2.jsx';
+import { clearStoredDraft, loadStoredDraft, saveStoredDraft } from './storage.js';
 
 const FOCUSABLE_SELECTOR =
   'button:not([disabled]):not([tabindex="-1"]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -422,17 +423,10 @@ const KRISENPLAN_NOTFALLNUMMERN = [
 
 const KRISENPLAN_STORAGE_KEY = 'puk-krisenplan-v1';
 
-function loadKrisenplan() {
-  try {
-    const raw = localStorage.getItem(KRISENPLAN_STORAGE_KEY);
-    if (!raw) return {};
-    const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === 'object' ? parsed : {};
-  } catch { return {}; }
-}
-
 function KrisenplanTool({ onClose, onNavigate }) {
-  const [data, setData] = React.useState(loadKrisenplan);
+  const initialState = React.useMemo(() => loadStoredDraft(KRISENPLAN_STORAGE_KEY), []);
+  const [data, setData] = React.useState(initialState.data);
+  const [remember, setRemember] = React.useState(initialState.remember);
   const [savedHint, setSavedHint] = React.useState('');
   const savedTimer = React.useRef(null);
 
@@ -445,7 +439,7 @@ function KrisenplanTool({ onClose, onNavigate }) {
     const next = { ...data, [id]: value, _updated: new Date().toISOString() };
     setData(next);
     try {
-      localStorage.setItem(KRISENPLAN_STORAGE_KEY, JSON.stringify(next));
+      saveStoredDraft(KRISENPLAN_STORAGE_KEY, next, remember);
       setSavedHint('Gespeichert');
       if (savedTimer.current) window.clearTimeout(savedTimer.current);
       savedTimer.current = window.setTimeout(() => setSavedHint(''), 1600);
@@ -455,8 +449,14 @@ function KrisenplanTool({ onClose, onNavigate }) {
   const reset = () => {
     if (window.confirm('Krisenplan zurücksetzen? Alle Eingaben gehen verloren.')) {
       setData({});
-      try { localStorage.removeItem(KRISENPLAN_STORAGE_KEY); } catch { /* ignore */ }
+      clearStoredDraft(KRISENPLAN_STORAGE_KEY);
     }
+  };
+
+  const toggleRemember = () => {
+    const nextRemember = !remember;
+    setRemember(nextRemember);
+    saveStoredDraft(KRISENPLAN_STORAGE_KEY, data, nextRemember);
   };
 
   const lastUpdate = data._updated
@@ -468,10 +468,14 @@ function KrisenplanTool({ onClose, onNavigate }) {
         <header className="krisenplan-head">
           <span className="kicker">Werkzeug · Krisenplan</span>
           <h2>Mein Krisenplan</h2>
-          <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln. Ihre Eingaben bleiben in diesem Browser auf diesem Gerät und werden nicht versendet. Auf gemeinsam genutzten Geräten können Sie den Plan unten jederzeit zurücksetzen.</p>
+          <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln. Standardmässig bleibt der Entwurf nur bis zum Schliessen dieses Tabs erhalten und wird nicht versendet. Auf gemeinsam genutzten Geräten können Sie ihn unten zusätzlich dauerhaft löschen.</p>
           {lastUpdate && (
             <p className="krisenplan-meta no-print">Zuletzt bearbeitet: {lastUpdate}</p>
           )}
+          <label className="storage-toggle no-print">
+            <input type="checkbox" checked={remember} onChange={toggleRemember} />
+            <span>Auf diesem Gerät dauerhaft behalten</span>
+          </label>
         </header>
 
         <div className="krisenplan-fields">
@@ -1035,26 +1039,20 @@ const KOMMUNIKATION_HINWEISE = {
 const KOMMUNIKATION_STORAGE_KEY = 'puk-kommunikation-v1';
 const KOMMUNIKATION_DEFAULT = { anlass: '', beobachtung: '', wirkung: '', bitte: '' };
 
-function loadKommunikation() {
-  try {
-    const raw = localStorage.getItem(KOMMUNIKATION_STORAGE_KEY);
-    if (!raw) return KOMMUNIKATION_DEFAULT;
-    const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === 'object'
-      ? { ...KOMMUNIKATION_DEFAULT, ...parsed }
-      : KOMMUNIKATION_DEFAULT;
-  } catch { return KOMMUNIKATION_DEFAULT; }
-}
-
 function KommunikationsTrainerTool({ onClose, onNavigate }) {
+  const initialState = React.useMemo(
+    () => loadStoredDraft(KOMMUNIKATION_STORAGE_KEY, KOMMUNIKATION_DEFAULT),
+    [],
+  );
   const [step, setStep] = React.useState('intro'); // intro | anlass | beobachtung | wirkung | bitte | result
-  const [data, setData] = React.useState(loadKommunikation);
+  const [data, setData] = React.useState(initialState.data);
+  const [remember, setRemember] = React.useState(initialState.remember);
 
 
   const updateField = (key, value) => {
     setData((d) => {
       const next = { ...d, [key]: value };
-      try { localStorage.setItem(KOMMUNIKATION_STORAGE_KEY, JSON.stringify(next)); } catch { /* ignore */ }
+      saveStoredDraft(KOMMUNIKATION_STORAGE_KEY, next, remember);
       return next;
     });
   };
@@ -1063,9 +1061,15 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
   const reset = () => {
     if (window.confirm('Skript zurücksetzen? Alle Eingaben gehen verloren.')) {
       setData(KOMMUNIKATION_DEFAULT);
-      try { localStorage.removeItem(KOMMUNIKATION_STORAGE_KEY); } catch { /* ignore */ }
+      clearStoredDraft(KOMMUNIKATION_STORAGE_KEY);
       setStep('anlass');
     }
+  };
+
+  const toggleRemember = () => {
+    const nextRemember = !remember;
+    setRemember(nextRemember);
+    saveStoredDraft(KOMMUNIKATION_STORAGE_KEY, data, nextRemember);
   };
 
   const anlass = KOMMUNIKATION_ANLAESSE.find((a) => a.key === data.anlass) || KOMMUNIKATION_ANLAESSE[0];
@@ -1090,7 +1094,11 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
           <>
             <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Ein Gespräch vorbereiten</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte. Am Ende haben Sie ein eigenes Skript für ein schwieriges Gespräch — in Ihren Worten, in einer Form, die nicht eskaliert.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren. Ihre Eingaben bleiben in diesem Browser auf diesem Gerät. Auf gemeinsam genutzten Geräten können Sie das Skript jederzeit zurücksetzen.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren. Standardmässig bleibt Ihr Entwurf nur bis zum Schliessen dieses Tabs erhalten. Auf gemeinsam genutzten Geräten können Sie ihn jederzeit zurücksetzen.</p>
+            <label className="storage-toggle">
+              <input type="checkbox" checked={remember} onChange={toggleRemember} />
+              <span>Auf diesem Gerät dauerhaft behalten</span>
+            </label>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>
@@ -1662,14 +1670,12 @@ function WerkzeugePage({ onNavigate }) {
             {TOOLS.map((t) => {
               const handleClick = () => setOpenTool(t.tool);
               return (
-                <div
+                <button
+                  type="button"
                   key={t.tool}
                   className="tool-card-lg"
-                  style={{ cursor: 'pointer' }}
                   onClick={handleClick}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(); } }}
+                  aria-haspopup="dialog"
                 >
                   <span className="tool-tag">{t.tag}</span>
                   <h3>{t.title}</h3>
@@ -1677,7 +1683,7 @@ function WerkzeugePage({ onNavigate }) {
                   <div className="tool-card-foot">
                     <span className="btn-arrow">{t.cta} →</span>
                   </div>
-                </div>
+                </button>
               );
             })}
           </div>

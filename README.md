@@ -1,16 +1,72 @@
-# React + Vite
+# Angehörige bipolarer Störung · PUK Zürich
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Browserbasierte Lese-Begleitung für Angehörige und Nahestehende von Menschen mit bipolarer Störung. Die Anwendung kombiniert sieben Module, interaktive Werkzeuge, Handouts und einen Notfallweg.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- Vite 8
+- Vitest + Testing Library
+- ESLint
+- Netlify Deployment
 
-## React Compiler
+## Voraussetzungen
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 22 oder neuer
+- npm 10 oder neuer
 
-## Expanding the ESLint configuration
+## Lokale Entwicklung
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Die Anwendung läuft anschliessend über den von Vite ausgegebenen lokalen Server.
+
+## Qualitätschecks
+
+Vor Änderungen und vor jedem Merge sollten diese Befehle im Projektwurzelverzeichnis erfolgreich laufen:
+
+```bash
+npm run lint
+npm run test
+npm run build
+```
+
+Coverage kann zusätzlich mit `npm run test:coverage` erzeugt werden.
+
+## Wichtige Projektstruktur
+
+- `src/app.jsx` — App-Shell, Lazy Loading und Seitenauswahl
+- `src/home.jsx` — Startseite mit Orientierungseinstieg
+- `src/module.jsx` und `src/modul*.jsx` — Lernpfad und einzelne Module
+- `src/werkzeuge.jsx` — interaktive Werkzeuge und Overlay-Infrastruktur
+- `src/unterstuetzung.jsx` — Ressourcen, Materialien, FAQ und Handouts
+- `src/shared.jsx` — globale Navigation, Footer und Krisenleiste
+- `src/test/` — Vitest- und Testing-Library-Tests
+- `netlify.toml` — Build, Redirects und Security-Header für das Deployment
+
+## Inhalts- und Sicherheitsentscheidungen
+
+- Die Seite ist für öffentliche Auffindbarkeit konfiguriert (`index, follow`, `robots.txt` erlaubt Crawling).
+- Sensible Eingaben in Krisenplan und Kommunikations-Trainer bleiben standardmässig nur für die aktuelle Browser-Sitzung erhalten. Dauerhafte Speicherung ist nur per Opt-in aktivierbar.
+- Für eingebettete Edit-Mode-Nachrichten werden nur erlaubte Origins akzeptiert.
+
+## Deployment
+
+Netlify baut die Produktion mit:
+
+```bash
+npm run build
+```
+
+Das veröffentlichte Verzeichnis ist `dist/`. SPA-Routen werden in `netlify.toml` auf `index.html` zurückgeführt.
+
+## CI
+
+GitHub Actions führt auf Push und Pull Request automatisch folgende Checks aus:
+
+- `npm run lint`
+- `npm run test`
+- `npm run build`
