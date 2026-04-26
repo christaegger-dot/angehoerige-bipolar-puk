@@ -14,9 +14,37 @@ describe('App navigation', () => {
     await user.click(screen.getByRole('link', { name: 'Werkzeuge' }));
 
     expect(await screen.findByRole('heading', { name: /Werkzeuge im Überblick/i })).toBeInTheDocument();
+    expect(window.location.pathname).toBe('/werkzeuge');
 
     await user.click(screen.getByRole('link', { name: 'Anlaufstellen' }));
 
     expect(await screen.findByRole('heading', { name: /Unterstützung und Ressourcen/i })).toBeInTheDocument();
+    expect(window.location.pathname).toBe('/unterstuetzung');
+  });
+
+  it('supports direct entry and back-forward navigation from browser history', async () => {
+    const user = userEvent.setup();
+
+    window.history.replaceState({}, '', '/module/6');
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { level: 1, name: /Was Sie konkret tun können/i })).toBeInTheDocument();
+
+    await user.click(screen.getByRole('link', { name: 'Werkzeuge' }));
+    expect(await screen.findByRole('heading', { name: /Werkzeuge im Überblick/i })).toBeInTheDocument();
+
+    window.history.back();
+    window.dispatchEvent(new PopStateEvent('popstate'));
+
+    expect(await screen.findByRole('heading', { level: 1, name: /Was Sie konkret tun können/i })).toBeInTheDocument();
+  });
+
+  it('canonicalizes legacy hash routes on first load', async () => {
+    window.history.replaceState({}, '', '/#modul2');
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { name: /Die eigene Belastung verstehen/i })).toBeInTheDocument();
+    expect(window.location.pathname).toBe('/module/2');
+    expect(window.location.hash).toBe('');
   });
 });

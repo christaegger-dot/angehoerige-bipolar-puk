@@ -2,25 +2,11 @@
 
 import React from 'react';
 import { CrisisBar, Nav, Footer } from './shared.jsx';
-import { HomePage } from './home.jsx';
 import { scrollToAnchorWhenReady } from './anchor-scroll.js';
+import { PAGE_RENDERERS } from './page-registry.jsx';
 import { useTweaks } from './use-tweaks.js';
+import { useBrowserNavigation } from './use-browser-navigation.js';
 import { TweaksPanel, TweakSection, TweakRadio } from './tweaks-panel.jsx';
-
-const ModulePage = React.lazy(() => import('./module.jsx').then(m => ({ default: m.ModulePage })));
-const WerkzeugePage = React.lazy(() => import('./werkzeuge.jsx').then(m => ({ default: m.WerkzeugePage })));
-const NotfallPage = React.lazy(() => import('./notfall.jsx').then(m => ({ default: m.NotfallPage })));
-const UnterstuetzungPage = React.lazy(() => import('./unterstuetzung.jsx').then(m => ({ default: m.UnterstuetzungPage })));
-const Modul1Page = React.lazy(() => import('./modul1.jsx').then(m => ({ default: m.Modul1Page })));
-const Modul2Page = React.lazy(() => import('./modul2.jsx').then(m => ({ default: m.Modul2Page })));
-const Modul3Page = React.lazy(() => import('./modul3.jsx').then(m => ({ default: m.Modul3Page })));
-const Modul4Page = React.lazy(() => import('./modul4.jsx').then(m => ({ default: m.Modul4Page })));
-const Modul5Page = React.lazy(() => import('./modul5.jsx').then(m => ({ default: m.Modul5Page })));
-const Modul6Page = React.lazy(() => import('./modul6.jsx').then(m => ({ default: m.Modul6Page })));
-const Modul7Page = React.lazy(() => import('./modul7.jsx').then(m => ({ default: m.Modul7Page })));
-const ImpressumPage = React.lazy(() => import('./impressum.jsx').then(m => ({ default: m.ImpressumPage })));
-const DatenschutzPage = React.lazy(() => import('./datenschutz.jsx').then(m => ({ default: m.DatenschutzPage })));
-const BarrierefreiheitPage = React.lazy(() => import('./barrierefreiheit.jsx').then(m => ({ default: m.BarrierefreiheitPage })));
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "palette": "cream",
@@ -73,7 +59,7 @@ function PageLoadingFallback() {
 
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-  const [nav, setNav] = React.useState({ page: 'start', anchor: null });
+  const [nav, onNavigate] = useBrowserNavigation();
   const page = nav.page;
 
   React.useEffect(() => {
@@ -91,29 +77,7 @@ function App() {
     return scrollToAnchorWhenReady(nav.anchor);
   }, [nav.anchor, nav.page]);
 
-  const onNavigate = React.useCallback((p, anchor) => {
-    setNav({ page: p, anchor: anchor || null });
-  }, []);
-  React.useEffect(() => { window.__navigate = onNavigate; }, [onNavigate]);
-
-  const PAGES = {
-    start:            (p) => <HomePage onNavigate={p.onNavigate} />,
-    module:           (p) => <ModulePage onNavigate={p.onNavigate} />,
-    werkzeuge:        (p) => <WerkzeugePage onNavigate={p.onNavigate} />,
-    notfall:          (p) => <NotfallPage onNavigate={p.onNavigate} />,
-    unterstuetzung:   (p) => <UnterstuetzungPage onNavigate={p.onNavigate} />,
-    modul1:           (p) => <Modul1Page onNavigate={p.onNavigate} />,
-    modul2:           (p) => <Modul2Page onNavigate={p.onNavigate} />,
-    modul3:           (p) => <Modul3Page onNavigate={p.onNavigate} />,
-    modul4:           (p) => <Modul4Page onNavigate={p.onNavigate} />,
-    modul5:           (p) => <Modul5Page onNavigate={p.onNavigate} />,
-    modul6:           (p) => <Modul6Page onNavigate={p.onNavigate} />,
-    modul7:           (p) => <Modul7Page onNavigate={p.onNavigate} />,
-    impressum:        () => <ImpressumPage />,
-    datenschutz:      () => <DatenschutzPage />,
-    barrierefreiheit: () => <BarrierefreiheitPage />,
-  };
-  const renderPage = PAGES[page] || PAGES.start;
+  const renderPage = PAGE_RENDERERS[page] || PAGE_RENDERERS.start;
   const content = renderPage({ onNavigate });
 
   return (

@@ -7,6 +7,7 @@ afterEach(() => {
   vi.restoreAllMocks();
   window.localStorage.clear();
   window.sessionStorage.clear();
+  window.history.replaceState({}, '', '/');
 });
 
 if (!window.requestAnimationFrame) {

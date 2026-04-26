@@ -1,6 +1,6 @@
 // Home — editorial single column, one triage flow, modules as nummerierte Liste
 
-import { navHandler } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 import { TriageFlow } from './triage-flow.jsx';
 
@@ -50,7 +50,7 @@ function HomePage({ onNavigate }) {
             <a className="hero-cta" href="#triage" onClick={(e) => { e.preventDefault(); document.getElementById('triage').scrollIntoView({ behavior: 'smooth' }); }}>
               Wo soll ich anfangen? →
             </a>
-            <a className="hero-cta-secondary" href="#modul1" onClick={navHandler('modul1', onNavigate)}>Direkt zu Modul 1</a>
+            <a className="hero-cta-secondary" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)}>Direkt zu Modul 1</a>
           </div>
           <div className="hero-illustration animate-in delay-3">
             <Ill.Hero size={420} />
@@ -79,7 +79,7 @@ function HomePage({ onNavigate }) {
             {MODULES.map((m) => {
               const Illu = Ill[m.illu];
               return (
-                <a key={m.num} className="module-row" href={`#modul${m.num}`} onClick={navHandler('modul' + m.num, onNavigate)}>
+                <a key={m.num} className="module-row" href={navHref('modul' + m.num)} onClick={navHandler('modul' + m.num, onNavigate)}>
                   <div className="module-num">{m.num.toString().padStart(2, '0')}</div>
                   <div className="module-content">
                     <h3>{m.title}</h3>
@@ -94,7 +94,7 @@ function HomePage({ onNavigate }) {
                 </a>);
 
             })}
-            <a className="module-row module-row-resource" href="#unterstuetzung" onClick={navHandler('unterstuetzung', onNavigate)}>
+            <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
               <div className="module-num module-num-resource">→</div>
               <div className="module-content">
                 <h3>{ANLAUFSTELLEN_ENTRY.title}</h3>
@@ -135,11 +135,11 @@ function HomePage({ onNavigate }) {
               <span className="kicker">Werkzeuge</span>
               <h2>Direkt nutzen — ohne vorher zu lesen.</h2>
             </div>
-            <a className="tools-teaser-link" href="#werkzeuge" onClick={navHandler('werkzeuge', onNavigate)}>Alle neun Werkzeuge →</a>
+            <a className="tools-teaser-link" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>Alle neun Werkzeuge →</a>
           </div>
           <div className="tools-row">
             {[TOOLS[0], TOOLS[3], TOOLS[1]].map((t) =>
-            <a key={t.tool} className="tools-row-item" href="#werkzeuge" onClick={navHandler('werkzeuge', onNavigate)}>
+            <a key={t.tool} className="tools-row-item" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                 <span className="tools-row-tag">{t.tag}</span>
                 <h3>{t.title}</h3>
                 <p>{t.desc}</p>
