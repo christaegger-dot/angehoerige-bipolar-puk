@@ -8,8 +8,8 @@
 
 import React from 'react';
 import { navHandler, navHref } from './nav-handler.js';
-import { TOOLS } from './home.jsx';
 import { Eisberg } from './modul2.jsx';
+import { TOOLS } from './site-content.js';
 import { clearStoredDraft, loadStoredDraft, saveStoredDraft } from './storage.js';
 
 const FOCUSABLE_SELECTOR =
@@ -1625,7 +1625,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
   );
 }
 
-// Map: tool-key → React-Komponente. Reihenfolge irrelevant; TOOLS in home.jsx steuert die Karten-Reihenfolge.
+// Map: tool-key → React-Komponente. Reihenfolge irrelevant; TOOLS in site-content.js steuert die Karten-Reihenfolge.
 const TOOL_COMPONENTS = {
   atem:              AtemuebungTool,
   selbsttest:        SelbsttestTool,

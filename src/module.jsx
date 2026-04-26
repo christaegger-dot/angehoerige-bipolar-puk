@@ -1,5 +1,5 @@
 import { navHandler, navHref } from './nav-handler.js';
-import { MODULES, ANLAUFSTELLEN_ENTRY } from './home.jsx';
+import { MODULES, ANLAUFSTELLEN_ENTRY } from './site-content.js';
 import { TriageFlow } from './triage-flow.jsx';
 
 const DEFAULT_OVERVIEW_META = 'Lesen →';
