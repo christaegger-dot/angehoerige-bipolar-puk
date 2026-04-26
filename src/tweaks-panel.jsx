@@ -41,6 +41,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import React from 'react';
+import { postEditModeMessage } from './edit-mode-messaging.js';
 
 const __TWEAKS_STYLE = `
   .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
@@ -181,13 +182,13 @@ function TweaksPanel({ title = 'Tweaks', children }) {
       else if (t === '__deactivate_edit_mode') setOpen(false);
     };
     window.addEventListener('message', onMsg);
-    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    postEditModeMessage({ type: '__edit_mode_available' });
     return () => window.removeEventListener('message', onMsg);
   }, []);
 
   const dismiss = () => {
     setOpen(false);
-    window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+    postEditModeMessage({ type: '__edit_mode_dismissed' });
   };
 
   const onDragStart = (e) => {
@@ -277,6 +278,7 @@ function TweakToggle({ label, value, onChange }) {
 
 function TweakRadio({ label, value, options, onChange }) {
   const trackRef = React.useRef(null);
+  const buttonRefs = React.useRef([]);
   const [dragging, setDragging] = React.useState(false);
   const opts = options.map((o) => (typeof o === 'object' ? o : { value: o, label: o }));
   const idx = Math.max(0, opts.findIndex((o) => o.value === value));
@@ -286,6 +288,16 @@ function TweakRadio({ label, value, options, onChange }) {
   // of a drag — ref it so a stale closure doesn't fire onChange for every move.
   const valueRef = React.useRef(value);
   React.useLayoutEffect(() => { valueRef.current = value; });
+
+  const selectIndex = React.useCallback((nextIdx, { focus = false } = {}) => {
+    const next = opts[nextIdx];
+    if (!next) return;
+    if (next.value !== valueRef.current) {
+      valueRef.current = next.value;
+      onChange(next.value);
+    }
+    if (focus) buttonRefs.current[nextIdx]?.focus();
+  }, [onChange, opts]);
 
   const segAt = (clientX) => {
     const r = trackRef.current.getBoundingClientRect();
@@ -297,11 +309,17 @@ function TweakRadio({ label, value, options, onChange }) {
   const onPointerDown = (e) => {
     setDragging(true);
     const v0 = segAt(e.clientX);
-    if (v0 !== valueRef.current) onChange(v0);
+    if (v0 !== valueRef.current) {
+      valueRef.current = v0;
+      onChange(v0);
+    }
     const move = (ev) => {
       if (!trackRef.current) return;
       const v = segAt(ev.clientX);
-      if (v !== valueRef.current) onChange(v);
+      if (v !== valueRef.current) {
+        valueRef.current = v;
+        onChange(v);
+      }
     };
     const up = () => {
       setDragging(false);
@@ -319,8 +337,31 @@ function TweakRadio({ label, value, options, onChange }) {
         <div className="twk-seg-thumb"
              style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
                       width: `calc((100% - 4px) / ${n})` }} />
-        {opts.map((o) => (
-          <button key={o.value} type="button" role="radio" aria-checked={o.value === value}>
+        {opts.map((o, optionIndex) => (
+          <button
+            key={o.value}
+            ref={(node) => { buttonRefs.current[optionIndex] = node; }}
+            type="button"
+            role="radio"
+            aria-checked={o.value === value}
+            tabIndex={o.value === value ? 0 : -1}
+            onClick={() => selectIndex(optionIndex)}
+            onKeyDown={(e) => {
+              if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                selectIndex((optionIndex + 1) % n, { focus: true });
+              } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                selectIndex((optionIndex - 1 + n) % n, { focus: true });
+              } else if (e.key === 'Home') {
+                e.preventDefault();
+                selectIndex(0, { focus: true });
+              } else if (e.key === 'End') {
+                e.preventDefault();
+                selectIndex(n - 1, { focus: true });
+              }
+            }}
+          >
             {o.label}
           </button>
         ))}

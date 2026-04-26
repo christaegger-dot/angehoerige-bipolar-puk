@@ -3,6 +3,7 @@
 import React from 'react';
 import { CrisisBar, Nav, Footer } from './shared.jsx';
 import { HomePage } from './home.jsx';
+import { scrollToAnchorWhenReady } from './anchor-scroll.js';
 import { useTweaks } from './use-tweaks.js';
 import { TweaksPanel, TweakSection, TweakRadio } from './tweaks-panel.jsx';
 
@@ -76,20 +77,10 @@ function App() {
   }, [t.palette, t.typography]);
 
   // Bei Page-Wechsel: zum Anchor scrollen falls gesetzt, sonst zum Seitenanfang.
-  // requestAnimationFrame gibt React eine Frame Zeit, das neue Layout aufzubauen.
+  // Lazy geladene Seiten können ein paar Frames brauchen, bis das Ziel existiert.
   React.useEffect(() => {
-    const id = nav.anchor;
-    requestAnimationFrame(() => {
-      if (id) {
-        const el = document.getElementById(id);
-        if (el) {
-          window.scrollTo({ top: el.offsetTop - 80, behavior: 'instant' });
-          return;
-        }
-      }
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    });
-  }, [nav]);
+    return scrollToAnchorWhenReady(nav.anchor);
+  }, [nav.anchor, nav.page]);
 
   const onNavigate = React.useCallback((p, anchor) => {
     setNav({ page: p, anchor: anchor || null });

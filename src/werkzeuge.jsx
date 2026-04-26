@@ -1485,6 +1485,9 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
     { x: 220, y: 95, label: 'Wiederkehr', text: 'Kumulation. Jede Episode hinterlässt Spuren: Schlafmangel, Misstrauen gegenüber Ruhe, mehr Wachsamkeit, weniger innere Reserve. Die Hoffnung wird vorsichtiger.' },
     { x: 330, y: 130, label: 'Chronische Phase', text: 'Dauer-Alarm. Die Belastung wird zu einem Hintergrundzustand. Schlafprobleme, Gereiztheit, Rückzug bleiben auch dann spürbar, wenn keine akute Krise sichtbar ist.' },
   ];
+  const activateEpisode = React.useCallback((index) => {
+    setHoveredEpisode(index);
+  }, []);
 
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Belastungsverlauf" cardClass="phasen-card">
@@ -1564,7 +1567,13 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
             {episoden.map((ep, i) => (
               <g
                 key={i}
-                onClick={() => setHoveredEpisode(i)}
+                onClick={() => activateEpisode(i)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    activateEpisode(i);
+                  }
+                }}
                 style={{ cursor: 'pointer' }}
                 tabIndex={0}
                 role="button"
