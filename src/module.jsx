@@ -25,8 +25,7 @@ function ModulePage({ onNavigate }) {
                   <p>{m.desc}</p>
                   <div className="module-meta">
                     <span>⏱ {m.time}</span>
-                    {m.num === 6 && <span>· mit Vertiefungen 22 Min.</span>}
-                    {m.num !== 6 && <span>· Lesen →</span>}
+                    <span>· {m.overviewMeta || 'Lesen →'}</span>
                   </div>
                 </div>
                 <div className="module-row-arrow" aria-hidden="true">→</div>

@@ -97,7 +97,7 @@ function TriageFlow({ onNavigate }) {
               <button
                 key={option.action}
                 type="button"
-                className={`triage-opt${option.variant === 'yes' ? ' triage-opt-yes' : ''}`}
+                className={['triage-opt', option.variant === 'yes' && 'triage-opt-yes'].filter(Boolean).join(' ')}
                 onClick={() => handle(option.action)}
               >
                 {option.label}

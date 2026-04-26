@@ -10,7 +10,7 @@ const MODULES = [
 { num: 3, title: 'Wie Beziehungen unter Druck geraten', desc: 'Rollenverschiebung, Beziehungslogik, Vertrauensbrüche und die Frage, was Episoden in Beziehungen hinterlassen.', time: '10–12 Min.', illu: 'M3' },
 { num: 4, title: 'Wenn die Kraft nachlässt', desc: 'Schleichende Erschöpfung, ungreifbarer Verlust und die Frage, was chronische Belastung mit Angehörigen macht.', time: '14–16 Min.', illu: 'M4' },
 { num: 5, title: 'Loyalitätskonflikte', desc: 'Das Spannungsfeld zwischen Verpflichtung und Selbstschutz — mit Schuld, Grenzenot und der Frage nach Abstand oder Neuordnung.', time: '14–16 Min.', illu: 'M5' },
-{ num: 6, title: 'Was Sie konkret tun können', desc: 'Gespräche, Grenzsetzung, Krisenplan und praktische Hilfen für belastende oder instabile Situationen.', time: '12–22 Min.', illu: 'M6' },
+{ num: 6, title: 'Was Sie konkret tun können', desc: 'Gespräche, Grenzsetzung, Krisenplan und praktische Hilfen für belastende oder instabile Situationen.', time: '12–22 Min.', illu: 'M6', overviewMeta: 'mit Vertiefungen 22 Min.' },
 { num: 7, title: 'Langfristige Tragfähigkeit', desc: 'Selbstfürsorge stärken, Stabilität im Alltag sichern und die lange Strecke etwas tragfähiger machen.', time: '12–14 Min.', illu: 'M7' }];
 
 const ANLAUFSTELLEN_ENTRY = { title: 'Unterstützung und Ressourcen', desc: 'Orientierung nach Situation, Anlaufstellen, Materialien und konkrete nächste Schritte.', time: '3–5 Min.', illu: 'M8' };
