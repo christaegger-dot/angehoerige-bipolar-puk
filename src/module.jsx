@@ -1,4 +1,4 @@
-import { navHandler, navHref } from './nav-handler.js';
+import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
 import { MODULES, ANLAUFSTELLEN_ENTRY } from './site-content.js';
 import { TriageFlow } from './triage-flow.jsx';
 
@@ -19,7 +19,7 @@ function ModulePage({ onNavigate }) {
         <div className="container">
           <div className="module-list">
             {MODULES.map((m) => (
-              <a key={m.num} className="module-row" href={navHref('modul' + m.num)} onClick={navHandler('modul' + m.num, onNavigate)}>
+              <a key={m.num} className="module-row" href={navHref('modul' + m.num)} onClick={navHandler('modul' + m.num, onNavigate)} {...navPreloadProps('modul' + m.num)}>
                 <div className="module-num">{String(m.num).padStart(2, '0')}</div>
                 <div className="module-content">
                   <div className="module-row-numlabel">Modul</div>
@@ -33,7 +33,7 @@ function ModulePage({ onNavigate }) {
                 <div className="module-row-arrow" aria-hidden="true">→</div>
               </a>
             ))}
-            <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
+            <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>
               <div className="module-num module-num-resource">→</div>
               <div className="module-content">
                 <div className="module-row-numlabel">Schnellstart</div>

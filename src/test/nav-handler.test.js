@@ -1,5 +1,12 @@
 import { describe, it, expect, vi } from 'vitest';
-import { navHandler, navHref } from '../nav-handler.js';
+
+const preloadPage = vi.fn();
+
+vi.mock('../page-loader.js', () => ({
+  preloadPage,
+}));
+
+import { navHandler, navHref, navPreloadProps } from '../nav-handler.js';
 
 describe('navHandler', () => {
   it('prevents default and navigates to the configured target', () => {
@@ -26,5 +33,18 @@ describe('navHandler', () => {
 
   it('builds canonical hrefs for known pages', () => {
     expect(navHref('modul6', 's4')).toBe('/module/6#s4');
+  });
+
+  it('preloads routes on hover, focus, and touch interactions', () => {
+    const props = navPreloadProps('werkzeuge');
+
+    props.onMouseEnter();
+    props.onFocus();
+    props.onTouchStart();
+
+    expect(preloadPage).toHaveBeenCalledTimes(3);
+    expect(preloadPage).toHaveBeenNthCalledWith(1, 'werkzeuge');
+    expect(preloadPage).toHaveBeenNthCalledWith(2, 'werkzeuge');
+    expect(preloadPage).toHaveBeenNthCalledWith(3, 'werkzeuge');
   });
 });

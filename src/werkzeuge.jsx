@@ -7,7 +7,7 @@
 // Beim Schliessen: Fokus zur Trigger-Komponente zurückgeben.
 
 import React from 'react';
-import { navHandler, navHref } from './nav-handler.js';
+import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
 import { Eisberg } from './modul2.jsx';
 import { TOOLS } from './site-content.js';
 import { clearStoredDraft, loadStoredDraft, saveStoredDraft } from './storage.js';
@@ -1658,11 +1658,11 @@ function WerkzeugePage({ onNavigate }) {
           <div className="info-stripe">
             <div>
               <span className="kicker">Wenn Sie lieber lesen als klicken</span>
-              <p>Die inhaltliche Einordnung finden Sie in den <a className="link-underline" href={navHref('module')} onClick={navHandler('module', onNavigate)}>sieben Modulen</a>. Die Werkzeuge sind eine Ergänzung, kein Ersatz für Orientierung und Kontext.</p>
+              <p>Die inhaltliche Einordnung finden Sie in den <a className="link-underline" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>sieben Modulen</a>. Die Werkzeuge sind eine Ergänzung, kein Ersatz für Orientierung und Kontext.</p>
             </div>
             <div>
               <span className="kicker">Wenn es akut ist</span>
-              <p>In Krisen oder bei unmittelbarer Gefahr ist der <a className="link-underline" href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> wichtiger als jedes Werkzeug.</p>
+              <p>In Krisen oder bei unmittelbarer Gefahr ist der <a className="link-underline" href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>Notfallweg</a> wichtiger als jedes Werkzeug.</p>
             </div>
           </div>
 
