@@ -1,0 +1,42 @@
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { ModulePage } from '../module.jsx';
+
+describe('ModulePage', () => {
+  it('exposes module rows as keyboard-accessible links', async () => {
+    const user = userEvent.setup();
+    const onNavigate = vi.fn();
+
+    render(<ModulePage onNavigate={onNavigate} />);
+
+    await user.tab();
+
+    const firstModuleLink = screen.getByRole('link', { name: /Die bipolare Störung verstehen/i });
+    expect(firstModuleLink).toHaveFocus();
+
+    await user.keyboard('{Enter}');
+
+    expect(onNavigate).toHaveBeenCalledWith('modul1');
+  });
+
+  it('uses the same orientation flow as the homepage', async () => {
+    const user = userEvent.setup();
+    const onNavigate = vi.fn();
+
+    render(<ModulePage onNavigate={onNavigate} />);
+
+    await user.click(screen.getByRole('button', { name: 'Nein' }));
+    await user.click(screen.getByRole('button', { name: 'Nein, schon länger' }));
+    await user.click(screen.getByRole('button', { name: 'Nein' }));
+    await user.click(screen.getByRole('button', { name: 'Nein, eher Werkzeuge' }));
+    await user.click(screen.getByRole('button', { name: 'Konkret handeln, Grenzen, Gespräche' }));
+
+    const recommendationLink = await screen.findByRole('link', { name: /Modul 6 — Was Sie konkret tun können/i });
+    expect(recommendationLink).toBeInTheDocument();
+
+    await user.click(recommendationLink);
+
+    expect(onNavigate).toHaveBeenCalledWith('modul6');
+  });
+});

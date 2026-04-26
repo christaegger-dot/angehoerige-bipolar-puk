@@ -23,8 +23,7 @@ const BarrierefreiheitPage = React.lazy(() => import('./barrierefreiheit.jsx').t
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "palette": "cream",
-  "typography": "editorial",
-  "heroLayout": "split"
+  "typography": "editorial"
 }/*EDITMODE-END*/;
 
 const PALETTES = {
@@ -98,7 +97,7 @@ function App() {
   React.useEffect(() => { window.__navigate = onNavigate; }, [onNavigate]);
 
   const PAGES = {
-    start:            (p) => <HomePage onNavigate={p.onNavigate} heroLayout={p.heroLayout} />,
+    start:            (p) => <HomePage onNavigate={p.onNavigate} />,
     module:           (p) => <ModulePage onNavigate={p.onNavigate} />,
     werkzeuge:        (p) => <WerkzeugePage onNavigate={p.onNavigate} />,
     notfall:          (p) => <NotfallPage onNavigate={p.onNavigate} />,
@@ -115,7 +114,7 @@ function App() {
     barrierefreiheit: () => <BarrierefreiheitPage />,
   };
   const renderPage = PAGES[page] || PAGES.start;
-  const content = renderPage({ onNavigate, heroLayout: t.heroLayout });
+  const content = renderPage({ onNavigate });
 
   return (
     <>
@@ -141,15 +140,6 @@ function App() {
             { value: 'duality', label: 'Zwei-Ton' },
           ]}
           onChange={(v) => setTweak('palette', v)} />
-
-        <TweakSection label="Hero-Layout" />
-        <TweakRadio label="Layout" value={t.heroLayout}
-          options={[
-            { value: 'split', label: 'Split' },
-            { value: 'centered', label: 'Mittig' },
-            { value: 'editorial', label: 'Editorial' },
-          ]}
-          onChange={(v) => setTweak('heroLayout', v)} />
       </TweaksPanel>
     </>
   );

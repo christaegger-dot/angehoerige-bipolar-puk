@@ -1,8 +1,8 @@
 // Home — editorial single column, one triage flow, modules as nummerierte Liste
 
-import React from 'react';
 import { navHandler } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
+import { TriageFlow } from './triage-flow.jsx';
 
 const MODULES = [
 { num: 1, title: 'Die bipolare Störung verstehen', desc: 'Was die Erkrankung ist, wie sich Episoden zeigen und warum Angehörige oft mit Unsicherheit statt mit Klarheit leben.', time: '12–15 Min.', illu: 'M1' },
@@ -29,28 +29,7 @@ const TOOLS = [
 { tool: 'atem',              tag: 'Pause',         title: 'Durchatmen',               cta: 'Atemübung starten',     desc: 'Eine kurze Atemübung. Wenn der Moment einfach gerade zu viel ist.' }];
 
 
-const TRIAGE = {
-  'q1-yes': { label: 'Notfallweg', text: 'Zum Notfallweg', target: 'notfall', urgent: true },
-  'q1b-yes': { label: 'Empfehlung', text: 'Modul 1 — Die bipolare Störung verstehen', target: 'modul1' },
-  'q2-yes': { label: 'Empfehlung', text: 'Modul 4 — Wenn die Kraft nachlässt', target: 'modul4' },
-  'q3-yes': { label: 'Empfehlung', text: 'Modul 1 — Grundlagen verstehen', target: 'modul1' },
-  'q4-beziehung': { label: 'Empfehlung', text: 'Modul 3 — Wie Beziehungen unter Druck geraten', target: 'modul3' },
-  'q4-handeln': { label: 'Empfehlung', text: 'Modul 6 — Was Sie konkret tun können', target: 'modul6' },
-  'q4-selbst': { label: 'Empfehlung', text: 'Modul 2 — Die eigene Belastung verstehen', target: 'modul2' }
-};
-
 function HomePage({ onNavigate }) {
-  const [step, setStep] = React.useState('q1');
-  const [result, setResult] = React.useState(null);
-  const handle = (a) => {
-    if (a === 'q1-no') setStep('q1b');else
-    if (a === 'q1b-no') setStep('q2');else
-    if (a === 'q2-no') setStep('q3');else
-    if (a === 'q3-no' || a === 'q3-both') setStep('q4');else
-    if (TRIAGE[a]) setResult(TRIAGE[a]);
-  };
-  const restart = () => {setResult(null);setStep('q1');};
-
   return (
     <>
       {/* HERO */}
@@ -86,68 +65,7 @@ function HomePage({ onNavigate }) {
           <h2>Wo soll ich anfangen?</h2>
           <p className="triage-intro">Bis zu fünf kurze Fragen führen Sie zum passenden Einstieg — oder direkt zum Notfallweg, wenn das jetzt wichtiger ist.</p>
 
-          <div className="triage-step">
-            {!result && step === 'q1' &&
-            <>
-                <div className="triage-progress">Frage 1 von bis zu 5</div>
-                <div className="triage-q">Ist gerade jemand in akuter Gefahr — die erkrankte Person oder Sie selbst?</div>
-                <div className="triage-options">
-                  <button className="triage-opt triage-opt-yes" onClick={() => handle('q1-yes')}>Ja oder unklar</button>
-                  <button className="triage-opt" onClick={() => handle('q1-no')}>Nein</button>
-                </div>
-              </>
-            }
-            {!result && step === 'q1b' &&
-            <>
-                <div className="triage-progress">Frage 2 von bis zu 5</div>
-                <div className="triage-q">Haben Sie gerade zum ersten Mal von der Diagnose erfahren?</div>
-                <div className="triage-options">
-                  <button className="triage-opt" onClick={() => handle('q1b-yes')}>Ja, die Diagnose ist neu</button>
-                  <button className="triage-opt" onClick={() => handle('q1b-no')}>Nein, schon länger</button>
-                </div>
-              </>
-            }
-            {!result && step === 'q2' &&
-            <>
-                <div className="triage-progress">Frage 3 von bis zu 5</div>
-                <div className="triage-q">Sind Sie selbst gerade am Limit — erschöpft, überfordert, ausgebrannt?</div>
-                <div className="triage-options">
-                  <button className="triage-opt" onClick={() => handle('q2-yes')}>Ja</button>
-                  <button className="triage-opt" onClick={() => handle('q2-no')}>Nein</button>
-                </div>
-              </>
-            }
-            {!result && step === 'q3' &&
-            <>
-                <div className="triage-progress">Frage 4 von bis zu 5</div>
-                <div className="triage-q">Brauchen Sie vor allem Grundlagenwissen über die Erkrankung?</div>
-                <div className="triage-options">
-                  <button className="triage-opt" onClick={() => handle('q3-yes')}>Ja</button>
-                  <button className="triage-opt" onClick={() => handle('q3-both')}>Sowohl als auch</button>
-                  <button className="triage-opt" onClick={() => handle('q3-no')}>Nein, eher Werkzeuge</button>
-                </div>
-              </>
-            }
-            {!result && step === 'q4' &&
-            <>
-                <div className="triage-progress">Frage 5 von bis zu 5</div>
-                <div className="triage-q">Was steht bei Ihnen gerade am meisten im Vordergrund?</div>
-                <div className="triage-options">
-                  <button className="triage-opt" onClick={() => handle('q4-beziehung')}>Beziehung, Vertrauen, Nähe</button>
-                  <button className="triage-opt" onClick={() => handle('q4-handeln')}>Konkret handeln, Grenzen, Gespräche</button>
-                  <button className="triage-opt" onClick={() => handle('q4-selbst')}>Verstehen, was mit mir passiert</button>
-                </div>
-              </>
-            }
-
-            {result &&
-            <div className={`triage-result ${result.urgent ? 'triage-result-urgent' : ''}`}>
-                <span className="triage-result-label">{result.label}</span>
-                <a className="triage-result-link" href={`#${result.target}`} onClick={(e) => { e.preventDefault(); onNavigate(result.target); }}>{result.text} →</a>
-                <button className="triage-restart" onClick={restart}>Nochmal beantworten</button>
-              </div>
-            }
-          </div>
+          <TriageFlow onNavigate={onNavigate} />
         </div>
       </section>
 

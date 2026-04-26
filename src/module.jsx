@@ -1,5 +1,6 @@
-
+import { navHandler } from './nav-handler.js';
 import { MODULES, ANLAUFSTELLEN_ENTRY } from './home.jsx';
+import { TriageFlow } from './triage-flow.jsx';
 
 function ModulePage({ onNavigate }) {
   return (
@@ -16,37 +17,34 @@ function ModulePage({ onNavigate }) {
         <div className="container">
           <div className="module-list">
             {MODULES.map((m) => (
-              <div key={m.num} className="module-row" style={{cursor:'pointer'}} onClick={() => onNavigate('modul' + m.num)}>
-                <div className="module-row-num">
+              <a key={m.num} className="module-row" href={`#modul${m.num}`} onClick={navHandler('modul' + m.num, onNavigate)}>
+                <div className="module-num">{String(m.num).padStart(2, '0')}</div>
+                <div className="module-content">
                   <div className="module-row-numlabel">Modul</div>
-                  <div className="module-row-numbig">{String(m.num).padStart(2, '0')}</div>
-                </div>
-                <div className="module-row-body">
                   <h3>{m.title}</h3>
                   <p>{m.desc}</p>
-                  <div className="module-row-meta">
-                    <span className="mono">⏱ {m.time}</span>
-                    {m.num === 6 && <span className="mono">· mit Vertiefungen 22</span>}
+                  <div className="module-meta">
+                    <span>⏱ {m.time}</span>
+                    {m.num === 6 && <span>· mit Vertiefungen 22 Min.</span>}
+                    {m.num !== 6 && <span>· Lesen →</span>}
                   </div>
                 </div>
-                <div className="module-row-arrow">→</div>
-              </div>
+                <div className="module-row-arrow" aria-hidden="true">→</div>
+              </a>
             ))}
-            <div className="module-row module-row-resource" style={{cursor:'pointer'}} onClick={() => onNavigate('unterstuetzung')}>
-              <div className="module-row-num">
+            <a className="module-row module-row-resource" href="#unterstuetzung" onClick={navHandler('unterstuetzung', onNavigate)}>
+              <div className="module-num module-num-resource">→</div>
+              <div className="module-content">
                 <div className="module-row-numlabel">Schnellstart</div>
-                <div className="module-row-numbig module-row-numbig-resource">→</div>
-              </div>
-              <div className="module-row-body">
                 <h3>{ANLAUFSTELLEN_ENTRY.title}</h3>
                 <p>{ANLAUFSTELLEN_ENTRY.desc}</p>
-                <div className="module-row-meta">
-                  <span className="mono">⏱ {ANLAUFSTELLEN_ENTRY.time}</span>
-                  <span className="mono">· Anlaufstellen &amp; Material</span>
+                <div className="module-meta">
+                  <span>⏱ {ANLAUFSTELLEN_ENTRY.time}</span>
+                  <span>· Anlaufstellen &amp; Material →</span>
                 </div>
               </div>
-              <div className="module-row-arrow">→</div>
-            </div>
+              <div className="module-row-arrow" aria-hidden="true">→</div>
+            </a>
           </div>
         </div>
       </section>
@@ -55,36 +53,17 @@ function ModulePage({ onNavigate }) {
         <div className="container">
           <div className="section-head">
             <div className="label-col">
-              <span className="num">— Wo anfangen?</span>
-              <span className="eyebrow">Drei kurze Fragen</span>
+              <span className="num">— Orientierung</span>
+              <span className="eyebrow">Bis zu fünf kurze Fragen</span>
             </div>
             <div>
-              <h2>Sie wissen nicht, welches Modul für Sie passt? Lassen Sie sich orientieren.</h2>
+              <h2>Sie wissen nicht, welches Modul für Sie passt? Der gleiche Orientierungsweg wie auf der Startseite hilft beim Einstieg.</h2>
             </div>
           </div>
-          <div className="orient-grid">
-            <div className="orient-card">
-              <div className="orient-q">Besteht gerade Gefahr für Leib und Leben?</div>
-              <button className="orient-btn warn" onClick={() => onNavigate('notfall')}>Ja oder unklar → SOS</button>
-              <button className="orient-btn">Nein</button>
-            </div>
-            <div className="orient-card">
-              <div className="orient-q">Diagnose ganz neu?</div>
-              <button className="orient-btn" onClick={() => onNavigate('modul1')}>Ja → Modul 1</button>
-              <button className="orient-btn">Nein, kenne ich schon länger</button>
-            </div>
-            <div className="orient-card">
-              <div className="orient-q">Sind Sie selbst gerade am Limit?</div>
-              <button className="orient-btn" onClick={() => onNavigate('modul2')}>Ja → Modul 2 + 4</button>
-              <button className="orient-btn">Nein</button>
-            </div>
-            <div className="orient-card">
-              <div className="orient-q">Was steht im Vordergrund?</div>
-              <button className="orient-btn" onClick={() => onNavigate('modul3')}>Beziehung → Modul 3</button>
-              <button className="orient-btn" onClick={() => onNavigate('modul6')}>Konkret handeln → Modul 6</button>
-              <button className="orient-btn" onClick={() => onNavigate('modul1')}>Verstehen → Modul 1</button>
-            </div>
-          </div>
+          <p className="triage-intro" style={{ maxWidth: '50ch', marginTop: 16 }}>
+            Sie können die Orientierung hier direkt beantworten oder oben ein Modul frei wählen.
+          </p>
+          <TriageFlow onNavigate={onNavigate} />
         </div>
       </section>
     </>

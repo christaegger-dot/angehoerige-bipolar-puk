@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { useTweaks } from '../use-tweaks.js';
 
 function HookHarness() {
-  const [values, setTweak] = useTweaks({ palette: 'cream', heroLayout: 'split' });
+  const [values, setTweak] = useTweaks({ palette: 'cream' });
 
   return (
     <>
