@@ -1532,7 +1532,12 @@ section + section { padding-top: 0; }
   display: block;
 }
 
-/* Beschriftung mit Hierarchie */
+/* Beschriftung mit Hierarchie.
+   ACHTUNG: pointer-events: none ist für die statischen <span>-Labels in
+   modul2.jsx (EisbergFigur) gedacht, damit Klicks zur SVG durchgehen.
+   Interaktive Versionen (z. B. EisbergTool in werkzeuge-tools.jsx) MÜSSEN
+   zusätzlich .eisberg-tool-btn tragen — diese Klasse setzt
+   pointer-events: auto wieder ein, sonst sind die Buttons unklickbar. */
 .eisberg-word {
   position: absolute;
   transform: translate(-50%, -50%);

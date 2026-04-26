@@ -1460,7 +1460,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
         </div>
 
         <figure className="phasen-figure">
-          <svg viewBox="0 0 420 200" className="phasen-svg" aria-hidden="true">
+          <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Belastungsverlauf von Angehörigen über mehrere Episoden, mit drei klickbaren Phasen-Markern.">
             {/* Achsen */}
             <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">VOLL</text>
             <text x="6" y="178" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">RESERVE</text>
