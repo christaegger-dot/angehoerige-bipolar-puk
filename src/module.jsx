@@ -70,19 +70,19 @@ function ModulePage({ onNavigate }) {
             </div>
             <div className="orient-card">
               <div className="orient-q">Diagnose ganz neu?</div>
-              <button className="orient-btn" onClick={() => onNavigate('module')}>Ja → Modul 1</button>
+              <button className="orient-btn" onClick={() => onNavigate('modul1')}>Ja → Modul 1</button>
               <button className="orient-btn">Nein, kenne ich schon länger</button>
             </div>
             <div className="orient-card">
               <div className="orient-q">Sind Sie selbst gerade am Limit?</div>
-              <button className="orient-btn" onClick={() => onNavigate('module')}>Ja → Modul 2 + 4</button>
+              <button className="orient-btn" onClick={() => onNavigate('modul2')}>Ja → Modul 2 + 4</button>
               <button className="orient-btn">Nein</button>
             </div>
             <div className="orient-card">
               <div className="orient-q">Was steht im Vordergrund?</div>
-              <button className="orient-btn" onClick={() => onNavigate('module')}>Beziehung → Modul 3</button>
-              <button className="orient-btn" onClick={() => onNavigate('module')}>Konkret handeln → Modul 6</button>
-              <button className="orient-btn" onClick={() => onNavigate('module')}>Verstehen → Modul 1</button>
+              <button className="orient-btn" onClick={() => onNavigate('modul3')}>Beziehung → Modul 3</button>
+              <button className="orient-btn" onClick={() => onNavigate('modul6')}>Konkret handeln → Modul 6</button>
+              <button className="orient-btn" onClick={() => onNavigate('modul1')}>Verstehen → Modul 1</button>
             </div>
           </div>
         </div>
