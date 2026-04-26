@@ -468,7 +468,7 @@ function KrisenplanTool({ onClose, onNavigate }) {
         <header className="krisenplan-head">
           <span className="kicker">Werkzeug · Krisenplan</span>
           <h2>Mein Krisenplan</h2>
-          <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln. Ihre Eingaben bleiben in diesem Browser und werden nicht versendet.</p>
+          <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln. Ihre Eingaben bleiben in diesem Browser auf diesem Gerät und werden nicht versendet. Auf gemeinsam genutzten Geräten können Sie den Plan unten jederzeit zurücksetzen.</p>
           {lastUpdate && (
             <p className="krisenplan-meta no-print">Zuletzt bearbeitet: {lastUpdate}</p>
           )}
@@ -1090,7 +1090,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
           <>
             <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Ein Gespräch vorbereiten</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte. Am Ende haben Sie ein eigenes Skript für ein schwieriges Gespräch — in Ihren Worten, in einer Form, die nicht eskaliert.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren. Ihre Eingaben bleiben in diesem Browser.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren. Ihre Eingaben bleiben in diesem Browser auf diesem Gerät. Auf gemeinsam genutzten Geräten können Sie das Skript jederzeit zurücksetzen.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>

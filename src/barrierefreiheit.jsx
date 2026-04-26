@@ -26,7 +26,7 @@ function BarrierefreiheitPage() {
 
             <h2>Was umgesetzt ist</h2>
             <ul>
-              <li><strong>Tastatur-Bedienbarkeit</strong>: Alle interaktiven Elemente (Navigation, Werkzeuge, Module, Notfall-Akkordeon) sind ohne Maus erreichbar; sichtbarer Fokusrahmen.</li>
+              <li><strong>Tastatur-Bedienbarkeit</strong>: Alle interaktiven Elemente (Navigation, Werkzeuge, Modul-Überblick, Orientierungsfragen, Notfall-Akkordeon) sind ohne Maus erreichbar; sichtbarer Fokusrahmen.</li>
               <li><strong>Screenreader-Unterstützung</strong>: Semantisches HTML, ARIA-Beschriftungen, Skip-Link zum Hauptinhalt, Fokus-Management in Dialogen.</li>
               <li><strong>Kontrast</strong>: Text gegenüber Hintergrund mindestens 4.5:1, UI-Elemente mindestens 3:1.</li>
               <li><strong>Skalierbarkeit</strong>: Layout bleibt bei 200%-Zoom nutzbar; Schriftgrössen in relativen Einheiten.</li>

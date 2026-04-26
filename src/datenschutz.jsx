@@ -50,7 +50,14 @@ function DatenschutzPage() {
               Eingaben ausschliesslich <strong>lokal in Ihrem Browser</strong> (Local&nbsp;Storage). Diese Daten
               werden zu keinem Zeitpunkt an unsere Server, an die PUK oder an Dritte übermittelt. Sie können
               die Daten jederzeit löschen — entweder über die jeweilige Werkzeug-Funktion oder über die
-              Browser-Einstellungen.
+              Browser-Einstellungen. Wenn Sie ein gemeinsam genutztes Gerät verwenden, setzen Sie das jeweilige
+              Werkzeug nach der Nutzung zurück oder löschen Sie die Browser-Daten.
+            </p>
+
+            <h3>Auffindbarkeit über Suchmaschinen</h3>
+            <p>
+              Die Lese-Begleitung ist derzeit bewusst <strong>nicht</strong> für Suchmaschinen indexiert. Sie ist
+              über direkte Links erreichbar, soll aber nicht aktiv in öffentlichen Suchergebnissen erscheinen.
             </p>
 
             <h3>Schriften &amp; Ressourcen</h3>
