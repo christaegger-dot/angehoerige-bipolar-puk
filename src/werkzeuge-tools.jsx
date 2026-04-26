@@ -1460,7 +1460,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
         </div>
 
         <figure className="phasen-figure">
-          <svg viewBox="0 0 420 200" className="phasen-svg" aria-hidden="true">
+          <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Belastungsverlauf von Angehörigen über mehrere Episoden, mit drei klickbaren Phasen-Markern.">
             {/* Achsen */}
             <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">VOLL</text>
             <text x="6" y="178" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">RESERVE</text>
@@ -1529,6 +1529,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
                 aria-label={ep.label}
                 aria-pressed={activeEpisode === i}
               >
+                {/* Unsichtbarer 22px-Circle vergrössert das Touch-Target über den 14px-Marker hinaus auf min. 44px Durchmesser. */}
                 <circle cx={ep.x} cy={ep.y} r="22" fill="transparent" pointerEvents="all" />
                 <circle cx={ep.x} cy={ep.y} r="14" fill="var(--bg)" stroke={activeEpisode === i ? 'var(--accent)' : 'var(--ink-mute)'} strokeWidth={activeEpisode === i ? 2 : 1.2} />
                 <text x={ep.x} y={ep.y + 4} textAnchor="middle" fontFamily="var(--mono)" fontSize="11" fill={activeEpisode === i ? 'var(--accent)' : 'var(--ink)'} fontWeight={activeEpisode === i ? 600 : 400}>
