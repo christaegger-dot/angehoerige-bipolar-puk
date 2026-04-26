@@ -389,7 +389,7 @@ function Modul2Page({ onNavigate }) {
 
               <div className="do-dont">
                 <div className="do-col">
-                  <h4>Was Sie dürfen und sollen</h4>
+                  <h3>Was Sie dürfen und sollen</h3>
                   <ul>
                     <li>Veränderungen benennen, die Sie wahrnehmen — als Ich-Botschaft</li>
                     <li>Frühwarnzeichen beobachten, die gemeinsam im Krisenplan vereinbart wurden</li>
@@ -398,7 +398,7 @@ function Modul2Page({ onNavigate }) {
                   </ul>
                 </div>
                 <div className="dont-col">
-                  <h4>Was nicht hilft</h4>
+                  <h3>Was nicht hilft</h3>
                   <ul>
                     <li>Heimlich Handy, E-Mails oder Kontoauszüge kontrollieren</li>
                     <li>Medikamenteneinnahme überwachen statt begleiten</li>

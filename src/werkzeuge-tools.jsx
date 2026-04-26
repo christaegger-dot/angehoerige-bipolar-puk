@@ -4,6 +4,23 @@ import { Eisberg } from './modul2.jsx';
 import { clearStoredDraft, loadStoredDraft, saveStoredDraft } from './storage.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 
+// WAI-ARIA-konforme Pfeil-Navigation für role="tablist": ArrowLeft/Right
+// wechseln + aktivieren den Nachbartab, Home/End springen an die Enden.
+// Voraussetzung: Tab-Buttons haben tabIndex roving (selected=0, sonst -1).
+function handleTabKeyDown(e) {
+  if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) return;
+  e.preventDefault();
+  const tabs = Array.from(e.currentTarget.parentElement.querySelectorAll('[role="tab"]'));
+  const i = tabs.indexOf(e.currentTarget);
+  const next =
+    e.key === 'ArrowRight' ? tabs[(i + 1) % tabs.length] :
+    e.key === 'ArrowLeft' ? tabs[(i - 1 + tabs.length) % tabs.length] :
+    e.key === 'Home' ? tabs[0] :
+    tabs[tabs.length - 1];
+  next.focus();
+  next.click();
+}
+
 const ATEM_PHASEN = [
   { name: 'einatmen', label: 'Einatmen', duration: 4000, scale: 1 },
   { name: 'halten',   label: 'Halten',   duration: 2000, scale: 1 },
@@ -332,6 +349,7 @@ const KRISENPLAN_NOTFALLNUMMERN = [
   { num: '144', label: 'Sanität · Lebensgefahr · 24 h' },
   { num: '117', label: 'Polizei · Gewalt · Bedrohung' },
   { num: '143', label: 'Dargebotene Hand · anonym · 24 h' },
+  { num: '147', label: 'Pro Juventute · Kinder & Jugendliche · 24 h' },
   { num: '0800 33 66 55', label: 'Ärztefon ZH · Notfalldienst · 24 h' },
   { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h' },
   { num: '058 384 38 00', label: 'Fachstelle Angehörigenarbeit PUK · werktags' },
@@ -384,7 +402,7 @@ function KrisenplanTool({ onClose, onNavigate }) {
           <h2>Mein Krisenplan</h2>
           <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln. Standardmässig bleibt der Entwurf nur bis zum Schliessen dieses Tabs erhalten und wird nicht versendet. Auf gemeinsam genutzten Geräten können Sie ihn unten zusätzlich dauerhaft löschen.</p>
           {lastUpdate && (
-            <p className="krisenplan-meta no-print">Zuletzt bearbeitet: {lastUpdate}</p>
+            <p className="krisenplan-meta">Zuletzt bearbeitet: {lastUpdate}</p>
           )}
           <label className="storage-toggle no-print">
             <input type="checkbox" checked={remember} onChange={toggleRemember} />
@@ -1018,7 +1036,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
   };
 
   return (
-    <ToolOverlay onClose={onClose} ariaLabel="Kommunikations-Trainer" cardClass="kommunikation-card">
+    <ToolOverlay onClose={onClose} ariaLabel="Kommunikations-Trainer" cardClass="kommunikation-card" noPrint={true}>
       <span className="kicker">Werkzeug · Kommunikation</span>
 
         {step === 'intro' && (
@@ -1275,16 +1293,20 @@ function EeKreislaufTool({ onClose, onNavigate }) {
             <button
               role="tab"
               aria-selected={view === 'was'}
+              tabIndex={view === 'was' ? 0 : -1}
               className={`ee-detail-tab ${view === 'was' ? 'is-active' : ''}`}
               onClick={() => setView('was')}
+              onKeyDown={handleTabKeyDown}
             >
               Was passiert
             </button>
             <button
               role="tab"
               aria-selected={view === 'unterbrechen'}
+              tabIndex={view === 'unterbrechen' ? 0 : -1}
               className={`ee-detail-tab ${view === 'unterbrechen' ? 'is-active' : ''}`}
               onClick={() => setView('unterbrechen')}
+              onKeyDown={handleTabKeyDown}
             >
               Wo unterbrechen
             </button>
@@ -1363,8 +1385,10 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
               key={p.key}
               role="tab"
               aria-selected={active === p.key}
+              tabIndex={active === p.key ? 0 : -1}
               className={`phasen-tab ${active === p.key ? 'is-active' : ''}`}
               onClick={() => setActive(p.key)}
+              onKeyDown={handleTabKeyDown}
             >
               <strong>{p.label}</strong>
               <span>{p.sub}</span>

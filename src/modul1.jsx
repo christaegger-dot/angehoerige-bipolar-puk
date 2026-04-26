@@ -101,7 +101,7 @@ function Modul1Page({ onNavigate }) {
 
               <div className="do-dont">
                 <div className="dont-col">
-                  <h4>Was in den ersten Tagen oft schadet</h4>
+                  <h3>Was in den ersten Tagen oft schadet</h3>
                   <ul>
                     <li>Stundenlang im Internet suchen — die meisten Seiten sind nicht für Angehörige</li>
                     <li>Grosse Entscheidungen treffen, die warten können</li>
@@ -110,7 +110,7 @@ function Modul1Page({ onNavigate }) {
                   </ul>
                 </div>
                 <div className="do-col">
-                  <h4>Was hingegen helfen kann</h4>
+                  <h3>Was hingegen helfen kann</h3>
                   <ul>
                     <li>Eine einzige Vertrauensperson ins Vertrauen ziehen</li>
                     <li>Die Fachstelle anrufen — auch wenn Sie noch nicht wissen, was Sie fragen sollen</li>
