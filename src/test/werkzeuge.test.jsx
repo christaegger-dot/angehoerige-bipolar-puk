@@ -16,6 +16,13 @@ describe('WerkzeugePage', () => {
 
     expect(await screen.findByRole('dialog', { name: 'Krisenplan-Werkzeug' })).toBeInTheDocument();
   });
+
+  it('uses canonical hrefs for cross-page support links', () => {
+    render(<WerkzeugePage onNavigate={() => {}} />);
+
+    expect(screen.getByRole('link', { name: /sieben Modulen/i })).toHaveAttribute('href', '/module');
+    expect(screen.getByRole('link', { name: /Notfallweg/i })).toHaveAttribute('href', '/notfall');
+  });
 });
 
 describe('KrisenplanTool storage', () => {
@@ -34,5 +41,11 @@ describe('KrisenplanTool storage', () => {
 
     expect(window.localStorage.getItem('puk-krisenplan-v1')).toContain('PUK Zürich');
     expect(window.sessionStorage.getItem('puk-krisenplan-v1')).toBeNull();
+  });
+
+  it('uses a canonical href for the crisis path link in the disclaimer', () => {
+    render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
+
+    expect(screen.getByRole('link', { name: /Notfallweg/i })).toHaveAttribute('href', '/notfall');
   });
 });

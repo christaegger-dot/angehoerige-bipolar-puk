@@ -2,7 +2,7 @@
 // Zentrales Bild: Zwei Linien, die unter Druck Form verändern.
 
 import React from 'react';
-import { navHandler } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 
 function ZweiLinien() {
   // Konzept: Zwei Linien beginnen ruhig parallel, geraten unter Druck,
@@ -177,9 +177,9 @@ function Modul3Page({ onNavigate }) {
         <header className="module-detail-header">
           <div className="col">
             <div className="breadcrumb">
-              <a href="#start" onClick={navHandler('start', onNavigate)}>Start</a>
+              <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
               <span className="sep">/</span>
-              <a href="#module" onClick={navHandler('module', onNavigate)}>Module</a>
+              <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
               <span className="sep">/</span>
               <span>Modul 3</span>
             </div>
@@ -207,7 +207,7 @@ function Modul3Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href="#module" onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
             </div>
           </aside>
 
@@ -317,14 +317,14 @@ function Modul3Page({ onNavigate }) {
               <p>Unkontrollierte Geldausgaben, die Existenzen gefährden. In einer manischen Phase kann ein Mensch in wenigen Tagen die Ersparnisse einer Familie auflösen. Konkrete Vorkehrungen (Ausgabenlimit, Vorsorgevollmacht, Bankabsprachen) finden Sie in Modul 6.</p>
 
               <h3>Sexuelle Enthemmung</h3>
-              <p>Grenzüberschreitungen, die die Beziehung tief verletzen. Das ist ein Thema für professionelle Begleitung — nicht für Alleinbewältigung. Anlaufstellen nach Situation finden Sie in der <a className="link-underline" href="#unterstuetzung" onClick={navHandler('unterstuetzung', onNavigate)}>Schnellstart-Übersicht</a>.</p>
+              <p>Grenzüberschreitungen, die die Beziehung tief verletzen. Das ist ein Thema für professionelle Begleitung — nicht für Alleinbewältigung. Anlaufstellen nach Situation finden Sie in der <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Schnellstart-Übersicht</a>.</p>
 
               <h3>Verbale und körperliche Gewalt</h3>
               <p>Aggression, die verletzt — auch wenn sie krankheitsbedingt ist. Wenn Sie Gewalt erfahren: Sie haben das Recht, sich in Sicherheit zu bringen. Immer.</p>
 
               <aside className="callout">
                 <span className="callout-label">Bei Gewalt</span>
-                <p><strong>117 Polizei</strong> bei akuter Gewalt · <strong>058 384 38 00</strong> Fachstelle PUK (kostenlos, vertraulich) · <strong>044 299 40 50</strong> Opferhilfe Zürich (Beratung &amp; Begleitung). Mehr im <a href="#notfall" onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
+                <p><strong>117 Polizei</strong> bei akuter Gewalt · <strong>058 384 38 00</strong> Fachstelle PUK (kostenlos, vertraulich) · <strong>044 299 40 50</strong> Opferhilfe Zürich (Beratung &amp; Begleitung). Mehr im <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
               </aside>
 
               <blockquote className="module-quote">
@@ -355,14 +355,14 @@ function Modul3Page({ onNavigate }) {
               </aside>
 
               <div className="next-modules">
-                <a className="next-module" href="#modul6" onClick={navHandler('modul6', onNavigate)}>
+                <a className="next-module" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
                   <span className="next-module-num">06</span>
                   <div>
                     <h3>Was Sie konkret tun können</h3>
                     <p>Werkzeuge für Gespräche, Krisenpläne und konkrete Schritte — wenn Sie nicht mehr nur lesen, sondern handeln möchten.</p>
                   </div>
                 </a>
-                <a className="next-module" href="#werkzeuge" onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeuge — Schwierige Gespräche</h3>
@@ -389,10 +389,10 @@ function Modul3Page({ onNavigate }) {
               <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert und keine reale Einzelperson.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href="#modul2" onClick={navHandler('modul2', onNavigate)}>
+                <a className="module-nav-btn" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>
                   ← Modul 02 — Die eigene Belastung verstehen
                 </a>
-                <a className="module-nav-btn module-nav-next" href="#modul4" onClick={navHandler('modul4', onNavigate)}>
+                <a className="module-nav-btn module-nav-next" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
                   Modul 04 — Wenn die Kraft nachlässt →
                 </a>
               </div>

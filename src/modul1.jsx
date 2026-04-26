@@ -1,7 +1,7 @@
 // Modul 1 — Die bipolare Störung verstehen · Volles Lese-Layout
 
 import React from 'react';
-import { navHandler } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 
 function Modul1Page({ onNavigate }) {
@@ -50,9 +50,9 @@ function Modul1Page({ onNavigate }) {
         <header className="module-detail-header">
           <div className="col">
             <div className="breadcrumb">
-              <a href="#start" onClick={navHandler('start', onNavigate)}>Start</a>
+              <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
               <span className="sep">/</span>
-              <a href="#module" onClick={navHandler('module', onNavigate)}>Module</a>
+              <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
               <span className="sep">/</span>
               <span>Modul 1</span>
             </div>
@@ -84,7 +84,7 @@ function Modul1Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href="#module" onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
             </div>
           </aside>
 
@@ -160,7 +160,7 @@ function Modul1Page({ onNavigate }) {
               <p>Die Phasenlehre ist nur dann hilfreich, wenn sie in den Alltag übersetzt wird. Entscheidend ist nicht nur, wie eine Episode diagnostisch heisst, sondern wie sie sich für Sie zu Hause anfühlt: unberechenbar, laut, leer, beschämend, angsteinflössend oder seltsam schwer greifbar.</p>
 
               <h3>Manie und Hypomanie</h3>
-              <p>Nicht nur «zu gute Laune», sondern oft Gereiztheit, Enthemmung und fehlende Einsicht. Fachlich heisst diese fehlende Einsicht <em>Anosognosie</em> — die Person kann die eigene Erkrankung im Moment nicht realistisch erkennen. Das ist kein Unwille, sondern ein Symptom; <a className="link-underline" href="#modul6" onClick={navHandler('modul6', onNavigate)}>Modul 6</a> vertieft, was das für Gespräche bedeutet.</p>
+              <p>Nicht nur «zu gute Laune», sondern oft Gereiztheit, Enthemmung und fehlende Einsicht. Fachlich heisst diese fehlende Einsicht <em>Anosognosie</em> — die Person kann die eigene Erkrankung im Moment nicht realistisch erkennen. Das ist kein Unwille, sondern ein Symptom; <a className="link-underline" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a> vertieft, was das für Gespräche bedeutet.</p>
               <p><strong>Übersteigertes Selbstwertgefühl.</strong> «Ich kann alles.» Realitätsverlust bis zum Grössenwahn. <em>«Er hört nicht mehr auf mich — ich werde als Bremse wahrgenommen.»</em></p>
               <p><strong>Vermindertes Schlafbedürfnis.</strong> Oft nur 2–3 Stunden Schlaf bei voller Energie. <em>«Nachts um 3 Uhr wird die Wohnung umgeräumt — ich kann nicht schlafen.»</em></p>
               <p><strong>Impulsive Entscheidungen.</strong> Grosse Geldausgaben, riskante Investitionen, sexuelle Abenteuer. <em>«Er hat 10'000 Fr. ausgegeben, ohne mich zu fragen.»</em></p>
@@ -183,7 +183,7 @@ function Modul1Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Bei Suizidgedanken</span>
-                <p>Modul 2 erklärt, was das mit Angehörigen macht — und wo Hilfe ist. Bei akuter Gefahr: <strong>144</strong> oder <a href="#notfall" onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
+                <p>Modul 2 erklärt, was das mit Angehörigen macht — und wo Hilfe ist. Bei akuter Gefahr: <strong>144</strong> oder <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
               </aside>
             </section>
 
@@ -288,14 +288,14 @@ function Modul1Page({ onNavigate }) {
               <p>Wenn Sie bisher vieles allein eingeordnet haben, entlastet oft schon eine Person, die die Lage kennt. Nicht die halbe Version, sondern die wirkliche: was Sie beobachten, was Sie befürchten und was Sie im Alltag tragen.</p>
 
               <div className="next-modules">
-                <a className="next-module" href="#modul2" onClick={navHandler('modul2', onNavigate)}>
+                <a className="next-module" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>
                   <span className="next-module-num">02</span>
                   <div>
                     <h3>Die eigene Belastung verstehen</h3>
                     <p>Wenn Sie merken, dass die Wachsamkeit Sie selbst zermürbt.</p>
                   </div>
                 </a>
-                <a className="next-module" href="#modul6" onClick={navHandler('modul6', onNavigate)}>
+                <a className="next-module" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
                   <span className="next-module-num">06</span>
                   <div>
                     <h3>Was Sie konkret tun können</h3>
@@ -322,10 +322,10 @@ function Modul1Page({ onNavigate }) {
               <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert und keine reale Einzelperson.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href="#module" onClick={navHandler('module', onNavigate)}>
+                <a className="module-nav-btn" href={navHref('module')} onClick={navHandler('module', onNavigate)}>
                   ← Alle Module
                 </a>
-                <a className="module-nav-btn module-nav-next" href="#modul2" onClick={navHandler('modul2', onNavigate)}>
+                <a className="module-nav-btn module-nav-next" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>
                   Modul 02 — Die eigene Belastung verstehen →
                 </a>
               </div>

@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ModulePage } from '../module.jsx';
+import { Modul1Page } from '../modul1.jsx';
 
 describe('ModulePage', () => {
   it('exposes module rows as keyboard-accessible links', async () => {
@@ -38,5 +39,17 @@ describe('ModulePage', () => {
     await user.click(recommendationLink);
 
     expect(onNavigate).toHaveBeenCalledWith('modul6');
+  });
+
+  it('uses canonical hrefs for module detail cross-page links', () => {
+    render(<Modul1Page onNavigate={() => {}} />);
+
+    expect(screen.getByRole('link', { name: 'Start' })).toHaveAttribute('href', '/');
+    expect(screen.getAllByRole('link', { name: 'Module' })[0]).toHaveAttribute('href', '/module');
+    screen.getAllByRole('link', { name: /← Alle Module/i }).forEach((link) => {
+      expect(link).toHaveAttribute('href', '/module');
+    });
+    expect(screen.getByRole('link', { name: 'Modul 6' })).toHaveAttribute('href', '/module/6');
+    expect(screen.getByRole('link', { name: 'Notfallweg' })).toHaveAttribute('href', '/notfall');
   });
 });
