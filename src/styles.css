@@ -280,7 +280,9 @@ section + section { padding-top: 0; }
   padding: 6px 0;
   position: relative;
   transition: color 0.15s;
+  white-space: nowrap;
 }
+.nav-label-compact { display: none; }
 .nav-links a:hover { color: var(--ink); }
 .nav-links a.active {
   color: var(--ink);
@@ -1099,6 +1101,31 @@ section + section { padding-top: 0; }
   .guide-head { grid-template-columns: 40px 1fr; gap: 16px; }
   .guide-toggle { display: none; }
   .guide-body { padding-left: 0; }
+}
+
+@media (max-width: 640px) {
+  .nav .col-wide {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .nav-inner {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: auto;
+    gap: 8px 16px;
+    padding: 10px 0;
+  }
+  .nav-brand { width: 100%; }
+  .nav-brand-mark { font-size: 17px; }
+  .nav-links {
+    width: 100%;
+    gap: 8px;
+    font-size: 11px;
+    justify-content: flex-start;
+  }
+  .nav-links a { padding: 4px 0; }
+  .nav-label-full { display: none; }
+  .nav-label-compact { display: inline; }
 }
 
 
