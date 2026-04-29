@@ -304,20 +304,20 @@ function Modul6Page({ onNavigate }) {
               <p>Manische Episoden können in kurzer Zeit erhebliche finanzielle Schäden auslösen. Absprachen dazu wirken schnell kontrollierend, sind aber in stabilen Phasen oft schlicht Schutz: für beide Seiten, für Kinder und für das, was nach der Episode übrig bleiben soll.</p>
               <ol>
                 <li><strong>Ausgabenlimit vereinbaren:</strong> Grössere Ausgaben (z. B. über CHF 500) gemeinsam besprechen — als gemeinsame Abmachung.</li>
-                <li><strong>Vorsorgevollmacht errichten:</strong> Greift im Krisenfall. Die KESB kann bei Bedarf eine Beistandschaft einrichten.</li>
+                <li><strong>Bankvollmacht oder Vorsorgeauftrag in ruhigen Phasen klären:</strong> Wer darf im Ernstfall was tun, und was braucht dafür eine rechtliche Prüfung?</li>
                 <li><strong>Bankabsprachen:</strong> Transaktionslimiten oder Benachrichtigungen bei ungewöhnlichen Aktivitäten aktivieren.</li>
                 <li><strong>Krisenplan ergänzen:</strong> Festhalten, wer im Ernstfall Zugang zu Konten hat und welche Schritte eingeleitet werden.</li>
               </ol>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Beratung</span>
-                <p>Pro Mente Sana (<strong>0848 800 858</strong> · promentesana.ch) ist hier eine gute erste Anlaufstelle für Vorsorgeauftrag und Patientenverfügung. Diese Fragen lassen sich fast immer besser in ruhigen Phasen klären als mitten in einer Eskalation.</p>
+                <p>Pro Mente Sana (<strong>0848 800 858</strong> · promentesana.ch) ist hier eine gute erste Anlaufstelle für Vorsorgeauftrag, Vollmachten und Patientenverfügung. Diese Fragen lassen sich fast immer besser in ruhigen Phasen klären als mitten in einer Eskalation.</p>
               </aside>
             </section>
 
             <section id="s3">
               <h2>Wenn Substanzkonsum mitläuft — und warum das so häufig ist</h2>
-              <p>Substanzkonsum ist bei bipolarer Störung keine Ausnahme, sondern eine der häufigsten Begleiterscheinungen: <strong>40–60 % der Betroffenen entwickeln im Verlauf eine Substanzgebrauchsstörung</strong> — deutlich mehr als in der Allgemeinbevölkerung.</p>
+              <p>Substanzkonsum ist bei bipolarer Störung keine Ausnahme, sondern eine der häufigsten Begleiterscheinungen. Studien beschreiben deutlich höhere Raten von Substanzgebrauchsstörungen als in der Allgemeinbevölkerung. Für Angehörige wichtiger als eine exakte Zahl ist die Einordnung: Diese Kombination ist häufig, klinisch relevant und erhöht das Krisenrisiko.</p>
 
               <aside className="callout">
                 <span className="callout-label">Faustregel</span>
@@ -407,7 +407,7 @@ function Modul6Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Bei Suizidgedanken</span>
-                <p>Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» Diese Frage löst Suizidgedanken <em>nicht</em> aus. Wenn konkrete Pläne, Mittel oder ein Termin im Raum stehen, ist es eine medizinische Notfallsituation: <strong>tödliche Mittel — Medikamente, Waffen — wenn möglich aus Reichweite bringen, ohne Eskalation</strong>, und gemeinsam zur Notfallaufnahme. Wenn das nicht geht: <strong>144</strong> oder <strong>0800 33 66 55</strong>. Vollständiger Ablauf auf der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
+                <p>Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» Diese Frage löst Suizidgedanken <em>nicht</em> aus. Wenn konkrete Pläne, Mittel oder ein Termin im Raum stehen, ist es eine medizinische Notfallsituation: <strong>tödliche Mittel — Medikamente, Waffen — wenn möglich aus Reichweite bringen, ohne Eskalation</strong>, und gemeinsam zur Notfallaufnahme. Wenn das nicht möglich ist oder unmittelbare Gefahr besteht: <strong>144</strong>. Wenn Sie dringend medizinische Einschätzung brauchen, die Lage aber nicht unmittelbar lebensbedrohlich ist: <strong>0800 33 66 55</strong>. Vollständiger Ablauf auf der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
               </aside>
 
               <blockquote className="module-quote">
@@ -447,7 +447,7 @@ function Modul6Page({ onNavigate }) {
 
             <section id="s7">
               <h2>«Sie hat die Medikamente abgesetzt» — was Sie tun können</h2>
-              <p>Kaum eine Situation löst bei Angehörigen so viel Angst aus wie das Absetzen der Medikamente. Die Sorge ist berechtigt: Ohne Stimmungsstabilisierung steigt das Rückfallrisiko deutlich. Gleichzeitig ist Medikamenten-Adhärenz bei bipolarer Störung eine der grössten Herausforderungen — <strong>bis zu 50 % der Betroffenen setzen die Medikation mindestens einmal eigenmächtig ab</strong>.</p>
+              <p>Kaum eine Situation löst bei Angehörigen so viel Angst aus wie das Absetzen der Medikamente. Die Sorge ist berechtigt: Ohne Stimmungsstabilisierung steigt das Rückfallrisiko deutlich. Gleichzeitig ist Medikamenten-Adhärenz bei bipolarer Störung eine der grössten Herausforderungen — viele Betroffene setzen die Medikation im Verlauf mindestens einmal eigenmächtig ab.</p>
 
               <h3>Warum Menschen absetzen — verstehen, nicht billigen</h3>
               <p>Die Gründe sind oft nachvollziehbar: Nebenwirkungen wie Gewichtszunahme, Tremor oder sexuelle Funktionsstörungen belasten den Alltag. In stabilen Phasen fühlen sich viele «gesund» und sehen keinen Grund mehr für Medikamente. In hypomanen Phasen fühlt sich die Erkrankung nach Kraft an, nicht nach Krankheit. Manchmal spielen auch Scham, Autonomiebedürfnis oder schlechte Erfahrungen eine Rolle.</p>
@@ -499,10 +499,10 @@ function Modul6Page({ onNavigate }) {
 
               <h3>Dauer — womit Sie rechnen können</h3>
               <ul>
-                <li><strong>Akute Manie:</strong> Häufig 2–6 Wochen. Schwere manische Episoden mit Psychose können länger dauern.</li>
-                <li><strong>Schwere Depression:</strong> Oft 3–8 Wochen. Antidepressive Wirkung braucht Zeit.</li>
+                <li><strong>Akute Manie:</strong> Oft Tage bis mehrere Wochen. Schwere manische Episoden mit Psychose oder anhaltender Schlaflosigkeit können länger dauern.</li>
+                <li><strong>Schwere Depression:</strong> Häufig mehrere Wochen. Die Erholung verläuft oft langsamer, als Angehörige es sich wünschen.</li>
                 <li><strong>Mischzustände oder Rapid Cycling:</strong> Schwerer vorhersehbar.</li>
-                <li><strong>FU:</strong> Maximal 6 Wochen ohne richterliche Überprüfung. Viele FU-Aufenthalte enden früher, wenn die akute Gefährdung abklingt.</li>
+                <li><strong>Ärztlich angeordnete FU im Kanton Zürich:</strong> Sie ist in der Regel auf höchstens sechs Wochen befristet. Wenn eine längere Unterbringung nötig bleibt, braucht es rechtzeitig einen Entscheid der KESB.</li>
               </ul>
 
               <h3>Besuch — Ihre Rolle auf der Station</h3>

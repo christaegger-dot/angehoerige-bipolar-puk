@@ -33,10 +33,11 @@ function DatenschutzPage() {
             <h3>Server-Logs des Hosters</h3>
             <p>
               Die Lese-Begleitung wird bei <strong>Netlify, Inc.</strong> (USA) gehostet. Beim Aufruf der Seite
-              werden vom Hoster technisch notwendige Verbindungsdaten verarbeitet: anonymisierte IP-Adresse,
-              Zeitpunkt des Zugriffs, abgerufene Ressource, übermittelter Statuscode, übertragene Datenmenge,
-              Browser-Kennung. Diese Daten dienen ausschliesslich dem sicheren Betrieb der Seite und werden
-              nicht mit anderen Quellen zusammengeführt.
+              werden vom Hoster technisch notwendige Verbindungs- und Logdaten verarbeitet: IP-Adresse bzw.
+              Client-IP, Zeitpunkt des Zugriffs, abgerufene Ressource, übermittelter Statuscode, übertragene
+              Datenmenge und Browser-Kennung. Diese Daten dienen dem sicheren Betrieb, der Auslieferung und der
+              Fehleranalyse der Seite. Wir setzen selbst keine Analytics- oder Tracking-Tools ein und führen
+              diese Logdaten nicht mit Werkzeug-Eingaben zusammen.
             </p>
             <p>
               Da Netlify in den USA sitzt, findet eine Übermittlung in einen Drittstaat statt. Netlify ist nach
@@ -46,12 +47,19 @@ function DatenschutzPage() {
 
             <h3>Daten in den Werkzeugen</h3>
             <p>
-              Die interaktiven Werkzeuge (Krisenplan, Selbsttest, Säulen-Check, Kommunikations-Trainer u. a.) speichern Ihre
-              Eingaben ausschliesslich <strong>lokal in Ihrem Browser</strong> (Local&nbsp;Storage). Diese Daten
-              werden zu keinem Zeitpunkt an unsere Server, an die PUK oder an Dritte übermittelt. Sie können
-              die Daten jederzeit löschen — entweder über die jeweilige Werkzeug-Funktion oder über die
-              Browser-Einstellungen. Wenn Sie ein gemeinsam genutztes Gerät verwenden, setzen Sie das jeweilige
-              Werkzeug nach der Nutzung zurück oder löschen Sie die Browser-Daten.
+              Die interaktiven Werkzeuge arbeiten bewusst <strong>lokal in Ihrem Browser</strong>. Freitext-Entwürfe
+              wie Krisenplan oder Kommunikations-Trainer werden standardmässig nur für die aktuelle Browser-Sitzung
+              gespeichert (<code>sessionStorage</code>). Wenn Sie die Option «Auf diesem Gerät dauerhaft behalten»
+              aktivieren, werden diese Entwürfe im <code>localStorage</code> dieses Geräts gespeichert. Andere
+              Werkzeuge wie Selbsttest, Säulen-Check oder Phasenverlauf werten Ihre Eingaben direkt im Browser aus.
+              Diese Daten werden zu keinem Zeitpunkt an unsere Server, an die PUK oder an Dritte übermittelt.
+            </p>
+            <p>
+              Sie können lokale Entwürfe jederzeit über die jeweilige Werkzeug-Funktion oder über die
+              Browser-Einstellungen löschen. Wenn Sie Inhalte kopieren, drucken oder als PDF speichern, entstehen
+              zusätzliche lokale Spuren auf Ihrem Gerät (z. B. Zwischenablage, PDF-Datei, Druckverlauf). Wenn Sie
+              ein gemeinsam genutztes Gerät verwenden, setzen Sie das jeweilige Werkzeug nach der Nutzung zurück
+              oder löschen Sie die Browser-Daten.
             </p>
 
             <h3>Auffindbarkeit über Suchmaschinen</h3>
@@ -69,8 +77,9 @@ function DatenschutzPage() {
 
             <h3>Was wir nicht tun</h3>
             <ul style={{ marginTop: 8 }}>
-              <li>Keine Cookies (ausser technisch notwendiger Local-Storage-Speicherung Ihrer eigenen Werkzeug-Eingaben).</li>
-              <li>Kein Tracking, keine Analytics, keine Werbung, keine Social-Media-Plugins.</li>
+              <li>Keine Tracking-Cookies, keine Werbe-Cookies und keine Analytics.</li>
+              <li>Keine Übermittlung Ihrer Werkzeug-Eingaben an Server der PUK oder an Dritte.</li>
+              <li>Keine Werbung und keine Social-Media-Plugins.</li>
               <li>Keine Profilbildung, kein Verkauf von Daten, keine Weitergabe an Dritte.</li>
             </ul>
 

@@ -153,6 +153,11 @@ function Modul1Page({ onNavigate }) {
               <h2>Bipolar ist mehr als Hoch und Tief</h2>
               <p>Das gängige Bild ist zu simpel: oben Manie, unten Depression, dazwischen Normalität. In der Realität sind Verläufe oft unruhiger. Es gibt klare Episoden, schleichende Übergänge, gemischte Zustände, scheinbar gute Phasen mit Kipprisiko und stabile Zeiten, die sich für Angehörige trotzdem nicht wirklich sicher anfühlen.</p>
               <p>Stabile Phasen sind wichtig, aber nicht automatisch entlastend. Viele Angehörige kommen innerlich erst verzögert aus der Alarmbereitschaft heraus. Manchmal bleibt auch zwischen Episoden eine Restanspannung: auf Seiten der erkrankten Person, aber auch bei Ihnen.</p>
+
+              <aside className="callout callout-soft">
+                <span className="callout-label">Zur Einordnung</span>
+                <p>Diese Beschreibungen orientieren sich an den gebräuchlichen Diagnose-Systemen ICD-11 und DSM-5-TR, sind hier aber bewusst in Alltagssprache übersetzt. Eine Diagnose stellt immer eine Fachperson. Angehörige beobachten Muster, Veränderungen und Verläufe — nicht Diagnosen.</p>
+              </aside>
             </section>
 
             <section id="s4">
@@ -175,7 +180,7 @@ function Modul1Page({ onNavigate }) {
               <p>Stabile Phasen sind wichtig für Planung, Gespräche und Erholung. Sie können echte Entlastung und neue Absprachen ermöglichen. Gleichzeitig sind sie nicht automatisch unbelastet: Viele Angehörige prüfen in dieser Zeit innerlich weiter, ob das wirklich Ruhe ist — oder nur die Vorstufe zur nächsten Welle.</p>
 
               <h3>Depression</h3>
-              <p>Nicht nur Traurigkeit, sondern Leere, Verlangsamung und oft lange Hilflosigkeit auf beiden Seiten.</p>
+              <p>Nicht nur Traurigkeit, sondern Leere, Verlangsamung und oft lange Hilflosigkeit auf beiden Seiten. Eine bipolare Depression kann nach aussen wie eine «gewöhnliche» Depression wirken; der Unterschied zeigt sich oft erst im Gesamtverlauf mit Hochphasen, Mischzuständen oder kippriger Aktivierung.</p>
               <p><strong>Tiefe Traurigkeit und Antriebslosigkeit.</strong> Gefühl der Leere, Hoffnungslosigkeit, bleierne Müdigkeit. <em>«Nichts, was ich sage oder tue, hilft — ich fühle mich machtlos.»</em></p>
               <p><strong>Sozialer Rückzug.</strong> Isolation, kein Interesse an Hobbys oder Kontakten. <em>«Wir sehen keine Freunde mehr — ich vereinsame mit.»</em></p>
               <p><strong>Gedankenkreisen.</strong> Konzentrationsstörungen, Schuldgefühle, manchmal Suizidgedanken. <em>«Die Angst, dass er sich etwas antut, lässt mich nicht schlafen.»</em></p>
@@ -203,6 +208,9 @@ function Modul1Page({ onNavigate }) {
                 <span className="callout-label">Warum der Unterschied wichtig ist</span>
                 <p>Bei Bipolar II fühlen sich Angehörige besonders oft nicht ernst genommen. Das Umfeld sagt «So schlimm ist das doch nicht» — weil niemand die Hypomanie als Problem erkennt. Sichtbare Krise und schleichende Zermürbung sind unterschiedliche Belastungen — beide sind real.</p>
               </aside>
+
+              <h3>Zyklothymie und unscharfe Verläufe</h3>
+              <p>Nicht jeder Verlauf passt sauber in Bipolar I oder Bipolar II. Bei einer Zyklothymie wechseln sich über längere Zeit mildere Hochs und Tiefs ab, die trotzdem Beziehungen und Alltag belasten können. Für Angehörige ist wichtig: Auch weniger spektakuläre oder schwer greifbare Verläufe dürfen ernst genommen und fachlich abgeklärt werden.</p>
 
               <blockquote className="module-quote">
                 <p>«Letzte Woche hat er das ganze Wochenende durchgearbeitet, drei neue Projekte gestartet und war euphorisch. Alle fanden ihn grossartig. Ich war die Einzige, die wusste: Das ist keine gute Phase. Das ist der Anfang.»</p>

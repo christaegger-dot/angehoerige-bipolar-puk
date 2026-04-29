@@ -357,7 +357,7 @@ function Modul4Page({ onNavigate }) {
               </aside>
 
               <h3>Genetisches Risiko bei Kindern</h3>
-              <p>Ja, die Genetik spielt eine Rolle. Die Heritabilität liegt bei 60–85% (Craddock &amp; Sklar, 2013). Aber: Ein erhöhtes Risiko ist keine Gewissheit. Die meisten Kinder betroffener Eltern entwickeln keine bipolare Störung. Aufmerksam sein reicht — bei Schlafveränderungen, extremen Stimmungsschwankungen in der Pubertät oder anhaltendem Rückzug. Aufklärung schützt; Schweigen macht Kindern mehr Angst als Ehrlichkeit.</p>
+              <p>Ja, die Genetik spielt eine Rolle. Familien- und Zwillingsstudien zeigen ein deutlich erhöhtes familiäres Risiko. Aber: Ein erhöhtes Risiko ist keine Gewissheit. Die meisten Kinder betroffener Eltern entwickeln keine bipolare Störung. Aufmerksam sein reicht — bei Schlafveränderungen, extremen Stimmungsschwankungen in der Pubertät oder anhaltendem Rückzug. Aufklärung schützt; Schweigen macht Kindern mehr Angst als Ehrlichkeit.</p>
             </section>
 
             <section id="s7">

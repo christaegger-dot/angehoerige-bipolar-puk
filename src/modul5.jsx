@@ -266,7 +266,7 @@ function Modul5Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Warum das lohnt</span>
-                <p>In einer Meta-Analyse war hohes EE-Niveau in Familien mit dem 2- bis 3-fachen Rückfallrisiko der erkrankten Person assoziiert (Butzlaff &amp; Hooley, 1998). Das heisst <strong>nicht</strong>, dass Angehörige Rückfälle verursachen. Es heisst: Ein entlastenderes familiäres Klima kann für beide Seiten spürbar helfen. EE lässt sich verändern — nicht durch Schuld, sondern durch Bewusstwerdung, Entlastung und konkrete Strategien.</p>
+                <p>Meta-Analysen beschreiben bei hohem EE-Niveau ein deutlich erhöhtes Rückfallrisiko der erkrankten Person. Das heisst <strong>nicht</strong>, dass Angehörige Rückfälle verursachen. Es heisst: Ein entlastenderes familiäres Klima kann für beide Seiten spürbar helfen. EE lässt sich verändern — nicht durch Schuld, sondern durch Bewusstwerdung, Entlastung und konkrete Strategien.</p>
               </aside>
             </section>
 
@@ -327,12 +327,12 @@ function Modul5Page({ onNavigate }) {
 
             <section id="s8">
               <h2>Gehen, Bleiben, Abstand, Neuordnung</h2>
-              <p>Viele Angehörige kennen den Wunsch, einfach weg zu sein. Nicht da zu sein. Nicht mehr zuständig zu sein. Über 60 % berichten von Phasen, in denen sie an Trennung oder Rückzug gedacht haben (Perlick et al., 2007). <strong>Dieser Wunsch ist ein Signal — kein Versagen.</strong> Er sagt: «Ich bin am Limit.»</p>
+              <p>Viele Angehörige kennen den Wunsch, einfach weg zu sein. Nicht da zu sein. Nicht mehr zuständig zu sein. In Befragungen berichten viele von Phasen, in denen sie an Trennung oder Rückzug gedacht haben. <strong>Dieser Wunsch ist ein Signal — kein Versagen.</strong> Er sagt: «Ich bin am Limit.»</p>
               <p>Die Frage, die daraus folgt, ist eine der schwersten: Gehen oder Bleiben? Oft ist aber schon die Frage selbst zu eng. Manche brauchen zunächst Abstand, eine Neuordnung von Zuständigkeiten, eine klare Sicherheitsgrenze oder eine befristete Entlastung. Nicht die Entscheidung allein ist das Lähmende — sondern das dauerhafte Pendeln ohne Klarheit.</p>
 
               <aside className="callout">
                 <span className="callout-label">Zur Einordnung</span>
-                <p>2- bis 3-mal höhere Trennungsrate bei bipolarer Störung im Vergleich zur Allgemeinbevölkerung (Kessler et al., 1998). Das ist Ausdruck der strukturellen Belastung, nicht einer schwachen Beziehung.</p>
+                <p>Ältere Bevölkerungsstudien beschreiben bei bipolarer Störung erhöhte Trennungsraten im Vergleich zur Allgemeinbevölkerung. Solche Zahlen sagen nichts über Ihre einzelne Beziehung aus, zeigen aber, wie gross die strukturelle Belastung sein kann.</p>
               </aside>
 
               <h3>Drei Bewegungen, je nach Lage</h3>
