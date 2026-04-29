@@ -25,7 +25,7 @@ function Nav({ page, onNavigate }) {
         <div className="nav-links">
           <a href={navHref('module')} className={page === 'module' ? 'active' : ''} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')} aria-current={page === 'module' ? 'page' : undefined}>Module</a>
           <a href={navHref('werkzeuge')} className={page === 'werkzeuge' ? 'active' : ''} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')} aria-current={page === 'werkzeuge' ? 'page' : undefined}>Werkzeuge</a>
-          <a href={navHref('unterstuetzung')} className={page === 'unterstuetzung' ? 'active' : ''} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')} aria-current={page === 'unterstuetzung' ? 'page' : undefined}>Unterstützung</a>
+          <a href={navHref('unterstuetzung')} className={page === 'unterstuetzung' ? 'active' : ''} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')} aria-current={page === 'unterstuetzung' ? 'page' : undefined}>Unterstützung und Ressourcen</a>
           <a href={navHref('notfall')} className="nav-sos" onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>SOS Krise</a>
         </div>
       </div>

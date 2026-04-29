@@ -13,9 +13,9 @@ describe('WerkzeugePage', () => {
     const toolButton = screen.getByRole('button', { name: /Belastungs-Selbsttest/i });
     expect(toolButton).toHaveAttribute('aria-haspopup', 'dialog');
 
-    await user.click(screen.getByRole('button', { name: /Krisenplan-Werkzeug/i }));
+    await user.click(screen.getByRole('button', { name: /Krisenplan/i }));
 
-    expect(await screen.findByRole('dialog', { name: 'Krisenplan-Werkzeug' })).toBeInTheDocument();
+    expect(await screen.findByRole('dialog', { name: 'Krisenplan' })).toBeInTheDocument();
   });
 
   it('uses canonical hrefs for cross-page support links', () => {
@@ -96,7 +96,7 @@ describe('tool regressions', () => {
     fireEvent.keyDown(secondEpisode, { key: 'Enter' });
     expect(screen.getByRole('heading', { level: 3, name: /wiederkehr/i })).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: /anlaufstellen ansehen/i }));
+    fireEvent.click(screen.getByRole('button', { name: /unterstützung und ressourcen/i }));
     expect(onNavigate).toHaveBeenCalledWith('unterstuetzung');
     expect(onClose).toHaveBeenCalled();
   });

@@ -365,8 +365,8 @@ function Modul3Page({ onNavigate }) {
                 <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                   <span className="next-module-num">W</span>
                   <div>
-                    <h3>Werkzeuge — Schwierige Gespräche</h3>
-                    <p>Eine Vorlage für das Gespräch nach einer Episode. Schritt für Schritt, mit Beispielsätzen.</p>
+                    <h3>Werkzeug — Kommunikations-Trainer</h3>
+                    <p>Vier Schritte für schwierige Gespräche nach einer Episode — mit Beispielsätzen und klarer Struktur.</p>
                   </div>
                 </a>
               </div>

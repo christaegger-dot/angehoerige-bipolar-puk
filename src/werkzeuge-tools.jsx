@@ -178,7 +178,7 @@ const SELBSTTEST_ZONEN = {
     sub: 'Ihre Belastung ist deutlich.',
     body: 'Sie sind nicht «zu empfindlich». Modul 4 beschreibt, wie sich Erschöpfung über Zeit aufbaut und was helfen kann, wenn Sie an der Grenze sind. Eine kleine Entlastung jetzt verhindert oft eine grössere Krise später.',
     primary: { text: 'Modul 4 — Wenn die Kraft nachlässt', target: 'modul4', anchor: 's2' }, // Reservoir
-    secondary: { text: 'Anlaufstellen ansehen', target: 'unterstuetzung' },
+    secondary: { text: 'Unterstützung und Ressourcen', target: 'unterstuetzung' },
   },
   notlage: {
     label: 'Notlage',
@@ -212,7 +212,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
 
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Belastungs-Selbsttest" cardClass="selbsttest-card">
-      <span className="kicker">Werkzeug · Selbsttest</span>
+      <span className="kicker">Werkzeug · Belastungs-Selbsttest</span>
 
         {phase === 'intro' && (
           <>
@@ -396,10 +396,10 @@ function KrisenplanTool({ onClose, onNavigate }) {
     : null;
 
   return (
-    <ToolOverlay onClose={onClose} ariaLabel="Krisenplan-Werkzeug" overlayClass="krisenplan-overlay" cardClass="krisenplan-card" noPrint={true}>
+    <ToolOverlay onClose={onClose} ariaLabel="Krisenplan" overlayClass="krisenplan-overlay" cardClass="krisenplan-card" noPrint={true}>
         <header className="krisenplan-head">
           <span className="kicker">Werkzeug · Krisenplan</span>
-          <h2>Mein Krisenplan</h2>
+          <h2>Krisenplan</h2>
           <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln. Standardmässig bleibt der Entwurf nur bis zum Schliessen dieses Tabs erhalten und wird nicht versendet. Wenn Sie drucken oder als PDF speichern, entstehen zusätzliche Kopien auf Ihrem Gerät. Auf gemeinsam genutzten Geräten können Sie den Entwurf unten zusätzlich dauerhaft löschen.</p>
           {lastUpdate && (
             <p className="krisenplan-meta">Zuletzt bearbeitet: {lastUpdate}</p>
@@ -614,7 +614,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
 
         {phase === 'intro' && (
           <>
-            <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Welche Stütze trägt — und welche ist dünn?</h2>
+            <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Säulen-Check</h2>
             <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu vier Bereichen, die Angehörige langfristig tragen: Körper, Beziehungen, eigene Welt, fachlicher Halt. Sie sehen am Ende, wo die Architektur gerade hält und wo eine Stütze nachgezogen werden müsste.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Etwa drei Minuten. Anonym, im Browser. Keine Diagnose und nicht für akute Krisen gedacht — nur eine Standortbestimmung. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
             <div style={{ marginTop: 24 }}>
@@ -684,7 +684,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
                 Modul 7 — Langfristige Tragfähigkeit →
               </button>
               <button className="selbsttest-secondary" onClick={() => { onNavigate('unterstuetzung'); onClose(); }}>
-                Anlaufstellen ansehen →
+                Unterstützung und Ressourcen →
               </button>
             </div>
 
@@ -1037,12 +1037,12 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Kommunikations-Trainer" cardClass="kommunikation-card" noPrint={true}>
-      <span className="kicker">Werkzeug · Kommunikation</span>
+      <span className="kicker">Werkzeug · Kommunikations-Trainer</span>
 
         {step === 'intro' && (
           <>
-            <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Ein Gespräch vorbereiten</h2>
-            <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte. Am Ende haben Sie ein eigenes Skript für ein schwieriges Gespräch — in Ihren Worten, in einer Form, die nicht eskaliert.</p>
+            <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Kommunikations-Trainer</h2>
+            <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte für ein schwieriges Gespräch. Am Ende haben Sie ein eigenes Skript — in Ihren Worten, in einer Form, die nicht eskaliert.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren. Dieses Werkzeug ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung. Standardmässig bleibt Ihr Entwurf nur bis zum Schliessen dieses Tabs erhalten. Wenn Sie das Skript kopieren, liegt es zusätzlich in der Zwischenablage Ihres Geräts. Auf gemeinsam genutzten Geräten können Sie den Entwurf jederzeit zurücksetzen.</p>
             <label className="storage-toggle">
               <input type="checkbox" checked={remember} onChange={toggleRemember} />
@@ -1586,7 +1586,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
             Modul 4 — Wenn die Kraft nachlässt →
           </button>
           <button className="selbsttest-secondary" onClick={() => { onNavigate('unterstuetzung'); onClose(); }}>
-            Anlaufstellen ansehen →
+            Unterstützung und Ressourcen →
           </button>
         </div>
     </ToolOverlay>

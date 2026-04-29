@@ -545,14 +545,14 @@ function HandoutOverlay({ id, onClose }) {
 // Material-Karten — Reihenfolge bestimmt das Grid.
 // kind: 'handout' rendert HandoutOverlay, 'tool' öffnet das interaktive Werkzeug.
 const MATERIAL_CARDS = [
-  { id: 'DL-01', kind: 'handout', title: 'Erste Orientierung als Angehörige*r', desc: 'Was diese Erkrankung bedeutet, was Sie als Angehörige*r dürfen und nicht müssen.' },
-  { id: 'DL-02', kind: 'handout', title: 'Notfallkarte fürs Portemonnaie', desc: 'Wichtige Nummern und persönliche Angaben — zum Drucken, Ausfüllen, Falten und Einstecken.' },
-  { id: 'DL-04', kind: 'handout', title: 'Umgang mit Suizidgedanken', desc: 'Anleitung für das direkte Gespräch und Schritte bei akuter Gefährdung.' },
-  { id: 'DL-05', kind: 'handout', title: 'Umgang mit Psychose / Wahn', desc: 'Was Sie sagen können, was Sie nicht sagen sollten, wann professionelle Hilfe nötig ist.' },
-  { id: 'DL-06', kind: 'handout', title: 'Umgang mit Manie', desc: 'Frühwarnzeichen, Kommunikation, Schutzmassnahmen und Notfallweg.' },
-  { id: 'DL-07', kind: 'handout', title: 'Umgang mit Depression', desc: 'Anwesenheit statt Argumente. Wie Sie tragen, ohne sich aufzulösen.' },
-  { id: 'DL-08', kind: 'handout', title: 'Fragen für das Arztgespräch', desc: 'Vorbereitete Fragen für Hausärztin, Psychiaterin oder Klinikpersonal — strukturiert nach Thema.' },
-  { id: 'DL-09', kind: 'tool', tool: 'krisenplan', title: 'Krisenplan-Vorlage zum Ausfüllen', desc: 'Strukturierte Vorlage für Frühwarnzeichen, Kontakte und Klinikwünsche.' },
+  { id: 'DL-01', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Erste Orientierung als Angehörige*r', desc: 'Was diese Erkrankung bedeutet, was Sie als Angehörige*r dürfen und nicht müssen.' },
+  { id: 'DL-02', kind: 'handout', metaLabel: 'NOTFALLKARTE', title: 'Notfallkarte fürs Portemonnaie', desc: 'Wichtige Nummern und persönliche Angaben — zum Drucken, Ausfüllen, Falten und Einstecken.' },
+  { id: 'DL-04', kind: 'handout', metaLabel: 'GESPRÄCHSHILFE', title: 'Umgang mit Suizidgedanken', desc: 'Anleitung für das direkte Gespräch und Schritte bei akuter Gefährdung.' },
+  { id: 'DL-05', kind: 'handout', metaLabel: 'GESPRÄCHSHILFE', title: 'Umgang mit Psychose / Wahn', desc: 'Was Sie sagen können, was Sie nicht sagen sollten, wann professionelle Hilfe nötig ist.' },
+  { id: 'DL-06', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Manie', desc: 'Frühwarnzeichen, Kommunikation, Schutzmassnahmen und Notfallweg.' },
+  { id: 'DL-07', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Depression', desc: 'Anwesenheit statt Argumente. Wie Sie tragen, ohne sich aufzulösen.' },
+  { id: 'DL-08', kind: 'handout', metaLabel: 'CHECKLISTE', title: 'Fragen für das Arztgespräch', desc: 'Vorbereitete Fragen für Hausärztin, Psychiaterin oder Klinikpersonal — strukturiert nach Thema.' },
+  { id: 'DL-09', kind: 'tool', tool: 'krisenplan', metaLabel: 'VORLAGE', cta: '↪ Krisenplan öffnen', title: 'Krisenplan', desc: 'Interaktive Vorlage für Frühwarnzeichen, Kontakte und Klinikwünsche.' },
 ];
 
 const KIND_META = {
@@ -668,12 +668,12 @@ function UnterstuetzungPage({ onNavigate }) {
                 >
                   <div className="download-meta">
                     <span className="mono">{d.id} · core_v01 · 2026-04-25</span>
-                    <span className="download-pdf-label">{meta.label}</span>
+                    <span className="download-pdf-label">{d.metaLabel || meta.label}</span>
                   </div>
                   <h3>{d.title}</h3>
                   <p>{d.desc}</p>
                   <div className="download-actions">
-                    <span className="btn-arrow">{meta.cta}</span>
+                    <span className="btn-arrow">{d.cta || meta.cta}</span>
                   </div>
                 </button>
               );

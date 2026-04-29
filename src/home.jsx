@@ -86,7 +86,7 @@ function HomePage({ onNavigate }) {
                 <p>{ANLAUFSTELLEN_ENTRY.desc}</p>
                 <div className="module-meta">
                   <span>⏱ {ANLAUFSTELLEN_ENTRY.time}</span>
-                  <span>· Hilfe, Material &amp; Kontakt →</span>
+                  <span>· Hilfe, Material und Kontakt →</span>
                 </div>
               </div>
               <div className="module-row-arrow" aria-hidden="true">→</div>
