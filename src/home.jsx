@@ -1,11 +1,9 @@
-// Home — editorial single column, one triage flow, modules as nummerierte Liste
+// Home — editorial single column, one triage flow, clear entry paths
 
 import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
-import { ANLAUFSTELLEN_ENTRY, MODULES, TOOLS } from './site-content.js';
+import { ANLAUFSTELLEN_ENTRY, TOOLS } from './site-content.js';
 import { TriageFlow } from './triage-flow.jsx';
-const AnlaufstellenIllu = Ill[ANLAUFSTELLEN_ENTRY.illu];
-
 
 function HomePage({ onNavigate }) {
   return (
@@ -47,43 +45,51 @@ function HomePage({ onNavigate }) {
         </div>
       </section>
 
-      {/* MODULES — nummerierte Liste */}
+      {/* ENTRY PATHS */}
       <section>
         <div className="col-wide">
-          <span className="kicker">Sieben Module + Anlaufstellen</span>
-          <h2 style={{ maxWidth: '20ch', marginBottom: 8, fontStyle: 'italic' }}>Wählen Sie, was zu Ihrer Lage passt.</h2>
-          <p style={{ color: 'var(--ink-soft)', maxWidth: '50ch', marginBottom: 32 }}>Jedes Modul lässt sich einzeln lesen — Sie müssen nicht bei Modul 1 anfangen.</p>
+          <span className="kicker">Drei Wege zum Einstieg</span>
+          <h2 style={{ maxWidth: '20ch', marginBottom: 8, fontStyle: 'italic' }}>Wählen Sie den Zugang, der gerade passt.</h2>
+          <p style={{ color: 'var(--ink-soft)', maxWidth: '52ch', marginBottom: 32 }}>Die Startseite hilft beim Sortieren. Den vollständigen Lernpfad mit allen sieben Modulen finden Sie gesammelt unter <a className="link-underline" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>Module</a>.</p>
           <div className="module-list">
-            {MODULES.map((m) => {
-              const Illu = Ill[m.illu];
-              return (
-                <a key={m.num} className="module-row" href={navHref('modul' + m.num)} onClick={navHandler('modul' + m.num, onNavigate)} {...navPreloadProps('modul' + m.num)}>
-                  <div className="module-num">{m.num.toString().padStart(2, '0')}</div>
-                  <div className="module-content">
-                    <h3>{m.title}</h3>
-                    <p>{m.desc}</p>
-                    <div className="module-meta">
-                      <span>⏱ {m.time}</span>
-                      <span>·</span>
-                      <span>Lesen →</span>
-                    </div>
-                  </div>
-                  <div className="module-illu">{Illu && <Illu size={84} />}</div>
-                </a>);
-
-            })}
+            <a className="module-row" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>
+              <div className="module-num">M</div>
+              <div className="module-content">
+                <div className="module-row-numlabel">Lernpfad</div>
+                <h3>Alle sieben Module im Überblick</h3>
+                <p>Wenn Sie systematisch lesen oder gezielt ein Thema auswählen möchten.</p>
+                <div className="module-meta">
+                  <span>Sieben Module</span>
+                  <span>· Lernpfad öffnen →</span>
+                </div>
+              </div>
+              <div className="module-row-arrow" aria-hidden="true">→</div>
+            </a>
+            <a className="module-row" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')}>
+              <div className="module-num">W</div>
+              <div className="module-content">
+                <div className="module-row-numlabel">Direkt nutzen</div>
+                <h3>Werkzeuge und Vorlagen</h3>
+                <p>Wenn Sie lieber reflektieren, planen oder ein Gespräch vorbereiten möchten.</p>
+                <div className="module-meta">
+                  <span>Neun Werkzeuge</span>
+                  <span>· Werkzeuge öffnen →</span>
+                </div>
+              </div>
+              <div className="module-row-arrow" aria-hidden="true">→</div>
+            </a>
             <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>
               <div className="module-num module-num-resource">→</div>
               <div className="module-content">
+                <div className="module-row-numlabel">Hilfe finden</div>
                 <h3>{ANLAUFSTELLEN_ENTRY.title}</h3>
                 <p>{ANLAUFSTELLEN_ENTRY.desc}</p>
                 <div className="module-meta">
                   <span>⏱ {ANLAUFSTELLEN_ENTRY.time}</span>
-                  <span>·</span>
-                  <span>Anlaufstellen &amp; Material →</span>
+                  <span>· Hilfe, Material &amp; Kontakt →</span>
                 </div>
               </div>
-              <div className="module-illu">{AnlaufstellenIllu && <AnlaufstellenIllu size={84} />}</div>
+              <div className="module-row-arrow" aria-hidden="true">→</div>
             </a>
           </div>
         </div>

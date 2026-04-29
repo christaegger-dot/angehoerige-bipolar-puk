@@ -191,11 +191,11 @@ function Modul7Page({ onNavigate }) {
   }, []);
 
   const sections = [
-    { id: 's1', label: 'Wie die lange Strecke trägt' },
-    { id: 's2', label: 'Der Tag danach' },
+    { id: 's1', label: 'Die lange Strecke' },
+    { id: 's2', label: 'Nach der Krise' },
     { id: 's3', label: 'Selbstfürsorge als Schutz' },
     { id: 's4', label: 'Was langfristig trägt' },
-    { id: 's5', label: 'Die eigene Welt zurückholen' },
+    { id: 's5', label: 'Eigene Welt zurückholen' },
     { id: 's6', label: 'Trialog & Zusammenarbeit' },
     { id: 's7', label: 'Was Zeit anders macht' },
     { id: 's8', label: 'Wachstum & Rückfall' },
@@ -226,7 +226,7 @@ function Modul7Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 12–14 Minuten · 9 Abschnitte</span>
             </div>
             <h1>Langfristige <em>Tragfähigkeit</em></h1>
-            <p className="lede">Nach einer Krise kommt eine eigene Phase mit Erschöpfung, Wut und Erleichterung gleichzeitig. Tragfähigkeit entsteht durch Routinen, nicht durch Perfektion. Selbstfürsorge ist kein Luxus, sondern schützt vor Auszehrung.</p>
+            <p className="lede">Nach einer Krise kommt eine eigene Phase mit Erschöpfung, Wut und Erleichterung gleichzeitig. Dieses Modul geht nicht zurück in Akuthilfe oder Grenzfragen, sondern in die lange Strecke: Wie Tragfähigkeit, eigene Welt und etwas mehr Boden über Zeit wieder aufgebaut werden.</p>
           </div>
         </header>
 
@@ -451,8 +451,8 @@ function Modul7Page({ onNavigate }) {
                 <a className="next-module" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
                   <span className="next-module-num next-module-num-resource">→</span>
                   <div>
-                    <h3>Anlaufstellen — Unterstützung und Ressourcen</h3>
-                    <p>Anlaufstellen nach Situation, Materialien und konkrete nächste Schritte.</p>
+                    <h3>Unterstützung und Ressourcen</h3>
+                    <p>Wenn Sie jetzt vor allem Hilfe, Material, Kontakt oder eine konkrete nächste Adresse brauchen.</p>
                   </div>
                 </a>
                 <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
@@ -476,7 +476,7 @@ function Modul7Page({ onNavigate }) {
                   ← Modul 06 — Was Sie konkret tun können
                 </a>
                 <a className="module-nav-btn module-nav-next" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
-                  Anlaufstellen — Unterstützung und Ressourcen →
+                  Unterstützung und Ressourcen →
                 </a>
               </div>
             </footer>

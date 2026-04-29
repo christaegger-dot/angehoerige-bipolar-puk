@@ -1,4 +1,4 @@
-// Anlaufstellen — Beratung, Materialien, Handouts (Schnellstart, kein Lesemodul).
+// Unterstützung und Ressourcen — Beratung, Materialien, Handouts und Kontakt als Hub.
 
 import React from 'react';
 import { ToolOverlay } from './tool-overlay.jsx';
@@ -589,9 +589,9 @@ function UnterstuetzungPage({ onNavigate }) {
     <>
       <header className="about-hero">
         <div className="container">
-          <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Anlaufstellen · Schnellstart</div>
-          <h1 className="animate-in delay-1" style={{ maxWidth: '22ch' }}>Unterstützung und Ressourcen — Orientierung nach Situation.</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Anlaufstellen, Materialien und konkrete nächste Schritte. Wählen Sie den Eingang, der Ihrer Lage gerade am ehesten entspricht.</p>
+          <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Unterstützung · Orientierung</div>
+          <h1 className="animate-in delay-1" style={{ maxWidth: '22ch' }}>Unterstützung und Ressourcen.</h1>
+          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Diese Seite bündelt vier Dinge: Hilfe finden, Material nutzen, Kontakt aufnehmen und häufige Fragen klären. Wenn Sie gerade überfordert sind, beginnen Sie am besten bei Hilfe oder Direktkontakt.</p>
         </div>
       </header>
 
@@ -599,11 +599,11 @@ function UnterstuetzungPage({ onNavigate }) {
         <div className="container">
           <div className="section-head">
             <div className="label-col">
-              <span className="num">01 / Beratung</span>
-              <span className="eyebrow">Anlaufstellen</span>
+              <span className="num">01 / Hilfe</span>
+              <span className="eyebrow">Beratung finden</span>
             </div>
             <div>
-              <h2>Diese Stellen beraten auch Sie als Angehörige.</h2>
+              <h2>Wenn Sie zuerst Unterstützung brauchen.</h2>
               <p className="lede">Kostenlos und vertraulich. Sie müssen nicht zuerst der erkrankten Person helfen, um Hilfe für sich anzunehmen.</p>
             </div>
           </div>
@@ -647,10 +647,10 @@ function UnterstuetzungPage({ onNavigate }) {
           <div className="section-head">
             <div className="label-col">
               <span className="num">02 / Material</span>
-              <span className="eyebrow">Zum Mitnehmen</span>
+              <span className="eyebrow">Lesen &amp; Drucken</span>
             </div>
             <div>
-              <h2>Materialien zum Lesen und Drucken.</h2>
+              <h2>Wenn Sie etwas Konkretes zum Mitnehmen brauchen.</h2>
               <p className="lede">Kurze Begleitungen — für Sie selbst, für ein Gespräch oder für die nächste Krise. Klick öffnet den Text; «Drucken / als PDF speichern» liefert das druckbare Format.</p>
             </div>
           </div>
@@ -686,11 +686,11 @@ function UnterstuetzungPage({ onNavigate }) {
         <div className="container">
           <div className="section-head">
             <div className="label-col">
-              <span className="num">03 / Direkt</span>
-              <span className="eyebrow">Fachstelle erreichen</span>
+              <span className="num">03 / Kontakt</span>
+              <span className="eyebrow">Direkt zur Fachstelle</span>
             </div>
             <div>
-              <h2>Sie müssen nicht wissen, was Sie sagen wollen.</h2>
+              <h2>Wenn Sie direkt mit der Fachstelle sprechen möchten.</h2>
               <p className="lede">Die Fachstelle Angehörigenarbeit berät auch Sie — nicht nur die erkrankte Person. Auch wenn Sie sich noch nicht sicher sind, ob Sie Hilfe brauchen.</p>
             </div>
           </div>
@@ -724,11 +724,11 @@ function UnterstuetzungPage({ onNavigate }) {
         <div className="container">
           <div className="section-head">
             <div className="label-col">
-              <span className="num">04 / FAQ</span>
-              <span className="eyebrow">Häufige Fragen</span>
+              <span className="num">04 / Fragen</span>
+              <span className="eyebrow">Kurz geklärt</span>
             </div>
             <div>
-              <h2>Was uns Angehörige am häufigsten fragen.</h2>
+              <h2>Was Angehörige uns dazu am häufigsten fragen.</h2>
             </div>
           </div>
           <div className="faq-list">

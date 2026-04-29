@@ -205,14 +205,14 @@ function Modul6Page({ onNavigate }) {
 
   const sections = [
     { id: 's1', label: 'Was zuerst hilft' },
-    { id: 's2', label: 'Vorbereiten · Krisenplan & Co.' },
-    { id: 's3', label: 'Wenn Substanzkonsum mitläuft' },
-    { id: 's4', label: 'Kommunikation in stabiler Phase' },
-    { id: 's5', label: 'Kommunikation akut schwierig' },
-    { id: 's6', label: 'Wenn Einsicht fehlt' },
+    { id: 's2', label: 'Vorbereitung & Absprachen' },
+    { id: 's3', label: 'Spezialfall: Substanzkonsum' },
+    { id: 's4', label: 'Gespräche in stabiler Phase' },
+    { id: 's5', label: 'Akut kommunizieren' },
+    { id: 's8', label: 'Grenzen setzen' },
+    { id: 's6', label: 'Wenn Gespräch nicht mehr reicht' },
     { id: 's7', label: 'Wenn Medikamente abgesetzt werden' },
-    { id: 's8', label: 'Grenzen, die tragen' },
-    { id: 's9', label: 'Wenn es zur Klinik kommt' },
+    { id: 's9', label: 'Klinik & Übergänge' },
     { id: 's10', label: 'Worauf es ankommt' },
   ];
 
@@ -276,7 +276,7 @@ function Modul6Page({ onNavigate }) {
 
               <HandlungsfelderGrid />
 
-              <p>Die Leiter ist kein starres Schema. Sie hilft nur, schneller zu sortieren, ob es im Moment noch um Vorbereitung und Gespräch geht oder ob Schutz und Notfallhandeln Vorrang bekommen.</p>
+              <p>Die Leiter ist kein starres Schema. Sie hilft nur, schneller zu sortieren, ob es im Moment noch um Vorbereitung und Gespräch geht oder ob Schutz und Notfallhandeln Vorrang bekommen. Der Rest dieses Moduls folgt derselben Logik: zuerst vorbereiten, dann Gespräch und Grenzen, dann die Lagen, in denen Behandlungsteam, Klinik oder Notfallpfad wichtiger werden als das bessere Argument.</p>
             </section>
 
             <section id="s2">
@@ -416,9 +416,32 @@ function Modul6Page({ onNavigate }) {
               </blockquote>
             </section>
 
+            <section id="s8">
+              <h2>Grenzen, die tragen statt eskalieren</h2>
+              <p>Bis hierhin ging es um Vorbereitung und Gespräch. Dieser Abschnitt gehört an die Stelle, an der Sprache nicht mehr alles tragen soll, aber noch Beziehung möglich ist: Grenzen markieren Verhalten, benennen Konsequenzen und schützen, ohne unnötig zu eskalieren.</p>
+
+              <h3>Aufbau einer hilfreichen Grenz-Aussage</h3>
+              <p><strong>Ich-Botschaft.</strong> «Ich lasse mich nicht anschreien.» Bezieht sich auf mein Erleben — nicht auf die Person. Kein Vorwurf.</p>
+              <p><strong>Klare Konsequenz.</strong> «Ich gehe ins Nebenzimmer.» Benennt, was passiert — konkret, ohne Drohung oder Ultimatum.</p>
+              <p><strong>Rückkehr-Signal.</strong> «Wenn wir ruhig reden können, komme ich zurück.» Optional — zeigt: Die Grenze schützt die Beziehung, beendet sie nicht.</p>
+
+              <h3>Drei Beispiele</h3>
+              <p>✗ «Du bist unmöglich, wenn du so schreist!»<br/>
+              ✓ <strong>«Ich lasse mich nicht anschreien. Ich gehe ins Nebenzimmer — wenn wir ruhig reden können, komme ich zurück.»</strong></p>
+
+              <p>✗ «Wenn du so weitermachst, gehe ich!»<br/>
+              ✓ <strong>«Wenn du die Medikamente absetzt, kann ich die Verantwortung zu Hause nicht mehr tragen. Dann müssen wir über die Klinik reden.»</strong></p>
+
+              <p>✗ «Hast du deine Medikamente genommen? Schon wieder vergessen?»<br/>
+              ✓ <strong>«Ich mache mir Sorgen, wenn ich sehe, dass die Packung noch voll ist. Was brauchst du, um dran zu bleiben?»</strong></p>
+
+              <h3>Was nicht funktioniert</h3>
+              <AntiPatterns />
+            </section>
+
             <section id="s6">
               <h2>Wenn Krankheitseinsicht fehlt oder Behandlung scheitert</h2>
-              <p>Manche Situationen scheitern nicht an der Kommunikation, sondern daran, dass die erkrankte Person ihre Lage grundlegend anders erlebt. In manischen Phasen fehlt häufig jede Krankheitseinsicht. Fachleute sprechen hier von Anosognosie: Die Person kann die eigene Erkrankung in diesem Moment nicht realistisch erkennen. Das ist kein Unwille und keine Sturheit, sondern ein Symptom.</p>
+              <p>Ab hier geht es um Situationen, in denen Gespräch und klare Grenzen allein oft nicht mehr reichen. Manche Lagen scheitern nicht an der Kommunikation, sondern daran, dass die erkrankte Person ihre Lage grundlegend anders erlebt. In manischen Phasen fehlt häufig jede Krankheitseinsicht. Fachleute sprechen hier von Anosognosie: Die Person kann die eigene Erkrankung in diesem Moment nicht realistisch erkennen. Das ist kein Unwille und keine Sturheit, sondern ein Symptom.</p>
 
               <div className="do-dont">
                 <div className="do-col">
@@ -464,29 +487,6 @@ function Modul6Page({ onNavigate }) {
                 <span className="callout-label">Was Sie vermeiden sollten</span>
                 <p>✗ Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · ✗ Tägliche Kontrollfragen («Hast du deine Tabletten genommen?») — sie erzeugen Scham und Widerstand · ✗ Ultimaten stellen, die Sie nicht einhalten können · ✗ Allein die Verantwortung tragen — holen Sie das Behandlungsteam dazu.</p>
               </aside>
-            </section>
-
-            <section id="s8">
-              <h2>Grenzen, die tragen statt eskalieren</h2>
-              <p>Hilfreiche Grenzen drohen nicht nur, sie markieren Verhalten, benennen Konsequenzen und schützen, ohne unnötig zu eskalieren.</p>
-
-              <h3>Aufbau einer hilfreichen Grenz-Aussage</h3>
-              <p><strong>Ich-Botschaft.</strong> «Ich lasse mich nicht anschreien.» Bezieht sich auf mein Erleben — nicht auf die Person. Kein Vorwurf.</p>
-              <p><strong>Klare Konsequenz.</strong> «Ich gehe ins Nebenzimmer.» Benennt, was passiert — konkret, ohne Drohung oder Ultimatum.</p>
-              <p><strong>Rückkehr-Signal.</strong> «Wenn wir ruhig reden können, komme ich zurück.» Optional — zeigt: Die Grenze schützt die Beziehung, beendet sie nicht.</p>
-
-              <h3>Drei Beispiele</h3>
-              <p>✗ «Du bist unmöglich, wenn du so schreist!»<br/>
-              ✓ <strong>«Ich lasse mich nicht anschreien. Ich gehe ins Nebenzimmer — wenn wir ruhig reden können, komme ich zurück.»</strong></p>
-
-              <p>✗ «Wenn du so weitermachst, gehe ich!»<br/>
-              ✓ <strong>«Wenn du die Medikamente absetzt, kann ich die Verantwortung zu Hause nicht mehr tragen. Dann müssen wir über die Klinik reden.»</strong></p>
-
-              <p>✗ «Hast du deine Medikamente genommen? Schon wieder vergessen?»<br/>
-              ✓ <strong>«Ich mache mir Sorgen, wenn ich sehe, dass die Packung noch voll ist. Was brauchst du, um dran zu bleiben?»</strong></p>
-
-              <h3>Was nicht funktioniert</h3>
-              <AntiPatterns />
             </section>
 
             <section id="s9">

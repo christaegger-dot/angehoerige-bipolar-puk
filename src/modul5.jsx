@@ -152,14 +152,14 @@ function Modul5Page({ onNavigate }) {
   }, []);
 
   const sections = [
-    { id: 's1', label: 'Das Dilemma ist real' },
+    { id: 's1', label: 'Innere Zerrissenheit' },
     { id: 's2', label: 'Verpflichtung & Selbstschutz' },
     { id: 's3', label: 'EE-Kreislauf' },
     { id: 's4', label: 'Beruhigungs-Dilemma' },
     { id: 's5', label: 'Warum Grenzen schwer fallen' },
     { id: 's6', label: 'Wenn Stigma abfärbt' },
     { id: 's7', label: 'Eltern und Geschwister' },
-    { id: 's8', label: 'Gehen, Bleiben, Abstand' },
+    { id: 's8', label: 'Formen von Abstand' },
     { id: 's9', label: 'Was zuerst klar werden muss' },
     { id: 's10', label: 'Worauf es ankommt' },
   ];
@@ -188,7 +188,7 @@ function Modul5Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 14–16 Minuten · 10 Abschnitte</span>
             </div>
             <h1>Zwischen <em>Treue</em> und <em>Selbstschutz</em></h1>
-            <p className="lede">Loyalitätskonflikte sind selten laut. Sie zeigen sich als stille Doppelbewegung: jemandem nahe bleiben wollen — und gleichzeitig sich selbst nicht verlieren wollen. Dieses Modul macht den Konflikt sichtbar, nimmt ihm den moralischen Vorwurf und beschreibt Wege hindurch.</p>
+            <p className="lede">Loyalitätskonflikte sind selten laut. Sie zeigen sich als stille Doppelbewegung: jemandem nahe bleiben wollen — und gleichzeitig sich selbst nicht verlieren wollen. Dieses Modul schaut weniger auf Erschöpfungsfolgen oder Akuthilfe als auf die innere Zerrissenheit, die Selbstschutz, Grenzen und Neuordnung so schwer macht.</p>
           </div>
         </header>
 
@@ -378,14 +378,14 @@ function Modul5Page({ onNavigate }) {
                   <span className="next-module-num">04</span>
                   <div>
                     <h3>Wenn die Kraft nachlässt</h3>
-                    <p>Loyalitätskonflikte und Erschöpfung verstärken sich gegenseitig. Wer den eigenen Pegel kennt, kann früher gegensteuern.</p>
+                    <p>Wenn Sie den eigenen Pegel und die Erschöpfungsdynamik noch klarer einordnen möchten.</p>
                   </div>
                 </a>
                 <a className="next-module" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
                   <span className="next-module-num">06</span>
                   <div>
                     <h3>Was Sie konkret tun können</h3>
-                    <p>Krisenplan, Kommunikation und praktische Grenzsetzung — wenn Klarheit reicht, um zu handeln.</p>
+                    <p>Wenn klarer wird, welche Gespräche, Grenzen oder Schutzschritte jetzt praktisch nötig sind.</p>
                   </div>
                 </a>
               </div>
