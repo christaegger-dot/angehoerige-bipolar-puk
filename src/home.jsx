@@ -16,10 +16,10 @@ function HomePage({ onNavigate }) {
             <span className="hero-meta-dot">·</span>
             Psychiatrische Universitätsklinik Zürich
           </div>
-          <div className="hero-micro-nav animate-in delay-1" aria-hidden="true">
-            <a tabIndex={-1} href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>Module</a>
-            <a tabIndex={-1} href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')}>Werkzeuge</a>
-            <a tabIndex={-1} href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>Unterstützung</a>
+          <div className="hero-micro-nav animate-in delay-1" aria-label="Schnelle Einstiege">
+            <a aria-label="Schnelleinstieg Module" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>Module</a>
+            <a aria-label="Schnelleinstieg Werkzeuge" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')}>Werkzeuge</a>
+            <a aria-label="Schnelleinstieg Unterstützung" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>Unterstützung</a>
           </div>
           <h1 className="animate-in delay-1">
             Wenn jemand, den Sie lieben, eine <em>bipolare Störung</em> hat — und Sie selbst dabei oft vergessen werden.
