@@ -2753,6 +2753,20 @@ section + section { padding-top: 0; }
   max-width: 22ch;
   margin-bottom: 24px;
 }
+.about-hero-copy {
+  display: grid;
+  gap: 12px;
+  max-width: 60ch;
+}
+.about-hero-copy .lede { margin: 0; }
+.about-hero-note {
+  margin: 0;
+  max-width: 46ch;
+  font-family: var(--sans);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
 
 .eyebrow {
   font-family: var(--sans);
@@ -3285,6 +3299,18 @@ section + section { padding-top: 0; }
 .tool-overlay-card h2 { margin-bottom: 16px; }
 .tool-overlay-card .lede { margin: 0 auto 16px; text-align: center; }
 .tool-overlay-card p { margin-left: auto; margin-right: auto; text-align: center; }
+.tool-intro-notes {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+.tool-intro-notes p {
+  margin: 0 !important;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
 .tool-close {
   position: absolute;
   top: 8px;
@@ -3799,6 +3825,13 @@ section + section { padding-top: 0; }
 .kommunikation-card {
   max-width: 640px;
   text-align: left;
+}
+.kommunikation-card .lede,
+.kommunikation-card .tool-intro-notes p {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: 46ch;
 }
 .kommunikation-step {
   margin-top: 12px;
@@ -4546,10 +4579,15 @@ section + section { padding-top: 0; }
   font-size: 1rem;
   line-height: 1.6;
   color: var(--ink-soft);
-  margin: 0 0 8px;
+  margin: 0;
   max-width: 60ch;
   text-align: left;
 }
+.krisenplan-intro-notes {
+  margin-top: 10px;
+  max-width: 60ch;
+}
+.krisenplan-intro-notes p { text-align: left !important; }
 .krisenplan-meta {
   font-family: var(--mono);
   font-size: 0.75rem;
