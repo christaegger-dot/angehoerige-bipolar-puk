@@ -10,8 +10,8 @@ function ModulePage({ onNavigate }) {
       <header className="about-hero">
         <div className="container">
           <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Lernpfad · Psychoedukation</div>
-          <h1 className="animate-in delay-1" style={{ maxWidth: '20ch' }}>Sieben Module und ein Schnellstart.</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Sie können den Lernpfad linear gehen oder direkt das Modul wählen, das Ihrer Lage entspricht. Jedes Modul ist eigenständig lesbar. Anlaufstellen, Material und nächste Schritte finden Sie zusätzlich am Ende.</p>
+          <h1 className="animate-in delay-1" style={{ maxWidth: '20ch' }}>Alle sieben Module im Überblick.</h1>
+          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Hier finden Sie den Lernpfad: welches Modul welche Frage beantwortet und wie die Strecke aufgebaut ist. Sie können linear lesen oder direkt das Modul wählen, das Ihrer Lage entspricht. Hilfe, Material und direkte Kontakte finden Sie separat unter Unterstützung.</p>
         </div>
       </header>
 
@@ -36,12 +36,12 @@ function ModulePage({ onNavigate }) {
             <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>
               <div className="module-num module-num-resource">→</div>
               <div className="module-content">
-                <div className="module-row-numlabel">Schnellstart</div>
+                <div className="module-row-numlabel">Unterstützung</div>
                 <h3>{ANLAUFSTELLEN_ENTRY.title}</h3>
                 <p>{ANLAUFSTELLEN_ENTRY.desc}</p>
                 <div className="module-meta">
                   <span>⏱ {ANLAUFSTELLEN_ENTRY.time}</span>
-                  <span>· Anlaufstellen &amp; Material →</span>
+                  <span>· Hilfe, Material &amp; Kontakt →</span>
                 </div>
               </div>
               <div className="module-row-arrow" aria-hidden="true">→</div>
@@ -54,15 +54,15 @@ function ModulePage({ onNavigate }) {
         <div className="container">
           <div className="section-head">
             <div className="label-col">
-              <span className="num">— Orientierung</span>
-              <span className="eyebrow">Bis zu fünf kurze Fragen</span>
+              <span className="num">— Optionaler Einstieg</span>
+              <span className="eyebrow">Wenn Sie schneller sortieren möchten</span>
             </div>
             <div>
-              <h2>Sie wissen nicht, welches Modul für Sie passt? Der gleiche Orientierungsweg wie auf der Startseite hilft beim Einstieg.</h2>
+              <h2>Sie wissen noch nicht, welches Modul passt? Die kurze Orientierung von der Startseite hilft auch hier.</h2>
             </div>
           </div>
           <p className="triage-intro" style={{ maxWidth: '50ch', marginTop: 16 }}>
-            Sie können die Orientierung hier direkt beantworten oder oben ein Modul frei wählen.
+            Die Modulseite bleibt der Lernpfad. Wenn Sie nicht erst die Titel vergleichen möchten, können Sie hier den schnelleren Einstieg nutzen.
           </p>
           <TriageFlow onNavigate={onNavigate} />
         </div>

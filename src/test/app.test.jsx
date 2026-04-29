@@ -16,7 +16,7 @@ describe('App navigation', () => {
     expect(await screen.findByRole('heading', { name: /Werkzeuge im Überblick/i })).toBeInTheDocument();
     expect(window.location.pathname).toBe('/werkzeuge');
 
-    await user.click(screen.getByRole('link', { name: 'Anlaufstellen' }));
+    await user.click(screen.getByRole('link', { name: 'Unterstützung' }));
 
     expect(await screen.findByRole('heading', { name: /Unterstützung und Ressourcen/i })).toBeInTheDocument();
     expect(window.location.pathname).toBe('/unterstuetzung');

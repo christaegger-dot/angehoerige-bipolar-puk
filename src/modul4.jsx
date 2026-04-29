@@ -136,13 +136,13 @@ function Modul4Page({ onNavigate }) {
   }, []);
 
   const sections = [
-    { id: 's1', label: 'Da und doch nicht da' },
+    { id: 's1', label: 'Trauer ohne klaren Abschied' },
     { id: 's2', label: 'Wie Erschöpfung sich aufbaut' },
-    { id: 's3', label: 'Warnzeichen in Körper, Gefühl, Verhalten' },
+    { id: 's3', label: 'Warnzeichen' },
     { id: 's4', label: 'Schonhaltung & Identitätsverlust' },
     { id: 's5', label: 'Was auf der Strecke bleibt' },
     { id: 's6', label: 'Wenn Kinder mittragen' },
-    { id: 's7', label: 'Erste Gegensteuerung' },
+    { id: 's7', label: 'Warnsignale & Gegensteuerung' },
     { id: 's8', label: 'Worauf es ankommt' },
   ];
 
@@ -170,7 +170,7 @@ function Modul4Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 14–16 Minuten · 8 Abschnitte</span>
             </div>
             <h1>Wenn die Kraft <em>nachlässt</em></h1>
-            <p className="lede">Die Erschöpfung von Angehörigen baut sich über Jahre auf und verschwindet nicht zwischen Episoden. Schonhaltung und Identitätsverlust sind häufige Folgen. Wenn der Alltag nur noch um die Erkrankung kreist, ist Gegensteuern erforderlich.</p>
+            <p className="lede">Die Erschöpfung von Angehörigen baut sich über Jahre auf und verschwindet nicht zwischen Episoden. Schonhaltung und Identitätsverlust sind häufige Folgen. Dieses Modul schaut weniger auf Beziehung oder Akuthilfe als auf das, was Dauerbelastung mit Ihnen selbst macht.</p>
           </div>
         </header>
 
@@ -213,7 +213,7 @@ function Modul4Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Wenn diese Trauer gross wird</span>
-                <p>Unterstützung kann helfen — sei es über Einzel- oder Paartherapie, eine Angehörigengruppe (VASK Zürich, Selbsthilfe Zürich) oder bei anhaltend komplizierter Trauer eine Fachperson für Trauerbegleitung. Kontaktdaten und weitere Anlaufstellen finden Sie in der <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Schnellstart-Übersicht</a>.</p>
+                <p>Unterstützung kann helfen — sei es über Einzel- oder Paartherapie, eine Angehörigengruppe (VASK Zürich, Selbsthilfe Zürich) oder bei anhaltend komplizierter Trauer eine Fachperson für Trauerbegleitung. Kontaktdaten und weitere Anlaufstellen finden Sie unter <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>
               </aside>
 
               <p>Zwischen schweren Zeiten gibt es auch Inseln: ein ruhiger Sonntag, ein gutes Gespräch, das Gefühl, dass es sich doch lohnt. Diese Inseln sind klein, aber sie tragen.</p>
@@ -377,7 +377,7 @@ function Modul4Page({ onNavigate }) {
               <p>Chronische Belastung hat körperliche Folgen — Blutdruck, Immunsystem, Schlaf. Ihr Hausarzt kann helfen, diese früh zu erkennen.</p>
 
               <h3>5. Peer-Kontakt suchen</h3>
-              <p>Andere Angehörige verstehen, ohne dass Sie erklären müssen. Anlaufstellen finden Sie in der <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Schnellstart-Übersicht</a>.</p>
+              <p>Andere Angehörige verstehen, ohne dass Sie erklären müssen. Anlaufstellen finden Sie unter <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Reflexion</span>
@@ -385,18 +385,18 @@ function Modul4Page({ onNavigate }) {
               </aside>
 
               <div className="next-modules">
+                <a className="next-module" href={navHref('modul5')} onClick={navHandler('modul5', onNavigate)}>
+                  <span className="next-module-num">05</span>
+                  <div>
+                    <h3>Loyalitätskonflikte</h3>
+                    <p>Wenn Erschöpfung innerlich in Schuld, Selbstschutz und schwierige Grenzen kippt.</p>
+                  </div>
+                </a>
                 <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeuge — Belastungs-Selbstcheck</h3>
                     <p>Ein Fragebogen, der Ihren aktuellen Stand auf der Reservoir-Skala genauer einordnet. Anonym, im Browser.</p>
-                  </div>
-                </a>
-                <a className="next-module" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
-                  <span className="next-module-num">06</span>
-                  <div>
-                    <h3>Was Sie konkret tun können</h3>
-                    <p>Werkzeuge, Gespräche und konkrete Schritte — wenn Sie nicht mehr nur lesen, sondern handeln möchten.</p>
                   </div>
                 </a>
               </div>
