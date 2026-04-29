@@ -1127,7 +1127,6 @@ section + section { padding-top: 0; }
   .guide-head { grid-template-columns: 40px 1fr; gap: 16px; }
   .guide-toggle { display: none; }
   .guide-body { padding-left: 0; }
-  .about-hero-functions { grid-template-columns: repeat(2, max-content); }
 }
 
 @media (max-width: 640px) {
@@ -2890,6 +2889,10 @@ section + section { padding-top: 0; }
   border-radius: 50%;
   background: var(--accent);
   opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .about-hero-functions { grid-template-columns: repeat(2, max-content); }
 }
 
 .eyebrow {
