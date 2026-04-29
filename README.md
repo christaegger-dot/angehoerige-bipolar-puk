@@ -49,7 +49,7 @@ Coverage kann zusätzlich mit `npm run test:coverage` erzeugt werden.
 
 ## Inhalts- und Sicherheitsentscheidungen
 
-- Die Seite ist für öffentliche Auffindbarkeit konfiguriert (`index, follow`, `robots.txt` erlaubt Crawling).
+- Die Seite ist aktuell nicht für öffentliche Suchmaschinen-Auffindbarkeit freigegeben (`noindex, nofollow`; `robots.txt` blockiert Crawling mit `Disallow: /`).
 - Sensible Eingaben in Krisenplan und Kommunikations-Trainer bleiben standardmässig nur für die aktuelle Browser-Sitzung erhalten. Dauerhafte Speicherung ist nur per Opt-in aktivierbar.
 - Für eingebettete Edit-Mode-Nachrichten werden nur erlaubte Origins akzeptiert.
 
@@ -68,5 +68,5 @@ Das veröffentlichte Verzeichnis ist `dist/`. SPA-Routen werden in `netlify.toml
 GitHub Actions führt auf Push und Pull Request automatisch folgende Checks aus:
 
 - `npm run lint`
-- `npm run test`
+- `npm run test:coverage`
 - `npm run build`
