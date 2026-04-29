@@ -594,6 +594,12 @@ function UnterstuetzungPage({ onNavigate }) {
           <div className="about-hero-copy animate-in delay-2" style={{ marginTop: 28 }}>
             <p className="lede" style={{ maxWidth: '34ch' }}>Hier finden Sie Hilfe, Material, Kontakt und häufige Fragen an einem Ort.</p>
             <p className="about-hero-note">Wenn Sie gerade überfordert sind, beginnen Sie am besten bei Hilfe oder Direktkontakt.</p>
+            <ul className="about-hero-functions" aria-label="Vier Bereiche">
+              <li className="about-hero-function">Hilfe</li>
+              <li className="about-hero-function">Material</li>
+              <li className="about-hero-function">Kontakt</li>
+              <li className="about-hero-function">Fragen</li>
+            </ul>
           </div>
         </div>
       </header>

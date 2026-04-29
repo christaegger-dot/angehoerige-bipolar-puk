@@ -16,13 +16,18 @@ function HomePage({ onNavigate }) {
             <span className="hero-meta-dot">·</span>
             Psychiatrische Universitätsklinik Zürich
           </div>
+          <div className="hero-micro-nav animate-in delay-1" aria-label="Schnelle Einstiege">
+            <a aria-label="Schnelleinstieg Module" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>Module</a>
+            <a aria-label="Schnelleinstieg Werkzeuge" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')}>Werkzeuge</a>
+            <a aria-label="Schnelleinstieg Unterstützung" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>Unterstützung</a>
+          </div>
           <h1 className="animate-in delay-1">
             Wenn jemand, den Sie lieben, eine <em>bipolare Störung</em> hat — und Sie selbst dabei oft vergessen werden.
           </h1>
           <p className="hero-lede animate-in delay-2">Eine Lese-Begleitung für Partnerinnen, Eltern, Geschwister und erwachsene Kinder.
 
           </p>
-          <div className="animate-in delay-3">
+          <div className="hero-actions animate-in delay-3">
             <a className="hero-cta" href="#triage" onClick={(e) => { e.preventDefault(); document.getElementById('triage').scrollIntoView({ behavior: 'smooth' }); }}>
               Wo soll ich anfangen? →
             </a>
