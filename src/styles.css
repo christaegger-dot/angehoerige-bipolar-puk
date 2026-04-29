@@ -361,6 +361,16 @@ section + section { padding-top: 0; }
 }
 .hero-illustration svg { max-width: 380px; }
 
+@media (min-width: 901px) {
+  .hero {
+    padding: clamp(48px, 8.5vh, 104px) 0 clamp(24px, 4.5vh, 60px);
+  }
+  .hero-meta { margin-bottom: 20px; }
+  .hero h1 { margin-bottom: 20px; }
+  .hero-lede { margin-bottom: 28px; }
+  .hero-illustration { margin: 32px 0 8px; }
+}
+
 /* Primary Hero-CTA — echte Pille mit Akzent-Hintergrund. Ein klarer Path. */
 .hero-cta {
   display: inline-flex;
