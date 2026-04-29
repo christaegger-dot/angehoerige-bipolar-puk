@@ -1,5 +1,5 @@
 import React from 'react';
-import { navHref } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 import { Eisberg } from './modul2.jsx';
 import { clearStoredDraft, loadStoredDraft, saveStoredDraft } from './storage.js';
 import { ToolOverlay } from './tool-overlay.jsx';
@@ -218,7 +218,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
           <>
             <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Belastungs-Selbsttest</h2>
             <p className="lede" style={{ maxWidth: '44ch' }}>Fünf kurze Fragen, etwa zwei Minuten. Sie bekommen am Ende eine Einordnung — Information, Entlastung oder Gespräch — als Orientierung.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Dieser Test ist keine Diagnose. Er gibt Hinweise, wo Sie gerade stehen — anonym, im Browser. Ihre Antworten verlassen Ihr Gerät nicht.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Dieser Test ist keine Diagnose und kein Ersatz für eine fachliche Einschätzung. Er gibt Hinweise, wo Sie gerade stehen — anonym, im Browser. Ihre Antworten verlassen Ihr Gerät nicht. Bei akuter Gefahr ist dieses Werkzeug nicht der richtige erste Schritt: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>
@@ -400,7 +400,7 @@ function KrisenplanTool({ onClose, onNavigate }) {
         <header className="krisenplan-head">
           <span className="kicker">Werkzeug · Krisenplan</span>
           <h2>Mein Krisenplan</h2>
-          <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln. Standardmässig bleibt der Entwurf nur bis zum Schliessen dieses Tabs erhalten und wird nicht versendet. Auf gemeinsam genutzten Geräten können Sie ihn unten zusätzlich dauerhaft löschen.</p>
+          <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln. Standardmässig bleibt der Entwurf nur bis zum Schliessen dieses Tabs erhalten und wird nicht versendet. Wenn Sie drucken oder als PDF speichern, entstehen zusätzliche Kopien auf Ihrem Gerät. Auf gemeinsam genutzten Geräten können Sie den Entwurf unten zusätzlich dauerhaft löschen.</p>
           {lastUpdate && (
             <p className="krisenplan-meta">Zuletzt bearbeitet: {lastUpdate}</p>
           )}
@@ -616,7 +616,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
           <>
             <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Welche Stütze trägt — und welche ist dünn?</h2>
             <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu vier Bereichen, die Angehörige langfristig tragen: Körper, Beziehungen, eigene Welt, fachlicher Halt. Sie sehen am Ende, wo die Architektur gerade hält und wo eine Stütze nachgezogen werden müsste.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Etwa drei Minuten. Anonym, im Browser. Keine Diagnose — nur eine Standortbestimmung.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Etwa drei Minuten. Anonym, im Browser. Keine Diagnose und nicht für akute Krisen gedacht — nur eine Standortbestimmung. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>
@@ -1043,7 +1043,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
           <>
             <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Ein Gespräch vorbereiten</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte. Am Ende haben Sie ein eigenes Skript für ein schwieriges Gespräch — in Ihren Worten, in einer Form, die nicht eskaliert.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren. Standardmässig bleibt Ihr Entwurf nur bis zum Schliessen dieses Tabs erhalten. Auf gemeinsam genutzten Geräten können Sie ihn jederzeit zurücksetzen.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren. Dieses Werkzeug ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung. Standardmässig bleibt Ihr Entwurf nur bis zum Schliessen dieses Tabs erhalten. Wenn Sie das Skript kopieren, liegt es zusätzlich in der Zwischenablage Ihres Geräts. Auf gemeinsam genutzten Geräten können Sie den Entwurf jederzeit zurücksetzen.</p>
             <label className="storage-toggle">
               <input type="checkbox" checked={remember} onChange={toggleRemember} />
               <span>Auf diesem Gerät dauerhaft behalten</span>
@@ -1377,7 +1377,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
     <ToolOverlay onClose={onClose} ariaLabel="Bipolarer Phasenverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Interaktiv</span>
         <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Bipolarer Phasenverlauf</h2>
-        <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Vier typische Muster — wählen Sie eines, um den Verlauf und seine typischen Eigenheiten zu sehen.</p>
+        <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Vier typische Muster zur Orientierung — wählen Sie eines, um den Verlauf und seine typischen Eigenheiten zu sehen. Nicht dargestellt sind damit automatisch alle Varianten, etwa Zyklothymie oder besonders unruhige Mischverläufe.</p>
 
         <div className="phasen-tabs" role="tablist">
           {PHASEN_VARIANTEN.map((p) => (
@@ -1416,7 +1416,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
             <path d={cur.path + ' L 400,90 L 10,90 Z'} transform="translate(10 0)" fill="url(#phasen-fill)" />
             <path d={cur.path} transform="translate(10 0)" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <figcaption>Schematische Darstellung — reale Verläufe variieren stark.</figcaption>
+          <figcaption>Schematische Darstellung zur Orientierung — kein Diagnosewerkzeug. Reale Verläufe, Übergänge und Zwischenphasen variieren stark.</figcaption>
         </figure>
 
         <div className="ee-detail">

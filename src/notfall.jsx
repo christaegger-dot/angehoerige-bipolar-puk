@@ -30,7 +30,7 @@ function NotfallPage({ onNavigate }) {
       bullets: [
         'Schlaf ist medizinisch wichtig. Wenn die Person seit Tagen nicht schläft: ärztliche Hilfe ist dringend.',
         'Verbindliche Bezugsperson informieren (behandelnder Arzt, Psychiaterin, Klinik).',
-        'Wenn Geld, Verträge, Geschäfte ausser Kontrolle geraten: in stabiler Phase besprochene Vollmachten aktivieren.',
+        'Wenn Geld, Verträge, Geschäfte ausser Kontrolle geraten: in stabiler Phase besprochene Schutzschritte umsetzen, etwa Bankabsprachen, eine Bankvollmacht oder einen Vorsorgeauftrag.',
         'Bei akuter Selbst- oder Fremdgefährdung: 144. Bei Gewaltrisiko zusätzlich 117.',
       ],
       dont: 'Fördern Sie keine Pläne mit, auch nicht aus Erleichterung darüber, dass die Person endlich «wieder spricht». Keine grossen Entscheidungen.',

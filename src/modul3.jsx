@@ -314,7 +314,7 @@ function Modul3Page({ onNavigate }) {
               <p>Manche Erfahrungen in Episoden werden kaum benannt, obwohl sie Beziehungen tief prägen. Sie sind real — und sie verletzen, auch wenn sie krankheitsbedingt sind. <em>«Krankheitsbedingt»</em> bedeutet nicht, dass Sie es aushalten oder verschweigen müssen.</p>
 
               <h3>Finanzielle Zerstörung</h3>
-              <p>Unkontrollierte Geldausgaben, die Existenzen gefährden. In einer manischen Phase kann ein Mensch in wenigen Tagen die Ersparnisse einer Familie auflösen. Konkrete Vorkehrungen (Ausgabenlimit, Vorsorgevollmacht, Bankabsprachen) finden Sie in Modul 6.</p>
+              <p>Unkontrollierte Geldausgaben, die Existenzen gefährden. In einer manischen Phase kann ein Mensch in wenigen Tagen die Ersparnisse einer Familie auflösen. Konkrete Vorkehrungen (Ausgabenlimit, Bankvollmacht oder Vorsorgeauftrag, Bankabsprachen) finden Sie in Modul 6.</p>
 
               <h3>Sexuelle Enthemmung</h3>
               <p>Grenzüberschreitungen, die die Beziehung tief verletzen. Das ist ein Thema für professionelle Begleitung — nicht für Alleinbewältigung. Anlaufstellen nach Situation finden Sie in der <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Schnellstart-Übersicht</a>.</p>
@@ -324,7 +324,7 @@ function Modul3Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Bei Gewalt</span>
-                <p><strong>117 Polizei</strong> bei akuter Gewalt · <strong>058 384 38 00</strong> Fachstelle PUK (kostenlos, vertraulich) · <strong>044 299 40 50</strong> Opferhilfe Zürich (Beratung &amp; Begleitung). Mehr im <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
+                <p><strong>117 Polizei</strong> bei akuter Gewalt · <strong>144</strong> bei Verletzung oder unmittelbarer medizinischer Gefahr · <strong>044 455 21 42</strong> Opferhilfe Zürich (24/7, Beratung &amp; Begleitung) · <strong>058 384 38 00</strong> Fachstelle PUK (werktags, vertraulich). Mehr im <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
               </aside>
 
               <blockquote className="module-quote">

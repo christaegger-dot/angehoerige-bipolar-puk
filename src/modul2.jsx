@@ -296,7 +296,7 @@ function Modul2Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 12–15 Minuten · 8 Abschnitte</span>
             </div>
             <h1>Die eigene <em>Belastung</em> verstehen</h1>
-            <p className="lede">Ihre Belastung als Angehörige ist real, messbar — und zu 80 % unsichtbar. Hypervigilanz ist eine verständliche Reaktion, lässt sich aber unterbrechen. Information und Einordnung entlasten nachweislich.</p>
+            <p className="lede">Ihre Belastung als Angehörige ist real, messbar — und zu einem grossen Teil unsichtbar. Hypervigilanz ist eine verständliche Reaktion, lässt sich aber unterbrechen. Information und Einordnung entlasten nachweislich.</p>
           </div>
         </header>
 
@@ -328,7 +328,7 @@ function Modul2Page({ onNavigate }) {
 
             <aside className="callout">
               <span className="callout-label">Auf einen Blick</span>
-              <p>Ihre Belastung als Angehörige und Nahestehende ist real, messbar — und zu 80 % unsichtbar. Hypervigilanz ist eine verständliche Reaktion, lässt sich aber unterbrechen. Suizidangst gehört zu den schwersten Belastungen — Sie müssen das nicht allein tragen. Information und Einordnung sind keine Extras, sondern entlasten nachweislich.</p>
+              <p>Ihre Belastung als Angehörige und Nahestehende ist real, messbar — und zu einem grossen Teil unsichtbar. Hypervigilanz ist eine verständliche Reaktion, lässt sich aber unterbrechen. Suizidangst gehört zu den schwersten Belastungen — Sie müssen das nicht allein tragen. Information und Einordnung sind keine Extras, sondern entlasten nachweislich.</p>
             </aside>
 
             <section id="s1">
@@ -337,6 +337,7 @@ function Modul2Page({ onNavigate }) {
               <p>Viele der häufigsten Belastungen drehen sich um Unsicherheit, Informationsmangel und fehlende Einordnung. Das macht die Erkrankung nicht kleiner, zeigt aber: Ein Teil Ihrer Belastung ist verstehbar und beeinflussbar.</p>
 
               <h3>Die häufigsten Belastungsquellen</h3>
+              <p>Die folgenden Prozentwerte stammen aus Angehörigenbefragungen. Sie sollen die Richtung zeigen — nicht jede einzelne Familie exakt abbilden.</p>
               <ul className="stats-list">
                 <li><span>Ängste durch mangelnde Information</span><strong>84 %</strong></li>
                 <li><span>Unsicherheit mit den Symptomen</span><strong>81 %</strong></li>
@@ -436,11 +437,11 @@ function Modul2Page({ onNavigate }) {
 
               <p><strong>Hypervigilanz.</strong> Angehörige, die mit dem Suizidrisiko ihres Partners leben, scannen oft ständig nach Warnzeichen. Diese dauerhafte Anspannung kann zu Schlafstörungen, Reizbarkeit und eigenen Angstsymptomen führen.</p>
               <p><strong>Trauma.</strong> Das Erleben oder Entdecken eines Suizidversuchs kann bei Angehörigen selbst PTBS-Symptome auslösen — wiederkehrende Bilder, Vermeidung, innere Anspannung. Diese Traumatisierung wird in der klinischen Versorgung häufig nicht erkannt.</p>
-              <p><strong>Eigenes Wohlbefinden.</strong> Angehörige von Menschen mit bipolarer Störung entwickeln in bis zu 46 % der Fälle eigene depressive oder Angstsymptome — doppelt so häufig wie die Allgemeinbevölkerung. Die Ursache ist die Belastung, nicht die Anfälligkeit: Wer entlastet wird, erkrankt seltener. Das macht Hilfe suchen zu einer Form von Prävention.</p>
+              <p><strong>Eigenes Wohlbefinden.</strong> Studien zeigen, dass Angehörige von Menschen mit bipolarer Störung deutlich häufiger eigene depressive oder Angstsymptome entwickeln als Menschen ohne diese Dauerbelastung. Die genaue Höhe schwankt je nach Stichprobe und Erhebungsmethode. Entscheidend ist die Richtung: Wer entlastet wird, erkrankt seltener. Hilfe suchen ist deshalb auch Prävention.</p>
 
               <aside className="callout">
                 <span className="callout-label">Bei akuter Suizidgefahr</span>
-                <p><strong>0800 33 66 55</strong> — Ärztefon Notfalldienst ZH (24/7, kostenlos). Konkrete Schritte zur Vorbereitung finden Sie in Modul 6. Alle Notrufnummern: <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
+                <p>Wenn unmittelbare Gefahr besteht oder die Person akut handelt: <strong>144</strong>. Wenn Sie dringende medizinische Einschätzung brauchen, die Lage aber nicht unmittelbar lebensbedrohlich ist: <strong>0800 33 66 55</strong> — Ärztefon Notfalldienst ZH (24/7, kostenlos). Konkrete Schritte zur Vorbereitung finden Sie in Modul 6. Alle Notrufnummern: <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
               </aside>
 
               <p>Wichtig zu wissen: Konsequente Behandlung — insbesondere mit Lithium — senkt das Suizidrisiko nachweislich. Die Erkrankung ist behandelbar, und Behandlung kann deutlich entlasten.</p>
@@ -469,7 +470,7 @@ function Modul2Page({ onNavigate }) {
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeuge — Belastungs-Selbstcheck</h3>
-                    <p>Ein zehn-minütiger Fragebogen, der Ihre eigene Innenseite einordnet. Anonym, im Browser.</p>
+                    <p>Ein kurzer Fragebogen, der Ihre eigene Innenseite einordnet. Anonym, im Browser.</p>
                   </div>
                 </a>
               </div>
@@ -479,7 +480,7 @@ function Modul2Page({ onNavigate }) {
               <h2>Worauf es ankommt</h2>
               <ul className="key-points">
                 <li><strong>Ihre Belastung ist real und messbar</strong> — die häufigsten Belastungen betreffen Informationsmangel und sind damit beeinflussbar.</li>
-                <li><strong>80 % Ihrer Last ist unsichtbar</strong> — das erklärt, warum andere Ihre Erschöpfung nicht sehen.</li>
+                <li><strong>Ein grosser Teil Ihrer Last ist unsichtbar</strong> — das erklärt, warum andere Ihre Erschöpfung nicht sehen.</li>
                 <li><strong>Hypervigilanz ist ein Kreislauf</strong> — er lässt sich unterbrechen, wenn Sie Beobachtung und Kontrolle voneinander trennen.</li>
                 <li><strong>Sie dürfen Hilfe für sich selbst holen</strong> — das ist keine Illoyalität, sondern Voraussetzung dafür, dass Sie langfristig begleiten können.</li>
               </ul>

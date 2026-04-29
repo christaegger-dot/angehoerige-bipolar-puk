@@ -244,7 +244,7 @@ const HANDOUTS = {
           'Ruhige Stimme — auch wenn Sie nicht ruhig sind',
           'Kurze Sätze, ein Thema pro Gespräch',
           'Behandelnde Stelle informieren — auch ohne Zustimmung',
-          'In stabiler Phase besprochene Vollmachten aktivieren',
+          'In stabiler Phase besprochene Schutzschritte umsetzen',
           'Wenn die Person tagelang nicht schläft: ärztliche Hilfe ist dringend',
         ],
         dont: [
@@ -257,7 +257,7 @@ const HANDOUTS = {
       {
         kind: 'callout',
         label: 'Bei Geld, Verträgen, Geschäften',
-        text: 'In manischen Phasen können in wenigen Tagen erhebliche finanzielle Schäden entstehen. Wenn in stabilen Phasen Vorsorgevollmachten oder Bankabsprachen vereinbart wurden — jetzt aktivieren. Bankberater oder die KESB (für Beistandschaft) sind Ansprechpartner.',
+        text: 'In manischen Phasen können in wenigen Tagen erhebliche finanzielle Schäden entstehen. Wenn in stabilen Phasen Bankabsprachen, eine Bankvollmacht oder ein Vorsorgeauftrag vorbereitet wurden — jetzt umsetzen. Bankberater oder die KESB (für Beistandschaft) sind Ansprechpartner.',
       },
       {
         kind: 'h',
@@ -266,10 +266,10 @@ const HANDOUTS = {
       {
         kind: 'phonelist',
         items: [
-          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h' },
-          { num: '0800 33 66 55', label: 'Ärztefon ZH · 24 h' },
           { num: '144', label: 'Sanität · Lebensgefahr' },
           { num: '117', label: 'Polizei · bei Gewalt' },
+          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h' },
+          { num: '0800 33 66 55', label: 'Ärztefon ZH · 24 h' },
         ],
       },
     ],
@@ -616,7 +616,7 @@ function UnterstuetzungPage({ onNavigate }) {
               { num: '04', title: 'EQUILIBRIUM', desc: 'Verein der Schweizer Selbsthilfegruppen für Menschen mit affektiven Störungen und ihre Angehörigen.', tag: 'equilibrium-ch.ch', href: 'https://www.equilibrium-ch.ch/', kind: 'web' },
               { num: '05', title: 'VASK Schweiz', desc: 'Vereinigung der Angehörigen von schizophrenie- und psychisch Kranken — Selbsthilfegruppen in vielen Kantonen.', tag: 'vask.ch', href: 'https://www.vask.ch/', kind: 'web' },
               { num: '06', title: 'Selbsthilfe Zürich', desc: 'Vermittelt regionale Selbsthilfegruppen — auch spezifisch für Angehörige bipolarer Menschen.', tag: 'selbsthilfezentrum-zh.ch', href: 'https://www.selbsthilfezentrum-zh.ch/', kind: 'web' },
-              { num: '07', title: 'Opferhilfe Zürich', desc: 'Unterstützung bei Gewalt durch Angehörige — kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', tag: '044 299 40 50', href: 'tel:+41442994050', kind: 'tel' },
+              { num: '07', title: 'Opferhilfe Zürich', desc: 'Unterstützung bei Gewalt durch Angehörige — 24/7, kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', tag: '044 455 21 42', href: 'tel:+41444552142', kind: 'tel' },
             ].map(r => {
               const external = r.kind === 'web';
               const ariaLabel = r.kind === 'tel'

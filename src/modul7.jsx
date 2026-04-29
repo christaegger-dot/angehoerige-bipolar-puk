@@ -274,11 +274,11 @@ function Modul7Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Typischer emotionaler Verlauf nach einer Episode</span>
-                <p><strong>Tage 1–3:</strong> Erschöpfung, Taubheit · <strong>Woche 1–2:</strong> Leere, Schuldgefühle · <strong>Woche 2–4:</strong> Wut, Erleichterung · <strong>Ab Woche 4:</strong> Bilanz, Gespräch möglich. Jede Person erlebt diese Phasen anders. Die Reihenfolge und Intensität können sich verschieben — das ist normal.</p>
+                <p><strong>Unmittelbar danach:</strong> oft Erschöpfung oder Taubheit · <strong>in den ersten Wochen:</strong> häufig Leere, Schuldgefühle, Wut oder Erleichterung · <strong>später:</strong> Bilanz und Gespräch werden eher möglich. Jede Person erlebt diese Phasen anders. Die Reihenfolge und Intensität können sich verschieben — das ist normal.</p>
               </aside>
 
               <h3>Das Gespräch nach der Krise</h3>
-              <p>Viele Angehörige tragen die Frage, wann und wie sie das Erlebte ansprechen können. Zu früh und die erkrankte Person ist noch nicht stabil genug. Zu spät und das Ungesagte wird zur Belastung. Eine Faustregel: <strong>Warten Sie, bis die Person sich wieder an Alltagsgesprächen beteiligen kann — meist zwei bis vier Wochen nach der akuten Phase.</strong></p>
+              <p>Viele Angehörige tragen die Frage, wann und wie sie das Erlebte ansprechen können. Zu früh und die erkrankte Person ist noch nicht stabil genug. Zu spät und das Ungesagte wird zur Belastung. Eine Faustregel: <strong>Warten Sie, bis die Person sich wieder an Alltagsgesprächen beteiligen kann — meist erst mit etwas Abstand zur akuten Phase, nicht unmittelbar danach.</strong></p>
               <p>Manchmal erinnert sich die erkrankte Person an Teile der Manie oder schweren Depression nur lückenhaft. Das bedeutet nicht, dass das Gespräch sinnlos ist. Es bedeutet, dass Sie beginnen können, ohne vorauszusetzen, dass die andere Person alles weiss.</p>
 
               <h3>Mögliche Einstiege</h3>
@@ -459,7 +459,7 @@ function Modul7Page({ onNavigate }) {
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Säulen-Check</h3>
-                    <p>Reflexion zu den fünf Säulen — wo bin ich gerade stabil, wo ist Boden zu dünn?</p>
+                    <p>Reflexion zu den vier Säulen — wo bin ich gerade stabil, wo ist Boden zu dünn?</p>
                   </div>
                 </a>
               </div>
