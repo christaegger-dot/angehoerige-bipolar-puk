@@ -43,7 +43,7 @@ function HomePage({ onNavigate }) {
       <section className="triage" id="triage">
         <div className="triage-inner">
           <span className="kicker">Orientierung</span>
-          <h2>Wo soll ich anfangen?</h2>
+          <h2>Den passenden Einstieg finden</h2>
           <p className="triage-intro">Bis zu fünf kurze Fragen führen Sie zum passenden Einstieg — oder direkt zum Notfallweg, wenn das jetzt wichtiger ist.</p>
 
           <TriageFlow onNavigate={onNavigate} />
