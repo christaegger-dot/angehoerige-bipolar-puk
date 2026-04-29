@@ -25,7 +25,18 @@ function Nav({ page, onNavigate }) {
         <div className="nav-links">
           <a href={navHref('module')} className={page === 'module' ? 'active' : ''} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')} aria-current={page === 'module' ? 'page' : undefined}>Module</a>
           <a href={navHref('werkzeuge')} className={page === 'werkzeuge' ? 'active' : ''} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')} aria-current={page === 'werkzeuge' ? 'page' : undefined}>Werkzeuge</a>
-          <a href={navHref('unterstuetzung')} className={page === 'unterstuetzung' ? 'active' : ''} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')} aria-current={page === 'unterstuetzung' ? 'page' : undefined}>Unterstützung und Ressourcen</a>
+          <a
+            href={navHref('unterstuetzung')}
+            className={page === 'unterstuetzung' ? 'active' : ''}
+            onClick={navHandler('unterstuetzung', onNavigate)}
+            {...navPreloadProps('unterstuetzung')}
+            aria-current={page === 'unterstuetzung' ? 'page' : undefined}
+            aria-label="Unterstützung und Ressourcen"
+            title="Unterstützung und Ressourcen"
+          >
+            <span className="nav-label-full">Unterstützung und Ressourcen</span>
+            <span className="nav-label-compact" aria-hidden="true">Unterstützung</span>
+          </a>
           <a href={navHref('notfall')} className="nav-sos" onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>SOS Krise</a>
         </div>
       </div>
