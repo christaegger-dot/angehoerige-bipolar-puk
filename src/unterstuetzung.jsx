@@ -591,7 +591,10 @@ function UnterstuetzungPage({ onNavigate }) {
         <div className="container">
           <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Unterstützung · Orientierung</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '22ch' }}>Unterstützung und Ressourcen.</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Diese Seite bündelt vier Dinge: Hilfe finden, Material nutzen, Kontakt aufnehmen und häufige Fragen klären. Wenn Sie gerade überfordert sind, beginnen Sie am besten bei Hilfe oder Direktkontakt.</p>
+          <div className="about-hero-copy animate-in delay-2" style={{ marginTop: 28 }}>
+            <p className="lede" style={{ maxWidth: '34ch' }}>Hier finden Sie Hilfe, Material, Kontakt und häufige Fragen an einem Ort.</p>
+            <p className="about-hero-note">Wenn Sie gerade überfordert sind, beginnen Sie am besten bei Hilfe oder Direktkontakt.</p>
+          </div>
         </div>
       </header>
 

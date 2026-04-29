@@ -400,7 +400,11 @@ function KrisenplanTool({ onClose, onNavigate }) {
         <header className="krisenplan-head">
           <span className="kicker">Werkzeug · Krisenplan</span>
           <h2>Krisenplan</h2>
-          <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln. Standardmässig bleibt der Entwurf nur bis zum Schliessen dieses Tabs erhalten und wird nicht versendet. Wenn Sie drucken oder als PDF speichern, entstehen zusätzliche Kopien auf Ihrem Gerät. Auf gemeinsam genutzten Geräten können Sie den Entwurf unten zusätzlich dauerhaft löschen.</p>
+          <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln.</p>
+          <div className="tool-intro-notes krisenplan-intro-notes">
+            <p>Standardmässig bleibt der Entwurf nur bis zum Schliessen dieses Tabs erhalten und wird nicht versendet.</p>
+            <p>Wenn Sie drucken oder als PDF speichern, entstehen zusätzliche Kopien auf Ihrem Gerät. Auf gemeinsam genutzten Geräten können Sie den Entwurf unten zusätzlich dauerhaft löschen.</p>
+          </div>
           {lastUpdate && (
             <p className="krisenplan-meta">Zuletzt bearbeitet: {lastUpdate}</p>
           )}
@@ -1043,12 +1047,16 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
           <>
             <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Kommunikations-Trainer</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte für ein schwieriges Gespräch. Am Ende haben Sie ein eigenes Skript — in Ihren Worten, in einer Form, die nicht eskaliert.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren. Dieses Werkzeug ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung. Standardmässig bleibt Ihr Entwurf nur bis zum Schliessen dieses Tabs erhalten. Wenn Sie das Skript kopieren, liegt es zusätzlich in der Zwischenablage Ihres Geräts. Auf gemeinsam genutzten Geräten können Sie den Entwurf jederzeit zurücksetzen.</p>
+            <div className="tool-intro-notes kommunikation-intro-notes">
+              <p>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren.</p>
+              <p>Dieses Werkzeug ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
+              <p>Standardmässig bleibt Ihr Entwurf nur bis zum Schliessen dieses Tabs erhalten. Wenn Sie das Skript kopieren, liegt es zusätzlich in der Zwischenablage Ihres Geräts. Auf gemeinsam genutzten Geräten können Sie den Entwurf jederzeit zurücksetzen.</p>
+            </div>
             <label className="storage-toggle">
               <input type="checkbox" checked={remember} onChange={toggleRemember} />
               <span>Auf diesem Gerät dauerhaft behalten</span>
             </label>
-            <div style={{ marginTop: 24 }}>
+            <div style={{ marginTop: 18 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>
           </>
