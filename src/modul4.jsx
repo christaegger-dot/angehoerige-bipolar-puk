@@ -395,7 +395,7 @@ function Modul4Page({ onNavigate }) {
                 <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                   <span className="next-module-num">W</span>
                   <div>
-                    <h3>Werkzeuge — Belastungs-Selbstcheck</h3>
+                    <h3>Werkzeug — Belastungs-Selbsttest</h3>
                     <p>Ein Fragebogen, der Ihren aktuellen Stand auf der Reservoir-Skala genauer einordnet. Anonym, im Browser.</p>
                   </div>
                 </a>

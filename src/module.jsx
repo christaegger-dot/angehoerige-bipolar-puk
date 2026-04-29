@@ -11,7 +11,7 @@ function ModulePage({ onNavigate }) {
         <div className="container">
           <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Lernpfad · Psychoedukation</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '20ch' }}>Alle sieben Module im Überblick.</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Hier finden Sie den Lernpfad: welches Modul welche Frage beantwortet und wie die Strecke aufgebaut ist. Sie können linear lesen oder direkt das Modul wählen, das Ihrer Lage entspricht. Hilfe, Material und direkte Kontakte finden Sie separat unter Unterstützung.</p>
+          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Hier finden Sie den Lernpfad: welches Modul welche Frage beantwortet und wie die Strecke aufgebaut ist. Sie können linear lesen oder direkt das Modul wählen, das Ihrer Lage entspricht. Hilfe, Material und Kontakt finden Sie separat unter Unterstützung und Ressourcen.</p>
         </div>
       </header>
 
@@ -36,12 +36,12 @@ function ModulePage({ onNavigate }) {
             <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>
               <div className="module-num module-num-resource">→</div>
               <div className="module-content">
-                <div className="module-row-numlabel">Unterstützung</div>
+                <div className="module-row-numlabel">Hilfe finden</div>
                 <h3>{ANLAUFSTELLEN_ENTRY.title}</h3>
                 <p>{ANLAUFSTELLEN_ENTRY.desc}</p>
                 <div className="module-meta">
                   <span>⏱ {ANLAUFSTELLEN_ENTRY.time}</span>
-                  <span>· Hilfe, Material &amp; Kontakt →</span>
+                  <span>· Hilfe, Material und Kontakt →</span>
                 </div>
               </div>
               <div className="module-row-arrow" aria-hidden="true">→</div>
