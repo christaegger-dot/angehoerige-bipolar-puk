@@ -13,6 +13,7 @@ const PAGE_LOADERS = {
   impressum: () => import('./impressum.jsx'),
   datenschutz: () => import('./datenschutz.jsx'),
   barrierefreiheit: () => import('./barrierefreiheit.jsx'),
+  schweigepflicht: () => import('./schweigepflicht.jsx'),
 };
 
 const preloadCache = new Map();
