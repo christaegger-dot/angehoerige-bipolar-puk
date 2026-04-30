@@ -299,6 +299,9 @@ function Modul6Page({ onNavigate }) {
                 <li><strong>Vorsorgeauftrag und Patientenverfügung:</strong> Gleichzeitig besprechen — damit bei schweren Episoden klare Regelungen bestehen.</li>
                 <li><strong>Auch ohne Entbindung:</strong> Sie können dem Behandlungsteam jederzeit Informationen <em>geben</em> — Sie erhalten nur keine zurück.</li>
               </ol>
+              <p style={{ marginTop: 12 }}>
+                Eine ausführlichere Referenz mit Vorlagentext zum Abschreiben oder Ausdrucken finden Sie auf der Seite <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflichtentbindung</a>.
+              </p>
 
               <h3>Finanzen absichern</h3>
               <p>Manische Episoden können in kurzer Zeit erhebliche finanzielle Schäden auslösen. Absprachen dazu wirken schnell kontrollierend, sind aber in stabilen Phasen oft schlicht Schutz: für beide Seiten, für Kinder und für das, was nach der Episode übrig bleiben soll.</p>
@@ -471,6 +474,11 @@ function Modul6Page({ onNavigate }) {
             <section id="s7">
               <h2>«Sie hat die Medikamente abgesetzt» — was Sie tun können</h2>
               <p>Kaum eine Situation löst bei Angehörigen so viel Angst aus wie das Absetzen der Medikamente. Die Sorge ist berechtigt: Ohne Stimmungsstabilisierung steigt das Rückfallrisiko deutlich. Gleichzeitig ist Medikamenten-Adhärenz bei bipolarer Störung eine der grössten Herausforderungen — viele Betroffene setzen die Medikation im Verlauf mindestens einmal eigenmächtig ab.</p>
+
+              <blockquote className="module-quote">
+                <p>«Ich habe gelernt, in der Krise nicht mehr alles auf einmal zu denken. Nur den nächsten Schritt. Und dann den nächsten. Das hat mich stabil gehalten — auch wenn um mich herum vieles nicht stabil war.»</p>
+                <cite>Vater, 12 Jahre Erfahrung · anonymisiert</cite>
+              </blockquote>
 
               <h3>Warum Menschen absetzen — verstehen, nicht billigen</h3>
               <p>Die Gründe sind oft nachvollziehbar: Nebenwirkungen wie Gewichtszunahme, Tremor oder sexuelle Funktionsstörungen belasten den Alltag. In stabilen Phasen fühlen sich viele «gesund» und sehen keinen Grund mehr für Medikamente. In hypomanen Phasen fühlt sich die Erkrankung nach Kraft an, nicht nach Krankheit. Manchmal spielen auch Scham, Autonomiebedürfnis oder schlechte Erfahrungen eine Rolle.</p>

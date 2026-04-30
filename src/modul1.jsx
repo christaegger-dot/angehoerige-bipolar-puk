@@ -222,6 +222,11 @@ function Modul1Page({ onNavigate }) {
               <h2>Wenn Verläufe nicht sauber in Phasen passen</h2>
               <p>Gerade Angehörige zweifeln oft an ihrer Wahrnehmung, wenn das Erleben nicht zur klaren Phasenlehre passt. Das ist häufig kein Missverständnis, sondern Teil der Erkrankung: Bipolare Verläufe können widersprüchlich, gereizt, schnell wechselnd oder über Wochen schwer lesbar sein.</p>
 
+              <blockquote className="module-quote">
+                <p>«Wir hatten ihn jahrelang für depressiv gehalten. Dass die Sommer, in denen er drei Bücher gleichzeitig schrieb und um vier Uhr morgens losfuhr, dazugehörten, hat niemand gesehen.»</p>
+                <cite>Tochter, 38 Jahre · anonymisiert</cite>
+              </blockquote>
+
               <h3>Mischzustände</h3>
               <p>Die Person wirkt gleichzeitig getrieben und verzweifelt, gereizt und erschöpft, innerlich beschleunigt und dunkel. Für Angehörige gehört das zu den schwersten Zuständen, weil Energie und Verzweiflung zusammenkommen.</p>
 

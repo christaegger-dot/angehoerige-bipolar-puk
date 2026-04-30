@@ -328,6 +328,11 @@ function Modul5Page({ onNavigate }) {
             <section id="s8">
               <h2>Gehen, Bleiben, Abstand, Neuordnung</h2>
               <p>Viele Angehörige kennen den Wunsch, einfach weg zu sein. Nicht da zu sein. Nicht mehr zuständig zu sein. In Befragungen berichten viele von Phasen, in denen sie an Trennung oder Rückzug gedacht haben. <strong>Dieser Wunsch ist ein Signal — kein Versagen.</strong> Er sagt: «Ich bin am Limit.»</p>
+
+              <blockquote className="module-quote">
+                <p>«Ich habe mich am Ende für die Trennung entschieden. Es war keine Schuld. Es war eine ehrliche Antwort darauf, was ich noch tragen konnte und was nicht.»</p>
+                <cite>Anonym, nach 18 Jahren Ehe</cite>
+              </blockquote>
               <p>Die Frage, die daraus folgt, ist eine der schwersten: Gehen oder Bleiben? Oft ist aber schon die Frage selbst zu eng. Manche brauchen zunächst Abstand, eine Neuordnung von Zuständigkeiten, eine klare Sicherheitsgrenze oder eine befristete Entlastung. Nicht die Entscheidung allein ist das Lähmende — sondern das dauerhafte Pendeln ohne Klarheit.</p>
 
               <aside className="callout">
