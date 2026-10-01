@@ -11,6 +11,7 @@ describe('route helpers', () => {
     expect(parseRouteLocation({ pathname: '/module/4', hash: '#s2' })).toEqual({ page: 'modul4', anchor: 's2' });
     expect(parseRouteLocation({ pathname: '/', hash: '#werkzeuge' })).toEqual({ page: 'werkzeuge', anchor: null });
     expect(parseRouteLocation({ pathname: '/', hash: '#triage' })).toEqual({ page: 'start', anchor: 'triage' });
+    expect(parseRouteLocation({ pathname: '/schweigepflicht', hash: '' })).toEqual({ page: 'schweigepflicht', anchor: null });
   });
 
   it('recognizes when client-side navigation should be handled', () => {
