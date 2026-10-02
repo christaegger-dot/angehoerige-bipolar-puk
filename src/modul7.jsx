@@ -299,11 +299,6 @@ function Modul7Page({ onNavigate }) {
               <p>Selbstfürsorge klingt schnell nach Kür. In Angehörigenrealitäten ist sie oft eher Schadensbegrenzung. Wenn Sie dauerhaft zu viel tragen, zu wenig schlafen, sich sozial zurückziehen und nur noch reagieren, ist sie nicht Optimierung, sondern Schutz vor weiterer Auszehrung.</p>
               <p><strong>Ihre Gesundheit hat einen Eigenwert.</strong> Nicht erst, wenn Sie zusammenbrechen. Und nicht nur, damit Sie weiter funktionieren können.</p>
 
-              <blockquote className="module-quote">
-                <p>«Ich habe gelernt, einmal pro Woche etwas zu tun, bei dem ich ihn nicht erwähne. Nicht weil er mir egal wäre, sondern damit ich Mutter bleibe und nicht nur Angehörige.»</p>
-                <cite>Mutter eines erwachsenen Sohnes · anonymisiert</cite>
-              </blockquote>
-
               <aside className="callout callout-soft">
                 <span className="callout-label">Wissenschaftlicher Hintergrund</span>
                 <p>Wie in Modul 2 beschrieben, entwickeln Angehörige von Menschen mit bipolarer Störung überproportional häufig eigene depressive oder Angstsymptome. Die Belastung durch die Pflege verursacht die Symptome — nicht umgekehrt. Entlastung ist deshalb <em>Prävention</em>, nicht Selbstsucht.</p>
