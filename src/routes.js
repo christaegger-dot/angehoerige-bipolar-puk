@@ -14,6 +14,7 @@ const ROUTES = [
   { page: 'impressum', path: '/impressum', legacyHash: 'impressum' },
   { page: 'datenschutz', path: '/datenschutz', legacyHash: 'datenschutz' },
   { page: 'barrierefreiheit', path: '/barrierefreiheit', legacyHash: 'barrierefreiheit' },
+  { page: 'schweigepflicht', path: '/schweigepflicht', legacyHash: 'schweigepflicht' },
 ];
 
 const ROUTE_BY_PAGE = Object.fromEntries(ROUTES.map((route) => [route.page, route]));

@@ -9,6 +9,7 @@ import { NotfallPage } from '../notfall.jsx';
 import { ImpressumPage } from '../impressum.jsx';
 import { DatenschutzPage } from '../datenschutz.jsx';
 import { BarrierefreiheitPage } from '../barrierefreiheit.jsx';
+import { SchweigepflichtPage } from '../schweigepflicht.jsx';
 
 describe('content pages', () => {
   it('renders the legal and accessibility pages with their primary headings', () => {
@@ -30,6 +31,16 @@ describe('content pages', () => {
       screen.getByRole('heading', { level: 1, name: /erklärung zur barrierefreiheit/i }),
     ).toBeInTheDocument();
     expect(screen.getByText(/web content accessibility guidelines/i)).toBeInTheDocument();
+
+    rerender(<SchweigepflichtPage />);
+    expect(
+      screen.getByRole('heading', { level: 1, name: /schweigepflicht bei angehörigen.*gesprächen/i }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /puk-formular als pdf öffnen/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('pukzh.ch'),
+    );
+    expect(screen.queryByText(/empfehlung 12 monate/i)).not.toBeInTheDocument();
   });
 
   it('renders core learning modules with their main headings', () => {

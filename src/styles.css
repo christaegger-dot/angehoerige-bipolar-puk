@@ -5010,3 +5010,15 @@ section + section { padding-top: 0; }
   .atem-stage { width: 180px; height: 180px; }
   .atem-circle { width: 160px; height: 160px; }
 }
+
+/* Praktische Rechtsreferenz: ruhige Leseseite ohne selbst erstelltes Formular. */
+.reference-hero { padding-bottom: clamp(48px, 7vw, 88px); }
+.reference-eyebrow { margin-bottom: 24px; }
+.reference-title { max-width: 22ch; }
+.reference-lede { margin-top: 28px; max-width: 60ch; }
+.reference-section { padding-top: 0; }
+.reference-container { max-width: 720px; }
+.reference-download { margin-block: 48px; }
+.reference-action { margin: 24px 0 0; }
+.reference-sources a { text-decoration: underline; text-underline-offset: .18em; }
+.reference-status { margin-top: 56px; color: var(--ink-3); font-size: 14px; }

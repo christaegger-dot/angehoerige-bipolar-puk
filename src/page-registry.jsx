@@ -16,6 +16,7 @@ const Modul7Page = React.lazy(() => preloadPage('modul7').then(m => ({ default: 
 const ImpressumPage = React.lazy(() => preloadPage('impressum').then(m => ({ default: m.ImpressumPage })));
 const DatenschutzPage = React.lazy(() => preloadPage('datenschutz').then(m => ({ default: m.DatenschutzPage })));
 const BarrierefreiheitPage = React.lazy(() => preloadPage('barrierefreiheit').then(m => ({ default: m.BarrierefreiheitPage })));
+const SchweigepflichtPage = React.lazy(() => preloadPage('schweigepflicht').then(m => ({ default: m.SchweigepflichtPage })));
 
 const PAGE_RENDERERS = {
   start: (props) => <HomePage onNavigate={props.onNavigate} />,
@@ -33,6 +34,7 @@ const PAGE_RENDERERS = {
   impressum: () => <ImpressumPage />,
   datenschutz: () => <DatenschutzPage />,
   barrierefreiheit: () => <BarrierefreiheitPage />,
+  schweigepflicht: () => <SchweigepflichtPage />,
 };
 
 export { PAGE_RENDERERS };
