@@ -1,16 +1,26 @@
-const BAG_GEHEIMNIS_URL = 'https://www.bag.admin.ch/de/berufs-oder-arztgeheimnis';
-const ZH_GEHEIMNIS_URL = 'https://www.zh.ch/de/gesundheit/gesundheitsberufe.html#-1694175302';
-const PUK_FORMULAR_URL = 'https://www.pukzh.ch/patienten-angehoerige/anfrage-patientendokumentation/anspruch-drittpersonen/entbindung-berufs-und-amtsgeheimnis/';
+import { navHandler, navHref } from './nav-handler.js';
 
-function SchweigepflichtPage() {
+const BAG_GEHEIMNIS_URL = 'https://www.bag.admin.ch/de/berufs-oder-arztgeheimnis';
+const ZH_GEHEIMNIS_URL = 'https://www.zh.ch/de/gesundheit/gesundheitsberufe.html';
+const PUK_FORMULAR_URL = 'https://www.pukzh.ch/patienten-angehoerige/anfrage-patientendokumentation/anspruch-drittpersonen/entbindung-berufs-und-amtsgeheimnis/';
+const PUK_PATIENTENRECHTE_URL = 'https://www.pukzh.ch/sites/default/assets/File/rechte_pflichten_spitalaufenthalt(1).pdf';
+
+function SchweigepflichtPage({ onNavigate }) {
   return (
     <>
       <header className="about-hero reference-hero">
         <div className="container">
+          <div className="breadcrumb animate-in">
+            <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
+            <span className="sep">/</span>
+            <a href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a>
+            <span className="sep">/</span>
+            <span>Schweigepflicht</span>
+          </div>
           <div className="eyebrow animate-in reference-eyebrow"><span className="dot"></span>Praktische Referenz</div>
           <h1 className="animate-in delay-1 reference-title">Schweigepflicht bei Angehörigen&shy;gesprächen.</h1>
           <p className="lede animate-in delay-2 reference-lede">
-            Das Behandlungsteam darf Angehörigen grundsätzlich nur mit Erlaubnis der betroffenen Person
+            Das Behandlungsteam darf Angehörigen grundsätzlich nur mit Einwilligung der betroffenen Person
             Auskunft geben. Hier erfahren Sie, was eine Schweigepflichtentbindung ermöglicht, wo ihre
             Grenzen liegen und wie Sie das Gespräch darüber vorbereiten können.
           </p>
@@ -51,8 +61,13 @@ function SchweigepflichtPage() {
             <ul>
               <li><strong>Urteilsfähige Erwachsene</strong> entscheiden selbst, welche Informationen an wen weitergegeben werden dürfen.</li>
               <li><strong>Urteilsfähige Minderjährige</strong> haben ebenfalls Anspruch auf Vertraulichkeit. Ob sie urteilsfähig sind, hängt von der konkreten Situation und Fragestellung ab.</li>
-              <li><strong>Bei fehlender Urteilsfähigkeit</strong> können gesetzliche Vertretungsregeln und weitere Ausnahmen relevant werden. Klären Sie den konkreten Fall mit dem Behandlungsteam; leiten Sie daraus nicht selbst eine pauschale Auskunftsberechtigung ab.</li>
+              <li><strong>Bei urteilsunfähigen Minderjährigen</strong> entscheiden die Inhaberinnen oder Inhaber der elterlichen Sorge über medizinische Massnahmen.</li>
+              <li><strong>Bei urteilsunfähigen Erwachsenen</strong> richtet sich die Vertretung bei medizinischen Massnahmen grundsätzlich nach Patientenverfügung, Vorsorgeauftrag und der gesetzlichen Reihenfolge. Für die Behandlung einer psychischen Störung in einer psychiatrischen Klinik gelten besondere Regeln.</li>
             </ul>
+            <p>
+              Klären Sie den konkreten Fall mit dem Behandlungsteam; leiten Sie aus Verwandtschaft oder
+              Betreuung nicht selbst eine pauschale Auskunfts- oder Entscheidungsberechtigung ab.
+            </p>
 
             <h2>Was eine Entbindung ermöglicht</h2>
             <p>
@@ -68,6 +83,10 @@ function SchweigepflichtPage() {
               <li>ob Informationen in beide Richtungen ausgetauscht werden dürfen,</li>
               <li>wie lange die Einwilligung gelten soll und wie sie widerrufen werden kann.</li>
             </ul>
+            <p>
+              Das aktuelle PUK-Formular ist breit gefasst und gilt bis zum Widerruf. Wenn Sie den Austausch
+              einschränken möchten, klären Sie mit der PUK, wie diese Grenzen dokumentiert werden können.
+            </p>
 
             <h2>Wie Sie das Gespräch vorbereiten können</h2>
             <ol>
@@ -92,7 +111,7 @@ function SchweigepflichtPage() {
                 überträgt keine medizinischen Entscheidungsrechte und gilt laut Formular bis zum Widerruf.
               </div>
               <p className="reference-action">
-                <a className="btn btn-primary" href={PUK_FORMULAR_URL} target="_blank" rel="noreferrer">
+                <a className="btn btn-primary" href={PUK_FORMULAR_URL}>
                   PUK-Formular als PDF öffnen
                 </a>
               </p>
@@ -104,21 +123,33 @@ function SchweigepflichtPage() {
               Beobachtungen schildern und um allgemeine Orientierung bitten. Das Team muss dabei darauf
               achten, durch seine Antwort keine geschützten Informationen preiszugeben.
             </p>
+            <aside className="callout callout-soft">
+              <span className="callout-label">Vertrauliche Angaben</span>
+              <p>
+                Ihre Angaben können in der Patientendokumentation festgehalten werden. Die behandelte Person
+                hat grundsätzlich ein Einsichtsrecht. Wenn es um besonders vertrauliche Angaben geht, sprechen
+                Sie vorab mit dem Team darüber, wie diese dokumentiert werden und ob schutzwürdige Interessen
+                im Einzelfall eine eingeschränkte Einsicht rechtfertigen.
+              </p>
+            </aside>
             <p>
-              Bei akuter Gefahr gelten zusätzlich die Regeln und Handlungsmöglichkeiten für Notfälle. Diese
-              Seite ersetzt keine Beurteilung des Einzelfalls durch die behandelnde Stelle oder eine
-              rechtliche Fachperson.
+              Bei akuter Gefahr wenden Sie sich an den Notruf oder das Behandlungsteam. Welche Informationen
+              weitergegeben werden dürfen, richtet sich nach der Situation und der Rechtsgrundlage. Diese Seite
+              ersetzt keine Beurteilung des Einzelfalls durch die behandelnde Stelle oder eine rechtliche
+              Fachperson.
             </p>
 
             <h2>Amtliche Quellen</h2>
             <ul className="reference-sources">
-              <li><a href={BAG_GEHEIMNIS_URL} target="_blank" rel="noreferrer">Bundesamt für Gesundheit: Berufs- oder Arztgeheimnis</a></li>
-              <li><a href={ZH_GEHEIMNIS_URL} target="_blank" rel="noreferrer">Kanton Zürich: Berufliche Schweigepflicht und Entbindung</a></li>
-              <li><a href={PUK_FORMULAR_URL} target="_blank" rel="noreferrer">Psychiatrische Universitätsklinik Zürich: offizielles Formular</a></li>
+              <li><a href={BAG_GEHEIMNIS_URL}>Bundesamt für Gesundheit: Berufs- oder Arztgeheimnis</a></li>
+              <li><a href={ZH_GEHEIMNIS_URL}>Kanton Zürich: Berufliche Schweigepflicht und Entbindung</a></li>
+              <li><a href={PUK_FORMULAR_URL}>Psychiatrische Universitätsklinik Zürich: offizielles Formular</a></li>
+              <li><a href={PUK_PATIENTENRECHTE_URL}>Kanton Zürich und PUK: Rechte und Pflichten im Spital (PDF)</a></li>
             </ul>
 
             <p className="reference-status">
-              Fachliche Orientierung, keine Rechtsberatung. Quellen geprüft am 2. Oktober 2026.
+              Fachliche Orientierung, keine Rechtsberatung. Quellen geprüft am 3. Oktober 2026.
+              Fachlich-rechtliche Freigabe vor einer öffentlichen Veröffentlichung ausstehend.
             </p>
           </article>
         </div>
