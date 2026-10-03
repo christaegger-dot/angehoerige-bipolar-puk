@@ -39,6 +39,23 @@ describe('App navigation', () => {
     expect(await screen.findByRole('heading', { level: 1, name: /Was Sie konkret tun können/i })).toBeInTheDocument();
   });
 
+  it('marks the module context and updates metadata on the confidentiality reference', async () => {
+    window.history.replaceState({}, '', '/schweigepflicht');
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { level: 1, name: /schweigepflicht bei angehörigen.*gesprächen/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Module' })).toHaveAttribute('aria-current', 'page');
+    expect(document.title).toMatch(/schweigepflicht bei angehörigengesprächen/i);
+    expect(document.querySelector('meta[name="description"]')).toHaveAttribute(
+      'content',
+      expect.stringMatching(/schweigepflicht, einwilligung/i),
+    );
+    expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute(
+      'href',
+      'https://angehoerige-bipolar-puk.netlify.app/schweigepflicht',
+    );
+  });
+
   it('canonicalizes legacy hash routes on first load', async () => {
     window.history.replaceState({}, '', '/#modul2');
     render(<App />);

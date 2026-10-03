@@ -15,6 +15,8 @@ function CrisisBar({ onNavigate }) {
 }
 
 function Nav({ page, onNavigate }) {
+  const moduleActive = page === 'module' || /^modul[1-7]$/.test(page) || page === 'schweigepflicht';
+
   return (
     <nav className="nav" aria-label="Hauptnavigation">
       <div className="col-wide nav-inner">
@@ -23,7 +25,7 @@ function Nav({ page, onNavigate }) {
           <span className="nav-brand-sub">PUK Zürich</span>
         </a>
         <div className="nav-links">
-          <a href={navHref('module')} className={page === 'module' ? 'active' : ''} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')} aria-current={page === 'module' ? 'page' : undefined}>Module</a>
+          <a href={navHref('module')} className={moduleActive ? 'active' : ''} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')} aria-current={moduleActive ? 'page' : undefined}>Module</a>
           <a href={navHref('werkzeuge')} className={page === 'werkzeuge' ? 'active' : ''} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')} aria-current={page === 'werkzeuge' ? 'page' : undefined}>Werkzeuge</a>
           <a
             href={navHref('unterstuetzung')}

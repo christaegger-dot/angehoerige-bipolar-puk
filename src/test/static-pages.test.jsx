@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { Modul3Page } from '../modul3.jsx';
 import { Modul4Page } from '../modul4.jsx';
 import { Modul5Page } from '../modul5.jsx';
+import { Modul6Page } from '../modul6.jsx';
 import { Modul7Page } from '../modul7.jsx';
 import { NotfallPage } from '../notfall.jsx';
 import { ImpressumPage } from '../impressum.jsx';
@@ -40,6 +41,11 @@ describe('content pages', () => {
       'href',
       expect.stringContaining('pukzh.ch'),
     );
+    expect(screen.getByText(/angaben können in der patientendokumentation festgehalten werden/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /rechte und pflichten im spital/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('pukzh.ch'),
+    );
     expect(screen.queryByText(/empfehlung 12 monate/i)).not.toBeInTheDocument();
   });
 
@@ -53,6 +59,13 @@ describe('content pages', () => {
 
     rerender(<Modul5Page onNavigate={noop} />);
     expect(screen.getByRole('heading', { level: 1, name: /zwischen treue und selbstschutz/i })).toBeInTheDocument();
+
+    rerender(<Modul6Page onNavigate={noop} />);
+    expect(screen.getByRole('heading', { level: 1, name: /was sie konkret tun können/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /schweigepflicht bei angehörigengesprächen/i })).toHaveAttribute(
+      'href',
+      '/schweigepflicht',
+    );
 
     rerender(<Modul7Page onNavigate={noop} />);
     expect(screen.getByRole('heading', { level: 1, name: /langfristige tragfähigkeit/i })).toBeInTheDocument();

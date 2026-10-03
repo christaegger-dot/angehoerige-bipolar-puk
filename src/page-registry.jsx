@@ -34,7 +34,7 @@ const PAGE_RENDERERS = {
   impressum: () => <ImpressumPage />,
   datenschutz: () => <DatenschutzPage />,
   barrierefreiheit: () => <BarrierefreiheitPage />,
-  schweigepflicht: () => <SchweigepflichtPage />,
+  schweigepflicht: (props) => <SchweigepflichtPage onNavigate={props.onNavigate} />,
 };
 
 export { PAGE_RENDERERS };

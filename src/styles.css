@@ -4887,7 +4887,7 @@ section + section { padding-top: 0; }
    Tool-spezifische Farb-/Layout-Tweaks weiter unten.
    ═══════════════════════════════════════════════════════════════ */
 @media print {
-  @page { margin: 18mm 14mm; }
+  @page { size: A4; margin: 18mm 14mm; }
   html, body { background: white !important; }
 
   /* Alles unsichtbar — visibility statt display, damit Layout stabil bleibt */
@@ -4896,6 +4896,39 @@ section + section { padding-top: 0; }
   /* Druckbare Overlays + ihr Inhalt einblenden */
   .handout-overlay, .handout-overlay *,
   .krisenplan-overlay, .krisenplan-overlay * { visibility: visible !important; }
+
+  /* Die eigenständige Referenzseite muss auch ohne Werkzeug-Overlay druckbar bleiben. */
+  .reference-hero, .reference-hero *,
+  .reference-section, .reference-section * { visibility: visible !important; }
+
+  .reference-hero,
+  .reference-section {
+    background: white !important;
+    color: black !important;
+  }
+
+  .reference-hero *,
+  .reference-section * {
+    color: black !important;
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .reference-hero { padding: 0 0 10mm !important; }
+  .reference-section { padding: 0 !important; }
+  .reference-section h2,
+  .reference-section h3 { break-after: avoid-page; }
+  .reference-download,
+  .reference-section aside,
+  .reference-sources,
+  .reference-status { break-inside: avoid; }
+  .reference-action .btn {
+    background: transparent !important;
+    border: 1px solid black !important;
+    color: black !important;
+  }
+  .reference-status { margin-top: 8mm !important; break-before: avoid-page; }
 
   /* No-print-Elemente und globaler Site-Chrome härter ausblenden */
   .no-print, .no-print * { display: none !important; visibility: hidden !important; }

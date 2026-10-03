@@ -7,6 +7,7 @@ import { PAGE_RENDERERS } from './page-registry.jsx';
 import { useTweaks } from './use-tweaks.js';
 import { useBrowserNavigation } from './use-browser-navigation.js';
 import { TweaksPanel, TweakSection, TweakRadio } from './tweaks-panel.jsx';
+import { applyPageMetadata } from './page-metadata.js';
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "palette": "cream",
@@ -76,6 +77,10 @@ function App() {
   React.useEffect(() => {
     return scrollToAnchorWhenReady(nav.anchor);
   }, [nav.anchor, nav.page]);
+
+  React.useEffect(() => {
+    applyPageMetadata(page);
+  }, [page]);
 
   const renderPage = PAGE_RENDERERS[page] || PAGE_RENDERERS.start;
   const content = renderPage({ onNavigate });

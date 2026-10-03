@@ -292,13 +292,19 @@ function Modul6Page({ onNavigate }) {
               <Vereinbarung />
 
               <h3>Schweigepflichtentbindung</h3>
-              <p>Ohne Entbindung dürfen Ärztinnen und Ärzte Ihnen keine Auskunft geben — auch nicht dann, wenn Sie die Situation zu Hause wesentlich mittragen. Eine Schweigepflichtentbindung ist deshalb kein Nebenthema, sondern ein praktisches Schutzinstrument.</p>
+              <p>Ohne Einwilligung darf das Behandlungsteam Angehörigen grundsätzlich keine patientenbezogenen Informationen weitergeben — auch nicht dann, wenn Sie die Situation zu Hause wesentlich mittragen. Eine Schweigepflichtentbindung ist deshalb kein Nebenthema, sondern ein praktisches Schutzinstrument.</p>
               <ol>
                 <li><strong>In stabilen Phasen besprechen:</strong> Erklären Sie, dass die Entbindung Ihnen Sicherheit gibt und Sie im Notfall besser unterstützen können.</li>
                 <li><strong>Spezifisch entbinden:</strong> Die Entbindung kann auf bestimmte Personen und Informationen begrenzt werden.</li>
                 <li><strong>Vorsorgeauftrag und Patientenverfügung:</strong> Gleichzeitig besprechen — damit bei schweren Episoden klare Regelungen bestehen.</li>
-                <li><strong>Auch ohne Entbindung:</strong> Sie können dem Behandlungsteam jederzeit Informationen <em>geben</em> — Sie erhalten nur keine zurück.</li>
+                <li><strong>Auch ohne Entbindung:</strong> Sie können dem Behandlungsteam Beobachtungen und Sorgen mitteilen und um allgemeine Orientierung bitten. Ohne rechtliche Grundlage darf das Team dabei keine geschützten patientenbezogenen Informationen offenlegen.</li>
               </ol>
+              <p>
+                Ausführliche Informationen und das offizielle PUK-Formular finden Sie auf der Seite{' '}
+                <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>
+                  Schweigepflicht bei Angehörigengesprächen
+                </a>.
+              </p>
 
               <h3>Finanzen absichern</h3>
               <p>Manische Episoden können in kurzer Zeit erhebliche finanzielle Schäden auslösen. Absprachen dazu wirken schnell kontrollierend, sind aber in stabilen Phasen oft schlicht Schutz: für beide Seiten, für Kinder und für das, was nach der Episode übrig bleiben soll.</p>
