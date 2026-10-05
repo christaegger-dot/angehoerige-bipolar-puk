@@ -36,6 +36,10 @@ Der erste GitHub-CI-Lauf bestand Installation, Lint, Coverage, Build, Abhängigk
 
 Ein erneuter Werkzeuglauf zeigte während des Farbwechsels am Belastungsverlauf einen vorübergehend zu geringen Textkontrast. Der Umschalter wechselt seine Farben deshalb ohne Übergangsanimation; die gut lesbaren Ausgangs- und Endfarben bleiben gleich. Die zusätzlichen Wiederholungsläufe verwenden ausdrücklich farbige CI-Ausgabe.
 
+Die Druck-CSS-Simulation kann bei der Rückkehr zur Bildschirmansicht die kurze Overlay-Einblendung erneut starten. Ein entsprechender Messfehler wurde nach dem zweiten CI-Lauf lokal reproduziert. Der Werkzeugrunner wartet deshalb auch nach dieser Rückkehr und vor den Messungen auf das tatsächliche Ende endlicher Animationen/Transitions am Overlay und seinen Kindern. Animationen werden dabei nicht deaktiviert; dauerhafte Abläufe wie die Atemübung werden nicht vollständig durchlaufen. axe bewertet die fertig dargestellten Einstiegs- und Interaktionszustände.
+
+Zwei aufeinanderfolgende Wiederholungsläufe mit `CI=1`, `FORCE_COLOR=1` und ohne `NO_COLOR` bestanden jeweils alle 209 Werkzeugprüfungen sowie 19 tatsächliche Textvergrösserungsnachweise. Der Build blieb über beide Läufe unverändert.
+
 Reproduzierbare Befehle und Browserinstallation stehen in der [README](../README.md). Laufberichte entstehen unter `qa/output/` und werden von GitHub Actions als Artefakt aufbewahrt. Das Produktionsgate bleibt ein gesonderter Freigabenachweis.
 
 ## Offene Punkte nach Issue

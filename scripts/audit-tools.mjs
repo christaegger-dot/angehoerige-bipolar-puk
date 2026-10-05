@@ -39,7 +39,39 @@ const record = (name, zoom, tool, passed, details = {}) => {
   report.checks.push(check);
   if (!passed) report.failures.push(check);
 };
+
+async function waitForFiniteMotion(dialog) {
+  await dialog.evaluate(async overlay => {
+    // Reading animations flushes media/style changes. Print -> screen can
+    // restart both the overlay fade and the card rise, even on an open tool.
+    for (let pass = 0; pass < 8; pass++) {
+      const animations = new Set(overlay.getAnimations({ subtree: true }));
+      for (let ancestor = overlay.parentElement; ancestor; ancestor = ancestor.parentElement) {
+        for (const animation of ancestor.getAnimations()) animations.add(animation);
+      }
+      const pending = [...animations].filter(animation =>
+        animation.playState !== 'finished' && animation.playState !== 'idle'
+        && Number.isFinite(animation.effect?.getTiming().iterations)
+      );
+      if (!pending.length) return;
+      let timer;
+      try {
+        await Promise.race([
+          Promise.allSettled(pending.map(animation => animation.finished)),
+          new Promise((_, reject) => {
+            timer = setTimeout(() => reject(new Error('Finite tool animation did not finish within 15 seconds')), 15000);
+          }),
+        ]);
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+    throw new Error('Finite tool motion kept restarting');
+  });
+}
+
 async function inspect(page, dialog, zoom, tool, state) {
+  await waitForFiniteMotion(dialog);
   const details = await dialog.evaluate(el => {
     const card = el.querySelector('.tool-overlay-card');
     const width = document.documentElement.clientWidth;
@@ -168,7 +200,7 @@ try {
         await trigger.click();
         const dialog = page.getByRole('dialog', { name: names[index], exact: true });
         await dialog.waitFor();
-        await dialog.locator('.tool-overlay-card').evaluate(async el => { await Promise.allSettled(el.getAnimations().map(animation => animation.finished)); });
+        await waitForFiniteMotion(dialog);
         await enlargeState(page, zoom, tool, 'intro');
         await inspect(page, dialog, zoom, tool, 'intro');
         await focusLoop(page, dialog, zoom, tool, 'intro');
@@ -203,6 +235,7 @@ try {
           const printFonts = await dialog.evaluate(el => [...el.querySelectorAll('h2, p, label, input, textarea')].map(node => getComputedStyle(node).fontFamily));
           record('print/local-rubik-font', zoom, tool, printFonts.length > 0 && printFonts.every(family => family.includes('Rubik')), { fontFamilies: [...new Set(printFonts)] });
           await page.emulateMedia({ media: 'screen' });
+          await waitForFiniteMotion(dialog);
           await page.evaluate(() => { window.__qaPrintRequests = 0; window.print = () => { window.__qaPrintRequests++; }; });
           await dialog.getByRole('button', { name: /Drucken/ }).click();
           record('interaction/print-trigger', zoom, tool, await page.evaluate(() => window.__qaPrintRequests === 1));
@@ -244,6 +277,7 @@ try {
           record('interaction/breath-cancel', zoom, tool, await dialog.getByRole('button', { name: /Beginnen/ }).count() === 1);
         }
         await enlargeState(page, zoom, tool, 'interaction');
+        await waitForFiniteMotion(dialog);
         const resultAxe = await new AxeBuilder({ page }).include('.tool-overlay').withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
         record('axe/interaction', zoom, tool, resultAxe.violations.length === 0, { violations: resultAxe.violations.map(v => ({ id: v.id, impact: v.impact, help: v.help, targets: v.nodes.map(n => ({ target: n.target, summary: n.failureSummary })) })), incompleteCount: resultAxe.incomplete.length });
         await inspect(page, dialog, zoom, tool, 'interaction');
