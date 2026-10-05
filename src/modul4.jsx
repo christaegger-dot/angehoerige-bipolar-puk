@@ -2,6 +2,7 @@
 // Zentrales Bild: Reservoir-Skala mit Erschöpfungs-Stufen.
 
 import React from 'react';
+import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function Reservoir() {
@@ -11,7 +12,7 @@ function Reservoir() {
     { from: 70, to: 95, key: 'getragen', label: 'Getragen', sub: 'es geht — auch wenn es manchmal anstrengend ist' },
     { from: 35, to: 70, key: 'schmal', label: 'Schmal', sub: 'es funktioniert — aber nichts Zusätzliches geht mehr' },
     { from: 12, to: 35, key: 'reserve', label: 'Reserve', sub: 'aus Routine und Pflichtgefühl, nicht mehr aus Kraft' },
-    { from: 0, to: 12, key: 'notlage', label: 'Notlage', sub: 'körperliche und seelische Warnzeichen' },
+    { from: 0, to: 12, key: 'notlage', label: 'Kaum Kraft', sub: 'körperliche und seelische Warnzeichen' },
   ];
   const top = 50, bot = 320;
   const yFor = (val) => bot - ((val / 100) * (bot - top));
@@ -32,7 +33,7 @@ function Reservoir() {
         <rect x="100" y={top} width="80" height={bot - top} fill="none" stroke="var(--ink)" strokeWidth="1" strokeOpacity="0.5" />
         <rect x="100" y={yFor(45)} width="80" height={bot - yFor(45)} fill="url(#reservoir-fill)" />
         <line x1="100" y1={yFor(45)} x2="180" y2={yFor(45)} stroke="var(--accent)" strokeWidth="1.5" />
-        <text x="92" y={yFor(45) + 4} fontFamily="var(--serif-display)" fontStyle="italic" fontSize="11" fill="var(--accent)" textAnchor="end">aktueller Stand</text>
+        <text x="92" y={yFor(45) + 4} fontFamily="var(--serif-display)" fontStyle="italic" fontSize="11" fill="var(--accent)" textAnchor="end">fiktives Beispiel</text>
       </g>
 
       <g>
@@ -58,8 +59,8 @@ function Reservoir() {
       </g>
 
       <g fontFamily="var(--mono)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.06em">
-        <text x="92" y={top + 4} textAnchor="end">100</text>
-        <text x="92" y={bot + 4} textAnchor="end">0</text>
+
+
       </g>
     </svg>
   );
@@ -72,8 +73,8 @@ function ReservoirFigur() {
         <Reservoir />
       </div>
       <figcaption>
-        Eine Art Wasserstand der eigenen Kräfte. Die Frage ist nicht «leer oder voll», sondern: wo bin ich gerade — und wie lange schon dort?
-        {' '}Wer länger im Bereich «Schmal» oder darunter lebt, läuft auf Reserve — auch wenn es nach aussen weiter funktioniert.
+        Ein Bild für eigene Kräfte, keine Messung. Die eingezeichnete Füllhöhe ist ein fiktives Beispiel.
+        {' '}Die Bereiche sind keine geprüften Schwellen für Belastung oder Dringlichkeit.
       </figcaption>
     </figure>
   );
@@ -170,7 +171,7 @@ function Modul4Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 14–16 Minuten · 8 Abschnitte</span>
             </div>
             <h1>Wenn die Kraft <em>nachlässt</em></h1>
-            <p className="lede">Die Erschöpfung von Angehörigen baut sich über Jahre auf und verschwindet nicht zwischen Episoden. Schonhaltung und Identitätsverlust sind häufige Folgen. Dieses Modul schaut weniger auf Beziehung oder Akuthilfe als auf das, was Dauerbelastung mit Ihnen selbst macht.</p>
+            <p className="lede">Anhaltende Belastung kann die eigene Kraft und Gesundheit beeinträchtigen, auch zwischen Episoden. Dauer und Ausmass sind unterschiedlich; Erholung und neue Handlungsspielräume bleiben möglich. Dieses Modul schaut weniger auf Beziehung oder Akuthilfe als auf das, was Dauerbelastung mit Ihnen selbst macht.</p>
           </div>
         </header>
 
@@ -194,26 +195,27 @@ function Modul4Page({ onNavigate }) {
           </aside>
 
           <div className="module-body prose">
+            <ModuleQuickStart number={4} onNavigate={onNavigate} />
 
             <blockquote className="module-quote">
               <p>«Ich sage allen, es geht mir gut. Aber nachts liege ich wach und frage mich, wie lange ich das noch schaffe. Ich bin so müde — nicht körperlich, sondern in meiner Seele.»</p>
-              <cite>Partnerin, 38 Jahre · anonymisiert</cite>
+              <cite>Partnerin, 38 Jahre · fiktives Beispiel</cite>
             </blockquote>
 
             <section id="s1">
               <h2>Da und doch nicht da — Trauer ohne klaren Abschied</h2>
               <p className="dropcap">Pauline Boss nennt das «<span lang="en">Ambiguous Loss</span>»: eine Trauer ohne Abschluss, weil der Verlust nicht endgültig ist und sich deshalb nicht einfach verarbeiten lässt. Alltagsnäher gesagt: Jemand ist noch da, und gleichzeitig ist vieles nicht mehr so, wie es einmal war.</p>
-              <p>Da der Verlust nicht endgültig ist, kommt auch die Trauer oft nicht zu einem klaren Abschluss. Angehörige bleiben in einer merkwürdigen Zwischenlage: verbunden und doch einsam, loyal und doch erschöpft, hoffnungsvoll und doch ständig vorsichtig. Diese Trauer ist normal und berechtigt — auch wenn die erkrankte Person noch da ist. Kenneth Doka beschreibt dafür den Begriff «nicht anerkannte Trauer»: eine Trauer, die real und tief ist, aber gesellschaftlich oft keinen klaren Platz hat.</p>
+              <p>Da der Verlust nicht endgültig ist, kommt auch die Trauer oft nicht zu einem klaren Abschluss. Angehörige bleiben in einer merkwürdigen Zwischenlage: verbunden und doch einsam, loyal und doch erschöpft, hoffnungsvoll und doch ständig vorsichtig. Diese Trauer ist normal und berechtigt — auch wenn die erkrankte Person noch da ist. Davon zu unterscheiden ist Kenneth Dokas Begriff «nicht anerkannte Trauer»: eine Trauer, die real und tief ist, aber gesellschaftlich oft keinen klaren Platz hat.</p>
 
-              <h3>Worüber Angehörige typischerweise trauern</h3>
-              <p><strong>Gemeinsame Zukunft.</strong> Pläne — Kinder, Reisen, gemeinsames Altern — müssen aufgegeben oder drastisch angepasst werden.</p>
+              <h3>Worüber manche Angehörige trauern</h3>
+              <p><strong>Gemeinsame Zukunft.</strong> Pläne — Kinder, Reisen, gemeinsames Altern — können neu besprochen oder angepasst werden.</p>
               <p><strong>Identität des Partners.</strong> «Ich erkenne ihn nicht mehr wieder.» Der Mensch, den man liebte, verändert sich durch die Erkrankung.</p>
               <p><strong>Soziale Kontakte.</strong> Freundschaften zerbrechen, weil man sich zurückzieht — oder Freunde sich distanzieren.</p>
               <p><strong>Intimität.</strong> Emotionale und körperliche Nähe leidet unter der Verschiebung vom Partner zum Pfleger.</p>
 
               <aside className="callout">
                 <span className="callout-label">Wenn diese Trauer gross wird</span>
-                <p>Unterstützung kann helfen — sei es über Einzel- oder Paartherapie, eine Angehörigengruppe (VASK Zürich, Selbsthilfe Zürich) oder bei anhaltend komplizierter Trauer eine Fachperson für Trauerbegleitung. Kontaktdaten und weitere Anlaufstellen finden Sie unter <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>
+                <p>Unterstützung kann helfen — sei es über Einzel- oder Paartherapie, eine Angehörigengruppe (VASK Zürich, Selbsthilfe Zürich) oder bei starkem oder anhaltendem Leid eine geeignete Fachperson. Kontaktdaten und weitere Anlaufstellen finden Sie unter <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>
               </aside>
 
               <p>Zwischen schweren Zeiten gibt es auch Inseln: ein ruhiger Sonntag, ein gutes Gespräch, das Gefühl, dass es sich doch lohnt. Diese Inseln sind klein, aber sie tragen.</p>
@@ -221,22 +223,22 @@ function Modul4Page({ onNavigate }) {
 
             <section id="s2">
               <h2>Wie Erschöpfung sich über Zeit aufbaut</h2>
-              <p>In Modul 3 ging es um die Erosion von Beziehung. Hier zeigt sich dieselbe Logik auf einer anderen Ebene: Ihrer eigenen Belastbarkeit. Mit jeder Episode und jedem erneuten Alarm bleibt oft etwas zurück — weniger Vertrauen in Ruhe, weniger spontane Entlastung, weniger innere Reserve.</p>
+              <p>Belastung kann sich ansammeln, abnehmen oder über längere Zeit gering bleiben. Die folgenden Erfahrungen können einzeln, gemeinsam oder gar nicht auftreten. Es gibt keine festgelegte Reihenfolge. Erholung und Entlastung sind auch nach schweren Zeiten möglich.</p>
 
               <ReservoirFigur />
 
-              <h3>Phase 1 — Frühphase: Notfallmodus</h3>
+              <h3>Mögliche Erfahrung: Notfallmodus</h3>
               <p>Sie schalten in den Krisenmodus: behandeln helfen, organisieren, Verantwortung übernehmen, funktionieren. Die eigene Erschöpfung ist noch zweitrangig.</p>
 
-              <h3>Phase 2 — Wiederkehr: Kumulation</h3>
-              <p>Jede Episode hinterlässt Spuren — Schlafmangel, Misstrauen gegenüber Ruhe, mehr Wachsamkeit, weniger Spielraum. Die Hoffnung wird vorsichtiger: «Schon wieder.»</p>
+              <h3>Mögliche Erfahrung: wiederholte Belastung</h3>
+              <p>Wiederholte Episoden können Spuren hinterlassen — Schlafmangel, Misstrauen gegenüber Ruhe, mehr Wachsamkeit, weniger Spielraum. Die Hoffnung wird vorsichtiger: «Schon wieder.»</p>
 
-              <h3>Phase 3 — Chronisch: Dauer-Alarm</h3>
+              <h3>Mögliche Erfahrung: anhaltende Wachsamkeit</h3>
               <p>Die Belastung wird zu einem Hintergrundzustand. Schlafprobleme, Gereiztheit, Rückzug und innere Müdigkeit bleiben auch dann spürbar, wenn gerade keine akute Krise sichtbar ist.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Wichtig zu wissen</span>
-                <p>Im Bereich «Schmal» zu sein, ist <strong>nicht</strong> ein Versagen. Es ist eine Phase. Problematisch wird es, wenn sie sich verfestigt und zur neuen Normalität wird, ohne dass jemand — Sie selbst eingeschlossen — bemerkt, dass das nicht «Normal» ist, sondern Reserve. Belastung fällt mit Unterstützung nicht auf Null zurück, kann aber wieder tragfähiger werden.</p>
+                <p>Überlastung ist kein persönliches Versagen. Die Grafik stuft Sie nicht ein. Wenn Beschwerden anhalten oder der Alltag kaum gelingt, suchen Sie passende Unterstützung oder eine medizinische Abklärung.</p>
               </aside>
             </section>
 
@@ -246,7 +248,7 @@ function Modul4Page({ onNavigate }) {
 
               <Warnzeichen />
 
-              <p>Sie müssen nicht «alle» Punkte erfüllen, um an der Grenze zu sein. Schon zwei oder drei dauerhafte Zeichen aus zwei Bereichen sind ein deutliches Signal — gerade dann, wenn sie schleichend gekommen sind.</p>
+              <p>Sie müssen nicht «alle» Punkte erfüllen, um an der Grenze zu sein. Es gibt hier keine geprüfte Anzahl als Schwelle. Auch ein einzelnes starkes oder anhaltendes Zeichen kann Anlass sein, Unterstützung oder eine medizinische Abklärung zu suchen.</p>
             </section>
 
             <section id="s4">
@@ -264,7 +266,7 @@ function Modul4Page({ onNavigate }) {
 
               <blockquote className="module-quote">
                 <p>«Ich trage einen unsichtbaren Rucksack. Jeden Tag packe ich mehr hinein: die Sorge, die Verantwortung, die Angst. Der Rucksack wird immer schwerer, aber niemand sieht ihn.»</p>
-                <cite>Maria, 42 Jahre, Partnerin · anonymisiert</cite>
+                <cite>Maria, 42 Jahre, Partnerin · fiktives Beispiel</cite>
               </blockquote>
 
               <h3>Anzeichen, dass die Identität schmaler wird</h3>
@@ -282,7 +284,7 @@ function Modul4Page({ onNavigate }) {
 
               <blockquote className="module-quote">
                 <p>«Ich habe jahrelang jedes Gespräch über meine eigenen Sorgen vermieden. Ich dachte, ich schütze sie damit — dabei habe ich mich selbst unsichtbar gemacht. Irgendwann wusste ich selbst nicht mehr, was ich wollte oder brauchte.»</p>
-                <cite>Thomas, 51 Jahre, Ehemann · anonymisiert</cite>
+                <cite>Thomas, 51 Jahre, Ehemann · fiktives Beispiel</cite>
               </blockquote>
             </section>
 
@@ -303,7 +305,7 @@ function Modul4Page({ onNavigate }) {
               <h3>Was helfen kann</h3>
               <ul>
                 <li><strong>Mit dem Arbeitgeber eine Minimalversion der Wahrheit klären</strong> — «Ich begleite einen Angehörigen mit einer schweren Erkrankung» reicht oft, ohne Details preiszugeben. Viele Arbeitgeber haben Sozialberatungen, die vertraulich unterstützen.</li>
-                <li><strong>Betreuungspflichten als Grund für flexible Arbeitszeiten nutzen</strong> — in der Schweiz gibt es seit 2021 einen gesetzlichen Anspruch auf kurzzeitige Abwesenheit für die Betreuung kranker Angehöriger (max. 3 Tage pro Ereignis, Art. 329h OR).</li>
+                <li><strong>Betreuungsurlaub und Arbeitszeiten klären</strong> — Art. 329h OR sieht in privatrechtlichen Arbeitsverhältnissen bezahlten Urlaub für die notwendige Betreuung gesundheitlich beeinträchtigter Familienmitglieder oder der Lebenspartnerin bzw. des Lebenspartners vor: höchstens drei Tage pro Ereignis und grundsätzlich zehn Tage pro Jahr. Für Kinder und weitere Ansprüche gelten Besonderheiten; öffentlich-rechtliche Anstellungen können anderen Regeln folgen. Flexible Arbeitszeiten sind gesondert zu vereinbaren. Klären Sie die konkrete Situation mit der Personalabteilung.</li>
                 <li><strong>Die eigene berufliche Identität bewusst schützen</strong> — Arbeit kann Stabilisator sein, nicht nur Belastung. Wenn Sie merken, dass Sie Ihre berufliche Rolle nur noch als Störung erleben, ist das ein Warnsignal für Überlastung.</li>
               </ul>
             </section>
@@ -337,7 +339,7 @@ function Modul4Page({ onNavigate }) {
               <h3>Mit Kindern sprechen — je nach Alter</h3>
               <p>Kinder brauchen ehrliche Erklärungen — aber in ihrer Sprache. Schweigen schützt nicht, es erzeugt Fantasien, die oft schlimmer sind als die Realität.</p>
 
-              <p><strong>4–6 Jahre: Einfach und konkret.</strong> «Mama ist krank in ihrem Kopf. Das macht sie manchmal traurig oder sehr aufgeregt. Das ist nicht deine Schuld.» Kinder in diesem Alter brauchen vor allem Körperkontakt, Routinen und die Gewissheit: «Du bist sicher.»</p>
+              <p><strong>4–6 Jahre: Einfach und konkret.</strong> «Mama ist krank in ihrem Kopf. Das macht sie manchmal traurig oder sehr aufgeregt. Das ist nicht deine Schuld.» Kinder in diesem Alter brauchen vor allem Körperkontakt, Routinen und verlässliche Betreuung und die Zusage: «Wir kümmern uns darum, dass du Unterstützung und einen sicheren Ort hast.»</p>
 
               <p><strong>7–12 Jahre: Mehr Zusammenhang.</strong> «Papa hat eine Krankheit, die dafür sorgt, dass er manchmal sehr viel Energie hat und dann wieder gar keine. Sie heisst bipolare Störung. Er nimmt Medikamente dagegen.» Schulkinder verstehen Ursache und Wirkung. Geben Sie ihnen Sprache für das, was sie sehen — und erlauben Sie Fragen.</p>
 
@@ -348,7 +350,7 @@ function Modul4Page({ onNavigate }) {
 
               <blockquote className="module-quote">
                 <p>«Ich habe erst mit 25 verstanden, dass nicht jede Familie so lebt. Dass andere Kinder nicht gelernt haben, morgens zuerst die Stimmung im Haus zu lesen. Ich bin nicht wütend auf ihn — er ist krank, und er kämpft. Aber ich trauere um die Kindheit, die anders hätte sein können.»</p>
-                <cite>Lukas, 28 Jahre, Sohn eines betroffenen Vaters · anonymisiert</cite>
+                <cite>Lukas, 28 Jahre, Sohn eines betroffenen Vaters · fiktives Beispiel</cite>
               </blockquote>
 
               <aside className="callout">
@@ -395,8 +397,8 @@ function Modul4Page({ onNavigate }) {
                 <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                   <span className="next-module-num">W</span>
                   <div>
-                    <h3>Werkzeug — Belastungs-Selbsttest</h3>
-                    <p>Ein Fragebogen, der Ihren aktuellen Stand auf der Reservoir-Skala genauer einordnet. Anonym, im Browser.</p>
+                    <h3>Werkzeug — Meine Belastung wahrnehmen</h3>
+                    <p>Fünf Fragen zu Ihrer eigenen Lage, ohne Reservoir-Wert, Gesamtpunktzahl oder Einstufung.</p>
                   </div>
                 </a>
               </div>
@@ -415,10 +417,9 @@ function Modul4Page({ onNavigate }) {
             </section>
 
             <footer className="module-article-footer">
-              <p className="module-credits">
-                Quellen: Boss, P. (1999) «<span lang="en">Ambiguous Loss</span>» · Doka, K. J. (2002) «<span lang="en">Disenfranchised Grief</span>» · Perlick, D. A. et al. (2007) «<span lang="en">Caregiver burden and health in bipolar disorder</span>» · Hooper, L. M. et al. (2011) «<span lang="en">Parentification, self-esteem, and psychological distress</span>» · Craddock &amp; Sklar (2013) «<span lang="en">Genetics of bipolar disorder</span>» · Beratungsmaterial der Fachstelle Angehörigenarbeit der PUK Zürich.
-              </p>
-              <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert und keine reale Einzelperson.</p>
+              <EvidenceSources number={4} />
+
+              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
                 <a className="module-nav-btn" href={navHref('modul3')} onClick={navHandler('modul3', onNavigate)}>

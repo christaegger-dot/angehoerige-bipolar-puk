@@ -49,7 +49,8 @@ describe('ModulePage', () => {
     screen.getAllByRole('link', { name: /← Alle Module/i }).forEach((link) => {
       expect(link).toHaveAttribute('href', '/module');
     });
-    expect(screen.getByRole('link', { name: 'Modul 6' })).toHaveAttribute('href', '/module/6');
-    expect(screen.getByRole('link', { name: 'Notfallweg' })).toHaveAttribute('href', '/notfall');
+    expect(screen.getByRole('link', { name: 'Konkrete Hilfen' })).toHaveAttribute('href', '/module/6');
+    screen.getAllByRole('link', { name: 'Notfallweg' }).forEach(link => expect(link).toHaveAttribute('href', '/notfall'));
+    expect(screen.getByRole('link', { name: 'Kinder unterstützen' })).toHaveAttribute('href', '/module/4#s6');
   });
 });

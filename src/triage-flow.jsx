@@ -1,9 +1,10 @@
 import React from 'react';
+import { navHandler, navHref } from './nav-handler.js';
 
 const TRIAGE_RESULTS = {
   'q1-yes': { label: 'Notfallweg', text: 'Zum Notfallweg', target: 'notfall', urgent: true },
   'q1b-yes': { label: 'Empfehlung', text: 'Modul 1 — Die bipolare Störung verstehen', target: 'modul1' },
-  'q2-yes': { label: 'Empfehlung', text: 'Modul 4 — Wenn die Kraft nachlässt', target: 'modul4' },
+  'q2-yes': { label: 'Empfehlung', text: 'Beratung und Entlastung', target: 'unterstuetzung', secondary: true },
   'q3-yes': { label: 'Empfehlung', text: 'Modul 1 — Grundlagen verstehen', target: 'modul1' },
   'q4-beziehung': { label: 'Empfehlung', text: 'Modul 3 — Wie Beziehungen unter Druck geraten', target: 'modul3' },
   'q4-handeln': { label: 'Empfehlung', text: 'Modul 6 — Was Sie konkret tun können', target: 'modul6' },
@@ -140,14 +141,12 @@ function TriageFlow({ onNavigate }) {
           <span className="triage-result-label">{result.label}</span>
           <a
             className="triage-result-link"
-            href={`#${result.target}`}
-            onClick={(e) => {
-              e.preventDefault();
-              onNavigate(result.target);
-            }}
+            href={navHref(result.target)}
+            onClick={navHandler(result.target, onNavigate)}
           >
             {result.text} →
           </a>
+          {result.secondary && <p>Sie müssen zuerst kein Modul lesen. Wenn Sie in Ruhe mehr verstehen möchten: <a href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>Wenn die Kraft nachlässt</a>.</p>}
           <button type="button" className="triage-restart" onClick={restart}>Nochmal beantworten</button>
         </div>
       )}

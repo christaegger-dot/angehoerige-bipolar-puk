@@ -1,6 +1,7 @@
 // SOS Krise — editorial Notfallweg
 
 import React from 'react';
+import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
 import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 
@@ -12,11 +13,11 @@ function NotfallPage({ onNavigate }) {
       cls: 'red', letter: 'A',
       title: 'Suizidale Krise',
       sub: 'Konkrete Pläne, Abschiedsverhalten, akute Lebensgefahr',
-      do: 'Bleiben Sie. Zeigen Sie ehrlich, dass Sie Sorge haben. Sagen Sie es direkt: «Ich mache mir Sorgen um dich. Ich möchte nicht, dass du das alleine durchstehen musst.»',
+      do: SUICIDE_SAFETY,
       bullets: [
         'Sofort 144 anrufen, wenn die Person akut handelt oder konkrete Pläne mitteilt.',
-        'Tödliche Mittel — Medikamente, Waffen — wenn möglich aus Reichweite bringen, ohne Eskalation.',
-        'Wenn ansprechbar: gemeinsam in die Notfallaufnahme. Nicht alleine lassen, bis jemand übernimmt.',
+        'Gefährliche Gegenstände nur dann aus Reichweite bringen, wenn dies ohne Eigengefährdung und ohne Widerstand sicher möglich ist.',
+        'Eine sichere Hilfeübergabe organisieren. Sie müssen keine alleinige Dauerwache übernehmen.',
         'Wenn Sie nicht hingehen können: 144 oder Polizei (117) rufen und auf konkrete Suizidalität hinweisen.',
       ],
       dont: 'Versprechen Sie nichts, was Sie nicht halten können — keine Geheimhaltung, kein «Wir kriegen das alleine hin», wenn das nicht stimmt.',
@@ -30,7 +31,7 @@ function NotfallPage({ onNavigate }) {
       bullets: [
         'Schlaf ist medizinisch wichtig. Wenn die Person seit Tagen nicht schläft: ärztliche Hilfe ist dringend.',
         'Verbindliche Bezugsperson informieren (behandelnder Arzt, Psychiaterin, Klinik).',
-        'Wenn Geld, Verträge, Geschäfte ausser Kontrolle geraten: in stabiler Phase besprochene Schutzschritte umsetzen, etwa Bankabsprachen, eine Bankvollmacht oder einen Vorsorgeauftrag.',
+        FINANCIAL_SAFETY,
         'Bei akuter Selbst- oder Fremdgefährdung: 144. Bei Gewaltrisiko zusätzlich 117.',
       ],
       dont: 'Fördern Sie keine Pläne mit, auch nicht aus Erleichterung darüber, dass die Person endlich «wieder spricht». Keine grossen Entscheidungen.',
@@ -54,7 +55,7 @@ function NotfallPage({ onNavigate }) {
       cls: 'blue', letter: 'D',
       title: 'Tiefe depressive Krise',
       sub: 'Bewegungslosigkeit, anhaltende Suizidgedanken, völliger Rückzug',
-      do: 'Da sein, ohne zu drängen. Aktive Hilfe anbieten in kleinen Schritten — Wasser, kurzer Spaziergang, gemeinsam essen.',
+      do: 'Behandelnde Stelle oder Notfalldienst kontaktieren. Wenn die Person nicht reagiert, kaum trinkt oder bewegungslos bleibt, braucht sie dringend medizinische Einschätzung; bei unmittelbarer Gefahr 144. Kleine Alltagshilfen nur anbieten, wenn sie ansprechbar ist und dies möglich ist.',
       bullets: [
         'Direkt nach Suizidgedanken fragen. Das löst keine aus — es schafft Erleichterung.',
         'Wenn konkrete Pläne, ein Termin oder Mittel im Raum stehen: medizinische Notfallsituation. 144 oder Notfallaufnahme.',
@@ -163,12 +164,12 @@ function NotfallPage({ onNavigate }) {
             <div className="grauzone-grid">
               <div className="grauzone-card">
                 <div className="grauzone-card-quote">«Sie schläft seit drei Nächten kaum.»</div>
-                <p>Allein noch kein Notfall — aber ein wichtiges Frühwarnzeichen für Manie. Beobachten und früh handeln.</p>
+                <p>Kaum Schlaf über mehrere Nächte heute ärztlich einschätzen lassen. Bei zusätzlichen Warnzeichen wie starker Verwirrung, riskantem Verhalten oder unmittelbarer Gefahr sofort Hilfe holen.</p>
                 <span className="grauzone-card-action">→ Heute behandelnde Stelle anrufen</span>
               </div>
               <div className="grauzone-card">
                 <div className="grauzone-card-quote">«Er sagt, das Leben hat keinen Sinn — aber keinen Plan.»</div>
-                <p>Ernst nehmen. Direkt nachfragen: Konkrete Gedanken? Mittel? Termin? Antwort entscheidet die nächsten Schritte.</p>
+                <p>Ernst nehmen und direkt nachfragen. Auch ohne genannten Plan ist keine Entwarnung möglich. Wenn die Sicherheit unklar ist, professionelle Einschätzung holen; bei unmittelbarer Gefahr 144.</p>
                 <span className="grauzone-card-action">→ Direkt fragen, dranbleiben, Beratung holen</span>
               </div>
               <div className="grauzone-card">

@@ -1,6 +1,7 @@
 // Modul 1 — Die bipolare Störung verstehen · Volles Lese-Layout
 
 import React from 'react';
+import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 
@@ -89,10 +90,11 @@ function Modul1Page({ onNavigate }) {
           </aside>
 
           <div className="module-body prose">
+            <ModuleQuickStart number={1} onNavigate={onNavigate} />
 
             <blockquote className="module-quote">
               <p>«Als ich endlich begriffen habe, dass seine Gereiztheit ein Symptom ist und nicht gegen mich gerichtet — das hat alles verändert. Ich war nicht weniger erschöpft, aber ich war nicht mehr wütend.»</p>
-              <cite>Thomas, 51 Jahre, Ehemann · anonymisiert</cite>
+              <cite>Thomas, 51 Jahre, Ehemann · fiktives Beispiel</cite>
             </blockquote>
 
             <section id="s1">
@@ -145,7 +147,7 @@ function Modul1Page({ onNavigate }) {
 
               <blockquote className="module-quote">
                 <p>«Ich wollte am Anfang vor allem wissen, ob das jetzt er ist, die Krankheit ist oder ob ich überreagiere. Erst später habe ich verstanden: Für Angehörige ist genau diese Unklarheit oft die eigentliche Belastung.»</p>
-                <cite>Partnerin · anonymisiert</cite>
+                <cite>Partnerin · fiktives Beispiel</cite>
               </blockquote>
             </section>
 
@@ -165,16 +167,19 @@ function Modul1Page({ onNavigate }) {
               <p>Die Phasenlehre ist nur dann hilfreich, wenn sie in den Alltag übersetzt wird. Entscheidend ist nicht nur, wie eine Episode diagnostisch heisst, sondern wie sie sich für Sie zu Hause anfühlt: unberechenbar, laut, leer, beschämend, angsteinflössend oder seltsam schwer greifbar.</p>
 
               <h3>Manie und Hypomanie</h3>
-              <p>Nicht nur «zu gute Laune», sondern oft Gereiztheit, Enthemmung und fehlende Einsicht. Fachlich heisst diese fehlende Einsicht <em>Anosognosie</em> — die Person kann die eigene Erkrankung im Moment nicht realistisch erkennen. Das ist kein Unwille, sondern ein Symptom; <a className="link-underline" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a> vertieft, was das für Gespräche bedeutet.</p>
-              <p><strong>Übersteigertes Selbstwertgefühl.</strong> «Ich kann alles.» Realitätsverlust bis zum Grössenwahn. <em>«Er hört nicht mehr auf mich — ich werde als Bremse wahrgenommen.»</em></p>
+              <p>In beiden Hochphasen verändern sich Stimmung und Aktivität deutlich gegenüber dem gewohnten Zustand. Weniger Schlafbedürfnis, viele Ideen, Rededrang und Gereiztheit können vorkommen. Nicht jede Gereiztheit ist ein Symptom. Krankheitseinsicht kann beeinträchtigt sein; Widerspruch oder ein anderer Behandlungswunsch beweisen das jedoch nicht.</p>
+              <p><strong>Übersteigertes Selbstwertgefühl.</strong> Die Person traut sich ungewöhnlich viel zu. Bei einer Manie können Grössenwahn und andere psychotische Symptome auftreten. Eine Hochphase mit psychotischen Symptomen ist keine Hypomanie.</p>
               <p><strong>Vermindertes Schlafbedürfnis.</strong> Oft nur 2–3 Stunden Schlaf bei voller Energie. <em>«Nachts um 3 Uhr wird die Wohnung umgeräumt — ich kann nicht schlafen.»</em></p>
               <p><strong>Impulsive Entscheidungen.</strong> Grosse Geldausgaben, riskante Investitionen, sexuelle Abenteuer. <em>«Er hat 10'000 Fr. ausgegeben, ohne mich zu fragen.»</em></p>
               <p><strong>Reizbarkeit.</strong> Schnelle Aggression bei Widerstand oder Kritik. <em>«Jede Nachfrage wird als Angriff gewertet.»</em></p>
-              <p>Hypomanie ist oft schwerer zu erkennen, weil sie nach aussen produktiv, charmant oder erleichternd wirken kann. Gerade für Angehörige ist das tückisch: Was für andere wie eine gute Phase aussieht, kann für Sie bereits der Beginn einer Entgleisung sein.</p>
+              <p>Bei einer Hypomanie ist die Veränderung erkennbar, führt aber nicht zu der schweren Beeinträchtigung einer Manie. Nach DSM-5-TR dauert sie mindestens vier aufeinanderfolgende Tage; die ICD-11 spricht von mehreren Tagen. Es gibt keine feste Obergrenze von sieben Tagen. Eine Manie dauert nach DSM normalerweise mindestens eine Woche, bei erforderlicher Hospitalisation auch kürzer. Dauer, Schweregrad und Gesamtverlauf werden fachlich beurteilt.</p>
+
+              <h3>Was psychotische Symptome bedeuten</h3>
+              <p>Wahnvorstellungen oder Wahrnehmungen ohne äussere Entsprechung können während einer schweren Manie oder Depression auftreten. Sie werden von der betroffenen Person häufig als real erlebt. Es handelt sich nicht um eine zweite Persönlichkeit. Neue solche Veränderungen brauchen fachliche Einschätzung; bei unmittelbarer Gefahr nutzen Sie den <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
 
               <h3>Stabile Phase (Euthymie)</h3>
               <p>Wichtige Zeitfenster — aber nicht immer echte innere Entwarnung.</p>
-              <p><strong>Keine Episode — aber keine echte Pause.</strong> Stabile Phasen sind wertvoll und wichtig für die Behandlung. <em>«Ich warte immer auf den nächsten Einbruch — auch wenn es gerade gut geht.»</em></p>
+              <p><strong>Raum für Erholung.</strong> Stabile Phasen können lange dauern und echte Entlastung ermöglichen. Nach einer Krise kann die eigene Wachsamkeit noch eine Zeit lang bestehen bleiben.</p>
               <p><strong>Restsymptome möglich.</strong> Zwischen Episoden können milde Symptome bestehen bleiben. <em>«Ist diese gute Laune echt — oder schon der Beginn einer Manie?»</em></p>
               <p><strong>Zeit für Krisenplanung.</strong> Stabile Phasen sind der richtige Moment für wichtige Gespräche. <em>«Jetzt können wir reden — über Grenzen, Vereinbarungen, Notfallplan.»</em></p>
               <p>Stabile Phasen sind wichtig für Planung, Gespräche und Erholung. Sie können echte Entlastung und neue Absprachen ermöglichen. Gleichzeitig sind sie nicht automatisch unbelastet: Viele Angehörige prüfen in dieser Zeit innerlich weiter, ob das wirklich Ruhe ist — oder nur die Vorstufe zur nächsten Welle.</p>
@@ -196,17 +201,17 @@ function Modul1Page({ onNavigate }) {
               <h2>Bipolar I und Bipolar II</h2>
               <p>Die Unterscheidung ist für Angehörige nicht nur medizinisch relevant. Sie verändert oft, welche Belastung im Vordergrund steht: sichtbare Eskalation, lange Depression, fehlende Ernstnahme durch das Umfeld oder wiederkehrende Unsicherheit in scheinbar guten Phasen.</p>
 
-              <h3>Bipolar I — die «sichtbare» Form mit ausgeprägten Manien</h3>
-              <p>Bipolar I ist die Form, die die meisten Menschen vor Augen haben, wenn sie «bipolar» hören. Die manischen Episoden sind oft unübersehbar: Die erkrankte Person schläft kaum noch, hat grandiose Ideen, gibt unkontrolliert Geld aus, redet ohne Pause und ist überzeugt, alles sei grossartig.</p>
+              <h3>Bipolar I — mindestens eine manische Episode</h3>
+              <p>Für die Diagnose Bipolar I ist mindestens eine manische Episode erforderlich. Depressive Episoden können hinzukommen, sind für diese Diagnose aber nicht zwingend. Eine Manie kann den Alltag stark beeinträchtigen; manchmal ist eine stationäre Behandlung nötig.</p>
               <p>Die Manie kann so schwer werden, dass eine Hospitalisation nötig wird. Für Angehörige steht hier oft die sichtbare Eskalation im Vordergrund: Kontrollverlust, Angst, Gefahr, Beschämung und das Gefühl, den vertrauten Menschen zeitweise nicht wiederzuerkennen.</p>
 
-              <h3>Bipolar II — die «unsichtbare» Form mit langen Depressionen</h3>
-              <p>Bipolar II ist weniger bekannt, aber nicht weniger belastend. Statt vollständiger Manien treten Hypomanien auf — abgeschwächte, kürzere Hochphasen von etwa 4 bis 7 Tagen. Die Hypomanie wird oft als «gute Phase» fehlinterpretiert.</p>
-              <p>Was Bipolar II besonders belastend macht: Die depressiven Phasen sind oft schwerer und dauern länger als bei Bipolar I. Die eigentliche Krankheitslast liegt damit häufig nicht in der auffälligen Hochphase, sondern in der langen, zermürbenden Depression — die von aussen oft kaum sichtbar ist.</p>
+              <h3>Bipolar II — Hypomanie und depressive Episoden</h3>
+              <p>Bei Bipolar II treten mindestens eine hypomanische und eine depressive Episode auf, ohne frühere Manie. Bipolar II ist keine grundsätzlich leichte Form. Eine Hypomanie kann als produktive oder angenehme Phase erlebt und deshalb übersehen werden.</p>
+              <p>Bei Bipolar II kann die depressive Krankheitslast gross sein. Dauer, Schwere und Häufigkeit der Episoden sind individuell; aus der Diagnose allein lässt sich nicht ableiten, wie belastet eine Person oder ihre Angehörigen sein werden.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Warum der Unterschied wichtig ist</span>
-                <p>Bei Bipolar II fühlen sich Angehörige besonders oft nicht ernst genommen. Das Umfeld sagt «So schlimm ist das doch nicht» — weil niemand die Hypomanie als Problem erkennt. Sichtbare Krise und schleichende Zermürbung sind unterschiedliche Belastungen — beide sind real.</p>
+                <p>Beide Diagnosen können den Alltag erheblich belasten. Wie sichtbar Symptome für andere sind, ist kein Diagnosekriterium. Beschreiben Sie konkrete Veränderungen und Ihre eigenen Bedürfnisse, auch wenn das Umfeld wenig davon bemerkt.</p>
               </aside>
 
               <h3>Zyklothymie und unscharfe Verläufe</h3>
@@ -214,7 +219,7 @@ function Modul1Page({ onNavigate }) {
 
               <blockquote className="module-quote">
                 <p>«Letzte Woche hat er das ganze Wochenende durchgearbeitet, drei neue Projekte gestartet und war euphorisch. Alle fanden ihn grossartig. Ich war die Einzige, die wusste: Das ist keine gute Phase. Das ist der Anfang.»</p>
-                <cite>Angehörige · anonymisiert</cite>
+                <cite>Angehörige · fiktives Beispiel</cite>
               </blockquote>
             </section>
 
@@ -223,13 +228,13 @@ function Modul1Page({ onNavigate }) {
               <p>Gerade Angehörige zweifeln oft an ihrer Wahrnehmung, wenn das Erleben nicht zur klaren Phasenlehre passt. Das ist häufig kein Missverständnis, sondern Teil der Erkrankung: Bipolare Verläufe können widersprüchlich, gereizt, schnell wechselnd oder über Wochen schwer lesbar sein.</p>
 
               <h3>Mischzustände</h3>
-              <p>Die Person wirkt gleichzeitig getrieben und verzweifelt, gereizt und erschöpft, innerlich beschleunigt und dunkel. Für Angehörige gehört das zu den schwersten Zuständen, weil Energie und Verzweiflung zusammenkommen.</p>
+              <p>Bei Mischsymptomen bestehen depressive und manische Symptome gleichzeitig, etwa starke Aktivierung und Hoffnungslosigkeit. Gereiztheit allein bedeutet noch keinen Mischzustand. Bei dieser Kombination ist eine zeitnahe fachliche Einschätzung wichtig.</p>
 
               <h3>Gereizte Manie</h3>
               <p>Nicht jede Manie ist euphorisch. Manche Menschen wirken vor allem gereizt, aggressiv, misstrauisch oder explosiv. Fachleute sprechen hier auch von dysphorischer Manie.</p>
 
               <h3>Schnelle Wechsel</h3>
-              <p>Bei manchen Verläufen kippen Stimmung, Schlaf, Reizbarkeit und Antrieb rascher als erwartet. Für Angehörige fühlt sich das oft an, als gäbe es keinen verlässlichen Boden mehr.</p>
+              <p>Stimmung und Antrieb können schwanken. Das ist nicht automatisch Rapid Cycling: Dieser Fachbegriff bezeichnet mindestens vier abgrenzbare affektive Episoden innerhalb von zwölf Monaten. Angehörige müssen diese Einordnung nicht selbst vornehmen.</p>
 
               <h3>Unklare Übergänge</h3>
               <p>Viele Belastungen beginnen nicht eindeutig. Ist das eine echte gute Phase, eine Hypomanie, Erholung oder schon das Kippen? Gerade diese Unschärfe macht Angehörige oft hyperaufmerksam und erschöpft.</p>
@@ -245,21 +250,28 @@ function Modul1Page({ onNavigate }) {
               <p>Wenn Verläufe unklar, wiederkehrend oder widersprüchlich sind, entsteht bei Angehörigen oft ein Zustand permanenter Einordnung: Sie beobachten Schlaf, Sprache, Tempo, Geld, Rückzug, Gereiztheit — und fragen sich gleichzeitig, ob Sie überreagieren. Genau diese Unsicherheit ist eine eigene Belastung.</p>
               <p>Die Unterscheidung zwischen Person und Symptom kann helfen. Sie verhindert, dass Sie jedes Verhalten nur noch als bösen Willen lesen. Aber sie löst nicht alles. Auch krankheitsbedingtes Verhalten kann verletzen, Angst machen oder Vertrauen erschüttern. Verstehen entlastet also oft die Einordnung — nicht automatisch die Beziehung oder Ihre Erschöpfung.</p>
               <p>Viele Angehörige erleben stabile Phasen ambivalent: als Erleichterung und gleichzeitig als Zeit erhöhter Wachsamkeit. Nach schweren Episoden kommen oft Scham, vorsichtige Hoffnung und die Frage zusammen, wie viel Normalität man sich überhaupt noch trauen darf.</p>
-              <p>Die bipolare Störung ist nicht ein Charakter, der sich verändert — sie ist ein zweiter Zustand, der denselben Menschen bewohnt. <em>Zwei Zustände, eine Person.</em> Diese Erfahrung ist real, und sie ist eine der zentralen Belastungen im Alltag.</p>
+              <p>In einer Episode können Erleben und Verhalten stark verändert sein. Die Person bleibt mehr als diese Episode: mit ihrer Geschichte, ihren Fähigkeiten, Interessen und Beziehungen. Eine krankheitsbezogene Einordnung hebt Ihre Gefühle oder Schutzbedürfnisse nicht auf.</p>
             </section>
 
             <section id="s8">
               <h2>Behandlung — Was hilft, was schwierig bleibt</h2>
-              <p>Die bipolare Störung ist gut behandelbar, aber Behandlung bedeutet selten lineare Stabilität. Das Ziel ist meist nicht perfekte Normalität, sondern weniger Rückfälle, frühere Intervention, kürzere Episoden und mehr gemeinsame Vorhersehbarkeit.</p>
+              <p>Die bipolare Störung ist behandelbar. Ziele sind unter anderem weniger Rückfälle und Beschwerden, Erholung und ein selbstbestimmter Alltag. Lange stabile Phasen und ein gutes eigenes und gemeinsames Leben sind möglich; der Verlauf bleibt individuell.</p>
 
               <h3>Stimmungsstabilisierer</h3>
-              <p>Lithium, Valproat, Lamotrigin und weitere Medikamente sind oft die Basis. Sie können Rückfälle deutlich senken, brauchen aber Geduld, gute Begleitung und werden nicht immer auf Anhieb gut vertragen.</p>
+              <p>Die Auswahl richtet sich nach der aktuellen Phase, dem bisherigen Verlauf, Wirkungen und Nebenwirkungen. Eingesetzt werden unter anderem Lithium, bestimmte Antipsychotika und je nach Situation weitere Medikamente. Lamotrigin und Valproat haben unterschiedliche Einsatzgebiete. Notwendige Kontrollen und mögliche Alternativen werden mit dem Behandlungsteam besprochen. Medikamente nicht eigenständig verändern.</p>
+
+              <aside className="callout callout-soft">
+                <span className="callout-label">Kinderwunsch, Schwangerschaft und Zeit nach der Geburt</span>
+                <p>Planen Sie früh mit dem psychiatrischen und gynäkologischen Behandlungsteam. Bei Valproat bestehen besondere Risiken und Schutzvorgaben; zur Behandlung bipolarer Störungen darf es während einer Schwangerschaft nicht eingesetzt werden. Auch für Männer mit Kinderwunsch ist fachliche Beratung wichtig. Änderungen der Behandlung gehören in fachärztliche Hände. Für die Zeit nach der Geburt sind Schlaf, Unterstützung und ein gemeinsam abgestimmter Krisenplan besonders wichtig.</p>
+              </aside>
+              <h3>Gemeinsam über Behandlung entscheiden</h3>
+              <p>Was ist der betroffenen Person wichtig? Welche Wirkung hilft, welche Nebenwirkung belastet? Welche Unterstützung möchten und können Sie anbieten? Angehörige dürfen eigene Grenzen benennen. Besprechen Sie auch körperliche Gesundheit und die zur jeweiligen Medikation nötigen Kontrollen.</p>
 
               <h3>Psychotherapie</h3>
               <p>Gesprächstherapien und familienbezogene Behandlungsformen helfen, Warnzeichen früher zu erkennen, Rückfälle einzuordnen und den Alltag verlässlicher zu gestalten.</p>
 
               <h3>Psychoedukation</h3>
-              <p>Strukturiertes Wissen für Betroffene und Angehörige senkt nachweislich das Rückfallrisiko. Gemeint ist: Muster besser verstehen, benennen und Krisen früher erkennen.</p>
+              <p>Strukturierte Psychoedukation und familienbezogene Behandlungen können ergänzend zur medizinischen Behandlung helfen. Sie verbinden Wissen mit Übungen, Austausch und konkreten Strategien. Studien untersuchen solche Programme, nicht bloss das Lesen von Informationen. Diese Website bietet Orientierung; daraus lässt sich keine nachgewiesene Wirkung dieser Website auf Rückfälle oder Belastung ableiten.</p>
 
               <h3>Realistische Erwartungen</h3>
               <p>Auch unter guter Behandlung können Episoden auftreten. Fortschritt heisst oft: weniger, mildere oder früher erkannte Krisen — nicht null Krisen. Gerade für Angehörige ist diese realistische Erwartung zentral.</p>
@@ -324,10 +336,9 @@ function Modul1Page({ onNavigate }) {
             </section>
 
             <footer className="module-article-footer">
-              <p className="module-credits">
-                Quellen: S3-Leitlinie Bipolare Störungen (DGBS / DGPPN, 2019) · Goodwin &amp; Jamison «Manic-Depressive Illness» · Erfahrungsberichte aus der Beratung der Fachstelle Angehörigenarbeit der PUK Zürich.
-              </p>
-              <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert und keine reale Einzelperson.</p>
+              <EvidenceSources number={1} />
+
+              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
                 <a className="module-nav-btn" href={navHref('module')} onClick={navHandler('module', onNavigate)}>

@@ -2,6 +2,7 @@
 // Zentrales Bild: Zwei Linien, die unter Druck Form verändern.
 
 import React from 'react';
+import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function ZweiLinien() {
@@ -84,7 +85,7 @@ function ZweiLinienFigur() {
       <div className="zwei-linien-stage">
         <ZweiLinien />
       </div>
-      <figcaption>Vier Phasen einer Episode — und wie sich beide Linien dabei bewegen. Am Ende sind sie nicht zerbrochen, aber leicht versetzt zur Ausgangslage.</figcaption>
+      <figcaption>Fiktives Beispiel für unterschiedliche Erfahrungen während und nach einer Episode. Die Linien bilden weder einen typischen Verlauf noch eine Prognose ab.</figcaption>
     </figure>
   );
 }
@@ -95,19 +96,19 @@ function Druckpunkte() {
       num: '01',
       titel: 'Vertrauen',
       sub: 'wenn Wahrnehmung zur Streitfrage wird',
-      body: 'Impulsives Verhalten in Manien — Untreue, Geldausgaben, Versprechen — erschüttert das Grundvertrauen. Wer schon einmal eine Manie miterlebt hat, prüft. Stimmt das, was die Person sagt? Ist das «sie» oder «die Krankheit»? Diese Prüfung ist verständlich und verändert die Beziehung. Vertrauen wird zu einer Frage des aktuellen Zustands, nicht der Person.'
+      body: 'Impulsives Verhalten in Manien — Untreue, Geldausgaben, Versprechen — erschüttert das Grundvertrauen. Manche Angehörige prüfen nach einer belastenden Manie stärker. Stimmt das, was die Person sagt? Ist das «sie» oder «die Krankheit»? Diese Prüfung ist verständlich und verändert die Beziehung. Vertrauen wird zu einer Frage des aktuellen Zustands, nicht der Person.'
     },
     {
       num: '02',
       titel: 'Nähe',
       sub: 'wenn Körper und Vertrauen entkoppelt sind',
-      body: 'Sexualität, Zärtlichkeit, das einfache Nebeneinander — alles, was Nähe stiftet, ist in Episoden gestört. In der Manie oft zu viel, in der Depression oft gar nicht. Libidoverlust durch Medikamente trifft auf eine veränderte Dynamik. Nach Episoden bleibt manchmal eine Distanz, die nicht laut ist, aber bleibt.'
+      body: 'Sexualität, Zärtlichkeit, das einfache Nebeneinander — Nähe kann in Episoden verändert sein. In der Manie oft zu viel, in der Depression oft gar nicht. Libidoverlust durch Medikamente trifft auf eine veränderte Dynamik. Nach Episoden bleibt manchmal eine Distanz, die nicht laut ist, aber bleibt.'
     },
     {
       num: '03',
       titel: 'Leichtigkeit',
       sub: 'wenn Spontanität verlernt wird',
-      body: 'Spontanität wird unmöglich — jede Stimmungsschwankung wird analysiert. «Es ist schwer, Liebhaber zu sein, wenn man gleichzeitig Aufpasser ist.» Was früher leicht war — ein Witz, ein Ausflug, ein gemeinsames Schweigen — bekommt einen Schatten der Vorsicht.'
+      body: 'Spontanität kann schwerer fallen, wenn Stimmungsschwankungen ständig beobachtet werden. «Es ist schwer, Liebhaber zu sein, wenn man gleichzeitig Aufpasser ist.» Was früher leicht war — ein Witz, ein Ausflug, ein gemeinsames Schweigen — bekommt einen Schatten der Vorsicht.'
     },
     {
       num: '04',
@@ -118,8 +119,8 @@ function Druckpunkte() {
   ];
   return (
     <div className="druckpunkte">
-      <span className="kicker">Vier Substanzen, die erodieren</span>
-      <h3>Was Episode für Episode dünner wird.</h3>
+      <span className="kicker">Vier Bereiche, die unter Druck geraten können</span>
+      <h3>Was Aufmerksamkeit und Unterstützung brauchen kann.</h3>
       <ol>
         {punkte.map(p => (
           <li key={p.num}>
@@ -156,7 +157,7 @@ function Modul3Page({ onNavigate }) {
 
   const sections = [
     { id: 's1', label: 'Wenn Beziehung zur Funktion wird' },
-    { id: 's2', label: 'Vom Liebespaar zum Funktionspaar' },
+    { id: 's2', label: 'Wenn Verantwortung die Beziehung verändert' },
     { id: 's3', label: 'Was erodiert' },
     { id: 's4', label: 'Was Episoden hinterlassen' },
     { id: 's5', label: 'Was selten ausgesprochen wird' },
@@ -188,7 +189,7 @@ function Modul3Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 10–12 Minuten · 7 Abschnitte</span>
             </div>
             <h1>Wie Beziehungen unter <em>Druck</em> geraten</h1>
-            <p className="lede">Die Erkrankung verschiebt Rollen schleichend — vom Liebespaar zum Funktionspaar. Vertrauen, Nähe und Leichtigkeit erodieren Episode für Episode, oft unbemerkt. Tabuthemen wie Gewalt, Geldverlust oder sexuelle Enthemmung dürfen benannt werden.</p>
+            <p className="lede">Wiederholte Krisen können Rollen, Vertrauen und Nähe belasten. Wie stark und wie lange, ist unterschiedlich. Neue Absprachen und Entlastung können Raum für Beziehung schaffen. Tabuthemen wie Gewalt, Geldverlust oder sexuelle Enthemmung dürfen benannt werden.</p>
           </div>
         </header>
 
@@ -212,10 +213,11 @@ function Modul3Page({ onNavigate }) {
           </aside>
 
           <div className="module-body prose">
+            <ModuleQuickStart number={3} onNavigate={onNavigate} />
 
             <blockquote className="module-quote">
               <p>«Ich merkte irgendwann, dass ich nicht mehr seine Partnerin war, sondern seine Managerin. Ich kontrollierte Medikamente, Termine, Finanzen — und vergass dabei, dass wir mal ein Liebespaar waren.»</p>
-              <cite>Partnerin, 41 Jahre · anonymisiert</cite>
+              <cite>Partnerin, 41 Jahre · fiktives Beispiel</cite>
             </blockquote>
 
             <section id="s1">
@@ -230,20 +232,20 @@ function Modul3Page({ onNavigate }) {
             </section>
 
             <section id="s2">
-              <h2>Vom Liebespaar zum Funktionspaar</h2>
+              <h2>Wenn Verantwortung die Beziehung verändert</h2>
               <p>Diese Rollenverschiebung geschieht schleichend und oft aus Fürsorge. Wenn Sie sich hier wiedererkennen, ist das kein Versagen — sondern eine verständliche Anpassung an eine aussergewöhnliche Situation.</p>
 
               <ZweiLinienFigur />
 
               <h3>Die schleichende Verschiebung</h3>
               <p><strong>Diagnose.</strong> Sie bleiben Partnerin und Partner. Erste Übernahme von Verantwortung — Termine, Recherche, emotionale Stütze.</p>
-              <p><strong>6 Monate.</strong> Routinen entstehen. Medikamente erinnern, Stimmung beobachten, Arztbesuche koordinieren.</p>
-              <p><strong>2 Jahre.</strong> Mehrere Episoden hinter sich. Automatische Alarmbereitschaft. Sie wissen mehr über die Erkrankung als über Ihre eigenen Bedürfnisse.</p>
-              <p><strong>5+ Jahre.</strong> Betreuung ist zur zweiten Natur geworden. Die Liebesbeziehung tritt in den Hintergrund. Sie sind Funktionspaar.</p>
+              <p><strong>Zusätzliche Aufgaben.</strong> Manchmal übernehmen Angehörige Termine, Erinnerungen oder Organisation. Was ist gewünscht und für Sie tragbar?</p>
+              <p><strong>Wachsende Belastung.</strong> Nach Krisen kann Alarmbereitschaft bleiben. Dann lohnt es sich, Aufgaben und Unterstützung neu zu besprechen.</p>
+              <p><strong>Neue Verteilung.</strong> In stabileren Zeiten können Aufgaben wieder zurückgegeben werden. Eigene Interessen und gemeinsame Zeit dürfen Platz haben. Diese Möglichkeiten bilden keine feste Jahresfolge.</p>
 
               <blockquote className="module-quote">
                 <p>«Ich merkte es erst, als wir mal einen ganzen Abend ohne Thema Bipolar verbracht haben — und ich nicht wusste, worüber wir reden sollten. Wir zwei hatten verlernt, einfach zusammen zu sein.»</p>
-                <cite>Lars, 39 Jahre, Ehemann · anonymisiert</cite>
+                <cite>Lars, 39 Jahre, Ehemann · fiktives Beispiel</cite>
               </blockquote>
             </section>
 
@@ -257,12 +259,12 @@ function Modul3Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Kumulative Erosion</span>
-                <p>Nach jeder Episode erholen sich Vertrauen, Nähe und Leichtigkeit — aber nie ganz auf das Niveau von vorher. Dieser kumulative Effekt erklärt, warum langjährige Angehörige weniger Ressourcen haben als am Anfang. <strong>Dieser Prozess ist umkehrbar</strong> — mit bewusster Arbeit und professioneller Begleitung.</p>
+                <p>Wiederholte Krisen können Vertrauen, Nähe und Kraft belasten. Manche Beziehungen finden zu grosser Stabilität zurück; andere brauchen neue Absprachen, mehr Unterstützung oder Abstand. Aus der Zahl der Episoden folgt keine feste Beziehungsprognose.</p>
               </aside>
 
               <blockquote className="module-quote">
                 <p>«Die Manie hat uns fast zerstört — nicht wegen der Symptome, sondern wegen des Vertrauensbruchs danach. Er hat Dinge getan, die ich rational einordnen kann, aber emotional nicht vergessen. Jetzt ist er stabil, und ich frage mich: Darf ich ihm noch böse sein, wenn es eine Krankheit war? Meine Therapeutin hat gesagt: Ja, beides darf nebeneinander existieren.»</p>
-                <cite>Sabine, 44 Jahre, Partnerin seit 9 Jahren · anonymisiert</cite>
+                <cite>Sabine, 44 Jahre, Partnerin seit 9 Jahren · fiktives Beispiel</cite>
               </blockquote>
             </section>
 
@@ -329,7 +331,7 @@ function Modul3Page({ onNavigate }) {
 
               <blockquote className="module-quote">
                 <p>«Am schwersten war nicht nur, was passiert ist. Am schwersten war, dass ich lange dachte, ich dürfte es nicht einmal aussprechen. Als wäre schon das Benennen ein Verrat. Erst als ich es gesagt habe, wurde es überhaupt bearbeitbar.»</p>
-                <cite>Partner · anonymisiert</cite>
+                <cite>Partner · fiktives Beispiel</cite>
               </blockquote>
             </section>
 
@@ -383,10 +385,9 @@ function Modul3Page({ onNavigate }) {
             </section>
 
             <footer className="module-article-footer">
-              <p className="module-credits">
-                Quellen: Lam et al., «Cognitive Therapy for Bipolar Disorder» · Miklowitz, «The Family-Focused Treatment of Bipolar Disorder» · Beobachtungen aus Paar- und Angehörigengesprächen der Fachstelle Angehörigenarbeit der PUK Zürich.
-              </p>
-              <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert und keine reale Einzelperson.</p>
+              <EvidenceSources number={3} />
+
+              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
                 <a className="module-nav-btn" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>

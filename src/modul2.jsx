@@ -2,6 +2,7 @@
 // Zentrales Bild: Eisberg-Figur (sichtbar / verborgen) in der Bildmarke der Seite.
 
 import React from 'react';
+import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function Eisberg() {
@@ -86,12 +87,12 @@ function EisbergFigur() {
     <figure className="eisberg-figure">
       <div className="eisberg-zones">
         <div className="eisberg-zone-top">
-          <span className="eisberg-zone-kicker">Was andere sehen — etwa 20 %</span>
+          <span className="eisberg-zone-kicker">Was andere sehen</span>
           <span className="eisberg-zone-line"></span>
         </div>
         <div className="eisberg-zone-bottom">
           <span className="eisberg-zone-line"></span>
-          <span className="eisberg-zone-kicker">Was Sie tragen — etwa 80 %</span>
+          <span className="eisberg-zone-kicker">Was unter der Oberfläche liegen kann</span>
         </div>
       </div>
       <div className="eisberg-stage">
@@ -296,7 +297,7 @@ function Modul2Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 12–15 Minuten · 8 Abschnitte</span>
             </div>
             <h1>Die eigene <em>Belastung</em> verstehen</h1>
-            <p className="lede">Ihre Belastung als Angehörige ist real, messbar — und zu einem grossen Teil unsichtbar. Hypervigilanz ist eine verständliche Reaktion, lässt sich aber unterbrechen. Information und Einordnung entlasten nachweislich.</p>
+            <p className="lede">Ihre Belastung als Angehörige ist real, messbar — und zu einem grossen Teil unsichtbar. Hypervigilanz ist eine verständliche Reaktion, lässt sich aber unterbrechen. Information und Einordnung können Orientierung geben; Entlastung braucht oft auch konkrete Hilfe.</p>
           </div>
         </header>
 
@@ -320,33 +321,34 @@ function Modul2Page({ onNavigate }) {
           </aside>
 
           <div className="module-body prose">
+            <ModuleQuickStart number={2} onNavigate={onNavigate} />
 
             <blockquote className="module-quote">
               <p>«Als die Diagnose kam, war mein erster Gedanke: Endlich hat es einen Namen. Jahrelang dachte ich, ich sei das Problem — zu sensibel, zu fordernd, zu wenig geduldig. Dann plötzlich: eine Erklärung. Ich habe geweint — vor Erleichterung und vor Erschöpfung gleichzeitig.»</p>
-              <cite>Miriam, 47 Jahre · anonymisiert</cite>
+              <cite>Miriam, 47 Jahre · fiktives Beispiel</cite>
             </blockquote>
 
             <aside className="callout">
               <span className="callout-label">Auf einen Blick</span>
-              <p>Ihre Belastung als Angehörige und Nahestehende ist real, messbar — und zu einem grossen Teil unsichtbar. Hypervigilanz ist eine verständliche Reaktion, lässt sich aber unterbrechen. Suizidangst gehört zu den schwersten Belastungen — Sie müssen das nicht allein tragen. Information und Einordnung sind keine Extras, sondern entlasten nachweislich.</p>
+              <p>Ihre Belastung als Angehörige und Nahestehende ist real, messbar — und zu einem grossen Teil unsichtbar. Hypervigilanz ist eine verständliche Reaktion, lässt sich aber unterbrechen. Suizidangst gehört zu den schwersten Belastungen — Sie müssen das nicht allein tragen. Information, Austausch und praktische Unterstützung können hilfreich sein.</p>
             </aside>
 
             <section id="s1">
               <h2>Was Angehörige am meisten belastet</h2>
-              <p className="dropcap">Ihre Belastung als Angehörige und Nahestehende ist real — und sie ist messbar. Angehörige von Menschen mit bipolarer Störung tragen eine der höchsten Belastungen aller Angehörigengruppen. Ein grosser Teil davon bleibt im Alltag unsichtbar: für das Umfeld, oft lange auch für Sie selbst.</p>
+              <p>Angehörige können erheblich belastet sein. Wie stark, hängt unter anderem von den Symptomen, dem gemeinsamen Alltag und verfügbaren Hilfen ab. Ein Teil bleibt für das Umfeld unsichtbar. Ebenso gibt es Angehörige, die sich gut unterstützt fühlen und lange stabile Zeiten erleben.</p>
               <p>Viele der häufigsten Belastungen drehen sich um Unsicherheit, Informationsmangel und fehlende Einordnung. Das macht die Erkrankung nicht kleiner, zeigt aber: Ein Teil Ihrer Belastung ist verstehbar und beeinflussbar.</p>
 
               <h3>Die häufigsten Belastungsquellen</h3>
-              <p>Die folgenden Prozentwerte stammen aus Angehörigenbefragungen. Sie sollen die Richtung zeigen — nicht jede einzelne Familie exakt abbilden.</p>
-              <ul className="stats-list">
-                <li><span>Ängste durch mangelnde Information</span><strong>84 %</strong></li>
-                <li><span>Unsicherheit mit den Symptomen</span><strong>81 %</strong></li>
-                <li><span>Sorgen bezüglich der Behandlung</span><strong>78 %</strong></li>
-                <li><span>Hilflosigkeit und Ohnmacht</span><strong>72 %</strong></li>
-                <li><span>Einsamkeit und Alleinverantwortung</span><strong>72 %</strong></li>
+              <p>Studien und Erfahrungsbeschreibungen nennen unterschiedliche Belastungsquellen. Welche davon treffen auf Sie zu?</p>
+              <ul>
+                <li>Unsicherheit über Symptome und Verlauf</li>
+                <li>Sorgen bezüglich der Behandlung</li>
+                <li>Hilflosigkeit oder fehlende Information</li>
+                <li>Einsamkeit und zu viel Verantwortung</li>
+                <li>Schlafmangel, finanzielle oder berufliche Belastungen</li>
               </ul>
+              <p>Wissen kann Fragen klären. Ob daraus Entlastung entsteht, hängt auch von erreichbaren Hilfen, Entlastung im Alltag und Ihrer eigenen Situation ab. Sie müssen Ihre Belastung nicht mit einer Prozentzahl rechtfertigen.</p>
 
-              <p>Dass sich die häufigsten Belastungen um Informationsmangel und Unsicherheit drehen, ist wichtig: Es zeigt, warum Angehörigenwissen und Einordnung nicht «nice to have» sind, sondern entlasten können. Sie sind nicht «zu empfindlich» — Sie befinden sich in einer objektiv schwierigen Situation.</p>
               <p>Das tägliche Gleichgewichthalten — zwischen Fürsorge und eigenen Grenzen, zwischen Präsenz und Abstand — ist eine eigene Leistung, die selten gesehen wird. Dieses Modul hilft Ihnen, diese Leistung zu benennen und zu verstehen, was sie kostet.</p>
             </section>
 
@@ -361,7 +363,7 @@ function Modul2Page({ onNavigate }) {
 
               <blockquote className="module-quote">
                 <p>«Meine Freundin hat mich gefragt, wie es mir geht. Ich habe gesagt: ‹Gut, danke.› Aber in Wahrheit hatte ich seit Wochen nicht mehr durchgeschlafen, weil ich auf jedes Geräusch im Haus horche.»</p>
-                <cite>Sarah, 34 Jahre, Partnerin · anonymisiert</cite>
+                <cite>Sarah, 34 Jahre, Partnerin · fiktives Beispiel</cite>
               </blockquote>
 
               <aside className="callout callout-soft">
@@ -372,16 +374,16 @@ function Modul2Page({ onNavigate }) {
 
             <section id="s3">
               <h2>Der Hypervigilanz-Kreislauf — und wie Sie ihn unterbrechen</h2>
-              <p>Viele Angehörige werden zum «Frühwarnsystem»: Sie scannen permanent Stimmung, Schlaf, Tempo, Reizbarkeit oder Rückzug. Diese Daueranspannung ist verständlich, hält sich aber oft selbst aufrecht — und Erholung gelingt nie ganz.</p>
+              <p>Nach belastenden Krisen kann erhöhte Wachsamkeit entstehen: Schlaf, Stimmung oder Rückzug werden immer wieder überprüft. Wenn diese Alarmbereitschaft anhält, kann sie Erholung erschweren. Die folgende Grafik ist ein vereinfachtes Reflexionsmodell, kein für alle geltender Ablauf.</p>
 
               <HypervigilanzFigur />
 
               <h3>Der Kreislauf der chronischen Anspannung</h3>
               <p><strong>1 — Beobachten.</strong> Sie scannen permanent die Stimmung — jede Verhaltensänderung wird geprüft. Das aktiviert Ihren Körper.</p>
-              <p><strong>2 — Anspannung.</strong> Der Körper geht in Alarmbereitschaft. Cortisol steigt, Schlaf wird oberflächlich. Das kostet Kraft.</p>
-              <p><strong>3 — Erschöpfung.</strong> Konzentration und Belastbarkeit sinken. Sie funktionieren, fühlen aber nicht mehr. Sie brauchen eine Pause.</p>
-              <p><strong>4 — Kurze Erholung.</strong> Ein ruhiger Tag — aber die Wachsamkeit bleibt. Sie sind nie ganz erholt, bevor das Beobachten wieder beginnt.</p>
-              <p>Der Kreislauf wiederholt sich täglich — oft unbewusst. Mit jeder Runde wird die Erholung kürzer. Das ist kein Versagen — es ist ein automatisierter Schutzmechanismus.</p>
+              <p><strong>2 — Anspannung.</strong> Sie fühlen sich innerlich oder körperlich angespannt; Abschalten und Schlafen können schwerfallen.</p>
+              <p><strong>3 — Erschöpfung.</strong> Konzentration und Kraft können nachlassen. Welche Entlastung wäre jetzt erreichbar?</p>
+              <p><strong>4 — Erholung.</strong> Ruhe kann entlasten. Nach einer Krise braucht es manchmal Zeit, bis die Wachsamkeit zurückgeht.</p>
+              <p>Diese Erfahrungen können sich gegenseitig verstärken, müssen es aber nicht. Gemeinsam vereinbarte Zuständigkeiten, verlässliche Hilfe und eigene Erholung können Raum schaffen. Neue oder anhaltende Beschwerden sollten auch medizinisch abgeklärt werden.</p>
             </section>
 
             <section id="s4">
@@ -417,7 +419,7 @@ function Modul2Page({ onNavigate }) {
 
             <section id="s5">
               <h2>Wenn Sie Elternteil eines erwachsenen Kindes sind</h2>
-              <p>Die bisherigen Beschreibungen — Hypervigilanz, Eisberg, Daueranspannung — treffen auf alle Angehörigen zu. Für Eltern erwachsener Kinder kommt ein spezifisches Dilemma dazu: Sie wollen schützen, aber die Person ist erwachsen. Das bedeutet: Sie haben kein Recht auf Auskunft, keinen Einfluss auf Behandlungsentscheidungen und oft wenig Einblick in den Alltag Ihres Kindes. Gleichzeitig spüren Sie die Verantwortung so stark wie damals, als Ihr Kind noch klein war.</p>
+              <p>Vielleicht erkennen Sie sich als Elternteil in den Beschreibungen wieder. Ihr erwachsenes Kind entscheidet grundsätzlich selbst. Eltern haben nicht automatisch ein Auskunfts- oder Entscheidungsrecht; mit Einwilligung oder je nach rechtlicher Rolle können sie einbezogen werden. Beobachtungen dürfen Sie dem Behandlungsteam mitteilen. Was dies für Vertraulichkeit und Rückmeldung bedeutet, erklärt die <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflichtseite</a>. Eigene Beratung dürfen Sie unabhängig davon nutzen.</p>
               <p>Typisch für Eltern ist der Pendelschlag zwischen Überengagement (anrufen, kontrollieren, einspringen) und schmerzlichem Rückzug (weil die eigenen Grenzen oder die des Kindes erreicht sind). Viele Eltern tragen zusätzlich die Schuldfrage mit sich: Habe ich etwas übersehen? Liegt es an der Erziehung? Die Antwort der Forschung ist klar: Bipolare Störung ist eine neurobiologische Erkrankung — sie wird nicht durch Erziehung verursacht. Aber das Wissen nimmt nicht immer das Gefühl.</p>
 
               <aside className="callout">
@@ -432,19 +434,19 @@ function Modul2Page({ onNavigate }) {
 
               <blockquote className="module-quote">
                 <p>«Nach seinem zweiten Suizidversuch habe ich drei Monate lang jede Nacht wach gelegen. Nicht weil ich Angst hatte, dass er es wieder tut — das auch — sondern weil ich nicht wusste, ob ich das noch aushalte.»</p>
-                <cite>Thomas, 51 Jahre, Ehemann · anonymisiert</cite>
+                <cite>Thomas, 51 Jahre, Ehemann · fiktives Beispiel</cite>
               </blockquote>
 
               <p><strong>Hypervigilanz.</strong> Angehörige, die mit dem Suizidrisiko ihres Partners leben, scannen oft ständig nach Warnzeichen. Diese dauerhafte Anspannung kann zu Schlafstörungen, Reizbarkeit und eigenen Angstsymptomen führen.</p>
               <p><strong>Trauma.</strong> Das Erleben oder Entdecken eines Suizidversuchs kann bei Angehörigen selbst PTBS-Symptome auslösen — wiederkehrende Bilder, Vermeidung, innere Anspannung. Diese Traumatisierung wird in der klinischen Versorgung häufig nicht erkannt.</p>
-              <p><strong>Eigenes Wohlbefinden.</strong> Studien zeigen, dass Angehörige von Menschen mit bipolarer Störung deutlich häufiger eigene depressive oder Angstsymptome entwickeln als Menschen ohne diese Dauerbelastung. Die genaue Höhe schwankt je nach Stichprobe und Erhebungsmethode. Entscheidend ist die Richtung: Wer entlastet wird, erkrankt seltener. Hilfe suchen ist deshalb auch Prävention.</p>
+              <p><strong>Eigenes Wohlbefinden.</strong> Hohe anhaltende Belastung steht in Studien mit eigenen psychischen Beschwerden in Zusammenhang. Frühere Belastungen, körperliche Gesundheit, Schlaf und Unterstützung spielen ebenfalls eine Rolle. Das ist ein Grund, die eigene Gesundheit ernst zu nehmen; es ist keine Vorhersage für Sie persönlich.</p>
 
               <aside className="callout">
                 <span className="callout-label">Bei akuter Suizidgefahr</span>
                 <p>Wenn unmittelbare Gefahr besteht oder die Person akut handelt: <strong>144</strong>. Wenn Sie dringende medizinische Einschätzung brauchen, die Lage aber nicht unmittelbar lebensbedrohlich ist: <strong>0800 33 66 55</strong> — Ärztefon Notfalldienst ZH (24/7, kostenlos). Konkrete Schritte zur Vorbereitung finden Sie in Modul 6. Alle Notrufnummern: <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
               </aside>
 
-              <p>Wichtig zu wissen: Konsequente Behandlung — insbesondere mit Lithium — senkt das Suizidrisiko nachweislich. Die Erkrankung ist behandelbar, und Behandlung kann deutlich entlasten.</p>
+              <p>Behandlung kann die Erkrankung stabilisieren. Lithium ist eine etablierte Option und kann zur langfristigen Schutzplanung gehören. Wie stark es Suizide verhindert, ist wegen seltener Ereignisse und uneinheitlicher Studienergebnisse nicht abschliessend geklärt. Auch bei laufender Behandlung braucht akute Suizidgefahr sofort professionelle Hilfe.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Atmen Sie durch</span>
@@ -469,8 +471,8 @@ function Modul2Page({ onNavigate }) {
                 <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                   <span className="next-module-num">W</span>
                   <div>
-                    <h3>Werkzeug — Belastungs-Selbsttest</h3>
-                    <p>Ein kurzer Fragebogen, der Ihre eigene Innenseite einordnet. Anonym, im Browser.</p>
+                    <h3>Werkzeug — Meine Belastung wahrnehmen</h3>
+                    <p>Fünf Fragen zur persönlichen Reflexion, ohne Gesamtpunktzahl oder Einstufung. Im Browser.</p>
                   </div>
                 </a>
               </div>
@@ -487,10 +489,9 @@ function Modul2Page({ onNavigate }) {
             </section>
 
             <footer className="module-article-footer">
-              <p className="module-credits">
-                Quellen: «Caring for someone with bipolar disorder» (Royal College of Psychiatrists) · Bauer &amp; Pfennig, «Lebensqualität von Angehörigen affektiv Erkrankter» · Erfahrungen aus der Beratung der Fachstelle Angehörigenarbeit der PUK Zürich. Konzept der Hypervigilanz nach Cardeña / Spiegel.
-              </p>
-              <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert und keine reale Einzelperson.</p>
+              <EvidenceSources number={2} />
+
+              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
                 <a className="module-nav-btn" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)}>

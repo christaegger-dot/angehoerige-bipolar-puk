@@ -63,8 +63,8 @@ function AtemuebungTool({ onClose }) {
         {phase === 'intro' && (
           <>
             <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Durchatmen</h2>
-            <p className="lede" style={{ maxWidth: '40ch' }}>Wenn der Moment gerade zu viel ist. Fünf Atemzüge in Ihrem Tempo — geführt durch einen Kreis, der mit Ihnen ein- und ausatmet.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '40ch' }}>Einatmen 4 · Halten 2 · Ausatmen 6 · Pause 2. Wiederholt sich fünf Mal, etwa eine Minute.</p>
+            <p className="lede" style={{ maxWidth: '40ch' }}>Wenn der Moment gerade zu viel ist. Fünf geführte Atemzüge als freiwillige Pause. Passen Sie die Atmung an das an, was sich angenehm anfühlt.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '40ch' }}>Einatmen 4 · Halten 2 · Ausatmen 6 · Pause 2. Wiederholt sich fünf Mal, etwa 70 Sekunden. Atemhalten ist optional. Bei Unwohlsein stoppen und normal weiteratmen. Alternativ: den Bodenkontakt spüren und drei Dinge im Raum betrachten.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>
@@ -109,180 +109,123 @@ const SELBSTTEST_FRAGEN = [
   {
     q: 'Wie ist Ihr Schlaf in den letzten zwei Wochen?',
     opts: [
-      { label: 'Erholsam, ich schlafe meistens gut durch', score: 0 },
-      { label: 'Meist okay, aber mit unruhigen Nächten', score: 1 },
-      { label: 'Oberflächlich — ich werde oft wach', score: 2 },
-      { label: 'Gestört — ich liege wach oder kann nicht abschalten', score: 3 },
+      { label: 'Erholsam, ich schlafe meistens gut durch' },
+      { label: 'Meist okay, aber mit unruhigen Nächten' },
+      { label: 'Oberflächlich — ich werde oft wach' },
+      { label: 'Gestört — ich liege wach oder kann nicht abschalten' },
     ],
   },
   {
     q: 'Wie geht es Ihnen mit dem täglichen Funktionieren?',
     opts: [
-      { label: 'Ich habe Energie für mehr als das Nötigste', score: 0 },
-      { label: 'Ich schaffe, was ansteht — manchmal mit Mühe', score: 1 },
-      { label: 'Ich funktioniere, fühle aber wenig', score: 2 },
-      { label: 'Ich komme kaum noch durch den Tag', score: 3 },
+      { label: 'Ich habe Energie für mehr als das Nötigste' },
+      { label: 'Ich schaffe, was ansteht — manchmal mit Mühe' },
+      { label: 'Ich funktioniere, fühle aber wenig' },
+      { label: 'Ich komme kaum noch durch den Tag' },
     ],
   },
   {
     q: 'Wie ist Ihr Kontakt zu Menschen ausserhalb der Erkrankung?',
     opts: [
-      { label: 'Regelmässig — ich pflege eigene Kontakte', score: 0 },
-      { label: 'Reduziert, aber noch da', score: 1 },
-      { label: 'Stark zurückgegangen', score: 2 },
-      { label: 'Ich bin meist allein damit', score: 3 },
+      { label: 'Regelmässig — ich pflege eigene Kontakte' },
+      { label: 'Reduziert, aber noch da' },
+      { label: 'Stark zurückgegangen' },
+      { label: 'Ich bin meist allein damit' },
     ],
   },
   {
     q: 'Wenn jemand fragt «Wie geht es Ihnen?» — welche Antwort liegt am nächsten?',
     opts: [
-      { label: 'Ich kann ehrlich antworten', score: 0 },
-      { label: 'Ich antworte automatisch «gut»', score: 1 },
-      { label: 'Ich weiss nicht mehr, wie es mir wirklich geht', score: 2 },
-      { label: 'Mir fällt die Frage zunehmend schwer', score: 3 },
+      { label: 'Ich kann ehrlich antworten' },
+      { label: 'Ich antworte automatisch «gut»' },
+      { label: 'Ich weiss nicht mehr, wie es mir wirklich geht' },
+      { label: 'Mir fällt die Frage zunehmend schwer' },
     ],
   },
   {
     q: 'In den letzten Wochen — wie geht es Ihnen innerlich?',
     opts: [
-      { label: 'Belastet, aber im Gleichgewicht', score: 0 },
-      { label: 'Wechselhaft — gute und schwere Tage', score: 1 },
-      { label: 'Erschöpft, dünnhäutig, gereizt', score: 2 },
-      { label: 'Leer, abgestumpft oder ständig in Alarm', score: 3 },
+      { label: 'Belastet, aber im Gleichgewicht' },
+      { label: 'Wechselhaft — gute und schwere Tage' },
+      { label: 'Erschöpft, dünnhäutig, gereizt' },
+      { label: 'Leer, abgestumpft oder ständig in Alarm' },
     ],
   },
 ];
 
-function selbsttestZone(score) {
-  if (score <= 3)  return 'getragen';
-  if (score <= 7)  return 'schmal';
-  if (score <= 11) return 'reserve';
-  return 'notlage';
-}
-
-const SELBSTTEST_ZONEN = {
-  getragen: {
-    label: 'Getragen',
-    sub: 'Sie wirken aktuell tragfähig unterwegs.',
-    body: 'Das heisst nicht, dass alles leicht ist — sondern dass Sie im Moment Ressourcen haben, die mittragen. Wenn Sie Hintergrundwissen oder Sprache für die eigene Erfahrung suchen, ist Modul 1 der gute Einstieg.',
-    primary: { text: 'Modul 1 — Die bipolare Störung verstehen', target: 'modul1' }, // top — Intro
-  },
-  schmal: {
-    label: 'Schmal',
-    sub: 'Erste Belastungsspuren sind erkennbar.',
-    body: 'Was Sie beobachten ist verständlich. Modul 2 ordnet ein, was bei Angehörigen typisch ist — Hypervigilanz, der unsichtbare Anteil, der Eisberg unter der Oberfläche. Es geht nicht darum, sofort etwas zu ändern, sondern erst einmal zu verstehen, was läuft.',
-    primary: { text: 'Modul 2 — Die eigene Belastung verstehen', target: 'modul2', anchor: 's2' }, // Eisberg
-  },
-  reserve: {
-    label: 'Reserve',
-    sub: 'Ihre Belastung ist deutlich.',
-    body: 'Sie sind nicht «zu empfindlich». Modul 4 beschreibt, wie sich Erschöpfung über Zeit aufbaut und was helfen kann, wenn Sie an der Grenze sind. Eine kleine Entlastung jetzt verhindert oft eine grössere Krise später.',
-    primary: { text: 'Modul 4 — Wenn die Kraft nachlässt', target: 'modul4', anchor: 's2' }, // Reservoir
-    secondary: { text: 'Unterstützung und Ressourcen', target: 'unterstuetzung' },
-  },
-  notlage: {
-    label: 'Notlage',
-    sub: 'Sie sind am Limit.',
-    body: 'Bitte holen Sie Unterstützung. Sie müssen das nicht weiter alleine tragen. Die Fachstelle Angehörigenarbeit PUK Zürich berät kostenlos und vertraulich — auch dann, wenn Sie noch nicht wissen, was Sie sagen wollen.',
-    phone: { display: '058 384 38 00', href: 'tel:+41583843800', label: 'Fachstelle PUK Angehörigenarbeit' },
-    primary: { text: 'Modul 4 — Wenn die Kraft nachlässt', target: 'modul4', anchor: 's7' }, // Erste Gegensteuerung
-    secondary: { text: 'Notfallweg', target: 'notfall', urgent: true },
-  },
-};
-
 function SelbsttestTool({ onClose, onNavigate }) {
   const [phase, setPhase] = React.useState('intro');
   const [answers, setAnswers] = React.useState([]);
-
-
-  const start  = () => { setAnswers([]); setPhase('running'); };
-  const answer = (score) => {
-    const next = [...answers, score];
+  const start = () => { setAnswers([]); setPhase('running'); };
+  const answer = (optionIndex) => {
+    const next = [...answers, optionIndex];
     setAnswers(next);
     if (next.length === SELBSTTEST_FRAGEN.length) setPhase('result');
   };
-  const back     = () => setAnswers(answers.slice(0, -1));
-
-  const qIdx = answers.length;
-  const total = answers.reduce((a, b) => a + b, 0);
-  const zoneKey = selbsttestZone(total);
-  const zone = SELBSTTEST_ZONEN[zoneKey];
-
   const goto = (target, anchor) => { onNavigate(target, anchor); onClose(); };
+  const qIdx = answers.length;
+  const alltagSehrSchwer = answers[1] === 3;
 
   return (
-    <ToolOverlay onClose={onClose} ariaLabel="Belastungs-Selbsttest" cardClass="selbsttest-card">
-      <span className="kicker">Werkzeug · Belastungs-Selbsttest</span>
-
-        {phase === 'intro' && (
-          <>
-            <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Belastungs-Selbsttest</h2>
-            <p className="lede" style={{ maxWidth: '44ch' }}>Fünf kurze Fragen, etwa zwei Minuten. Sie bekommen am Ende eine Einordnung — Information, Entlastung oder Gespräch — als Orientierung.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Dieser Test ist keine Diagnose und kein Ersatz für eine fachliche Einschätzung. Er gibt Hinweise, wo Sie gerade stehen — anonym, im Browser. Ihre Antworten verlassen Ihr Gerät nicht. Bei akuter Gefahr ist dieses Werkzeug nicht der richtige erste Schritt: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
-            <div style={{ marginTop: 24 }}>
-              <button className="btn btn-primary" onClick={start}>Beginnen →</button>
-            </div>
-          </>
-        )}
-
-        {phase === 'running' && (
-          <div className="selbsttest-q-block">
-            <div className="selbsttest-progress">
-              Frage {qIdx + 1} von {SELBSTTEST_FRAGEN.length}
-              <span className="selbsttest-progress-bar"><span style={{ width: `${(qIdx / SELBSTTEST_FRAGEN.length) * 100}%` }}></span></span>
-            </div>
-            <div className="selbsttest-q">{SELBSTTEST_FRAGEN[qIdx].q}</div>
-            <div className="selbsttest-options">
-              {SELBSTTEST_FRAGEN[qIdx].opts.map((o, i) => (
-                <button key={i} className="selbsttest-opt" onClick={() => answer(o.score)}>
-                  {o.label}
-                </button>
-              ))}
-            </div>
-            {answers.length > 0 && (
-              <button className="tool-quiet-btn" onClick={back}>← Frage zurück</button>
-            )}
+    <ToolOverlay onClose={onClose} ariaLabel="Meine Belastung wahrnehmen" cardClass="selbsttest-card">
+      <span className="kicker">Werkzeug · Persönliche Reflexion</span>
+      {phase === 'intro' && (
+        <>
+          <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Meine Belastung wahrnehmen</h2>
+          <p className="lede" style={{ maxWidth: '44ch' }}>Fünf Fragen zu Schlaf, Alltag, Kontakten und Befinden. Sie sehen danach Ihre eigenen Antworten und können überlegen, welche Unterstützung Sie brauchen.</p>
+          <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Diese Fragen sind kein validierter Test. Es gibt keine Gesamtpunktzahl, Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert. Bei akuter Gefahr: 144. Wenn Sie die Sicherheit nicht einschätzen können, holen Sie professionelle Hilfe über den <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
+          <div style={{ marginTop: 24 }}><button className="btn btn-primary" onClick={start}>Beginnen →</button></div>
+        </>
+      )}
+      {phase === 'running' && (
+        <div className="selbsttest-q-block">
+          <div className="selbsttest-progress">
+            Frage {qIdx + 1} von {SELBSTTEST_FRAGEN.length}
+            <span className="selbsttest-progress-bar"><span style={{ width: `${(qIdx / SELBSTTEST_FRAGEN.length) * 100}%` }} /></span>
           </div>
-        )}
-
-        {phase === 'result' && (
-          <div className="selbsttest-result">
-            <div className={`selbsttest-zone selbsttest-zone-${zoneKey}`}>
-              <span className="selbsttest-zone-kicker">Ihre Einordnung</span>
-              <h2>{zone.label}</h2>
-              <p className="selbsttest-zone-sub">{zone.sub}</p>
-            </div>
-            <p className="selbsttest-body">{zone.body}</p>
-
-            {zone.phone && (
-              <div className="selbsttest-phone">
-                <a href={zone.phone.href} className="selbsttest-phone-num">{zone.phone.display}</a>
-                <span className="selbsttest-phone-label">{zone.phone.label}</span>
-              </div>
-            )}
-
-            <div className="selbsttest-actions">
-              {zone.primary && (
-                <button className="btn btn-primary" onClick={() => goto(zone.primary.target, zone.primary.anchor)}>
-                  {zone.primary.text} →
-                </button>
-              )}
-              {zone.secondary && (
-                <button
-                  className={`selbsttest-secondary ${zone.secondary.urgent ? 'selbsttest-secondary-alert' : ''}`}
-                  onClick={() => goto(zone.secondary.target, zone.secondary.anchor)}
-                >
-                  {zone.secondary.text} →
-                </button>
-              )}
-            </div>
-
-            <div className="selbsttest-foot">
-              <button className="tool-quiet-btn" onClick={start}>Test wiederholen</button>
-              <button className="tool-quiet-btn" onClick={onClose}>schliessen</button>
-            </div>
+          <div className="selbsttest-q">{SELBSTTEST_FRAGEN[qIdx].q}</div>
+          <div className="selbsttest-options">
+            {SELBSTTEST_FRAGEN[qIdx].opts.map((option, index) => (
+              <button key={option.label} className="selbsttest-opt" onClick={() => answer(index)}>{option.label}</button>
+            ))}
           </div>
-        )}
+          {answers.length > 0 && <button className="tool-quiet-btn" onClick={() => setAnswers(answers.slice(0, -1))}>← Frage zurück</button>}
+        </div>
+      )}
+      {phase === 'result' && (
+        <div className="selbsttest-result">
+          <h2>Was Sie gerade beschreiben</h2>
+          <p>Ihre Antworten stehen nebeneinander. Eine gute Erfahrung in einem Bereich hebt eine Belastung in einem anderen nicht auf.</p>
+          <dl>
+            {SELBSTTEST_FRAGEN.map((question, index) => (
+              <React.Fragment key={question.q}>
+                <dt><strong>{question.q}</strong></dt>
+                <dd style={{ margin: '4px 0 20px' }}>{question.opts[answers[index]].label}</dd>
+              </React.Fragment>
+            ))}
+          </dl>
+          {alltagSehrSchwer && (
+            <aside className="callout" role="status">
+              <span className="callout-label">Wenn der Alltag kaum noch gelingt</span>
+              <p>Sie beschreiben, dass Ihnen der Alltag derzeit sehr schwerfällt. Holen Sie möglichst zeitnah Unterstützung: bei Ihrer Hausärztin, Ihrem Hausarzt oder einer Beratungsstelle. Welche Aufgabe könnte heute jemand übernehmen?</p>
+            </aside>
+          )}
+          <p className="selbsttest-body">Was fällt Ihnen besonders auf? Was tut Ihnen gut, was fehlt? Sie dürfen Beratung nutzen, auch wenn vieles noch gelingt. Bei anhaltenden Schlafproblemen, Erschöpfung oder anderen Beschwerden ist eine fachliche Abklärung sinnvoll.</p>
+          <div className="selbsttest-phone">
+            <a href="tel:+41583843800" className="selbsttest-phone-num">058 384 38 00</a>
+            <span className="selbsttest-phone-label">Fachstelle Angehörigenarbeit PUK · werktags · kostenlos</span>
+          </div>
+          <div className="selbsttest-actions">
+            <button className="btn btn-primary" onClick={() => goto('unterstuetzung')}>Unterstützung und Ressourcen →</button>
+            <button className="selbsttest-secondary" onClick={() => goto('modul4', 's7')}>Mögliche Entlastungsschritte →</button>
+            <button className="selbsttest-secondary" onClick={() => goto('notfall')}>Bei Sorge um die Sicherheit: Notfallweg →</button>
+          </div>
+          <div className="selbsttest-foot">
+            <button className="tool-quiet-btn" onClick={start}>Fragen erneut ansehen</button>
+            <button className="tool-quiet-btn" onClick={onClose}>schliessen</button>
+          </div>
+        </div>
+      )}
     </ToolOverlay>
   );
 }
@@ -307,7 +250,7 @@ const KRISENPLAN_FELDER = [
     id: 'schritte',
     label: 'Erste Schritte bei Verschlechterung',
     sub: 'In welcher Reihenfolge handeln wir? Konkret und geordnet.',
-    placeholder: 'z.B.\n1. Hausärztin / behandelnde Psychiaterin anrufen\n2. Termin innerhalb von 48 Stunden\n3. Krisenplan mit erkrankter Person aktivieren\n4. Bei akuter Gefährdung → 144 / 117',
+    placeholder: 'z.B.\n1. Hausärztin / behandelnde Psychiaterin anrufen\n2. Dringlichkeit heute fachlich klären; Ausweichkontakt bei Nichterreichbarkeit\n3. Krisenplan mit erkrankter Person aktivieren\n4. Bei akuter Gefährdung → 144 / 117',
     kind: 'textarea',
     rows: 5,
   },
@@ -339,10 +282,13 @@ const KRISENPLAN_FELDER = [
     id: 'nichthilft',
     label: 'Was nicht hilft',
     sub: 'Auch wenn es gut gemeint ist — was wir bewusst lassen.',
-    placeholder: 'z.B.\n— lange Diskussionen über die Wahrnehmung\n— Vorhaltungen, Schuldzuweisungen\n— Schweigen aus Angst\n— ohne Vorwarnung Polizei',
+    placeholder: 'z.B.\n— lange Diskussionen über die Wahrnehmung\n— Vorhaltungen, Schuldzuweisungen\n— Schweigen aus Angst\n— unklare Zuständigkeiten; bei akuter Bedrohung 117 rufen',
     kind: 'textarea',
     rows: 4,
   },
+  { id: 'ausweichkontakt', label: 'Wenn niemand erreichbar ist', sub: 'Notfalldienst und Vorgehen, wenn der Plan nicht zur Lage passt. Bei unmittelbarer Gefahr 144 / 117.', placeholder: 'Wen rufen wir heute an? Wer kann übernehmen?', kind: 'textarea', rows: 3 },
+  { id: 'betreuung', label: 'Kinder und eigene Entlastung', sub: 'Wer betreut Kinder oder andere abhängige Personen? Wer übernimmt, wenn ich nicht begleiten kann?', placeholder: 'Betreuung: Name / Telefon / sicherer Ort. Meine Unterstützung: Name / Telefon.', kind: 'textarea', rows: 3 },
+  { id: 'geprueft', label: 'Gemeinsam geprüft am', sub: 'Datum und nächster Überprüfungstermin. Eine private Absprache ersetzt keine rechtliche Vertretungsbefugnis.', placeholder: 'Datum / wer war dabei / erneut prüfen am', kind: 'input' },
 ];
 
 const KRISENPLAN_NOTFALLNUMMERN = [
@@ -553,12 +499,12 @@ const SAEULEN_DEF = [
     sub: 'Beratung · Therapie · Selbsthilfe',
     questions: [
       {
-        q: 'Haben Sie professionelle Unterstützung — für sich selbst, nicht für die erkrankte Person?',
+        q: 'Ist passende Unterstützung für Ihre eigenen Anliegen erreichbar und für Sie ausreichend?',
         opts: [
-          { label: 'Ja, in regelmässigem Kontakt', score: 3 },
-          { label: 'Ja, aber selten genutzt', score: 2 },
-          { label: 'Nein, aber ich überlege', score: 1 },
-          { label: 'Nein', score: 0 },
+          { label: 'Ja, erreichbar und ausreichend — bei Bedarf', score: 3 },
+          { label: 'Teilweise — ich wünsche mir mehr Unterstützung', score: 2 },
+          { label: 'Ich bin unsicher, welche Hilfe passen würde', score: 1 },
+          { label: 'Keine passende Hilfe erreichbar', score: 0 },
         ],
       },
       {
@@ -567,7 +513,7 @@ const SAEULEN_DEF = [
           { label: 'Ja, ich weiss wohin', score: 3 },
           { label: 'Vage — ich müsste suchen', score: 2 },
           { label: 'Eher nicht', score: 1 },
-          { label: 'Nein', score: 0 },
+          { label: 'Keine passende Hilfe erreichbar', score: 0 },
         ],
       },
     ],
@@ -619,8 +565,8 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
         {phase === 'intro' && (
           <>
             <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Säulen-Check</h2>
-            <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu vier Bereichen, die Angehörige langfristig tragen: Körper, Beziehungen, eigene Welt, fachlicher Halt. Sie sehen am Ende, wo die Architektur gerade hält und wo eine Stütze nachgezogen werden müsste.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Etwa drei Minuten. Anonym, im Browser. Keine Diagnose und nicht für akute Krisen gedacht — nur eine Standortbestimmung. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
+            <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu vier Bereichen, die Angehörige langfristig tragen: Körper, Beziehungen, eigene Welt, fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie misst keine gesundheitliche Stabilität oder Tragfähigkeit.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Etwa drei Minuten. Anonym, im Browser. Keine Diagnose und nicht für akute Krisen gedacht — eine persönliche Reflexion ohne validierte klinische Auswertung. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>
@@ -653,7 +599,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
             <div className="selbsttest-zone">
               <span className="selbsttest-zone-kicker">Ihre Säulen jetzt</span>
               <h2>Tragwerk</h2>
-              <p className="selbsttest-zone-sub">Die Höhe der Säulen zeigt, wie viel Tragfähigkeit gerade in jedem Bereich da ist.</p>
+              <p className="selbsttest-zone-sub">Die Höhe fasst Ihre Antworten schematisch zusammen. Sie ist kein gemessener Wert Ihrer Belastbarkeit.</p>
             </div>
 
             <div className="saeulen-result">
@@ -674,11 +620,11 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
             <p className="selbsttest-body">
               {weakest && weakest.score / weakest.max < 0.5 ? (
                 <>
-                  Am dünnsten ist gerade <strong style={{ color: 'var(--accent)', fontStyle: 'italic' }}>{weakest.label}</strong>. Das ist kein Befund, sondern ein Hinweis — meistens reicht eine kleine, regelmässige Bewegung in dem Bereich, um die ganze Architektur stabiler zu machen.
+                  In Ihren Antworten ist weniger Raum für <strong style={{ color: 'var(--accent)', fontStyle: 'italic' }}>{weakest.label}</strong>. Welche Unterstützung wünschen Sie sich in diesem Bereich? Kleine Schritte können helfen; bei starker oder anhaltender Belastung braucht es möglicherweise mehr Entlastung und fachliche Hilfe.
                 </>
               ) : (
                 <>
-                  Ihre vier Stützen sind insgesamt tragfähig. Was am stärksten trägt, ist gerade <strong style={{ color: 'var(--accent)', fontStyle: 'italic' }}>{strongest.label}</strong> — gut, dass es da ist. Wenn Sie eine Stütze gezielt stärken wollen: <strong style={{ fontStyle: 'italic' }}>{weakest.label}</strong> hat aktuell am meisten Spielraum.
+                  Sie beschreiben Ressourcen in mehreren Bereichen. Besonders viel Raum hat in Ihren Antworten <strong style={{ color: 'var(--accent)', fontStyle: 'italic' }}>{strongest.label}</strong> — was davon möchten Sie bewahren? Wenn Sie Unterstützung ergänzen möchten: <strong style={{ fontStyle: 'italic' }}>{weakest.label}</strong> könnte ein Ausgangspunkt sein. Das ist keine gesundheitliche Entwarnung.
                 </>
               )}
             </p>
@@ -767,7 +713,7 @@ const EISBERG_LABELS = {
       label: 'Trauer',
       kind: 'tertiary',
       x: 50, y: 88,
-      desc: 'Um das, was war. Um die Pläne, die nicht so kamen. Um den Menschen, wie er einmal war. Pauline Boss nennt das «Ambiguous Loss» — Trauer um jemanden, der noch da ist.',
+      desc: 'Um das, was war. Um die Pläne, die nicht so kamen. Um veränderte Nähe oder Erwartungen. «Ambiguous Loss» beschreibt einen uneindeutigen Verlust; das Bild erklärt nicht die ganze Person oder jede Angehörigenerfahrung.',
     },
     {
       key: 'angst',
@@ -820,7 +766,7 @@ function EisbergTool({ onClose, onNavigate }) {
         {phase === 'intro' && (
           <>
             <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Der Eisberg Ihrer Belastung</h2>
-            <p className="lede" style={{ maxWidth: '46ch' }}>Was nach aussen sichtbar ist — Sorge, Geduld, Hilfsbereitschaft — ist nur die Spitze. Darunter liegt das, was Angehörige selten zeigen, oft nicht einmal vor sich selbst zugeben.</p>
+            <p className="lede" style={{ maxWidth: '46ch' }}>Der Eisberg ist eine Metapher, keine Messung: Manche Belastungen sind sichtbar, andere bleiben verborgen. Die Begriffe sind mögliche Erfahrungen; nicht alle müssen auf Sie zutreffen.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Klicken Sie auf einen Begriff, um zu lesen, was er für viele Angehörige bedeutet. Markieren Sie, was Sie wiedererkennen — am Ende sehen Sie eine Übersicht.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Eisberg ansehen →</button>
@@ -1046,7 +992,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
         {step === 'intro' && (
           <>
             <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Kommunikations-Trainer</h2>
-            <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte für ein schwieriges Gespräch. Am Ende haben Sie ein eigenes Skript — in Ihren Worten, in einer Form, die nicht eskaliert.</p>
+            <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte für ein schwieriges Gespräch. Am Ende haben Sie ein eigenes Skript — in Ihren Worten, so vorbereitet, dass Sie Ihr Anliegen ruhig und klar ansprechen können. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
             <div className="tool-intro-notes kommunikation-intro-notes">
               <p>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren.</p>
               <p>Dieses Werkzeug ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
@@ -1178,7 +1124,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               <ul>
                 <li>Bewusst gewählter Moment — nicht direkt nach einer Episode oder im Stress</li>
                 <li>Reize reduzieren — TV aus, Telefon stumm</li>
-                <li>Wenn es eskaliert: «Ich brauche kurz Pause» ist kein Aufgeben</li>
+                <li>Eine Pause oder ein Gesprächsende ist erlaubt: «Ich beende das Gespräch für heute.» Eine Fortsetzung bleibt freiwillig.</li>
                 <li>Wer zu schnell weiterspricht, raubt der anderen Person den Raum für eine echte Antwort</li>
               </ul>
             </aside>
@@ -1215,29 +1161,29 @@ const EE_PHASEN = [
     key: 'schuld',
     label: 'Schuld',
     pos: { left: '50%', top: '14%' },
-    desc: '«Hätte ich die Warnzeichen früher erkannt? Mache ich genug?» Die Schuld treibt Sie zu noch mehr Kontrolle und Aufmerksamkeit.',
+    desc: '«Hätte ich die Warnzeichen früher erkannt? Mache ich genug?» Schuldgefühle können zusätzliche Kontrolle oder Aufmerksamkeit auslösen; andere Reaktionen sind ebenso möglich.',
     unterbrechen: 'Schuld als Gefühl bemerken, nicht als Urteil. Modul 5 vertieft: «Schuldgefühl ist kein Beweis von Schuld.» Es kann auch dann kommen, wenn Sie etwas Richtiges tun.',
   },
   {
     key: 'engagement',
     label: 'Überengagement',
     pos: { left: '86%', top: '50%' },
-    desc: 'Sie übernehmen alles: Medikamente, Termine, Stimmungs-Monitoring, Krisenmanagement. Die erkrankte Person verliert Eigenverantwortung — und Sie verlieren Spielraum.',
+    desc: 'Sie übernehmen alles: Medikamente, Termine, Stimmungs-Monitoring, Krisenmanagement. Prüfen Sie gemeinsam, was gewünscht und tragbar ist und welche Aufgaben wieder zurückgegeben werden können.',
     unterbrechen: 'Eine einzige Aufgabe abgeben. Nicht alle. Eine. Etwas, das auch jemand anderes tragen kann — Geschwister, Behandlungsteam, Spitex.',
   },
   {
     key: 'erschoepfung',
     label: 'Erschöpfung',
     pos: { left: '50%', top: '86%' },
-    desc: 'Irgendwann kippen Sie. Die Belastung wird zu Gereiztheit — ungewollt, aber unvermeidlich. Energie und Geduld werden dünn.',
-    unterbrechen: 'Den Pegel früher benennen. Selbsttest oder Säulen-Check zeigen, wo Sie stehen, bevor das Limit erreicht ist.',
+    desc: 'Unter Belastung können Energie und Geduld nachlassen. Gereiztheit ist keine zwangsläufige Folge. Entlastung darf früh beginnen.',
+    unterbrechen: 'Eigene Belastung ansprechen. Die Fragen «Meine Belastung wahrnehmen» oder der Säulen-Check helfen bei der Reflexion; sie messen keine Grenze.',
   },
   {
     key: 'kritik',
     label: 'Kritik',
     pos: { left: '14%', top: '50%' },
-    desc: 'Sätze, die Sie bereuen. Vorwürfe, die verletzen. Danach kommt die Schuld zurück — und der Kreislauf beginnt von vorn.',
-    unterbrechen: 'Pause statt Reaktion. «Ich brauche kurz Pause» ist kein Aufgeben. Es verhindert, dass eine angespannte Situation zu einem verletzenden Gespräch wird.',
+    desc: 'Unter Belastung können verletzende Sätze fallen. Das muss keinen festen Kreislauf auslösen. Eine Pause, eine spätere Klärung oder Unterstützung können helfen.',
+    unterbrechen: 'Pause statt Reaktion. «Ich brauche kurz Pause» ist kein Aufgeben. Eine Pause kann Raum schaffen. Sie dürfen das Gespräch beenden; eine Fortsetzung bleibt freiwillig.',
   },
 ];
 
@@ -1250,10 +1196,10 @@ function EeKreislaufTool({ onClose, onNavigate }) {
   const curIdx = EE_PHASEN.findIndex((p) => p.key === selected);
 
   return (
-    <ToolOverlay onClose={onClose} ariaLabel="EE-Kreislauf" cardClass="ee-card">
+    <ToolOverlay onClose={onClose} ariaLabel="Wenn Belastung Gespräche verändert" cardClass="ee-card">
       <span className="kicker">Werkzeug · Beziehung</span>
-        <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Der EE-Kreislauf</h2>
-        <p className="ee-intro">Wie Schuld, Überengagement, Erschöpfung und Kritik sich gegenseitig hochschaukeln — und wo der Kreislauf unterbrechbar ist. Klicken Sie auf eine Phase.</p>
+        <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Wenn Belastung Gespräche verändert</h2>
+        <p className="ee-intro">Vier mögliche Aspekte, die sich unter Belastung gegenseitig verstärken können. Das ist ein vereinfachtes Reflexionsmodell, keine feste Reihenfolge und keine Definition von Expressed Emotion (EE). Wählen Sie, was Sie wiedererkennen.</p>
 
         <div className="ee-stage">
           <svg viewBox="0 0 400 400" className="ee-svg" aria-hidden="true">
@@ -1294,7 +1240,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
 
         <div className="ee-detail">
           <div className="ee-detail-head">
-            <span className="ee-detail-num">Phase {curIdx + 1} von 4</span>
+            <span className="ee-detail-num">Aspekt {curIdx + 1} von 4</span>
             <h3>{cur.label}</h3>
           </div>
           <div className="ee-detail-tabs" role="tablist">
@@ -1334,7 +1280,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
         </div>
 
         <p className="ee-foot-note">
-          EE-Kreislauf ist selten Bosheit — meist Überlastung, die in Beziehungssprache kippt. Schon das Erkennen des Musters ist ein erster Schritt, es zu durchbrechen.
+          EE bezeichnet in der Forschung Kritik, Feindseligkeit und emotionale Überinvolviertheit. Zusammenhänge mit Rückfällen beweisen keine individuelle Verursachung durch Angehörige. Legitime Grenzen sind keine Feindseligkeit. Modul 5 erklärt die Abgrenzung.
         </p>
     </ToolOverlay>
   );
@@ -1344,33 +1290,33 @@ const PHASEN_VARIANTEN = [
   {
     key: 'bipolar1',
     label: 'Bipolar I',
-    sub: 'die «sichtbare» Form',
+    sub: 'Diagnose: mindestens eine Manie',
     path: 'M 0,90 L 60,90 Q 90,30 120,55 Q 150,90 180,135 Q 210,160 230,140 Q 260,90 320,90 Q 350,40 380,75 L 400,90',
-    desc: 'Vollständige manische Episoden mit oft sichtbarer Eskalation. Die Manie kann so schwer werden, dass eine Hospitalisation nötig wird. Dazwischen tiefe depressive Phasen und längere stabile Strecken.',
-    angehoerige: 'Sichtbare Eskalation steht im Vordergrund — Kontrollverlust, Angst, das Gefühl, den vertrauten Menschen zeitweise nicht wiederzuerkennen.',
+    desc: 'Für Bipolar I ist mindestens eine manische Episode erforderlich. Depressive Episoden können hinzukommen, sind für die Diagnose aber nicht zwingend. Ausmass und Dauer der Beeinträchtigung werden fachlich beurteilt.',
+    angehoerige: 'Bei einer schweren Manie können Kontrollverlust und Angst im Vordergrund stehen. Welche Belastung entsteht, ist individuell.',
   },
   {
     key: 'bipolar2',
     label: 'Bipolar II',
-    sub: 'die «unsichtbare» Form',
+    sub: 'Diagnose: Hypomanie und Depression',
     path: 'M 0,90 L 50,90 Q 70,60 95,75 Q 110,90 135,140 Q 175,165 215,160 Q 250,150 280,90 Q 295,68 320,80 Q 340,90 360,140 Q 380,160 400,150',
-    desc: 'Statt vollständiger Manien treten Hypomanien auf — abgeschwächte, kürzere Hochphasen von 4–7 Tagen. Die depressiven Phasen sind oft schwerer und dauern länger als bei Bipolar I.',
-    angehoerige: 'Die eigentliche Krankheitslast liegt in der langen, zermürbenden Depression — die von aussen oft kaum sichtbar ist. Angehörige fühlen sich häufig nicht ernst genommen.',
+    desc: 'Bipolar II umfasst mindestens eine hypomanische und eine depressive Episode, ohne frühere Manie. Hypomanie: nach DSM-5-TR mindestens vier aufeinanderfolgende Tage, nach ICD-11 mehrere Tage; keine feste Obergrenze von sieben Tagen. Psychotische Symptome in einer Hochphase schliessen Hypomanie aus.',
+    angehoerige: 'Depressionen können erheblich belasten. Dauer und Sichtbarkeit unterscheiden sich; Angehörige dürfen eigene Bedürfnisse unabhängig davon ansprechen.',
   },
   {
     key: 'misch',
     label: 'Mischzustände',
-    sub: 'wenn beide Pole gleichzeitig',
+    sub: 'Zustand: gleichzeitige Symptome',
     path: 'M 0,90 L 30,80 Q 50,55 70,100 Q 90,140 110,75 Q 130,40 155,120 Q 175,150 200,80 Q 220,55 250,135 Q 280,155 305,90 Q 325,55 350,130 L 400,110',
-    desc: 'Beide Pole sind gleichzeitig da: rasende Gedanken bei tiefer Hoffnungslosigkeit, gereizte Manie statt Euphorie, schnelle Wechsel ohne klaren Boden. Klinisch besonders belastend.',
+    desc: 'Aktivierung und depressive Symptome können gleichzeitig auftreten, etwa Getriebenheit und Hoffnungslosigkeit. Gereiztheit oder rasche Wechsel allein sind kein Mischzustand. Rapid Cycling meint mindestens vier abgrenzbare affektive Episoden in zwölf Monaten.',
     angehoerige: 'Für Angehörige gehören Mischzustände zu den schwersten Phasen, weil Energie und Verzweiflung zusammenkommen — und weil die übliche Phasenlehre nicht greift.',
   },
   {
     key: 'stabil',
     label: 'Stabile Phase',
-    sub: 'ambivalent, nicht entlastet',
+    sub: 'Zustand: ausserhalb einer Episode',
     path: 'M 0,92 Q 50,85 100,93 Q 150,88 200,92 Q 250,87 300,90 Q 350,93 400,88',
-    desc: 'Keine Episode — aber selten echte innere Pause. Restsymptome können bestehen bleiben, und die Frage «ist das jetzt Stabilität oder schon der Beginn einer neuen Phase?» läuft mit.',
+    desc: 'Stabile Phasen können lange dauern und Erholung, eigene Pläne und gute gemeinsame Zeit ermöglichen. Manchmal bestehen Restsymptome oder eigene Wachsamkeit fort.',
     angehoerige: 'Stabile Phasen sind wertvoll für Planung und Gespräche, aber nicht automatisch entlastend. Viele Angehörige bleiben innerlich wachsam, auch wenn nach aussen Ruhe sichtbar ist.',
   },
 ];
@@ -1385,7 +1331,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
     <ToolOverlay onClose={onClose} ariaLabel="Bipolarer Phasenverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Interaktiv</span>
         <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Bipolarer Phasenverlauf</h2>
-        <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Vier typische Muster zur Orientierung — wählen Sie eines, um den Verlauf und seine typischen Eigenheiten zu sehen. Nicht dargestellt sind damit automatisch alle Varianten, etwa Zyklothymie oder besonders unruhige Mischverläufe.</p>
+        <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Die ersten beiden Auswahlfelder erklären Diagnosen, die anderen aktuelle Zustände. Die Kurven sind fiktive Beispiele ohne Zeitmassstab oder individuelle Prognose. Keine Diagnose lässt sich an einer Kurve ablesen.</p>
 
         <div className="phasen-tabs" role="tablist">
           {PHASEN_VARIANTEN.map((p) => (
@@ -1404,6 +1350,18 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
           ))}
         </div>
 
+        {active === 'misch' ? (
+          <figure className="phasen-figure">
+            <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Fiktives Beispiel: erhöhte Aktivierung und depressive Stimmung bestehen gleichzeitig. Zwei getrennte Linien zeigen die beiden Dimensionen.">
+              <text x="10" y="20" fontFamily="var(--sans)" fontSize="11" fill="var(--accent)">Erhöhte Aktivierung / Getriebenheit</text>
+              <path d="M 10,65 Q 100,40 190,60 T 400,50" fill="none" stroke="var(--accent)" strokeWidth="2.5" />
+              <text x="10" y="120" fontFamily="var(--sans)" fontSize="11" fill="var(--ink)">Depressive Stimmung / Hoffnungslosigkeit</text>
+              <path d="M 10,160 Q 100,140 190,160 T 400,150" fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeDasharray="6 3" />
+              <text x="400" y="192" textAnchor="end" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)">Gleicher Zeitraum →</text>
+            </svg>
+            <figcaption>Zwei gleichzeitige Dimensionen, kein rascher Wechsel zwischen Hoch und Tief. Fiktive Darstellung, keine Messung oder Diagnose.</figcaption>
+          </figure>
+        ) : (
         <figure className="phasen-figure">
           <svg viewBox="0 0 420 200" className="phasen-svg" aria-hidden="true">
             <defs>
@@ -1413,7 +1371,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
               </linearGradient>
             </defs>
             {/* Achsen-Beschriftung */}
-            <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">MANIE</text>
+            <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">HOCHPHASE</text>
             <text x="6" y="178" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">DEPRESSION</text>
             <text x="395" y="100" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.06em" fill="var(--ink-mute)" textAnchor="end">Zeit →</text>
 
@@ -1426,6 +1384,8 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
           </svg>
           <figcaption>Schematische Darstellung zur Orientierung — kein Diagnosewerkzeug. Reale Verläufe, Übergänge und Zwischenphasen variieren stark.</figcaption>
         </figure>
+
+        )}
 
         <div className="ee-detail">
           <div className="ee-detail-head">
@@ -1463,8 +1423,8 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
   // Drei Episoden mit Erklärungen
   const episoden = [
     { x: 110, y: 60,  label: 'Erste Episode', text: 'Frühphase — Notfallmodus. Sie schalten in den Krisenmodus: organisieren, Verantwortung übernehmen, funktionieren. Die eigene Erschöpfung ist noch zweitrangig.' },
-    { x: 220, y: 95, label: 'Wiederkehr', text: 'Kumulation. Jede Episode hinterlässt Spuren: Schlafmangel, Misstrauen gegenüber Ruhe, mehr Wachsamkeit, weniger innere Reserve. Die Hoffnung wird vorsichtiger.' },
-    { x: 330, y: 130, label: 'Chronische Phase', text: 'Dauer-Alarm. Die Belastung wird zu einem Hintergrundzustand. Schlafprobleme, Gereiztheit, Rückzug bleiben auch dann spürbar, wenn keine akute Krise sichtbar ist.' },
+    { x: 220, y: 95, label: 'Wiederkehr', text: 'Nach einer weiteren Krise kann Erholung Zeit brauchen. Manche Angehörige erleben mehr Belastung, andere finden wieder zu Ruhe und Vertrauen. Eine feste Reihenfolge gibt es nicht.' },
+    { x: 330, y: 130, label: 'Längerfristige Belastung', text: 'Bei manchen Angehörigen bleibt Belastung länger bestehen. Andere erleben lange stabile Zeiten. Neue Aufgabenverteilung, eigene Behandlung bei Bedarf und praktische Hilfe können wichtig sein.' },
   ];
   const activateEpisode = React.useCallback((index) => {
     setActiveEpisode(index);
@@ -1473,21 +1433,21 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Belastungsverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Verlauf</span>
-        <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Belastungsverlauf über Jahre</h2>
-        <p className="ee-intro">Wie sich die Belastbarkeit von Angehörigen über mehrere Episoden verändern kann — und welchen Unterschied Unterstützung macht. Klicken Sie auf eine Episode für die typische Phase.</p>
+        <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Mögliche Belastungsverläufe</h2>
+        <p className="ee-intro">Die eigene Kraft kann nach Krisen abnehmen, sich erholen oder weitgehend stabil bleiben. Drei fiktive Beispiele zeigen diese Unterschiede. Die Linien sind keine Messwerte und kein Nachweis einer bestimmten Behandlung. Wählen Sie einen Marker für eine mögliche Erfahrung.</p>
 
         <div className="belastung-toggle">
           <button
             className={`belastung-toggle-btn ${!showSupport ? 'is-active' : ''}`}
             onClick={() => setShowSupport(false)}
           >
-            ohne Unterstützung
+            Ein mögliches Beispiel
           </button>
           <button
             className={`belastung-toggle-btn ${showSupport ? 'is-active' : ''}`}
             onClick={() => setShowSupport(true)}
           >
-            mit Unterstützung
+            Weitere mögliche Verläufe
           </button>
         </div>
 
@@ -1524,7 +1484,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
               style={{ transition: 'opacity 0.4s' }}
             />
             <text x="380" y="158" textAnchor="end" fontFamily="var(--sans)" fontSize="9" fill="var(--alert)" opacity={showSupport ? 0.5 : 1}>
-              ohne Hilfe
+              A: länger belastet
             </text>
 
             {/* Belastbarkeits-Linie mit Unterstützung — kommt zurück */}
@@ -1539,8 +1499,10 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
                   style={{ animation: 'fadeUp 0.6s' }}
                 />
                 <text x="380" y="62" textAnchor="end" fontFamily="var(--sans)" fontSize="9" fill="var(--accent)" fontWeight="500">
-                  mit Hilfe
+                  B: erneute Erholung
                 </text>
+                <path d="M 10,48 Q 90,42 150,52 T 280,48 T 400,46" fill="none" stroke="var(--ink)" strokeWidth="2" strokeDasharray="7 4" />
+                <text x="380" y="35" textAnchor="end" fontFamily="var(--sans)" fontSize="9" fill="var(--ink)">C: weitgehend stabil</text>
               </>
             )}
 
@@ -1570,7 +1532,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
               </g>
             ))}
           </svg>
-          <figcaption>Schematisches Modell — basierend auf Perlick et al. (2007), Reinares et al. (2016).</figcaption>
+          <figcaption>Fiktive Beispiele ohne Zeitmassstab. Verlauf und Unterstützungsbedarf sind individuell. Die Marker bezeichnen mögliche Erfahrungen, keine Entwicklungsstufen.</figcaption>
         </figure>
 
         {activeEpisode !== null && (
@@ -1586,7 +1548,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
         )}
 
         <p className="ee-foot-note">
-          Belastung fällt mit jeder Episode oft nicht vollständig auf das vorherige Niveau zurück. Mit Unterstützung — Beratung, Selbsthilfegruppe, eigene Therapie — kann Belastbarkeit wieder tragfähiger werden, auch wenn die Ausgangslage nicht ungeschehen wird.
+          Unterstützung kann entlasten, bestimmt aber nicht allein den Verlauf. Welche Hilfe passt, hängt von Ihrer Situation ab. Sie dürfen sie nutzen, bevor Sie an eine Grenze kommen.
         </p>
 
         <div className="selbsttest-actions">
