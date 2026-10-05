@@ -32,6 +32,10 @@ Bei 200 % werden die berechneten HTML-Schriftgrössen tatsächlich verdoppelt, a
 
 Die Browseraudits starten und beenden jeweils ihren eigenen Server. Beide Audits wurden zusätzlich gegen einen bereits belegten Port geprüft; der Websiteaudit auch gegen einen unerwartet beendeten Preview-Prozess. Diese Fälle führen zu einem Fehler, statt fremde Inhalte als bestandenen Projektlauf zu werten. Der Werkzeugaudit prüfte zudem 19 tatsächliche Schriftvergrösserungen ohne Abweichung und Rubik in der Druck-CSS-Simulation. Alle 38 Builddateien blieben während dieses Laufs unverändert.
 
+Der erste GitHub-CI-Lauf bestand Installation, Lint, Coverage, Build, Abhängigkeitsaudit und Browserinstallation, scheiterte aber an der Preview-Erkennung. Dieser Fehler wurde mit farbiger CI-Ausgabe lokal reproduziert: ANSI-Steuerzeichen trennten „Local“ vom Doppelpunkt und die Portnummer von der URL. Beide Runner entfernen nun diese Steuerzeichen vor dem Vergleich mit der exakten Adresse ihres eigenen Prozesses. Die Serverbesitzprüfung bleibt erhalten; eine fremde HTTP-Antwort reicht weiterhin nicht aus.
+
+Ein erneuter Werkzeuglauf zeigte während des Farbwechsels am Belastungsverlauf einen vorübergehend zu geringen Textkontrast. Der Umschalter wechselt seine Farben deshalb ohne Übergangsanimation; die gut lesbaren Ausgangs- und Endfarben bleiben gleich. Die zusätzlichen Wiederholungsläufe verwenden ausdrücklich farbige CI-Ausgabe.
+
 Reproduzierbare Befehle und Browserinstallation stehen in der [README](../README.md). Laufberichte entstehen unter `qa/output/` und werden von GitHub Actions als Artefakt aufbewahrt. Das Produktionsgate bleibt ein gesonderter Freigabenachweis.
 
 ## Offene Punkte nach Issue

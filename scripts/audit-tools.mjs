@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { spawn } from 'node:child_process';
+import { stripVTControlCharacters } from 'node:util';
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
 import { resizeHtmlText } from './text-resize.mjs';
@@ -106,7 +107,7 @@ async function startPreview() {
       announced += chunk;
       // The exact announcement and strictPort identify this child; a successful
       // HTTP response from an unrelated process never establishes ownership.
-      if (announced.split(/\r?\n/).some(line => line.includes('Local:') && line.includes(url + '/'))) {
+      if (stripVTControlCharacters(announced).split(/\r?\n/).some(line => line.includes('Local:') && line.includes(url + '/'))) {
         clearTimeout(timer);
         resolve();
       }

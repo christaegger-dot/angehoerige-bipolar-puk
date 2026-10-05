@@ -4381,7 +4381,8 @@ section + section { padding-top: 0; }
   color: var(--ink-soft);
   cursor: pointer;
   border-radius: var(--web-radius-btn);
-  transition: background-color var(--t-fast) var(--easing), color var(--t-fast) var(--easing), border-color var(--t-fast) var(--easing);
+  /* Simultaneously fading white/blue into grey/white loses text contrast. */
+  transition: none;
   min-height: var(--touch-target);
   min-width: var(--touch-target);
 }

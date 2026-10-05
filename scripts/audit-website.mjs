@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
+import { stripVTControlCharacters } from 'node:util';
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
 import { resizeHtmlText } from './text-resize.mjs';
@@ -48,7 +49,7 @@ async function startPreview() {
       serverOutput += data;
       startupOutput += data;
       // HTTP alone cannot identify this child: another process may own the port.
-      if (startupOutput.split(/\r?\n/).some(line => line.includes('Local:') && line.includes(baseURL + '/'))) {
+      if (stripVTControlCharacters(startupOutput).split(/\r?\n/).some(line => line.includes('Local:') && line.includes(baseURL + '/'))) {
         clearTimeout(timeout);
         resolve();
       }
