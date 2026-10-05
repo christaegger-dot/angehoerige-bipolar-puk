@@ -1,0 +1,35 @@
+/* Project adapter for the supplied Rubik binaries, unchanged in public/assets/puk.
+   WOFF2 first, original TTF fallback. The static faces expose PUK weights
+   300/400/500; original variable italic uses the same family and range. */
+@font-face {
+  font-family: "Rubik";
+  src: url("/assets/puk/fonts/Rubik-Light.woff2") format("woff2"),
+       url("/assets/puk/fonts/Rubik-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("/assets/puk/fonts/Rubik-Regular.woff2") format("woff2"),
+       url("/assets/puk/fonts/Rubik-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("/assets/puk/fonts/Rubik-Medium.woff2") format("woff2"),
+       url("/assets/puk/fonts/Rubik-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("/assets/puk/fonts/Rubik-Italic-VariableFont_wght.woff2") format("woff2"),
+       url("/assets/puk/fonts/Rubik-Italic-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 300 500;
+  font-style: italic;
+  font-display: swap;
+}

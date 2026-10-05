@@ -10,15 +10,26 @@ Browserbasierte Lese-Begleitung für Angehörige und Nahestehende von Menschen m
 - ESLint
 - Netlify Deployment
 
+## Designsystem
+
+Die Website verwendet das bereitgestellte **PUK Zürich Design System 1.10.1** mit dem
+abgeleiteten **PUK Website Kit 1.10.1-r4**: lokale Rubik-Schriften, originale Logos,
+PUK-Farbtokens und flache Komponenten. Herkunft und Archivprüfsummen stehen in
+`src/puk-design/provenance.json`; die übernommenen Dateien enthalten keine Uploads
+oder Referenz-Falldaten. Die vorhandene React-Anwendung bleibt erhalten und nutzt
+eine gemeinsame Seitenhülle und den dokumentierten SPA-Auditadapter.
+`_dev/PUK-VISUALISIERUNGSPLAN.md` beschreibt die vorhandenen Erklärgrafiken und ihre
+sichtbaren Textfassungen. Das Profil ersetzt keine menschlichen Freigaben.
+
 ## Voraussetzungen
 
-- Node.js 22 oder neuer
+- Node.js 22 ab 22.13 oder Node.js 24 und neuer
 - npm 10 oder neuer
 
 ## Lokale Entwicklung
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -36,6 +47,37 @@ npm run build
 
 Coverage kann zusätzlich mit `npm run test:coverage` erzeugt werden.
 
+Der Browseraudit prüft die **gebaute und servierte SPA**, nicht die leere Vite-Quelldatei:
+
+```bash
+npm run build
+npm run audit:website
+npm run audit:tools
+```
+
+Das Skript startet und beendet seinen eigenen Preview-Prozess. Es prüft 320, 360, 768 und 1440 Pixel, jeweils mit 100 % und 200 % Textgrösse, Textbereiche, Navigation, Tastatur, flüchtige Eingaben und Altbestands-Löschung sowie automatisierte axe-AA-Befunde. Es verwendet vorhandenes `/usr/bin/chromium`; alternativ `BROWSER_EXECUTABLE_PATH` setzen oder einmal `npx playwright install chromium` ausführen. `AUDIT_PORT` und `AUDIT_OUTPUT` sind optionale Laufzeitparameter. Der Ergebnisbericht liegt standardmässig unter `qa/output/website-audit.json`; jeder Lauf schreibt Zeitstempel und eigene Ergebnisse, der Exitstatus meldet fehlgeschlagene Prüfungen.
+
+Der zusätzliche Werkzeugaudit öffnet alle neun Werkzeuge bei 360 Pixel und
+100/200 % Textgrösse. Er prüft Bedienziele, Reflow, konkrete Interaktionen,
+Tastatur und Modalfokus sowie flüchtige Entwürfe, Altbestands-Löschung,
+Zwischenablage und den Druckaufruf. Beide Audits verdoppeln bei 200 % die
+tatsächlich berechneten HTML-Schriftgrössen, auch bei fluiden Überschriften.
+Eine ausgelöste Druckfunktion bestätigt keinen physischen Ausdruck.
+`AUDIT_TOOLS_OUTPUT` überschreibt `qa/output/tools.json`;
+`AUDIT_TOOLS_PORT` überschreibt den Standardport 4525.
+
+Der kanonische Projektauditor und das verbindliche Websiteprofil 1.10.1 liegen als unveränderte, über SHA256 nachgewiesene Auszüge des bereitgestellten PUK-Vollsystems vor:
+
+```bash
+npm run audit:puk:logic
+npm run audit:puk
+npm run audit:puk:production
+```
+
+Die Projektaudits bauen automatisch neu und erfassen alle Routen aus `src/routes.js` als gerenderte SPA-Snapshots. Das kanonische Gate prüft diese bei 320/360/768/1440 Pixel und erhält zusätzlich den originalen Quellbestand. Ergebnisse liegen unter `qa/output/puk`; `PUK_AUDIT_OUTPUT_DIR` überschreibt das Ziel. Herkunft, Adapter und Prüfgrenzen stehen in `scripts/puk-audit/README.md` und `vendor/ORIGIN.json`.
+
+Ein fehlgeschlagener Datenschutz- oder Screenreader-Gate bleibt offen. Der Regex wertet auch historischen Browser-Löschcode und Tests als Speichernutzung; diese konservative Grenze wird nicht ausgeblendet. Der Produktionslauf verlangt zusätzlich mindestens zwei bestandene reale Screenreader-Läufe. `website-screenreader-test.json` enthält passende, noch auszuführende `runs`. Automatisierte Browserchecks ersetzen weder VoiceOver/NVDA noch fachliche und rechtliche Freigaben. Der Website-Marker bezeichnet das Zielprofil und ist keine Konformitätsbescheinigung.
+
 ## Wichtige Projektstruktur
 
 - `src/app.jsx` — App-Shell, Lazy Loading und Seitenauswahl
@@ -50,8 +92,11 @@ Coverage kann zusätzlich mit `npm run test:coverage` erzeugt werden.
 ## Inhalts- und Sicherheitsentscheidungen
 
 - Die Seite ist aktuell nicht für öffentliche Suchmaschinen-Auffindbarkeit freigegeben (`noindex, nofollow`; `robots.txt` blockiert Crawling mit `Disallow: /`).
-- Sensible Eingaben in Krisenplan und Kommunikations-Trainer bleiben standardmässig nur für die aktuelle Browser-Sitzung erhalten. Dauerhafte Speicherung ist nur per Opt-in aktivierbar.
-- Für eingebettete Edit-Mode-Nachrichten werden nur erlaubte Origins akzeptiert.
+- Eingaben in den Werkzeugen bleiben nur im flüchtigen Arbeitsspeicher. Beim Schliessen oder Neuladen gehen sie verloren. Browser-Persistenz und Wiederherstellung älterer Entwürfe sind deaktiviert.
+- Historische Browser-Schlüssel, bestätigte Löschung, frühere Fristen und Exporte stehen in `public/website-data-policy.json`. Sichtbare Hinweise erklären den aktuellen flüchtigen Zustand und die Bereinigung alter Browser-Kopien.
+- Die 25 redaktionellen Fallbeispiele sind sichtbar als fiktiv gekennzeichnet und im `_dev/ZITATREGISTER-2026-10-05.md` einzeln erfasst. Sie sind keine belegten Angehörigenzitate.
+- Die formale Freigabe der Schweigepflichtseite bleibt offen. `_dev/FREIGABE-SCHWEIGEPFLICHT.md` enthält den Wortlaut und die konkreten Prüffragen; es bestätigt keine Freigabe.
+- Der frühere Editor für alternative Farbpaletten ist mit der Übernahme des festen PUK-Profils entfernt.
 
 ## Deployment
 
@@ -70,3 +115,8 @@ GitHub Actions führt auf Push und Pull Request automatisch folgende Checks aus:
 - `npm run lint`
 - `npm run test:coverage`
 - `npm run build`
+- `npm audit --audit-level=high`
+- `npm run audit:website` und `npm run audit:tools` mit installiertem Chromium
+
+Die Browserberichte werden als CI-Artefakt aufbewahrt. Das kanonische
+Produktionsgate und die echten Screenreader-Läufe bleiben separate Freigabenachweise.

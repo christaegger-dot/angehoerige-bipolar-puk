@@ -1,0 +1,30 @@
+/* Spacing — 4px base grid. Webprofil: nur Bildschirmmasse.
+   Papier-, Brief-, Folien- und Büromedienmasse der Elternversion sind hier
+   bewusst nicht enthalten (Provenienz: PLATFORM_ADAPTERS.md, Abschnitt Profilgrenze). */
+:root{
+  --space-0:0px;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --space-12:48px;
+  --space-16:64px;
+  --space-20:80px;
+  --space-24:96px;
+
+  --gutter-page:var(--space-6); /* @kind spacing */
+  --gutter-section:var(--space-16); /* @kind spacing */
+  --stack-tight:var(--space-2); /* @kind spacing */
+  --stack-default:var(--space-4); /* @kind spacing */
+  --stack-loose:var(--space-8); /* @kind spacing */
+
+  /* Sperrzone: Freiraum um das Logo als Anteil der Logobreite. */
+  --logo-clearspace:0.14; /* @kind spacing */
+  /* Seitenverhältnis der ausgelieferten Markendatei PUK_Logo_statisch_*_de.svg
+     (mit transparentem Innenrand). */
+  --logo-aspect-brand:214 / 85; /* @kind spacing */
+}

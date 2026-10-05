@@ -1,0 +1,130 @@
+/* PUK Hausfarben — Blau, Schwarz, Weiss. Gelb und Rot als Signalfarben.
+   All shades of a base colour are permitted (CD Manual, Farben). */
+:root{
+  /* Blau — Pantone 072 U / C100 M91 Y0 K0 / RGB 60 100 255 */
+  --puk-blue-100:#3C64FF;
+  --puk-blue-75:#7692FF;
+  --puk-blue-50:#9DB1FF;
+  --puk-blue-25:#D8E0FF;
+  /* Abgedunkelte Schattierung über 100 % — zulässig nach «sämtliche
+     Schattierungen». Hover und Press auf blauen Flächen; 6,37:1 mit Weiss. */
+  --puk-blue-125:#2B4FE0;
+
+  /* Schwarz — Pantone Black 6 U / C0 M0 Y0 K100 / RAL 7021 / RGB 34 34 34 */
+  --puk-black-100:#222222;
+  --puk-black-75:#646464;
+  --puk-black-50:#909090;
+  --puk-black-25:#D2D2D2;
+
+  /* Weiss — C0 M0 Y0 K0 / RAL 9010 */
+  --puk-white:#FFFFFF;
+
+  /* Die vier Rasterstufen von Blau und Schwarz sind auf der Farbseite des CD
+     Manuals verbindlich festgelegt. Gelb und Rot sind dort ohne Stufen
+     abgebildet; sämtliche Schattierungen der Grundfarbe sind zulässig. */
+
+  /* Web — Werte des PUK-Webauftritts (app.css). GEKENNZEICHNETE AUSNAHME:
+     Der Webauftritt setzt Text in reinem Schwarz #000000 statt Hausschwarz
+     #222222 und Feldtext in einem Braungrau #675E58, das keine Schattierung
+     einer Hausfarbe ist. Beide Werte sind aus der Produktionsseite gemessen,
+     nicht erfunden; sie gelten nur im Template website und in der Karte
+     «Web-Typografie», um den bestehenden Auftritt treu abzubilden. Kontrast
+     auf Weiss: 21,00:1 bzw. 6,33:1. Ausserhalb davon gelten --text-default und
+     --text-muted. Ob der Webauftritt auf die Hausfarben zurückgeführt wird,
+     entscheidet die Kommunikationsabteilung (Herkunftsregister). */
+  --puk-web-text:#000000; /* @kind color */
+  --puk-web-field-text:#675E58; /* @kind color */
+  --puk-web-field-focus:#BCC9FF;
+
+  /* Signalfarben — punktuell.
+     Gelb Pantone 607 U / C0 M0 Y50 K0 / RGB 240 235 150
+     Rot  Pantone 3516 U / C0 M87 Y100 K2 / RGB 220 80 60 */
+  --puk-yellow:#F0EB96;
+  --puk-yellow-50:#F8F5CB;
+  --puk-red:#DC503C;
+  --puk-red-50:#EEA79E;
+  /* Signalrot erreicht auf Weiss 4,00:1: genug für Grosstext (ab 24 px oder
+     18,66 px fett) und für Bedienelemente nach SC 1.4.11, aber unter den
+     4,5:1, die Fliesstext nach SC 1.4.3 braucht. Als Fläche und Rahmen bleibt
+     es unverändert; für Text gilt diese abgedunkelte Schattierung — 7,59:1 auf
+     Weiss, gleicher Farbton.
+     «Es sind sämtliche Schattierungen der jeweiligen Grundfarbe zulässig.» */
+  --puk-red-text:#9E2814; /* @kind color */
+  /* Noch eine Stufe dunkler, für Hover auf Flächen, die Text tragen: 9,06:1
+     mit Weiss. Dunkler statt heller, damit Hover die Reserve nicht aufgibt. */
+  --puk-red-text-hover:#8A2211; /* @kind color */
+
+  /* ---- Weitere Schattierungen, für den Bildschirm benannt ----
+     «Es sind sämtliche Schattierungen der jeweiligen Grundfarbe zulässig»
+     (CD Manual, Farben). Die vier Rasterstufen sind die im Manual
+     festgehaltenen Bezugspunkte, keine Begrenzung: jede weitere Schattierung
+     darf gemischt werden. Diese drei liegen unter 25 % — dort, wo der
+     Bildschirm feinere Werte braucht als der Druck — und sind benannt, weil
+     sie in jeder Oberfläche wiederkehren. Weitere nach Bedarf frei bilden. */
+  --ui-field:#F0F3FF;     /* Platzhalter-, Bild- und Eingabefelder */
+  --ui-hairline:#E9E9E9;  /* Haarlinien, Trennlinien, Switch aus */
+  --ui-wash:#F4F4F4;      /* Hover-Fläche, versenkte Fläche, Seitengrund */
+  --ui-danger-wash:#FBEAE7; /* Warnfläche hinter Alert und Toast */
+
+  /* Strukturfläche für Diagramme, Modelle und neutrale Orientierungsfelder.
+     Eine Schattierung von Schwarz unter 25 %, keine PUK-Grundfarbe. Belegt im
+     Referenzprodukt (Heft, Modellseiten) und darum benannt statt literal. */
+  --surface-structure:#F7F7F7;
+
+  /* ---- Semantic aliases ----
+     --text-* sind Textfarben. Schrift-Kurzformen heissen seit 1.7.29 --type-*
+     (tokens/typography.css); die alten --text-body usw. sind dort nur noch
+     veraltete Verweise. */
+  --text-default:var(--puk-black-100); /* @kind color */
+  --text-muted:var(--puk-black-75); /* @kind color */
+  /* Schwarz 50, 3,19:1 auf Weiss: nur Grosstext ab 24 px, deaktivierte
+     Beschriftungen, Rahmen. Kein Fliesstext — der Name sagt es. */
+  --text-large-only:var(--puk-black-50); /* @kind color */
+  --text-subtle:var(--text-large-only); /* @kind color */ /* veraltet seit 1.7.29; Entfernung 2.0.0, nicht vor 31.03.2027 */
+  --text-accent:var(--puk-blue-100); /* @kind color */
+  --text-on-dark:var(--puk-white); /* @kind color */
+  --text-link:var(--puk-blue-100); /* @kind color */
+  --text-link-hover:var(--puk-black-100); /* @kind color */
+  --text-link-visited:var(--puk-blue-125); /* @kind color */
+  --text-danger:var(--puk-red-text); /* @kind color */
+
+  --surface-page:var(--puk-white);
+  --surface-card:var(--puk-white);
+  --surface-sunken:var(--ui-wash);
+  --surface-diagram:var(--surface-structure);
+  --surface-accent:var(--ui-field);
+  --surface-inverse:var(--puk-black-100);
+  --surface-brand:var(--puk-blue-100);
+
+  --border-hairline:var(--ui-hairline);
+  --border-default:var(--puk-black-25);
+  --border-strong:var(--puk-black-100);
+  --border-focus:var(--puk-blue-100);
+
+  --action-primary-bg:var(--puk-black-100);
+  --action-primary-bg-hover:var(--puk-blue-100);
+  --action-primary-fg:var(--puk-white);
+  --action-accent-bg:var(--puk-blue-100);
+  --action-accent-bg-hover:var(--puk-blue-125);
+  --action-disabled-bg:var(--puk-black-25);
+  --action-disabled-fg:var(--puk-black-50);
+
+  --status-warning-bg:var(--puk-yellow);
+  --status-warning-fg:var(--puk-black-100);
+  --status-danger-bg:var(--puk-red);
+  /* Zwei Danger-Flächen, absichtlich getrennt. --status-danger-bg trägt keinen
+     Text: Rahmen, Icons, Diagrammfelder, Signalflächen. Wo ein Bauteil Text
+     trägt, gilt --status-danger-strong-bg. Grund: Signalrot deckt mit Weiss bei
+     4,00:1 aus, gegen PUK-Schwarz bei 3,98:1 — auf dieser Fläche erreicht kein
+     Textton die 4,5:1 für Normaltext. Die Grosstextausnahme greift nicht: die
+     betroffenen Grade sind 11, 15 und 17 px, die Grenze liegt bei 24 px.
+     Der starke Ton ist keine neue Farbe, sondern --puk-red-text, im Manual als
+     zulässige Schattierung derselben Grundfarbe belegt — 7,59:1 auf Weiss. */
+  --status-danger-strong-bg:var(--puk-red-text);
+  --status-danger-strong-hover-bg:var(--puk-red-text-hover);
+  --status-danger-fg:var(--puk-white);
+  --status-danger-soft-bg:var(--ui-danger-wash);
+  --status-danger-text:var(--puk-red-text); /* @kind color */
+  --status-info-bg:var(--puk-blue-25);
+  --status-info-fg:var(--puk-black-100);
+}

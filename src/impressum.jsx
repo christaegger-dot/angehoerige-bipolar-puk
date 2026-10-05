@@ -64,7 +64,7 @@ function ImpressumPage() {
               Zustimmung.
             </p>
 
-            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: 14 }}>
+            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: '0.875rem' }}>
               Stand: April 2026
             </p>
           </article>

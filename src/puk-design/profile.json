@@ -1,0 +1,182 @@
+{
+  "systemVersion": "1.10.1",
+  "id": "website",
+  "name": "Website",
+  "status": "system-defined-web-profile",
+  "authority": {
+    "type": "measured-and-system-defined",
+    "normativeSource": "templates/website/profile.json",
+    "scope": "Websites und browserbasierte Informationsangebote innerhalb dieses Design Systems",
+    "basis": [
+      "PUK Corporate-Design-Manual",
+      "am bestehenden PUK-Webauftritt gemessene app.css-Werte",
+      "Webtokens und öffentliche Komponenten des Design Systems"
+    ],
+    "officialOfficeMediaClaim": false
+  },
+  "sourceBoundary": "Eigenständiges digitales Systemprofil. profile.json ist die verbindliche Sollquelle für die Website-Erstellung im Design System; es ist keine officeatwork-Büromedien-Vorlage und keine vollständige technische Spezifikation des produktiven PUK-Webauftritts.",
+  "viewports": {
+    "narrow": { "widthPx": 360, "heightPx": 800 },
+    "medium": { "widthPx": 768, "heightPx": 900 },
+    "wide": { "widthPx": 1440, "heightPx": 1000 }
+  },
+  "layout": {
+    "containerMaximumPx": 1200,
+    "contentMeasureCh": 68,
+    "minimumInlineGutterPx": 20,
+    "maximumInlineGutterPx": 48,
+    "horizontalOverflowAllowed": false,
+    "wideContainerCentered": true
+  },
+  "typography": {
+    "family": "Rubik",
+    "bodyMaximumPx": 21,
+    "headingMaximumPx": { "h1": 114, "h2": 57, "h3": 40 },
+    "fluidHeadingsRequired": true,
+    "bodyMeasureMinimumCh": 45,
+    "bodyMeasureMaximumCh": 75
+  },
+  "semantics": {
+    "languageRequired": true,
+    "uniqueTitleRequired": true,
+    "metaDescriptionRequired": true,
+    "skipLinkRequired": true,
+    "exactlyOneMainRequired": true,
+    "navigationLabelRequired": true,
+    "activeNavigationUsesAriaCurrent": true,
+    "exactlyOneH1Required": true
+  },
+  "navigation": {
+    "minimumTargetPx": 44,
+    "minimumTargetScope": [
+      "buttons",
+      "navigation links",
+      "standalone action links"
+    ],
+    "inlineTextLinks": {
+      "layout": "inline-with-natural-line-height",
+      "minimumHeightRequired": false,
+      "minimumSpacingRequired": false,
+      "wcag22Reference": "SC 2.5.8 inline target exception"
+    },
+    "narrowMode": "wrapping-grid",
+    "emergencyLinkVisuallyDistinct": true,
+    "colorAloneForActiveStateAllowed": false
+  },
+  "content": {
+    "tokensInsteadOfColorLiterals": true,
+    "faviconRequiredOnEveryPage": true,
+    "cardsUseListSemantics": true,
+    "figuresRequireTextAlternative": true,
+    "tablesRequireCaption": true,
+    "pageSequenceHasPreviousNextNavigation": true,
+    "longformPattern": {
+      "registry": "templates/website/longform-pattern.json",
+      "styles": "tokens/web-longform.css",
+      "referenceDirectory": "templates/website/longform",
+      "status": "validated-in-three-synthetic-contexts",
+      "humanComprehensionTested": false
+    }
+  },
+  "safetyAccess": {
+    "status": "decision-template-requires-clinical-and-communications-approval",
+    "selectionQuestion": "Ist das unmittelbare Erkennen und Auslösen eines Krisenwegs die Hauptaufgabe dieser Seite?",
+    "variants": {
+      "direct": {
+        "useFor": [
+          "contact and urgency pathfinders",
+          "triage-adjacent applications",
+          "pages whose primary task is acute help"
+        ],
+        "placement": "persistent and immediately visible",
+        "visualPriority": "high"
+      },
+      "persistent-subdued": {
+        "useFor": [
+          "longform psychoeducation",
+          "foundation pages",
+          "non-acute orientation pages"
+        ],
+        "placement": "stable support or footer region with a direct labelled link",
+        "visualPriority": "secondary but not hidden"
+      }
+    },
+    "mustNot": [
+      "hide crisis information behind a filter, dialog or accordion",
+      "claim a contact is verified without documented editorial review",
+      "choose a variant without recording content owner and approval status"
+    ]
+  },
+  "applicationPatterns": {
+    "registry": "templates/website/application-patterns.json",
+    "referenceDirectory": "templates/website/applications",
+    "contentSchema": "templates/website/application-content.schema.json",
+    "contentExample": "templates/website/applications/application-content.example.json",
+    "requiredIds": [
+      "situation-navigator",
+      "contact-pathfinder",
+      "conversation-guide",
+      "service-finder"
+    ],
+    "rules": {
+      "diagnosisOrAutomatedTriageAllowed": false,
+      "onePrimaryNextStepRequired": true,
+      "sourceOwnerAndReviewDateRequiredForOperationalContent": true,
+      "structuredContentContractRequired": true,
+      "criticalInformationOnlyInDialogAllowed": false,
+      "resultStatusProgrammaticallyExposed": true,
+      "sensitiveInputPersistenceDefault": "off"
+    }
+  },
+  "formsAndData": {
+    "labelsRequired": true,
+    "errorSummaryRequiredForMultiFieldErrors": true,
+    "sensitiveInputPersistenceDefault": "off",
+    "storagePolicyFile": "website-data-policy.json",
+    "storagePolicyTemplate": "templates/website/website-data-policy.example.json",
+    "storageNoticeMarker": "data-storage-notice",
+    "storageDeleteMarker": "data-storage-delete",
+    "browserStorageRequires": [
+      "transparent notice before entry",
+      "explicit retention scope",
+      "visible delete action",
+      "privacy review",
+      "no transmission claim verified"
+    ]
+  },
+  "qualityGates": {
+    "viewports": [360, 768, 1440],
+    "reflowWidthPx": 320,
+    "textResizePercent": 200,
+    "reflowEquivalentZoomPercent": 400,
+    "criticalBreakpointsRequired": true,
+    "keyboard": true,
+    "focusNotObscured": true,
+    "contrastAgainstWcag22AA": true,
+    "screenreader": "human-test-required-before-production",
+    "screenreaderEvidenceFile": "website-screenreader-test.json",
+    "screenreaderEvidenceTemplate": "templates/website/website-screenreader-test.example.json",
+    "screenreaderMinimumRuns": 2,
+    "allPagesProjectGateRequired": true,
+    "allLocalResourcesMustResolve": true,
+    "runtimeDependenciesMustBeLocal": true,
+    "applicationPatternsGateRequired": true,
+    "browserErrors": 0,
+    "externalRequests": 0
+  },
+  "releaseHygiene": {
+    "referenceContentIncluded": false,
+    "rawClaudeProjectExportIsReleaseArtifact": false,
+    "canonicalReleaseCommands": [
+      "npm run release",
+      "npm run release:build -- <new-target-directory>"
+    ],
+    "forbiddenPathPatterns": [
+      "uploads/",
+      "_src/",
+      "case-data/",
+      "Stress und Stressbewältigung",
+      "Stress und Stressbewaeltigung"
+    ]
+  }
+}

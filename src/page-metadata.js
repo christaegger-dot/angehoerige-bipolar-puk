@@ -1,4 +1,5 @@
 import { buildRouteHref } from './routes.js';
+import { MODULES, ANLAUFSTELLEN_ENTRY } from './site-content.js';
 
 const SITE_ORIGIN = 'https://angehoerige-bipolar-puk.netlify.app';
 
@@ -8,6 +9,39 @@ const DEFAULT_METADATA = {
 };
 
 const PAGE_METADATA = {
+  start: DEFAULT_METADATA,
+  module: {
+    title: 'Alle sieben Module im Überblick | PUK Zürich',
+    description: 'Hier finden Sie den Lernpfad: welches Modul welche Frage beantwortet und wie die Strecke aufgebaut ist. Sie können linear lesen oder direkt ein Modul wählen.',
+  },
+  ...Object.fromEntries(MODULES.map(module => [
+    `modul${module.num}`,
+    { title: `Modul ${module.num}: ${module.title} | PUK Zürich`, description: module.desc },
+  ])),
+  werkzeuge: {
+    title: 'Werkzeuge im Überblick | PUK Zürich',
+    description: 'Interaktive Hilfen, um Muster sichtbarer zu machen, Gespräche vorzubereiten und konkrete nächste Schritte festzuhalten.',
+  },
+  unterstuetzung: {
+    title: `${ANLAUFSTELLEN_ENTRY.title} | PUK Zürich`,
+    description: ANLAUFSTELLEN_ENTRY.desc,
+  },
+  notfall: {
+    title: 'SOS Krise — Notfallweg | PUK Zürich',
+    description: 'In akuten Lagen hat dieser Weg Vorrang. Sie müssen hier nichts lesen, was nicht jetzt hilft.',
+  },
+  impressum: {
+    title: 'Impressum | PUK Zürich',
+    description: 'Angaben zur Trägerschaft, inhaltlichen Verantwortung und zum Kontakt.',
+  },
+  datenschutz: {
+    title: 'Datenschutz — Was passiert mit Ihren Daten? | PUK Zürich',
+    description: 'Informationen zur Datenbearbeitung und zur Speicherung von Werkzeug-Entwürfen in Ihrem Browser.',
+  },
+  barrierefreiheit: {
+    title: 'Erklärung zur Barrierefreiheit | PUK Zürich',
+    description: 'Informationen zur Zugänglichkeit dieser Lese-Begleitung, zum Stand der Vereinbarkeit und zum Kontakt bei Barrieren.',
+  },
   schweigepflicht: {
     title: 'Schweigepflicht bei Angehörigengesprächen | PUK Zürich',
     description: 'Amtlich belegte Orientierung für Angehörige zu Schweigepflicht, Einwilligung und dem offiziellen PUK-Formular.',

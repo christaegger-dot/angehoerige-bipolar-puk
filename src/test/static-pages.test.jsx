@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { Modul3Page } from '../modul3.jsx';
 import { Modul4Page } from '../modul4.jsx';
 import { Modul5Page } from '../modul5.jsx';
@@ -71,9 +70,7 @@ describe('content pages', () => {
     expect(screen.getByRole('heading', { level: 1, name: /langfristige tragfähigkeit/i })).toBeInTheDocument();
   });
 
-  it('keeps the notfall accordion and emergency links accessible', async () => {
-    const user = userEvent.setup();
-
+  it('keeps crisis first steps and safety instructions visible without an accordion', () => {
     render(<NotfallPage onNavigate={() => {}} />);
 
     expect(
@@ -82,10 +79,12 @@ describe('content pages', () => {
     expect(screen.getByRole('link', { name: /144.*sanität.*lebensgefahr/i })).toHaveAttribute('href', 'tel:144');
     expect(screen.getAllByText(/auch ohne genannten plan/i).length).toBeGreaterThan(0);
 
-    await user.click(screen.getByRole('button', { name: /suizidale krise/i }));
-    expect(screen.getByRole('button', { name: /suizidale krise.*öffnen/i })).toBeInTheDocument();
-
-    await user.click(screen.getByRole('button', { name: /drohende gewalt/i }));
-    expect(screen.getByText(/polizei 117/i)).toBeInTheDocument();
+    ['Suizidale Krise', 'Akute Manie', 'Psychotische Episode', 'Tiefe depressive Krise', 'Drohende Gewalt'].forEach(name => {
+      expect(screen.getByRole('heading', { level: 3, name })).toBeVisible();
+    });
+    screen.getAllByText('Erster Schritt:').forEach(label => expect(label.parentElement).toBeVisible());
+    screen.getAllByText('Vermeiden:').forEach(label => expect(label.parentElement).toBeVisible());
+    expect(screen.getByText(/polizei 117/i)).toBeVisible();
+    expect(screen.queryByRole('button', { name: /suizidale krise/i })).not.toBeInTheDocument();
   });
 });

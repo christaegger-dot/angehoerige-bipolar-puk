@@ -1,0 +1,109 @@
+/* Tool controls use the supplied darker blue on tinted reading surfaces. */
+.tool-overlay-card {
+  --accent: var(--puk-blue-125);
+  overflow-wrap: anywhere;
+}
+
+.tool-overlay-card p a[href] {
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+
+.saeulen-result {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 6rem), 1fr));
+}
+
+.saeulen-result-col,
+.saeulen-result-label {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.krisenplan-notruf ul { grid-template-columns: minmax(0, 1fr); }
+.krisenplan-notruf li { flex-wrap: wrap; min-width: 0; }
+.krisenplan-notruf-num {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+}
+.krisenplan-notruf-label { min-width: 0; flex: 1 1 10rem; }
+
+/* Native controls retain their 44px target size as the SVG scales down. */
+.belastung-marker-actions {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 16px 0 24px;
+  list-style: none;
+}
+.belastung-marker-actions li { min-width: 0; }
+.belastung-marker-button {
+  display: block;
+  width: 100%;
+  min-height: var(--web-touch-target);
+  padding: 12px 16px;
+  border: 1px solid var(--border-default);
+  background: var(--surface-page);
+  color: var(--text-default);
+  font: inherit;
+  font-weight: var(--fw-regular);
+  text-align: left;
+  cursor: pointer;
+}
+.belastung-marker-button[aria-pressed="true"] {
+  border-color: var(--puk-blue-125);
+  background: var(--surface-accent);
+  color: var(--puk-blue-125);
+}
+
+/* Coordinates work only while text remains small relative to the figure.
+   Narrow containers and enlarged text use the same grouped terms in rows. */
+.eisberg-tool { container-name: tool-iceberg; container-type: inline-size; }
+.eisberg-tool-terms { display: contents; }
+.eisberg-tool-fallback-heading { display: none; }
+
+@container tool-iceberg (width < 24rem) {
+  .eisberg-tool-zones { display: none; }
+  .eisberg-tool-stage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    aspect-ratio: auto;
+    background: none;
+  }
+  .eisberg-tool-stage > .eisberg-svg {
+    position: static;
+    flex-basis: 100%;
+    height: auto;
+    max-height: 240px;
+  }
+  .eisberg-tool-terms {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    flex: 1 1 100%;
+    gap: 8px;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .eisberg-tool-fallback-heading {
+    display: block;
+    color: var(--text-muted);
+    font-weight: var(--fw-medium);
+  }
+  .eisberg-tool-terms .eisberg-tool-btn {
+    position: static;
+    transform: none;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    border: 1px solid var(--border-default);
+    background: var(--surface-page);
+  }
+  .eisberg-tool-terms .eisberg-tool-btn.is-selected,
+  .eisberg-tool-terms .eisberg-tool-btn.is-marked {
+    color: var(--puk-blue-125) !important;
+    background: var(--surface-accent);
+  }
+}

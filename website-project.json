@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "contract": "Project-specific SPA adapter configuration, not a canonical PUK schema",
+  "profileVersion": "1.10.1",
+  "deliveryDirectory": "dist",
+  "routesModule": "src/routes.js",
+  "authoredInputs": [
+    "src",
+    "index.html",
+    "vite.config.js"
+  ],
+  "outputDirectory": "qa/output/puk",
+  "screenreaderEvidence": "website-screenreader-test.json",
+  "dataPolicy": "public/website-data-policy.json"
+}

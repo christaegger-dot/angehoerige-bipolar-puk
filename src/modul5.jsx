@@ -1,8 +1,9 @@
+import { scrollToSection } from './anchor-scroll.js';
 // Modul 5 — Loyalitätskonflikte · Volles Lese-Layout
 // Zentrales Bild: Zwei sich ziehende Linien (Knoten) als Metapher.
 
 import React from 'react';
-import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
+import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function KnotenFigur() {
@@ -18,14 +19,14 @@ function KnotenFigur() {
         </marker>
       </defs>
 
-      <text x="40" y="28" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0.14em" fontWeight="600">DIE DOPPELTE BEWEGUNG</text>
+      <text x="40" y="28" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0" fontWeight="500">DIE DOPPELTE BEWEGUNG</text>
 
-      <text x="60" y="78" fontFamily="var(--serif-display)" fontStyle="italic" fontSize="14" fill="var(--ink)">Verpflichtung</text>
-      <text x="60" y="96" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0.06em">zur anderen Person</text>
+      <text x="60" y="78" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="14" fill="var(--ink)">Verpflichtung</text>
+      <text x="60" y="96" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0">zur anderen Person</text>
       <path d="M 90,110 C 180,150 240,210 280,240" fill="none" stroke="var(--ink)" strokeWidth="1.5" markerStart="url(#dotA)" />
 
-      <text x="500" y="78" textAnchor="end" fontFamily="var(--serif-display)" fontStyle="italic" fontSize="14" fill="var(--accent)">Selbstschutz</text>
-      <text x="500" y="96" textAnchor="end" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0.06em">zu sich selbst</text>
+      <text x="500" y="78" textAnchor="end" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="14" fill="var(--accent)">Selbstschutz</text>
+      <text x="500" y="96" textAnchor="end" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0">zu sich selbst</text>
       <path d="M 470,110 C 380,150 320,210 280,240" fill="none" stroke="var(--accent)" strokeWidth="1.5" markerStart="url(#dotB)" />
 
       <g transform="translate(280, 240)">
@@ -34,38 +35,43 @@ function KnotenFigur() {
         <circle cx="0" cy="0" r="3" fill="var(--ink)" />
       </g>
 
-      <text x="280" y="290" textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="italic" fontSize="13" fill="var(--ink-soft)">der Konflikt</text>
-      <text x="280" y="306" textAnchor="middle" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.1em">beides ist legitim · beides zieht</text>
+      <text x="280" y="290" textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="13" fill="var(--ink-soft)">der Konflikt</text>
+      <text x="280" y="306" textAnchor="middle" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0">beides ist legitim · beides zieht</text>
     </svg>
   );
 }
 
 function KnotenFigurWrap() {
   return (
-    <figure className="knoten-figure">
+    <figure className="knoten-figure" data-visual-id="m5-loyalitaetsknoten" data-visual-type="illustration" aria-labelledby="m5-loyalitaetsknoten-title" aria-describedby="m5-loyalitaetsknoten-text">
       <div className="knoten-stage">
         <KnotenFigur />
       </div>
       <figcaption>
+        <strong id="m5-loyalitaetsknoten-title">Der Loyalitätsknoten.</strong>{' '}
         Loyalitätskonflikte sind keine Schwäche und keine Kälte. Sie entstehen, weil zwei legitime Bindungen — die zur erkrankten Person und die zu sich selbst — gleichzeitig ziehen. Wer das nur als «entweder–oder» denkt, gerät in den Knoten.
       </figcaption>
+      <FigureText visualId="m5-loyalitaetsknoten">
+        <p>Von links führt eine Linie mit der Bezeichnung „Verpflichtung zur anderen Person“ zu einem Knoten. Von rechts kommt die Linie „Selbstschutz zu sich selbst“. Im Knoten treffen beide zusammen: Beides ist legitim, beides zieht gleichzeitig.</p>
+        <p>Das Bild zeigt einen möglichen inneren Konflikt. Es ist kein Ablauf und schreibt keine Entscheidung zum Bleiben oder Gehen vor.</p>
+      </FigureText>
     </figure>
   );
 }
 
 function StimmenBlock() {
   const stimmen = [
-    { text: 'Ich kann ihn doch nicht alleinlassen.', kontext: 'Verantwortung' },
-    { text: 'Wenn ich gehe, verrate ich alles, was wir aufgebaut haben.', kontext: 'Geschichte' },
-    { text: 'Ich bin doch die Einzige, die noch durchhält.', kontext: 'Rolle' },
-    { text: 'Ich darf nicht egoistisch werden — nicht jetzt.', kontext: 'Schuld' },
+    { id: 'quote-m5-01', text: 'Ich kann ihn doch nicht alleinlassen.', kontext: 'Verantwortung' },
+    { id: 'quote-m5-02', text: 'Wenn ich gehe, verrate ich alles, was wir aufgebaut haben.', kontext: 'Geschichte' },
+    { id: 'quote-m5-03', text: 'Ich bin doch die Einzige, die noch durchhält.', kontext: 'Rolle' },
+    { id: 'quote-m5-04', text: 'Ich darf nicht egoistisch werden — nicht jetzt.', kontext: 'Schuld' },
   ];
   return (
     <div className="stimmen-block">
-      {stimmen.map((s, i) => (
-        <blockquote key={i} className="stimme">
+      {stimmen.map((s) => (
+        <blockquote key={s.id} id={s.id} className="stimme">
           <p>«{s.text}»</p>
-          <cite>— {s.kontext}</cite>
+          <cite>Redaktionelles Fallbeispiel (fiktiv) · {s.kontext}</cite>
         </blockquote>
       ))}
     </div>
@@ -165,10 +171,7 @@ function Modul5Page({ onNavigate }) {
     { id: 's10', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-  };
+  const scrollTo = scrollToSection;
 
   return (
     <>
@@ -410,10 +413,10 @@ function Modul5Page({ onNavigate }) {
               <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
+                <a className="puk-link--action module-nav-btn" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
                   ← Modul 04 — Wenn die Kraft nachlässt
                 </a>
-                <a className="module-nav-btn module-nav-next" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
+                <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
                   Modul 06 — Was Sie konkret tun können →
                 </a>
               </div>

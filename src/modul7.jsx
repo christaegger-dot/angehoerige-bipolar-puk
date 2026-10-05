@@ -1,8 +1,9 @@
+import { scrollToSection } from './anchor-scroll.js';
 // Modul 7 — Langfristige Tragfähigkeit · Volles Lese-Layout
 // Zentrales Bild: Vier Säulen als Tragwerk.
 
 import React from 'react';
-import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
+import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function SaeulenFigur() {
@@ -24,9 +25,9 @@ function SaeulenFigur() {
         </pattern>
       </defs>
 
-      <text x="40" y="32" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0.14em" fontWeight="600">DIE TRAGENDE ARCHITEKTUR</text>
+      <text x="40" y="32" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0" fontWeight="500">DIE TRAGENDE ARCHITEKTUR</text>
 
-      <text x="300" y="82" textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="italic" fontSize="13" fill="var(--ink-soft)">Ihr Leben — mit der Erkrankung als einem Teil davon</text>
+      <text x="300" y="82" textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="13" fill="var(--ink-soft)">Ihr Leben — mit der Erkrankung als einem Teil davon</text>
       <line x1="180" y1="94" x2="420" y2="94" stroke="var(--ink)" strokeWidth="0.4" strokeOpacity="0.4" />
 
       <rect x="60" y={topBarY} width="480" height="14" fill="url(#bar-hatch)" stroke="var(--ink)" strokeWidth="1" />
@@ -37,8 +38,8 @@ function SaeulenFigur() {
           <rect x={c.x - 22} y={topBarY + 14} width="44" height="6" fill="var(--ink)" />
           <rect x={c.x - 22} y={baseY - 6} width="44" height="6" fill="var(--ink)" />
           <line x1={c.x} y1={topBarY + 24} x2={c.x} y2={baseY - 10} stroke="var(--accent)" strokeWidth="0.6" strokeOpacity="0.5" />
-          <text x={c.x} y={baseY + 28} textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="italic" fontSize="14" fill="var(--accent)" fontWeight="500">{c.label}</text>
-          <text x={c.x} y={baseY + 48} textAnchor="middle" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0.04em">
+          <text x={c.x} y={baseY + 28} textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="14" fill="var(--accent)" fontWeight="500">{c.label}</text>
+          <text x={c.x} y={baseY + 48} textAnchor="middle" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0">
             {c.sub}
           </text>
         </g>
@@ -51,13 +52,24 @@ function SaeulenFigur() {
 
 function SaeulenFigurWrap() {
   return (
-    <figure className="saeulen-figure">
+    <figure className="saeulen-figure" data-visual-id="m7-stuetzen" data-visual-type="illustration" aria-labelledby="m7-stuetzen-title" aria-describedby="m7-stuetzen-text">
       <div className="saeulen-stage">
         <SaeulenFigur />
       </div>
       <figcaption>
+        <strong id="m7-stuetzen-title">Vier mögliche Stützen.</strong>{' '}
         Die vier Stützen sind ein Bild für mögliche Ressourcen. Sie messen weder Belastbarkeit noch Sicherheit. Welche Unterstützung erreichbar ist, hängt auch von Zeit, Geld, Betreuung und dem Hilfesystem ab.
       </figcaption>
+      <FigureText visualId="m7-stuetzen">
+        <p>Ein gemeinsames Dach steht für Ihr Leben, in dem die Erkrankung ein Teil ist. Darunter stehen vier mögliche Stützen:</p>
+        <ul>
+          <li><strong>Körper:</strong> Schlaf, Bewegung und Pausen.</li>
+          <li><strong>Beziehungen:</strong> Verbindungen ausserhalb der Erkrankung.</li>
+          <li><strong>Eigene Welt:</strong> Tätigkeit, Räume und Interessen.</li>
+          <li><strong>Fachlicher Halt:</strong> Beratung, Therapie und Selbsthilfe.</li>
+        </ul>
+        <p>Die vier Stützen sind eine Metapher. Es gibt keine geprüfte Mindestzahl, die Belastbarkeit oder Sicherheit garantiert.</p>
+      </FigureText>
     </figure>
   );
 }
@@ -166,7 +178,7 @@ function ZeitTimeline() {
 function SchlussSaetze() {
   return (
     <div className="schluss-block">
-      <p className="schluss-leitsatz">Drei Sätze, die in der Beratung oft als das Tragfähigste zurückkommen.</p>
+      <p className="schluss-leitsatz">Drei redaktionell formulierte Sätze als Anregung für die eigene Reflexion.</p>
       <ol className="schluss-saetze">
         <li>«Ich darf eine eigene Geschichte haben — auch in dieser Beziehung.»</li>
         <li>«Ich muss nicht alles gleichzeitig sein, was die Situation gerade bräuchte.»</li>
@@ -203,10 +215,7 @@ function Modul7Page({ onNavigate }) {
     { id: 's9', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-  };
+  const scrollTo = scrollToSection;
 
   return (
     <>
@@ -253,9 +262,9 @@ function Modul7Page({ onNavigate }) {
           <div className="module-body prose">
             <ModuleQuickStart number={7} onNavigate={onNavigate} />
 
-            <blockquote className="module-quote">
+            <blockquote className="module-quote" id="quote-m7-01">
               <p>«Wir haben gelernt, als Team zu funktionieren. Er sagt mir, wenn es kippt. Ich sage ihm, wenn ich eine Pause brauche. Es ist nicht perfekt — aber es ist unseres.»</p>
-              <cite>Partnerin, 49 Jahre · fiktives Beispiel</cite>
+              <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
             </blockquote>
 
             <section id="s1">
@@ -290,9 +299,9 @@ function Modul7Page({ onNavigate }) {
               <p>✗ «Du weisst nicht, was du mir angetan hast.» — entlädt, aber öffnet kein Gespräch.</p>
               <p>✗ «Lass uns jetzt alles aufarbeiten.» — zu viel auf einmal, zu früh nach der Krise.</p>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m7-02">
                 <p>«Es ist nicht gut. Das sage ich ehrlich. Er hat immer noch Episoden. Aber es ist besser als vor drei Jahren. Damals konnte ich nicht mehr schlafen, nicht mehr arbeiten, nicht mehr fühlen. Heute schlafe ich meistens durch. Ich habe gelernt, dass ‹besser› reicht. Nicht als Ziel — sondern als etwas, worauf ich stolz sein darf.»</p>
-                <cite>Brigitte, 56 Jahre, Ehefrau seit 22 Jahren · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Ehefrau</cite>
               </blockquote>
             </section>
 
@@ -329,13 +338,13 @@ function Modul7Page({ onNavigate }) {
 
               <StuetzenDetail />
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m7-03">
                 <p>«Die Wende kam, als wir aufgehört haben, nur über die Erkrankung zu reden, und angefangen haben, wieder über uns zu reden. Wir haben einen Abend pro Woche eingeführt, an dem Bipolar tabu ist. Diese gemeinsame Zeit war uns wichtig.»</p>
-                <cite>Daniel, 45 Jahre, Ehemann · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Ehemann</cite>
               </blockquote>
 
-              <h3>Was erkrankte Partner sich häufig wünschen</h3>
-              <p>Ein kurzer Blick auf die andere Seite kann helfen, Missverständnisse zu entschärfen. Nicht, um Ihre Belastung kleiner zu machen, sondern um zu sehen, welche Formen von Unterstützung oft eher tragen als Kontrolle oder Schonhaltung.</p>
+              <h3>Mögliche Bedürfnisse der erkrankten Person</h3>
+              <p>Ein kurzer Blick auf die andere Seite kann helfen, Missverständnisse zu entschärfen. Die folgenden Ich-Sätze sind fiktive Formulierungsbeispiele, keine dokumentierten Aussagen erkrankter Personen. Fragen Sie Ihr Gegenüber, welche Bedürfnisse für ihn oder sie wichtig sind.</p>
               <ul>
                 <li><strong>Nicht als Erkrankung behandelt werden.</strong> «Ich bin mehr als meine Diagnose. Ich bin immer noch ich.»</li>
                 <li><strong>Frühzeichen bemerkt, nicht kontrolliert.</strong> «Sag mir, was du siehst — aber entscheide nicht für mich.»</li>
@@ -411,9 +420,9 @@ function Modul7Page({ onNavigate }) {
 
               <p><strong>Fortschritt ist wellenförmig, nicht linear.</strong> Drei Schritte vor, zwei zurück — das ist kein Scheitern. Entscheidend ist oft nicht der einzelne Rückfall, sondern ob über Zeit etwas mehr Klarheit, Entlastung oder Boden wächst.</p>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m7-04">
                 <p>«Wachstum klingt so gross. Bei mir war es eher: Ich habe gelernt, dass ich mehr aushalte, als ich dachte — und dass ich trotzdem Hilfe brauche. Beides gleichzeitig. Ich bin stolz darauf, wie wir es geschafft haben. Und ich bin manchmal wütend, dass wir es überhaupt schaffen mussten. Das ist kein Widerspruch.»</p>
-                <cite>Leila, 53 Jahre, Partnerin · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
               </blockquote>
 
               <h3>Wenn es nach Jahren wieder passiert</h3>
@@ -473,10 +482,10 @@ function Modul7Page({ onNavigate }) {
               <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
+                <a className="puk-link--action module-nav-btn" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
                   ← Modul 06 — Was Sie konkret tun können
                 </a>
-                <a className="module-nav-btn module-nav-next" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
+                <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
                   Unterstützung und Ressourcen →
                 </a>
               </div>

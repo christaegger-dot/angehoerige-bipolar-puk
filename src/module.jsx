@@ -17,36 +17,40 @@ function ModulePage({ onNavigate }) {
 
       <section style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="module-list">
+          <ul className="module-list" role="list" aria-label="Lernpfad und Unterstützung">
             {MODULES.map((m) => (
-              <a key={m.num} className="module-row" href={navHref('modul' + m.num)} onClick={navHandler('modul' + m.num, onNavigate)} {...navPreloadProps('modul' + m.num)}>
-                <div className="module-num">{String(m.num).padStart(2, '0')}</div>
+              <li key={m.num}>
+                <a className="module-row" href={navHref('modul' + m.num)} onClick={navHandler('modul' + m.num, onNavigate)} {...navPreloadProps('modul' + m.num)}>
+                  <div className="module-num">{String(m.num).padStart(2, '0')}</div>
+                  <div className="module-content">
+                    <div className="module-row-numlabel">Modul</div>
+                    <h3>{m.title}</h3>
+                    <p>{m.desc}</p>
+                    <div className="module-meta">
+                      <span>⏱ {m.time}</span>
+                      <span>· {m.overviewMeta || DEFAULT_OVERVIEW_META}</span>
+                    </div>
+                  </div>
+                  <div className="module-row-arrow" aria-hidden="true">→</div>
+                </a>
+              </li>
+            ))}
+            <li>
+              <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>
+                <div className="module-num module-num-resource">→</div>
                 <div className="module-content">
-                  <div className="module-row-numlabel">Modul</div>
-                  <h3>{m.title}</h3>
-                  <p>{m.desc}</p>
+                  <div className="module-row-numlabel">Hilfe finden</div>
+                  <h3>{ANLAUFSTELLEN_ENTRY.title}</h3>
+                  <p>{ANLAUFSTELLEN_ENTRY.desc}</p>
                   <div className="module-meta">
-                    <span>⏱ {m.time}</span>
-                    <span>· {m.overviewMeta || DEFAULT_OVERVIEW_META}</span>
+                    <span>⏱ {ANLAUFSTELLEN_ENTRY.time}</span>
+                    <span>· Hilfe, Material und Kontakt →</span>
                   </div>
                 </div>
                 <div className="module-row-arrow" aria-hidden="true">→</div>
               </a>
-            ))}
-            <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>
-              <div className="module-num module-num-resource">→</div>
-              <div className="module-content">
-                <div className="module-row-numlabel">Hilfe finden</div>
-                <h3>{ANLAUFSTELLEN_ENTRY.title}</h3>
-                <p>{ANLAUFSTELLEN_ENTRY.desc}</p>
-                <div className="module-meta">
-                  <span>⏱ {ANLAUFSTELLEN_ENTRY.time}</span>
-                  <span>· Hilfe, Material und Kontakt →</span>
-                </div>
-              </div>
-              <div className="module-row-arrow" aria-hidden="true">→</div>
-            </a>
-          </div>
+            </li>
+          </ul>
         </div>
       </section>
 

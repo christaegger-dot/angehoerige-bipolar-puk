@@ -1,0 +1,35 @@
+{
+  "systemVersion": "1.10.1",
+  "source": {
+    "type": "user-provided-archive",
+    "receivedAt": "2026-10-05",
+    "archiveName": "PUK Zürich · Vollsystem · V1.10.1 · Grundlage für alle Medien.zip",
+    "fileId": "file_000000006ac082108350c67c752db57e",
+    "archiveSha256": "b05e73c41cc372d4ac793e1f935b3e29d424fe4fdec1d5c057ae53ce03eae4b9",
+    "upstreamUrl": null,
+    "upstreamCommit": null
+  },
+  "modifications": "None: selected files are byte-identical to supplied full archive",
+  "files": [
+    {
+      "path": "_tooling/audit/tools/verify-website-project.mjs",
+      "sha256": "92abf07a9cf952a4b71c0aaa73e1f6f3d8b58cce8449c4bc31d5d209e2147aa9"
+    },
+    {
+      "path": "_tooling/audit/tools/website-rules.mjs",
+      "sha256": "2a658dfa9dce9d869533876ed88de06a9fad3bc611e2ce966a858feb83be1ba3"
+    },
+    {
+      "path": "_tooling/audit/tools/verify-website-project-logic.mjs",
+      "sha256": "443bd10949c20c2ba365bd11d9ce5b433c295ef45791070bdb44d95c047c775c"
+    },
+    {
+      "path": "templates/website/profile.json",
+      "sha256": "62f2890b3c9b6f899df6618f98a096e3128fe1c8ca2d3865191b419d8e742ff6"
+    },
+    {
+      "path": "templates/website/website-screenreader-test.example.json",
+      "sha256": "fc8a868a63dde5583be0d669cba81e74dd30236cb02d1b16d8fc8af46740d55e"
+    }
+  ]
+}

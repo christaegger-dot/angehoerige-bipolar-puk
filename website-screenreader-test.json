@@ -1,0 +1,45 @@
+{
+  "status": "prepared-not-executed",
+  "profileTarget": "PUK Websiteprofil 1.10.1",
+  "lastTechnicalPreparation": "2026-10-05",
+  "testedWith": [],
+  "manualApproval": null,
+  "requiredSystems": [
+    "VoiceOver with Safari on macOS or iOS",
+    "NVDA with Firefox or Chrome on Windows"
+  ],
+  "scenarios": [
+    "Skip link, main landmark and keyboard focus after navigation",
+    "Module navigation, headings, source details and fictional-example labels",
+    "Crisis contact links, crisis plan fields and visible storage notices",
+    "Tool overlay focus trap, Escape and return focus",
+    "Memory-only tool drafts, reset feedback and removal of historical drafts from both browser stores",
+    "Reflection questions, mixed-symptom graph text alternative and result announcements",
+    "320 and 360 px layouts and 200 percent text enlargement"
+  ],
+  "evidence": [],
+  "note": "Automated browser and axe checks do not establish a real VoiceOver/NVDA pass. Current tool inputs remain in memory only; historical browser drafts are removed without loading their contents. Record tester, date, system, outcomes and evidence after actual assistive-technology execution.",
+  "scope": "Konkrete React-SPA mit sämtlichen Routen, Formular- und Fehlerzuständen",
+  "runs": [
+    {
+      "assistiveTechnology": "VoiceOver",
+      "browser": "Safari",
+      "platform": "macOS oder iOS",
+      "testedAt": null,
+      "testerRole": null,
+      "result": "pending",
+      "evidence": []
+    },
+    {
+      "assistiveTechnology": "NVDA",
+      "browser": "Firefox oder Chrome",
+      "platform": "Windows",
+      "testedAt": null,
+      "testerRole": null,
+      "result": "pending",
+      "evidence": []
+    }
+  ],
+  "issues": [],
+  "schemaReference": "scripts/puk-audit/vendor/templates/website/website-screenreader-test.example.json"
+}

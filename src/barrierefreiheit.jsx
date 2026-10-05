@@ -68,7 +68,7 @@ function BarrierefreiheitPage() {
               Schweizerische Stiftung «Zugang für alle» oder an Pro&nbsp;Infirmis wenden.
             </p>
 
-            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: 14 }}>
+            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: '0.875rem' }}>
               Stand: April 2026 · Selbstbewertung
             </p>
           </article>

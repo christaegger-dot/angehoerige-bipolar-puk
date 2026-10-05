@@ -19,22 +19,22 @@ const BarrierefreiheitPage = React.lazy(() => preloadPage('barrierefreiheit').th
 const SchweigepflichtPage = React.lazy(() => preloadPage('schweigepflicht').then(m => ({ default: m.SchweigepflichtPage })));
 
 const PAGE_RENDERERS = {
-  start: (props) => <HomePage onNavigate={props.onNavigate} />,
-  module: (props) => <ModulePage onNavigate={props.onNavigate} />,
-  werkzeuge: (props) => <WerkzeugePage onNavigate={props.onNavigate} />,
-  notfall: (props) => <NotfallPage onNavigate={props.onNavigate} />,
-  unterstuetzung: (props) => <UnterstuetzungPage onNavigate={props.onNavigate} />,
-  modul1: (props) => <Modul1Page onNavigate={props.onNavigate} />,
-  modul2: (props) => <Modul2Page onNavigate={props.onNavigate} />,
-  modul3: (props) => <Modul3Page onNavigate={props.onNavigate} />,
-  modul4: (props) => <Modul4Page onNavigate={props.onNavigate} />,
-  modul5: (props) => <Modul5Page onNavigate={props.onNavigate} />,
-  modul6: (props) => <Modul6Page onNavigate={props.onNavigate} />,
-  modul7: (props) => <Modul7Page onNavigate={props.onNavigate} />,
-  impressum: () => <ImpressumPage />,
-  datenschutz: () => <DatenschutzPage />,
-  barrierefreiheit: () => <BarrierefreiheitPage />,
-  schweigepflicht: (props) => <SchweigepflichtPage onNavigate={props.onNavigate} />,
+  start: (props) => React.createElement(HomePage, { onNavigate: props.onNavigate }),
+  module: (props) => React.createElement(ModulePage, { onNavigate: props.onNavigate }),
+  werkzeuge: (props) => React.createElement(WerkzeugePage, { onNavigate: props.onNavigate }),
+  notfall: (props) => React.createElement(NotfallPage, { onNavigate: props.onNavigate }),
+  unterstuetzung: (props) => React.createElement(UnterstuetzungPage, { onNavigate: props.onNavigate }),
+  modul1: (props) => React.createElement(Modul1Page, { onNavigate: props.onNavigate }),
+  modul2: (props) => React.createElement(Modul2Page, { onNavigate: props.onNavigate }),
+  modul3: (props) => React.createElement(Modul3Page, { onNavigate: props.onNavigate }),
+  modul4: (props) => React.createElement(Modul4Page, { onNavigate: props.onNavigate }),
+  modul5: (props) => React.createElement(Modul5Page, { onNavigate: props.onNavigate }),
+  modul6: (props) => React.createElement(Modul6Page, { onNavigate: props.onNavigate }),
+  modul7: (props) => React.createElement(Modul7Page, { onNavigate: props.onNavigate }),
+  impressum: () => React.createElement(ImpressumPage),
+  datenschutz: () => React.createElement(DatenschutzPage),
+  barrierefreiheit: () => React.createElement(BarrierefreiheitPage),
+  schweigepflicht: (props) => React.createElement(SchweigepflichtPage, { onNavigate: props.onNavigate }),
 };
 
 export { PAGE_RENDERERS };
