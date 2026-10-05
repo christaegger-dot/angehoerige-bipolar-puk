@@ -1,3 +1,4 @@
+import { scrollToSection } from './anchor-scroll.js';
 // Modul 1 — Die bipolare Störung verstehen · Volles Lese-Layout
 
 import React from 'react';
@@ -36,10 +37,7 @@ function Modul1Page({ onNavigate }) {
     { id: 's10', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-  };
+  const scrollTo = scrollToSection;
 
   return (
     <>
@@ -92,9 +90,9 @@ function Modul1Page({ onNavigate }) {
           <div className="module-body prose">
             <ModuleQuickStart number={1} onNavigate={onNavigate} />
 
-            <blockquote className="module-quote">
+            <blockquote className="module-quote" id="quote-m1-01">
               <p>«Als ich endlich begriffen habe, dass seine Gereiztheit ein Symptom ist und nicht gegen mich gerichtet — das hat alles verändert. Ich war nicht weniger erschöpft, aber ich war nicht mehr wütend.»</p>
-              <cite>Thomas, 51 Jahre, Ehemann · fiktives Beispiel</cite>
+              <cite>Redaktionelles Fallbeispiel (fiktiv) · Ehemann</cite>
             </blockquote>
 
             <section id="s1">
@@ -145,9 +143,9 @@ function Modul1Page({ onNavigate }) {
                 <p>Viele Beispiele stammen aus Paarbeziehungen. Die Grundfragen — Was ist Symptom, was Beziehung, wo brauche ich Unterstützung? — gelten genauso für Eltern, Geschwister und erwachsene Kinder.</p>
               </aside>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m1-02">
                 <p>«Ich wollte am Anfang vor allem wissen, ob das jetzt er ist, die Krankheit ist oder ob ich überreagiere. Erst später habe ich verstanden: Für Angehörige ist genau diese Unklarheit oft die eigentliche Belastung.»</p>
-                <cite>Partnerin · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
               </blockquote>
             </section>
 
@@ -165,6 +163,7 @@ function Modul1Page({ onNavigate }) {
             <section id="s4">
               <h2>Wie sich Episoden im Alltag zeigen</h2>
               <p>Die Phasenlehre ist nur dann hilfreich, wenn sie in den Alltag übersetzt wird. Entscheidend ist nicht nur, wie eine Episode diagnostisch heisst, sondern wie sie sich für Sie zu Hause anfühlt: unberechenbar, laut, leer, beschämend, angsteinflössend oder seltsam schwer greifbar.</p>
+              <p>Die kursiven Ich-Sätze in diesem Abschnitt sind fiktive Alltagsbeispiele, keine dokumentierten Angehörigenzitate.</p>
 
               <h3>Manie und Hypomanie</h3>
               <p>In beiden Hochphasen verändern sich Stimmung und Aktivität deutlich gegenüber dem gewohnten Zustand. Weniger Schlafbedürfnis, viele Ideen, Rededrang und Gereiztheit können vorkommen. Nicht jede Gereiztheit ist ein Symptom. Krankheitseinsicht kann beeinträchtigt sein; Widerspruch oder ein anderer Behandlungswunsch beweisen das jedoch nicht.</p>
@@ -217,9 +216,9 @@ function Modul1Page({ onNavigate }) {
               <h3>Zyklothymie und unscharfe Verläufe</h3>
               <p>Nicht jeder Verlauf passt sauber in Bipolar I oder Bipolar II. Bei einer Zyklothymie wechseln sich über längere Zeit mildere Hochs und Tiefs ab, die trotzdem Beziehungen und Alltag belasten können. Für Angehörige ist wichtig: Auch weniger spektakuläre oder schwer greifbare Verläufe dürfen ernst genommen und fachlich abgeklärt werden.</p>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m1-03">
                 <p>«Letzte Woche hat er das ganze Wochenende durchgearbeitet, drei neue Projekte gestartet und war euphorisch. Alle fanden ihn grossartig. Ich war die Einzige, die wusste: Das ist keine gute Phase. Das ist der Anfang.»</p>
-                <cite>Angehörige · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Angehörige</cite>
               </blockquote>
             </section>
 
@@ -341,10 +340,10 @@ function Modul1Page({ onNavigate }) {
               <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href={navHref('module')} onClick={navHandler('module', onNavigate)}>
+                <a className="puk-link--action module-nav-btn" href={navHref('module')} onClick={navHandler('module', onNavigate)}>
                   ← Alle Module
                 </a>
-                <a className="module-nav-btn module-nav-next" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>
+                <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>
                   Modul 02 — Die eigene Belastung verstehen →
                 </a>
               </div>

@@ -6,11 +6,14 @@ on:
       - main
       - master
       - 'copilot/**'
+      - 'codex/**'
+      - 'fix/**'
   pull_request:
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       contents: read
 
@@ -35,3 +38,23 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Dependency audit
+        run: npm audit --audit-level=high
+
+      - name: Install browser for accessibility checks
+        run: npx playwright install --with-deps chromium
+
+      - name: Website browser audit
+        run: npm run audit:website
+
+      - name: Tool interaction audit
+        run: npm run audit:tools
+
+      - name: Retain browser audit reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-browser-audits
+          path: qa/output/
+          if-no-files-found: ignore

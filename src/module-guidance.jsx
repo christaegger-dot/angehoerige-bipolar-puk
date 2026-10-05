@@ -27,7 +27,8 @@ function ModuleQuickStart({ number, onNavigate }) {
       <span className="callout-label">Kurzweg · {question}</span>
       <p>{point}</p>
       <p><strong>Ein möglicher nächster Schritt:</strong> {action}</p>
-      <p><a href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Konkrete Hilfen</a> · <a href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Beratung und Entlastung</a> · <a href={navHref('modul4', 's6')} onClick={navHandler('modul4', onNavigate, 's6')}>Kinder unterstützen</a></p>
+      <p>Die Fallbeispiele und beispielhaften Ich-Sätze sind redaktionell formuliert und fiktiv. Sie sind keine dokumentierten Originalzitate von Angehörigen oder erkrankten Personen.</p>
+      <p><a className="puk-link--inline" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Konkrete Hilfen</a> · <a className="puk-link--inline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Beratung und Entlastung</a> · <a className="puk-link--inline" href={navHref('modul4', 's6')} onClick={navHandler('modul4', onNavigate, 's6')}>Kinder unterstützen</a></p>
       <details><summary>Andere Angehörigenrollen</summary><p>{ROLE_GUIDES[number]}</p></details>
     </aside>
   );
@@ -67,7 +68,7 @@ function EvidenceSources({ number }) {
   return (
     <details className="module-credits">
       <summary>Quellen und Grenzen der Aussagen</summary>
-      <p>Die Forschung beschreibt Gruppen und unterschiedliche Lebenslagen. Sie sagt den Verlauf einer einzelnen Person oder Beziehung nicht voraus. Grafiken sind vereinfachte Bilder, keine Messungen. Beispielzitate sind fiktiv.</p>
+      <p>Die Forschung beschreibt Gruppen und unterschiedliche Lebenslagen. Sie sagt den Verlauf einer einzelnen Person oder Beziehung nicht voraus. Grafiken sind vereinfachte Bilder, keine Messungen. Die redaktionellen Fallbeispiele sind fiktiv; sie sind keine Originalzitate aus den verlinkten Quellen.</p>
       <ul>{MODULE_REFS[number].map(key => {
         const [title, url, note] = REFS[key];
         return <li key={key}><a href={url} target="_blank" rel="noopener noreferrer">{title}</a><br />{note}</li>;
@@ -75,4 +76,17 @@ function EvidenceSources({ number }) {
     </details>
   );
 }
-export { ModuleQuickStart, EvidenceSources };
+
+function FigureText({ visualId, children }) {
+  return (
+    <div className="figure-text" id={`${visualId}-text`}>
+      <p><strong>Textfassung</strong></p>
+      {children}
+      <p className="module-credits" data-source-status="eigene-darstellung" data-approval-status="ausstehend">
+        Eigene didaktische Darstellung · Entwurf; fachliche Freigabe nicht dokumentiert.
+      </p>
+    </div>
+  );
+}
+
+export { ModuleQuickStart, EvidenceSources, FigureText };

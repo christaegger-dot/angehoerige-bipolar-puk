@@ -1,0 +1,3 @@
+# Preserve the supplied font licence byte-for-byte, including its original
+# CRLF line endings and trailing spaces. Application code keeps normal checks.
+public/assets/puk/fonts/OFL.txt -text whitespace=-blank-at-eol,cr-at-eol

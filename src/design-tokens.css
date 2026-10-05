@@ -1,0 +1,86 @@
+@import "./puk-design/styles.css";
+
+/* Compatibility names for the existing application. Every colour resolves
+   to the supplied PUK tokens; the former optional palettes are removed.
+   Source identity and SHA-256 hashes: puk-design/provenance.json. */
+:root {
+  --bg: var(--surface-page);
+  --bg-alt: var(--surface-sunken);
+  --bg-cool: var(--surface-accent);
+  --paper: var(--surface-page);
+  --card: var(--surface-card);
+  --paper-edge: var(--border-default);
+  --rule: var(--border-hairline);
+
+  --ink: var(--puk-web-text);
+  --ink-2: var(--text-default);
+  --ink-3: var(--text-muted);
+  --ink-soft: var(--text-muted);
+  --ink-mute: var(--text-muted);
+  --ink-faint: var(--puk-black-50);
+
+  --accent: var(--text-accent);
+  --accent-on-sand: var(--puk-blue-125);
+  --accent-2: var(--puk-blue-125);
+  --accent-soft: var(--puk-blue-50);
+  --accent-faint: var(--puk-blue-25);
+  --accent-bg: var(--surface-accent);
+  --sand: var(--puk-blue-100);
+  --sand-soft: var(--surface-accent);
+  --alert: var(--status-danger-text);
+  --alert-soft: var(--status-danger-soft-bg);
+
+  --ill-ink: var(--puk-black-100);
+  --ill-fill: var(--puk-blue-25);
+
+  --serif: var(--font-core);
+  --serif-display: var(--font-core);
+  --sans: var(--font-core);
+  --mono: var(--font-core);
+
+  --measure: var(--web-content-measure);
+  --measure-narrow: 52ch;
+  --col-width: min(var(--web-container-max), calc(var(--measure) + 2 * var(--pad-x)));
+  --col-wide: var(--web-container-max);
+  --pad-x: var(--web-gutter-inline);
+  --touch-target: var(--web-touch-target);
+
+  /* Legacy spacing aliases; canonical --space-* values remain unchanged. */
+  --space-7: var(--space-12);
+  --space-9: var(--space-24);
+
+  /* UI screen grades 13/15/17/20/24 px at the browser's normal 16 px basis.
+     rem preserves the user's text enlargement preference. */
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1.0625rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+
+  --t-fast: var(--dur-fast);
+  --t-base: var(--dur-base);
+  --t-slow: var(--dur-slow);
+  --easing: var(--ease-standard);
+
+  --on-alert: var(--puk-white);
+  --on-alert-muted: var(--puk-white);
+  --on-alert-rule: var(--puk-white);
+  --on-accent-muted: var(--puk-white);
+  --nav-surface: var(--surface-page);
+  --strike-rule: var(--border-default);
+  --notebook-paper: var(--surface-page);
+  --notebook-rule: var(--border-hairline);
+  --overlay-backdrop: var(--scrim);
+  --shadow-text: color-mix(in srgb, var(--puk-black-100) 15%, transparent);
+  --shadow-card: color-mix(in srgb, var(--puk-black-100) 6%, transparent);
+  --shadow-accent: color-mix(in srgb, var(--puk-blue-100) 28%, transparent);
+
+  /* The existing print stylesheet reuses the brand palette. These aliases
+     do not assert compliance with the separate office or handout profiles. */
+  --print-ink: var(--puk-black-100);
+  --print-muted: var(--puk-black-75);
+  --print-caption: var(--puk-black-75);
+  --print-rule: var(--puk-black-25);
+  --print-paper: var(--ui-wash);
+  --print-strong: var(--puk-black-100);
+}

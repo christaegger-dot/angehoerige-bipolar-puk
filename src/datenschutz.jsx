@@ -46,21 +46,45 @@ function DatenschutzPage() {
             </p>
 
             <h3>Daten in den Werkzeugen</h3>
-            <p>
-              Die interaktiven Werkzeuge arbeiten bewusst <strong>lokal in Ihrem Browser</strong>. Freitext-Entwürfe
-              wie Krisenplan oder Kommunikations-Trainer werden standardmässig nur für die aktuelle Browser-Sitzung
-              gespeichert (<code>sessionStorage</code>). Wenn Sie die Option «Auf diesem Gerät dauerhaft behalten»
-              aktivieren, werden diese Entwürfe im <code>localStorage</code> dieses Geräts gespeichert. Andere
-              Werkzeuge wie «Meine Belastung wahrnehmen», Säulen-Check oder Phasenverlauf werten Ihre Eingaben direkt im Browser aus.
-              Diese Daten werden zu keinem Zeitpunkt an unsere Server, an die PUK oder an Dritte übermittelt.
-            </p>
-            <p>
-              Sie können lokale Entwürfe jederzeit über die jeweilige Werkzeug-Funktion oder über die
-              Browser-Einstellungen löschen. Wenn Sie Inhalte kopieren, drucken oder als PDF speichern, entstehen
-              zusätzliche lokale Spuren auf Ihrem Gerät (z. B. Zwischenablage, PDF-Datei, Druckverlauf). Wenn Sie
-              ein gemeinsam genutztes Gerät verwenden, setzen Sie das jeweilige Werkzeug nach der Nutzung zurück
-              oder löschen Sie die Browser-Daten.
-            </p>
+            <div data-storage-policy="browser-drafts">
+              <p data-storage-notice="memory-only">
+                Die interaktiven Werkzeuge arbeiten <strong>lokal in Ihrem Browser</strong>. Ihre Eingaben bleiben
+                nur während der geöffneten Übung sichtbar. Der Krisenplan und der Kommunikations-Trainer speichern
+                keine Entwürfe im Browser. Beim Schliessen des Werkzeugs oder Neuladen der Seite gehen die aktuellen
+                Eingaben verloren. Eine Option zum dauerhaften Behalten wird nicht angeboten. Sichern Sie wichtige
+                Inhalte bei Bedarf vor dem Schliessen durch Kopieren, Drucken oder Speichern als PDF.
+              </p>
+              <p>
+                Diese Eingaben können besonders schützenswerte Gesundheitsdaten enthalten: etwa Warnzeichen,
+                Behandlungswünsche, eigene Belastungen oder Angaben zu Angehörigen. Im Krisenplan können auch
+                Namen, Telefonnummern und Betreuungsabsprachen stehen. Browser-Speicherung schützt solche
+                Angaben nicht vor anderen Personen, die Ihr Gerät und Browser-Profil benutzen können. Schliessen
+                Sie auf gemeinsam genutzten Geräten nach der Nutzung alle offenen Tabs mit persönlichen Eingaben.
+                Andere Werkzeuge wie «Meine Belastung wahrnehmen», Säulen-Check und Phasenverlauf
+                halten Ihre Auswahl nur während der geöffneten Übung vor; sie speichern keine Entwürfe.
+                Die Website übermittelt Werkzeug-Eingaben nicht an unsere Server, an die PUK oder an Dritte.
+              </p>
+              <p data-storage-notice="legacy-deletion" data-storage-delete-notice="puk-krisenplan-v1 puk-kommunikation-v1">
+                Frühere Versionen konnten Entwürfe im Browser behalten. Solche alten Entwürfe werden in dieser
+                Fassung weder geladen noch angezeigt. Zum Entfernen öffnen Sie unter
+                <a className="link-underline" href="/werkzeuge"> Werkzeuge</a> den Krisenplan oder den
+                Kommunikations-Trainer und wählen «Entwurf löschen». Nach Ihrer Bestätigung werden die aktuellen
+                Eingaben und alte Browser-Kopien dieses Werkzeugs im aktuellen Tab sowie dessen dauerhafte Kopie
+                entfernt. Das andere Werkzeug bleibt unverändert. Alte Sitzungs-Kopien in anderen Tabs müssen Sie
+                dort ebenfalls entfernen; schliessen Sie auch diese Tabs. Alternativ können Sie in den
+                Browser-Einstellungen die Website-Daten dieser Domain löschen. Falls der Browser die Löschung
+                blockiert, zeigt das Werkzeug einen Hinweis; nutzen Sie dann die Browser-Einstellungen.
+              </p>
+              <p data-export-notice="clipboard print-pdf">
+                Wenn Sie das Gesprächs-Skript kopieren, liegt es zusätzlich in der Zwischenablage Ihres Geräts.
+                Ein Zwischenablage-Verlauf oder eine eingerichtete Synchronisierung kann weitere Kopien
+                behalten. Beim Drucken oder Speichern als PDF entstehen Ausdrucke, Dateien und gegebenenfalls
+                Einträge im Druckverlauf. «Entwurf löschen» entfernt diese Kopien nicht. Löschen Sie die
+                Zwischenablage und gespeicherte Dateien separat und bewahren Sie Ausdrucke sicher auf. Auch
+                Druckmaterialien unter «Unterstützung» können als PDF oder Ausdruck gespeichert werden; dort
+                werden keine persönlichen Eingaben im Browser erfasst.
+              </p>
+            </div>
 
             <h3>Auffindbarkeit über Suchmaschinen</h3>
             <p>
@@ -70,7 +94,7 @@ function DatenschutzPage() {
 
             <h3>Schriften &amp; Ressourcen</h3>
             <p>
-              Alle verwendeten Schriften (Source Serif 4, Inter Tight, JetBrains Mono) und Bilder werden
+              Die verwendete Schrift Rubik und alle Bilder werden
               unmittelbar von dieser Domain ausgeliefert. Es findet <strong>keine Verbindung zu Google Fonts
               oder anderen externen CDN</strong> statt.
             </p>
@@ -110,8 +134,8 @@ function DatenschutzPage() {
               inhaltlich ändert. Massgeblich ist jeweils die aktuelle, hier abrufbare Fassung.
             </p>
 
-            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: 14 }}>
-              Stand: April 2026
+            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: '0.875rem' }}>
+              Stand: Oktober 2026
             </p>
           </article>
         </div>

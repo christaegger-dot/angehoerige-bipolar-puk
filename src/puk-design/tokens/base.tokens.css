@@ -1,0 +1,61 @@
+/* Minimal element defaults so consuming pages inherit the brand voice. */
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--surface-page);color:var(--text-default);font:var(--type-body);text-wrap:pretty}
+h1,h2,h3,h4{margin:0;font-weight:var(--fw-light);line-height:var(--lh-heading)}
+h1{font-size:var(--size-title-1)}
+h2{font-size:var(--size-title-2)}
+h3{font-size:var(--size-title-3)}
+p{margin:0}
+/* Der PUK-Webauftritt setzt Links ohne Unterstreichung, blau auf schwarz im Hover. */
+a{color:var(--text-link);text-decoration:none;transition:color var(--dur-fast) var(--ease-standard)}
+a:hover{color:var(--text-link-hover)}
+/* ---- Link-Komponente ----
+   Im Fliesstext braucht ein Link ausser der Farbe ein zweites Merkmal, sobald
+   er gehovert oder fokussiert wird: die Unterstreichung. Besucht wird er eine
+   Stufe dunkler (--text-link-visited, 6,37:1). Nur für [data-puk-link], damit
+   der Webauftritt-Stil «ohne Unterstreichung» für nackte a-Elemente bleibt. */
+[data-puk-link]{color:var(--text-link);text-decoration:none;text-underline-offset:.18em;text-decoration-thickness:1px}
+[data-puk-link]:visited{color:var(--text-link-visited)}
+[data-puk-link]:hover{color:var(--text-link-hover);text-decoration:underline}
+[data-puk-link]:focus-visible{text-decoration:underline}
+[data-puk-link][aria-current="page"]{color:var(--text-default);text-decoration:underline;text-decoration-thickness:2px}
+[data-puk-link="standalone"]{font-weight:var(--fw-medium)}
+[data-puk-sr-only]{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+*,*::before,*::after{box-sizing:border-box}
+/* ---- Fokus ----
+   Ein Fokusbild für das ganze System, in zwei Anwendungen desselben Tokens:
+   Eingabefelder färben ihren eigenen Rahmen und setzen einen Innenring, weil
+   sie einen Rahmen haben. Alles andere — Schaltflächen, Reiter, Links,
+   Kontrollkästchen, Schalter — trägt --focus-ring. Der Browserstandardring ist
+   Rettungsnetz, nicht vorgesehene Gestaltung. Entfernen ist nie zulässig.
+   :where() hält die Spezifität bei 0, damit Komponenten überschreiben können. */
+[data-puk-field]{border:1px solid var(--border-default);transition:border-color var(--dur-fast) var(--ease-standard),box-shadow var(--dur-fast) var(--ease-standard)}
+[data-puk-field][data-invalid]{border-color:var(--puk-red)}
+[data-puk-field]:focus{outline:none}
+[data-puk-field]:focus-visible{border-color:var(--puk-blue-100);outline:none;box-shadow:inset 0 0 0 1px var(--puk-blue-100)}
+:where(a[href],button,summary,[role="button"],[role="tab"],[role="switch"],[role="link"],[tabindex]:not([tabindex="-1"])):not([data-puk-field]):focus-visible{outline:none;box-shadow:var(--focus-ring)}
+/* ---- Kontrollkästchen und Radio ----
+   Das native input wird direkt gestaltet (appearance:none) statt versteckt und
+   durch ein gezeichnetes Kästchen ersetzt. So kommen :checked, :disabled und
+   :focus-visible vom Element selbst — kein Geschwisterselektor, keine zwei
+   Zustände, die synchron gehalten werden müssen, und der Fokus ist sichtbar. */
+[data-puk-check]{appearance:none;-webkit-appearance:none;margin:0;width:18px;height:18px;flex:0 0 auto;box-sizing:border-box;border:1px solid var(--border-strong);border-radius:var(--radius-xs);background-color:var(--puk-white);cursor:pointer;transition:background-color var(--dur-fast) var(--ease-standard),border-color var(--dur-fast) var(--ease-standard)}
+[data-puk-check][type="radio"]{border-radius:50%}
+[data-puk-check][type="checkbox"]:checked{border-color:var(--puk-blue-100);background-color:var(--puk-blue-100);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4 9.5 7 12.5 13.5 6.5' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:16px 16px}
+[data-puk-check][type="radio"]:checked{border-color:var(--puk-blue-100);background-image:radial-gradient(circle at 50% 50%,var(--puk-blue-100) 0 5px,transparent 5px)}
+[data-puk-check]:disabled{border-color:var(--border-default);background-color:var(--surface-sunken);cursor:not-allowed}
+[data-puk-check]:disabled:checked{background-color:var(--puk-black-50);border-color:var(--puk-black-50)}
+[data-puk-check][type="radio"]:disabled:checked{background-color:var(--surface-sunken);background-image:radial-gradient(circle at 50% 50%,var(--puk-black-50) 0 5px,transparent 5px)}
+[data-puk-check]:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+/* ---- Reduzierte Bewegung ----
+   Das animierte Logo ist in digitalen Medien die Normalform (1,2 s). Wer
+   Bewegung abbestellt hat, bekommt die statische Fassung: im Markup beide
+   Varianten anlegen und hier umschalten. Im klinischen Kontext keine Formalie. */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  [data-motion="logo-animiert"]{display:none!important}
+  [data-motion="logo-statisch"]{display:revert!important}
+}
+@media not all and (prefers-reduced-motion:reduce){
+  [data-motion="logo-statisch"]{display:none}
+}

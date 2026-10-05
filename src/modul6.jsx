@@ -1,3 +1,4 @@
+import { scrollToSection } from './anchor-scroll.js';
 // Modul 6 — Was Sie konkret tun können · Volles Lese-Layout
 // Werkzeug-orientiert: Gespräche, Vereinbarungen, Krisenplan.
 
@@ -218,10 +219,7 @@ function Modul6Page({ onNavigate }) {
     { id: 's10', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-  };
+  const scrollTo = scrollToSection;
 
   return (
     <>
@@ -268,9 +266,9 @@ function Modul6Page({ onNavigate }) {
           <div className="module-body prose">
             <ModuleQuickStart number={6} onNavigate={onNavigate} />
 
-            <blockquote className="module-quote">
-              <p>«Bei der vierten Manie meines Mannes wusste ich wieder nicht, was ich tun soll. Dann haben wir in einer ruhigen Phase den Krisenplan geschrieben. Beim nächsten Mal habe ich ihn einfach aufgeschlagen. Ich musste nicht mehr denken. Ich musste nur noch handeln.»</p>
-              <cite>Sandra, 44 Jahre, Ehefrau · fiktives Beispiel</cite>
+            <blockquote className="module-quote" id="quote-m6-01">
+              <p>«Bei einer erneuten Manie meines Mannes wusste ich wieder nicht, was ich tun soll. Dann haben wir in einer ruhigen Phase den Krisenplan geschrieben. Beim nächsten Mal half er mir, nächste Schritte und passende Kontakte zu finden. Bei Unsicherheit habe ich professionelle Unterstützung geholt.»</p>
+              <cite>Redaktionelles Fallbeispiel (fiktiv) · Ehefrau</cite>
             </blockquote>
 
             <section id="s1">
@@ -422,9 +420,9 @@ function Modul6Page({ onNavigate }) {
                 <p>Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» Diese Frage löst Suizidgedanken nicht aus. {SUICIDE_SAFETY} Für dringende medizinische Einschätzung ohne unmittelbare Lebensgefahr: <strong>0800 33 66 55</strong>. Vollständiger Ablauf auf der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
               </aside>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m6-02">
                 <p>«Die Manie war laut und chaotisch, aber wenigstens passierte etwas. Die Depression war Stille. Wochenlang. Ich sass neben ihm und wusste nicht, ob ich stören darf. Irgendwann habe ich aufgehört zu fragen und einfach nur seine Hand gehalten. Das war am Ende das Richtige.»</p>
-                <cite>Claudia, 44 Jahre, Partnerin · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
               </blockquote>
             </section>
 
@@ -570,10 +568,10 @@ function Modul6Page({ onNavigate }) {
               <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href={navHref('modul5')} onClick={navHandler('modul5', onNavigate)}>
+                <a className="puk-link--action module-nav-btn" href={navHref('modul5')} onClick={navHandler('modul5', onNavigate)}>
                   ← Modul 05 — Loyalitätskonflikte
                 </a>
-                <a className="module-nav-btn module-nav-next" href={navHref('modul7')} onClick={navHandler('modul7', onNavigate)}>
+                <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul7')} onClick={navHandler('modul7', onNavigate)}>
                   Modul 07 — Langfristige Tragfähigkeit →
                 </a>
               </div>

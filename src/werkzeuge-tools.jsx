@@ -1,7 +1,7 @@
 import React from 'react';
 import { navHandler, navHref } from './nav-handler.js';
 import { Eisberg } from './modul2.jsx';
-import { clearStoredDraft, loadStoredDraft, saveStoredDraft } from './storage.js';
+import { clearStoredDraft } from './storage.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 
 // WAI-ARIA-konforme Pfeil-Navigation für role="tablist": ArrowLeft/Right
@@ -62,7 +62,7 @@ function AtemuebungTool({ onClose }) {
 
         {phase === 'intro' && (
           <>
-            <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Durchatmen</h2>
+            <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Durchatmen</h2>
             <p className="lede" style={{ maxWidth: '40ch' }}>Wenn der Moment gerade zu viel ist. Fünf geführte Atemzüge als freiwillige Pause. Passen Sie die Atmung an das an, was sich angenehm anfühlt.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '40ch' }}>Einatmen 4 · Halten 2 · Ausatmen 6 · Pause 2. Wiederholt sich fünf Mal, etwa 70 Sekunden. Atemhalten ist optional. Bei Unwohlsein stoppen und normal weiteratmen. Alternativ: den Bodenkontakt spüren und drei Dinge im Raum betrachten.</p>
             <div style={{ marginTop: 24 }}>
@@ -171,7 +171,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
       <span className="kicker">Werkzeug · Persönliche Reflexion</span>
       {phase === 'intro' && (
         <>
-          <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Meine Belastung wahrnehmen</h2>
+          <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Meine Belastung wahrnehmen</h2>
           <p className="lede" style={{ maxWidth: '44ch' }}>Fünf Fragen zu Schlaf, Alltag, Kontakten und Befinden. Sie sehen danach Ihre eigenen Antworten und können überlegen, welche Unterstützung Sie brauchen.</p>
           <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Diese Fragen sind kein validierter Test. Es gibt keine Gesamtpunktzahl, Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert. Bei akuter Gefahr: 144. Wenn Sie die Sicherheit nicht einschätzen können, holen Sie professionelle Hilfe über den <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
           <div style={{ marginTop: 24 }}><button className="btn btn-primary" onClick={start}>Beginnen →</button></div>
@@ -304,37 +304,21 @@ const KRISENPLAN_NOTFALLNUMMERN = [
 const KRISENPLAN_STORAGE_KEY = 'puk-krisenplan-v1';
 
 function KrisenplanTool({ onClose, onNavigate }) {
-  const initialState = React.useMemo(() => loadStoredDraft(KRISENPLAN_STORAGE_KEY), []);
-  const [data, setData] = React.useState(initialState.data);
-  const [remember, setRemember] = React.useState(initialState.remember);
-  const [savedHint, setSavedHint] = React.useState('');
-  const savedTimer = React.useRef(null);
-
-
-  React.useEffect(() => () => {
-    if (savedTimer.current) window.clearTimeout(savedTimer.current);
-  }, []);
+  const [data, setData] = React.useState({});
+  const [deletionHint, setDeletionHint] = React.useState('');
 
   const update = (id, value) => {
     const next = { ...data, [id]: value, _updated: new Date().toISOString() };
     setData(next);
-    saveStoredDraft(KRISENPLAN_STORAGE_KEY, next, remember);
-    setSavedHint('Gespeichert');
-    if (savedTimer.current) window.clearTimeout(savedTimer.current);
-    savedTimer.current = window.setTimeout(() => setSavedHint(''), 1600);
+    setDeletionHint('');
   };
 
   const reset = () => {
-    if (window.confirm('Krisenplan zurücksetzen? Alle Eingaben gehen verloren.')) {
+    if (window.confirm('Krisenplan löschen? Aktuelle Eingaben und früher gespeicherte Browser-Kopien werden entfernt. Ausdrucke und PDF-Dateien bleiben erhalten.')) {
       setData({});
-      clearStoredDraft(KRISENPLAN_STORAGE_KEY);
+      const cleared = clearStoredDraft(KRISENPLAN_STORAGE_KEY);
+      setDeletionHint(cleared ? 'Aktuelle Eingaben und frühere Browser-Kopien gelöscht.' : 'Die Eingaben sind hier entfernt. Frühere Browser-Kopien konnten nicht vollständig gelöscht werden. Löschen Sie die Website-Daten in Ihren Browser-Einstellungen.');
     }
-  };
-
-  const toggleRemember = () => {
-    const nextRemember = !remember;
-    setRemember(nextRemember);
-    saveStoredDraft(KRISENPLAN_STORAGE_KEY, data, nextRemember);
   };
 
   const lastUpdate = data._updated
@@ -347,20 +331,17 @@ function KrisenplanTool({ onClose, onNavigate }) {
           <span className="kicker">Werkzeug · Krisenplan</span>
           <h2>Krisenplan</h2>
           <p className="krisenplan-intro">Füllen Sie den Plan in einer ruhigen Phase aus. In einer Krise kann er Ihnen helfen, nächste Schritte und passende Kontakte zu finden. Er ersetzt keine fachliche Einschätzung. Holen Sie bei Unsicherheit professionelle Unterstützung.</p>
-          <div className="tool-intro-notes krisenplan-intro-notes">
-            <p>Standardmässig bleibt der Entwurf nur bis zum Schliessen dieses Tabs erhalten und wird nicht versendet.</p>
-            <p>Wenn Sie drucken oder als PDF speichern, entstehen zusätzliche Kopien auf Ihrem Gerät. Auf gemeinsam genutzten Geräten können Sie den Entwurf unten zusätzlich dauerhaft löschen.</p>
+          <div className="tool-intro-notes krisenplan-intro-notes" data-storage-key={KRISENPLAN_STORAGE_KEY}>
+            <p data-storage-notice="memory-only">Ihre Eingaben können persönliche Gesundheits- und Kontaktdaten enthalten. Sie werden nicht automatisch gespeichert oder versendet. Beim Schliessen des Werkzeugs oder Neuladen der Seite gehen sie verloren. Sichern Sie den ausgefüllten Plan bei Bedarf vor dem Schliessen.</p>
+            <p data-storage-notice="legacy-deletion">Entwürfe aus früheren Versionen werden nicht wieder geöffnet. Mit «Entwurf löschen» können Sie aktuelle Eingaben und frühere Browser-Kopien dieses Werkzeugs entfernen.</p>
+            <p data-export-notice="print-pdf">Drucke und PDF-Dateien sind zusätzliche Kopien, die Sie separat löschen müssen. Auf gemeinsam genutzten Geräten schliessen Sie nach der Nutzung auch andere offene Tabs mit persönlichen Eingaben.</p>
           </div>
           {lastUpdate && (
             <p className="krisenplan-meta">Zuletzt bearbeitet: {lastUpdate}</p>
           )}
-          <label className="storage-toggle no-print">
-            <input type="checkbox" checked={remember} onChange={toggleRemember} />
-            <span>Auf diesem Gerät dauerhaft behalten</span>
-          </label>
         </header>
 
-        <div className="krisenplan-fields">
+        <div className="krisenplan-fields" data-sensitive-content="true" data-storage-key={KRISENPLAN_STORAGE_KEY}>
           {KRISENPLAN_FELDER.map((f) => (
             <div className="krisenplan-feld" key={f.id}>
               <label htmlFor={`kp-${f.id}`} className="krisenplan-label">
@@ -404,10 +385,10 @@ function KrisenplanTool({ onClose, onNavigate }) {
 
         <div className="krisenplan-actions no-print">
           <div className="krisenplan-actions-left">
-            <button className="btn btn-primary" onClick={() => window.print()}>Drucken / als PDF speichern</button>
-            <button className="tool-quiet-btn" onClick={reset}>zurücksetzen</button>
+            <button className="btn btn-primary" onClick={() => window.print()} data-data-export="print-pdf" data-storage-key={KRISENPLAN_STORAGE_KEY}>Drucken / als PDF speichern</button>
+            <button className="tool-quiet-btn" onClick={reset} data-storage-delete={KRISENPLAN_STORAGE_KEY} data-storage-scope="session local">Entwurf löschen</button>
           </div>
-          <div className="krisenplan-saved" aria-live="polite">{savedHint}</div>
+          <div className="krisenplan-saved" role="status" aria-live="polite">{deletionHint}</div>
         </div>
 
         <p className="krisenplan-disclaimer no-print">
@@ -564,7 +545,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
 
         {phase === 'intro' && (
           <>
-            <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Säulen-Check</h2>
+            <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Säulen-Check</h2>
             <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu vier Bereichen, die Angehörige langfristig tragen: Körper, Beziehungen, eigene Welt, fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie misst keine gesundheitliche Stabilität oder Tragfähigkeit.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Etwa drei Minuten. Anonym, im Browser. Keine Diagnose und nicht für akute Krisen gedacht — eine persönliche Reflexion ohne validierte klinische Auswertung. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
             <div style={{ marginTop: 24 }}>
@@ -620,11 +601,11 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
             <p className="selbsttest-body">
               {weakest && weakest.score / weakest.max < 0.5 ? (
                 <>
-                  In Ihren Antworten ist weniger Raum für <strong style={{ color: 'var(--accent)', fontStyle: 'italic' }}>{weakest.label}</strong>. Welche Unterstützung wünschen Sie sich in diesem Bereich? Kleine Schritte können helfen; bei starker oder anhaltender Belastung braucht es möglicherweise mehr Entlastung und fachliche Hilfe.
+                  In Ihren Antworten ist weniger Raum für <strong style={{ color: 'var(--accent)', fontStyle: 'normal' }}>{weakest.label}</strong>. Welche Unterstützung wünschen Sie sich in diesem Bereich? Kleine Schritte können helfen; bei starker oder anhaltender Belastung braucht es möglicherweise mehr Entlastung und fachliche Hilfe.
                 </>
               ) : (
                 <>
-                  Sie beschreiben Ressourcen in mehreren Bereichen. Besonders viel Raum hat in Ihren Antworten <strong style={{ color: 'var(--accent)', fontStyle: 'italic' }}>{strongest.label}</strong> — was davon möchten Sie bewahren? Wenn Sie Unterstützung ergänzen möchten: <strong style={{ fontStyle: 'italic' }}>{weakest.label}</strong> könnte ein Ausgangspunkt sein. Das ist keine gesundheitliche Entwarnung.
+                  Sie beschreiben Ressourcen in mehreren Bereichen. Besonders viel Raum hat in Ihren Antworten <strong style={{ color: 'var(--accent)', fontStyle: 'normal' }}>{strongest.label}</strong> — was davon möchten Sie bewahren? Wenn Sie Unterstützung ergänzen möchten: <strong style={{ fontStyle: 'normal' }}>{weakest.label}</strong> könnte ein Ausgangspunkt sein. Das ist keine gesundheitliche Entwarnung.
                 </>
               )}
             </p>
@@ -765,7 +746,7 @@ function EisbergTool({ onClose, onNavigate }) {
 
         {phase === 'intro' && (
           <>
-            <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Der Eisberg Ihrer Belastung</h2>
+            <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Der Eisberg Ihrer Belastung</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>Der Eisberg ist eine Metapher, keine Messung: Manche Belastungen sind sichtbar, andere bleiben verborgen. Die Begriffe sind mögliche Erfahrungen; nicht alle müssen auf Sie zutreffen.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Klicken Sie auf einen Begriff, um zu lesen, was er für viele Angehörige bedeutet. Markieren Sie, was Sie wiedererkennen — am Ende sehen Sie eine Übersicht.</p>
             <div style={{ marginTop: 24 }}>
@@ -784,6 +765,8 @@ function EisbergTool({ onClose, onNavigate }) {
             </div>
             <div className="eisberg-tool-stage">
               <Eisberg />
+              <div className="eisberg-tool-terms" role="group" aria-label="Was andere sehen">
+                <span className="eisberg-tool-fallback-heading" aria-hidden="true">Was andere sehen</span>
               {EISBERG_LABELS.oben.map((item) => (
                 <button
                   key={item.key}
@@ -795,6 +778,9 @@ function EisbergTool({ onClose, onNavigate }) {
                   {item.label}
                 </button>
               ))}
+              </div>
+              <div className="eisberg-tool-terms" role="group" aria-label="Was Sie tragen">
+                <span className="eisberg-tool-fallback-heading" aria-hidden="true">Was Sie tragen</span>
               {EISBERG_LABELS.unten.map((item) => (
                 <button
                   key={item.key}
@@ -806,6 +792,7 @@ function EisbergTool({ onClose, onNavigate }) {
                   {item.label}
                 </button>
               ))}
+              </div>
             </div>
             <div className="eisberg-tool-zones">
               <div className="eisberg-zone-bottom">
@@ -925,13 +912,9 @@ const KOMMUNIKATION_STORAGE_KEY = 'puk-kommunikation-v1';
 const KOMMUNIKATION_DEFAULT = { anlass: '', beobachtung: '', wirkung: '', bitte: '' };
 
 function KommunikationsTrainerTool({ onClose, onNavigate }) {
-  const initialState = React.useMemo(
-    () => loadStoredDraft(KOMMUNIKATION_STORAGE_KEY, KOMMUNIKATION_DEFAULT),
-    [],
-  );
   const [step, setStep] = React.useState('intro'); // intro | anlass | beobachtung | wirkung | bitte | result
-  const [data, setData] = React.useState(initialState.data);
-  const [remember, setRemember] = React.useState(initialState.remember);
+  const [data, setData] = React.useState({ ...KOMMUNIKATION_DEFAULT });
+  const [storageHint, setStorageHint] = React.useState('');
   const [copyHint, setCopyHint] = React.useState({ tone: '', text: '' });
   const copyHintTimer = React.useRef(null);
 
@@ -947,26 +930,19 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
 
   const updateField = (key, value) => {
-    setData((d) => {
-      const next = { ...d, [key]: value };
-      saveStoredDraft(KOMMUNIKATION_STORAGE_KEY, next, remember);
-      return next;
-    });
+    const next = { ...data, [key]: value };
+    setData(next);
+    setStorageHint('');
   };
 
   const start = () => setStep('anlass');
   const reset = () => {
-    if (window.confirm('Skript zurücksetzen? Alle Eingaben gehen verloren.')) {
-      setData(KOMMUNIKATION_DEFAULT);
-      clearStoredDraft(KOMMUNIKATION_STORAGE_KEY);
+    if (window.confirm('Entwurf löschen? Aktuelle Eingaben und früher gespeicherte Browser-Kopien werden entfernt. Zwischenablage und geteilte Kopien bleiben erhalten.')) {
+      setData({ ...KOMMUNIKATION_DEFAULT });
+      const cleared = clearStoredDraft(KOMMUNIKATION_STORAGE_KEY);
+      setStorageHint(cleared ? 'Aktuelle Eingaben und frühere Browser-Kopien gelöscht.' : 'Die Eingaben sind hier entfernt. Frühere Browser-Kopien konnten nicht vollständig gelöscht werden. Löschen Sie die Website-Daten in Ihren Browser-Einstellungen.');
       setStep('anlass');
     }
-  };
-
-  const toggleRemember = () => {
-    const nextRemember = !remember;
-    setRemember(nextRemember);
-    saveStoredDraft(KOMMUNIKATION_STORAGE_KEY, data, nextRemember);
   };
 
   const anlass = KOMMUNIKATION_ANLAESSE.find((a) => a.key === data.anlass) || KOMMUNIKATION_ANLAESSE[0];
@@ -991,17 +967,12 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
         {step === 'intro' && (
           <>
-            <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Kommunikations-Trainer</h2>
+            <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Kommunikations-Trainer</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte für ein schwieriges Gespräch. Am Ende haben Sie ein eigenes Skript — in Ihren Worten, so vorbereitet, dass Sie Ihr Anliegen ruhig und klar ansprechen können. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
             <div className="tool-intro-notes kommunikation-intro-notes">
               <p>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren.</p>
               <p>Dieses Werkzeug ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
-              <p>Standardmässig bleibt Ihr Entwurf nur bis zum Schliessen dieses Tabs erhalten. Wenn Sie das Skript kopieren, liegt es zusätzlich in der Zwischenablage Ihres Geräts. Auf gemeinsam genutzten Geräten können Sie den Entwurf jederzeit zurücksetzen.</p>
             </div>
-            <label className="storage-toggle">
-              <input type="checkbox" checked={remember} onChange={toggleRemember} />
-              <span>Auf diesem Gerät dauerhaft behalten</span>
-            </label>
             <div style={{ marginTop: 18 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>
@@ -1035,9 +1006,10 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
         {step === 'beobachtung' && (
           <div className="kommunikation-step">
             <div className="kommunikation-progress">Schritt 2 von 4 · Beobachtung</div>
-            <h3 className="kommunikation-q">Was haben Sie konkret beobachtet?</h3>
+            <h3 className="kommunikation-q"><label htmlFor="kommunikation-beobachtung">Was haben Sie konkret beobachtet?</label></h3>
             <p className="kommunikation-hint">{KOMMUNIKATION_HINWEISE.beobachtung}</p>
             <textarea
+              id="kommunikation-beobachtung"
               className="krisenplan-textarea"
               rows={5}
               value={data.beobachtung}
@@ -1054,9 +1026,10 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
         {step === 'wirkung' && (
           <div className="kommunikation-step">
             <div className="kommunikation-progress">Schritt 3 von 4 · Wirkung auf mich</div>
-            <h3 className="kommunikation-q">Was macht das mit Ihnen?</h3>
+            <h3 className="kommunikation-q"><label htmlFor="kommunikation-wirkung">Was macht das mit Ihnen?</label></h3>
             <p className="kommunikation-hint">{KOMMUNIKATION_HINWEISE.wirkung}</p>
             <textarea
+              id="kommunikation-wirkung"
               className="krisenplan-textarea"
               rows={5}
               value={data.wirkung}
@@ -1073,9 +1046,10 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
         {step === 'bitte' && (
           <div className="kommunikation-step">
             <div className="kommunikation-progress">Schritt 4 von 4 · Bitte</div>
-            <h3 className="kommunikation-q">Was wäre Ihr Anliegen oder Ihre Bitte?</h3>
+            <h3 className="kommunikation-q"><label htmlFor="kommunikation-bitte">Was wäre Ihr Anliegen oder Ihre Bitte?</label></h3>
             <p className="kommunikation-hint">{KOMMUNIKATION_HINWEISE.bitte}</p>
             <textarea
+              id="kommunikation-bitte"
               className="krisenplan-textarea"
               rows={5}
               value={data.bitte}
@@ -1130,7 +1104,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
             </aside>
 
             <div className="selbsttest-actions">
-              <button className="btn btn-primary" onClick={copyToClipboard}>Skript kopieren</button>
+              <button className="btn btn-primary" onClick={copyToClipboard} data-data-export="clipboard" data-storage-key={KOMMUNIKATION_STORAGE_KEY}>Skript kopieren</button>
               <button className="selbsttest-secondary" onClick={() => { onNavigate('modul6', 's4'); onClose(); }}>
                 Modul 6 — Was Sie konkret tun können →
               </button>
@@ -1147,11 +1121,17 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
             <div className="selbsttest-foot">
               <button className="tool-quiet-btn" onClick={() => setStep('anlass')}>Skript bearbeiten</button>
-              <button className="tool-quiet-btn" onClick={reset}>zurücksetzen</button>
               <button className="tool-quiet-btn" onClick={onClose}>schliessen</button>
             </div>
           </div>
         )}
+        <div className="tool-intro-notes no-print" data-storage-key={KOMMUNIKATION_STORAGE_KEY}>
+          <p data-storage-notice="memory-only">Ihr Entwurf kann persönliche Gesundheits- und Beziehungsdaten enthalten. Er wird nicht automatisch gespeichert oder versendet. Beim Schliessen des Werkzeugs oder Neuladen der Seite geht er verloren. Kopieren Sie wichtige Inhalte bei Bedarf vor dem Schliessen.</p>
+          <p data-storage-notice="legacy-deletion">Entwürfe aus früheren Versionen werden nicht wieder geöffnet. Mit «Entwurf löschen» können Sie aktuelle Eingaben und frühere Browser-Kopien dieses Werkzeugs entfernen.</p>
+          <p data-export-notice="clipboard">Beim Kopieren liegt Ihr Skript zusätzlich in der Zwischenablage; das Gerät kann es in einem Verlauf behalten oder synchronisieren. «Entwurf löschen» entfernt diese Kopien nicht. Löschen Sie die Zwischenablage und geteilte Kopien separat und schliessen Sie auf gemeinsam genutzten Geräten auch andere offene Tabs mit persönlichen Eingaben.</p>
+          <button className="tool-quiet-btn" onClick={reset} data-storage-delete={KOMMUNIKATION_STORAGE_KEY} data-storage-scope="session local">Entwurf löschen</button>
+          <p role="status" aria-live="polite">{storageHint}</p>
+        </div>
     </ToolOverlay>
   );
 }
@@ -1198,7 +1178,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Wenn Belastung Gespräche verändert" cardClass="ee-card">
       <span className="kicker">Werkzeug · Beziehung</span>
-        <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Wenn Belastung Gespräche verändert</h2>
+        <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Wenn Belastung Gespräche verändert</h2>
         <p className="ee-intro">Vier mögliche Aspekte, die sich unter Belastung gegenseitig verstärken können. Das ist ein vereinfachtes Reflexionsmodell, keine feste Reihenfolge und keine Definition von Expressed Emotion (EE). Wählen Sie, was Sie wiedererkennen.</p>
 
         <div className="ee-stage">
@@ -1216,10 +1196,10 @@ function EeKreislaufTool({ onClose, onNavigate }) {
             <path d="M 80,160 A 130,130 0 0 1 160,80" fill="none" stroke="var(--accent)" strokeWidth="1.5" markerEnd="url(#ee-arrow)" />
 
             {/* Zentraler Kreislauf-Hinweis */}
-            <text x="200" y="195" textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="italic" fontSize="14" fill="var(--ink-mute)">
+            <text x="200" y="195" textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="14" fill="var(--ink-mute)">
               Kreislauf
             </text>
-            <text x="200" y="215" textAnchor="middle" fontFamily="var(--sans)" fontSize="10" letterSpacing="0.14em" fill="var(--ink-mute)">
+            <text x="200" y="215" textAnchor="middle" fontFamily="var(--sans)" fontSize="10" letterSpacing="0" fill="var(--ink-mute)">
               UNTERBRECHBAR
             </text>
           </svg>
@@ -1330,7 +1310,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Bipolarer Phasenverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Interaktiv</span>
-        <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Bipolarer Phasenverlauf</h2>
+        <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Bipolarer Phasenverlauf</h2>
         <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Die ersten beiden Auswahlfelder erklären Diagnosen, die anderen aktuelle Zustände. Die Kurven sind fiktive Beispiele ohne Zeitmassstab oder individuelle Prognose. Keine Diagnose lässt sich an einer Kurve ablesen.</p>
 
         <div className="phasen-tabs" role="tablist">
@@ -1371,9 +1351,9 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
               </linearGradient>
             </defs>
             {/* Achsen-Beschriftung */}
-            <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">HOCHPHASE</text>
-            <text x="6" y="178" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">DEPRESSION</text>
-            <text x="395" y="100" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.06em" fill="var(--ink-mute)" textAnchor="end">Zeit →</text>
+            <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" fontWeight="500">HOCHPHASE</text>
+            <text x="6" y="178" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" fontWeight="500">DEPRESSION</text>
+            <text x="395" y="100" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" textAnchor="end">Zeit →</text>
 
             {/* Neutral-Linie */}
             <line x1="10" y1="90" x2="400" y2="90" stroke="var(--ink-mute)" strokeWidth="0.5" strokeDasharray="2 4" opacity="0.35" />
@@ -1433,7 +1413,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Belastungsverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Verlauf</span>
-        <h2 style={{ fontStyle: 'italic', marginTop: 8 }}>Mögliche Belastungsverläufe</h2>
+        <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Mögliche Belastungsverläufe</h2>
         <p className="ee-intro">Die eigene Kraft kann nach Krisen abnehmen, sich erholen oder weitgehend stabil bleiben. Drei fiktive Beispiele zeigen diese Unterschiede. Die Linien sind keine Messwerte und kein Nachweis einer bestimmten Behandlung. Wählen Sie einen Marker für eine mögliche Erfahrung.</p>
 
         <div className="belastung-toggle">
@@ -1452,11 +1432,11 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
         </div>
 
         <figure className="phasen-figure">
-          <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Belastungsverlauf von Angehörigen über mehrere Episoden, mit drei klickbaren Phasen-Markern.">
+          <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Belastungsverlauf von Angehörigen über mehrere Episoden, mit drei nummerierten Markern. Die zugehörigen Erfahrungen können unterhalb der Abbildung ausgewählt werden.">
             {/* Achsen */}
-            <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">VOLL</text>
-            <text x="6" y="178" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.12em" fill="var(--ink-mute)" fontWeight="600">RESERVE</text>
-            <text x="395" y="100" fontFamily="var(--sans)" fontSize="9" letterSpacing="0.06em" fill="var(--ink-mute)" textAnchor="end">Zeit →</text>
+            <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" fontWeight="500">VOLL</text>
+            <text x="6" y="178" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" fontWeight="500">RESERVE</text>
+            <text x="395" y="100" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" textAnchor="end">Zeit →</text>
 
             {/* Hilfslinien */}
             <line x1="10" y1="40" x2="400" y2="40" stroke="var(--paper-edge)" strokeWidth="0.5" strokeDasharray="2 4" />
@@ -1510,23 +1490,9 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
             {episoden.map((ep, i) => (
               <g
                 key={i}
-                onClick={() => activateEpisode(i)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    activateEpisode(i);
-                  }
-                }}
-                style={{ cursor: 'pointer' }}
-                tabIndex={0}
-                role="button"
-                aria-label={ep.label}
-                aria-pressed={activeEpisode === i}
               >
-                {/* Unsichtbarer 22px-Circle vergrössert das Touch-Target über den 14px-Marker hinaus auf min. 44px Durchmesser. */}
-                <circle cx={ep.x} cy={ep.y} r="22" fill="transparent" pointerEvents="all" />
                 <circle cx={ep.x} cy={ep.y} r="14" fill="var(--bg)" stroke={activeEpisode === i ? 'var(--accent)' : 'var(--ink-mute)'} strokeWidth={activeEpisode === i ? 2 : 1.2} />
-                <text x={ep.x} y={ep.y + 4} textAnchor="middle" fontFamily="var(--mono)" fontSize="11" fill={activeEpisode === i ? 'var(--accent)' : 'var(--ink)'} fontWeight={activeEpisode === i ? 600 : 400}>
+                <text x={ep.x} y={ep.y + 4} textAnchor="middle" fontFamily="var(--mono)" fontSize="11" fill={activeEpisode === i ? 'var(--accent)' : 'var(--ink)'} fontWeight={activeEpisode === i ? 500 : 400}>
                   {i + 1}
                 </text>
               </g>
@@ -1534,6 +1500,20 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
           </svg>
           <figcaption>Fiktive Beispiele ohne Zeitmassstab. Verlauf und Unterstützungsbedarf sind individuell. Die Marker bezeichnen mögliche Erfahrungen, keine Entwicklungsstufen.</figcaption>
         </figure>
+
+        <ol className="belastung-marker-actions" aria-label="Mögliche Erfahrungen auswählen">
+          {episoden.map((ep, i) => (
+            <li key={ep.label}>
+              <button
+                className="belastung-marker-button"
+                onClick={() => activateEpisode(i)}
+                aria-pressed={activeEpisode === i}
+              >
+                <span aria-hidden="true">{i + 1} · </span>{ep.label}
+              </button>
+            </li>
+          ))}
+        </ol>
 
         {activeEpisode !== null && (
           <div className="ee-detail">

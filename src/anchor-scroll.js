@@ -1,6 +1,23 @@
+function navigationOffset() {
+  const nav = document.querySelector('.nav');
+  if (nav && !['sticky', 'fixed'].includes(window.getComputedStyle(nav).position)) return 16;
+  const height = nav?.getBoundingClientRect().height || 0;
+  return height ? height + 16 : 80;
+}
+
+function anchorTop(el, offset) {
+  const top = el.getBoundingClientRect ? el.getBoundingClientRect().top + window.scrollY : el.offsetTop;
+  return Math.max(0, top - offset);
+}
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) window.scrollTo({ top: anchorTop(el, navigationOffset()), behavior: 'smooth' });
+}
+
 function scrollToAnchorWhenReady(id, options = {}) {
   const {
-    offset = 80,
+    offset,
     maxAttempts = 20,
     requestFrame = window.requestAnimationFrame.bind(window),
     cancelFrame = window.cancelAnimationFrame.bind(window),
@@ -22,7 +39,7 @@ function scrollToAnchorWhenReady(id, options = {}) {
 
     const el = getElementById(id);
     if (el) {
-      scrollTo({ top: el.offsetTop - offset, behavior: 'instant' });
+      scrollTo({ top: anchorTop(el, offset ?? navigationOffset()), behavior: 'instant' });
       return;
     }
 
@@ -43,4 +60,4 @@ function scrollToAnchorWhenReady(id, options = {}) {
   };
 }
 
-export { scrollToAnchorWhenReady };
+export { scrollToAnchorWhenReady, scrollToSection };

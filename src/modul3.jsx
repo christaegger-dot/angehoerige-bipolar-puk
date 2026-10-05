@@ -1,8 +1,9 @@
+import { scrollToSection } from './anchor-scroll.js';
 // Modul 3 — Wie Beziehungen unter Druck geraten · Volles Lese-Layout
 // Zentrales Bild: Zwei Linien, die unter Druck Form verändern.
 
 import React from 'react';
-import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
+import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function ZweiLinien() {
@@ -23,7 +24,7 @@ function ZweiLinien() {
         </linearGradient>
       </defs>
 
-      <g fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.14em" fontWeight="600">
+      <g fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" fontWeight="500">
         <text x="80" y="28" textAnchor="middle">RUHE</text>
         <text x="220" y="28" textAnchor="middle">EPISODE</text>
         <text x="340" y="28" textAnchor="middle">DRUCK</text>
@@ -49,14 +50,15 @@ function ZweiLinien() {
         fill="none"
         stroke="url(#line-b)"
         strokeWidth="2.2"
+        strokeDasharray="7 4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
 
       <circle cx="40" cy="140" r="4" fill="var(--accent)" />
       <circle cx="40" cy="160" r="4" fill="var(--ink)" />
-      <text x="32" y="128" fontFamily="var(--serif-display)" fontSize="11" fill="var(--accent)" fontStyle="italic" textAnchor="end">erkrankte Person</text>
-      <text x="32" y="172" fontFamily="var(--serif-display)" fontSize="11" fill="var(--ink-soft)" fontStyle="italic" textAnchor="end">Sie</text>
+      <text x="32" y="128" fontFamily="var(--serif-display)" fontSize="11" fill="var(--accent)" fontStyle="normal" textAnchor="start">erkrankte Person</text>
+      <text x="32" y="172" fontFamily="var(--serif-display)" fontSize="11" fill="var(--ink-soft)" fontStyle="normal" textAnchor="start">Sie</text>
 
       <circle cx="480" cy="140" r="4" fill="var(--accent)" />
       <circle cx="480" cy="168" r="4" fill="var(--ink)" />
@@ -65,13 +67,13 @@ function ZweiLinien() {
         <line x1="0" y1="-12" x2="0" y2="12" stroke="var(--ink-mute)" strokeWidth="0.6" />
         <line x1="-3" y1="-12" x2="3" y2="-12" stroke="var(--ink-mute)" strokeWidth="0.6" />
         <line x1="-3" y1="12" x2="3" y2="12" stroke="var(--ink-mute)" strokeWidth="0.6" />
-        <text x="6" y="3" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" fontStyle="italic">leichter</text>
-        <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" fontStyle="italic">Versatz</text>
+        <text x="6" y="3" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" fontStyle="normal">leichter</text>
+        <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" fontStyle="normal">Versatz</text>
       </g>
 
       <g transform="translate(40 282)">
-        <text fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.12em" fontWeight="600">LESEN</text>
-        <text x="62" y="0" fontFamily="var(--serif-display)" fontSize="11" fill="var(--ink-soft)" fontStyle="italic">
+        <text fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" fontWeight="500">LESEN</text>
+        <text x="62" y="0" fontFamily="var(--serif-display)" fontSize="11" fill="var(--ink-soft)" fontStyle="normal">
           Beide Linien werden in jeder Phase bewegt — nicht nur die erkrankte.
         </text>
       </g>
@@ -81,11 +83,15 @@ function ZweiLinien() {
 
 function ZweiLinienFigur() {
   return (
-    <figure className="zwei-linien-figure">
+    <figure className="zwei-linien-figure" data-visual-id="m3-zwei-linien" data-visual-type="figure" aria-labelledby="m3-zwei-linien-title" aria-describedby="m3-zwei-linien-text">
       <div className="zwei-linien-stage">
         <ZweiLinien />
       </div>
-      <figcaption>Fiktives Beispiel für unterschiedliche Erfahrungen während und nach einer Episode. Die Linien bilden weder einen typischen Verlauf noch eine Prognose ab.</figcaption>
+      <figcaption><strong id="m3-zwei-linien-title">Zwei Personen, unterschiedliche Erfahrungen.</strong> Fiktives Beispiel während und nach einer Episode. Die Linien bilden weder einen typischen Verlauf noch eine Prognose ab.</figcaption>
+      <FigureText visualId="m3-zwei-linien">
+        <p>Die durchgezogene Linie steht für die erkrankte Person, die gestrichelte für die angehörige Person. Von links nach rechts sind Ruhe, Episode, Druck und Reparatur benannt. Beide Linien verändern sich; in der letzten Bildphase nähern sie sich wieder an und bleiben leicht versetzt.</p>
+        <p>Die Linien sind ein fiktives Bild für unterschiedliche Erfahrungen, keine Messung von Stimmung oder Belastung. Es gibt keine Zeitskala und keine vorgeschriebene Folge dieser Phasen.</p>
+      </FigureText>
     </figure>
   );
 }
@@ -108,7 +114,7 @@ function Druckpunkte() {
       num: '03',
       titel: 'Leichtigkeit',
       sub: 'wenn Spontanität verlernt wird',
-      body: 'Spontanität kann schwerer fallen, wenn Stimmungsschwankungen ständig beobachtet werden. «Es ist schwer, Liebhaber zu sein, wenn man gleichzeitig Aufpasser ist.» Was früher leicht war — ein Witz, ein Ausflug, ein gemeinsames Schweigen — bekommt einen Schatten der Vorsicht.'
+      body: 'Spontanität kann schwerer fallen, wenn Stimmungsschwankungen ständig beobachtet werden. Eine dauernde Kontrollrolle kann es erschweren, sich als Liebespaar zu begegnen. Was früher leicht war — ein Witz, ein Ausflug, ein gemeinsames Schweigen — bekommt einen Schatten der Vorsicht.'
     },
     {
       num: '04',
@@ -165,10 +171,7 @@ function Modul3Page({ onNavigate }) {
     { id: 's7', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-  };
+  const scrollTo = scrollToSection;
 
   return (
     <>
@@ -215,9 +218,9 @@ function Modul3Page({ onNavigate }) {
           <div className="module-body prose">
             <ModuleQuickStart number={3} onNavigate={onNavigate} />
 
-            <blockquote className="module-quote">
+            <blockquote className="module-quote" id="quote-m3-01">
               <p>«Ich merkte irgendwann, dass ich nicht mehr seine Partnerin war, sondern seine Managerin. Ich kontrollierte Medikamente, Termine, Finanzen — und vergass dabei, dass wir mal ein Liebespaar waren.»</p>
-              <cite>Partnerin, 41 Jahre · fiktives Beispiel</cite>
+              <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
             </blockquote>
 
             <section id="s1">
@@ -243,9 +246,9 @@ function Modul3Page({ onNavigate }) {
               <p><strong>Wachsende Belastung.</strong> Nach Krisen kann Alarmbereitschaft bleiben. Dann lohnt es sich, Aufgaben und Unterstützung neu zu besprechen.</p>
               <p><strong>Neue Verteilung.</strong> In stabileren Zeiten können Aufgaben wieder zurückgegeben werden. Eigene Interessen und gemeinsame Zeit dürfen Platz haben. Diese Möglichkeiten bilden keine feste Jahresfolge.</p>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m3-02">
                 <p>«Ich merkte es erst, als wir mal einen ganzen Abend ohne Thema Bipolar verbracht haben — und ich nicht wusste, worüber wir reden sollten. Wir zwei hatten verlernt, einfach zusammen zu sein.»</p>
-                <cite>Lars, 39 Jahre, Ehemann · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Ehemann</cite>
               </blockquote>
             </section>
 
@@ -262,9 +265,9 @@ function Modul3Page({ onNavigate }) {
                 <p>Wiederholte Krisen können Vertrauen, Nähe und Kraft belasten. Manche Beziehungen finden zu grosser Stabilität zurück; andere brauchen neue Absprachen, mehr Unterstützung oder Abstand. Aus der Zahl der Episoden folgt keine feste Beziehungsprognose.</p>
               </aside>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m3-03">
                 <p>«Die Manie hat uns fast zerstört — nicht wegen der Symptome, sondern wegen des Vertrauensbruchs danach. Er hat Dinge getan, die ich rational einordnen kann, aber emotional nicht vergessen. Jetzt ist er stabil, und ich frage mich: Darf ich ihm noch böse sein, wenn es eine Krankheit war? Meine Therapeutin hat gesagt: Ja, beides darf nebeneinander existieren.»</p>
-                <cite>Sabine, 44 Jahre, Partnerin seit 9 Jahren · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
               </blockquote>
             </section>
 
@@ -288,7 +291,7 @@ function Modul3Page({ onNavigate }) {
 
               <h3>Nähe und Sexualität nach Episoden</h3>
               <p>Intimität ist eines der Themen, über die Angehörige am seltensten sprechen — und unter denen sie am meisten leiden. In manischen Phasen kann sexuelle Enthemmung Grenzen überschreiten, die danach nachwirken. In depressiven Phasen verschwindet das Verlangen oft vollständig — bei der erkrankten Person, manchmal auch bei Ihnen. Dazu kommen Medikamenten-Nebenwirkungen (besonders SSRIs und einige Stimmungsstabilisierer), die die Libido dauerhaft dämpfen können.</p>
-              <p>Was am Ende oft bleibt, ist weniger ein sexuelles Problem als ein Nähe-Problem: Wenn Sie monatelang in der Rolle der Begleitperson, des Krisenstabs oder der Dauerkontrolle waren, fällt der Wechsel zurück in die Rolle des Partners oder der Partnerin schwer. «Wir sind Mitbewohner geworden» — dieser Satz fällt in Angehörigengruppen häufiger als fast jeder andere.</p>
+              <p>Was am Ende oft bleibt, ist weniger ein sexuelles Problem als ein Nähe-Problem: Wenn Sie monatelang in der Rolle der Begleitperson, des Krisenstabs oder der Dauerkontrolle waren, fällt der Wechsel zurück in die Rolle des Partners oder der Partnerin schwer. Es kann sich anfühlen, als wären Sie nur noch Mitbewohner statt ein Paar.</p>
 
               <div className="do-dont">
                 <div className="do-col">
@@ -329,9 +332,9 @@ function Modul3Page({ onNavigate }) {
                 <p><strong>117 Polizei</strong> bei akuter Gewalt · <strong>144</strong> bei Verletzung oder unmittelbarer medizinischer Gefahr · <strong>044 455 21 42</strong> Opferhilfe Zürich (24/7, Beratung &amp; Begleitung) · <strong>058 384 38 00</strong> Fachstelle PUK (werktags, vertraulich). Mehr im <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
               </aside>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m3-04">
                 <p>«Am schwersten war nicht nur, was passiert ist. Am schwersten war, dass ich lange dachte, ich dürfte es nicht einmal aussprechen. Als wäre schon das Benennen ein Verrat. Erst als ich es gesagt habe, wurde es überhaupt bearbeitbar.»</p>
-                <cite>Partner · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Partner</cite>
               </blockquote>
             </section>
 
@@ -390,10 +393,10 @@ function Modul3Page({ onNavigate }) {
               <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>
+                <a className="puk-link--action module-nav-btn" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>
                   ← Modul 02 — Die eigene Belastung verstehen
                 </a>
-                <a className="module-nav-btn module-nav-next" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
+                <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
                   Modul 04 — Wenn die Kraft nachlässt →
                 </a>
               </div>

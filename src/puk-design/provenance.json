@@ -1,0 +1,267 @@
+{
+  "identity": "PUK Website Kit 1.10.1-r4 · abgeleitet",
+  "canonicalParent": "PUK Zürich Design System 1.10.1",
+  "sourceProvidedAt": "2026-10-05",
+  "sourceProvidedBy": "User-supplied ZIP archives",
+  "upstreamRepositoryOrDownloadUrl": null,
+  "archives": [
+    {
+      "filename": "PUK Zürich · Vollsystem · V1.10.1 · Grundlage für alle Medien.zip",
+      "sha256": "b05e73c41cc372d4ac793e1f935b3e29d424fe4fdec1d5c057ae53ce03eae4b9",
+      "locallyVerifiedSha256": true
+    },
+    {
+      "filename": "PUK Zürich · Website-Profil · V1.10.1-r4 · für Websites.zip",
+      "sha256": "2e04e650a2822bc8efb2e377f839e2fb4227f3cdde14add69af974b2a0e6db1d",
+      "locallyVerifiedSha256": true
+    }
+  ],
+  "sourceKitManifest": {
+    "source": "source/WEBSITE_KIT_MANIFEST.json",
+    "sha256": "498898a435e0d213a1c665a69bb2acf26bb123795d4c7394f051653475404bd0",
+    "parentReleaseManifestSha256": "489ec25f440acd72bebcc8b68cfe246afc3a7c8078307076221c8507321cc232",
+    "note": "The original source-kit manifest is provenance, not an r4 file inventory."
+  },
+  "files": [
+    {
+      "source": "styles.css",
+      "path": "src/puk-design/styles.css",
+      "sha256": "6ff328786c8ed3722c6e57789400b0dfad03cbb4434d816d137dfcc3ef51e71f",
+      "bytes": 335,
+      "byteIdentical": false,
+      "sourceKitManifestSha256": "63df70f632eece515a2179014b2373a904589f72446a76e4b46d329e5346f9fa",
+      "matchesSuppliedWebsiteArchive": false,
+      "sourceSha256": "63df70f632eece515a2179014b2373a904589f72446a76e4b46d329e5346f9fa",
+      "adaptation": "Only import paths changed to *.tokens.css basenames so the unchanged canonical source-color gate recognizes token-definition files."
+    },
+    {
+      "source": "tokens/colors.css",
+      "path": "src/puk-design/tokens/colors.tokens.css",
+      "sha256": "6db6f130335ee6e1fac3b3f9df67670984148122f5ccbf8aa0c03d20b31ba1f3",
+      "bytes": 6638,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": false,
+      "sourceKitManifestSha256": "b1b9c0bc1d0281774310058b9ed96ed54868e25b4ce39650415134bfef6489e6",
+      "matchesSuppliedWebsiteArchive": true,
+      "sourceKitDifference": "Derived r4 profile: supplied file differs from the original 1.10.1 source-kit provenance manifest, as documented by the supplied profile."
+    },
+    {
+      "source": "tokens/typography.css",
+      "path": "src/puk-design/tokens/typography.tokens.css",
+      "sha256": "4ae64cb46848869427257e7511aa70dd8d57d834b5476ec5f48418dca3c1e799",
+      "bytes": 3116,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": false,
+      "sourceKitManifestSha256": "74b8c830fb8e2ccf785303ebf3435e9c23932a90514bd06166537840e9757c6f",
+      "matchesSuppliedWebsiteArchive": true,
+      "sourceKitDifference": "Derived r4 profile: supplied file differs from the original 1.10.1 source-kit provenance manifest, as documented by the supplied profile."
+    },
+    {
+      "source": "tokens/spacing.css",
+      "path": "src/puk-design/tokens/spacing.tokens.css",
+      "sha256": "1e79425f7be6f8fb517a99928c51c5472925a76ab302bd7c6ac2eb9ccedf9539",
+      "bytes": 1027,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": false,
+      "sourceKitManifestSha256": "b134b4b80007dfe35ddc18d5158af6b42cb9a5b1b806e22a4b983521875e0bb6",
+      "matchesSuppliedWebsiteArchive": true,
+      "sourceKitDifference": "Derived r4 profile: supplied file differs from the original 1.10.1 source-kit provenance manifest, as documented by the supplied profile."
+    },
+    {
+      "source": "tokens/surfaces.css",
+      "path": "src/puk-design/tokens/surfaces.tokens.css",
+      "sha256": "17101d981168727d2953311ef6c80f2c0ec420e093bdda714410d9b18c227f9a",
+      "bytes": 949,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": false,
+      "sourceKitManifestSha256": "c039fa59d771628b8e3b8ffe3782141bb3685edd5b3526e3f16f50cef449136f",
+      "matchesSuppliedWebsiteArchive": true,
+      "sourceKitDifference": "Derived r4 profile: supplied file differs from the original 1.10.1 source-kit provenance manifest, as documented by the supplied profile."
+    },
+    {
+      "source": "tokens/web.css",
+      "path": "src/puk-design/tokens/web.tokens.css",
+      "sha256": "e7c1f8a8253b28816824481ab4ffb3df391fc7e7dc47988a2eba494a79710900",
+      "bytes": 6282,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "e7c1f8a8253b28816824481ab4ffb3df391fc7e7dc47988a2eba494a79710900",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "tokens/base.css",
+      "path": "src/puk-design/tokens/base.tokens.css",
+      "sha256": "c11ee9c7adbcc80937314a5134ed38a2f10051c2479a7440a100752e2c98897a",
+      "bytes": 5282,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "c11ee9c7adbcc80937314a5134ed38a2f10051c2479a7440a100752e2c98897a",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "tokens/web-longform.css",
+      "path": "src/puk-design/tokens/web-longform.tokens.css",
+      "sha256": "8454324dfadc6aef319e23ab8ff29d6acfb6e0df1d53a171ec9b77ee1b75fad2",
+      "bytes": 6705,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "8454324dfadc6aef319e23ab8ff29d6acfb6e0df1d53a171ec9b77ee1b75fad2",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "templates/website/profile.json",
+      "path": "src/puk-design/profile.json",
+      "sha256": "62f2890b3c9b6f899df6618f98a096e3128fe1c8ca2d3865191b419d8e742ff6",
+      "bytes": 6531,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "62f2890b3c9b6f899df6618f98a096e3128fe1c8ca2d3865191b419d8e742ff6",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/fonts/Rubik-Light.woff2",
+      "path": "public/assets/puk/fonts/Rubik-Light.woff2",
+      "sha256": "1f091c25f949e6606dd346dd4606caacf1596bff37a4a58cb3aa317ed5181a99",
+      "bytes": 55800,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "1f091c25f949e6606dd346dd4606caacf1596bff37a4a58cb3aa317ed5181a99",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/fonts/Rubik-Light.ttf",
+      "path": "public/assets/puk/fonts/Rubik-Light.ttf",
+      "sha256": "0166a843b2704b797842abc712f1c2a00d3c2ea429ef86a6bf300b25f76cb6d3",
+      "bytes": 206696,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "0166a843b2704b797842abc712f1c2a00d3c2ea429ef86a6bf300b25f76cb6d3",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/fonts/Rubik-Regular.woff2",
+      "path": "public/assets/puk/fonts/Rubik-Regular.woff2",
+      "sha256": "6c75393948a7a29e10397647112cc8fd945dc4f8f0aad53b7c9f0070d9ab09c9",
+      "bytes": 61088,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "6c75393948a7a29e10397647112cc8fd945dc4f8f0aad53b7c9f0070d9ab09c9",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/fonts/Rubik-Regular.ttf",
+      "path": "public/assets/puk/fonts/Rubik-Regular.ttf",
+      "sha256": "6b94e23adedab4522e1b65d21158e83c75f377fc99f916c58f8ec40ecc7dd035",
+      "bytes": 207628,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "6b94e23adedab4522e1b65d21158e83c75f377fc99f916c58f8ec40ecc7dd035",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/fonts/Rubik-Medium.woff2",
+      "path": "public/assets/puk/fonts/Rubik-Medium.woff2",
+      "sha256": "aff60135700cc2dab3b1dac13bcb2b421bba8552a38d781c2a920c2ca9aafdbd",
+      "bytes": 61716,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "aff60135700cc2dab3b1dac13bcb2b421bba8552a38d781c2a920c2ca9aafdbd",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/fonts/Rubik-Medium.ttf",
+      "path": "public/assets/puk/fonts/Rubik-Medium.ttf",
+      "sha256": "f8a3689e56c32d880491b0e11c0a1c16ab51f6bd010cfbf7ffe6da52ae6737bd",
+      "bytes": 208200,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "f8a3689e56c32d880491b0e11c0a1c16ab51f6bd010cfbf7ffe6da52ae6737bd",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/fonts/Rubik-Italic-VariableFont_wght.woff2",
+      "path": "public/assets/puk/fonts/Rubik-Italic-VariableFont_wght.woff2",
+      "sha256": "1701772bfc7506f684d48774f171842f42933379efbc677b32866c56afa80fcb",
+      "bytes": 114824,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "1701772bfc7506f684d48774f171842f42933379efbc677b32866c56afa80fcb",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/fonts/Rubik-Italic-VariableFont_wght.ttf",
+      "path": "public/assets/puk/fonts/Rubik-Italic-VariableFont_wght.ttf",
+      "sha256": "304b3934d326ebc2358c0923b5a45d3f4e6090a80989e587b388d9692e641add",
+      "bytes": 348892,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "304b3934d326ebc2358c0923b5a45d3f4e6090a80989e587b388d9692e641add",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/fonts/OFL.txt",
+      "path": "public/assets/puk/fonts/OFL.txt",
+      "sha256": "fbf425c49bf998fb9cc1b52f8ca27d5f84dec079b60c40f654f242b52474d536",
+      "bytes": 4477,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "fbf425c49bf998fb9cc1b52f8ca27d5f84dec079b60c40f654f242b52474d536",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/logo/PUK_Logo_statisch_positiv_de.svg",
+      "path": "public/assets/puk/PUK_Logo_statisch_positiv_de.svg",
+      "sha256": "c27d0445159c67a7704c8d1d8da1b351a36a07aeb203d3afefdd72894713cade",
+      "bytes": 39725,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "c27d0445159c67a7704c8d1d8da1b351a36a07aeb203d3afefdd72894713cade",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/logo/PUK_Logo_dynamisch_positiv_de_540p_transparent.gif",
+      "path": "public/assets/puk/PUK_Logo_dynamisch_positiv_de_540p_transparent.gif",
+      "sha256": "c1815adc5a3fc77149ff1ab06448e2e190ff32df532fc09ca0a5cf2fdad16ca8",
+      "bytes": 4831832,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "c1815adc5a3fc77149ff1ab06448e2e190ff32df532fc09ca0a5cf2fdad16ca8",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/logo/PUK_Logo-Symbol_statisch_positiv.svg",
+      "path": "public/assets/puk/favicon.svg",
+      "sha256": "81a2de472e0d3cb3613d52ad344e56fddb4421a2149cafc5273a797abd3faffb",
+      "bytes": 9783,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "81a2de472e0d3cb3613d52ad344e56fddb4421a2149cafc5273a797abd3faffb",
+      "matchesSuppliedWebsiteArchive": true
+    },
+    {
+      "source": "assets/logo/PUK_Logo-Symbol_statisch_positiv.svg",
+      "path": "public/favicon.svg",
+      "sha256": "81a2de472e0d3cb3613d52ad344e56fddb4421a2149cafc5273a797abd3faffb",
+      "bytes": 9783,
+      "byteIdentical": true,
+      "matchesSourceKitManifest": true,
+      "sourceKitManifestSha256": "81a2de472e0d3cb3613d52ad344e56fddb4421a2149cafc5273a797abd3faffb",
+      "matchesSuppliedWebsiteArchive": true
+    }
+  ],
+  "adaptations": [
+    "tokens/fonts.tokens.css is a project adapter: public asset URLs, static Rubik 300/400/500, and original variable italic declared as Rubik 300–500. Font binaries are unchanged.",
+    "src/design-tokens.css maps legacy application token names to the supplied PUK tokens. The former four palettes are removed.",
+    "Vendored CSS basenames use *.tokens.css for recognition by the unchanged canonical website source-color gate. Token file contents remain byte-identical; styles.css only adapts import paths.",
+    "Das unveränderte Original-GIF wird im Header höchstens vier Sekunden angezeigt und danach durch das originale statische SVG ersetzt; Reduced Motion verwendet sofort das statische Logo. Die Datei selbst bleibt unverändert."
+  ],
+  "scope": "Website assets and tokens only. No platform/vendor, runtime bundles, uploads, cases or reference pages are included.",
+  "approvalClaim": "Technical provenance only; no communications, clinical, privacy or accessibility approval is asserted.",
+  "projectFontAdapter": {
+    "path": "src/puk-design/tokens/fonts.tokens.css",
+    "sha256": "e349eba095e97a6b9997e91c96c6fa10ec5ab6a7142f5b8f130aca466f444cd6",
+    "sourceTemplate": "tokens/fonts.css",
+    "sourceTemplateSha256": "62601b78815760f832ec44b20ee18ce1a8718519fa154d5fa0e1be0396061a72",
+    "copiedUnmodified": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "status": "prepared-not-executed",
+  "scope": "Konkrete Website mit realistischen Seitenfolgen, Formular- und Fehlerzuständen",
+  "runs": [
+    {
+      "assistiveTechnology": "VoiceOver",
+      "browser": "Safari",
+      "platform": "macOS oder iOS",
+      "testedAt": "YYYY-MM-DD",
+      "testerRole": "Accessibility Review",
+      "result": "pending"
+    },
+    {
+      "assistiveTechnology": "NVDA",
+      "browser": "Firefox",
+      "platform": "Windows",
+      "testedAt": "YYYY-MM-DD",
+      "testerRole": "Accessibility Review",
+      "result": "pending"
+    }
+  ],
+  "issues": []
+}

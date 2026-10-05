@@ -1,8 +1,9 @@
+import { scrollToSection } from './anchor-scroll.js';
 // Modul 4 — Wenn die Kraft nachlässt · Volles Lese-Layout
 // Zentrales Bild: Reservoir-Skala mit Erschöpfungs-Stufen.
 
 import React from 'react';
-import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
+import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function Reservoir() {
@@ -27,13 +28,13 @@ function Reservoir() {
         </linearGradient>
       </defs>
 
-      <text x="40" y="28" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0.14em" fontWeight="600">KRAFT-RESERVOIR</text>
+      <text x="40" y="28" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0" fontWeight="500">KRAFT-RESERVOIR</text>
 
       <g>
         <rect x="100" y={top} width="80" height={bot - top} fill="none" stroke="var(--ink)" strokeWidth="1" strokeOpacity="0.5" />
         <rect x="100" y={yFor(45)} width="80" height={bot - yFor(45)} fill="url(#reservoir-fill)" />
         <line x1="100" y1={yFor(45)} x2="180" y2={yFor(45)} stroke="var(--accent)" strokeWidth="1.5" />
-        <text x="92" y={yFor(45) + 4} fontFamily="var(--serif-display)" fontStyle="italic" fontSize="11" fill="var(--accent)" textAnchor="end">fiktives Beispiel</text>
+        <text x="92" y={yFor(45) + 4} fontFamily="var(--serif-display)" fontStyle="normal" fontSize="11" fill="var(--accent)" textAnchor="end">fiktives Beispiel</text>
       </g>
 
       <g>
@@ -47,10 +48,10 @@ function Reservoir() {
                 <line x1="100" y1={yHi} x2="180" y2={yHi} stroke="var(--paper-edge)" strokeWidth="1" strokeDasharray="2 3" />
               )}
               <line x1="180" y1={yMid} x2="220" y2={yMid} stroke="var(--ink-mute)" strokeWidth="0.5" strokeOpacity="0.5" />
-              <text x="228" y={yMid - 1} fontFamily="var(--serif-display)" fontStyle={isCurrent ? 'italic' : 'normal'} fontSize={isCurrent ? '15' : '13'} fontWeight={isCurrent ? '500' : '400'} fill={isCurrent ? 'var(--accent)' : 'var(--ink)'}>
+              <text x="228" y={yMid - 1} fontFamily="var(--serif-display)" fontStyle="normal" fontSize={isCurrent ? '15' : '13'} fontWeight={isCurrent ? '500' : '400'} fill={isCurrent ? 'var(--accent)' : 'var(--ink)'}>
                 {s.label}
               </text>
-              <text x="228" y={yMid + 13} fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" fontStyle="italic">
+              <text x="228" y={yMid + 13} fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" fontStyle="normal">
                 {s.sub}
               </text>
             </g>
@@ -58,7 +59,7 @@ function Reservoir() {
         })}
       </g>
 
-      <g fontFamily="var(--mono)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.06em">
+      <g fontFamily="var(--mono)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0">
 
 
       </g>
@@ -68,14 +69,26 @@ function Reservoir() {
 
 function ReservoirFigur() {
   return (
-    <figure className="reservoir-figure">
+    <figure className="reservoir-figure" data-visual-id="m4-reservoir" data-visual-type="figure" aria-labelledby="m4-reservoir-title" aria-describedby="m4-reservoir-text">
       <div className="reservoir-stage">
         <Reservoir />
       </div>
       <figcaption>
+        <strong id="m4-reservoir-title">Das Kraft-Reservoir.</strong>{' '}
         Ein Bild für eigene Kräfte, keine Messung. Die eingezeichnete Füllhöhe ist ein fiktives Beispiel.
         {' '}Die Bereiche sind keine geprüften Schwellen für Belastung oder Dringlichkeit.
       </figcaption>
+      <FigureText visualId="m4-reservoir">
+        <p>Ein Behälter zeigt eigene Kraft als Metapher. Daneben stehen von oben nach unten fünf Beschreibungen:</p>
+        <ul>
+          <li><strong>Voll:</strong> getragen, mit Spielraum.</li>
+          <li><strong>Getragen:</strong> es geht, auch wenn es manchmal anstrengend ist.</li>
+          <li><strong>Schmal:</strong> es funktioniert, aber nichts Zusätzliches geht mehr.</li>
+          <li><strong>Reserve:</strong> aus Routine und Pflichtgefühl, nicht mehr aus Kraft.</li>
+          <li><strong>Kaum Kraft:</strong> körperliche und seelische Warnzeichen.</li>
+        </ul>
+        <p>Der eingezeichnete Füllstand ist fiktiv. Die Bereiche sind keine geprüften Schwellen für Belastung oder Dringlichkeit und ergeben keinen persönlichen Score.</p>
+      </FigureText>
     </figure>
   );
 }
@@ -147,10 +160,7 @@ function Modul4Page({ onNavigate }) {
     { id: 's8', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-  };
+  const scrollTo = scrollToSection;
 
   return (
     <>
@@ -197,9 +207,9 @@ function Modul4Page({ onNavigate }) {
           <div className="module-body prose">
             <ModuleQuickStart number={4} onNavigate={onNavigate} />
 
-            <blockquote className="module-quote">
+            <blockquote className="module-quote" id="quote-m4-01">
               <p>«Ich sage allen, es geht mir gut. Aber nachts liege ich wach und frage mich, wie lange ich das noch schaffe. Ich bin so müde — nicht körperlich, sondern in meiner Seele.»</p>
-              <cite>Partnerin, 38 Jahre · fiktives Beispiel</cite>
+              <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
             </blockquote>
 
             <section id="s1">
@@ -264,9 +274,9 @@ function Modul4Page({ onNavigate }) {
               <h3>Der unsichtbare Rucksack — Identitätsverlust</h3>
               <p>Mit der Schonhaltung geht oft etwas Tieferes verloren: die eigene Identität. Man definiert sich zunehmend nur noch über die Betreuerrolle — wer man selbst ist, gerät aus dem Blick.</p>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m4-02">
                 <p>«Ich trage einen unsichtbaren Rucksack. Jeden Tag packe ich mehr hinein: die Sorge, die Verantwortung, die Angst. Der Rucksack wird immer schwerer, aber niemand sieht ihn.»</p>
-                <cite>Maria, 42 Jahre, Partnerin · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
               </blockquote>
 
               <h3>Anzeichen, dass die Identität schmaler wird</h3>
@@ -282,9 +292,9 @@ function Modul4Page({ onNavigate }) {
                 <p>Manche Angehörige werden mit der Zeit auch abgestumpfter, zynischer oder innerlich härter. Das ist nicht schön — aber oft ein Warnsignal chronischer Überlastung, nicht ein Beweis fehlender Liebe. Genau darum gehört auch die eigene Veränderung in den Blick.</p>
               </aside>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m4-03">
                 <p>«Ich habe jahrelang jedes Gespräch über meine eigenen Sorgen vermieden. Ich dachte, ich schütze sie damit — dabei habe ich mich selbst unsichtbar gemacht. Irgendwann wusste ich selbst nicht mehr, was ich wollte oder brauchte.»</p>
-                <cite>Thomas, 51 Jahre, Ehemann · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Ehemann</cite>
               </blockquote>
             </section>
 
@@ -348,9 +358,9 @@ function Modul4Page({ onNavigate }) {
               <h3>Parentifizierung — wenn Kinder Erwachsene werden</h3>
               <p>Manchmal übernehmen Kinder Aufgaben, die nicht für ihr Alter gedacht sind: Sie beruhigen, beobachten, schützen oder passen sich übermässig an. Es geht nicht nur um Haushalt, sondern um emotionale Verantwortung: das Kind, das spürt, dass es die Stimmung im Haus mitregulieren muss. Studien zeigen ein erhöhtes Risiko für spätere psychische Belastungen (Hooper et al., 2011).</p>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m4-04">
                 <p>«Ich habe erst mit 25 verstanden, dass nicht jede Familie so lebt. Dass andere Kinder nicht gelernt haben, morgens zuerst die Stimmung im Haus zu lesen. Ich bin nicht wütend auf ihn — er ist krank, und er kämpft. Aber ich trauere um die Kindheit, die anders hätte sein können.»</p>
-                <cite>Lukas, 28 Jahre, Sohn eines betroffenen Vaters · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Erwachsener Sohn</cite>
               </blockquote>
 
               <aside className="callout">
@@ -422,10 +432,10 @@ function Modul4Page({ onNavigate }) {
               <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href={navHref('modul3')} onClick={navHandler('modul3', onNavigate)}>
+                <a className="puk-link--action module-nav-btn" href={navHref('modul3')} onClick={navHandler('modul3', onNavigate)}>
                   ← Modul 03 — Wie Beziehungen unter Druck geraten
                 </a>
-                <a className="module-nav-btn module-nav-next" href={navHref('modul5')} onClick={navHandler('modul5', onNavigate)}>
+                <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul5')} onClick={navHandler('modul5', onNavigate)}>
                   Modul 05 — Loyalitätskonflikte →
                 </a>
               </div>

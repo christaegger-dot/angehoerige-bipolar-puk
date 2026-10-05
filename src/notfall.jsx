@@ -1,13 +1,10 @@
 // SOS Krise — editorial Notfallweg
 
-import React from 'react';
 import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
 import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 
 function NotfallPage({ onNavigate }) {
-  const [openGuide, setOpenGuide] = React.useState(0);
-
   const guides = [
     {
       cls: 'red', letter: 'A',
@@ -114,38 +111,20 @@ function NotfallPage({ onNavigate }) {
       <section style={{paddingTop: 56}}>
         <div className="col">
           <span className="kicker">Was tun, wenn …</span>
-          <h2 style={{fontStyle: 'italic', marginBottom: 12}}>Fünf typische Krisensituationen — mit konkreten Schritten.</h2>
-          <p style={{color: 'var(--ink-soft)', marginBottom: 24}}>Klappen Sie auf, was gerade zutrifft. Sie müssen die anderen nicht lesen.</p>
+          <h2 style={{marginBottom: 12}}>Fünf typische Krisensituationen — mit konkreten Schritten.</h2>
+          <p style={{color: 'var(--ink-soft)', marginBottom: 24}}>Lesen Sie den Abschnitt, der gerade zutrifft. Alle ersten Schritte und Sicherheitshinweise sind direkt sichtbar.</p>
 
           <div className="guides">
-            {guides.map((g, i) => {
-              const open = openGuide === i;
-              const panelId = `guide-panel-${i}`;
-              const buttonId = `guide-trigger-${i}`;
-              return (
-                <div key={i} className={`guide ${g.cls} ${open ? 'open' : ''}`}>
-                  <button
-                    id={buttonId}
-                    type="button"
-                    className="guide-head"
-                    onClick={() => setOpenGuide(open ? -1 : i)}
-                    aria-expanded={open}
-                    aria-controls={panelId}
-                  >
+            {guides.map((g, i) => (
+                <section key={g.letter} className={`guide ${g.cls} open`} aria-labelledby={`guide-title-${i}`}>
+                  <div className="guide-head">
                     <span className="guide-letter" aria-hidden="true">{g.letter}</span>
                     <div>
-                      <div className="guide-title">{g.title}</div>
+                      <h3 className="guide-title" id={`guide-title-${i}`}>{g.title}</h3>
                       <div className="guide-sub">{g.sub}</div>
                     </div>
-                    <span className="guide-toggle">{open ? 'schliessen' : 'öffnen'}</span>
-                  </button>
-                  <div
-                    id={panelId}
-                    className="guide-body"
-                    role="region"
-                    aria-labelledby={buttonId}
-                    hidden={!open}
-                  >
+                  </div>
+                  <div className="guide-body">
                     <div className="guide-do"><strong>Erster Schritt: </strong>{g.do}</div>
                     <ul>
                       {g.bullets.map((b, j) => <li key={j}>{b}</li>)}
@@ -153,9 +132,8 @@ function NotfallPage({ onNavigate }) {
                     <div className="guide-dont"><strong>Vermeiden: </strong>{g.dont}</div>
                     <div className="guide-sos"><strong>Wenn akut: </strong>{g.sos}</div>
                   </div>
-                </div>
-              );
-            })}
+                </section>
+            ))}
           </div>
 
           <div className="grauzone">
@@ -181,7 +159,7 @@ function NotfallPage({ onNavigate }) {
             <p className="grauzone-rule">Im Zweifel zählt: Lieber einmal zu früh anrufen als einmal zu spät.</p>
           </div>
 
-          <h2 style={{fontStyle: 'italic'}}>Weitere Nummern</h2>
+          <h2>Weitere Nummern</h2>
           <div className="numbers-row" style={{marginTop: 24}}>
             <a className="number-tile" href="tel:147"><span className="number-num">147</span><span className="number-label">Pro Juventute</span><span className="number-sub">Kinder &amp; Jugendliche</span></a>
             <a className="number-tile" href="tel:+41583842000"><span className="number-num">058 384 20 00</span><span className="number-label">PUK Notfall Erwachsene</span><span className="number-sub">24 h · ab 18 Jahren</span></a>

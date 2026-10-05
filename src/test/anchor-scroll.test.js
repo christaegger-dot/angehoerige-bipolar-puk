@@ -35,3 +35,36 @@ describe('scrollToAnchorWhenReady', () => {
     expect(cancelFrame).toHaveBeenCalled();
   });
 });
+
+it('keeps an anchor below navigation that grew after text enlargement', async () => {
+  const nav = document.createElement('nav');
+  nav.className = 'nav';
+  nav.style.position = 'sticky';
+  nav.getBoundingClientRect = () => ({ height: 180 });
+  document.body.append(nav);
+  const scrollTo = vi.fn();
+  const requestFrame = vi.fn(callback => { callback(); return 1; });
+  scrollToAnchorWhenReady('target', {
+    getElementById: () => ({ getBoundingClientRect: () => ({ top: 420 }) }),
+    scrollTo,
+    requestFrame,
+  });
+  expect(scrollTo).toHaveBeenCalledWith({ top: 224, behavior: 'instant' });
+  nav.remove();
+});
+
+it('does not leave a navigation-sized gap when the mobile navigation scrolls away', () => {
+  const nav = document.createElement('nav');
+  nav.className = 'nav';
+  nav.style.position = 'relative';
+  nav.getBoundingClientRect = () => ({ height: 300 });
+  document.body.append(nav);
+  const scrollTo = vi.fn();
+  scrollToAnchorWhenReady('target', {
+    getElementById: () => ({ getBoundingClientRect: () => ({ top: 420 }) }),
+    scrollTo,
+    requestFrame: callback => { callback(); return 1; },
+  });
+  expect(scrollTo).toHaveBeenCalledWith({ top: 404, behavior: 'instant' });
+  nav.remove();
+});

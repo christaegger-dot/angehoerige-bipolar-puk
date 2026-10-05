@@ -1,8 +1,9 @@
+import { scrollToSection } from './anchor-scroll.js';
 // Modul 2 — Die eigene Belastung verstehen · Volles Lese-Layout
 // Zentrales Bild: Eisberg-Figur (sichtbar / verborgen) in der Bildmarke der Seite.
 
 import React from 'react';
-import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
+import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function Eisberg() {
@@ -84,7 +85,7 @@ function EisbergFigur() {
   ];
 
   return (
-    <figure className="eisberg-figure">
+    <figure className="eisberg-figure" data-visual-id="m2-eisberg" data-visual-type="illustration" aria-labelledby="m2-eisberg-title" aria-describedby="m2-eisberg-text">
       <div className="eisberg-zones">
         <div className="eisberg-zone-top">
           <span className="eisberg-zone-kicker">Was andere sehen</span>
@@ -95,7 +96,7 @@ function EisbergFigur() {
           <span className="eisberg-zone-kicker">Was unter der Oberfläche liegen kann</span>
         </div>
       </div>
-      <div className="eisberg-stage">
+      <div className="eisberg-stage" aria-hidden="true">
         <Eisberg />
 
         {above.map((item, i) => (
@@ -117,7 +118,11 @@ function EisbergFigur() {
           </span>
         ))}
       </div>
-      <figcaption>Was nach aussen sichtbar ist — und was Angehörige im Stillen tragen.</figcaption>
+      <figcaption><strong id="m2-eisberg-title">Der Belastungs-Eisberg.</strong> Was nach aussen sichtbar ist — und was Angehörige im Stillen tragen.</figcaption>
+      <FigureText visualId="m2-eisberg">
+        <p>Der Eisberg ist eine Metapher. Über der Wasserlinie stehen Sorge, Geduld und Hilfsbereitschaft: Dinge, die andere sehen können. Unter der Oberfläche können Erschöpfung, Wut, Scham, Einsamkeit, Schuldgefühle, Trauer, Angst und Erstarrung liegen.</p>
+        <p>Die Grösse, Position und Verteilung der Wörter sind keine Messwerte und sagen nichts über Häufigkeit oder Ausmass Ihrer Belastung aus.</p>
+      </FigureText>
     </figure>
   );
 }
@@ -159,13 +164,13 @@ function Hypervigilanz() {
         <rect x="0" y="0" width="22" height="32" />
         <circle cx="17" cy="16" r="1.2" fill="var(--ink)" />
       </g>
-      <text x="60" y="108" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.08em">Tür</text>
+      <text x="60" y="108" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0">Tür</text>
 
       {/* Telefon oben rechts */}
       <g transform="translate(440 50)" stroke="var(--ink)" strokeWidth="1" fill="none" strokeLinejoin="round">
         <path d="M 4 4 Q 4 0 8 2 L 14 8 Q 16 10 14 14 L 12 18 Q 16 24 22 28 L 26 26 Q 30 24 32 26 L 38 32 Q 40 36 36 36 Q 18 36 4 22 Q 0 8 4 4 Z" />
       </g>
-      <text x="450" y="100" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.08em" textAnchor="middle">Anruf</text>
+      <text x="450" y="100" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" textAnchor="middle">Anruf</text>
 
       {/* Uhr Mitte rechts */}
       <g transform="translate(440 180)" stroke="var(--ink)" strokeWidth="1" fill="none">
@@ -173,26 +178,26 @@ function Hypervigilanz() {
         <line x1="12" y1="12" x2="12" y2="4" strokeWidth="1" />
         <line x1="12" y1="12" x2="18" y2="14" strokeWidth="1" />
       </g>
-      <text x="452" y="218" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.08em" textAnchor="middle">Zeit</text>
+      <text x="452" y="218" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" textAnchor="middle">Zeit</text>
 
       {/* Tablette unten rechts */}
       <g transform="translate(400 295)" stroke="var(--ink)" strokeWidth="1" fill="none">
         <ellipse cx="12" cy="6" rx="14" ry="6" />
         <path d="M 12 0 L 12 12" />
       </g>
-      <text x="412" y="322" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.08em" textAnchor="middle">Medikation</text>
+      <text x="412" y="322" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" textAnchor="middle">Medikation</text>
 
       {/* Schlaf-Indikator unten links — Mond */}
       <g transform="translate(70 270)" stroke="var(--ink)" strokeWidth="1" fill="none">
         <path d="M 18 4 Q 6 6 6 16 Q 6 26 20 26 Q 12 22 12 16 Q 12 8 18 4 Z" />
       </g>
-      <text x="78" y="310" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.08em" textAnchor="middle">Schlaf</text>
+      <text x="78" y="310" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" textAnchor="middle">Schlaf</text>
 
       {/* Stimme links Mitte — Sprechblasen-Welle */}
       <g transform="translate(50 175)" stroke="var(--ink)" strokeWidth="1" fill="none">
         <path d="M 0 8 Q 0 0 8 0 L 18 0 Q 26 0 26 8 L 26 14 Q 26 22 18 22 L 10 22 L 4 28 L 6 22 Q 0 22 0 14 Z" />
       </g>
-      <text x="38" y="218" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0.08em">Tonfall</text>
+      <text x="38" y="218" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0">Tonfall</text>
 
       {/* Zentrale Figur — sehr reduziert, derselbe Stil wie Werkzeug-Illus */}
       <g transform="translate(260 180)">
@@ -210,11 +215,15 @@ function Hypervigilanz() {
 
 function HypervigilanzFigur() {
   return (
-    <figure className="hv-figure">
+    <figure className="hv-figure" data-visual-id="m2-hypervigilanz" data-visual-type="illustration" aria-labelledby="m2-hypervigilanz-title" aria-describedby="m2-hypervigilanz-text">
       <div className="hv-stage">
         <Hypervigilanz />
       </div>
-      <figcaption>Eine sinnvolle Anpassung — und ein Dauerzustand: das Mitlesen vieler kleiner Signale gleichzeitig.</figcaption>
+      <figcaption><strong id="m2-hypervigilanz-title">Viele Signale gleichzeitig wahrnehmen.</strong> Eine sinnvolle Anpassung — und ein Dauerzustand: das Mitlesen vieler kleiner Signale gleichzeitig.</figcaption>
+      <FigureText visualId="m2-hypervigilanz">
+        <p>In der Mitte steht eine Person. Feine Linien verbinden sie mit sechs Alltagssignalen: Tür, Anruf, Zeit, Medikation, Schlaf und Tonfall. Die vielen Verbindungen zeigen gleichzeitig gebundene Aufmerksamkeit.</p>
+        <p>Die Darstellung ist kein festgelegter Ablauf und keine Anweisung, alle diese Signale überwachen zu müssen.</p>
+      </FigureText>
     </figure>
   );
 }
@@ -273,10 +282,7 @@ function Modul2Page({ onNavigate }) {
     { id: 's8', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
-  };
+  const scrollTo = scrollToSection;
 
   return (
     <>
@@ -323,9 +329,9 @@ function Modul2Page({ onNavigate }) {
           <div className="module-body prose">
             <ModuleQuickStart number={2} onNavigate={onNavigate} />
 
-            <blockquote className="module-quote">
+            <blockquote className="module-quote" id="quote-m2-01">
               <p>«Als die Diagnose kam, war mein erster Gedanke: Endlich hat es einen Namen. Jahrelang dachte ich, ich sei das Problem — zu sensibel, zu fordernd, zu wenig geduldig. Dann plötzlich: eine Erklärung. Ich habe geweint — vor Erleichterung und vor Erschöpfung gleichzeitig.»</p>
-              <cite>Miriam, 47 Jahre · fiktives Beispiel</cite>
+              <cite>Redaktionelles Fallbeispiel (fiktiv) · Angehörige</cite>
             </blockquote>
 
             <aside className="callout">
@@ -361,9 +367,9 @@ function Modul2Page({ onNavigate }) {
               <p>Was nach aussen sichtbar wird — Erschöpft wirken, Termine begleiten, Sorgen äussern — ist nur die Spitze. Darunter liegt das, was Angehörige selten zeigen, oft nicht einmal vor sich selbst zugeben: Hypervigilanz, Schlafstörungen, Schuldgefühle, Einsamkeit, Angst vor Rückfall, Trauer, Ambivalenz.</p>
               <p>Das ist kein Zeichen von Schwäche, sondern ein Merkmal chronischer Belastung: Viele Angehörige lernen, zu funktionieren, lange bevor sie merken, wie viel sie innerlich schon mittragen.</p>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m2-02">
                 <p>«Meine Freundin hat mich gefragt, wie es mir geht. Ich habe gesagt: ‹Gut, danke.› Aber in Wahrheit hatte ich seit Wochen nicht mehr durchgeschlafen, weil ich auf jedes Geräusch im Haus horche.»</p>
-                <cite>Sarah, 34 Jahre, Partnerin · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
               </blockquote>
 
               <aside className="callout callout-soft">
@@ -432,9 +438,9 @@ function Modul2Page({ onNavigate }) {
               <h2>Was Suizidangst mit Ihnen macht</h2>
               <p>Die bipolare Störung trägt eines der höchsten Suizidrisiken aller psychiatrischen Erkrankungen. Als Angehörige und Nahestehende leben Sie mit dieser Angst — oft allein. Dieser Abschnitt handelt nicht von den Zahlen, sondern von dem, was diese Angst mit Ihnen macht.</p>
 
-              <blockquote className="module-quote">
+              <blockquote className="module-quote" id="quote-m2-03">
                 <p>«Nach seinem zweiten Suizidversuch habe ich drei Monate lang jede Nacht wach gelegen. Nicht weil ich Angst hatte, dass er es wieder tut — das auch — sondern weil ich nicht wusste, ob ich das noch aushalte.»</p>
-                <cite>Thomas, 51 Jahre, Ehemann · fiktives Beispiel</cite>
+                <cite>Redaktionelles Fallbeispiel (fiktiv) · Ehemann</cite>
               </blockquote>
 
               <p><strong>Hypervigilanz.</strong> Angehörige, die mit dem Suizidrisiko ihres Partners leben, scannen oft ständig nach Warnzeichen. Diese dauerhafte Anspannung kann zu Schlafstörungen, Reizbarkeit und eigenen Angstsymptomen führen.</p>
@@ -494,10 +500,10 @@ function Modul2Page({ onNavigate }) {
               <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
-                <a className="module-nav-btn" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)}>
+                <a className="puk-link--action module-nav-btn" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)}>
                   ← Modul 01 — Die bipolare Störung verstehen
                 </a>
-                <a className="module-nav-btn module-nav-next" href={navHref('modul3')} onClick={navHandler('modul3', onNavigate)}>
+                <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul3')} onClick={navHandler('modul3', onNavigate)}>
                   Modul 03 — Wie Beziehungen unter Druck geraten →
                 </a>
               </div>

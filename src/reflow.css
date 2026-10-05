@@ -1,0 +1,115 @@
+/* Text remains readable when the browser's default text size is increased.
+   Lists and inline emphasis inherit wrapping from their reading container. */
+.module-body,
+.prose,
+.about-hero-copy,
+.contact-info-block,
+.guide-body {
+  overflow-wrap: anywhere;
+}
+
+/* Grid items must be able to shrink below a long word's intrinsic width. */
+.do-dont > *,
+.vereinbarung-zeile > *,
+.about-hero-copy > *,
+.resource-row > *,
+.contact-grid > * {
+  min-width: 0;
+}
+
+.vereinbarung-zeile {
+  grid-template-columns: 36px minmax(0, 1fr);
+}
+
+/* These labels and addresses can take another line instead of widening
+   their surrounding grid or flex row. */
+.eisberg-zone-kicker,
+.resource-row .tag {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.eisberg-zone-kicker {
+  min-width: 0;
+}
+
+.eisberg-zone-line {
+  min-width: 0;
+}
+
+/* Long labels anchored towards an edge need a bounded, wrapping box.
+   These static labels remain attached to their illustrated positions. */
+.eisberg-stage > .eisberg-secondary {
+  max-width: 52%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* When text grows relative to the illustration, fixed coordinates cannot
+   keep labels apart. Keep their original order in rows below the picture.
+   rem makes this respond to text enlargement as well as a narrow viewport. */
+.eisberg-figure {
+  container-name: static-eisberg;
+  container-type: inline-size;
+  margin-inline: 0;
+}
+
+.eyebrow {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.eyebrow .dot {
+  flex-shrink: 0;
+}
+
+@container static-eisberg (width < 14rem) {
+  .eisberg-stage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    aspect-ratio: auto;
+    background: none;
+  }
+
+  .eisberg-stage > .eisberg-svg {
+    position: static;
+    flex-basis: 100%;
+    height: auto;
+    max-height: 240px;
+  }
+
+  .eisberg-stage > .eisberg-word {
+    position: static;
+    transform: none;
+    flex: 1 1 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0;
+    background: none;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .eisberg-stage > .eisberg-primary {
+    flex-basis: 100%;
+    padding-top: 16px;
+    border-top: 1px solid var(--paper-edge);
+  }
+}
+
+/* max-content grid tracks kept the four labels wider than a small screen
+   at enlarged text sizes. Flex wrapping preserves each complete label. */
+.about-hero-functions {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-hero-function {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.about-hero-function::before {
+  flex: 0 0 5px;
+}

@@ -4,6 +4,15 @@ import userEvent from '@testing-library/user-event';
 import { WerkzeugePage } from '../werkzeuge.jsx';
 import { KrisenplanTool, TOOL_COMPONENTS } from '../werkzeuge-tools.jsx';
 
+function blockDeletion(storage) {
+  const owner = Object.hasOwn(storage, 'removeItem') ? storage : Object.getPrototypeOf(storage);
+  const removeItem = owner.removeItem;
+  return vi.spyOn(owner, 'removeItem').mockImplementation(function (...args) {
+    if (this === storage) throw new DOMException('Storage blocked', 'SecurityError');
+    return removeItem.apply(this, args);
+  });
+}
+
 describe('WerkzeugePage', () => {
   it('renders tool cards as dialog-trigger buttons', async () => {
     const user = userEvent.setup();
@@ -26,31 +35,128 @@ describe('WerkzeugePage', () => {
   });
 });
 
-describe('KrisenplanTool storage', () => {
-  it('stores drafts in session storage by default and only persists locally after opt-in', async () => {
+describe('KrisenplanTool privacy', () => {
+  it('keeps new input only in the open tool and offers no persistent-storage option', async () => {
     const user = userEvent.setup();
-
     render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
 
     await user.type(screen.getByRole('textbox', { name: /Plan für/i }), 'M. & Christine');
-
-    await user.type(screen.getByRole('textbox', { name: /Wenn niemand erreichbar ist/i }), 'Testkontakt');
     await user.type(screen.getByRole('textbox', { name: /Kinder und eigene Entlastung/i }), 'Testbetreuung');
-    expect(window.sessionStorage.getItem('puk-krisenplan-v1')).toContain('Testbetreuung');
-    expect(window.sessionStorage.getItem('puk-krisenplan-v1')).toContain('M. & Christine');
+
+    expect(screen.getByRole('textbox', { name: /Plan für/i })).toHaveValue('M. & Christine');
+    expect(window.sessionStorage.length).toBe(0);
+    expect(window.localStorage.length).toBe(0);
+    expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
+    expect(screen.queryByText(/^Gespeichert$/)).not.toBeInTheDocument();
+  });
+
+  it('does not restore or overwrite sensitive drafts left by older versions', () => {
+    window.localStorage.setItem('puk-krisenplan-v1', JSON.stringify({ name: 'Private old draft' }));
+    window.sessionStorage.setItem('puk-krisenplan-v1', JSON.stringify({ name: 'Old session copy' }));
+    render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
+
+    expect(screen.getByRole('textbox', { name: /Plan für/i })).toHaveValue('');
+    expect(screen.queryByText(/Private old draft/)).not.toBeInTheDocument();
+    expect(window.localStorage.getItem('puk-krisenplan-v1')).toContain('Private old draft');
+    expect(window.sessionStorage.getItem('puk-krisenplan-v1')).toContain('Old session copy');
+    expect(screen.getByText(/Entwürfe aus früheren Versionen werden nicht wieder geöffnet/)).toBeInTheDocument();
+  });
+
+  it('starts with an empty draft after closing and reopening the tool', async () => {
+    const user = userEvent.setup();
+    render(<WerkzeugePage onNavigate={() => {}} />);
+    await user.click(screen.getByRole('button', { name: /Krisenplan/i }));
+    await user.type(await screen.findByRole('textbox', { name: /Plan für/i }), 'Private current draft');
+    await user.click(screen.getByRole('button', { name: 'schliessen' }));
+    await user.click(screen.getByRole('button', { name: /Krisenplan/i }));
+
+    expect(await screen.findByRole('textbox', { name: /Plan für/i })).toHaveValue('');
+    expect(window.localStorage.length).toBe(0);
+    expect(window.sessionStorage.length).toBe(0);
+  });
+
+  it('deletes current input and both historical copies only after confirmation', async () => {
+    const user = userEvent.setup();
+    window.localStorage.setItem('puk-krisenplan-v1', JSON.stringify({ name: 'Private old draft' }));
+    window.sessionStorage.setItem('puk-krisenplan-v1', JSON.stringify({ name: 'Old copy' }));
+    window.localStorage.setItem('puk-kommunikation-v1', JSON.stringify({ beobachtung: 'Other tool' }));
+    const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false);
+    render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
+    await user.type(screen.getByRole('textbox', { name: /Plan für/i }), 'Current draft');
+
+    await user.click(screen.getByRole('button', { name: 'Entwurf löschen' }));
+    expect(screen.getByRole('textbox', { name: /Plan für/i })).toHaveValue('Current draft');
+    expect(window.localStorage.getItem('puk-krisenplan-v1')).toContain('Private old draft');
+
+    confirm.mockReturnValue(true);
+    await user.click(screen.getByRole('button', { name: 'Entwurf löschen' }));
+    expect(screen.getByRole('textbox', { name: /Plan für/i })).toHaveValue('');
     expect(window.localStorage.getItem('puk-krisenplan-v1')).toBeNull();
-
-    await user.click(screen.getByLabelText('Auf diesem Gerät dauerhaft behalten'));
-    await user.type(screen.getByRole('textbox', { name: /Klinikwunsch/i }), 'PUK Zürich');
-
-    expect(window.localStorage.getItem('puk-krisenplan-v1')).toContain('PUK Zürich');
     expect(window.sessionStorage.getItem('puk-krisenplan-v1')).toBeNull();
+    expect(window.localStorage.getItem('puk-kommunikation-v1')).toContain('Other tool');
+    expect(screen.getByRole('status')).toHaveTextContent('Aktuelle Eingaben und frühere Browser-Kopien gelöscht.');
+  });
+
+  it('warns when a historical copy cannot be deleted while still clearing current input', async () => {
+    const user = userEvent.setup();
+    window.localStorage.setItem('puk-krisenplan-v1', JSON.stringify({ name: 'Private old draft' }));
+    blockDeletion(window.localStorage);
+    vi.spyOn(window, 'confirm').mockReturnValue(true);
+    render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
+    await user.type(screen.getByRole('textbox', { name: /Plan für/i }), 'Current draft');
+
+    await user.click(screen.getByRole('button', { name: 'Entwurf löschen' }));
+
+    expect(screen.getByRole('textbox', { name: /Plan für/i })).toHaveValue('');
+    expect(screen.getByRole('status')).toHaveTextContent('Frühere Browser-Kopien konnten nicht vollständig gelöscht werden.');
+    expect(window.localStorage.getItem('puk-krisenplan-v1')).toContain('Private old draft');
   });
 
   it('uses a canonical href for the crisis path link in the disclaimer', () => {
     render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
-
     expect(screen.getByRole('link', { name: /Notfallweg/i })).toHaveAttribute('href', '/notfall');
+  });
+});
+
+describe('Kommunikations-Trainer privacy', () => {
+  it('completes a new script in memory without restoring or overwriting old browser copies', async () => {
+    const user = userEvent.setup();
+    window.localStorage.setItem('puk-kommunikation-v1', JSON.stringify({ anlass: 'anderes', beobachtung: 'Private old draft' }));
+    window.sessionStorage.setItem('puk-kommunikation-v1', JSON.stringify({ beobachtung: 'Old session copy' }));
+    render(<TOOL_COMPONENTS.kommunikation onClose={() => {}} onNavigate={() => {}} />);
+    await user.click(screen.getByRole('button', { name: /Beginnen/ }));
+    expect(screen.getByRole('button', { name: /weiter/ })).toBeDisabled();
+    await user.click(screen.getByRole('button', { name: /Ein anderes Anliegen/ }));
+    await user.click(screen.getByRole('button', { name: /weiter/ }));
+    expect(screen.getByRole('textbox', { name: 'Was haben Sie konkret beobachtet?' })).toHaveValue('');
+    await user.type(screen.getByRole('textbox', { name: 'Was haben Sie konkret beobachtet?' }), 'Current observation');
+    await user.click(screen.getByRole('button', { name: /weiter/ }));
+    await user.type(screen.getByRole('textbox', { name: 'Was macht das mit Ihnen?' }), 'Current feeling');
+    await user.click(screen.getByRole('button', { name: /weiter/ }));
+    await user.type(screen.getByRole('textbox', { name: 'Was wäre Ihr Anliegen oder Ihre Bitte?' }), 'Current request');
+    await user.click(screen.getByRole('button', { name: 'Skript ansehen →' }));
+
+    expect(screen.getByText('«Current observation»')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Skript kopieren' })).toBeInTheDocument();
+    expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
+    expect(window.localStorage.getItem('puk-kommunikation-v1')).toContain('Private old draft');
+    expect(window.sessionStorage.getItem('puk-kommunikation-v1')).toContain('Old session copy');
+  });
+
+  it('lets users delete old drafts immediately without finishing the exercise', async () => {
+    const user = userEvent.setup();
+    window.localStorage.setItem('puk-kommunikation-v1', JSON.stringify({ beobachtung: 'Private old draft' }));
+    window.sessionStorage.setItem('puk-kommunikation-v1', JSON.stringify({ beobachtung: 'Old copy' }));
+    vi.spyOn(window, 'confirm').mockReturnValue(true);
+    render(<TOOL_COMPONENTS.kommunikation onClose={() => {}} onNavigate={() => {}} />);
+
+    await user.click(screen.getByRole('button', { name: 'Entwurf löschen' }));
+
+    expect(window.localStorage.getItem('puk-kommunikation-v1')).toBeNull();
+    expect(window.sessionStorage.getItem('puk-kommunikation-v1')).toBeNull();
+    expect(screen.getByRole('status')).toHaveTextContent('Aktuelle Eingaben und frühere Browser-Kopien gelöscht.');
+    expect(screen.getByRole('heading', { name: 'Worum geht es im Gespräch?' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Entwurf löschen' })).toBeInTheDocument();
   });
 });
 
@@ -85,18 +191,18 @@ describe('tool regressions', () => {
   });
 
   it('supports keyboard activation and navigation in the belastungsverlauf tool', async () => {
+    const user = userEvent.setup();
     const onNavigate = vi.fn();
     const onClose = vi.fn();
 
-    const { container } = render(<TOOL_COMPONENTS.belastungsverlauf onClose={onClose} onNavigate={onNavigate} />);
+    render(<TOOL_COMPONENTS.belastungsverlauf onClose={onClose} onNavigate={onNavigate} />);
 
     fireEvent.click(screen.getByRole('button', { name: /weitere mögliche verläufe/i }));
     expect(screen.getByText(/erneute erholung/i)).toBeInTheDocument();
 
-    const secondEpisode = container.querySelector('[aria-label="Wiederkehr"]');
-    expect(secondEpisode).not.toBeNull();
-    secondEpisode.focus();
-    fireEvent.keyDown(secondEpisode, { key: 'Enter' });
+    const markerButton = screen.getByRole('button', { name: 'Wiederkehr' });
+    markerButton.focus();
+    await user.keyboard('{Enter}');
     expect(screen.getByRole('heading', { level: 3, name: /wiederkehr/i })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: /unterstützung und ressourcen/i }));

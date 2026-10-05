@@ -1,0 +1,205 @@
+{
+  "status": "prepared-not-approved",
+  "reviewedAt": "2026-10-05",
+  "reviewerRole": "Technische Bestandsaufnahme anhand des Quellcodes; formelle Datenschutzfreigabe ausstehend",
+  "inventoryVersion": 1,
+  "profileCompatibility": {
+    "requestedProfile": "PUK-Websiteprofil 1.10.1",
+    "source": "templates/website/profile.json#formsAndData und Website.prompt.md aus dem bereitgestellten Website Kit",
+    "sensitiveInputPersistenceDefault": "off",
+    "implementedRule": "Aktuelle Eingaben nur im flüchtigen Komponenten-Zustand; keine Browser-Persistenz und keine Wiederherstellung alter Entwürfe",
+    "privacyReview": "not-approved",
+    "productionApproval": "not-claimed"
+  },
+  "scope": "Aktuelle Eingaben bleiben ausschliesslich im flüchtigen Komponenten-Zustand. Der Anwendungscode verwendet Browser-Speicher nur zum bestätigten Entfernen von Altbeständen aus früheren Versionen; er liest keine gespeicherten Inhalte und schreibt keine neuen Einträge. Server-Logs, Hoster-Zugangsschutz und Browser-Netzwerk-Caches sind nicht von der Anwendung verwaltet.",
+  "dataCategories": [
+    "Aktuelle freiwillige Krisenplan- und Kommunikations-Eingaben können Namen, Kontaktdaten, Gesundheits-, Beziehungs- und Betreuungsangaben enthalten; sie werden nicht im Browser-Speicher persistiert",
+    "Historische Browser-Kopien können noch die früher gespeicherten Krisenplan-Einträge und Kommunikations-Entwürfe mit besonders schützenswerten Gesundheitsdaten sowie Angaben zu Angehörigen und Dritten enthalten"
+  ],
+  "retention": "Aktuelle Eingaben: nur während der geöffneten Übung im flüchtigen Zustand; keine Wiederherstellung nach Schliessen oder Neuladen. Historische sessionStorage-Kopien: Ende der jeweiligen Tab-Sitzung, wobei Browser-Wiederherstellung diese verlängern kann. Historische localStorage-Kopien: keine frühere automatische Löschfrist; bis bestätigter Löschaktion oder manueller Entfernung der Website-Daten. Es werden keine neuen Browser-Kopien angelegt.",
+  "deleteMechanism": "Unter /werkzeuge «Alte gespeicherte Entwürfe löschen» bestätigen, um beide historischen Werkzeug-Schlüssel aus sessionStorage des aktuellen Tabs und localStorage dieses Origins zu entfernen. Alternativ im geöffneten Werkzeug «Entwurf löschen» bestätigen; dies entfernt nur dessen historische Kopien und leert den aktuellen flüchtigen Entwurf. Bei blockierter Löschung wird kein vollständiger Erfolg behauptet. Kopien in anderen Tabs und Exporte werden gesondert bereinigt. Alternative: Website-Daten dieser Domain in den Browser-Einstellungen löschen.",
+  "transmission": "verified-none",
+  "transmissionEvidence": {
+    "meaning": "Der Anwendungscode übermittelt Werkzeug-Eingaben nicht an einen Server. Exporte sind gesondert beschrieben; externe Synchronisierung und Browser-Erweiterungen liegen ausserhalb der Anwendung.",
+    "sourceFiles": [
+      "src/storage.js",
+      "src/werkzeuge-tools.jsx",
+      "src/unterstuetzung.jsx"
+    ],
+    "applicationTracking": false,
+    "thirdPartyStorage": false
+  },
+  "browserStorage": [
+    {
+      "key": "puk-krisenplan-v1",
+      "feature": "Krisenplan",
+      "route": "/werkzeuge",
+      "purpose": "Historische Entwürfe älterer Versionen gezielt löschen; keine Speicherung, kein Lesen und keine Wiederherstellung in der aktuellen Fassung",
+      "format": "JSON object",
+      "fields": [
+        "name",
+        "fruehzeichen",
+        "schritte",
+        "kontakte",
+        "klinik",
+        "hilft",
+        "nichthilft",
+        "ausweichkontakt",
+        "betreuung",
+        "geprueft",
+        "_updated"
+      ],
+      "sensitiveUserContent": true,
+      "scopes": [
+        {
+          "api": "sessionStorage",
+          "scope": "Aktueller Website-Origin, Browser-Profil und Tab; Browser können eine Sitzung beim Wiederherstellen eines Tabs erhalten oder die anfängliche Sitzung beim Duplizieren eines Tabs kopieren",
+          "default": false,
+          "activation": "Keine Speicherung angeboten. Nur Altbestände aus früheren Versionen können vorhanden sein.",
+          "expiry": "Ende der Tab-Sitzung; keine zusätzliche Frist im Anwendungscode; Browser-Wiederherstellung kann die Sitzung fortsetzen"
+        },
+        {
+          "api": "localStorage",
+          "scope": "Aktueller Website-Origin und Browser-Profil auf diesem Gerät; für weitere Tabs desselben Origins lesbar",
+          "default": false,
+          "activation": "Keine Speicherung angeboten. Nur Altbestände aus früheren Versionen können vorhanden sein.",
+          "expiry": "Historische Einträge hatten keine automatische Frist. Bis bestätigter Löschaktion oder manueller Entfernung der Website-Daten; neue Einträge werden nicht erstellt."
+        }
+      ],
+      "deletion": {
+        "selector": "[data-storage-delete='puk-krisenplan-v1']",
+        "label": "Entwurf löschen",
+        "confirmationRequired": true,
+        "removes": [
+          "sessionStorage:puk-krisenplan-v1",
+          "localStorage:puk-krisenplan-v1",
+          "aktueller flüchtiger Werkzeug-Zustand"
+        ],
+        "doesNotRemove": [
+          "Entwurf im anderen Werkzeug",
+          "historische sessionStorage-Kopien und bereits sichtbare Eingaben in anderen Tabs",
+          "bereits erstellte PDF-Dateien, Ausdrucke und Druckverläufe"
+        ],
+        "additionalGlobalSelector": "[data-storage-delete='legacy-drafts']",
+        "globalActionLabel": "Alte gespeicherte Entwürfe löschen"
+      },
+      "noticeSelectors": [
+        "[data-storage-key='puk-krisenplan-v1'] [data-storage-notice]",
+        "[data-storage-policy='browser-drafts']"
+      ],
+      "exports": [
+        "crisis-plan-print"
+      ],
+      "legacyOnly": true,
+      "persistenceEnabled": false,
+      "currentOperations": [
+        "removeItem nach ausdrücklicher bestätigter Löschaktion"
+      ]
+    },
+    {
+      "key": "puk-kommunikation-v1",
+      "feature": "Kommunikations-Trainer",
+      "route": "/werkzeuge",
+      "purpose": "Historische Entwürfe älterer Versionen gezielt löschen; keine Speicherung, kein Lesen und keine Wiederherstellung in der aktuellen Fassung",
+      "format": "JSON object",
+      "fields": [
+        "anlass",
+        "beobachtung",
+        "wirkung",
+        "bitte"
+      ],
+      "sensitiveUserContent": true,
+      "scopes": [
+        {
+          "api": "sessionStorage",
+          "scope": "Aktueller Website-Origin, Browser-Profil und Tab; Browser können eine Sitzung beim Wiederherstellen eines Tabs erhalten oder die anfängliche Sitzung beim Duplizieren eines Tabs kopieren",
+          "default": false,
+          "activation": "Keine Speicherung angeboten. Nur Altbestände aus früheren Versionen können vorhanden sein.",
+          "expiry": "Ende der Tab-Sitzung; keine zusätzliche Frist im Anwendungscode; Browser-Wiederherstellung kann die Sitzung fortsetzen"
+        },
+        {
+          "api": "localStorage",
+          "scope": "Aktueller Website-Origin und Browser-Profil auf diesem Gerät; für weitere Tabs desselben Origins lesbar",
+          "default": false,
+          "activation": "Keine Speicherung angeboten. Nur Altbestände aus früheren Versionen können vorhanden sein.",
+          "expiry": "Historische Einträge hatten keine automatische Frist. Bis bestätigter Löschaktion oder manueller Entfernung der Website-Daten; neue Einträge werden nicht erstellt."
+        }
+      ],
+      "deletion": {
+        "selector": "[data-storage-delete='puk-kommunikation-v1']",
+        "label": "Entwurf löschen",
+        "confirmationRequired": true,
+        "removes": [
+          "sessionStorage:puk-kommunikation-v1",
+          "localStorage:puk-kommunikation-v1",
+          "aktueller flüchtiger Werkzeug-Zustand"
+        ],
+        "doesNotRemove": [
+          "Entwurf im anderen Werkzeug",
+          "historische sessionStorage-Kopien und bereits sichtbare Eingaben in anderen Tabs",
+          "Zwischenablage, Zwischenablage-Verlauf und bereits geteilte Kopien"
+        ],
+        "additionalGlobalSelector": "[data-storage-delete='legacy-drafts']",
+        "globalActionLabel": "Alte gespeicherte Entwürfe löschen"
+      },
+      "noticeSelectors": [
+        "[data-storage-key='puk-kommunikation-v1'] [data-storage-notice]",
+        "[data-storage-policy='browser-drafts']"
+      ],
+      "exports": [
+        "conversation-clipboard"
+      ],
+      "legacyOnly": true,
+      "persistenceEnabled": false,
+      "currentOperations": [
+        "removeItem nach ausdrücklicher bestätigter Löschaktion"
+      ]
+    }
+  ],
+  "storageBehavior": {
+    "currentPersistence": "disabled",
+    "loading": "Keine gespeicherten Werte werden gelesen, geparst, angezeigt oder still wiederhergestellt. Beide Werkzeuge starten mit leeren Eingaben.",
+    "writing": "Keine setItem-Aufrufe im Anwendungscode; weder sessionStorage noch localStorage speichert aktuelle Eingaben.",
+    "deletionOnly": "Nach ausdrücklicher Bestätigung versucht clearStoredDraft beide historischen Kopien des betroffenen Schlüssels unabhängig voneinander zu entfernen. Die Löschaktion ist im jeweiligen Werkzeug immer erreichbar.",
+    "blockedAccess": "Der aktuelle flüchtige Entwurf wird geleert; scheitert eine Altbestands-Löschung, wird kein vollständiger Lösch-Erfolg behauptet. Die Oberfläche verweist auf die Browser-Einstellungen.",
+    "crossTabLimit": "Die Entfernung betrifft die historische Sitzungs-Kopie nur im aktuellen Tab und die dauerhafte Kopie des Origins. Historische Sitzungs-Kopien anderer Tabs müssen dort oder über die Website-Datenbereinigung entfernt werden. Noch geöffnete ältere Website-Versionen können erneut schreiben; diese Tabs ebenfalls schliessen.",
+    "protection": "Keine Verschlüsselung historischer Browser-Kopien durch die Anwendung. Andere Benutzer desselben Browser-Profils und berechtigte Browser-Erweiterungen können auf Altbestände zugreifen.",
+    "auditLimitation": "Der bereitgestellte website-rules.mjs wertet bereits jedes Vorkommen von localStorage/sessionStorage als genehmigungspflichtige Speicherung, auch reine removeItem-Bereinigung. Dieser mögliche konservative Gate-Befund belegt keine aktuelle Persistenz. status bleibt prepared-not-approved; formelle Datenschutzfreigabe wird nicht erfunden."
+  },
+  "otherApplicationStorage": {
+    "cookies": [],
+    "indexedDB": [],
+    "cacheStorage": [],
+    "serviceWorkers": [],
+    "ephemeralToolState": "Alle Übungen einschliesslich Krisenplan und Kommunikations-Trainer halten Eingaben nur im flüchtigen Komponenten-Zustand; keine Wiederherstellung durch die Anwendung nach Schliessen oder Neuladen."
+  },
+  "exports": [
+    {
+      "id": "conversation-clipboard",
+      "feature": "Kommunikations-Trainer",
+      "trigger": "Skript kopieren oder manuelles Kopieren",
+      "api": "navigator.clipboard.writeText bei sicherem Kontext; andernfalls manuelles Markieren und Kopieren",
+      "content": "Gesprächseröffnung, Beobachtung, Wirkung und Bitte",
+      "retention": "Vom Betriebssystem und Browser bestimmt; Zwischenablage-Verlauf oder Synchronisierung können zusätzliche Kopien behalten",
+      "deletion": "Zwischenablage und Verlauf separat über die Geräte-Einstellungen löschen; «Entwurf löschen» greift darauf nicht zu"
+    },
+    {
+      "id": "crisis-plan-print",
+      "feature": "Krisenplan",
+      "trigger": "Drucken / als PDF speichern",
+      "api": "window.print",
+      "content": "Ausgefüllter Krisenplan einschliesslich persönlicher Kontakte und Betreuungsabsprachen",
+      "retention": "Vom Nutzer und Drucksystem bestimmt; keine automatische Löschung durch die Website",
+      "deletion": "PDF-Dateien, Ausdrucke und Druckverlauf separat löschen oder sicher vernichten; «Entwurf löschen» greift darauf nicht zu"
+    },
+    {
+      "id": "support-handout-print",
+      "feature": "Druckmaterialien unter /unterstuetzung",
+      "trigger": "Drucken / als PDF speichern",
+      "api": "window.print",
+      "content": "Statische Informationsblätter und unausgefüllte Vorlagen; keine Erfassung persönlicher Eingaben im Browser",
+      "retention": "Vom Nutzer und Drucksystem bestimmt; keine automatische Löschung durch die Website",
+      "deletion": "PDF-Dateien, Ausdrucke und Druckverlauf separat löschen oder sicher vernichten"
+    }
+  ]
+}

@@ -30,3 +30,6 @@ lighthouse-*.json
 *.njsproj
 *.sln
 *.sw?
+
+# Runtime browser audit reports
+qa/output/

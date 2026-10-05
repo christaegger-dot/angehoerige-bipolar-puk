@@ -1,0 +1,79 @@
+/* Langform und Psychoedukation — systemeigene Webmuster, keine zusätzliche
+   Vorgabe des PUK Corporate Designs. Der Vertrag ist in
+   templates/website/longform-pattern.json dokumentiert. */
+
+.puk-longform{background:var(--surface-page);color:var(--text-default)}
+.puk-longform__hero{padding-block:clamp(48px,7vw,88px) clamp(40px,6vw,72px)}
+.puk-longform__hero .puk-web-h1{max-width:16ch}
+.puk-longform__intro{max-width:62ch;margin:var(--space-6) 0 0;font-size:clamp(21px,2.1vw,var(--web-size-lead));line-height:1.35}
+.puk-longform__boundary{max-width:72ch;margin:var(--space-6) 0 0;padding:var(--space-4) var(--space-5);border-left:3px solid var(--puk-blue-100);background:var(--status-info-bg);font-size:16px;font-weight:var(--fw-regular)}
+
+.puk-longform__roadmap{padding-block:var(--space-6);border-block:1px solid var(--border-hairline)}
+.puk-longform__roadmap-label{margin:0 0 var(--space-3);font-size:14px;font-weight:var(--fw-medium);letter-spacing:.06em;text-transform:uppercase}
+.puk-longform__roadmap ol{display:flex;gap:var(--space-2) var(--space-5);flex-wrap:wrap;margin:0;padding:0;list-style:none;counter-reset:puk-longform-step}
+.puk-longform__roadmap li{counter-increment:puk-longform-step}
+.puk-longform__roadmap a{display:inline-flex;align-items:center;min-height:var(--web-touch-target);color:var(--text-default);font-size:16px;font-weight:var(--fw-regular);text-decoration:underline;text-decoration-color:var(--puk-black-25);text-underline-offset:.22em}
+.puk-longform__roadmap a::before{content:counter(puk-longform-step,decimal-leading-zero);margin-right:var(--space-2);color:var(--text-accent);font-weight:var(--fw-medium)}
+.puk-longform__roadmap a:hover{color:var(--text-link);text-decoration-color:currentColor}
+
+.puk-longform__section{padding-block:clamp(52px,7vw,84px);scroll-margin-top:var(--space-6)}
+.puk-longform__section+.puk-longform__section{border-top:1px solid var(--border-hairline)}
+.puk-longform__section-grid{display:grid;grid-template-columns:minmax(220px,.58fr) minmax(0,1.42fr);gap:clamp(32px,7vw,96px);align-items:start}
+.puk-longform__section-heading{position:sticky;top:var(--space-6)}
+.puk-longform__section-heading .puk-web-h2{max-width:12ch}
+.puk-longform__kicker{margin:0 0 var(--space-3);color:var(--text-accent);font-size:14px;font-weight:var(--fw-medium);letter-spacing:.07em;text-transform:uppercase}
+.puk-longform__copy{max-width:var(--web-content-measure);min-width:0}
+.puk-longform__copy> :first-child{margin-top:0}
+.puk-longform__copy> :last-child{margin-bottom:0}
+.puk-longform__copy p,.puk-longform__copy li,.puk-longform__copy dd{line-height:1.55}
+.puk-longform__copy p{margin:0 0 var(--space-5)}
+.puk-longform__copy h3{margin:var(--space-10) 0 var(--space-4);font:var(--type-title-2);line-height:1.15}
+.puk-longform__copy h4{margin:var(--space-8) 0 var(--space-3);font:var(--type-title-3)}
+
+.puk-longform__term-guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--space-5);margin:var(--space-8) 0 0}
+.puk-longform__term-guide>div{padding:var(--space-5);border-top:3px solid var(--puk-blue-100);background:var(--surface-sunken)}
+.puk-longform__term-guide dt{font-weight:var(--fw-medium)}
+.puk-longform__term-guide dd{margin:var(--space-2) 0 0;color:var(--text-muted)}
+
+.puk-longform__figure{margin:var(--space-8) 0;padding:clamp(20px,4vw,40px);border:1px solid var(--border-default);background:var(--surface-sunken)}
+.puk-longform__figure-stage{display:grid;grid-template-columns:1fr auto 1fr;gap:var(--space-4);align-items:center;min-height:180px}
+.puk-longform__figure-side{padding:var(--space-5);border-top:4px solid var(--puk-blue-100);background:var(--surface-card);font-weight:var(--fw-medium);text-align:center}
+.puk-longform__figure-relation{max-width:18ch;color:var(--text-muted);font-size:16px;font-weight:var(--fw-regular);text-align:center}
+.puk-longform__figure figcaption{max-width:68ch;margin-top:var(--space-5);font-size:15px;line-height:1.5;color:var(--text-muted)}
+
+.puk-longform__reflection{margin:var(--space-8) 0;padding:clamp(20px,4vw,36px);border-left:4px solid var(--puk-blue-100);background:var(--surface-accent)}
+.puk-longform__reflection h3{margin:0 0 var(--space-3)}
+.puk-longform__reflection p{margin:0 0 var(--space-5)}
+.puk-longform__reflection label{display:block;margin-bottom:var(--space-2);font-weight:var(--fw-medium)}
+.puk-longform__reflection textarea{width:100%;min-height:132px;padding:var(--space-4);resize:vertical;border:1px solid var(--border-strong);border-radius:var(--radius-xs);background:var(--surface-card);color:var(--text-default);font:inherit;line-height:1.45}
+.puk-longform__reflection textarea:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+.puk-longform__privacy{margin:var(--space-3) 0 0!important;font-size:14px;color:var(--text-muted)}
+
+.puk-longform__transition{max-width:68ch;margin:var(--space-10) 0 0;padding-top:var(--space-5);border-top:1px solid var(--border-default);font-weight:var(--fw-regular)}
+.puk-longform__sources{margin:var(--space-8) 0 0;padding:0;list-style:none}
+.puk-longform__sources li{padding-block:var(--space-4);border-top:1px solid var(--border-hairline)}
+.puk-longform__source-use{display:block;margin-top:var(--space-2);font-size:15px;color:var(--text-muted)}
+.puk-longform__support{padding:clamp(24px,5vw,48px);border-top:4px solid var(--puk-blue-100);background:var(--surface-sunken)}
+.puk-longform__support h3{margin-top:0}
+
+/* Inline-Satzlink und eigenständige Aktion sind absichtlich getrennte
+   Verträge. Das verhindert vergrösserte Zeilenabstände bei Linkumbrüchen. */
+.puk-link--inline{display:inline;min-height:0;padding:0;color:var(--text-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
+.puk-link--inline:hover{color:var(--text-link-hover)}
+.puk-link--action{display:inline-flex;align-items:center;justify-content:center;min-height:var(--web-touch-target);padding:var(--space-2) var(--space-4);border:1px solid var(--border-strong);border-radius:var(--radius-sm);color:var(--text-default);font-weight:var(--fw-medium);text-decoration:none}
+.puk-link--action:hover{border-color:var(--puk-blue-100);color:var(--text-link)}
+
+@media (max-width:760px){
+  .puk-longform__section-grid{grid-template-columns:1fr}
+  .puk-longform__section-heading{position:static}
+  .puk-longform__section-heading .puk-web-h2{max-width:16ch}
+  .puk-longform__figure-stage{grid-template-columns:1fr;min-height:0}
+  .puk-longform__figure-relation{max-width:none}
+}
+
+@media (max-width:420px){
+  .puk-longform__roadmap ol{display:grid;grid-template-columns:1fr}
+  .puk-longform__roadmap a{width:100%}
+}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
