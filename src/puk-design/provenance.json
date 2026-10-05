@@ -37,12 +37,14 @@
     {
       "source": "tokens/colors.css",
       "path": "src/puk-design/tokens/colors.tokens.css",
-      "sha256": "6db6f130335ee6e1fac3b3f9df67670984148122f5ccbf8aa0c03d20b31ba1f3",
+      "sha256": "07fbdd3d58d4b38b245c90e2c9fc2344ed9ed45c842418ec2e40c99b53d1267b",
       "bytes": 6638,
-      "byteIdentical": true,
+      "byteIdentical": false,
       "matchesSourceKitManifest": false,
       "sourceKitManifestSha256": "b1b9c0bc1d0281774310058b9ed96ed54868e25b4ce39650415134bfef6489e6",
-      "matchesSuppliedWebsiteArchive": true,
+      "matchesSuppliedWebsiteArchive": false,
+      "sourceSha256": "6db6f130335ee6e1fac3b3f9df67670984148122f5ccbf8aa0c03d20b31ba1f3",
+      "adaptation": "Project contrast correction in commit 60b64f7: surface-brand and action-accent-bg use the supplied puk-blue-125 instead of puk-blue-100. Original palette values are unchanged.",
       "sourceKitDifference": "Derived r4 profile: supplied file differs from the original 1.10.1 source-kit provenance manifest, as documented by the supplied profile."
     },
     {

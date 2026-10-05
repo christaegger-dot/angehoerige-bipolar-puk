@@ -49,4 +49,11 @@ describe('navHandler', () => {
     expect(preloadPage).toHaveBeenNthCalledWith(2, 'werkzeuge');
     expect(preloadPage).toHaveBeenNthCalledWith(3, 'werkzeuge');
   });
+
+  it('handles a rejected speculative preload without an unhandled rejection', async () => {
+    preloadPage.mockReturnValueOnce(Promise.reject(new Error('Offline')));
+    navPreloadProps('module').onFocus();
+    await new Promise(resolve => setTimeout(resolve, 0));
+    expect(preloadPage).toHaveBeenLastCalledWith('module');
+  });
 });

@@ -4762,6 +4762,7 @@ section + section { padding-top: 0; }
   background: var(--bg);
 }
 .krisenplan-textarea { font-family: var(--sans); min-height: 80px; }
+.krisenplan-print-value { display: none; }
 .krisenplan-input::placeholder,
 .krisenplan-textarea::placeholder {
   color: var(--ink-mute);
@@ -4874,6 +4875,13 @@ section + section { padding-top: 0; }
   .handout-overlay, .handout-overlay *,
   .krisenplan-overlay, .krisenplan-overlay * { visibility: visible !important; }
 
+  /* Hidden background content still occupies printable pages. Remove only
+     siblings outside the active overlay path, including page wrappers. */
+  #main-content:has(.handout-overlay, .krisenplan-overlay) > :not(.handout-overlay):not(.krisenplan-overlay):not(:has(.handout-overlay, .krisenplan-overlay)),
+  #main-content :has(.handout-overlay, .krisenplan-overlay) > :not(.handout-overlay):not(.krisenplan-overlay):not(:has(.handout-overlay, .krisenplan-overlay)) {
+    display: none !important;
+  }
+
   /* Die eigenständige Referenzseite muss auch ohne Werkzeug-Overlay druckbar bleiben. */
   .reference-hero, .reference-hero *,
   .reference-section, .reference-section * { visibility: visible !important; }
@@ -4928,6 +4936,8 @@ section + section { padding-top: 0; }
   /* Card-Chrome strippen */
   .handout-overlay .tool-overlay-card,
   .krisenplan-overlay .tool-overlay-card {
+    animation: none !important;
+    transform: none !important;
     box-shadow: none !important;
     max-height: none !important;
     overflow: visible !important;
@@ -4966,6 +4976,12 @@ section + section { padding-top: 0; }
   .krisenplan-label-sub { color: var(--print-caption) !important; }
   .krisenplan-input,
   .krisenplan-textarea {
+    display: none !important;
+  }
+  /* Native form controls print only their visible scroll area. Normal text
+     preserves the complete in-memory value and can flow onto another page. */
+  .krisenplan-print-value {
+    display: block !important;
     border: 1px solid var(--print-rule) !important;
     background: white !important;
     color: black !important;
@@ -4973,13 +4989,13 @@ section + section { padding-top: 0; }
     font-size: 11pt !important;
     line-height: 1.45 !important;
     padding: 8px 10px !important;
-    overflow: visible !important;
-    height: auto !important;
-    min-height: auto !important;
-    resize: none !important;
-    page-break-inside: avoid;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    min-height: 2.25em;
   }
-  .krisenplan-feld { page-break-inside: avoid; margin-bottom: 14px !important; }
+  .krisenplan-print-value-multiline { min-height: 4em; }
+  .krisenplan-feld { page-break-inside: auto; margin-bottom: 14px !important; }
+  .krisenplan-label { break-after: avoid-page; }
   .krisenplan-notruf {
     background: var(--print-paper) !important;
     border-left: 2px solid var(--print-rule) !important;

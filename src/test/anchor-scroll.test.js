@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { scrollToAnchorWhenReady } from '../anchor-scroll.js';
+import { scrollToAnchorWhenReady, scrollToSection } from '../anchor-scroll.js';
 
 describe('scrollToAnchorWhenReady', () => {
   it('keeps retrying until a lazy anchor is rendered', () => {
@@ -67,4 +67,91 @@ it('does not leave a navigation-sized gap when the mobile navigation scrolls awa
   });
   expect(scrollTo).toHaveBeenCalledWith({ top: 404, behavior: 'instant' });
   nav.remove();
+});
+
+it('moves keyboard focus from the contents link to its heading and respects reduced motion', () => {
+  const section = document.createElement('section');
+  section.id = 'contents-target';
+  const heading = document.createElement('h2');
+  heading.textContent = 'Zielabschnitt';
+  section.append(heading);
+  section.getBoundingClientRect = () => ({ top: 1000 });
+  document.body.append(section);
+  const scroll = vi.spyOn(window, 'scrollTo');
+  vi.stubGlobal('matchMedia', () => ({ matches: true }));
+
+  scrollToSection('contents-target');
+
+  expect(heading).toHaveFocus();
+  expect(scroll).toHaveBeenCalledWith({ top: 920, behavior: 'instant' });
+  section.remove();
+  vi.unstubAllGlobals();
+});
+
+it('realigns a bookmarked section after the web font changes the layout', async () => {
+  let resolveFonts;
+  const ready = new Promise(resolve => { resolveFonts = resolve; });
+  const callbacks = [];
+  let top = 260;
+  const scrollTo = vi.fn();
+  const cleanup = scrollToAnchorWhenReady('section', {
+    fonts: { status: 'loading', ready },
+    requestFrame: callback => { callbacks.push(callback); return callbacks.length; },
+    cancelFrame: vi.fn(),
+    getElementById: () => ({ getBoundingClientRect: () => ({ top }) }),
+    scrollTo,
+    offset: 80,
+  });
+  callbacks.shift()();
+  expect(scrollTo).toHaveBeenLastCalledWith({ top: 180, behavior: 'instant' });
+
+  top = 400;
+  resolveFonts();
+  await Promise.resolve();
+  callbacks.shift()();
+  expect(scrollTo).toHaveBeenLastCalledWith({ top: 320, behavior: 'instant' });
+  cleanup();
+});
+
+it.each(['wheel', 'pointerdown', 'keydown'])('does not pull the reader back after %s interaction while fonts load', async type => {
+  let resolveFonts;
+  const ready = new Promise(resolve => { resolveFonts = resolve; });
+  const callbacks = [];
+  const scrollTo = vi.fn();
+  const cleanup = scrollToAnchorWhenReady('section', {
+    fonts: { status: 'loading', ready },
+    requestFrame: callback => { callbacks.push(callback); return callbacks.length; },
+    cancelFrame: vi.fn(),
+    getElementById: () => ({ getBoundingClientRect: () => ({ top: 260 }) }),
+    scrollTo,
+    offset: 80,
+  });
+  callbacks.shift()();
+  window.dispatchEvent(new Event(type));
+  resolveFonts();
+  await Promise.resolve();
+  expect(callbacks).toHaveLength(0);
+  expect(scrollTo).toHaveBeenCalledTimes(1);
+  cleanup();
+});
+
+it('cancels pending font realignment when the route changes', async () => {
+  let resolveFonts;
+  const ready = new Promise(resolve => { resolveFonts = resolve; });
+  const callbacks = [];
+  const scrollTo = vi.fn();
+  const cleanup = scrollToAnchorWhenReady('section', {
+    fonts: { status: 'loading', ready },
+    requestFrame: callback => { callbacks.push(callback); return callbacks.length; },
+    cancelFrame: vi.fn(),
+    getElementById: () => ({ getBoundingClientRect: () => ({ top: 260 }) }),
+    scrollTo,
+    offset: 80,
+  });
+  callbacks.shift()();
+  cleanup();
+  resolveFonts();
+  await Promise.resolve();
+  expect(callbacks).toHaveLength(0);
+  expect(scrollTo).toHaveBeenCalledTimes(1);
 });

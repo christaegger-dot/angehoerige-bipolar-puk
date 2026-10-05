@@ -12,7 +12,12 @@ function anchorTop(el, offset) {
 
 function scrollToSection(id) {
   const el = document.getElementById(id);
-  if (el) window.scrollTo({ top: anchorTop(el, navigationOffset()), behavior: 'smooth' });
+  if (!el) return;
+  const destination = el.querySelector('h1, h2, h3') || el;
+  if (!destination.hasAttribute('tabindex')) destination.setAttribute('tabindex', '-1');
+  destination.focus({ preventScroll: true });
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: anchorTop(el, navigationOffset()), behavior: reduceMotion ? 'instant' : 'smooth' });
 }
 
 function scrollToAnchorWhenReady(id, options = {}) {
@@ -23,11 +28,31 @@ function scrollToAnchorWhenReady(id, options = {}) {
     cancelFrame = window.cancelAnimationFrame.bind(window),
     getElementById = document.getElementById.bind(document),
     scrollTo = window.scrollTo.bind(window),
+    fonts = document.fonts,
   } = options;
 
   let cancelled = false;
   let rafId = 0;
   let attempts = 0;
+  let stopFontCorrection = () => {};
+
+  const correctAfterFontsLoad = () => {
+    if (!fonts || fonts.status !== 'loading') return;
+    let userInteracted = false;
+    const onInteraction = () => { userInteracted = true; };
+    const interactionEvents = ['wheel', 'pointerdown', 'keydown'];
+    interactionEvents.forEach(type => window.addEventListener(type, onInteraction, { passive: true }));
+    stopFontCorrection = () => interactionEvents.forEach(type => window.removeEventListener(type, onInteraction));
+    void fonts.ready.then(() => {
+      if (cancelled || userInteracted) { stopFontCorrection(); return; }
+      rafId = requestFrame(() => {
+        stopFontCorrection();
+        if (cancelled || userInteracted) return;
+        const el = getElementById(id);
+        if (el) scrollTo({ top: anchorTop(el, offset ?? navigationOffset()), behavior: 'instant' });
+      });
+    }, () => stopFontCorrection());
+  };
 
   const run = () => {
     if (cancelled) return;
@@ -40,6 +65,7 @@ function scrollToAnchorWhenReady(id, options = {}) {
     const el = getElementById(id);
     if (el) {
       scrollTo({ top: anchorTop(el, offset ?? navigationOffset()), behavior: 'instant' });
+      correctAfterFontsLoad();
       return;
     }
 
@@ -57,6 +83,7 @@ function scrollToAnchorWhenReady(id, options = {}) {
   return () => {
     cancelled = true;
     cancelFrame(rafId);
+    stopFontCorrection();
   };
 }
 

@@ -4,6 +4,7 @@ import { TOOLS } from './site-content.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 import { loadWerkzeugTool, preloadWerkzeugTool } from './werkzeug-loader.js';
 import { clearStoredDraft } from './storage.js';
+import { LoadErrorBoundary } from './load-error-boundary.jsx';
 
 const LEGACY_DRAFT_KEYS = ['puk-krisenplan-v1', 'puk-kommunikation-v1'];
 
@@ -16,7 +17,7 @@ const LAZY_TOOL_COMPONENTS = Object.fromEntries(
 
 function werkzeugPreloadProps(tool) {
   const preload = () => {
-    preloadWerkzeugTool(tool);
+    void preloadWerkzeugTool(tool).catch(() => {});
   };
 
   return {
@@ -34,6 +35,17 @@ function ToolLoadingOverlay({ onClose }) {
       <p className="lede" style={{ maxWidth: '40ch' }}>
         Das interaktive Werkzeug wird geladen.
       </p>
+    </ToolOverlay>
+  );
+}
+
+function ToolLoadError({ onClose }) {
+  return (
+    <ToolOverlay onClose={onClose} ariaLabel="Werkzeug konnte nicht geladen werden">
+      <span className="kicker">Werkzeug</span>
+      <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Das Werkzeug konnte nicht geöffnet werden.</h2>
+      <p>Laden Sie die Seite erneut, um das Werkzeug noch einmal zu öffnen. Sie können dieses Fenster auch schliessen und die übrigen Inhalte nutzen.</p>
+      <button type="button" className="btn btn-primary" onClick={() => window.location.reload()}>Seite neu laden</button>
     </ToolOverlay>
   );
 }
@@ -116,9 +128,11 @@ function WerkzeugePage({ onNavigate, anchor }) {
       </section>
 
       {ActiveTool && (
-        <React.Suspense fallback={<ToolLoadingOverlay onClose={closeTool} />}>
-          <ActiveTool onClose={closeTool} onNavigate={onNavigate} />
-        </React.Suspense>
+        <LoadErrorBoundary resetKey={openTool} fallback={<ToolLoadError onClose={closeTool} />}>
+          <React.Suspense fallback={<ToolLoadingOverlay onClose={closeTool} />}>
+            <ActiveTool onClose={closeTool} onNavigate={onNavigate} />
+          </React.Suspense>
+        </LoadErrorBoundary>
       )}
     </>
   );

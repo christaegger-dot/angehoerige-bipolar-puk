@@ -18,7 +18,9 @@ function navHref(target, anchor) {
 
 function navPreloadProps(target) {
   const preload = () => {
-    preloadPage(target);
+    // Speculative loading must not create an unhandled rejection. Actual
+    // navigation reports a failed import through the page error boundary.
+    void preloadPage(target)?.catch(() => {});
   };
 
   return {

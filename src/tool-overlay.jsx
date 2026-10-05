@@ -31,7 +31,7 @@ function useToolOverlay(onClose) {
       } else if (!e.shiftKey && active === last) {
         e.preventDefault();
         first.focus();
-      } else if (!getFocusables().includes(active)) {
+      } else if (!document.querySelector('.tool-overlay-card')?.contains(active)) {
         e.preventDefault();
         first.focus();
       }
@@ -40,12 +40,15 @@ function useToolOverlay(onClose) {
     window.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
 
-    requestAnimationFrame(() => {
+    const focusFrame = requestAnimationFrame(() => {
+      // A fast interaction may already have focused a step inside the dialog.
+      if (document.querySelector('.tool-overlay-card')?.contains(document.activeElement)) return;
       const focusables = getFocusables();
       if (focusables.length > 0) focusables[0].focus();
     });
 
     return () => {
+      cancelAnimationFrame(focusFrame);
       window.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
       if (previousFocus && typeof previousFocus.focus === 'function' && document.contains(previousFocus)) {
