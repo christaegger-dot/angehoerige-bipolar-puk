@@ -346,7 +346,7 @@ function KrisenplanTool({ onClose, onNavigate }) {
         <header className="krisenplan-head">
           <span className="kicker">Werkzeug · Krisenplan</span>
           <h2>Krisenplan</h2>
-          <p className="krisenplan-intro">In ruhiger Phase ausfüllen. In der Krise nur noch lesen — Sie müssen nicht mehr entscheiden, sondern handeln.</p>
+          <p className="krisenplan-intro">Füllen Sie den Plan in einer ruhigen Phase aus. In einer Krise kann er Ihnen helfen, nächste Schritte und passende Kontakte zu finden. Er ersetzt keine fachliche Einschätzung. Holen Sie bei Unsicherheit professionelle Unterstützung.</p>
           <div className="tool-intro-notes krisenplan-intro-notes">
             <p>Standardmässig bleibt der Entwurf nur bis zum Schliessen dieses Tabs erhalten und wird nicht versendet.</p>
             <p>Wenn Sie drucken oder als PDF speichern, entstehen zusätzliche Kopien auf Ihrem Gerät. Auf gemeinsam genutzten Geräten können Sie den Entwurf unten zusätzlich dauerhaft löschen.</p>
