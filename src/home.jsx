@@ -138,7 +138,7 @@ function HomePage({ onNavigate }) {
           <ul className="tools-row" role="list" aria-label="Ausgewählte Werkzeuge">
             {[TOOLS[0], TOOLS[3], TOOLS[1]].map((t) =>
               <li key={t.tool}>
-                <a className="tools-row-item" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')}>
+                <a className="tools-row-item" href={navHref('werkzeuge', t.tool)} onClick={navHandler('werkzeuge', onNavigate, t.tool)} {...navPreloadProps('werkzeuge')}>
                   <span className="tools-row-tag">{t.tag}</span>
                   <h3>{t.title}</h3>
                   <p>{t.desc}</p>

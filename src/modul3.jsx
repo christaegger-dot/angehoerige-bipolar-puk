@@ -362,7 +362,7 @@ function Modul3Page({ onNavigate }) {
                     <p>Werkzeuge für Gespräche, Krisenpläne und konkrete Schritte — wenn Sie nicht mehr nur lesen, sondern handeln möchten.</p>
                   </div>
                 </a>
-                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge', 'kommunikation')} onClick={navHandler('werkzeuge', onNavigate, 'kommunikation')}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeug — Kommunikations-Trainer</h3>

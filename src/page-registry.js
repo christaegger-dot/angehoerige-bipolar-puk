@@ -21,9 +21,9 @@ const SchweigepflichtPage = React.lazy(() => preloadPage('schweigepflicht').then
 const PAGE_RENDERERS = {
   start: (props) => React.createElement(HomePage, { onNavigate: props.onNavigate }),
   module: (props) => React.createElement(ModulePage, { onNavigate: props.onNavigate }),
-  werkzeuge: (props) => React.createElement(WerkzeugePage, { onNavigate: props.onNavigate }),
+  werkzeuge: (props) => React.createElement(WerkzeugePage, { onNavigate: props.onNavigate, anchor: props.anchor }),
   notfall: (props) => React.createElement(NotfallPage, { onNavigate: props.onNavigate }),
-  unterstuetzung: (props) => React.createElement(UnterstuetzungPage, { onNavigate: props.onNavigate }),
+  unterstuetzung: (props) => React.createElement(UnterstuetzungPage, { onNavigate: props.onNavigate, anchor: props.anchor }),
   modul1: (props) => React.createElement(Modul1Page, { onNavigate: props.onNavigate }),
   modul2: (props) => React.createElement(Modul2Page, { onNavigate: props.onNavigate }),
   modul3: (props) => React.createElement(Modul3Page, { onNavigate: props.onNavigate }),

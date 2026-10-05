@@ -152,7 +152,7 @@ function Modul1Page({ onNavigate }) {
             <section id="s3">
               <h2>Bipolar ist mehr als Hoch und Tief</h2>
               <p>Das gängige Bild ist zu simpel: oben Manie, unten Depression, dazwischen Normalität. In der Realität sind Verläufe oft unruhiger. Es gibt klare Episoden, schleichende Übergänge, gemischte Zustände, scheinbar gute Phasen mit Kipprisiko und stabile Zeiten, die sich für Angehörige trotzdem nicht wirklich sicher anfühlen.</p>
-              <p>Stabile Phasen sind wichtig, aber nicht automatisch entlastend. Viele Angehörige kommen innerlich erst verzögert aus der Alarmbereitschaft heraus. Manchmal bleibt auch zwischen Episoden eine Restanspannung: auf Seiten der erkrankten Person, aber auch bei Ihnen.</p>
+              <p>Stabile Phasen können entlasten. Nach belastenden Episoden kann Ihre eigene Alarmbereitschaft jedoch noch eine Zeit lang anhalten. In <a className="puk-link--inline" href={navHref('modul2', 's3')} onClick={navHandler('modul2', onNavigate, 's3')}>Modul 2: erhöhte Wachsamkeit</a> finden Sie eine ausführlichere Reflexion dazu und zu Ihrer eigenen Entlastung.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Zur Einordnung</span>
@@ -177,11 +177,10 @@ function Modul1Page({ onNavigate }) {
               <p>Wahnvorstellungen oder Wahrnehmungen ohne äussere Entsprechung können während einer schweren Manie oder Depression auftreten. Sie werden von der betroffenen Person häufig als real erlebt. Es handelt sich nicht um eine zweite Persönlichkeit. Neue solche Veränderungen brauchen fachliche Einschätzung.</p>
 
               <h3>Stabile Phase (Euthymie)</h3>
-              <p>Wichtige Zeitfenster — aber nicht immer echte innere Entwarnung.</p>
-              <p><strong>Raum für Erholung.</strong> Stabile Phasen können lange dauern und echte Entlastung ermöglichen. Nach einer Krise kann die eigene Wachsamkeit noch eine Zeit lang bestehen bleiben.</p>
+              <p>Zeitfenster für Erholung, Gespräche und gemeinsame Vorbereitung.</p>
+              <p><strong>Raum für Erholung.</strong> Stabile Phasen können lange dauern und echte Entlastung ermöglichen. Ihre eigene Erholung darf ein anderes Tempo haben.</p>
               <p><strong>Restsymptome möglich.</strong> Zwischen Episoden können milde Symptome bestehen bleiben. <em>«Ist diese gute Laune echt — oder schon der Beginn einer Manie?»</em></p>
               <p><strong>Zeit für Krisenplanung.</strong> Stabile Phasen sind der richtige Moment für wichtige Gespräche. <em>«Jetzt können wir reden — über Grenzen, Vereinbarungen, Notfallplan.»</em></p>
-              <p>Stabile Phasen sind wichtig für Planung, Gespräche und Erholung. Sie können echte Entlastung und neue Absprachen ermöglichen. Gleichzeitig sind sie nicht automatisch unbelastet: Viele Angehörige prüfen in dieser Zeit innerlich weiter, ob das wirklich Ruhe ist — oder nur die Vorstufe zur nächsten Welle.</p>
 
               <h3>Depression</h3>
               <p>Nicht nur Traurigkeit, sondern Leere, Verlangsamung und oft lange Hilflosigkeit auf beiden Seiten. Ob eine Depression im Rahmen einer bipolaren Störung auftritt, wird anhand des gesamten bisherigen Verlaufs fachlich beurteilt. Angehörige können konkrete Veränderungen beschreiben; sie müssen die Diagnose nicht selbst einordnen.</p>
@@ -245,7 +244,6 @@ function Modul1Page({ onNavigate }) {
               <h2>Was das für Angehörige bedeutet</h2>
               <p>Wenn Verläufe unklar, wiederkehrend oder widersprüchlich sind, entsteht bei Angehörigen oft ein Zustand permanenter Einordnung: Sie beobachten Schlaf, Sprache, Tempo, Geld, Rückzug, Gereiztheit — und fragen sich gleichzeitig, ob Sie überreagieren. Genau diese Unsicherheit ist eine eigene Belastung.</p>
               <p>Die Unterscheidung zwischen Person und Symptom kann helfen. Sie verhindert, dass Sie jedes Verhalten nur noch als bösen Willen lesen. Aber sie löst nicht alles. Auch krankheitsbedingtes Verhalten kann verletzen, Angst machen oder Vertrauen erschüttern. Verstehen entlastet also oft die Einordnung — nicht automatisch die Beziehung oder Ihre Erschöpfung.</p>
-              <p>Viele Angehörige erleben stabile Phasen ambivalent: als Erleichterung und gleichzeitig als Zeit erhöhter Wachsamkeit. Nach schweren Episoden kommen oft Scham, vorsichtige Hoffnung und die Frage zusammen, wie viel Normalität man sich überhaupt noch trauen darf.</p>
               <p>In einer Episode können Erleben und Verhalten stark verändert sein. Die Person bleibt mehr als diese Episode: mit ihrer Geschichte, ihren Fähigkeiten, Interessen und Beziehungen. Eine krankheitsbezogene Einordnung hebt Ihre Gefühle oder Schutzbedürfnisse nicht auf.</p>
             </section>
 

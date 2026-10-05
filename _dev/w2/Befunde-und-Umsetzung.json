@@ -1,0 +1,330 @@
+{
+  "review": "W2",
+  "implementationDate": "2026-10-05",
+  "reviewBase": "02dd82874b24621cc68afdc67f3a11ab097ec6a1",
+  "branch": "fix/w1-content-review",
+  "scope": "Alle 14 autorisierten W2-Massnahmen; W1-Textstand als Basis",
+  "summary": {
+    "total": 14,
+    "implemented": 14,
+    "important": 6,
+    "optional": 8,
+    "w1VerificationsStillPending": 35
+  },
+  "findings": [
+    {
+      "id": "W2-01",
+      "priority": "wichtig",
+      "categories": [
+        "C",
+        "E"
+      ],
+      "pages": "Start, Werkzeuge, Phasenverlauf, M1",
+      "problem": "Der Dialog behauptet, die ersten beiden Auswahlfelder «erklären Diagnosen» ([werkzeuge-tools.jsx:1309](/workspace/angehoerige-bipolar-puk/src/werkzeuge-tools.jsx:1309)); die Details zu Bipolar I/II erklären die Unterscheidung aber nicht und begrenzen ausdrücklich diagnostische Kriterien. Die gemeinsame Ankündigung verspricht ebenfalls eine Veranschaulichung von Diagnosen ([site-content.js:20](/workspace/angehoerige-bipolar-puk/src/site-content.js:20)).",
+      "relevance": "Das Werkzeug erfüllt den ausdrücklich behaupteten Erklärungsschritt nicht. Der vorhandene M1-Link führt zu Episoden in s4 statt zur Unterscheidung der Diagnosetypen in s5.",
+      "proposal": "Ankündigung und Einleitung auf fiktive Verlaufsskizzen und mögliche Erfahrungen begrenzen. Vorhandenen M1-Link für die Diagnoseunterscheidung passend beschriften und zu s5 führen. Keine in W1 zurückgenommenen ungeprüften Kriterien einsetzen, um ein altes Versprechen zu erfüllen.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Phasenverlauf in Karte, Einleitung und Detailüberschriften als fiktive Verlaufsskizzen und mögliche Erfahrungen angekündigt. Diagnosevertiefung führt zu Modul 1 s5.",
+        "files": [
+          "src/site-content.js",
+          "src/werkzeuge-tools.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-02",
+      "priority": "wichtig",
+      "categories": [
+        "C"
+      ],
+      "pages": "M4/M5/M7, Werkzeug «Wenn Belastung Gespräche verändert»",
+      "problem": "Derselbe zweite Aspekt heisst in M5 «Zusätzliche Verantwortung» ([modul5.jsx:268](/workspace/angehoerige-bipolar-puk/src/modul5.jsx:268)), im Werkzeug «Überengagement» mit «Sie übernehmen alles» ([werkzeuge-tools.jsx:1158](/workspace/angehoerige-bipolar-puk/src/werkzeuge-tools.jsx:1158)). M7 sagt «Verantwortung für die Erkrankung nicht allein» ([modul7.jsx:433](/workspace/angehoerige-bipolar-puk/src/modul7.jsx:433)); M5 schliesst die Ableitung von Verantwortung für den Krankheitsverlauf ausdrücklich aus.",
+      "relevance": "Neutral benannte, vereinbarte Unterstützung wird beim Oberflächenwechsel als übermässiges Engagement bewertet; der Abschluss lässt wiederum eine allgemeine Erkrankungsverantwortung anklingen. Das schwächt die zentrale entlastende Haltung.",
+      "proposal": "Vier Aspekte gemeinsam benennen, «Zusätzliche Verantwortung» offen und ohne «alles»-Zuschreibung erklären. Durchgehend vereinbarte Aufgaben/Beobachtungen, eigene Grenzen sowie fachliche Behandlung auseinanderhalten. Den M7-Satz auf Aufgaben und Unterstützung beziehen. Keine Gleichsetzung mit EE oder Rückfallschuld.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Modul 5 und Werkzeug verwenden Zusätzliche Verantwortung. Mögliche gewünschte, tragbare Aufgaben und eigene Grenzen ersetzen Überengagement/Alles-Zuschreibung; Modul 7 begrenzt Verantwortung auf vereinbarte Aufgaben und Beobachtungen.",
+        "files": [
+          "src/modul5.jsx",
+          "src/modul7.jsx",
+          "src/werkzeuge-tools.jsx",
+          "src/tool-reflow.css"
+        ]
+      }
+    },
+    {
+      "id": "W2-03",
+      "priority": "wichtig",
+      "categories": [
+        "E",
+        "B"
+      ],
+      "pages": "Start, Modulübersicht, Orientierung",
+      "problem": "«Nein, eher Werkzeuge» und «Sowohl als auch» führen zur gleichen Themenfrage; deren Ergebnisse sind nur M2/M3/M6 ([triage-flow.jsx:32](/workspace/angehoerige-bipolar-puk/src/triage-flow.jsx:32), Ergebnisdefinitionen ab Zeile 4). Im Browser führte «Werkzeuge» + «Grenzen/Gespräche» ausschliesslich zu M6. Bei «beides» fehlt auch der gewählte Grundlagenweg.",
+      "relevance": "Der abgefragte Bedarf wirkt sich nicht passend auf das Ergebnis aus. Globale Direktlinks mildern das Problem, erfüllen aber die im begonnenen Dialog getroffene Auswahl nicht.",
+      "proposal": "Gewähltes Format im Ergebnis erhalten: konkreter Werkzeugzugang bei «Werkzeuge», Grundlagen und praktische Anwendung bei «beides». Das Thema darf diese Wege präzisieren. Derselbe Ablauf auf Start und Modulübersicht muss dieselbe Logik nutzen.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Orientierung erhält den gewählten Formatbedarf: Werkzeuge bietet den zum Thema passenden Dialog plus freiwilliges Modul; beides enthält Modul 1, den Dialog und die thematische Vertiefung. Neustart setzt das Format zurück.",
+        "files": [
+          "src/triage-flow.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-04",
+      "priority": "wichtig",
+      "categories": [
+        "E",
+        "B"
+      ],
+      "pages": "Start, M2/M3/M4/M6/M7, Werkzeuge, Materialien",
+      "problem": "Benannte Werkzeuglinks führen zur Übersicht statt zur ausgewählten Anwendung; die Startkarte «Krisenplan · Öffnen» endete im Browser mit keinem geöffneten Dialog. M6 verspricht zusätzlich «Fragen fürs Arztgespräch», führt aber nur zu Werkzeuge ([modul6.jsx:535](/workspace/angehoerige-bipolar-puk/src/modul6.jsx:535)); DL-08 liegt unter Unterstützung. Einzelne Kurzmaterialien sind nur über eine erneute Auswahl innerhalb der Seite erreichbar.",
+      "relevance": "Die konkrete Entscheidung muss wiederholt werden; das ausdrücklich versprochene Arztmaterial wird am Ziel gar nicht angeboten. Ein gezielter Verweis aus Beratung, Lesezeichen oder Modul kann das gewünschte Angebot derzeit nicht zuverlässig mitführen.",
+      "proposal": "Benannte Verweise zum benannten Angebot führen und gezielte Einstiege für Werkzeug/Material ermöglichen. «Alle Werkzeuge/Materialien» bleibt der Überblicksweg. M6 getrennt zum vorhandenen Plan und zu DL-08 führen. Technische Ausgestaltung erst bei Umsetzung/W3 festlegen.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Ankeradressen öffnen ausgewählte Werkzeuge und Materialien direkt; Routing aktualisiert Auswahl auch bei Neuladen und Browsernavigation. Benannte Start-/Modulkarten führen direkt. Modul 6 trennt Krisenplan und DL-08. Schliessen entfernt die Dialogauswahl aus der Adresse und führt Fokus zur Karte.",
+        "files": [
+          "src/app.jsx",
+          "src/page-registry.js",
+          "src/werkzeuge.jsx",
+          "src/unterstuetzung.jsx",
+          "src/home.jsx",
+          "src/modul2.jsx",
+          "src/modul3.jsx",
+          "src/modul4.jsx",
+          "src/modul6.jsx",
+          "src/modul7.jsx",
+          "src/puk-website.css"
+        ]
+      }
+    },
+    {
+      "id": "W2-06",
+      "priority": "wichtig",
+      "categories": [
+        "B",
+        "D"
+      ],
+      "pages": "M6, Krisenplan-Werkzeug",
+      "problem": "«Krisenplan in vier Feldern», «Vereinbarung in stabiler Phase» und die vollständige interaktive Vorlage behandeln ähnliche Absprachen, ohne ihr Verhältnis zu erklären ([modul6.jsx:143](/workspace/angehoerige-bipolar-puk/src/modul6.jsx:143), Einfügung ab Zeile 287; vollständige Vorlage [werkzeuge-tools.jsx:231](/workspace/angehoerige-bipolar-puk/src/werkzeuge-tools.jsx:231)). Der Werkzeugweg erscheint erst später.",
+      "relevance": "Es bleibt unklar, ob mehrere Dokumente nötig sind und welches für die eigene Vorbereitung gedacht ist. Wiederholung ersetzt hier den fehlenden Arbeitsschritt.",
+      "proposal": "Vier Felder als Kurzüberblick kennzeichnen und dort direkt zur vollständigen gemeinsamen Vorlage führen. Die Vereinbarung nur mit einem klaren ergänzenden Zweck behalten; andernfalls gleiche Absprachen in die Planvorbereitung integrieren. Ablauf: verstehen → gemeinsam ausfüllen → Aufgaben/Zuständigkeiten klären → Überprüfung vereinbaren.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Vier Planfragen als Kurzüberblick mit direkter vollständiger Vorlage. Funktionsgleiche zweite Vereinbarung entfernt; gemeinsame Vorbereitung, gewünschte Aufgaben, fachliche Zuständigkeit und Überprüfung erklärt. Private Absprachen geben keine allgemeine Entscheidungsbefugnis; DL-09 öffnet dieselbe Vorlage.",
+        "files": [
+          "src/modul6.jsx",
+          "src/werkzeuge-tools.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-08",
+      "priority": "wichtig",
+      "categories": [
+        "B",
+        "E",
+        "F"
+      ],
+      "pages": "M6 Hilfeablehnung/Behandlung, Unterstützung",
+      "problem": "M6 setzt beim Informieren und Hinzuziehen weitgehend ein bestehendes Behandlungsteam voraus ([modul6.jsx:453](/workspace/angehoerige-bipolar-puk/src/modul6.jsx:453), besonders Zeilen 461/476/491). Hilfe für Angehörige ohne bestehende Behandlung oder vorherige Überzeugung der anderen Person ist bereits in den FAQ vorhanden ([unterstuetzung.jsx:567](/workspace/angehoerige-bipolar-puk/src/unterstuetzung.jsx:567)), wird hier aber nicht angeschlossen.",
+      "relevance": "Die passende Hauptseite für abgelehnte Hilfe beantwortet den Fall «kein Team / keine Mitwirkung» nicht als erreichbaren nächsten Weg. Das betrifft den eigenen Handlungsspielraum der Angehörigen, keine fehlende Krisenorientierung.",
+      "proposal": "In der nicht akuten Vorbereitung zwei Wege unterscheiden: bestehendes Team und keine bestehende Behandlung/abgelehnte Mitwirkung. Beim zweiten Weg eigene Angehörigenberatung und Klärung der eigenen Grenzen verbinden. Vorhandene FAQ nutzen; keine Zusage einer Behandlung gegen den Willen der Person.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Modul 6 unterscheidet bestehendes Team von fehlender Behandlung/Mitwirkung und verbindet den zweiten Fall mit eigener Angehörigenberatung. Keine Zustimmung der erkrankten Person als Voraussetzung für eigene Unterstützung verlangt.",
+        "files": [
+          "src/modul6.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-05",
+      "priority": "optional",
+      "categories": [
+        "B",
+        "E"
+      ],
+      "pages": "Unterstützung, DL-01/06/07/08, Schweigepflicht, M1/M6",
+      "problem": "Kurzmaterialien enden mit Druck/Schliessen, ohne passende fachliche Vertiefung ([unterstuetzung.jsx:535](/workspace/angehoerige-bipolar-puk/src/unterstuetzung.jsx:535)). DL-08 und FAQ behandeln Schweigepflicht bereits verständlich, verbinden aber nicht mit der vorhandenen Referenzseite (Zeilen 353/571). Diese bietet ihrerseits keinen Anschluss an Arztfragen oder eigene Beratung.",
+      "relevance": "Die kurzen Einstiege sind benutzbar und kein erheblicher Verständlichkeitsbruch. Freiwillige Verbindungen würden aber das Weiterlernen und die Vorbereitung der eigenen Fragen erleichtern.",
+      "proposal": "Passende Anschlüsse anbieten: DL-01 → M1, DL-06/07 → jeweiliger M6-Abschnitt, DL-08/FAQ → Schweigepflicht. Von der Referenz zu DL-08 und eigener Angehörigenberatung führen; unterschiedliche Vertraulichkeitskontexte benennen. Keine zweite Rechtsseite oder neue Rechtsbehauptung nötig.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "DL-01/06/07/08 bieten passende Modul-/Schweigepflicht-Vertiefungen. FAQ verbindet mit Schweigepflicht; Referenzseite führt zu DL-08 und eigener Beratung. Unterstützung hat erreichbare Abschnittsanker.",
+        "files": [
+          "src/unterstuetzung.jsx",
+          "src/schweigepflicht.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-07",
+      "priority": "optional",
+      "categories": [
+        "B",
+        "E"
+      ],
+      "pages": "M5 → M6",
+      "problem": "M5-Kurzweg empfiehlt eine selbst umsetzbare Grenze; der Haupttext vertagt konkrete Schritte in das nächste Modul ([modul5.jsx:372](/workspace/angehoerige-bipolar-puk/src/modul5.jsx:372)). Der vorhandene Link benennt M6 als Ort für Gespräche und Grenzen; die entsprechende Anleitung steht dort erst in s8 ([modul6.jsx:429](/workspace/angehoerige-bipolar-puk/src/modul6.jsx:429)).",
+      "relevance": "Der Übergang trägt grundsätzlich. Ein konkretes Sprungziel würde die im Kurzweg angeregte Aufgabe leichter fortsetzen und das Suchen im langen M6 vermeiden.",
+      "proposal": "In M5 einen kleinen Grenzschritt ermöglichen oder direkt zu M6 s8 führen. Allgemeinen Einstieg in M6 daneben erhalten. Eigene Handlung von einer Bitte an die andere Person unterscheiden.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Modul 5 enthält einen kleinen eigenen Grenzschritt, unterscheidet Bitte und eigene Handlung und verbindet direkt mit Modul 6 s8; allgemeiner M6-Weg bleibt.",
+        "files": [
+          "src/modul5.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-09",
+      "priority": "optional",
+      "categories": [
+        "A",
+        "B"
+      ],
+      "pages": "Start, Rollenhinweise, M2/M5/M6",
+      "problem": "Die Startseite nennt fünf Angehörigenrollen ([home.jsx:28](/workspace/angehoerige-bipolar-puk/src/home.jsx:28)). Ausführliche Situationen sind überwiegend paarbezogen; erwachsene Kinder eines betroffenen Elternteils und Freundschaften erhalten in allen Modulen bereits nutzbare, aber aufklappbare Transferhinweise ([module-guidance.jsx:14](/workspace/angehoerige-bipolar-puk/src/module-guidance.jsx:14)).",
+      "relevance": "Die Rollen fehlen nicht. Sichtbare kurze Beispiele würden jedoch die Übertragung auf heutige Begleitung eines Elternteils oder Kontakt ohne gemeinsamen Haushalt erleichtern. Daraus folgt keine Pflicht zu gleicher Rollenquote oder eigenen Modulen.",
+      "proposal": "Bei einer Überarbeitung je eine kurze Situation für erwachsene Kinder eines betroffenen Elternteils und Freundschaften in vorhandene Haupttexte integrieren. Gewünschte Unterstützung, eigene Grenze und nächsten Schritt zeigen. Bestehende Eltern-/Geschwister-/Kinderinhalte erhalten.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Sichtbare fiktive Beispiele: erwachsene Tochter begleitet ihren Vater auf dessen Wunsch; Freundschaft ohne gemeinsamen Haushalt vereinbart Kontakt und Verfügbarkeit. Beide zeigen gewünschte Hilfe, eigene Grenze und nächsten Schritt.",
+        "files": [
+          "src/modul2.jsx",
+          "src/modul5.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-10",
+      "priority": "optional",
+      "categories": [
+        "C",
+        "D"
+      ],
+      "pages": "M5 s4, M6 s5",
+      "problem": "M5 erlaubt bei wiederholten Fragen nach Zuwendung ehrliche Bestätigung plus Grenze ([modul5.jsx:280](/workspace/angehoerige-bipolar-puk/src/modul5.jsx:280)). M6 antwortet auf wiederholte Fragen zur Genesung «Nicht mehr Bestätigung, sondern Umlenken», nutzt aber denselben Zuwendungssatz ([modul6.jsx:415](/workspace/angehoerige-bipolar-puk/src/modul6.jsx:415)).",
+      "relevance": "Die Fragen haben verschiedene Gegenstände; deshalb kein nachgewiesener fachlicher Widerspruch. Der kategorische M6-Einstieg erschwert aber das Erkennen, welche Bestätigung gemeint ist.",
+      "proposal": "Ehrliche Zuwendung von einer nicht möglichen Genesungsgarantie unterscheiden. M5 behält Beziehung/Zuwendung, M6 die begrenzte Antwort auf Prognosefragen. Keine zusätzliche Diagnose oder pauschale Wirksamkeitsbehauptung.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Modul 6 unterscheidet ehrliche Zuwendung von einer nicht möglichen Genesungsgarantie und erlaubt eine eigene Verfügbarkeitsgrenze.",
+        "files": [
+          "src/modul6.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-11",
+      "priority": "optional",
+      "categories": [
+        "B",
+        "C"
+      ],
+      "pages": "M4 → M5",
+      "problem": "Der Übergang sagt «Wenn Erschöpfung innerlich in Schuld, Selbstschutz und schwierige Grenzen kippt» ([modul4.jsx:404](/workspace/angehoerige-bipolar-puk/src/modul4.jsx:404)); M5 beschreibt gerade keine notwendige Folge seiner vier Aspekte.",
+      "relevance": "Der einzelne Teaser legt eine Entwicklung nahe, die der Zieltext begrenzt. Die Module selbst sind klarer; deshalb begrenzte redaktionelle Korrektur.",
+      "proposal": "Etwa: «Wenn Sie Zuwendung, eigene Bedürfnisse und Grenzen miteinander abwägen möchten.» Keine Reihenfolge oder Ursache zwischen den Erfahrungen behaupten.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Übergang Modul 4 zu Modul 5 beschreibt Abwägen von Zuwendung, eigenen Bedürfnissen und Grenzen ohne Kippen oder feste Folge.",
+        "files": [
+          "src/modul4.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-12",
+      "priority": "optional",
+      "categories": [
+        "D"
+      ],
+      "pages": "M1/M2, M4/M7",
+      "problem": "Anhaltende Wachsamkeit wird in M1 mehrfach erläutert und in M2 vertieft. Eigene Bedürfnisse, Kontakte und Selbstsorge werden in M4 vorbereitet und in M7 wiederholt ([modul4.jsx:265](/workspace/angehoerige-bipolar-puk/src/modul4.jsx:265); [modul7.jsx:309](/workspace/angehoerige-bipolar-puk/src/modul7.jsx:309)). M7 benennt seinen langfristigen Zweck und die Neuverhandlung von Absprachen bereits.",
+      "relevance": "Überwiegend sinnvolle Verankerung für eigenständige Unterseiten; einige längere Wiederholungen lassen sich ohne Wissensverlust kürzen. Kein nachgewiesener didaktischer Bruch und kein Auftrag, alle wiederkehrenden Hinweise zu entfernen.",
+      "proposal": "Bei redaktioneller Kürzung in M1 eine Erklärung plus kurze Erinnerung/Verweis zu M2 erhalten. M4s erste Entlastung und M7s Pflege/Überprüfung über Zeit beibehalten; nur längere funktionsgleiche Passagen durch kurze Rückbezüge ersetzen. Keine Zusammenlegung ganzer Module.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Mehrfache Wachsamkeitserklärung in Modul 1 gebündelt und mit Modul 2 s3 verbunden. Modul 4 behält erste Entlastung; Modul 7 kürzt funktionsgleiche Grundpassagen und konkretisiert Pflege/Überprüfung über Zeit mit Rückweg M4 s7.",
+        "files": [
+          "src/modul1.jsx",
+          "src/modul7.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-13",
+      "priority": "optional",
+      "categories": [
+        "C",
+        "D"
+      ],
+      "pages": "DL-01 ↔ M1, DL-06 ↔ M6",
+      "problem": "DL-01 nennt «Stundenlang im Internet suchen» als zu vermeiden; M1 begrenzt dies auf zunehmend überfordernde Suche ohne Pause. DL-06 nennt nicht einhaltbare Drohungen; M6 grenzt eigene Schutzgrenzen grundsätzlich von Drohung ab ([unterstuetzung.jsx:41](/workspace/angehoerige-bipolar-puk/src/unterstuetzung.jsx:41), Zeile 272; [modul1.jsx:106](/workspace/angehoerige-bipolar-puk/src/modul1.jsx:106)).",
+      "relevance": "Die Verkürzung verliert eine für die Bedeutung wichtige Bedingung. Die Langtexte sind vorhanden; eine neue Empfehlung ist unnötig.",
+      "proposal": "Im kurzen Medium die zentrale Bedingung erhalten: überfordernde Suche, keine Drohung als Druckmittel; eine selbst umsetzbare Schutzgrenze bleibt möglich. Bei der Materialüberarbeitung die Formulierung zusammen mit der Langfassung pflegen.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "DL-01 begrenzt die Empfehlung auf zunehmend überfordernde Internetsuche ohne Pause. DL-06 unterscheidet Drohungen als Druckmittel von eigener umsetzbarer Schutzgrenze.",
+        "files": [
+          "src/unterstuetzung.jsx"
+        ]
+      }
+    },
+    {
+      "id": "W2-14",
+      "priority": "optional",
+      "categories": [
+        "C",
+        "E"
+      ],
+      "pages": "Start, Werkzeugübersicht, M7, Säulen-Check, Kommunikations-Trainer",
+      "problem": "Säulen-Karte nennt «Stabilität» und deren Schwächung ([site-content.js:24](/workspace/angehoerige-bipolar-puk/src/site-content.js:24)); M7 fragt «wo bin ich gerade stabil» ([modul7.jsx:473](/workspace/angehoerige-bipolar-puk/src/modul7.jsx:473)). Der Dialog grenzt sich unmittelbar von gesundheitlicher Messung ab ([werkzeuge-tools.jsx:529](/workspace/angehoerige-bipolar-puk/src/werkzeuge-tools.jsx:529)). Kommunikations-Karte nennt «Eskalationsrisiko», während der Ablauf Anliegen, Bitte und Grenze formulieren hilft.",
+      "relevance": "Die Ankündigungen behaupten keine konkrete klinische Messung; ihr weiter gefasster Wortlaut kann aber mehr Einordnung erwarten lassen, als die Anwendungen bieten. Das ist eine begrenzte Zweckpräzisierung.",
+      "proposal": "Säulen als eigene Ressourcenreflexion, Kommunikations-Trainer als Gesprächsvorbereitung ankündigen. Lokale Nutzungshinweise und Grenzen erhalten. Kein zusätzliches Risiko- oder Diagnostikangebot nötig.",
+      "implementation": {
+        "status": "implemented",
+        "notes": "Säulen in Karte, M7-Teaser, Dialogeinleitung und Ergebnis als eigene Ressourcenreflexion. Kommunikationsvorbereitung beschreibt Anliegen, Bitte und eigene Grenze ohne versprochene Risikoeinschätzung.",
+        "files": [
+          "src/site-content.js",
+          "src/werkzeuge-tools.jsx",
+          "src/modul7.jsx"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "unitTests": {
+      "passed": 113,
+      "files": 18
+    },
+    "lint": "passed",
+    "build": "passed",
+    "websiteAudit": {
+      "checks": 636,
+      "failures": 0
+    },
+    "toolsAudit": {
+      "checks": 225,
+      "failures": 0
+    },
+    "w2UserPaths": {
+      "checks": 105,
+      "failures": 0,
+      "browserErrors": 0
+    },
+    "w2BuildHash": "eb38b91e7f3cdcdd876e7f6b552c0ae529dd87ecd93928f65f9e40ff618e7ccd",
+    "independentReview": "all 14 measures implemented",
+    "notIncluded": [
+      "W3 als eigenständiger Code-Review",
+      "Originalquellen- und Angebotsfreigaben aus W1",
+      "Physischer Druck/PDF-Freigabe",
+      "Reale VoiceOver/NVDA-Prüfung"
+    ]
+  }
+}

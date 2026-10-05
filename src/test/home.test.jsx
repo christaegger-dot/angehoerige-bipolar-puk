@@ -19,7 +19,7 @@ describe('HomePage triage flow', () => {
     expect(screen.getByText('Frage 1 von bis zu 4')).toBeInTheDocument();
   });
 
-  it('routes the reading and planning needs to a module recommendation', async () => {
+  it('preserves the chosen tool format and offers the module as further reading', async () => {
     const user = userEvent.setup();
     const onNavigate = vi.fn();
     render(<HomePage onNavigate={onNavigate} />);
@@ -29,10 +29,32 @@ describe('HomePage triage flow', () => {
     await user.click(screen.getByRole('button', { name: 'Nein, eher Werkzeuge' }));
     await user.click(screen.getByRole('button', { name: 'Konkret handeln, Grenzen, Gespräche' }));
 
-    const recommendationLink = await screen.findByRole('link', { name: /Modul 6 — Was Sie konkret tun können/i });
+    const toolLink = await screen.findByRole('link', { name: /Kommunikations-Trainer — Anliegen und Grenzen vorbereiten/i });
+    expect(toolLink).toHaveAttribute('href', '/werkzeuge#kommunikation');
+    await user.click(toolLink);
+    expect(onNavigate).toHaveBeenCalledWith('werkzeuge', 'kommunikation');
+    const recommendationLink = screen.getByRole('link', { name: /Modul 6 — Was Sie konkret tun können/i });
     expect(recommendationLink).toBeInTheDocument();
     await user.click(recommendationLink);
     expect(onNavigate).toHaveBeenCalledWith('modul6');
+  });
+
+  it('keeps both foundations and a targeted tool when both formats are chosen', async () => {
+    const user = userEvent.setup();
+    render(<HomePage onNavigate={vi.fn()} />);
+
+    await user.click(screen.getByRole('button', { name: 'Nein, schon länger' }));
+    await user.click(screen.getByRole('button', { name: 'Nein' }));
+    await user.click(screen.getByRole('button', { name: 'Sowohl als auch' }));
+    await user.click(screen.getByRole('button', { name: 'Verstehen, was mit mir passiert' }));
+
+    expect(screen.getByRole('link', { name: /Modul 1 — Grundlagen verstehen/i })).toHaveAttribute('href', '/module/1');
+    expect(screen.getByRole('link', { name: /Meine Belastung wahrnehmen — fünf Reflexionsfragen/i })).toHaveAttribute('href', '/werkzeuge#selbsttest');
+    expect(screen.getByRole('link', { name: /Modul 2 — Die eigene Belastung verstehen/i })).toHaveAttribute('href', '/module/2');
+
+    await user.click(screen.getByRole('button', { name: 'Nochmal beantworten' }));
+    await user.click(screen.getByRole('button', { name: 'Ja, die Diagnose ist neu' }));
+    expect(screen.queryByRole('link', { name: /fünf Reflexionsfragen/i })).not.toBeInTheDocument();
   });
 });
 

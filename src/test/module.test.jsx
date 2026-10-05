@@ -32,6 +32,10 @@ describe('ModulePage', () => {
     await user.click(screen.getByRole('button', { name: 'Nein, eher Werkzeuge' }));
     await user.click(screen.getByRole('button', { name: 'Konkret handeln, Grenzen, Gespräche' }));
 
+    const tool = screen.getByRole('link', { name: /Kommunikations-Trainer — Anliegen und Grenzen vorbereiten/i });
+    expect(tool).toHaveAttribute('href', '/werkzeuge#kommunikation');
+    await user.click(tool);
+    expect(onNavigate).toHaveBeenCalledWith('werkzeuge', 'kommunikation');
     const recommendationLink = await screen.findByRole('link', { name: /Modul 6 — Was Sie konkret tun können/i });
     expect(recommendationLink).toBeInTheDocument();
 

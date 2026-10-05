@@ -59,57 +59,7 @@ function GespraechsSkript() {
   );
 }
 
-function Vereinbarung() {
-  return (
-    <div className="vereinbarung">
-      <div className="vereinbarung-head">
-        <span className="kicker">Werkzeug · Vorlage</span>
-        <h4>Vereinbarung in stabiler Phase</h4>
-        <p className="vereinbarung-intro">In ruhigen Wochen gemeinsam festhalten und regelmässig prüfen. Eine Unterschrift dokumentiert die Absprache, schafft aber keine allgemeine Vertretungs- oder Entscheidungsbefugnis.</p>
-      </div>
-
-      <div className="vereinbarung-blatt">
-        <div className="vereinbarung-zeile">
-          <span className="vereinbarung-num">1</span>
-          <div>
-            <h5>Welche Veränderungen sind für mich wichtige Frühwarnzeichen?</h5>
-            <div className="vereinbarung-feld">z.B. deutlich weniger Schlaf als sonst · auffällig viele neue Pläne · Geldausgaben verändern sich</div>
-          </div>
-        </div>
-        <div className="vereinbarung-zeile">
-          <span className="vereinbarung-num">2</span>
-          <div>
-            <h5>Wenn du vereinbarte Veränderungen bemerkst, was besprechen wir?</h5>
-            <div className="vereinbarung-feld">z.B. mich darauf hinweisen · Beobachtungen dem Behandlungsteam mitteilen · gemeinsam einen Termin anfragen</div>
-          </div>
-        </div>
-        <div className="vereinbarung-zeile">
-          <span className="vereinbarung-num">3</span>
-          <div>
-            <h5>Was hilft mir in einer beginnenden Episode?</h5>
-            <div className="vereinbarung-feld">z.B. ruhige Stimme, kein Streiten · gemeinsame Mahlzeiten · feste Zeiten, früh ins Bett</div>
-          </div>
-        </div>
-        <div className="vereinbarung-zeile">
-          <span className="vereinbarung-num">4</span>
-          <div>
-            <h5>Was hilft mir <em>nicht</em>, auch wenn es gut gemeint ist?</h5>
-            <div className="vereinbarung-feld">z.B. lange Diskussionen über meine Wahrnehmung · Vorhaltungen · Schweigen</div>
-          </div>
-        </div>
-        <div className="vereinbarung-fuss">
-          <span>Datum &amp; Unterschriften</span>
-          <div className="vereinbarung-linien">
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Krisenplan() {
+function Krisenplan({ onNavigate }) {
   const felder = [
     {
       titel: 'Frühe Anzeichen',
@@ -139,9 +89,9 @@ function Krisenplan() {
   return (
     <div className="krisenplan">
       <div className="krisenplan-head">
-        <span className="kicker">Werkzeug · Strukturvorlage</span>
-        <h4>Der Krisenplan in vier Feldern</h4>
-        <p className="krisenplan-intro">Eine Orientierung, die Sie in einer ruhigen Phase gemeinsam vorbereiten. Ergänzen Sie einen Ausweichkontakt, die Betreuung von Kindern, Ihre eigenen Grenzen und das Datum der nächsten Überprüfung. Der Plan kann nächste Schritte und Kontakte sichtbar machen; er ersetzt keine fachliche Einschätzung.</p>
+        <span className="kicker">Kurzüberblick · Planvorbereitung</span>
+        <h4>Vier Fragen für den gemeinsamen Krisenplan</h4>
+        <p className="krisenplan-intro">Dieser Kurzüberblick erklärt die Grundfragen. Zum gemeinsamen Ausfüllen nutzen Sie die vollständige Vorlage; sie enthält auch hilfreiche Unterstützung, einen Ausweichkontakt, Betreuung und eigene Entlastung sowie einen Überprüfungstermin. Sie brauchen keine zweite Vereinbarung mit denselben Absprachen.</p>
       </div>
       <div className="krisenplan-grid">
         {felder.map((f, i) => (
@@ -154,6 +104,11 @@ function Krisenplan() {
           </div>
         ))}
       </div>
+      <p>
+        <a href={navHref('werkzeuge', 'krisenplan')} onClick={navHandler('werkzeuge', onNavigate, 'krisenplan')}>
+          Vollständigen Krisenplan öffnen
+        </a>
+      </p>
     </div>
   );
 }
@@ -287,10 +242,16 @@ function Modul6Page({ onNavigate }) {
               <h3>Der Krisenplan</h3>
               <p>Ein Krisenplan ist ein schriftliches Dokument, das in einer stabilen Phase gemeinsam erstellt wird. Er hält vereinbarte nächste Schritte und Kontakte bei einer Verschlechterung fest. Er kann Orientierung geben, ersetzt aber keine fachliche Einschätzung.</p>
 
-              <Krisenplan />
+              <Krisenplan onNavigate={onNavigate} />
 
-              <h3>Vereinbarung in stabiler Phase</h3>
-              <Vereinbarung />
+              <h3>Von den Fragen zur gemeinsamen Absprache</h3>
+              <ol>
+                <li><strong>Verstehen:</strong> Besprechen Sie, welche Veränderungen bisher aufgefallen sind und was der betroffenen Person hilft oder nicht hilft.</li>
+                <li><strong>Gemeinsam ausfüllen:</strong> Halten Sie diese Absprachen in der vollständigen Krisenplan-Vorlage fest, wenn die betroffene Person mitwirken möchte; beziehen Sie bei Bedarf das Behandlungsteam ein.</li>
+                <li><strong>Aufgaben und Zuständigkeiten klären:</strong> Wer übernimmt welche vereinbarte Aufgabe? Wer beurteilt Veränderungen fachlich? Wer kann Sie und gegebenenfalls Kinder entlasten? Ihre eigenen Grenzen gehören dazu.</li>
+                <li><strong>Überprüfung vereinbaren:</strong> Notieren Sie, wann Sie den Plan gemeinsam wieder anschauen möchten und welche Kontakte oder Absprachen inzwischen angepasst werden müssen.</li>
+              </ol>
+              <p>Eine Unterschrift kann eine private Absprache dokumentieren, schafft aber keine allgemeine Vertretungs- oder Entscheidungsbefugnis.</p>
 
               <h3>Schweigepflichtentbindung</h3>
               <p>Ohne Einwilligung darf das Behandlungsteam Angehörigen grundsätzlich keine patientenbezogenen Informationen weitergeben — auch nicht dann, wenn Sie die Situation zu Hause wesentlich mittragen. Eine Schweigepflichtentbindung ist deshalb kein Nebenthema, sondern ein praktisches Schutzinstrument.</p>
@@ -413,7 +374,7 @@ function Modul6Page({ onNavigate }) {
               «Ich verstehe, dass es sich so anfühlt. Du bist mir wichtig.» Sie müssen das Gefühl nicht korrigieren — Sie dürfen es stehen lassen. <em>Vermeiden:</em> «Quatsch, du bist doch keine Last».</p>
 
               <p><strong>«Sagst du mir ehrlich, dass ich besser werde?» — immer wieder.</strong><br/>
-              Nicht mehr Bestätigung, sondern Umlenken: «Ich glaube an die Behandlung. Was würde dich gerade konkret beruhigen?» Oder einfach: «Du bist mir wichtig. Ich kann jetzt zehn Minuten bei dir sein. Danach brauche ich eine Pause.» <em>Vermeiden:</em> Mehr versprechen, als Sie wissen oder leisten können. Nicht jede Bitte um Bestätigung ist ein problematisches Muster.</p>
+              Sie dürfen ehrlich Zuwendung bestätigen, ohne eine Genesung zu garantieren: «Ich weiss nicht, wie es weitergeht. Du bist mir wichtig.» Wenn Sie möchten, fragen Sie: «Was würde dir gerade guttun?» Auch Ihre Grenze darf Platz haben: «Ich kann jetzt zehn Minuten bei dir sein. Danach brauche ich eine Pause.» <em>Vermeiden:</em> Mehr versprechen, als Sie wissen oder leisten können. Eine Bitte um Zuwendung ist etwas anderes als die Frage nach einer sicheren Prognose.</p>
 
               <aside className="callout">
                 <span className="callout-label">Sorgen im Voraus besprechen</span>
@@ -458,7 +419,7 @@ function Modul6Page({ onNavigate }) {
                   <h3>Was hilft, wenn Einsicht fehlt</h3>
                   <ul>
                     <li>Sachlich dokumentieren, was Sie beobachten</li>
-                    <li>Behandlungsteam informieren (auch ohne Zustimmung)</li>
+                    <li>Ein bestehendes Behandlungsteam über Beobachtungen informieren; bei fehlender Behandlung eigene Beratung nutzen</li>
                     <li>Vereinbarungen in stabilen Phasen schriftlich treffen</li>
                     <li>Eigene Schutzgrenze halten</li>
                   </ul>
@@ -473,7 +434,11 @@ function Modul6Page({ onNavigate }) {
                 </div>
               </div>
 
-              <p>Daneben gibt es weniger akute Situationen, in denen Behandlung ambivalent, brüchig oder konflikthaft wird. Nebenwirkungen, Scham, Müdigkeit oder das Erleben, dass Hypomanie sich subjektiv nach Kraft anfühlt — all das macht Behandlungstreue zu einem schwierigen Thema. In stabileren Phasen ruhig sprechen, Sorgen als Ich-Botschaft formulieren, Beobachtungen benennen — und das Behandlungsteam informieren, auch ohne Rückmeldung.</p>
+              <p>Daneben gibt es weniger akute Situationen, in denen Behandlung ambivalent, brüchig oder konflikthaft wird. Nebenwirkungen, Scham, Müdigkeit oder das Erleben, dass Hypomanie sich subjektiv nach Kraft anfühlt — all das macht Behandlungstreue zu einem schwierigen Thema. In stabileren Phasen können Sie ruhig sprechen, Sorgen als Ich-Botschaft formulieren und Beobachtungen benennen.</p>
+
+              <h3>Zwei Wege für die eigene Orientierung</h3>
+              <p><strong>Es gibt ein Behandlungsteam.</strong> Sie können ihm Beobachtungen und Sorgen mitteilen, auch wenn die betroffene Person eine gemeinsame Besprechung ablehnt. Informationen mitzuteilen ist von einem Anspruch auf patientenbezogene Auskunft zu unterscheiden. Klären Sie, wer für fachliche Fragen zuständig ist und welche Aufgaben Sie vereinbart haben.</p>
+              <p><strong>Es gibt kein Behandlungsteam oder die Person möchte nicht mitwirken.</strong> Sie können für sich selbst <a href={navHref('unterstuetzung', 'kontakt')} onClick={navHandler('unterstuetzung', onNavigate, 'kontakt')}>Angehörigenberatung nutzen</a>. Dafür müssen Sie die andere Person nicht zuerst von einer Behandlung überzeugen. Besprechen Sie dort Ihre Beobachtungen, eigene Grenzen und erreichbare Entlastung. Daraus entsteht keine Befugnis, die Behandlung der anderen Person festzulegen.</p>
 
               <p>Besprechen Sie möglichst in einer ruhigen Phase, welche Aufgaben Sie übernehmen möchten und wann fachliche Unterstützung nötig ist. Eine private Absprache gibt Ihnen keine allgemeine Behandlungs- oder Entscheidungsbefugnis.</p>
             </section>
@@ -488,14 +453,14 @@ function Modul6Page({ onNavigate }) {
               <h3>Was Sie konkret tun können</h3>
               <p><strong>1. Einen ruhigen Moment wählen.</strong> Sorgen oder Wut können verständlich sein. Sie dürfen eine Pause machen, bevor Sie Ihre Beobachtungen und Fragen ansprechen.</p>
               <p><strong>2. Beobachten und dokumentieren.</strong> Notieren Sie, was Sie sehen: Schlafveränderungen, Reizbarkeit, Energieschübe, Rückzug. Diese Beobachtungen sind später wichtig.</p>
-              <p><strong>3. Das Behandlungsteam informieren.</strong> Rufen Sie die Psychiaterin oder den Hausarzt an — auch wenn die erkrankte Person das nicht möchte. Sie brechen keine Schweigepflicht, wenn Sie <em>Informationen geben</em>.</p>
+              <p><strong>3. Passende Unterstützung ansprechen.</strong> Wenn es eine behandelnde Fachperson gibt, können Sie ihr Beobachtungen mitteilen, auch wenn die erkrankte Person das nicht möchte. Informationen zu geben ist von einem Anspruch auf Auskunft zu unterscheiden. Gibt es keine bestehende Behandlung oder keine gemeinsame Besprechung, können Sie Ihre eigenen Fragen in der <a href={navHref('unterstuetzung', 'kontakt')} onClick={navHandler('unterstuetzung', onNavigate, 'kontakt')}>Angehörigenberatung</a> klären.</p>
               <p><strong>4. In einem ruhigen Moment das Gespräch suchen.</strong> Nicht im Streit. Ich-Botschaften: «Ich mache mir Sorgen, weil ich Veränderungen sehe, seit du die Medikamente nicht mehr nimmst.» Vielleicht lassen sich Nebenwirkungen mit der Ärztin besprechen, statt das Medikament ganz abzusetzen.</p>
               <p><strong>5. Ihre Grenze benennen — klar, nicht drohend.</strong> «Wenn du ohne Medikamente lebst und eine Episode kommt, kann ich die Verantwortung zu Hause nicht allein tragen. Dann brauchen wir einen Plan B.»</p>
               <p><strong>6. Den Krisenplan aktualisieren.</strong> Wenn ein Krisenplan existiert, prüfen Sie: Gelten die Absprachen noch?</p>
 
               <aside className="callout">
                 <span className="callout-label">Was Sie vermeiden sollten</span>
-                <p>✗ Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · ✗ Tägliche Kontrollfragen («Hast du deine Tabletten genommen?») — sie erzeugen Scham und Widerstand · ✗ Ultimaten stellen, die Sie nicht einhalten können · ✗ Allein die Verantwortung tragen — holen Sie das Behandlungsteam dazu.</p>
+                <p>✗ Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · ✗ Tägliche Kontrollfragen («Hast du deine Tabletten genommen?») — sie erzeugen Scham und Widerstand · ✗ Ultimaten stellen, die Sie nicht einhalten können · ✗ Behandlung und Unterstützung allein koordinieren wollen — nutzen Sie ein bestehendes Behandlungsteam oder eigene Angehörigenberatung.</p>
               </aside>
             </section>
 
@@ -532,11 +497,18 @@ function Modul6Page({ onNavigate }) {
               </aside>
 
               <div className="next-modules">
-                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge', 'krisenplan')} onClick={navHandler('werkzeuge', onNavigate, 'krisenplan')}>
                   <span className="next-module-num">W</span>
                   <div>
-                    <h3>Werkzeuge und druckbare Materialien</h3>
-                    <p>Krisenplan-Tool und Fragen fürs Arztgespräch zur gemeinsamen Vorbereitung.</p>
+                    <h3>Gemeinsamer Krisenplan</h3>
+                    <p>Die vollständige Vorlage ausfüllen und vereinbarte Aufgaben, Kontakte und Entlastung festhalten.</p>
+                  </div>
+                </a>
+                <a className="next-module" href={navHref('unterstuetzung', 'dl-08')} onClick={navHandler('unterstuetzung', onNavigate, 'dl-08')}>
+                  <span className="next-module-num next-module-num-resource">→</span>
+                  <div>
+                    <h3>Fragen fürs Arztgespräch</h3>
+                    <p>Die vorhandene Checkliste DL-08 zur Vorbereitung eines Angehörigengesprächs öffnen.</p>
                   </div>
                 </a>
                 <a className="next-module" href={navHref('modul7')} onClick={navHandler('modul7', onNavigate)}>

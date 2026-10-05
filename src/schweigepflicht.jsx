@@ -138,6 +138,27 @@ function SchweigepflichtPage({ onNavigate }) {
               Fachperson.
             </p>
 
+            <h2>Eigene Beratung und nächste Schritte</h2>
+            <p>
+              Der Austausch mit dem Behandlungsteam und Ihre eigene Angehörigenberatung sind unterschiedliche
+              Gesprächssituationen. Für Ihre eigene Belastung, Ihre Fragen und Ihre Grenzen können Sie Beratung
+              nutzen, auch wenn die erkrankte Person nicht in Behandlung ist oder nicht mitwirken möchte.
+              Die Angehörigenberatung ist vertraulich; wenn Sie Beobachtungen einem Behandlungsteam mitteilen,
+              klären Sie dort vorab den Umgang mit diesen Angaben.
+            </p>
+            <ul className="reference-sources">
+              <li>
+                <a href={navHref('unterstuetzung', 'dl-08')} onClick={navHandler('unterstuetzung', onNavigate, 'dl-08')}>
+                  Fragen für das Arztgespräch öffnen
+                </a> — wählen Sie zwei oder drei Anliegen für das nächste Gespräch.
+              </li>
+              <li>
+                <a href={navHref('unterstuetzung', 'kontakt')} onClick={navHandler('unterstuetzung', onNavigate, 'kontakt')}>
+                  Kontakt zur eigenen Angehörigenberatung
+                </a> — für Fragen zu Ihrer Situation und zu möglichen nächsten Schritten.
+              </li>
+            </ul>
+
             <h2>Amtliche Informationen und Formular</h2>
             <ul className="reference-sources">
               <li><a href={BAG_GEHEIMNIS_URL}>Bundesamt für Gesundheit: Berufs- oder Arztgeheimnis</a></li>

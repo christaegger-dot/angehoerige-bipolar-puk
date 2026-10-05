@@ -401,10 +401,10 @@ function Modul4Page({ onNavigate }) {
                   <span className="next-module-num">05</span>
                   <div>
                     <h3>Loyalitätskonflikte</h3>
-                    <p>Wenn Erschöpfung innerlich in Schuld, Selbstschutz und schwierige Grenzen kippt.</p>
+                    <p>Wenn Sie Zuwendung, eigene Bedürfnisse und Grenzen miteinander abwägen möchten.</p>
                   </div>
                 </a>
-                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge', 'selbsttest')} onClick={navHandler('werkzeuge', onNavigate, 'selbsttest')}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeug — Meine Belastung wahrnehmen</h3>

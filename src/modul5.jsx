@@ -165,7 +165,7 @@ function Modul5Page({ onNavigate }) {
     { id: 's4', label: 'Wiederholte Bestätigung' },
     { id: 's5', label: 'Warum Grenzen schwer fallen' },
     { id: 's6', label: 'Wenn Vorurteile belasten' },
-    { id: 's7', label: 'Eltern und Geschwister' },
+    { id: 's7', label: 'Eltern, Geschwister und Freundschaften' },
     { id: 's8', label: 'Formen von Abstand' },
     { id: 's9', label: 'Was zuerst klar werden muss' },
     { id: 's10', label: 'Worauf es ankommt' },
@@ -323,11 +323,14 @@ function Modul5Page({ onNavigate }) {
             </section>
 
             <section id="s7">
-              <h2>Besondere Loyalitätskonflikte für Eltern und Geschwister</h2>
+              <h2>Loyalitätskonflikte in unterschiedlichen Beziehungen</h2>
               <p>Einige Beispiele in diesem Modul beziehen sich auf Partnerschaften. Auch als Elternteil oder Geschwister können Sie Nähe, Verantwortung und eigene Bedürfnisse abwägen.</p>
               <p><strong>Eltern</strong> denken vielleicht: «Ich kann mein eigenes Kind doch nicht im Stich lassen», auch wenn es längst erwachsen ist. Sie dürfen seine Eigenständigkeit respektieren und zugleich klären, welche Unterstützung Sie selbst anbieten möchten.</p>
               <p><strong>Geschwister</strong> können Pflichtgefühle gegenüber dem Bruder oder der Schwester erleben und gleichzeitig wünschen, dass eigene Bedürfnisse Platz haben. Auch Sie dürfen Aufgaben und Grenzen besprechen.</p>
               <p>Für beide gilt: Die Fragen aus diesem Modul — Wie viel Nähe ist tragbar? Wo endet meine Zuständigkeit? Was wünsche ich mir für mein eigenes Leben? — sind ebenso berechtigt wie für Partnerinnen und Partner. Die passenden Absprachen hängen von Ihrer Beziehung und Situation ab.</p>
+
+              <h3>Freundschaft ohne gemeinsamen Haushalt</h3>
+              <p><strong>Fiktives Kurzbeispiel.</strong> Zwei Freunde wohnen getrennt. Einer wünscht sich in einer belastenden Zeit häufige Telefonate. Der andere möchte den Kontakt halten und braucht zugleich ungestörte Zeit für Arbeit und Erholung. Sein nächster Schritt ist eine Absprache über die gewünschte Hilfe und seine Verfügbarkeit: «Ich kann morgen Abend eine halbe Stunde telefonieren. Während der Arbeit und nachts beantworte ich keine Nachrichten. Passt dieser Zeitpunkt für dich?» Gemeinsam können sie klären, welche weitere Unterstützung der Freund nutzen möchte; ständige Erreichbarkeit ist keine Voraussetzung für die Freundschaft.</p>
             </section>
 
             <section id="s8">
@@ -369,8 +372,9 @@ function Modul5Page({ onNavigate }) {
               <h3>3. Ein Gespräch nach Ihren Bedürfnissen führen</h3>
               <p>Sprechen Sie mit einer vertrauten Person oder Beratungsstelle über das, was Sie belastet. Sie entscheiden, was Sie teilen möchten und in welchem Tempo. Sie müssen nicht alles offenlegen; beachten Sie dabei auch die Privatsphäre der anderen Person.</p>
 
-              <h3>4. Konkrete Schritte nicht hier lösen, sondern im nächsten Modul</h3>
-              <p>Wenn Sie merken, dass die innere Klarheit noch fehlt, ist das kein Scheitern. Modul 6 geht nicht zurück ins Dilemma, sondern in Krisenplan, Kommunikation und praktische Grenzsetzung.</p>
+              <h3>4. Eine kleine Grenze für das eigene Handeln formulieren</h3>
+              <p>Wenn es zu Ihrer Situation passt, wählen Sie eine Grenze, die Sie selbst umsetzen können. Eine Bitte sagt, was Sie sich von der anderen Person wünschen; Ihre Grenze sagt, was Sie selbst tun werden. Zum Beispiel: «Ich wünsche mir, dass wir ausreden lassen. Wenn wir uns anschreien, beende ich das Gespräch und nehme eine Pause.»</p>
+              <p>Sie müssen damit keine grosse Beziehungsentscheidung treffen. Wenn Ihnen noch Klarheit fehlt, können Sie den Schritt mit einer vertrauten Person oder Beratungsstelle besprechen. Weitere Beispiele finden Sie in <a className="puk-link--inline" href={navHref('modul6', 's8')} onClick={navHandler('modul6', onNavigate, 's8')}>Modul 6: Grenzen formulieren</a>. Der allgemeine Einstieg in Modul 6 unten führt auch zu Vorbereitung und Gesprächen.</p>
 
               <h3>Wenn die Entscheidung fällt — praktische Hinweise</h3>
               <p>Vielleicht beschäftigen Sie praktische Fragen zusätzlich. Notieren Sie, was Sie klären möchten, und holen Sie Unterstützung für die konkrete Situation.</p>

@@ -54,27 +54,54 @@ const TRIAGE_NEXT_STEPS = {
   'q3-both': 'q4',
 };
 
+const TRIAGE_TOOLS = {
+  'q4-beziehung': { text: 'Kommunikations-Trainer — ein Gespräch vorbereiten', target: 'werkzeuge', anchor: 'kommunikation' },
+  'q4-handeln': { text: 'Kommunikations-Trainer — Anliegen und Grenzen vorbereiten', target: 'werkzeuge', anchor: 'kommunikation' },
+  'q4-selbst': { text: 'Meine Belastung wahrnehmen — fünf Reflexionsfragen', target: 'werkzeuge', anchor: 'selbsttest' },
+};
+
+function recommendationFor(action, format) {
+  const recommendation = TRIAGE_RESULTS[action];
+  const tool = TRIAGE_TOOLS[action];
+  if (!tool) return { ...recommendation, links: [recommendation] };
+
+  const links = format === 'both'
+    ? [TRIAGE_RESULTS['q3-yes'], tool, recommendation]
+    : [tool, recommendation];
+  return {
+    label: 'Passende Einstiege',
+    links,
+    note: format === 'both'
+      ? 'Sie haben Grundlagen und Werkzeuge gewählt. Beginnen Sie mit dem Zugang, der gerade passt; das thematische Modul ist eine weitere Vertiefung.'
+      : 'Das Werkzeug lässt sich direkt nutzen. Wenn Sie danach mehr lesen möchten, finden Sie hier auch das passende Modul.',
+  };
+}
+
 function TriageFlow({ onNavigate }) {
   const [step, setStep] = React.useState('q1b');
   const [result, setResult] = React.useState(null);
+  const [format, setFormat] = React.useState(null);
   const stepRef = React.useRef(null);
   const resultRef = React.useRef(null);
   const isFirstRender = React.useRef(true);
 
   const handleAction = React.useCallback((action) => {
     if (TRIAGE_RESULTS[action]) {
-      setResult(TRIAGE_RESULTS[action]);
+      setResult(recommendationFor(action, format));
       return;
     }
 
+    if (action === 'q3-no') setFormat('tools');
+    if (action === 'q3-both') setFormat('both');
     const nextStep = TRIAGE_NEXT_STEPS[action];
     if (nextStep) {
       setStep(nextStep);
     }
-  }, []);
+  }, [format]);
 
   const restart = React.useCallback(() => {
     setResult(null);
+    setFormat(null);
     setStep('q1b');
   }, []);
 
@@ -129,13 +156,17 @@ function TriageFlow({ onNavigate }) {
           className="triage-result"
         >
           <span className="triage-result-label">{result.label}</span>
-          <a
-            className="triage-result-link"
-            href={navHref(result.target)}
-            onClick={navHandler(result.target, onNavigate)}
-          >
-            {result.text} →
-          </a>
+          {result.note && <p>{result.note}</p>}
+          {result.links.map(link => (
+            <a
+              key={`${link.target}-${link.anchor || ''}`}
+              className="triage-result-link"
+              href={navHref(link.target, link.anchor)}
+              onClick={navHandler(link.target, onNavigate, link.anchor)}
+            >
+              {link.text} →
+            </a>
+          ))}
           {result.secondary && <p>Sie müssen zuerst kein Modul lesen. Wenn Sie in Ruhe mehr verstehen möchten: <a href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>Wenn die Kraft nachlässt</a>.</p>}
           <button type="button" className="triage-restart" onClick={restart}>Nochmal beantworten</button>
         </div>

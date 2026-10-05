@@ -422,6 +422,9 @@ function Modul2Page({ onNavigate }) {
                 <span className="callout-label">Entlastender Grundsatz</span>
                 <p>Sie sind nicht das Frühwarnsystem — Sie sind ein Teil davon. Das Behandlungsteam, der Krisenplan und die erkrankte Person selbst tragen Mitverantwortung. Klären Sie in einer ruhigen Phase gemeinsam: «Welche Veränderungen soll ich ansprechen? Wie soll ich es tun?» Was vereinbart ist, dürfen Sie ansprechen — ohne Schuldgefühle.</p>
               </aside>
+
+              <h3>Als erwachsenes Kind einen Elternteil begleiten</h3>
+              <p><strong>Fiktives Kurzbeispiel.</strong> Eine erwachsene Tochter wohnt nicht bei ihrem Vater. Er bittet sie, ihn zu einem Behandlungsgespräch zu begleiten. Sie möchte dabei sein, kann aber nicht alle Termine für ihn organisieren. Ihr nächster Schritt ist eine konkrete Absprache: «Ich begleite dich am Dienstag. Bitte vereinbare die weiteren Termine selbst; wir können vorher zusammen überlegen, welche Fragen du stellen möchtest.» Eigene Belastungen kann sie unabhängig davon in einer Angehörigenberatung besprechen.</p>
             </section>
 
             <section id="s5">
@@ -471,7 +474,7 @@ function Modul2Page({ onNavigate }) {
                     <p>Erschöpfungszeichen und mögliche Unterstützung für Sie selbst.</p>
                   </div>
                 </a>
-                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge', 'selbsttest')} onClick={navHandler('werkzeuge', onNavigate, 'selbsttest')}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeug — Meine Belastung wahrnehmen</h3>

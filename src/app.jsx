@@ -31,7 +31,7 @@ function App() {
   }, [page]);
 
   const renderPage = PAGE_RENDERERS[page] || PAGE_RENDERERS.start;
-  const content = renderPage({ onNavigate });
+  const content = renderPage({ onNavigate, anchor: nav.anchor });
 
   return (
     <>

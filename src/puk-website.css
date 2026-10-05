@@ -115,6 +115,12 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
   --text-accent: var(--puk-blue-125);
 }
 .footer-links a[aria-current="page"] { color: var(--puk-blue-125); }
+.about-hero-functions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--web-touch-target);
+  color: var(--puk-blue-125);
+}
 .module-body :is(p, li, dd, blockquote) { max-width: var(--web-content-measure); }
 .module-body .figure-text .module-credits { max-width: var(--web-content-measure); }
 .module-body ul.key-points li { max-width: var(--web-content-measure); }

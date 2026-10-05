@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, within, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../app.jsx';
 
@@ -82,5 +82,62 @@ describe('App navigation', () => {
     expect(await screen.findByRole('heading', { name: /Die eigene Belastung verstehen/i })).toBeInTheDocument();
     expect(window.location.pathname).toBe('/module/2');
     expect(window.location.hash).toBe('');
+  });
+
+  it('opens a bookmarked tool after loading and keeps its module destination when leaving the dialog', async () => {
+    const user = userEvent.setup();
+    window.history.replaceState({}, '', '/werkzeuge#phasenverlauf');
+    render(<App />);
+
+    const dialog = await screen.findByRole('dialog', { name: 'Bipolarer Phasenverlauf' });
+    await user.click(within(dialog).getByRole('button', { name: /Bipolar I und II unterscheiden/i }));
+
+    await screen.findByRole('heading', { level: 1, name: /Die bipolare Störung verstehen/i });
+    expect(window.location.pathname + window.location.hash).toBe('/module/1#s5');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it('opens the doctor questions from module 6 and continues to their reference', async () => {
+    const user = userEvent.setup();
+    window.history.replaceState({}, '', '/module/6');
+    render(<App />);
+    await screen.findByRole('heading', { level: 1, name: /Was Sie konkret tun können/i });
+    await user.click(screen.getByRole('link', { name: /Fragen fürs Arztgespräch/i }));
+    const dialog = await screen.findByRole('dialog', { name: 'Fragen für das Arztgespräch' });
+    expect(window.location.pathname + window.location.hash).toBe('/unterstuetzung#dl-08');
+    await user.click(within(dialog).getByRole('link', { name: 'Schweigepflicht beim Behandlungsgespräch klären' }));
+    await screen.findByRole('heading', { level: 1, name: /Schweigepflicht bei Angehörigen/i });
+    expect(window.location.pathname).toBe('/schweigepflicht');
+  });
+
+  it('reflects browser history and hash changes in the selected tool without reopening a closed dialog', async () => {
+    const user = userEvent.setup();
+    window.history.replaceState({}, '', '/werkzeuge#krisenplan');
+    render(<App />);
+    await screen.findByRole('dialog', { name: 'Krisenplan' });
+
+    window.history.pushState({}, '', '/werkzeuge#saeulen');
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    await screen.findByRole('dialog', { name: 'Säulen-Check' });
+    expect(screen.queryByRole('dialog', { name: 'Krisenplan' })).not.toBeInTheDocument();
+
+    await user.keyboard('{Escape}');
+    await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
+    expect(window.location.hash).toBe('');
+
+    window.history.replaceState({}, '', '/werkzeuge#unbekannt');
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+    await waitFor(() => expect(window.location.hash).toBe('#unbekannt'));
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it('keeps the crisis-plan material linked to the same preparation context', async () => {
+    const user = userEvent.setup();
+    window.history.replaceState({}, '', '/unterstuetzung#dl-09');
+    render(<App />);
+    const dialog = await screen.findByRole('dialog', { name: 'Krisenplan' });
+    await user.click(within(dialog).getByRole('button', { name: /Plan gemeinsam vorbereiten/i }));
+    await screen.findByRole('heading', { level: 1, name: /Was Sie konkret tun können/i });
+    expect(window.location.pathname + window.location.hash).toBe('/module/6#s2');
   });
 });

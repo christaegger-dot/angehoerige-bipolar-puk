@@ -161,7 +161,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
     setAnswers(next);
     if (next.length === SELBSTTEST_FRAGEN.length) setPhase('result');
   };
-  const goto = (target, anchor) => { onNavigate(target, anchor); onClose(); };
+  const goto = (target, anchor) => { onClose(); onNavigate(target, anchor); };
   const qIdx = answers.length;
   const alltagSehrSchwer = answers[1] === 3;
 
@@ -291,7 +291,7 @@ const KRISENPLAN_FELDER = [
 
 const KRISENPLAN_STORAGE_KEY = 'puk-krisenplan-v1';
 
-function KrisenplanTool({ onClose }) {
+function KrisenplanTool({ onClose, onNavigate }) {
   const [data, setData] = React.useState({});
   const [deletionHint, setDeletionHint] = React.useState('');
 
@@ -319,6 +319,8 @@ function KrisenplanTool({ onClose }) {
           <span className="kicker">Werkzeug · Krisenplan</span>
           <h2>Krisenplan</h2>
           <p className="krisenplan-intro">Füllen Sie den Plan in einer ruhigen Phase aus. In einer Krise kann er Ihnen helfen, nächste Schritte und passende Kontakte zu finden. Er ersetzt keine fachliche Einschätzung. Holen Sie bei Unsicherheit professionelle Unterstützung.</p>
+          <p>Dies ist die vollständige gemeinsame Vorlage. Besprechen Sie beim Ausfüllen, welche Aufgaben gewünscht und tragbar sind, was fachlich geklärt werden muss und wann Sie die Absprachen erneut prüfen.</p>
+          <button className="tool-quiet-btn no-print" onClick={() => { onClose(); onNavigate('modul6', 's2'); }}>Plan gemeinsam vorbereiten · Modul 6 →</button>
           <div className="tool-intro-notes krisenplan-intro-notes" data-storage-key={KRISENPLAN_STORAGE_KEY}>
             <p data-storage-notice="memory-only">Ihre Eingaben können persönliche Gesundheits- und Kontaktdaten enthalten. Sie werden nicht automatisch gespeichert oder versendet. Beim Schliessen des Werkzeugs oder Neuladen der Seite gehen sie verloren. Sichern Sie den ausgefüllten Plan bei Bedarf vor dem Schliessen.</p>
             <p data-storage-notice="legacy-deletion">Entwürfe aus früheren Versionen werden nicht wieder geöffnet. Mit «Entwurf löschen» können Sie aktuelle Eingaben und frühere Browser-Kopien dieses Werkzeugs entfernen.</p>
@@ -526,7 +528,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
         {phase === 'intro' && (
           <>
             <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Säulen-Check</h2>
-            <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu vier Bereichen, die Angehörige langfristig tragen: Körper, Beziehungen, eigene Welt, fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie misst keine gesundheitliche Stabilität oder Tragfähigkeit.</p>
+            <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu Ihren Ressourcen in vier Bereichen: Körper, Beziehungen, eigene Welt, fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie können überlegen, was Sie bewahren möchten und wo Sie Unterstützung wünschen. Sie misst keine gesundheitliche Stabilität oder Tragfähigkeit.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Etwa drei Minuten. Anonym, im Browser. Eine persönliche Reflexion ohne validierte klinische Auswertung oder Diagnose. Bei starkem oder anhaltendem Unterstützungsbedarf ist fachliche Beratung sinnvoll.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
@@ -558,8 +560,8 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
         {phase === 'result' && (
           <div className="selbsttest-result">
             <div className="selbsttest-zone">
-              <span className="selbsttest-zone-kicker">Ihre Säulen jetzt</span>
-              <h2>Tragwerk</h2>
+              <span className="selbsttest-zone-kicker">Ihre Einschätzungen jetzt</span>
+              <h2>Meine Ressourcen</h2>
               <p className="selbsttest-zone-sub">Die Höhe fasst Ihre Antworten schematisch zusammen. Sie ist kein gemessener Wert Ihrer Belastbarkeit.</p>
             </div>
 
@@ -594,10 +596,10 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
             </section>
 
             <div className="selbsttest-actions">
-              <button className="btn btn-primary" onClick={() => { onNavigate('modul7', 's4'); onClose(); }}>
+              <button className="btn btn-primary" onClick={() => { onClose(); onNavigate('modul7', 's4'); }}>
                 Modul 7 — Langfristige Tragfähigkeit →
               </button>
-              <button className="selbsttest-secondary" onClick={() => { onNavigate('unterstuetzung'); onClose(); }}>
+              <button className="selbsttest-secondary" onClick={() => { onClose(); onNavigate('unterstuetzung'); }}>
                 Unterstützung und Ressourcen →
               </button>
             </div>
@@ -837,7 +839,7 @@ function EisbergTool({ onClose, onNavigate }) {
             </p>
 
             <div className="selbsttest-actions">
-              <button className="btn btn-primary" onClick={() => { onNavigate('modul2', 's2'); onClose(); }}>
+              <button className="btn btn-primary" onClick={() => { onClose(); onNavigate('modul2', 's2'); }}>
                 Modul 2 — Die eigene Belastung verstehen →
               </button>
             </div>
@@ -955,7 +957,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
         {step === 'intro' && (
           <>
             <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Kommunikations-Trainer</h2>
-            <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte für ein schwieriges Gespräch. Am Ende haben Sie ein eigenes Skript — in Ihren Worten, so vorbereitet, dass Sie Ihr Anliegen ruhig und klar ansprechen können. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
+            <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte für ein schwieriges Gespräch. Sie formulieren Ihr Anliegen, eine konkrete Bitte und bei Bedarf eine eigene Grenze. Am Ende haben Sie ein Skript in Ihren Worten. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
             <div className="tool-intro-notes kommunikation-intro-notes">
               <p>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren.</p>
               <p>Dieses Werkzeug dient der Gesprächsvorbereitung; es ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht.</p>
@@ -1114,7 +1116,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
             <div className="selbsttest-actions">
               <button className="btn btn-primary" onClick={copyToClipboard} data-data-export="clipboard" data-storage-key={KOMMUNIKATION_STORAGE_KEY}>Skript kopieren</button>
-              <button className="selbsttest-secondary" onClick={() => { onNavigate('modul6', 's4'); onClose(); }}>
+              <button className="selbsttest-secondary" onClick={() => { onClose(); onNavigate('modul6', 's4'); }}>
                 Modul 6 — Was Sie konkret tun können →
               </button>
             </div>
@@ -1155,10 +1157,10 @@ const EE_ASPEKTE = [
   },
   {
     key: 'engagement',
-    label: 'Überengagement',
+    label: 'Zusätzliche Verantwortung',
     pos: { left: '86%', top: '50%' },
-    desc: 'Sie übernehmen alles: Medikamente, Termine, Stimmungs-Monitoring, Krisenmanagement. Prüfen Sie gemeinsam, was gewünscht und tragbar ist und welche Aufgaben wieder zurückgegeben werden können.',
-    unterbrechen: 'Eine einzige Aufgabe abgeben. Nicht alle. Eine. Etwas, das auch jemand anderes tragen kann — Geschwister, Behandlungsteam, Spitex.',
+    desc: 'Vielleicht begleiten Sie Termine, unterstützen bei Alltagsaufgaben oder besprechen vereinbarte Beobachtungen. Prüfen Sie gemeinsam, welche Hilfe gewünscht und für Sie tragbar ist, was die andere Person selbst übernehmen möchte und wo Sie Entlastung brauchen. Diagnose und Behandlung bleiben fachliche Aufgaben.',
+    unterbrechen: 'Wählen Sie eine Aufgabe, die Sie neu besprechen möchten: Was können und möchten Sie übernehmen, wo liegt Ihre eigene Grenze und wer könnte Sie entlasten? Eine neue Aufgabenverteilung braucht Absprachen; Verantwortung für den Krankheitsverlauf wird daraus nicht abgeleitet.',
   },
   {
     key: 'erschoepfung',
@@ -1246,10 +1248,10 @@ function EeKreislaufTool({ onClose, onNavigate }) {
         </div>
 
         <div className="selbsttest-actions">
-          <button className="btn btn-primary" onClick={() => { onNavigate('modul5', 's3'); onClose(); }}>
+          <button className="btn btn-primary" onClick={() => { onClose(); onNavigate('modul5', 's3'); }}>
             Modul 5 — Loyalitätskonflikte →
           </button>
-          <button className="selbsttest-secondary" onClick={() => { onNavigate('modul2', 's3'); onClose(); }}>
+          <button className="selbsttest-secondary" onClick={() => { onClose(); onNavigate('modul2', 's3'); }}>
             Modul 2 — Eigene Belastung →
           </button>
         </div>
@@ -1306,7 +1308,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
     <ToolOverlay onClose={onClose} ariaLabel="Bipolarer Phasenverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Interaktiv</span>
         <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Bipolarer Phasenverlauf</h2>
-        <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Die ersten beiden Auswahlfelder erklären Diagnosen, die anderen aktuelle Zustände. Die Kurven sind fiktive Beispiele ohne Zeitmassstab oder individuelle Prognose. Keine Diagnose lässt sich an einer Kurve ablesen.</p>
+        <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Wählen Sie eine fiktive Verlaufsskizze und lesen Sie dazu mögliche Erfahrungen von Angehörigen. Die Auswahlfelder Bipolar I und II sind keine Erklärung der Diagnoseunterscheidung; diese finden Sie in Modul 1. Die Kurven haben keinen Zeitmassstab und geben keine individuelle Prognose. Keine Diagnose lässt sich an einer Kurve ablesen.</p>
 
         <div className="phasen-tabs" role="tablist">
           {PHASEN_VARIANTEN.map((p) => (
@@ -1365,7 +1367,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
         <div className="ee-detail">
           <div className="ee-detail-head">
             <span className="ee-detail-num">{cur.label} · {cur.sub}</span>
-            <h3>Was passiert</h3>
+            <h3>Zur fiktiven Darstellung</h3>
           </div>
           <div className="ee-detail-body">
             <p>{cur.desc}</p>
@@ -1374,7 +1376,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
 
         <div className="ee-detail">
           <div className="ee-detail-head">
-            <h3>Was Angehörige merken</h3>
+            <h3>Mögliche Erfahrungen von Angehörigen</h3>
           </div>
           <div className="ee-detail-body">
             <p>{cur.angehoerige}</p>
@@ -1382,8 +1384,8 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
         </div>
 
         <div className="selbsttest-actions">
-          <button className="btn btn-primary" onClick={() => { onNavigate('modul1', 's4'); onClose(); }}>
-            Modul 1 — Die bipolare Störung verstehen →
+          <button className="btn btn-primary" onClick={() => { onClose(); onNavigate('modul1', 's5'); }}>
+            Bipolar I und II unterscheiden · Modul 1 →
           </button>
         </div>
     </ToolOverlay>
@@ -1527,10 +1529,10 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
         </p>
 
         <div className="selbsttest-actions">
-          <button className="btn btn-primary" onClick={() => { onNavigate('modul4', 's2'); onClose(); }}>
+          <button className="btn btn-primary" onClick={() => { onClose(); onNavigate('modul4', 's2'); }}>
             Modul 4 — Wenn die Kraft nachlässt →
           </button>
-          <button className="selbsttest-secondary" onClick={() => { onNavigate('unterstuetzung'); onClose(); }}>
+          <button className="selbsttest-secondary" onClick={() => { onClose(); onNavigate('unterstuetzung'); }}>
             Unterstützung und Ressourcen →
           </button>
         </div>

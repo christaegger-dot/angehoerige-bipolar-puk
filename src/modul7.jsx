@@ -96,38 +96,6 @@ function StuetzenDetail() {
   );
 }
 
-function ErholungUndEntlastung() {
-  return (
-    <div className="kontrast-block">
-      <div className="kontrast-spalte kontrast-links">
-        <span className="kontrast-label">Eine mögliche Form</span>
-        <h4>Kurze Erholung</h4>
-        <p className="kontrast-untertitel">Ausgleich zum Stress</p>
-        <ul>
-          <li>Eine kurze Pause im Alltag.</li>
-          <li>Etwas, das Ihnen im Moment guttut.</li>
-          <li>Auch unregelmässig wertvoll.</li>
-          <li>«Diese kleine Pause ist mir wichtig.»</li>
-        </ul>
-      </div>
-      <div className="kontrast-trenner">
-        <span>und</span>
-      </div>
-      <div className="kontrast-spalte kontrast-rechts">
-        <span className="kontrast-label">Was zusätzlich entlasten kann</span>
-        <h4>Praktische Entlastung</h4>
-        <p className="kontrast-untertitel">Aufgaben und Unterstützung klären</p>
-        <ul>
-          <li>Andere übernehmen eine Aufgabe oder ermöglichen Betreuung.</li>
-          <li>Eigene Bedürfnisse dürfen ohne Rechtfertigung zählen.</li>
-          <li>Absprachen passen zu Ihren Möglichkeiten.</li>
-          <li>«Welche Hilfe würde mir jetzt Raum geben?»</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-
 function EigeneWeltGrid() {
   const bewegungen = [
     {
@@ -206,7 +174,7 @@ function Modul7Page({ onNavigate }) {
   const sections = [
     { id: 's1', label: 'Die lange Strecke' },
     { id: 's2', label: 'Nach der Krise' },
-    { id: 's3', label: 'Selbstfürsorge als Schutz' },
+    { id: 's3', label: 'Selbstfürsorge über Zeit' },
     { id: 's4', label: 'Was langfristig trägt' },
     { id: 's5', label: 'Eigene Welt zurückholen' },
     { id: 's6', label: 'Trialog & Zusammenarbeit' },
@@ -306,20 +274,16 @@ function Modul7Page({ onNavigate }) {
             </section>
 
             <section id="s3">
-              <h2>Selbstfürsorge als Belastungsmanagement</h2>
-              <p>Selbstfürsorge klingt schnell nach Kür. In Angehörigenrealitäten ist sie oft eher Schadensbegrenzung. Wenn Sie dauerhaft zu viel tragen, zu wenig schlafen, sich sozial zurückziehen und nur noch reagieren, ist sie nicht Optimierung, sondern Schutz vor weiterer Auszehrung.</p>
-              <p><strong>Ihre Gesundheit hat einen Eigenwert.</strong> Nicht erst, wenn Sie zusammenbrechen. Und nicht nur, damit Sie weiter funktionieren können.</p>
+              <h2>Selbstfürsorge über Zeit pflegen</h2>
+              <p><strong>Ihre Gesundheit hat einen Eigenwert.</strong> Für einen ersten kleinen Entlastungsschritt finden Sie Anregungen in <a href={navHref('modul4', 's7')} onClick={navHandler('modul4', onNavigate, 's7')}>Modul 4: Eigene Lage und nächste Schritte</a>. Hier geht es darum, vorhandene Entlastung über längere Zeit passend zu halten.</p>
+              <p>Wenn Sie Ihre Absprachen wieder anschauen möchten, können drei Fragen helfen: Was tut Ihnen noch gut? Welche Aufgabe oder Unterstützung fehlt inzwischen? Was möchten Sie beibehalten oder verändern? Auch kurze und unregelmässige Entlastung zählt; ein ausgefallener Termin ist kein persönliches Versagen.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Ihre eigenen Bedürfnisse zählen</span>
                 <p>Sie dürfen Unterstützung für sich selbst nutzen. Wenn Beschwerden anhalten oder Ihren Alltag beeinträchtigen, können Sie eine eigene ärztliche oder psychologische Beratung suchen. Sie brauchen dafür keine Rechtfertigung über die Erkrankung der anderen Person.</p>
               </aside>
 
-              <ErholungUndEntlastung />
-
-              <p>Wenn Selbstfürsorge gerade in schweren Zeiten ausfällt, fehlt möglicherweise Zeit, Kraft oder praktische Entlastung. Das ist kein persönliches Versagen. Eine kurze Pause kann guttun; zusätzlich kann jemand Aufgaben übernehmen oder verlässliche Betreuung ermöglichen. Ihre Gesundheit hat einen eigenen Wert, unabhängig davon, wie viel Sie begleiten.</p>
-
-              <h3>Drei Bereiche von Selbstfürsorge</h3>
+              <h3>Was Sie über Zeit im Blick behalten möchten</h3>
               <p><strong>Körper.</strong> Eigenen Schlafrhythmus beibehalten · regelmässige Bewegung, auch kurz · regelmässige Mahlzeiten · eigene Arztbesuche nicht vergessen.</p>
               <p><strong>Seele.</strong> Hobbys ohne Erkrankungsbezug · Freundschaften bewusst pflegen · eigene Gefühle reflektieren · psychologische Unterstützung.</p>
               <p><strong>Beziehung.</strong> Gemeinsame Rituale und Momente ohne Erkrankungsthema · Absprachen in stabilen Phasen · bei Bedarf Paarberatung oder Paartherapie zur Klärung gemeinsamer Fragen. Für Eltern, Geschwister und andere Nahestehende können Angehörigen- oder Familiengespräche passend sein.</p>
@@ -365,7 +329,7 @@ function Modul7Page({ onNavigate }) {
               </aside>
 
               <h3>Soziale Kontakte nach Co-Isolation wiederaufbauen</h3>
-              <p>«Co-Isolation» bezeichnet hier den schleichenden Rückzug aus dem eigenen sozialen Netz. Belastende Zeiten können dazu führen, dass eigene Kontakte weniger Raum bekommen. Wenn Sie wieder mehr Kontakt möchten, können Sie mit einer vertrauten Person beginnen und schauen, was gerade für Sie passt.</p>
+              <p>Wenn eigene Kontakte über längere Zeit weniger Raum bekommen haben — hier «Co-Isolation» genannt — können Sie überlegen, welche Verbindung Sie wieder aufnehmen oder neu knüpfen möchten. Ein Kontakt, der früher passend war, muss heute nicht derselbe sein.</p>
               <p>Sie entscheiden, wie viel Sie erklären möchten. Vielleicht ist auch eine Angehörigengruppe passend. <strong>Welche alten oder neuen Kontakte Sie pflegen möchten, bestimmen Sie selbst.</strong></p>
             </section>
 
@@ -430,7 +394,7 @@ function Modul7Page({ onNavigate }) {
 
               <p><strong>Unterbrochene Pläne.</strong> Vielleicht trauern Sie um unterbrochene Pläne oder vermissen die Sicherheit der vergangenen Zeit. Vielleicht bleibt Ihr Vertrauen in weitere stabile Zeiten bestehen. Beides darf Raum haben.</p>
               <p><strong>Erneuter Kraftbedarf.</strong> Eine weitere Episode kann erneut Kraft kosten. Frühere Erfahrungen können belasten, aber auch helfen, passende Unterstützung früher zu finden. Prüfen Sie, welche Entlastung Sie jetzt brauchen.</p>
-              <p><strong>Fragen zur Verantwortung.</strong> Vielleicht fragen Sie sich, ob Sie etwas hätten verhindern können. Eine erneute Episode ist für sich kein Beweis dafür, dass Sie etwas versäumt haben. Was den konkreten Verlauf beeinflusst hat und welche Absprachen künftig helfen können, lässt sich mit dem Behandlungsteam besprechen. Sie tragen die Verantwortung für die Erkrankung nicht allein.</p>
+              <p><strong>Fragen zur Verantwortung.</strong> Vielleicht fragen Sie sich, ob Sie etwas hätten verhindern können. Eine erneute Episode ist für sich kein Beweis dafür, dass Sie etwas versäumt haben. Sie können Beobachtungen mitteilen, vereinbarte Aufgaben übernehmen und Unterstützung nutzen. Daraus folgt keine Verantwortung für die Erkrankung oder ihren Verlauf. Fachliche Einschätzung und Behandlung liegen bei den zuständigen Fachpersonen, gemeinsam mit der betroffenen Person.</p>
               <p><strong>Aufgaben neu klären.</strong> Eine weitere Episode kann Fragen zur eigenen Rolle oder zu gemeinsamen Plänen aufwerfen. Sie kann auch zeigen, welche Absprachen bereits tragen. Sie dürfen Ihre Aufgaben und Grenzen neu klären.</p>
 
               <aside className="callout">
@@ -452,7 +416,7 @@ function Modul7Page({ onNavigate }) {
 
               <ul className="key-points">
                 <li><strong>Reaktionen nach einer Episode sind unterschiedlich</strong> — Erschöpfung, Leere, Wut oder Erleichterung können auftreten, müssen aber nicht.</li>
-                <li><strong>Selbstfürsorge ist hier eher Schutz als Luxus</strong> — sie verhindert nicht alles, kann aber helfen, dass chronische Belastung nicht alles verschlingt.</li>
+                <li><strong>Eigene Entlastung darf sich verändern</strong> — schauen Sie bei Bedarf, welche Unterstützung noch passt und welche Absprachen angepasst werden sollten.</li>
                 <li><strong>Langfristige Tragfähigkeit entsteht meist aus Strukturen</strong> — gemeinsames Verständnis, krankheitsfreie Inseln, Grenzen, die vereinbarten Schritte und eigene Entlastung.</li>
                 <li><strong>Veränderungen müssen keinem Muster folgen</strong> — Ihre Erfahrungen und Bedürfnisse dürfen sich verändern oder gleich bleiben.</li>
                 <li><strong>Wachstum darf sein, muss aber nicht</strong> — es ist möglich, gleichzeitig stolz, erschöpft und wütend auf das Erlebte zu sein.</li>
@@ -466,11 +430,11 @@ function Modul7Page({ onNavigate }) {
                     <p>Wenn Sie jetzt vor allem Hilfe, Material, Kontakt oder eine konkrete nächste Adresse brauchen.</p>
                   </div>
                 </a>
-                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge', 'saeulen')} onClick={navHandler('werkzeuge', onNavigate, 'saeulen')}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Säulen-Check</h3>
-                    <p>Reflexion zu den vier Säulen — wo bin ich gerade stabil, wo ist Boden zu dünn?</p>
+                    <p>Eigene Ressourcen anschauen: Was trägt mich, und welche Unterstützung wünsche ich mir?</p>
                   </div>
                 </a>
               </div>

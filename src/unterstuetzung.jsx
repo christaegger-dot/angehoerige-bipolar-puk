@@ -4,6 +4,7 @@ import React from 'react';
 import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 import { KrisenplanTool } from './werkzeuge-tools.jsx';
+import { navHandler, navHref } from './nav-handler.js';
 
 const HANDOUTS = {
   'DL-01': {
@@ -38,7 +39,7 @@ const HANDOUTS = {
           'Sich erlauben, noch nicht alles zu wissen',
         ],
         dont: [
-          'Stundenlang im Internet suchen',
+          'Ohne Pause im Internet weitersuchen, obwohl die Suche Sie zunehmend überfordert',
           'Grosse Entscheidungen treffen, die warten können',
           'Der erkrankten Person sofort «helfen» wollen, bevor Sie selbst orientiert sind',
           'Das ganze Umfeld sofort informieren',
@@ -263,13 +264,14 @@ const HANDOUTS = {
           'Ein Thema pro Gespräch ansprechen und Raum für eine Antwort lassen',
           'Eigene Beobachtungen dem Behandlungsteam mitteilen',
           'Vereinbarte Schutzschritte prüfen: Welche Befugnisse und eigenen Grenzen gelten?',
+          'Eine eigene Schutzgrenze benennen, die Sie selbst umsetzen können, etwa ein angespanntes Gespräch beenden',
           'Fachliche Unterstützung holen, wenn Sie Veränderungen oder das weitere Vorgehen nicht einschätzen können',
         ],
         dont: [
           'Wiederholtes Überzeugen, wenn das Gespräch die Anspannung erhöht',
           'Grosse Entscheidungen mittragen, auch nicht aus Erleichterung',
           'Lange Diskussionen trotz erkennbarer Überforderung fortsetzen',
-          'Drohungen, die Sie nicht halten können',
+          'Drohungen als Druckmittel einsetzen',
         ],
       },
       {
@@ -508,10 +510,18 @@ function HandoutSection({ section }) {
   }
 }
 
-function HandoutOverlay({ id, onClose }) {
+const HANDOUT_CONTINUATIONS = {
+  'DL-01': { target: 'modul1', label: 'Erkrankung und Behandlung verstehen · Modul 1' },
+  'DL-06': { target: 'modul6', anchor: 's5', label: 'Umgang mit Hochphasen vertiefen · Modul 6' },
+  'DL-07': { target: 'modul6', anchor: 's5', label: 'Begleitung bei Depression vertiefen · Modul 6' },
+  'DL-08': { target: 'schweigepflicht', label: 'Schweigepflicht beim Behandlungsgespräch klären' },
+};
+
+function HandoutOverlay({ id, onClose, onNavigate }) {
   const handout = HANDOUTS[id];
   if (!handout) return null;
   const crisisOrientation = ['DL-02', 'DL-04', 'DL-05'].includes(id);
+  const continuation = HANDOUT_CONTINUATIONS[id];
 
   return (
     <ToolOverlay onClose={onClose} ariaLabel={handout.title} overlayClass="handout-overlay" cardClass="handout-card" noPrint={true}>
@@ -525,6 +535,21 @@ function HandoutOverlay({ id, onClose }) {
         <div className="handout-body">
           {handout.sections.map((sec, i) => <HandoutSection key={i} section={sec} />)}
         </div>
+
+        {continuation && (
+          <nav className="handout-callout no-print" aria-label="Passende Vertiefung">
+            <span className="handout-callout-label">Wenn Sie weiterlesen möchten</span>
+            <p>
+              <a
+                className="link-underline"
+                href={navHref(continuation.target, continuation.anchor)}
+                onClick={navHandler(continuation.target, onNavigate, continuation.anchor)}
+              >
+                {continuation.label}
+              </a>
+            </p>
+          </nav>
+        )}
 
         <footer className="handout-foot">
           <p className="handout-credits">
@@ -568,19 +593,28 @@ const FAQS = [
   { q: 'Ist die Beratung kostenpflichtig?', a: 'Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist kostenlos und vertraulich.' },
   { q: 'Muss ich wissen, was ich sagen will, bevor ich anrufe?', a: 'Nein. Sie dürfen unsortiert anrufen. Das Sortieren ist Teil der Beratung — niemand erwartet von Ihnen einen fertigen Auftrag.' },
   { q: 'Was, wenn die erkrankte Person nicht in der PUK behandelt wird?', a: 'Die Beratung steht auch Angehörigen offen, deren Familienmitglied anderswo behandelt wird oder gar nicht in Behandlung ist. Wir vermitteln bei Bedarf weiter.' },
-  { q: 'Wie ist es mit der Schweigepflicht?', a: 'Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.' },
+  { q: 'Wie ist es mit der Schweigepflicht?', a: 'Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.', link: { target: 'schweigepflicht', label: 'Schweigepflicht beim Behandlungsteam vertiefen' } },
 ];
 
-function UnterstuetzungPage({ onNavigate }) {
-  const [openHandout, setOpenHandout] = React.useState(null);
-  const [openTool, setOpenTool] = React.useState(null);
+function UnterstuetzungPage({ onNavigate, anchor }) {
+  const [localMaterialId, setLocalMaterialId] = React.useState(null);
   const [openFaq, setOpenFaq] = React.useState(null);
-  const closeTool = React.useCallback(() => setOpenTool(null), []);
-  const ActiveTool = openTool ? MATERIAL_TOOL_COMPONENTS[openTool] : null;
+  const routedSelection = anchor !== undefined;
+  const selectedCard = routedSelection
+    ? MATERIAL_CARDS.find(card => typeof anchor === 'string' && card.id.toLowerCase() === anchor.toLowerCase())
+    : MATERIAL_CARDS.find(card => card.id === localMaterialId);
+  const openHandout = selectedCard?.kind === 'handout' ? selectedCard.id : null;
+  const ActiveTool = selectedCard?.kind === 'tool' ? MATERIAL_TOOL_COMPONENTS[selectedCard.tool] : null;
+  const selectedMaterialId = selectedCard?.id.toLowerCase();
+  const closeMaterial = React.useCallback(() => {
+    if (routedSelection) onNavigate('unterstuetzung', null, { replace: true });
+    else setLocalMaterialId(null);
+    requestAnimationFrame(() => document.getElementById(selectedMaterialId)?.focus());
+  }, [routedSelection, onNavigate, selectedMaterialId]);
 
   const handleDownload = (card) => {
-    if (card.kind === 'tool') setOpenTool(card.tool);
-    else setOpenHandout(card.id);
+    if (routedSelection) onNavigate('unterstuetzung', card.id.toLowerCase());
+    else setLocalMaterialId(card.id);
   };
 
   return (
@@ -593,16 +627,22 @@ function UnterstuetzungPage({ onNavigate }) {
             <p className="lede" style={{ maxWidth: '34ch' }}>Hier finden Sie Hilfe, Material, Kontakt und häufige Fragen an einem Ort.</p>
             <p className="about-hero-note">Wenn Sie gerade überfordert sind, beginnen Sie am besten bei Hilfe oder Direktkontakt.</p>
             <ul className="about-hero-functions" aria-label="Vier Bereiche">
-              <li className="about-hero-function">Hilfe</li>
-              <li className="about-hero-function">Material</li>
-              <li className="about-hero-function">Kontakt</li>
-              <li className="about-hero-function">Fragen</li>
+              {[
+                ['hilfe', 'Hilfe'],
+                ['material', 'Material'],
+                ['kontakt', 'Kontakt'],
+                ['fragen', 'Fragen'],
+              ].map(([target, label]) => (
+                <li className="about-hero-function" key={target}>
+                  <a className="link-underline" href={navHref('unterstuetzung', target)} onClick={navHandler('unterstuetzung', onNavigate, target)}>{label}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </header>
 
-      <section style={{ paddingTop: 0 }}>
+      <section id="hilfe" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head">
             <div className="label-col">
@@ -648,7 +688,7 @@ function UnterstuetzungPage({ onNavigate }) {
         </div>
       </section>
 
-      <section className="bg-paper">
+      <section id="material" className="bg-paper">
         <div className="container">
           <div className="section-head">
             <div className="label-col">
@@ -666,11 +706,12 @@ function UnterstuetzungPage({ onNavigate }) {
               const meta = KIND_META[d.kind];
               return (
                 <button
+                  id={d.id.toLowerCase()}
                   type="button"
                   key={d.id}
                   className="download-card"
                   onClick={() => handleDownload(d)}
-                  aria-haspopup={d.kind === 'tool' ? 'dialog' : undefined}
+                  aria-haspopup="dialog"
                 >
                   <div className="download-meta">
                     <span className="mono">{d.id} · review_v02 · 2026-10-05</span>
@@ -688,7 +729,7 @@ function UnterstuetzungPage({ onNavigate }) {
         </div>
       </section>
 
-      <section>
+      <section id="kontakt">
         <div className="container">
           <div className="section-head">
             <div className="label-col">
@@ -721,7 +762,7 @@ function UnterstuetzungPage({ onNavigate }) {
         </div>
       </section>
 
-      <section className="bg-paper">
+      <section id="fragen" className="bg-paper">
         <div className="container">
           <div className="section-head">
             <div className="label-col">
@@ -759,6 +800,11 @@ function UnterstuetzungPage({ onNavigate }) {
                     hidden={!open}
                   >
                     <p>{f.a}</p>
+                    {f.link && (
+                      <p>
+                        <a className="link-underline" href={navHref(f.link.target)} onClick={navHandler(f.link.target, onNavigate)}>{f.link.label}</a>
+                      </p>
+                    )}
                   </div>
                 </div>
               );
@@ -767,8 +813,8 @@ function UnterstuetzungPage({ onNavigate }) {
         </div>
       </section>
 
-      {openHandout && <HandoutOverlay id={openHandout} onClose={() => setOpenHandout(null)} />}
-      {ActiveTool && <ActiveTool onClose={closeTool} onNavigate={onNavigate} />}
+      {openHandout && <HandoutOverlay id={openHandout} onClose={closeMaterial} onNavigate={onNavigate} />}
+      {ActiveTool && <ActiveTool onClose={closeMaterial} onNavigate={onNavigate} />}
     </>
   );
 }
