@@ -80,7 +80,7 @@ describe('content pages', () => {
       screen.getByRole('heading', { level: 1, name: /sos krise — wenn jetzt nichts anderes vorrang hat/i }),
     ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /144.*sanität.*lebensgefahr/i })).toHaveAttribute('href', 'tel:144');
-    expect(screen.getByText(/ich mache mir sorgen um dich/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/auch ohne genannten plan/i).length).toBeGreaterThan(0);
 
     await user.click(screen.getByRole('button', { name: /suizidale krise/i }));
     expect(screen.getByRole('button', { name: /suizidale krise.*öffnen/i })).toBeInTheDocument();

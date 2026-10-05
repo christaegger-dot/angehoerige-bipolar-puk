@@ -51,7 +51,7 @@ function DatenschutzPage() {
               wie Krisenplan oder Kommunikations-Trainer werden standardmässig nur für die aktuelle Browser-Sitzung
               gespeichert (<code>sessionStorage</code>). Wenn Sie die Option «Auf diesem Gerät dauerhaft behalten»
               aktivieren, werden diese Entwürfe im <code>localStorage</code> dieses Geräts gespeichert. Andere
-              Werkzeuge wie Selbsttest, Säulen-Check oder Phasenverlauf werten Ihre Eingaben direkt im Browser aus.
+              Werkzeuge wie «Meine Belastung wahrnehmen», Säulen-Check oder Phasenverlauf werten Ihre Eingaben direkt im Browser aus.
               Diese Daten werden zu keinem Zeitpunkt an unsere Server, an die PUK oder an Dritte übermittelt.
             </p>
             <p>

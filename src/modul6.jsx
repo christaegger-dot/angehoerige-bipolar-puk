@@ -2,6 +2,8 @@
 // Werkzeug-orientiert: Gespräche, Vereinbarungen, Krisenplan.
 
 import React from 'react';
+import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
+import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
 import { navHandler, navHref } from './nav-handler.js';
 
 function HandlungsfelderGrid() {
@@ -62,7 +64,7 @@ function Vereinbarung() {
       <div className="vereinbarung-head">
         <span className="kicker">Werkzeug · Vorlage</span>
         <h4>Vereinbarung in stabiler Phase</h4>
-        <p className="vereinbarung-intro">In ruhigen Wochen festhalten — schwarz auf weiss, gemeinsam unterschrieben — damit im Ernstfall nicht in der Krise neu verhandelt werden muss.</p>
+        <p className="vereinbarung-intro">In ruhigen Wochen gemeinsam festhalten und regelmässig prüfen. Eine Unterschrift dokumentiert die Absprache, schafft aber keine allgemeine Vertretungs- oder Entscheidungsbefugnis.</p>
       </div>
 
       <div className="vereinbarung-blatt">
@@ -118,7 +120,7 @@ function Krisenplan() {
       titel: 'Erste Schritte',
       sub: 'was wir jetzt tun, in dieser Reihenfolge',
       text: 'Eine geordnete Liste — kein Chaos, kein «mal schauen». Damit Sie in der Krise nicht improvisieren müssen.',
-      beispiel: '1. Hausärztin anrufen · 2. Behandelnden Psychiater informieren · 3. Termin innert 48 Std.',
+      beispiel: '1. Behandelnde Stelle heute kontaktieren · 2. Dringlichkeit fachlich klären · 3. Bei Nichterreichbarkeit Notfalldienst; bei unmittelbarer Gefahr 144 / 117',
     },
     {
       titel: 'Wer wird informiert',
@@ -130,7 +132,7 @@ function Krisenplan() {
       titel: 'Was nicht hilft',
       sub: 'damit Gut-Gemeintes nicht schadet',
       text: 'Was in vergangenen Episoden eskalierend gewirkt hat — als Erinnerung an alle Beteiligten, einschliesslich an Sie selbst im Stress.',
-      beispiel: 'Diskussionen · «vernünftig sein» einfordern · ohne Vorwarnung Polizei',
+      beispiel: 'Diskussionen · «vernünftig sein» einfordern · unklare Zuständigkeiten; bei akuter Bedrohung Polizei unabhängig von Vorabsprachen',
     },
   ];
   return (
@@ -138,7 +140,7 @@ function Krisenplan() {
       <div className="krisenplan-head">
         <span className="kicker">Werkzeug · Strukturvorlage</span>
         <h4>Der Krisenplan in vier Feldern</h4>
-        <p className="krisenplan-intro">Eine Karte für den Ernstfall — entworfen in stabiler Phase, ausgedruckt am Kühlschrank. So müssen Sie in der Krise nicht denken, sondern lesen.</p>
+        <p className="krisenplan-intro">Eine Karte für den Ernstfall — entworfen in stabiler Phase, ausgedruckt am Kühlschrank. Ergänzen Sie einen Ausweichkontakt, die Betreuung von Kindern, Ihre eigenen Grenzen und das Datum der nächsten Überprüfung. Der Plan erleichtert Entscheidungen. Wenn die Lage davon abweicht oder Sie unsicher sind, holen Sie fachliche Einschätzung.</p>
       </div>
       <div className="krisenplan-grid">
         {felder.map((f, i) => (
@@ -264,10 +266,11 @@ function Modul6Page({ onNavigate }) {
           </aside>
 
           <div className="module-body prose">
+            <ModuleQuickStart number={6} onNavigate={onNavigate} />
 
             <blockquote className="module-quote">
               <p>«Bei der vierten Manie meines Mannes wusste ich wieder nicht, was ich tun soll. Dann haben wir in einer ruhigen Phase den Krisenplan geschrieben. Beim nächsten Mal habe ich ihn einfach aufgeschlagen. Ich musste nicht mehr denken. Ich musste nur noch handeln.»</p>
-              <cite>Sandra, 44 Jahre, Ehefrau · anonymisiert</cite>
+              <cite>Sandra, 44 Jahre, Ehefrau · fiktives Beispiel</cite>
             </blockquote>
 
             <section id="s1">
@@ -317,7 +320,10 @@ function Modul6Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Beratung</span>
-                <p>Pro Mente Sana (<strong>0848 800 858</strong> · promentesana.ch) ist hier eine gute erste Anlaufstelle für Vorsorgeauftrag, Vollmachten und Patientenverfügung. Diese Fragen lassen sich fast immer besser in ruhigen Phasen klären als mitten in einer Eskalation.</p>
+                <p>{FINANCIAL_SAFETY}</p>
+              <p>Eine Patientenverfügung betrifft medizinische Behandlungswünsche; eine Schweigepflichtentbindung regelt Informationsweitergabe. Beide sind vom Vorsorgeauftrag und von einer Bankvollmacht zu unterscheiden.</p>
+
+              <p>Pro Mente Sana (<strong>0848 800 858</strong> · promentesana.ch) ist hier eine gute erste Anlaufstelle für Vorsorgeauftrag, Vollmachten und Patientenverfügung. Diese Fragen lassen sich fast immer besser in ruhigen Phasen klären als mitten in einer Eskalation.</p>
               </aside>
             </section>
 
@@ -332,8 +338,8 @@ function Modul6Page({ onNavigate }) {
 
               <h3>Warum das so oft zusammenfällt</h3>
               <ul>
-                <li><strong>Selbstmedikation:</strong> Alkohol dämpft Unruhe und Schlaflosigkeit in manischen Phasen. Cannabis betäubt depressive Leere. Das funktioniert kurzfristig — und verschlimmert mittelfristig beides.</li>
-                <li><strong>Impulsivität in der Manie:</strong> Enthemmung und Risikobereitschaft gehören zum Krankheitsbild. Substanzkonsum ist dann kein bewusster Entscheid, sondern Symptom.</li>
+                <li><strong>Selbstmedikation:</strong> Manche Menschen versuchen, Unruhe, Schlafprobleme oder belastende Gefühle mit Substanzen zu lindern. Das kann zusätzliche Risiken schaffen und eine gezielte Abklärung erfordern.</li>
+                <li><strong>Impulsivität in der Manie:</strong> Enthemmung und Risikobereitschaft gehören zum Krankheitsbild. Eine Episode kann Entscheidungen beeinflussen. Nicht jeder Konsum ist ein Symptom; auch eine eigenständige Abhängigkeit oder andere Gründe können vorliegen.</li>
                 <li><strong>Nebenwirkungs-Flucht:</strong> Manche Betroffene ersetzen die als belastend empfundenen Medikamente durch Substanzen, die schneller wirken — ein gefährlicher Tausch.</li>
                 <li><strong>Gemeinsame Neurobiologie:</strong> Bipolare Störung und Sucht teilen Störungen im Dopamin- und Belohnungssystem.</li>
               </ul>
@@ -341,14 +347,14 @@ function Modul6Page({ onNavigate }) {
               <h3>Konkrete Leitplanken</h3>
               <p><strong>1. Benennen, was Sie sehen — nicht deuten.</strong> «Ich sehe, dass du seit drei Tagen jeden Abend trinkst» ist hilfreicher als «Du bist wieder süchtig». Beobachtungen lassen sich schwerer abstreiten als Bewertungen.</p>
               <p><strong>2. Dualdiagnose-Behandlung einfordern.</strong> Bipolare Störung und Substanzkonsum müssen gleichzeitig behandelt werden — nicht nacheinander. Anlaufstellen: die Suchtfachstellen der Kantone und die integrierten Psychiatrie-Angebote der PUK.</p>
-              <p><strong>3. Enabling erkennen und begrenzen.</strong> Wenn Sie regelmässig Konsequenzen des Konsums abfedern — Ausreden liefern, Schulden bezahlen, Arbeitgeber beschwichtigen — wird der Konsum kurzfristig erträglicher und langfristig stabiler.</p>
+              <p><strong>3. Aufgaben und Grenzen klären.</strong> Sie dürfen Hilfe anbieten, ohne Ausreden liefern oder Schulden übernehmen zu müssen. Nicht jede Unterstützung erhält den Konsum aufrecht. Besprechen Sie mit einer Beratungsstelle, was in Ihrer Situation sinnvoll und für Sie tragbar ist.</p>
               <p><strong>4. Das Behandlungsteam informieren — auch über den Konsum.</strong> Viele Angehörige verschweigen den Substanzkonsum aus Scham oder Loyalität. Aber ohne diese Information kann die Behandlung nicht richtig eingestellt werden. Sie dürfen Informationen geben, auch ohne Einwilligung.</p>
               <p><strong>5. Ihre Grenzen klar halten.</strong> «Wenn du getrunken hast, schlafe ich im anderen Zimmer» ist keine Bestrafung, sondern Schutz.</p>
               <p><strong>6. Sich selbst Hilfe holen.</strong> Selbsthilfegruppen für Angehörige von Suchtkranken (z. B. Al-Anon) und Angehörigenberatung können parallel zur bipolaren Psychoedukation entlasten.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Zur Einordnung</span>
-                <p>Eine Dualdiagnose macht den Verlauf komplizierter, aber nicht hoffnungslos. Integrierte Behandlung — also die gleichzeitige Therapie beider Störungen — verbessert nachweislich sowohl die Substanz- als auch die Stimmungsstabilität.</p>
+                <p>Bipolare Symptome und Substanzprobleme sollten gemeinsam berücksichtigt und die Behandlungen abgestimmt werden. Studien zu integrierten Angeboten zeigen unter anderem Verbesserungen des Konsums; ein gleichzeitiger Nutzen für alle Stimmungs- und Konsumendpunkte ist nicht durchgehend belegt. Behandlung bleibt sinnvoll und wird individuell geplant.</p>
               </aside>
             </section>
 
@@ -394,13 +400,13 @@ function Modul6Page({ onNavigate }) {
               <h3>Kommunikation in der Manie</h3>
               <p><strong>Kurz und klar — ein Thema pro Gespräch.</strong> Lange Gespräche eskalieren schnell. Sagen Sie, was jetzt wichtig ist — und hören Sie auf.</p>
               <p><strong>Ruhige Stimme — auch wenn Sie nicht ruhig sind.</strong> Lautstärke und Tempo sind ansteckend. Langsamer sprechen kann die Situation ohne Worte entschärfen.</p>
-              <p><strong>Rausgehen, wenn es zu viel wird.</strong> «Ich brauche kurz Pause» ist kein Aufgeben. Es verhindert, dass eine schwierige Situation zu einem verletzenden Gespräch wird.</p>
+              <p><strong>Rausgehen, wenn es zu viel wird.</strong> «Ich brauche kurz Pause» ist kein Aufgeben. Es kann Raum schaffen. Sie dürfen ein Gespräch beenden; eine spätere Fortsetzung ist freiwillig und setzt ausreichende Sicherheit voraus.</p>
 
               <h3>Kommunikation in der Depression</h3>
               <p>Depression ist nicht bloss Traurigkeit. Es ist oft Leere, Schwere und ein tatsächliches Nicht-Können. Deshalb helfen hier andere Formen von Kontakt als in der Manie: weniger Druck, weniger Lösungen, mehr tragfähige Präsenz.</p>
 
               <p><strong>«Er liegt den ganzen Tag im Bett und reagiert nicht.»</strong><br/>
-              Kurz präsent sein. «Ich bin da. Du musst nichts sagen.» Dann wieder gehen. Vielleicht fünf Minuten am Bett sitzen. Das reicht. <em>Vermeiden:</em> «Komm, steh auf», «Du musst doch mal raus».</p>
+              Wenn die Person nicht reagiert oder kaum trinkt: dringend medizinische Einschätzung holen, bei unmittelbarer Gefahr 144. Wenn sie ansprechbar ist, kann kurze, ruhige Anwesenheit helfen: «Ich kann eine Weile bei dir sein. Du musst nichts sagen.» <em>Vermeiden:</em> «Komm, steh auf», «Du musst doch mal raus».</p>
 
               <p><strong>«Ich habe schon alles versucht — nichts hilft.»</strong><br/>
               «Ich kann das nicht lösen, aber ich bin hier.» Dieser Satz entlastet Sie beide. <em>Vermeiden:</em> Immer neue Lösungsvorschläge, ständig fragen «Geht es dir besser?»</p>
@@ -409,16 +415,16 @@ function Modul6Page({ onNavigate }) {
               «Ich verstehe, dass es sich so anfühlt. Du bist mir wichtig.» Sie müssen das Gefühl nicht korrigieren — Sie dürfen es stehen lassen. <em>Vermeiden:</em> «Quatsch, du bist doch keine Last».</p>
 
               <p><strong>«Sagst du mir ehrlich, dass ich besser werde?» — immer wieder.</strong><br/>
-              Nicht mehr Bestätigung, sondern Umlenken: «Ich glaube an die Behandlung. Was würde dich gerade konkret beruhigen?» Oder einfach: «Ich bin hier — das ändert sich nicht.» <em>Vermeiden:</em> Immer neue Bestätigungen geben. Wer ständig beruhigt wird, zweifelt stärker — nicht weniger.</p>
+              Nicht mehr Bestätigung, sondern Umlenken: «Ich glaube an die Behandlung. Was würde dich gerade konkret beruhigen?» Oder einfach: «Du bist mir wichtig. Ich kann jetzt zehn Minuten bei dir sein. Danach brauche ich eine Pause.» <em>Vermeiden:</em> Mehr versprechen, als Sie wissen oder leisten können. Nicht jede Bitte um Bestätigung ist ein problematisches Muster.</p>
 
               <aside className="callout">
                 <span className="callout-label">Bei Suizidgedanken</span>
-                <p>Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» Diese Frage löst Suizidgedanken <em>nicht</em> aus. Wenn konkrete Pläne, Mittel oder ein Termin im Raum stehen, ist es eine medizinische Notfallsituation: <strong>tödliche Mittel — Medikamente, Waffen — wenn möglich aus Reichweite bringen, ohne Eskalation</strong>, und gemeinsam zur Notfallaufnahme. Wenn das nicht möglich ist oder unmittelbare Gefahr besteht: <strong>144</strong>. Wenn Sie dringend medizinische Einschätzung brauchen, die Lage aber nicht unmittelbar lebensbedrohlich ist: <strong>0800 33 66 55</strong>. Vollständiger Ablauf auf der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
+                <p>Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» Diese Frage löst Suizidgedanken nicht aus. {SUICIDE_SAFETY} Für dringende medizinische Einschätzung ohne unmittelbare Lebensgefahr: <strong>0800 33 66 55</strong>. Vollständiger Ablauf auf der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
               </aside>
 
               <blockquote className="module-quote">
                 <p>«Die Manie war laut und chaotisch, aber wenigstens passierte etwas. Die Depression war Stille. Wochenlang. Ich sass neben ihm und wusste nicht, ob ich stören darf. Irgendwann habe ich aufgehört zu fragen und einfach nur seine Hand gehalten. Das war am Ende das Richtige.»</p>
-                <cite>Claudia, 44 Jahre, Partnerin · anonymisiert</cite>
+                <cite>Claudia, 44 Jahre, Partnerin · fiktives Beispiel</cite>
               </blockquote>
             </section>
 
@@ -447,7 +453,7 @@ function Modul6Page({ onNavigate }) {
 
             <section id="s6">
               <h2>Wenn Krankheitseinsicht fehlt oder Behandlung scheitert</h2>
-              <p>Ab hier geht es um Situationen, in denen Gespräch und klare Grenzen allein oft nicht mehr reichen. Manche Lagen scheitern nicht an der Kommunikation, sondern daran, dass die erkrankte Person ihre Lage grundlegend anders erlebt. In manischen Phasen fehlt häufig jede Krankheitseinsicht. Fachleute sprechen hier von Anosognosie: Die Person kann die eigene Erkrankung in diesem Moment nicht realistisch erkennen. Das ist kein Unwille und keine Sturheit, sondern ein Symptom.</p>
+              <p>Während einer Manie kann es schwerfallen, Veränderungen und Risiken zu erkennen. Eine ausgeprägte fehlende Krankheitseinsicht wird auch als Anosognosie bezeichnet. Wie stark dies zutrifft, ist fachlich zu beurteilen. Widerspruch, Nebenwirkungsbedenken oder ein anderer Behandlungswunsch beweisen keine fehlende Einsicht. Auch wenn die Episode das Verhalten beeinflusst, bleiben Ihre Gefühle und Schutzbedürfnisse berechtigt.</p>
 
               <div className="do-dont">
                 <div className="do-col">
@@ -464,7 +470,7 @@ function Modul6Page({ onNavigate }) {
                   <ul>
                     <li>Überzeugen wollen (in akuter Manie kaum möglich)</li>
                     <li>Argumente und Beweise anführen</li>
-                    <li>Es persönlich nehmen — es ist Biologie</li>
+                    <li>Allein für Einsicht oder Zustimmung verantwortlich sein wollen</li>
                   </ul>
                 </div>
               </div>
@@ -501,7 +507,7 @@ function Modul6Page({ onNavigate }) {
 
               <h3>Aufnahme — die ersten Stunden</h3>
               <p>Die Aufnahme erfolgt entweder freiwillig, über den psychiatrischen Notfalldienst oder als Fürsorgerische Unterbringung (FU). In allen Fällen gibt es ein ärztliches Aufnahmegespräch, eine erste Einschätzung und eine Zuweisung auf eine Station. <strong>Bringen Sie mit, was Sie haben:</strong> Medikamentenliste, Krisenplan, Kontaktdaten der ambulanten Psychiaterin, Versichertenkarte.</p>
-              <p>Bei einer FU dürfen Sie als Angehörige zwar eine Gefährdungsmeldung einreichen, aber Sie haben kein Mitspracherecht bei Behandlungsentscheidungen. Das kann sich ohnmächtig anfühlen — schützt aber auch vor einer Rollenüberlastung.</p>
+              <p>Verwandtschaft allein begründet bei einer fürsorgerischen Unterbringung (FU) kein allgemeines Entscheidungsrecht. Die betroffene Person kann eine Vertrauensperson beiziehen; diese kann auf Wunsch an der Behandlungsplanung beteiligt werden. Anhörung und Beteiligung sind von stellvertretender Entscheidung zu unterscheiden. Beobachtungen dürfen Sie mitteilen. Auskunft und konkrete Vertretungsrechte hängen von Einwilligung und rechtlicher Rolle ab. Mehr auf der <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflichtseite</a>.</p>
 
               <h3>Dauer — womit Sie rechnen können</h3>
               <ul>
@@ -559,10 +565,9 @@ function Modul6Page({ onNavigate }) {
             </section>
 
             <footer className="module-article-footer">
-              <p className="module-credits">
-                Quellen: Miklowitz, D. J. (2010) «The Bipolar Disorder Survival Guide» · Colom &amp; Vieta (2006) «Psychoeducation Manual for Bipolar Disorder» · Dazzi et al. (2014) Asking about suicide does not induce ideation · Varga et al. (2006) Insight and bipolar disorder · S3-Leitlinie (DGBS/DGPPN) · Beratungsmaterial der Fachstelle Angehörigenarbeit der PUK Zürich.
-              </p>
-              <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert.</p>
+              <EvidenceSources number={6} />
+
+              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
                 <a className="module-nav-btn" href={navHref('modul5')} onClick={navHandler('modul5', onNavigate)}>

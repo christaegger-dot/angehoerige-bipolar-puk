@@ -2,6 +2,7 @@
 // Zentrales Bild: Zwei sich ziehende Linien (Knoten) als Metapher.
 
 import React from 'react';
+import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function KnotenFigur() {
@@ -85,8 +86,8 @@ function KipppunkteListe() {
     },
     {
       titel: 'Körper',
-      sub: 'wenn Loyalität sich rächt',
-      text: 'Schlafstörungen, Magen, Rücken, Herzklopfen ohne Grund. Der Körper sagt sich los, wenn der Verstand es noch nicht zulässt. Symptome ohne medizinischen Befund sind oft genau das.',
+      sub: 'wenn körperliche Beschwerden dazukommen',
+      text: 'Anspannung kann sich auch körperlich bemerkbar machen. Neue oder anhaltende Beschwerden wie Herzklopfen, Schmerzen oder Schlafstörungen brauchen medizinische Abklärung. Ein fehlender körperlicher Befund beweist keinen Loyalitätskonflikt.',
     },
   ];
   return (
@@ -212,6 +213,7 @@ function Modul5Page({ onNavigate }) {
           </aside>
 
           <div className="module-body prose">
+            <ModuleQuickStart number={5} onNavigate={onNavigate} />
 
             <section id="s1">
               <h2>Das Dilemma ist real</h2>
@@ -256,24 +258,24 @@ function Modul5Page({ onNavigate }) {
 
             <section id="s3">
               <h2>Wie Überlastung in Beziehungsmuster kippt</h2>
-              <p>«Expressed Emotion» (EE) ist ein Fachbegriff für ein angespanntes familiäres Klima mit viel Kritik oder zu viel Einmischung. Dieses Muster ist verwandt mit dem Hypervigilanz-Kreislauf aus Modul 2 — dort auf individueller Ebene, hier in der Beziehungsdynamik. Für Angehörige wichtig ist vor allem: EE ist selten Bosheit. Meist ist es Überlastung, die in Muster kippt. Was als Fürsorge beginnt, endet dann in Kontrolle, Gereiztheit oder Rückzug.</p>
+              <p>Unter Belastung können sich Sorgen, zusätzliche Verantwortungsübernahme, Erschöpfung und gereizte Gespräche gegenseitig verstärken. Die folgenden vier Aspekte sind ein vereinfachtes Reflexionsmodell. Sie müssen nicht in dieser Reihenfolge auftreten und beschreiben nicht jede Familie.</p>
 
               <h3>Der Teufelskreis — und wo er unterbrechbar ist</h3>
               <p><strong>1 — Schuldgefühle.</strong> «Hätte ich die Warnzeichen früher erkannt?» Die Schuld treibt Sie zu noch mehr Kontrolle. → Das erschöpft.</p>
-              <p><strong>2 — Überengagement.</strong> Sie übernehmen alles: Medikamente, Termine, Stimmungs-Monitoring. Die erkrankte Person verliert Eigenverantwortung. → Das kostet Kraft.</p>
-              <p><strong>3 — Erschöpfung.</strong> Irgendwann kippen Sie. Die Erschöpfung wird zu Gereiztheit — ungewollt, aber unvermeidlich. → Das erzeugt Distanz.</p>
+              <p><strong>2 — Zusätzliche Verantwortung.</strong> Sie übernehmen viele Aufgaben. Prüfen Sie gemeinsam, welche Unterstützung gewünscht ist, was die andere Person selbst übernehmen kann und wo Sie Entlastung brauchen.</p>
+              <p><strong>3 — Erschöpfung.</strong> Unter Belastung kann die Geduld nachlassen. Gereiztheit ist kein zwangsläufiger nächster Schritt; frühzeitige Hilfe und Abstand können entlasten.</p>
               <p><strong>4 — Kritik.</strong> Sätze, die Sie bereuen. Vorwürfe, die verletzen. Danach kommt die Schuld zurück — und der Kreislauf beginnt von vorn.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Warum das lohnt</span>
-                <p>Meta-Analysen beschreiben bei hohem EE-Niveau ein deutlich erhöhtes Rückfallrisiko der erkrankten Person. Das heisst <strong>nicht</strong>, dass Angehörige Rückfälle verursachen. Es heisst: Ein entlastenderes familiäres Klima kann für beide Seiten spürbar helfen. EE lässt sich verändern — nicht durch Schuld, sondern durch Bewusstwerdung, Entlastung und konkrete Strategien.</p>
+                <p>Expressed Emotion (EE) ist ein eigenständiger Forschungsbegriff für kritische Kommentare, Feindseligkeit und emotionale Überinvolviertheit. Er bezeichnet keine feste Vierphasenfolge. Eine systematische Übersicht findet Zusammenhänge mit Rückfällen, besonders depressiven Episoden. Daraus folgt keine individuelle Verursachung durch Angehörige. Legitime Grenzen oder hohe Beteiligung sind nicht automatisch feindselig. Entlastung und familienbezogene Unterstützung können für beide Seiten hilfreich sein.</p>
               </aside>
             </section>
 
             <section id="s4">
               <h2>Ein verwandtes Muster: Das Beruhigungs-Dilemma</h2>
-              <p>Neben dem EE-Kreislauf gibt es ein zweites, gut belegtes Muster: Depressive Personen suchen oft wiederholt Bestätigung — «Liebst du mich noch?», «Glaubst du, ich werde besser?» Angehörige antworten ehrlich und fürsorglich. Die Person zweifelt an der Antwort und fragt erneut. Irgendwann ist die Angehörigenperson erschöpft und zieht sich zurück — was die Situation für beide verschlimmert. Dieses Muster heisst in der Forschung «Excessive Reassurance Seeking» (Coyne, 1976; Joiner et al., 1992).</p>
-              <p>Die hilfreiche Antwort ist nicht mehr Bestätigung, sondern ein Umlenken: «Ich höre, dass du dir unsicher bist. Was brauchst du gerade — ausser einer Antwort?» Das entlastet beide. Wer dieses Muster erkennt, kann aus dem Kreislauf aussteigen, bevor er erschöpft.</p>
+              <p>Manche Menschen fragen in einer Depression wiederholt nach Bestätigung. Das kann mit Unsicherheit und Hoffnungslosigkeit zusammenhängen und Angehörige belasten. In der Depressionsforschung wird ein mögliches Muster als «Excessive Reassurance Seeking» beschrieben. Es ist keine Erklärung für jede Bitte um Nähe und kein speziell für bipolare Störungen gesicherter Ablauf.</p>
+              <p>Sie dürfen ehrlich Zuwendung zeigen und zugleich Ihre Verfügbarkeit begrenzen: «Du bist mir wichtig. Ich kann jetzt zehn Minuten bei dir sein. Danach brauche ich eine Pause.» Wenn Fragen und Antworten für beide belastend werden, besprechen Sie das Muster mit dem Behandlungsteam. Es gibt keinen Satz, der zuverlässig alle Zweifel beendet.</p>
             </section>
 
             <section id="s5">
@@ -282,7 +284,7 @@ function Modul5Page({ onNavigate }) {
 
               <h3>Vier typische Barrieren</h3>
               <p><strong>A — Angst.</strong> «Wenn ich Nein sage und etwas passiert — lebe ich mit der Schuld.» Diese Angst ist real. Aber es geht um «welche Grenze, wann, wie» — nicht um Alles oder Nichts.</p>
-              <p><strong>B — Schuld.</strong> Dieselbe Schuld, die den EE-Kreislauf antreibt, blockiert auch die Grenzsetzung. Das Muster zu erkennen ist der erste Schritt, es zu durchbrechen.</p>
+              <p><strong>B — Schuld.</strong> Schuldgefühle, die das Belastungsmuster verstärken können, blockiert auch die Grenzsetzung. Das Muster zu erkennen ist der erste Schritt, es zu durchbrechen.</p>
               <p><strong>C — Moralischer Druck.</strong> «Man lässt einen kranken Menschen nicht im Stich.» Dieses Narrativ ignoriert, dass unbegrenzte Aufopferung beide Seiten schädigt.</p>
               <p><strong>D — Gewohnheit.</strong> Nach Jahren der Übernahme fällt es schwer, Aufgaben zurückzugeben. Fachleute sprechen hier von «Enabling»: wenn gut gemeinte Hilfe unbeabsichtigt Eigenverantwortung untergräbt. Kein Vorwurf gegen Sie und kein moralisches Urteil über die erkrankte Person — eher ein Muster, das erkennbar und veränderbar ist.</p>
 
@@ -403,10 +405,9 @@ function Modul5Page({ onNavigate }) {
             </section>
 
             <footer className="module-article-footer">
-              <p className="module-credits">
-                Quellen: Boszormenyi-Nagy «Unsichtbare Bindungen» · Butzlaff &amp; Hooley (1998) Expressed Emotion und Rückfallrisiko · Coyne (1976) / Joiner et al. (1992) Excessive Reassurance Seeking · Mak &amp; Cheung (2008) Affiliate Stigma · Perlick et al. (2007) Caregiver Burden · Kessler et al. (1998) Trennungsraten · Beratungsmaterial der Fachstelle Angehörigenarbeit der PUK Zürich.
-              </p>
-              <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert.</p>
+              <EvidenceSources number={5} />
+
+              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
                 <a className="module-nav-btn" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>

@@ -36,3 +36,17 @@ describe('HomePage triage flow', () => {
     expect(onNavigate).toHaveBeenCalledWith('modul6');
   });
 });
+
+
+it('offers direct support when the carer is at their limit', async () => {
+  const user = userEvent.setup();
+  const onNavigate = vi.fn();
+  render(<HomePage onNavigate={onNavigate} />);
+  await user.click(screen.getByRole('button', { name: 'Nein' }));
+  await user.click(screen.getByRole('button', { name: 'Nein, schon länger' }));
+  await user.click(screen.getByRole('button', { name: 'Ja' }));
+  const support = screen.getByRole('link', { name: /Beratung und Entlastung/i });
+  expect(support).toHaveAttribute('href', '/unterstuetzung');
+  await user.click(support);
+  expect(onNavigate).toHaveBeenCalledWith('unterstuetzung');
+});

@@ -2,6 +2,7 @@
 // Zentrales Bild: Vier Säulen als Tragwerk.
 
 import React from 'react';
+import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function SaeulenFigur() {
@@ -55,7 +56,7 @@ function SaeulenFigurWrap() {
         <SaeulenFigur />
       </div>
       <figcaption>
-        Tragfähigkeit ist keine Stärke — sie ist Architektur. Vier Stützen, von denen eine ausfallen kann, ohne dass das ganze Tragwerk kippt. Wer nur eine Stütze hat — und sei sie noch so dick — steht ungeschützt.
+        Die vier Stützen sind ein Bild für mögliche Ressourcen. Sie messen weder Belastbarkeit noch Sicherheit. Welche Unterstützung erreichbar ist, hängt auch von Zeit, Geld, Betreuung und dem Hilfesystem ab.
       </figcaption>
     </figure>
   );
@@ -83,12 +84,12 @@ function StuetzenDetail() {
   );
 }
 
-function WellnessVsKontrast() {
+function ErholungUndEntlastung() {
   return (
     <div className="kontrast-block">
       <div className="kontrast-spalte kontrast-links">
         <span className="kontrast-label">Häufige Annahme</span>
-        <h4>Wellness</h4>
+        <h4>Kurze Erholung</h4>
         <p className="kontrast-untertitel">Ausgleich zum Stress</p>
         <ul>
           <li>Reagiert auf Belastung — wenn es eng wird, dann mehr.</li>
@@ -98,10 +99,10 @@ function WellnessVsKontrast() {
         </ul>
       </div>
       <div className="kontrast-trenner">
-        <span>statt</span>
+        <span>und</span>
       </div>
       <div className="kontrast-spalte kontrast-rechts">
-        <span className="kontrast-label">Was tragfähig ist</span>
+        <span className="kontrast-label">Was zusätzlich entlasten kann</span>
         <h4>Selbstfürsorge</h4>
         <p className="kontrast-untertitel">Strukturelle Voraussetzung</p>
         <ul>
@@ -144,10 +145,10 @@ function EigeneWeltGrid() {
 
 function ZeitTimeline() {
   const phasen = [
-    { jahre: 'Jahr 1–2', titel: 'Diagnose und erstes Verstehen', text: 'Vieles ist Schock und Lernen. Energie kommt aus dem Bedürfnis, zu begreifen.' },
-    { jahre: 'Jahr 3–5', titel: 'Routine und Müdigkeit', text: 'Die Aufmerksamkeit wird zur Gewohnheit. Hier zeigen sich die ersten Erschöpfungs-Linien.' },
-    { jahre: 'Jahr 6–10', titel: 'Neuverhandlung', text: 'Viele beginnen, ihre Rolle zu hinterfragen. Trennungen, Veränderungen, neue Verteilungen tauchen auf.' },
-    { jahre: 'Jahr 10+', titel: 'Eingelebte Form', text: 'Was bleibt, ist meist nicht das, was anfangs gedacht war — sondern das, was nach mehreren Korrekturen tatsächlich tragfähig ist.' },
+    { jahre: 'Eine mögliche Erfahrung', titel: 'Diagnose und erstes Verstehen', text: 'Vieles ist Schock und Lernen. Energie kommt aus dem Bedürfnis, zu begreifen.' },
+    { jahre: 'Eine mögliche Erfahrung', titel: 'Routine und Müdigkeit', text: 'Die Aufmerksamkeit wird zur Gewohnheit. Manchmal entsteht Müdigkeit; andere erleben zunehmende Sicherheit und Entlastung.' },
+    { jahre: 'Eine mögliche Erfahrung', titel: 'Neuverhandlung', text: 'Viele beginnen, ihre Rolle zu hinterfragen. Trennungen, Veränderungen, neue Verteilungen tauchen auf.' },
+    { jahre: 'Eine mögliche Erfahrung', titel: 'Eingelebte Form', text: 'Eine passende Form des Zusammenlebens oder Begleitens kann sich entwickeln und später erneut angepasst werden.' },
   ];
   return (
     <div className="zeit-timeline">
@@ -250,10 +251,11 @@ function Modul7Page({ onNavigate }) {
           </aside>
 
           <div className="module-body prose">
+            <ModuleQuickStart number={7} onNavigate={onNavigate} />
 
             <blockquote className="module-quote">
               <p>«Wir haben gelernt, als Team zu funktionieren. Er sagt mir, wenn es kippt. Ich sage ihm, wenn ich eine Pause brauche. Es ist nicht perfekt — aber es ist unseres.»</p>
-              <cite>Partnerin, 49 Jahre · anonymisiert</cite>
+              <cite>Partnerin, 49 Jahre · fiktives Beispiel</cite>
             </blockquote>
 
             <section id="s1">
@@ -290,7 +292,7 @@ function Modul7Page({ onNavigate }) {
 
               <blockquote className="module-quote">
                 <p>«Es ist nicht gut. Das sage ich ehrlich. Er hat immer noch Episoden. Aber es ist besser als vor drei Jahren. Damals konnte ich nicht mehr schlafen, nicht mehr arbeiten, nicht mehr fühlen. Heute schlafe ich meistens durch. Ich habe gelernt, dass ‹besser› reicht. Nicht als Ziel — sondern als etwas, worauf ich stolz sein darf.»</p>
-                <cite>Brigitte, 56 Jahre, Ehefrau seit 22 Jahren · anonymisiert</cite>
+                <cite>Brigitte, 56 Jahre, Ehefrau seit 22 Jahren · fiktives Beispiel</cite>
               </blockquote>
             </section>
 
@@ -301,12 +303,12 @@ function Modul7Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Wissenschaftlicher Hintergrund</span>
-                <p>Wie in Modul 2 beschrieben, entwickeln Angehörige von Menschen mit bipolarer Störung überproportional häufig eigene depressive oder Angstsymptome. Die Belastung durch die Pflege verursacht die Symptome — nicht umgekehrt. Entlastung ist deshalb <em>Prävention</em>, nicht Selbstsucht.</p>
+                <p>Anhaltende hohe Belastung kann das Risiko eigener psychischer Beschwerden erhöhen. Längsschnittforschung zeigt einen Zusammenhang zwischen Angehörigenbelastung und späteren depressiven Symptomen, aber keine ausschliessliche Ursache. Eigene Gesundheit, Schlaf und erreichbare Hilfe zählen ebenfalls. Sie dürfen Unterstützung für sich selbst nutzen.</p>
               </aside>
 
-              <WellnessVsKontrast />
+              <ErholungUndEntlastung />
 
-              <p>Wenn Sie merken, dass Ihre «Selbstfürsorge» genau dann ausfällt, wenn Sie sie am dringendsten bräuchten — ist das in der Regel ein Zeichen, dass es Wellness war, nicht Selbstfürsorge. Beides hat seinen Platz; nur ist nur eines von beidem strukturell tragend.</p>
+              <p>Wenn Selbstfürsorge gerade in schweren Zeiten ausfällt, fehlt möglicherweise Zeit, Kraft oder praktische Entlastung. Das ist kein persönliches Versagen. Eine kurze Pause kann guttun; zusätzlich kann jemand Aufgaben übernehmen oder verlässliche Betreuung ermöglichen. Ihre Gesundheit hat einen eigenen Wert, unabhängig davon, wie viel Sie begleiten.</p>
 
               <h3>Drei Bereiche von Selbstfürsorge</h3>
               <p><strong>Körper.</strong> Eigenen Schlafrhythmus beibehalten · regelmässige Bewegung, auch kurz · regelmässige Mahlzeiten · eigene Arztbesuche nicht vergessen.</p>
@@ -320,7 +322,7 @@ function Modul7Page({ onNavigate }) {
 
               <SaeulenFigurWrap />
 
-              <p>Die Stärke dieser Architektur liegt nicht in der Höhe der einzelnen Säule, sondern in ihrer Anzahl. Eine sehr starke Säule, etwa eine intensive Therapie, ist verletzlich, wenn sie alleine steht. Vier mittlere Säulen tragen länger als eine grosse, gerade dann, wenn eine wegfällt.</p>
+              <p>Das Bild lädt ein, vorhandene und fehlende Ressourcen anzuschauen. Es gibt keine geprüfte Anzahl von Stützen, die Sicherheit garantiert. Unterstützung kann auch bedeuten, Betreuung, finanzielle Fragen oder Belastungen am Arbeitsplatz gemeinsam zu klären.</p>
 
               <h3>Was eine Stütze ausmacht</h3>
               <p>Nicht alles, was als «Selbstfürsorge» bezeichnet wird, ist auch tragend. Eine echte Stütze hat vier Eigenschaften, die sie von einer netten Idee unterscheiden.</p>
@@ -328,8 +330,8 @@ function Modul7Page({ onNavigate }) {
               <StuetzenDetail />
 
               <blockquote className="module-quote">
-                <p>«Die Wende kam, als wir aufgehört haben, nur über die Erkrankung zu reden, und angefangen haben, wieder über uns zu reden. Wir haben einen Abend pro Woche eingeführt, an dem Bipolar tabu ist. Das hat mehr für unsere Beziehung getan als die meisten Therapiestunden.»</p>
-                <cite>Daniel, 45 Jahre, Ehemann · anonymisiert</cite>
+                <p>«Die Wende kam, als wir aufgehört haben, nur über die Erkrankung zu reden, und angefangen haben, wieder über uns zu reden. Wir haben einen Abend pro Woche eingeführt, an dem Bipolar tabu ist. Diese gemeinsame Zeit war uns wichtig.»</p>
+                <cite>Daniel, 45 Jahre, Ehemann · fiktives Beispiel</cite>
               </blockquote>
 
               <h3>Was erkrankte Partner sich häufig wünschen</h3>
@@ -383,7 +385,7 @@ function Modul7Page({ onNavigate }) {
 
             <section id="s7">
               <h2>Was Zeit anders macht</h2>
-              <p>Die Erkrankung verändert sich über die Jahre, die Beziehung verändert sich, Sie selbst verändern sich. Eine grobe Karte solcher Verschiebungen — basierend auf dem, was Beratungsstellen über lange Begleitungen rückmelden:</p>
+              <p>Lebenslagen und Beziehungen können sich verändern. Die folgenden Beispiele sind mögliche Erfahrungen, keine wissenschaftlich belegten Jahresphasen. Sie können gleichzeitig, in anderer Reihenfolge oder gar nicht auftreten. Ebenso möglich sind lange stabile Phasen, gelingende Kooperation und ein gutes eigenes und gemeinsames Leben.</p>
 
               <ZeitTimeline />
 
@@ -411,7 +413,7 @@ function Modul7Page({ onNavigate }) {
 
               <blockquote className="module-quote">
                 <p>«Wachstum klingt so gross. Bei mir war es eher: Ich habe gelernt, dass ich mehr aushalte, als ich dachte — und dass ich trotzdem Hilfe brauche. Beides gleichzeitig. Ich bin stolz darauf, wie wir es geschafft haben. Und ich bin manchmal wütend, dass wir es überhaupt schaffen mussten. Das ist kein Widerspruch.»</p>
-                <cite>Leila, 53 Jahre, Partnerin · anonymisiert</cite>
+                <cite>Leila, 53 Jahre, Partnerin · fiktives Beispiel</cite>
               </blockquote>
 
               <h3>Wenn es nach Jahren wieder passiert</h3>
@@ -466,10 +468,9 @@ function Modul7Page({ onNavigate }) {
             </section>
 
             <footer className="module-article-footer">
-              <p className="module-credits">
-                Quellen: Reinares et al. (2016) Family interventions in bipolar disorder · Miklowitz (2008) Adjunctive psychotherapy for bipolar disorder · Tedeschi &amp; Calhoun (2004) Posttraumatic growth · Southwick &amp; Charney (2012) Resilience · Neff (2011) Self-Compassion · Perlick et al. (2007) Caregiver burden · Beratungsmaterial der Fachstelle Angehörigenarbeit der PUK Zürich.
-              </p>
-              <p className="module-credits">Stand: April 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Zitate sind anonymisiert.</p>
+              <EvidenceSources number={7} />
+
+              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
                 <a className="module-nav-btn" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>

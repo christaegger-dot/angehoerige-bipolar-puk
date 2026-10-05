@@ -1,6 +1,7 @@
 // Unterstützung und Ressourcen — Beratung, Materialien, Handouts und Kontakt als Hub.
 
 import React from 'react';
+import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 import { KrisenplanTool } from './werkzeuge-tools.jsx';
 
@@ -16,7 +17,7 @@ const HANDOUTS = {
       },
       {
         kind: 'p',
-        text: 'Eine bipolare Störung ist eine wiederkehrende, oft schwer kalkulierbare Erkrankung mit Phasen erhöhten Antriebs (Manie/Hypomanie) und Phasen gesenkten Antriebs (Depression). Dazwischen gibt es oft längere stabile Strecken. Etwa 1 bis 2 von 100 Menschen erleben im Lauf ihres Lebens eine bipolare Störung. Sie ist nicht heilbar, aber gut behandelbar.',
+        text: 'Eine bipolare Störung ist eine wiederkehrende, oft schwer kalkulierbare Erkrankung mit Phasen erhöhten Antriebs (Manie/Hypomanie) und Phasen gesenkten Antriebs (Depression). Dazwischen gibt es oft längere stabile Strecken. Etwa 1 bis 2 von 100 Menschen erleben im Lauf ihres Lebens eine bipolare Störung. Behandlung kann Beschwerden lindern und lange stabile Phasen ermöglichen. Verlauf und Unterstützungsbedarf sind individuell.',
       },
       {
         kind: 'p',
@@ -93,6 +94,10 @@ const HANDOUTS = {
           { label: 'Aktuelle Medikation (Wirkstoff, Dosis)' },
           { label: 'Bekannte Allergien / Unverträglichkeiten' },
           { label: 'Klinikwunsch im Ernstfall' },
+          { label: 'Ausweichkontakt, wenn die behandelnde Stelle nicht erreichbar ist' },
+          { label: 'Betreuung für Kinder oder andere abhängige Personen' },
+          { label: 'Wer entlastet mich, wenn ich nicht begleiten kann?' },
+          { label: 'Zuletzt geprüft am' },
           { label: 'Vorsorgeauftrag / Patientenverfügung hinterlegt bei' },
         ],
       },
@@ -128,17 +133,17 @@ const HANDOUTS = {
       },
       {
         kind: 'p',
-        text: 'Wenn die Antwort konkret ist — Pläne, Mittel oder Zeitpunkt im Raum stehen — wird das eine medizinische Notfallsituation.',
+        text: SUICIDE_SAFETY,
       },
       {
         kind: 'do-dont',
         doTitle: 'Was hilft',
         dontTitle: 'Was selten hilft',
         do: [
-          'Bleiben. Lassen Sie die Person nicht allein.',
+          'Nur bleiben, solange Ihre eigene Sicherheit gewährleistet ist; Hilfeübergabe organisieren.',
           'Ehrlich Sorge zeigen: «Ich mache mir Sorgen um dich.»',
-          'Tödliche Mittel (Medikamente, Waffen) wenn möglich aus Reichweite bringen — ohne Eskalation.',
-          'Gemeinsam zur Notfallaufnahme. Wenn die Person nicht kann: 144.',
+          'Gefährliche Gegenstände nicht gegen Widerstand wegnehmen und sich nicht selbst gefährden.',
+          'Bei unmittelbarer Gefahr 144; zur Notfallaufnahme nur fahren, wenn dies sicher möglich ist.',
           'Nach der akuten Phase: behandelnde Stelle informieren, eigene Beratung holen.',
         ],
         dont: [
@@ -257,7 +262,7 @@ const HANDOUTS = {
       {
         kind: 'callout',
         label: 'Bei Geld, Verträgen, Geschäften',
-        text: 'In manischen Phasen können in wenigen Tagen erhebliche finanzielle Schäden entstehen. Wenn in stabilen Phasen Bankabsprachen, eine Bankvollmacht oder ein Vorsorgeauftrag vorbereitet wurden — jetzt umsetzen. Bankberater oder die KESB (für Beistandschaft) sind Ansprechpartner.',
+        text: FINANCIAL_SAFETY,
       },
       {
         kind: 'h',
@@ -294,7 +299,7 @@ const HANDOUTS = {
         dontTitle: 'Was selten hilft',
         do: [
           'Da sein, ohne zu drängen',
-          'Aktive Hilfe in kleinen Schritten: Wasser, kurzer Spaziergang, gemeinsam essen',
+          'Bei ansprechbarer Person: kleine Alltagshilfen anbieten. Bei fehlender Reaktion, Bewegungslosigkeit oder kaum Flüssigkeitsaufnahme dringend medizinisch einschätzen lassen; bei unmittelbarer Gefahr 144.',
           'Direkt nach Suizidgedanken fragen — das löst keine aus, es schafft Erleichterung',
           'Behandelnde Stelle früh kontaktieren — nicht erst, wenn es kaum noch geht',
           'Ihre eigene Belastung ernst nehmen',
@@ -321,7 +326,7 @@ const HANDOUTS = {
       {
         kind: 'callout',
         label: 'Bei Suizidgedanken',
-        text: 'Direkt fragen. Wenn konkrete Pläne, ein Termin oder Mittel im Raum stehen, ist das eine medizinische Notfallsituation. Bringen Sie tödliche Mittel wenn möglich aus Reichweite. Gemeinsam zur Notfallaufnahme oder 144.',
+        text: SUICIDE_SAFETY,
       },
       {
         kind: 'h',
@@ -530,7 +535,7 @@ function HandoutOverlay({ id, onClose }) {
 
         <footer className="handout-foot">
           <p className="handout-credits">
-            Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) · Inhaltliche Verantwortung: Ch. Egger · Stand: April 2026 · Diese Inhalte ersetzen keine fachliche Beratung. In akuten Lagen hat der Notfallweg Vorrang.
+            Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) · Inhaltliche Verantwortung: Ch. Egger · Redaktioneller Abgleich: Oktober 2026 · Diese Inhalte ersetzen keine fachliche Beratung. In akuten Lagen hat der Notfallweg Vorrang.
           </p>
         </footer>
 
@@ -570,7 +575,7 @@ const FAQS = [
   { q: 'Ist die Beratung kostenpflichtig?', a: 'Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist kostenlos und vertraulich.' },
   { q: 'Muss ich wissen, was ich sagen will, bevor ich anrufe?', a: 'Nein. Sie dürfen unsortiert anrufen. Das Sortieren ist Teil der Beratung — niemand erwartet von Ihnen einen fertigen Auftrag.' },
   { q: 'Was, wenn die erkrankte Person nicht in der PUK behandelt wird?', a: 'Die Beratung steht auch Angehörigen offen, deren Familienmitglied anderswo behandelt wird oder gar nicht in Behandlung ist. Wir vermitteln bei Bedarf weiter.' },
-  { q: 'Wie ist es mit der Schweigepflicht?', a: 'Wir unterstehen der ärztlichen Schweigepflicht. Was Sie uns erzählen, wird nicht ohne Ihre Zustimmung an die erkrankte Person oder das Behandlungsteam weitergegeben.' },
+  { q: 'Wie ist es mit der Schweigepflicht?', a: 'Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.' },
 ];
 
 function UnterstuetzungPage({ onNavigate }) {
@@ -676,7 +681,7 @@ function UnterstuetzungPage({ onNavigate }) {
                   aria-haspopup={d.kind === 'tool' ? 'dialog' : undefined}
                 >
                   <div className="download-meta">
-                    <span className="mono">{d.id} · core_v01 · 2026-04-25</span>
+                    <span className="mono">{d.id} · review_v02 · 2026-10-05</span>
                     <span className="download-pdf-label">{d.metaLabel || meta.label}</span>
                   </div>
                   <h3>{d.title}</h3>
@@ -708,12 +713,12 @@ function UnterstuetzungPage({ onNavigate }) {
             <div className="contact-info-block">
               <div className="label">TELEFON</div>
               <div className="value"><a className="link-underline" href="tel:+41583843800">058 384 38 00</a></div>
-              <div className="sub">Werktags. Antwort meist sofort, sonst Rückruf.</div>
+              <div className="sub">Werktags. Bei Nichterreichbarkeit eine Nachricht mit Rückrufmöglichkeit hinterlassen. Für akute Krisen den Notfalldienst nutzen.</div>
             </div>
             <div className="contact-info-block">
               <div className="label">E-MAIL</div>
               <div className="value"><a className="link-underline" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a></div>
-              <div className="sub">Antwort innerhalb von zwei Werktagen.</div>
+              <div className="sub">Für Beratungsanfragen. Bei dringlichem Hilfebedarf telefonisch den geeigneten Dienst kontaktieren.</div>
             </div>
             <div className="contact-info-block">
               <div className="label">AKUTE LAGE (24/7)</div>
