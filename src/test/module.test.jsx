@@ -27,7 +27,6 @@ describe('ModulePage', () => {
 
     render(<ModulePage onNavigate={onNavigate} />);
 
-    await user.click(screen.getByRole('button', { name: 'Nein' }));
     await user.click(screen.getByRole('button', { name: 'Nein, schon länger' }));
     await user.click(screen.getByRole('button', { name: 'Nein' }));
     await user.click(screen.getByRole('button', { name: 'Nein, eher Werkzeuge' }));
@@ -50,7 +49,6 @@ describe('ModulePage', () => {
       expect(link).toHaveAttribute('href', '/module');
     });
     expect(screen.getByRole('link', { name: 'Konkrete Hilfen' })).toHaveAttribute('href', '/module/6');
-    screen.getAllByRole('link', { name: 'Notfallweg' }).forEach(link => expect(link).toHaveAttribute('href', '/notfall'));
     expect(screen.getByRole('link', { name: 'Kinder unterstützen' })).toHaveAttribute('href', '/module/4#s6');
   });
 });

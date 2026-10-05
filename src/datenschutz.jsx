@@ -17,11 +17,11 @@ function DatenschutzPage() {
         <div className="container" style={{ maxWidth: 720 }}>
           <article className="prose">
 
-            <h2>Verantwortlicher</h2>
+            <h2>Ansprechstelle für Datenschutzfragen</h2>
             <p>
-              Verantwortlich für die Datenbearbeitung im Sinne des revidierten Schweizer Datenschutzgesetzes
-              (revDSG) ist die <strong>Fachstelle Angehörigenarbeit</strong> der Psychiatrischen Universitätsklinik
-              Zürich (PUK), vertreten durch Ch. Egger.
+              Bei Fragen zur Bearbeitung Ihrer Personendaten können Sie sich an die
+              <strong> Fachstelle Angehörigenarbeit</strong> der Psychiatrischen Universitätsklinik
+              Zürich (PUK) wenden.
             </p>
             <p>
               <a className="link-underline" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a><br/>
@@ -40,9 +40,8 @@ function DatenschutzPage() {
               diese Logdaten nicht mit Werkzeug-Eingaben zusammen.
             </p>
             <p>
-              Da Netlify in den USA sitzt, findet eine Übermittlung in einen Drittstaat statt. Netlify ist nach
-              dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage: berechtigtes Interesse am
-              technisch sicheren Betrieb (Art. 31 Abs. 2 lit. d revDSG).
+              Unser Hostingdienst Netlify, Inc. hat seinen Sitz in den USA. Die beim Website-Aufruf
+              verarbeiteten Verbindungsdaten können auch in den USA bearbeitet werden.
             </p>
 
             <h3>Daten in den Werkzeugen</h3>
@@ -104,7 +103,7 @@ function DatenschutzPage() {
               <li>Keine Tracking-Cookies, keine Werbe-Cookies und keine Analytics.</li>
               <li>Keine Übermittlung Ihrer Werkzeug-Eingaben an Server der PUK oder an Dritte.</li>
               <li>Keine Werbung und keine Social-Media-Plugins.</li>
-              <li>Keine Profilbildung, kein Verkauf von Daten, keine Weitergabe an Dritte.</li>
+              <li>Wir verwenden Ihre Werkzeug-Eingaben weder für Profilbildung noch für Werbung und übermitteln sie nicht an Dritte. Verbindungsdaten werden durch unseren Hostingdienst verarbeitet, wie oben beschrieben.</li>
             </ul>
 
             <h2>Kontaktaufnahme per E-Mail</h2>
@@ -112,20 +111,23 @@ function DatenschutzPage() {
               Wenn Sie uns per E-Mail schreiben, werden die übermittelten Inhalte (Name, E-Mail-Adresse,
               Nachricht) bei uns gespeichert, um Ihre Anfrage zu beantworten. Die Speicherung erfolgt im
               E-Mail-Postfach der Fachstelle, das den Schweigepflicht- und Sicherheits-Standards der PUK
-              unterliegt. Inhalte werden nicht ohne Ihre Zustimmung an die erkrankte Person oder das
-              Behandlungsteam weitergegeben.
+              unterliegt. Ihre Anfrage wird vertraulich behandelt. Wenn Sie besonders vertrauliche Angaben
+              besprechen möchten, klären Sie mit der Fachstelle vorab, wie diese dokumentiert werden und
+              welche Grenzen der Vertraulichkeit gelten.
             </p>
 
             <h2>Ihre Rechte</h2>
             <p>
-              Sie haben jederzeit das Recht auf Auskunft über die zu Ihrer Person bearbeiteten Daten, auf
-              deren Berichtigung oder Löschung, auf Einschränkung der Bearbeitung sowie auf Datenübertragbarkeit.
-              Wenden Sie sich dafür an <a className="link-underline" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a>.
+              Sie können sich mit Fragen und Anliegen zu Ihren Personendaten an die Fachstelle wenden,
+              insbesondere wenn Sie Auskunft erhalten oder Angaben berichtigen lassen möchten.
+              Welche weiteren Ansprüche bestehen und welche Voraussetzungen oder Ausnahmen gelten,
+              richtet sich nach dem anwendbaren Datenschutzrecht. Wenden Sie sich dafür an
+              <a className="link-underline" href="mailto:angehoerigenarbeit@pukzh.ch"> angehoerigenarbeit@pukzh.ch</a>.
             </p>
             <p>
-              Sind Sie der Auffassung, dass die Bearbeitung Ihrer Daten gegen das Datenschutzrecht verstösst,
-              haben Sie das Recht, eine Beschwerde beim <strong>Eidgenössischen Datenschutz- und
-              Öffentlichkeitsbeauftragten (EDÖB)</strong> einzureichen.
+              Wenn Sie eine unabhängige Prüfung der Datenbearbeitung oder ein rechtliches Verfahren
+              wünschen, fragen Sie bei der PUK nach der für dieses Angebot zuständigen Datenschutzaufsicht
+              und dem vorgesehenen Vorgehen.
             </p>
 
             <h2>Änderungen dieser Erklärung</h2>

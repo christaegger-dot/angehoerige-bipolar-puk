@@ -22,7 +22,7 @@ const TOOLS = [
   { tool: 'krisenplan', tag: 'Vorlage', title: 'Krisenplan', cta: 'Krisenplan öffnen', desc: 'Interaktive Vorlage für Frühwarnzeichen, Kontakte, Klinikwünsche und konkrete Schritte.' },
   { tool: 'kommunikation', tag: 'Kommunikation', title: 'Kommunikations-Trainer', cta: 'Gespräch vorbereiten', desc: 'Hilft, schwierige Gespräche klarer vorzubereiten und zwischen Anliegen, Grenze und Eskalationsrisiko zu unterscheiden.' },
   { tool: 'saeulen', tag: 'Stabilität', title: 'Säulen-Check', cta: 'Säulen prüfen', desc: 'Macht sichtbar, welche Alltagsbereiche gerade tragen und wo Belastung, Schlafmangel oder Überforderung die Stabilität schwächen.' },
-  { tool: 'ee', tag: 'Beziehung', title: 'Wenn Belastung Gespräche verändert', cta: 'Kreislauf ansehen', desc: 'Vier mögliche Erfahrungen als Reflexionshilfe — keine festen Phasen und kein Test für Expressed Emotion.' },
+  { tool: 'ee', tag: 'Beziehung', title: 'Wenn Belastung Gespräche verändert', cta: 'Aspekte ansehen', desc: 'Vier mögliche Erfahrungen zur persönlichen Reflexion, ohne feste Reihenfolge.' },
   { tool: 'belastungsverlauf', tag: 'Verlauf', title: 'Belastungsverlauf', cta: 'Verlauf öffnen', desc: 'Veranschaulicht, wie Solidarität, Erschöpfung und Dauerbelastung sich über längere Strecken verändern können.' },
   { tool: 'atem', tag: 'Pause', title: 'Durchatmen', cta: 'Atemübung starten', desc: 'Eine kurze Atemübung. Wenn der Moment einfach gerade zu viel ist.' },
 ];

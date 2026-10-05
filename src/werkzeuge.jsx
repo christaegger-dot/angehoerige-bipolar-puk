@@ -69,10 +69,6 @@ function WerkzeugePage({ onNavigate }) {
               <span className="kicker">Wenn Sie lieber lesen als klicken</span>
               <p>Die inhaltliche Einordnung finden Sie in den <a className="link-underline" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>sieben Modulen</a>. Die Werkzeuge sind eine Ergänzung, kein Ersatz für Orientierung und Kontext.</p>
             </div>
-            <div>
-              <span className="kicker">Wenn es akut ist</span>
-              <p>In Krisen oder bei unmittelbarer Gefahr ist der <a className="link-underline" href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>Notfallweg</a> wichtiger als jedes Werkzeug.</p>
-            </div>
           </div>
 
           <div className="tool-intro-notes no-print" data-storage-key={LEGACY_DRAFT_KEYS.join(' ')}>

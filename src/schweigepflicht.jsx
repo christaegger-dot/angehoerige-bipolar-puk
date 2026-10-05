@@ -60,9 +60,9 @@ function SchweigepflichtPage({ onNavigate }) {
             </p>
             <ul>
               <li><strong>Urteilsfähige Erwachsene</strong> entscheiden selbst, welche Informationen an wen weitergegeben werden dürfen.</li>
-              <li><strong>Urteilsfähige Minderjährige</strong> haben ebenfalls Anspruch auf Vertraulichkeit. Ob sie urteilsfähig sind, hängt von der konkreten Situation und Fragestellung ab.</li>
-              <li><strong>Bei urteilsunfähigen Minderjährigen</strong> entscheiden die Inhaberinnen oder Inhaber der elterlichen Sorge über medizinische Massnahmen.</li>
-              <li><strong>Bei urteilsunfähigen Erwachsenen</strong> richtet sich die Vertretung bei medizinischen Massnahmen grundsätzlich nach Patientenverfügung, Vorsorgeauftrag und der gesetzlichen Reihenfolge. Für die Behandlung einer psychischen Störung in einer psychiatrischen Klinik gelten besondere Regeln.</li>
+              <li><strong>Bei Minderjährigen</strong> klären Sie mit dem Behandlungsteam, wie Einwilligung, Vertraulichkeit und die Beteiligung der Sorgeberechtigten im konkreten Fall geregelt sind.</li>
+              <li><strong>Wenn die Person über eine konkrete Frage nicht selbst entscheiden kann,</strong> fragen Sie nach der dafür zuständigen Vertretung und der gesetzlichen Grundlage. Vorhandene Dokumente wie eine Patientenverfügung oder ein Vorsorgeauftrag können dabei zu klären sein.</li>
+              <li><strong>Bei psychiatrischer Behandlung</strong> lassen Sie sich erläutern, welche besonderen Regeln für die konkrete Situation gelten. Aus einer Auskunftsberechtigung folgt nicht automatisch eine medizinische Entscheidungsbefugnis.</li>
             </ul>
             <p>
               Klären Sie den konkreten Fall mit dem Behandlungsteam; leiten Sie aus Verwandtschaft oder
@@ -84,8 +84,8 @@ function SchweigepflichtPage({ onNavigate }) {
               <li>wie lange die Einwilligung gelten soll und wie sie widerrufen werden kann.</li>
             </ul>
             <p>
-              Das aktuelle PUK-Formular ist breit gefasst und gilt bis zum Widerruf. Wenn Sie den Austausch
-              einschränken möchten, klären Sie mit der PUK, wie diese Grenzen dokumentiert werden können.
+              Klären Sie vor dem Unterzeichnen mit der PUK, welche Informationen das verwendete Formular
+              umfasst, wie lange die Einwilligung gilt und wie sie eingeschränkt oder widerrufen werden kann.
             </p>
 
             <h2>Wie Sie das Gespräch vorbereiten können</h2>
@@ -97,22 +97,22 @@ function SchweigepflichtPage({ onNavigate }) {
               <li>Prüfen Sie die Regelung erneut, wenn sich Behandlung, behandelnde Stelle oder Wünsche verändern.</li>
             </ol>
             <p>
-              Im Kanton Zürich ist die Einwilligung an keine bestimmte Form gebunden. Aus Beweisgründen wird
-              eine schriftliche Zustimmung oder zumindest eine klare Dokumentation empfohlen. Verwenden Sie
-              für die PUK vorzugsweise das offizielle PUK-Formular.
+              Klären Sie mit der behandelnden Stelle, wie Ihre Einwilligung dokumentiert werden soll.
+              Fragen Sie bei der PUK nach dem aktuellen offiziellen Formular und lassen Sie sich dessen
+              Umfang, Gültigkeit und Widerruf erläutern.
             </p>
 
             <div className="contact-info-block reference-download">
               <div className="label">OFFIZIELLES FORMULAR</div>
               <div className="value">Entbindung von der ärztlichen Schweigepflicht und vom Amtsgeheimnis</div>
               <div className="sub">
-                Das PUK-Formular ermächtigt die in die Behandlung involvierten Ärztinnen und Ärzte sowie ihre
-                Hilfspersonen, gegenüber der bezeichneten Person Auskünfte zu erteilen und einzuholen. Es
-                überträgt keine medizinischen Entscheidungsrechte und gilt laut Formular bis zum Widerruf.
+                Auf der PUK-Seite finden Sie Informationen zum offiziellen Formular. Besprechen Sie mit der
+                behandelnden Stelle, wer mit wem welche Informationen austauschen darf und wie die Wünsche
+                der betroffenen Person festgehalten werden. Eine Entbindung ist keine medizinische Vollmacht.
               </div>
               <p className="reference-action">
                 <a className="btn btn-primary" href={PUK_FORMULAR_URL}>
-                  PUK-Formular als PDF öffnen
+                  PUK-Seite zum Formular öffnen
                 </a>
               </p>
             </div>
@@ -133,13 +133,12 @@ function SchweigepflichtPage({ onNavigate }) {
               </p>
             </aside>
             <p>
-              Bei akuter Gefahr wenden Sie sich an den Notruf oder das Behandlungsteam. Welche Informationen
-              weitergegeben werden dürfen, richtet sich nach der Situation und der Rechtsgrundlage. Diese Seite
+              Welche Informationen weitergegeben werden dürfen, richtet sich nach der Situation und der Rechtsgrundlage. Diese Seite
               ersetzt keine Beurteilung des Einzelfalls durch die behandelnde Stelle oder eine rechtliche
               Fachperson.
             </p>
 
-            <h2>Amtliche Quellen</h2>
+            <h2>Amtliche Informationen und Formular</h2>
             <ul className="reference-sources">
               <li><a href={BAG_GEHEIMNIS_URL}>Bundesamt für Gesundheit: Berufs- oder Arztgeheimnis</a></li>
               <li><a href={ZH_GEHEIMNIS_URL}>Kanton Zürich: Berufliche Schweigepflicht und Entbindung</a></li>
@@ -148,8 +147,9 @@ function SchweigepflichtPage({ onNavigate }) {
             </ul>
 
             <p className="reference-status">
-              Fachliche Orientierung, keine Rechtsberatung. Quellen geprüft am 3. Oktober 2026.
-              Fachlich-rechtliche Freigabe vor einer öffentlichen Veröffentlichung ausstehend.
+              Fachliche Orientierung, keine Rechtsberatung. Redaktioneller Stand: Oktober 2026.
+              Der Abgleich mit den aktuellen amtlichen Originalen und die fachlich-rechtliche Freigabe
+              vor einer öffentlichen Veröffentlichung stehen aus.
             </p>
           </article>
         </div>

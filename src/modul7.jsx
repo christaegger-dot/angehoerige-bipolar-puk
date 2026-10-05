@@ -76,10 +76,10 @@ function SaeulenFigurWrap() {
 
 function StuetzenDetail() {
   const eigenschaften = [
-    { titel: 'Regelmässig', text: 'Findet auch in stressigen Wochen statt — gerade dann. Wenn etwas ausschliesslich dann passiert, wenn es ohnehin gut läuft, ist es keine Stütze, sondern ein Bonus.' },
-    { titel: 'Eigenständig', text: 'Hängt nicht davon ab, ob die erkrankte Person mitkommt, zustimmt, wach ist. Was nur in deren Mit-Bewegung passiert, ist mit ihrem Zustand gekoppelt — und damit unzuverlässig.' },
-    { titel: 'Nicht verhandelbar', text: 'Steht nicht jede Woche neu zur Diskussion. Wenn Sie jeden Mittwochabend laufen gehen, ist das gesetzt — keine Frage des Moods, keine Frage der Zeit.' },
-    { titel: 'Selbstwert-tragend', text: 'Sie sind dort jemand — nicht «die Frau von», nicht «der Bruder von». Diese Räume erinnern Sie daran, dass es ein eigenes Sie gibt, unabhängig von der Erkrankung.' },
+    { titel: 'Passend für Ihren Alltag', text: 'Regelmässige oder kurze, unregelmässige Entlastung kann wertvoll sein. Was erreichbar ist, hängt auch von Zeit, Kraft, Betreuung und finanziellen Möglichkeiten ab.' },
+    { titel: 'Allein oder gemeinsam ermöglicht', text: 'Eine eigene Tätigkeit kann Raum schaffen. Ebenso zählt Entlastung, die gemeinsam mit der erkrankten Person oder anderen Menschen möglich wird.' },
+    { titel: 'Mit Unterstützung planbar', text: 'Überlegen Sie, ob ein realistischer Termin möglich ist und wer dafür Aufgaben übernehmen könnte. Wenn sich die Lage ändert, darf der Plan angepasst werden.' },
+    { titel: 'Für Sie bedeutsam', text: 'Welche Kontakte, Tätigkeiten oder kleinen Pausen tun Ihnen gut? Sie entscheiden, was Ihnen wichtig ist; eine Stütze muss keine vorgegebenen Eigenschaften erfüllen.' },
   ];
   return (
     <div className="stuetzen-detail">
@@ -100,14 +100,14 @@ function ErholungUndEntlastung() {
   return (
     <div className="kontrast-block">
       <div className="kontrast-spalte kontrast-links">
-        <span className="kontrast-label">Häufige Annahme</span>
+        <span className="kontrast-label">Eine mögliche Form</span>
         <h4>Kurze Erholung</h4>
         <p className="kontrast-untertitel">Ausgleich zum Stress</p>
         <ul>
-          <li>Reagiert auf Belastung — wenn es eng wird, dann mehr.</li>
-          <li>Belohnung für eine harte Woche.</li>
-          <li>Optional, wenn Zeit übrig ist.</li>
-          <li>«Ich gönne mir mal etwas.»</li>
+          <li>Eine kurze Pause im Alltag.</li>
+          <li>Etwas, das Ihnen im Moment guttut.</li>
+          <li>Auch unregelmässig wertvoll.</li>
+          <li>«Diese kleine Pause ist mir wichtig.»</li>
         </ul>
       </div>
       <div className="kontrast-trenner">
@@ -115,13 +115,13 @@ function ErholungUndEntlastung() {
       </div>
       <div className="kontrast-spalte kontrast-rechts">
         <span className="kontrast-label">Was zusätzlich entlasten kann</span>
-        <h4>Selbstfürsorge</h4>
-        <p className="kontrast-untertitel">Strukturelle Voraussetzung</p>
+        <h4>Praktische Entlastung</h4>
+        <p className="kontrast-untertitel">Aufgaben und Unterstützung klären</p>
         <ul>
-          <li>Findet unabhängig von Belastung statt — auch in ruhigen Wochen.</li>
-          <li>Kein Verdienst, sondern eine Investition in das, was tragen muss.</li>
-          <li>Fix, wie Schlafen oder Zähneputzen.</li>
-          <li>«Das ist Teil davon, dass ich morgen noch stehe.»</li>
+          <li>Andere übernehmen eine Aufgabe oder ermöglichen Betreuung.</li>
+          <li>Eigene Bedürfnisse dürfen ohne Rechtfertigung zählen.</li>
+          <li>Absprachen passen zu Ihren Möglichkeiten.</li>
+          <li>«Welche Hilfe würde mir jetzt Raum geben?»</li>
         </ul>
       </div>
     </div>
@@ -157,9 +157,9 @@ function EigeneWeltGrid() {
 
 function ZeitTimeline() {
   const phasen = [
-    { jahre: 'Eine mögliche Erfahrung', titel: 'Diagnose und erstes Verstehen', text: 'Vieles ist Schock und Lernen. Energie kommt aus dem Bedürfnis, zu begreifen.' },
+    { jahre: 'Eine mögliche Erfahrung', titel: 'Diagnose und erstes Verstehen', text: 'Eine Diagnose kann Fragen, Sorgen oder auch Erleichterung auslösen. Vielleicht möchten Sie zunächst mehr verstehen.' },
     { jahre: 'Eine mögliche Erfahrung', titel: 'Routine und Müdigkeit', text: 'Die Aufmerksamkeit wird zur Gewohnheit. Manchmal entsteht Müdigkeit; andere erleben zunehmende Sicherheit und Entlastung.' },
-    { jahre: 'Eine mögliche Erfahrung', titel: 'Neuverhandlung', text: 'Viele beginnen, ihre Rolle zu hinterfragen. Trennungen, Veränderungen, neue Verteilungen tauchen auf.' },
+    { jahre: 'Eine mögliche Erfahrung', titel: 'Neuverhandlung', text: 'Vielleicht möchten Sie Aufgaben, Absprachen oder die Form Ihrer Begleitung neu besprechen. Andere finden ihre bisherigen Absprachen weiterhin passend.' },
     { jahre: 'Eine mögliche Erfahrung', titel: 'Eingelebte Form', text: 'Eine passende Form des Zusammenlebens oder Begleitens kann sich entwickeln und später erneut angepasst werden.' },
   ];
   return (
@@ -236,7 +236,7 @@ function Modul7Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 12–14 Minuten · 9 Abschnitte</span>
             </div>
             <h1>Langfristige <em>Tragfähigkeit</em></h1>
-            <p className="lede">Nach einer Krise kommt eine eigene Phase mit Erschöpfung, Wut und Erleichterung gleichzeitig. Dieses Modul geht nicht zurück in Akuthilfe oder Grenzfragen, sondern in die lange Strecke: Wie Tragfähigkeit, eigene Welt und etwas mehr Boden über Zeit wieder aufgebaut werden.</p>
+            <p className="lede">Nach einer belastenden Phase können unterschiedliche Gefühle bleiben; es gibt dafür keinen festen Ablauf. Dieses Modul lädt Sie ein, eigene Bedürfnisse, erreichbare Entlastung und die Form Ihrer Begleitung über längere Zeit anzuschauen.</p>
           </div>
         </header>
 
@@ -269,27 +269,27 @@ function Modul7Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Wie die lange Strecke tragfähiger werden kann</h2>
-              <p className="dropcap">Nach Notfallvorbereitung, Kommunikation, Grenzen und Akuthilfe stellt sich oft eine andere Frage: <strong>Wie lebt man mit der Wiederkehr, ohne selbst ganz darin aufzugehen?</strong> Dieses Modul verschiebt den Fokus deshalb weg von der Akutbewältigung und hin zur langen Strecke: Was gibt über Monate und Jahre etwas Boden?</p>
+              <p className="dropcap">Neben Vorbereitung, Kommunikation und Grenzen darf eine weitere Frage Raum haben: <strong>Was trägt Ihr eigenes Leben über längere Zeit?</strong> Es kann um Kontakte, Interessen, Zusammenarbeit oder praktische Entlastung gehen. Sie entscheiden, was für Ihre Situation wichtig ist.</p>
               <p>Tragfähigkeit heisst hier nicht Harmonie oder Krisenfreiheit. Gemeint ist eher: Der Alltag wird über Zeit etwas haltbarer und leichter zu tragen. Etwas weniger allein, etwas weniger unvorbereitet, etwas mehr Routine, Entlastung und eigene Person.</p>
             </section>
 
             <section id="s2">
-              <h2>Der Tag danach und die Wochen danach</h2>
-              <p>Über Krisen wird viel gesprochen. Über das, was danach kommt, deutlich weniger. Dabei ist die Zeit nach einer Episode oft ein eigener Zustand: Der Alarm lässt nach, aber Erschöpfung, Leere, Wut oder Scham bleiben. Gerade diese Phase entscheidet oft darüber, ob sich etwas stabilisiert oder ob einfach nur die nächste Anspannung beginnt.</p>
+              <h2>Nach einer belastenden Phase</h2>
+              <p>Auch nachdem eine Episode abgeklungen ist, können Gefühle und Belastungen Raum brauchen. Erschöpfung, Leere, Wut, Schuldgefühle oder Erleichterung sind mögliche Erfahrungen; sie müssen nicht auftreten und haben keine festgelegte Reihenfolge.</p>
 
-              <p><strong>Erschöpfung.</strong> Der Körper holt nach, was während der Krise nicht sein durfte.</p>
-              <p><strong>Leere.</strong> Die Alarmbereitschaft fällt weg — und hinterlässt oft ein Vakuum.</p>
-              <p><strong>Wut.</strong> Auf die Erkrankung, auf das System, manchmal auch auf die erkrankte Person.</p>
-              <p><strong>Schuldgefühle.</strong> «Hätte ich früher handeln müssen?»</p>
-              <p><strong>Erleichterung — und manchmal Scham darüber.</strong> Erleichterung ist normal. Sie sagt nichts gegen die Bindung.</p>
+              <p><strong>Erschöpfung.</strong> Vielleicht merken Sie erst jetzt, wie viel Kraft die vergangenen Wochen gekostet haben.</p>
+              <p><strong>Leere.</strong> Vielleicht fehlt nach einer angespannten Zeit zunächst Orientierung.</p>
+              <p><strong>Wut.</strong> Sie kann sich auf Erlebtes, die Erkrankung oder fehlende Unterstützung beziehen.</p>
+              <p><strong>Schuldgefühle.</strong> Vielleicht beschäftigt Sie die Frage: «Hätte ich früher handeln müssen?»</p>
+              <p><strong>Erleichterung.</strong> Sie dürfen erleichtert sein und der erkrankten Person zugleich verbunden bleiben.</p>
 
               <aside className="callout callout-soft">
-                <span className="callout-label">Typischer emotionaler Verlauf nach einer Episode</span>
-                <p><strong>Unmittelbar danach:</strong> oft Erschöpfung oder Taubheit · <strong>in den ersten Wochen:</strong> häufig Leere, Schuldgefühle, Wut oder Erleichterung · <strong>später:</strong> Bilanz und Gespräch werden eher möglich. Jede Person erlebt diese Phasen anders. Die Reihenfolge und Intensität können sich verschieben — das ist normal.</p>
+                <span className="callout-label">Mögliche Reaktionen nach einer Episode</span>
+                <p>Ihre Reaktion muss keinem bestimmten Muster entsprechen. Gefühle können nebeneinander bestehen, sich verändern oder ausbleiben. Welche Unterstützung Sie nutzen oder wann Sie ein Gespräch führen möchten, hängt von Ihrer Situation ab.</p>
               </aside>
 
               <h3>Das Gespräch nach der Krise</h3>
-              <p>Viele Angehörige tragen die Frage, wann und wie sie das Erlebte ansprechen können. Zu früh und die erkrankte Person ist noch nicht stabil genug. Zu spät und das Ungesagte wird zur Belastung. Eine Faustregel: <strong>Warten Sie, bis die Person sich wieder an Alltagsgesprächen beteiligen kann — meist erst mit etwas Abstand zur akuten Phase, nicht unmittelbar danach.</strong></p>
+              <p>Vielleicht möchten Sie das Erlebte ansprechen. Fragen Sie, ob ein Gespräch gerade möglich und für beide passend ist. Sie dürfen damit warten, Unterstützung dafür suchen oder zunächst nur Ihre eigenen Erfahrungen in einer Beratung besprechen.</p>
               <p>Manchmal erinnert sich die erkrankte Person an Teile der Manie oder schweren Depression nur lückenhaft. Das bedeutet nicht, dass das Gespräch sinnlos ist. Es bedeutet, dass Sie beginnen können, ohne vorauszusetzen, dass die andere Person alles weiss.</p>
 
               <h3>Mögliche Einstiege</h3>
@@ -311,8 +311,8 @@ function Modul7Page({ onNavigate }) {
               <p><strong>Ihre Gesundheit hat einen Eigenwert.</strong> Nicht erst, wenn Sie zusammenbrechen. Und nicht nur, damit Sie weiter funktionieren können.</p>
 
               <aside className="callout callout-soft">
-                <span className="callout-label">Wissenschaftlicher Hintergrund</span>
-                <p>Anhaltende hohe Belastung kann das Risiko eigener psychischer Beschwerden erhöhen. Längsschnittforschung zeigt einen Zusammenhang zwischen Angehörigenbelastung und späteren depressiven Symptomen, aber keine ausschliessliche Ursache. Eigene Gesundheit, Schlaf und erreichbare Hilfe zählen ebenfalls. Sie dürfen Unterstützung für sich selbst nutzen.</p>
+                <span className="callout-label">Ihre eigenen Bedürfnisse zählen</span>
+                <p>Sie dürfen Unterstützung für sich selbst nutzen. Wenn Beschwerden anhalten oder Ihren Alltag beeinträchtigen, können Sie eine eigene ärztliche oder psychologische Beratung suchen. Sie brauchen dafür keine Rechtfertigung über die Erkrankung der anderen Person.</p>
               </aside>
 
               <ErholungUndEntlastung />
@@ -322,7 +322,7 @@ function Modul7Page({ onNavigate }) {
               <h3>Drei Bereiche von Selbstfürsorge</h3>
               <p><strong>Körper.</strong> Eigenen Schlafrhythmus beibehalten · regelmässige Bewegung, auch kurz · regelmässige Mahlzeiten · eigene Arztbesuche nicht vergessen.</p>
               <p><strong>Seele.</strong> Hobbys ohne Erkrankungsbezug · Freundschaften bewusst pflegen · eigene Gefühle reflektieren · psychologische Unterstützung.</p>
-              <p><strong>Beziehung.</strong> Gemeinsame Rituale schaffen · Notfallabsprachen in stabilen Phasen · Paartherapie als Prävention · Momente ohne Erkrankungsthema.</p>
+              <p><strong>Beziehung.</strong> Gemeinsame Rituale und Momente ohne Erkrankungsthema · Absprachen in stabilen Phasen · bei Bedarf Paarberatung oder Paartherapie zur Klärung gemeinsamer Fragen. Für Eltern, Geschwister und andere Nahestehende können Angehörigen- oder Familiengespräche passend sein.</p>
             </section>
 
             <section id="s4">
@@ -333,8 +333,8 @@ function Modul7Page({ onNavigate }) {
 
               <p>Das Bild lädt ein, vorhandene und fehlende Ressourcen anzuschauen. Es gibt keine geprüfte Anzahl von Stützen, die Sicherheit garantiert. Unterstützung kann auch bedeuten, Betreuung, finanzielle Fragen oder Belastungen am Arbeitsplatz gemeinsam zu klären.</p>
 
-              <h3>Was eine Stütze ausmacht</h3>
-              <p>Nicht alles, was als «Selbstfürsorge» bezeichnet wird, ist auch tragend. Eine echte Stütze hat vier Eigenschaften, die sie von einer netten Idee unterscheiden.</p>
+              <h3>Welche Unterstützung zu Ihnen passt</h3>
+              <p>Die folgenden Fragen sind Anregungen, keine Bedingungen für wirksame Entlastung. Auch eine kurze Pause oder gemeinsam organisierte Hilfe zählt. Sie wählen, was Ihnen wichtig und derzeit erreichbar ist.</p>
 
               <StuetzenDetail />
 
@@ -355,18 +355,18 @@ function Modul7Page({ onNavigate }) {
 
             <section id="s5">
               <h2>Die eigene Welt zurückholen</h2>
-              <p>Eine der ruhigsten und wirksamsten Bewegungen in der Angehörigen-Geschichte ist es, eine eigene Welt zurückzuholen — oder neu zu erfinden, wenn die alte nicht mehr passt. Drei Bewegungen tauchen dabei besonders oft auf.</p>
+              <p>Vielleicht möchten Sie eigenen Interessen und Kontakten wieder mehr Raum geben oder etwas Neues ausprobieren. Die folgenden drei Beispiele sind Anregungen; Sie entscheiden, was zu Ihrer Lebenslage passt.</p>
 
               <EigeneWeltGrid />
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Hilfreich zu wissen</span>
-                <p>«Eigene Welt» ist nicht das Gegenteil der Beziehung zu der erkrankten Person. Sie ist die Voraussetzung dafür, dass diese Beziehung weiterhin eine Beziehung sein kann — und nicht ein Verhältnis von Pflegeperson zu Patient:in.</p>
+                <p>Eigene Interessen und Kontakte können Ihnen guttun und zusätzliche Spielräume eröffnen. Auch wenn Sorgearbeit viel Raum einnimmt, bleiben Ihre Beziehung und Ihre eigenen Bedürfnisse wichtig.</p>
               </aside>
 
               <h3>Soziale Kontakte nach Co-Isolation wiederaufbauen</h3>
-              <p>Co-Isolation — der schleichende Rückzug aus dem eigenen sozialen Netz — ist eine der häufigsten Langzeitfolgen für Angehörige (Perlick et al., 2007). Wer sich über Monate erklärt hat, abgesagt hat oder einfach zu müde war, findet den Wiedereinstieg oft schwer.</p>
-              <p>Was helfen kann: Mit einer einzigen Vertrauensperson beginnen, nicht mit dem ganzen Netz. Erklären, was in der eigenen Sprache stimmig ist — ohne Vollständigkeit. Angehörigengruppen bieten den Vorteil, dass kein Erklärungsbedarf besteht. <strong>Das Ziel ist nicht das alte Netz zurück, sondern ein neues, das zu Ihrer jetzigen Situation passt.</strong></p>
+              <p>«Co-Isolation» bezeichnet hier den schleichenden Rückzug aus dem eigenen sozialen Netz. Belastende Zeiten können dazu führen, dass eigene Kontakte weniger Raum bekommen. Wenn Sie wieder mehr Kontakt möchten, können Sie mit einer vertrauten Person beginnen und schauen, was gerade für Sie passt.</p>
+              <p>Sie entscheiden, wie viel Sie erklären möchten. Vielleicht ist auch eine Angehörigengruppe passend. <strong>Welche alten oder neuen Kontakte Sie pflegen möchten, bestimmen Sie selbst.</strong></p>
             </section>
 
             <section id="s6">
@@ -398,7 +398,7 @@ function Modul7Page({ onNavigate }) {
 
               <ZeitTimeline />
 
-              <p>Diese Phasen sind keine Vorschrift, sondern eine Orientierung. Manche Angehörigen erleben sie schneller, manche langsamer, manche in anderer Reihenfolge. Was bei fast allen gleich ist: Was anfangs als endgültige Form schien, hat sich später als Zwischenform erwiesen.</p>
+              <p>Eine zunächst passend erscheinende Form kann sich später verändern. Sie muss es nicht. Absprachen dürfen zu Ihrer aktuellen Lebenslage passen und bei Bedarf neu besprochen werden.</p>
 
               <h3>Wenn die Beziehung sich verändert</h3>
               <p>Es gibt Phasen, in denen Angehörige sich fragen, ob die Beziehung in der jetzigen Form weitergehen kann oder soll. Dieser Gedanke wird oft sofort verurteilt — von innen oder von aussen — und damit verboten, bevor er gedacht werden konnte.</p>
@@ -406,19 +406,19 @@ function Modul7Page({ onNavigate }) {
             </section>
 
             <section id="s8">
-              <h2>Was Wachstum heissen kann — und was nicht</h2>
+              <h2>Mögliche persönliche Veränderungen</h2>
               <p><em>Dieser Abschnitt ist für Momente mit etwas Abstand, nicht für akute Erschöpfung.</em></p>
-              <p>Wenn nach langen Belastungen von Wachstum gesprochen wird, klingt das schnell so, als müsse am Ende etwas Gutes herauskommen. Das ist nicht gemeint. Posttraumatisches Wachstum beschreibt nur, dass manche Menschen mit der Zeit neue Sprache, klarere Grenzen oder veränderte Prioritäten entwickeln. Das Leiden wird dadurch nicht sinnvoller. Und Wachstum ist keine Pflicht.</p>
+              <p>Vielleicht finden Sie nach belastenden Erfahrungen neue Worte, klarere Grenzen oder andere Prioritäten. Vielleicht erleben Sie keine solche Veränderung. Daraus folgt weder ein Auftrag, an der Belastung zu wachsen, noch die Aussage, das Erlebte sei dadurch sinnvoll geworden. Persönliche Veränderung ist keine Pflicht.</p>
 
-              <h3>Mögliche Formen von Wachstum</h3>
+              <h3>Was sich für Sie verändern kann</h3>
               <ul>
-                <li>Erhöhte Empathie und tieferes Verständnis für Leiden anderer</li>
-                <li>Persönliche Reife — Geduld, Toleranz, Bewusstsein für das Wesentliche</li>
-                <li>Entdeckung eigener Ressourcen, die man vorher nicht kannte</li>
-                <li>Tiefere Wertschätzung für Gesundheit, stabile Momente und echte Beziehungen</li>
+                <li>Ein anderer Blick auf Ihre Bedürfnisse oder die Erfahrungen anderer</li>
+                <li>Klarere Vorstellungen davon, was Ihnen wichtig ist</li>
+                <li>Neue oder wiederentdeckte Kontakte und Unterstützung</li>
+                <li>Andere Prioritäten für Ihre Gesundheit und Ihren Alltag</li>
               </ul>
 
-              <p><strong>Fortschritt ist wellenförmig, nicht linear.</strong> Drei Schritte vor, zwei zurück — das ist kein Scheitern. Entscheidend ist oft nicht der einzelne Rückfall, sondern ob über Zeit etwas mehr Klarheit, Entlastung oder Boden wächst.</p>
+              <p><strong>Veränderung muss keinem festen Verlauf folgen.</strong> Sie dürfen gelingende Momente, Rückschläge und unveränderte Belastungen nebeneinander wahrnehmen. Was Sie als Fortschritt erleben, entscheiden Sie selbst.</p>
 
               <blockquote className="module-quote" id="quote-m7-04">
                 <p>«Wachstum klingt so gross. Bei mir war es eher: Ich habe gelernt, dass ich mehr aushalte, als ich dachte — und dass ich trotzdem Hilfe brauche. Beides gleichzeitig. Ich bin stolz darauf, wie wir es geschafft haben. Und ich bin manchmal wütend, dass wir es überhaupt schaffen mussten. Das ist kein Widerspruch.»</p>
@@ -426,23 +426,23 @@ function Modul7Page({ onNavigate }) {
               </blockquote>
 
               <h3>Wenn es nach Jahren wieder passiert</h3>
-              <p>Der Rückfall nach einer langen stabilen Phase gehört zu den schmerzhaftesten Erfahrungen für Angehörige — qualitativ anders als die ersten Episoden oder chronisches Cycling. Denn diesmal hatten Sie angefangen zu glauben, dass es vorbei sein könnte. Pläne, Vertrauen, Normalität — all das bricht nicht zum ersten Mal zusammen, aber <strong>es bricht aus einer Höhe, die Sie sich erst mühsam erarbeitet hatten.</strong></p>
+              <p>Eine erneute Episode nach einer langen stabilen Zeit kann enttäuschen oder neue Sorgen auslösen. Andere Angehörige erleben, dass frühere Erfahrungen und vorhandene Unterstützung ihnen diesmal helfen. Ihre Reaktion muss keinem bestimmten Muster entsprechen. <strong>Die stabilen Jahre behalten ihren Wert.</strong></p>
 
-              <p><strong>Trauer um das «Danach».</strong> Sie haben nicht nur die stabile Phase verloren, sondern auch die Hoffnung, dass Stabilität von Dauer sein kann. Das ist ein eigenständiger Verlust.</p>
-              <p><strong>Erschöpfung auf einem anderen Niveau.</strong> Beim ersten Mal hatten Sie Reserven. Jetzt wissen Sie, was kommt — und genau dieses Wissen macht es schwerer, nicht leichter.</p>
-              <p><strong>Die Schuldfrage dreht sich.</strong> Statt «Was habe ich übersehen?» kommt jetzt oft: «Hätte ich es verhindern können, wenn ich besser aufgepasst hätte?» Die Antwort: <em>Nein.</em> Bipolare Störung hat Rückfälle in ihrer Natur — auch bei guter Behandlung und stabiler Umgebung.</p>
-              <p><strong>Identitätskrise.</strong> Wenn «gesund» zum neuen Selbstverständnis geworden war, stellt der Rückfall alles infrage — auch Ihre Rolle, die sich in der stabilen Phase vielleicht normalisiert hatte.</p>
+              <p><strong>Unterbrochene Pläne.</strong> Vielleicht trauern Sie um unterbrochene Pläne oder vermissen die Sicherheit der vergangenen Zeit. Vielleicht bleibt Ihr Vertrauen in weitere stabile Zeiten bestehen. Beides darf Raum haben.</p>
+              <p><strong>Erneuter Kraftbedarf.</strong> Eine weitere Episode kann erneut Kraft kosten. Frühere Erfahrungen können belasten, aber auch helfen, passende Unterstützung früher zu finden. Prüfen Sie, welche Entlastung Sie jetzt brauchen.</p>
+              <p><strong>Fragen zur Verantwortung.</strong> Vielleicht fragen Sie sich, ob Sie etwas hätten verhindern können. Eine erneute Episode ist für sich kein Beweis dafür, dass Sie etwas versäumt haben. Was den konkreten Verlauf beeinflusst hat und welche Absprachen künftig helfen können, lässt sich mit dem Behandlungsteam besprechen. Sie tragen die Verantwortung für die Erkrankung nicht allein.</p>
+              <p><strong>Aufgaben neu klären.</strong> Eine weitere Episode kann Fragen zur eigenen Rolle oder zu gemeinsamen Plänen aufwerfen. Sie kann auch zeigen, welche Absprachen bereits tragen. Sie dürfen Ihre Aufgaben und Grenzen neu klären.</p>
 
               <aside className="callout">
-                <span className="callout-label">Was jetzt hilft</span>
-                <p>Erstens, sich erlauben, dass dieser Rückfall sich anders anfühlt — und dass das berechtigt ist. Zweitens, den Krisenplan aktivieren, der in der stabilen Phase geschrieben wurde — genau dafür ist er da. Drittens, nicht den Fehler machen, die stabilen Jahre rückwirkend zu entwerten. Sie waren real. Stabilität ist keine Illusion, nur weil sie nicht permanent ist.</p>
+                <span className="callout-label">Mögliche Orientierung</span>
+                <p>Ihre Gefühle dürfen Raum haben. Ein gemeinsam vorbereiteter Krisenplan kann nächste Schritte und passende Kontakte sichtbar machen; er ersetzt keine fachliche Einschätzung. Die stabilen Jahre werden durch eine neue Episode nicht rückwirkend entwertet. Sie waren real.</p>
               </aside>
 
-              <h3>Vier Schritte für die lange Strecke</h3>
+              <h3>Vier Anregungen für die lange Strecke</h3>
               <p><strong>1. Eine Nachkrise-Bilanz machen.</strong> Nach einer schwierigeren Phase kurz festhalten: Was hat geholfen? Was hat gefehlt? Was müsste beim nächsten Mal früher oder anders passieren?</p>
-              <p><strong>2. Einen nicht-verhandelbaren Selbstfürsorge-Termin setzen.</strong> Etwas, das nur Ihnen gehört. Eintragen wie einen Arzttermin. Nicht als Belohnung nach Funktionieren, sondern als fester Teil Ihrer Stabilität.</p>
+              <p><strong>2. Eine passende Entlastung überlegen.</strong> Was würde Ihnen guttun? Prüfen Sie, ob ein realistischer Termin möglich ist und wer dafür Aufgaben übernehmen kann. Auch kurze oder unregelmässige Entlastung zählt; Absprachen dürfen angepasst werden.</p>
               <p><strong>3. Zusammenarbeit aktiv einfordern.</strong> Bitten Sie um Angehörigengespräche oder wenigstens darum, dass Ihre Beobachtungen gehört und dokumentiert werden.</p>
-              <p><strong>4. Fortschritt sichtbar machen.</strong> Notieren Sie einmal pro Monat, was sich verändert hat — auch Kleines. Nicht um schönzureden, sondern um Rückschläge besser einordnen zu können.</p>
+              <p><strong>4. Veränderungen festhalten, wenn es Ihnen hilft.</strong> Vielleicht möchten Sie gelegentlich notieren, was leichter oder schwerer geworden ist. Sie bestimmen Zeitpunkt und Form; diese Reflexion ist keine zusätzliche Pflicht.</p>
             </section>
 
             <section id="s9">
@@ -451,10 +451,10 @@ function Modul7Page({ onNavigate }) {
               <SchlussSaetze />
 
               <ul className="key-points">
-                <li><strong>Die Nachkrise ist ein eigener Zustand</strong> — Erschöpfung, Leere, Wut oder Erleichterung danach sind keine Nebensachen, sondern Teil der Belastung.</li>
+                <li><strong>Reaktionen nach einer Episode sind unterschiedlich</strong> — Erschöpfung, Leere, Wut oder Erleichterung können auftreten, müssen aber nicht.</li>
                 <li><strong>Selbstfürsorge ist hier eher Schutz als Luxus</strong> — sie verhindert nicht alles, kann aber helfen, dass chronische Belastung nicht alles verschlingt.</li>
                 <li><strong>Langfristige Tragfähigkeit entsteht meist aus Strukturen</strong> — gemeinsames Verständnis, krankheitsfreie Inseln, Grenzen, die vereinbarten Schritte und eigene Entlastung.</li>
-                <li><strong>Rückschläge sagen wenig über die Richtung</strong> — Fortschritt bleibt oft ungleichmässig und wird eher über Monate sichtbar als im einzelnen Tag.</li>
+                <li><strong>Veränderungen müssen keinem Muster folgen</strong> — Ihre Erfahrungen und Bedürfnisse dürfen sich verändern oder gleich bleiben.</li>
                 <li><strong>Wachstum darf sein, muss aber nicht</strong> — es ist möglich, gleichzeitig stolz, erschöpft und wütend auf das Erlebte zu sein.</li>
               </ul>
 

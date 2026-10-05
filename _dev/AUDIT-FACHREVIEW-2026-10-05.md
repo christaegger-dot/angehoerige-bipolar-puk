@@ -1,5 +1,7 @@
 # Umsetzung des fachlichen und didaktischen Reviews
 
+Historischer Bericht zur ersten Fachreview-Umsetzung. Der anschliessende [W1-Umsetzungsbericht](W1-UMSETZUNG-2026-10-05.md) dokumentiert die weiteren Textkorrekturen und die weiterhin offenen Originalquellenprüfungen; dieser Bericht bestätigt keine aktuelle Aussageabdeckung.
+
 Stand: 5. Oktober 2026. Ausgangspunkt: `d4a3496f5c8a43c7f4f714472a17ec0dc8058ef7`.
 
 Der Änderungsentwurf setzt die 16 Befunde des separat bereitgestellten Fachreviews um. Die Recherche war ein gezielter Abgleich von Leitlinien, offiziellen Schweizer Informationen und über Consensus erschlossener Forschung, keine systematische Literaturübersicht. Aussagen aus Studien wurden anhand der verfügbaren Zusammenfassungen und ausgewählter Originalinformationen eingeordnet. Die Änderungen sind keine klinische oder juristische Freigabe.

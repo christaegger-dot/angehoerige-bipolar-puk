@@ -1,5 +1,4 @@
 import React from 'react';
-import { navHandler, navHref } from './nav-handler.js';
 import { Eisberg } from './modul2.jsx';
 import { clearStoredDraft } from './storage.js';
 import { ToolOverlay } from './tool-overlay.jsx';
@@ -173,7 +172,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
         <>
           <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Meine Belastung wahrnehmen</h2>
           <p className="lede" style={{ maxWidth: '44ch' }}>Fünf Fragen zu Schlaf, Alltag, Kontakten und Befinden. Sie sehen danach Ihre eigenen Antworten und können überlegen, welche Unterstützung Sie brauchen.</p>
-          <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Diese Fragen sind kein validierter Test. Es gibt keine Gesamtpunktzahl, Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert. Bei akuter Gefahr: 144. Wenn Sie die Sicherheit nicht einschätzen können, holen Sie professionelle Hilfe über den <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
+          <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Diese Fragen sind kein validierter Test. Es gibt keine Gesamtpunktzahl, Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert.</p>
           <div style={{ marginTop: 24 }}><button className="btn btn-primary" onClick={start}>Beginnen →</button></div>
         </>
       )}
@@ -218,7 +217,6 @@ function SelbsttestTool({ onClose, onNavigate }) {
           <div className="selbsttest-actions">
             <button className="btn btn-primary" onClick={() => goto('unterstuetzung')}>Unterstützung und Ressourcen →</button>
             <button className="selbsttest-secondary" onClick={() => goto('modul4', 's7')}>Mögliche Entlastungsschritte →</button>
-            <button className="selbsttest-secondary" onClick={() => goto('notfall')}>Bei Sorge um die Sicherheit: Notfallweg →</button>
           </div>
           <div className="selbsttest-foot">
             <button className="tool-quiet-btn" onClick={start}>Fragen erneut ansehen</button>
@@ -241,16 +239,16 @@ const KRISENPLAN_FELDER = [
   {
     id: 'fruehzeichen',
     label: 'Frühwarnzeichen',
-    sub: 'Drei bis fünf konkrete Verhaltensänderungen, die typischerweise vor einer Episode auftreten.',
-    placeholder: 'z.B.\n— Schlaf unter 5 Stunden\n— auffällig viele neue Pläne\n— Geldausgaben verändern sich\n— Reizbarkeit, Rückzug',
+    sub: 'Drei bis fünf persönliche Veränderungen, die vor einer Episode auftreten können. Gemeinsam, bei Bedarf mit dem Behandlungsteam, besprechen.',
+    placeholder: 'z.B.\n— deutlich weniger Schlaf als für die Person üblich\n— auffällig viele neue Pläne\n— Geldausgaben verändern sich\n— Reizbarkeit, Rückzug',
     kind: 'textarea',
     rows: 5,
   },
   {
     id: 'schritte',
     label: 'Erste Schritte bei Verschlechterung',
-    sub: 'In welcher Reihenfolge handeln wir? Konkret und geordnet.',
-    placeholder: 'z.B.\n1. Hausärztin / behandelnde Psychiaterin anrufen\n2. Dringlichkeit heute fachlich klären; Ausweichkontakt bei Nichterreichbarkeit\n3. Krisenplan mit erkrankter Person aktivieren\n4. Bei akuter Gefährdung → 144 / 117',
+    sub: 'Welche Reihenfolge und Dringlichkeit haben wir gemeinsam mit dem Behandlungsteam besprochen?',
+    placeholder: 'z.B.\n1. Vereinbarte Ansprechperson im Behandlungsteam kontaktieren\n2. Nächste Schritte gemeinsam fachlich klären\n3. Abgesprochene Unterstützung mit der erkrankten Person nutzen\n4. Vereinbarten Ausweichkontakt und besprochenes Vorgehen nutzen',
     kind: 'textarea',
     rows: 5,
   },
@@ -265,8 +263,8 @@ const KRISENPLAN_FELDER = [
   {
     id: 'klinik',
     label: 'Klinikwunsch (falls stationär nötig)',
-    sub: 'Wo möchten wir eine Behandlung — und wer ist Ansprechperson?',
-    placeholder: 'z.B. PUK Zürich · Notfall Erwachsene 058 384 20 00',
+    sub: 'Welche Klinik bevorzugt die erkrankte Person, und welche Ansprechperson wurde gemeinsam vereinbart? Ein Wunsch garantiert keine Aufnahme.',
+    placeholder: 'z.B. bevorzugte Klinik / vereinbarte Ansprechperson im Behandlungsteam',
     kind: 'textarea',
     rows: 2,
   },
@@ -282,28 +280,18 @@ const KRISENPLAN_FELDER = [
     id: 'nichthilft',
     label: 'Was nicht hilft',
     sub: 'Auch wenn es gut gemeint ist — was wir bewusst lassen.',
-    placeholder: 'z.B.\n— lange Diskussionen über die Wahrnehmung\n— Vorhaltungen, Schuldzuweisungen\n— Schweigen aus Angst\n— unklare Zuständigkeiten; bei akuter Bedrohung 117 rufen',
+    placeholder: 'z.B.\n— lange Diskussionen über die Wahrnehmung\n— Vorhaltungen, Schuldzuweisungen\n— Schweigen aus Angst\n— unklare Zuständigkeiten',
     kind: 'textarea',
     rows: 4,
   },
-  { id: 'ausweichkontakt', label: 'Wenn niemand erreichbar ist', sub: 'Notfalldienst und Vorgehen, wenn der Plan nicht zur Lage passt. Bei unmittelbarer Gefahr 144 / 117.', placeholder: 'Wen rufen wir heute an? Wer kann übernehmen?', kind: 'textarea', rows: 3 },
+  { id: 'ausweichkontakt', label: 'Wenn niemand erreichbar ist', sub: 'Welcher vereinbarte Kontakt und welches besprochene Vorgehen gelten, wenn niemand erreichbar ist oder der Plan nicht zur Lage passt?', placeholder: 'Vereinbarter Ausweichkontakt / besprochenes Vorgehen / wer kann übernehmen?', kind: 'textarea', rows: 3 },
   { id: 'betreuung', label: 'Kinder und eigene Entlastung', sub: 'Wer betreut Kinder oder andere abhängige Personen? Wer übernimmt, wenn ich nicht begleiten kann?', placeholder: 'Betreuung: Name / Telefon / sicherer Ort. Meine Unterstützung: Name / Telefon.', kind: 'textarea', rows: 3 },
   { id: 'geprueft', label: 'Gemeinsam geprüft am', sub: 'Datum und nächster Überprüfungstermin. Eine private Absprache ersetzt keine rechtliche Vertretungsbefugnis.', placeholder: 'Datum / wer war dabei / erneut prüfen am', kind: 'input' },
 ];
 
-const KRISENPLAN_NOTFALLNUMMERN = [
-  { num: '144', label: 'Sanität · Lebensgefahr · 24 h' },
-  { num: '117', label: 'Polizei · Gewalt · Bedrohung' },
-  { num: '143', label: 'Dargebotene Hand · anonym · 24 h' },
-  { num: '147', label: 'Pro Juventute · Kinder & Jugendliche · 24 h' },
-  { num: '0800 33 66 55', label: 'Ärztefon ZH · Notfalldienst · 24 h' },
-  { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h' },
-  { num: '058 384 38 00', label: 'Fachstelle Angehörigenarbeit PUK · werktags' },
-];
-
 const KRISENPLAN_STORAGE_KEY = 'puk-krisenplan-v1';
 
-function KrisenplanTool({ onClose, onNavigate }) {
+function KrisenplanTool({ onClose }) {
   const [data, setData] = React.useState({});
   const [deletionHint, setDeletionHint] = React.useState('');
 
@@ -371,17 +359,7 @@ function KrisenplanTool({ onClose, onNavigate }) {
           ))}
         </div>
 
-        <section className="krisenplan-notruf">
-          <span className="krisenplan-notruf-kicker">Notfallnummern · Schweiz</span>
-          <ul>
-            {KRISENPLAN_NOTFALLNUMMERN.map((n) => (
-              <li key={n.num}>
-                <span className="krisenplan-notruf-num">{n.num}</span>
-                <span className="krisenplan-notruf-label">{n.label}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <p>Beratung für Angehörige: Fachstelle Angehörigenarbeit PUK · <a href="tel:+41583843800">058 384 38 00</a> · werktags.</p>
 
         <div className="krisenplan-actions no-print">
           <div className="krisenplan-actions-left">
@@ -392,7 +370,7 @@ function KrisenplanTool({ onClose, onNavigate }) {
         </div>
 
         <p className="krisenplan-disclaimer no-print">
-          Dieser Plan ersetzt keine professionelle Beratung. Bei akuter Gefährdung gilt der <a href={navHref('notfall')} onClick={(e) => { e.preventDefault(); onClose(); onNavigate('notfall'); }}>Notfallweg</a>.
+          Dieser Plan ersetzt keine professionelle Beratung.
         </p>
     </ToolOverlay>
   );
@@ -494,7 +472,7 @@ const SAEULEN_DEF = [
           { label: 'Ja, ich weiss wohin', score: 3 },
           { label: 'Vage — ich müsste suchen', score: 2 },
           { label: 'Eher nicht', score: 1 },
-          { label: 'Keine passende Hilfe erreichbar', score: 0 },
+          { label: 'Nein, ich kenne noch keine passende Anlaufstelle', score: 0 },
         ],
       },
     ],
@@ -525,7 +503,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
   const curSaeule = cur && SAEULEN_BY_KEY[cur.saeule];
 
   // Pillar scores nur in der Ergebnisphase berechnen.
-  let saeuleScores = null, weakest = null, strongest = null;
+  let saeuleScores = null, leastRoom = [], mostRoom = [];
   if (phase === 'result') {
     saeuleScores = SAEULEN_DEF.map((s) => {
       const total = answers.reduce(
@@ -534,9 +512,11 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
       );
       return { ...s, score: total, max: s.questions.length * 3 };
     });
-    const sortedAsc = [...saeuleScores].sort((a, b) => (a.score / a.max) - (b.score / b.max));
-    weakest = sortedAsc[0];
-    strongest = sortedAsc[sortedAsc.length - 1];
+    const proportions = saeuleScores.map(s => s.score / s.max);
+    const minimum = Math.min(...proportions);
+    const maximum = Math.max(...proportions);
+    leastRoom = saeuleScores.filter(s => s.score / s.max === minimum);
+    mostRoom = saeuleScores.filter(s => s.score / s.max === maximum);
   }
 
   return (
@@ -547,7 +527,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
           <>
             <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Säulen-Check</h2>
             <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu vier Bereichen, die Angehörige langfristig tragen: Körper, Beziehungen, eigene Welt, fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie misst keine gesundheitliche Stabilität oder Tragfähigkeit.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Etwa drei Minuten. Anonym, im Browser. Keine Diagnose und nicht für akute Krisen gedacht — eine persönliche Reflexion ohne validierte klinische Auswertung. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Etwa drei Minuten. Anonym, im Browser. Eine persönliche Reflexion ohne validierte klinische Auswertung oder Diagnose. Bei starkem oder anhaltendem Unterstützungsbedarf ist fachliche Beratung sinnvoll.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>
@@ -598,17 +578,20 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
               })}
             </div>
 
-            <p className="selbsttest-body">
-              {weakest && weakest.score / weakest.max < 0.5 ? (
-                <>
-                  In Ihren Antworten ist weniger Raum für <strong style={{ color: 'var(--accent)', fontStyle: 'normal' }}>{weakest.label}</strong>. Welche Unterstützung wünschen Sie sich in diesem Bereich? Kleine Schritte können helfen; bei starker oder anhaltender Belastung braucht es möglicherweise mehr Entlastung und fachliche Hilfe.
-                </>
-              ) : (
-                <>
-                  Sie beschreiben Ressourcen in mehreren Bereichen. Besonders viel Raum hat in Ihren Antworten <strong style={{ color: 'var(--accent)', fontStyle: 'normal' }}>{strongest.label}</strong> — was davon möchten Sie bewahren? Wenn Sie Unterstützung ergänzen möchten: <strong style={{ fontStyle: 'normal' }}>{weakest.label}</strong> könnte ein Ausgangspunkt sein. Das ist keine gesundheitliche Entwarnung.
-                </>
-              )}
-            </p>
+            <section aria-label="Einordnung Ihrer Antworten">
+              <p className="selbsttest-body">
+                {leastRoom.length === SAEULEN_DEF.length ? (
+                  <>Ihre Einschätzungen sind in allen vier Bereichen gleich hoch. Es gibt keine stärkste oder schwächste Säule. Welchen Bereich möchten Sie näher anschauen?</>
+                ) : (
+                  <>
+                    Weniger Raum zeigen Ihre Antworten für <strong style={{ color: 'var(--accent)' }}>{leastRoom.map(s => s.label).join(', ')}</strong>. Besonders viel Raum zeigen sie für <strong style={{ color: 'var(--accent)' }}>{mostRoom.map(s => s.label).join(', ')}</strong>.
+                    {(leastRoom.length > 1 || mostRoom.length > 1) && <> Gleich hoch eingeschätzte Bereiche stehen nebeneinander; ihre Reihenfolge ist keine Rangfolge.</>}
+                    {' '}Was möchten Sie bewahren, und wo wünschen Sie sich Unterstützung? Sie entscheiden, welcher Bereich für Sie gerade wichtig ist.
+                  </>
+                )}
+              </p>
+              <p className="selbsttest-body">Kleine Schritte können helfen; bei starker oder anhaltender Belastung braucht es möglicherweise mehr Entlastung und fachliche Hilfe. Diese Darstellung gibt keine gesundheitliche Entwarnung.</p>
+            </section>
 
             <div className="selbsttest-actions">
               <button className="btn btn-primary" onClick={() => { onNavigate('modul7', 's4'); onClose(); }}>
@@ -620,7 +603,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
             </div>
 
             <div className="selbsttest-foot">
-              <button className="tool-quiet-btn" onClick={start}>Test wiederholen</button>
+              <button className="tool-quiet-btn" onClick={start}>Fragen erneut ansehen</button>
               <button className="tool-quiet-btn" onClick={onClose}>schliessen</button>
             </div>
           </div>
@@ -659,7 +642,7 @@ const EISBERG_LABELS = {
       label: 'Erschöpfung',
       kind: 'primary',
       x: 50, y: 64,
-      desc: 'Nicht die Müdigkeit nach einer langen Woche, sondern die, die auch mit Schlaf nicht weggeht. Der Effekt einer langen, stillen Daueraufmerksamkeit.',
+      desc: 'Anhaltende Erschöpfung kann mit langer Belastung und ständiger Aufmerksamkeit zusammenhängen. Sie kann auch andere Ursachen haben. Wenn Erschöpfung anhält oder Ihren Alltag beeinträchtigt, ist eine eigene fachliche Abklärung sinnvoll.',
     },
     {
       key: 'wut',
@@ -834,8 +817,8 @@ function EisbergTool({ onClose, onNavigate }) {
           <div className="selbsttest-result">
             <div className="selbsttest-zone">
               <span className="selbsttest-zone-kicker">Was Sie tragen</span>
-              <h2>{marked.size === 1 ? 'Eine Belastung erkannt' : `${marked.size} Belastungen erkannt`}</h2>
-              <p className="selbsttest-zone-sub">Diese Gefühle sind real. Sie sind die normale Innenseite einer ungewöhnlichen Situation — keine Schwäche, kein Charakterfehler.</p>
+              <h2>{marked.size === 1 ? 'Ein Begriff wiedererkannt' : `${marked.size} Begriffe wiedererkannt`}</h2>
+              <p className="selbsttest-zone-sub">Sie entscheiden, was Sie daran belastet und was auch eine Ressource sein kann. Eigene Gefühle und Bedürfnisse verdienen Aufmerksamkeit; sie sind keine Schwäche und kein Charakterfehler.</p>
             </div>
 
             <ul className="eisberg-tool-marked">
@@ -850,7 +833,7 @@ function EisbergTool({ onClose, onNavigate }) {
             </ul>
 
             <p className="selbsttest-body">
-              Wenn Sie mehr über diese Innenseite verstehen wollen — Modul 2 ordnet ein, was bei Angehörigen typisch ist und wie Hypervigilanz, Eisberg und Schonhaltung zusammenhängen.
+              Modul 2 vertieft mögliche Angehörigenerfahrungen: anhaltende Wachsamkeit, verborgene Belastungen und das Zurückstellen eigener Anliegen.
             </p>
 
             <div className="selbsttest-actions">
@@ -874,7 +857,7 @@ const KOMMUNIKATION_ANLAESSE = [
     key: 'fruehzeichen',
     label: 'Ich möchte Frühwarnzeichen ansprechen',
     sub: 'In stabiler Phase oder beginnender Verschlechterung.',
-    eroeffnung: 'Hast du heute Abend zehn Minuten? Ich möchte etwas mit dir besprechen — nichts Dringendes, aber etwas Wichtiges.',
+    eroeffnung: 'Ich möchte mit dir über eine Beobachtung sprechen; passt der Moment dafür?',
   },
   {
     key: 'nachher',
@@ -909,7 +892,7 @@ const KOMMUNIKATION_HINWEISE = {
 };
 
 const KOMMUNIKATION_STORAGE_KEY = 'puk-kommunikation-v1';
-const KOMMUNIKATION_DEFAULT = { anlass: '', beobachtung: '', wirkung: '', bitte: '' };
+const KOMMUNIKATION_DEFAULT = { anlass: '', beobachtung: '', wirkung: '', bitte: '', grenze: '' };
 
 function KommunikationsTrainerTool({ onClose, onNavigate }) {
   const [step, setStep] = React.useState('intro'); // intro | anlass | beobachtung | wirkung | bitte | result
@@ -947,8 +930,12 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
   const anlass = KOMMUNIKATION_ANLAESSE.find((a) => a.key === data.anlass) || KOMMUNIKATION_ANLAESSE[0];
   const eroeffnung = anlass.eroeffnung;
+  const isBoundary = data.anlass === 'grenze';
 
-  const skript = `${eroeffnung}\n\n${data.beobachtung || '[Ihre Beobachtung]'}\n\n${data.wirkung || '[Wirkung auf Sie]'}\n\n${data.bitte || '[Ihre Bitte]'}`;
+  const scriptParts = [eroeffnung, data.beobachtung || '[Ihre Beobachtung]', data.wirkung || '[Wirkung auf Sie]'];
+  if (data.bitte || !isBoundary) scriptParts.push(data.bitte || '[Ihre Bitte]');
+  if (isBoundary) scriptParts.push(data.grenze || '[Ihre eigene Grenze]');
+  const skript = scriptParts.join('\n\n');
 
   const copyToClipboard = () => {
     if (navigator.clipboard && window.isSecureContext) {
@@ -971,7 +958,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
             <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte für ein schwieriges Gespräch. Am Ende haben Sie ein eigenes Skript — in Ihren Worten, so vorbereitet, dass Sie Ihr Anliegen ruhig und klar ansprechen können. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
             <div className="tool-intro-notes kommunikation-intro-notes">
               <p>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren.</p>
-              <p>Dieses Werkzeug ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht. Bei akuter Gefahr: 144. Sonst hilft der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a> oder eine professionelle Einschätzung.</p>
+              <p>Dieses Werkzeug dient der Gesprächsvorbereitung; es ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht.</p>
             </div>
             <div style={{ marginTop: 18 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
@@ -1045,8 +1032,8 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
         {step === 'bitte' && (
           <div className="kommunikation-step">
-            <div className="kommunikation-progress">Schritt 4 von 4 · Bitte</div>
-            <h3 className="kommunikation-q"><label htmlFor="kommunikation-bitte">Was wäre Ihr Anliegen oder Ihre Bitte?</label></h3>
+            <div className="kommunikation-progress">Schritt 4 von 4 · {isBoundary ? 'Bitte und eigene Grenze' : 'Bitte'}</div>
+            <h3 className="kommunikation-q"><label htmlFor="kommunikation-bitte">{isBoundary ? 'Welche Bitte möchten Sie ergänzen? (optional)' : 'Was wäre Ihr Anliegen oder Ihre Bitte?'}</label></h3>
             <p className="kommunikation-hint">{KOMMUNIKATION_HINWEISE.bitte}</p>
             <textarea
               id="kommunikation-bitte"
@@ -1056,9 +1043,23 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               onChange={(e) => updateField('bitte', e.target.value)}
               placeholder="z.B. Können wir vielleicht zusammen schauen, ob ein Termin bei der Ärztin schon Sinn machen würde?"
             />
+            {isBoundary && (
+              <>
+                <h3 className="kommunikation-q"><label htmlFor="kommunikation-grenze">Welche eigene Grenze können Sie umsetzen?</label></h3>
+                <p className="kommunikation-hint">Benennen Sie, was Sie selbst tun werden, wenn Ihre Grenze überschritten wird. Diese Handlung braucht nicht die Zustimmung der anderen Person. Wählen Sie etwas, das für Sie möglich und sicher ist.</p>
+                <textarea
+                  id="kommunikation-grenze"
+                  className="krisenplan-textarea"
+                  rows={4}
+                  value={data.grenze}
+                  onChange={(e) => updateField('grenze', e.target.value)}
+                  placeholder="z.B. Wenn das Gespräch verletzend wird, beende ich es für heute."
+                />
+              </>
+            )}
             <div className="kommunikation-nav">
               <button className="tool-quiet-btn" onClick={() => setStep('wirkung')}>← zurück</button>
-              <button className="btn btn-primary" onClick={() => setStep('result')}>Skript ansehen →</button>
+              <button className="btn btn-primary" onClick={() => setStep('result')} disabled={isBoundary && !data.grenze.trim()}>Skript ansehen →</button>
             </div>
           </div>
         )}
@@ -1083,10 +1084,18 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
                 <span className="kommunikation-rolle">Wirkung</span>
                 <p>«{data.wirkung || '— noch nicht ausgefüllt —'}»</p>
               </div>
-              <div className="kommunikation-zeile">
-                <span className="kommunikation-rolle">Bitte</span>
-                <p>«{data.bitte || '— noch nicht ausgefüllt —'}»</p>
-              </div>
+              {(!isBoundary || data.bitte) && (
+                <div className="kommunikation-zeile">
+                  <span className="kommunikation-rolle">Bitte</span>
+                  <p>«{data.bitte || '— noch nicht ausgefüllt —'}»</p>
+                </div>
+              )}
+              {isBoundary && (
+                <div className="kommunikation-zeile">
+                  <span className="kommunikation-rolle">Eigene Grenze</span>
+                  <p>«{data.grenze}»</p>
+                </div>
+              )}
               <div className="kommunikation-zeile">
                 <span className="kommunikation-rolle">Pause</span>
                 <p className="kommunikation-pause">— stille zulassen, antwort abwarten —</p>
@@ -1099,7 +1108,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
                 <li>Bewusst gewählter Moment — nicht direkt nach einer Episode oder im Stress</li>
                 <li>Reize reduzieren — TV aus, Telefon stumm</li>
                 <li>Eine Pause oder ein Gesprächsende ist erlaubt: «Ich beende das Gespräch für heute.» Eine Fortsetzung bleibt freiwillig.</li>
-                <li>Wer zu schnell weiterspricht, raubt der anderen Person den Raum für eine echte Antwort</li>
+                <li>Lassen Sie nach Ihrer Bitte eine Pause, damit die andere Person antworten kann.</li>
               </ul>
             </aside>
 
@@ -1136,13 +1145,13 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
   );
 }
 
-const EE_PHASEN = [
+const EE_ASPEKTE = [
   {
     key: 'schuld',
-    label: 'Schuld',
+    label: 'Schuldgefühle',
     pos: { left: '50%', top: '14%' },
     desc: '«Hätte ich die Warnzeichen früher erkannt? Mache ich genug?» Schuldgefühle können zusätzliche Kontrolle oder Aufmerksamkeit auslösen; andere Reaktionen sind ebenso möglich.',
-    unterbrechen: 'Schuld als Gefühl bemerken, nicht als Urteil. Modul 5 vertieft: «Schuldgefühl ist kein Beweis von Schuld.» Es kann auch dann kommen, wenn Sie etwas Richtiges tun.',
+    unterbrechen: 'Schuldgefühle bemerken, nicht als Urteil übernehmen. Modul 5 vertieft: «Schuldgefühl ist kein Beweis von Schuld.» Es kann auch dann kommen, wenn Sie etwas Richtiges tun.',
   },
   {
     key: 'engagement',
@@ -1172,39 +1181,26 @@ function EeKreislaufTool({ onClose, onNavigate }) {
   const [view, setView] = React.useState('was'); // 'was' | 'unterbrechen'
 
 
-  const cur = EE_PHASEN.find((p) => p.key === selected);
-  const curIdx = EE_PHASEN.findIndex((p) => p.key === selected);
+  const cur = EE_ASPEKTE.find((p) => p.key === selected);
 
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Wenn Belastung Gespräche verändert" cardClass="ee-card">
       <span className="kicker">Werkzeug · Beziehung</span>
         <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Wenn Belastung Gespräche verändert</h2>
-        <p className="ee-intro">Vier mögliche Aspekte, die sich unter Belastung gegenseitig verstärken können. Das ist ein vereinfachtes Reflexionsmodell, keine feste Reihenfolge und keine Definition von Expressed Emotion (EE). Wählen Sie, was Sie wiedererkennen.</p>
+        <p className="ee-intro">Vier mögliche Erfahrungen im Umgang mit Belastung. Die Zusammenstellung dient der persönlichen Reflexion; sie ist kein Test und gibt keine feste Reihenfolge vor. Wählen Sie, was Sie wiedererkennen.</p>
 
         <div className="ee-stage">
           <svg viewBox="0 0 400 400" className="ee-svg" aria-hidden="true">
-            <defs>
-              <marker id="ee-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
-              </marker>
-            </defs>
-
-            {/* Vier Bögen im Uhrzeigersinn — Schuld → Engagement → Erschöpfung → Kritik → Schuld */}
-            <path d="M 240,80 A 130,130 0 0 1 320,240" fill="none" stroke="var(--accent)" strokeWidth="1.5" markerEnd="url(#ee-arrow)" />
-            <path d="M 320,240 A 130,130 0 0 1 240,320" fill="none" stroke="var(--accent)" strokeWidth="1.5" markerEnd="url(#ee-arrow)" />
-            <path d="M 160,320 A 130,130 0 0 1 80,240" fill="none" stroke="var(--accent)" strokeWidth="1.5" markerEnd="url(#ee-arrow)" />
-            <path d="M 80,160 A 130,130 0 0 1 160,80" fill="none" stroke="var(--accent)" strokeWidth="1.5" markerEnd="url(#ee-arrow)" />
-
-            {/* Zentraler Kreislauf-Hinweis */}
+            {/* Vier unabhängig auswählbare Aspekte ohne gerichtete Folge. */}
             <text x="200" y="195" textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="14" fill="var(--ink-mute)">
-              Kreislauf
+              Vier Aspekte
             </text>
             <text x="200" y="215" textAnchor="middle" fontFamily="var(--sans)" fontSize="10" letterSpacing="0" fill="var(--ink-mute)">
-              UNTERBRECHBAR
+              FREI AUSWÄHLBAR
             </text>
           </svg>
 
-          {EE_PHASEN.map((p, i) => (
+          {EE_ASPEKTE.map((p) => (
             <button
               key={p.key}
               className={`ee-node ${selected === p.key ? 'is-selected' : ''}`}
@@ -1212,7 +1208,6 @@ function EeKreislaufTool({ onClose, onNavigate }) {
               onClick={() => setSelected(p.key)}
               aria-pressed={selected === p.key}
             >
-              <span className="ee-node-num">{i + 1}</span>
               <span className="ee-node-label">{p.label}</span>
             </button>
           ))}
@@ -1220,7 +1215,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
 
         <div className="ee-detail">
           <div className="ee-detail-head">
-            <span className="ee-detail-num">Aspekt {curIdx + 1} von 4</span>
+            <span className="ee-detail-num">Mögliche Erfahrung</span>
             <h3>{cur.label}</h3>
           </div>
           <div className="ee-detail-tabs" role="tablist">
@@ -1260,7 +1255,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
         </div>
 
         <p className="ee-foot-note">
-          EE bezeichnet in der Forschung Kritik, Feindseligkeit und emotionale Überinvolviertheit. Zusammenhänge mit Rückfällen beweisen keine individuelle Verursachung durch Angehörige. Legitime Grenzen sind keine Feindseligkeit. Modul 5 erklärt die Abgrenzung.
+          Eigene Grenzen sind erlaubt. Schuldgefühle sind kein Urteil über Ihre Verantwortung. Modul 5 vertieft, wie Zuwendung und Selbstschutz nebeneinander Platz haben können.
         </p>
     </ToolOverlay>
   );
@@ -1270,17 +1265,17 @@ const PHASEN_VARIANTEN = [
   {
     key: 'bipolar1',
     label: 'Bipolar I',
-    sub: 'Diagnose: mindestens eine Manie',
+    sub: 'Diagnose: fachlich einzuordnen',
     path: 'M 0,90 L 60,90 Q 90,30 120,55 Q 150,90 180,135 Q 210,160 230,140 Q 260,90 320,90 Q 350,40 380,75 L 400,90',
-    desc: 'Für Bipolar I ist mindestens eine manische Episode erforderlich. Depressive Episoden können hinzukommen, sind für die Diagnose aber nicht zwingend. Ausmass und Dauer der Beeinträchtigung werden fachlich beurteilt.',
+    desc: 'Die Kurve ist ein fiktives Beispiel, keine Diagnosehilfe. Die diagnostischen Kriterien richten sich nach der verwendeten Klassifikation; eine Fachperson beurteilt den bisherigen Verlauf, Dauer, Begleitsymptome und Beeinträchtigung gemeinsam.',
     angehoerige: 'Bei einer schweren Manie können Kontrollverlust und Angst im Vordergrund stehen. Welche Belastung entsteht, ist individuell.',
   },
   {
     key: 'bipolar2',
     label: 'Bipolar II',
-    sub: 'Diagnose: Hypomanie und Depression',
+    sub: 'Diagnose: fachlich einzuordnen',
     path: 'M 0,90 L 50,90 Q 70,60 95,75 Q 110,90 135,140 Q 175,165 215,160 Q 250,150 280,90 Q 295,68 320,80 Q 340,90 360,140 Q 380,160 400,150',
-    desc: 'Bipolar II umfasst mindestens eine hypomanische und eine depressive Episode, ohne frühere Manie. Hypomanie: nach DSM-5-TR mindestens vier aufeinanderfolgende Tage, nach ICD-11 mehrere Tage; keine feste Obergrenze von sieben Tagen. Psychotische Symptome in einer Hochphase schliessen Hypomanie aus.',
+    desc: 'Auch dieses Beispiel beschreibt keine diagnostischen Kriterien. Eine Fachperson ordnet den bisherigen Verlauf und die einzelnen Episoden anhand der verwendeten Klassifikation ein. An der Form der Kurve lässt sich keine Diagnose ablesen.',
     angehoerige: 'Depressionen können erheblich belasten. Dauer und Sichtbarkeit unterscheiden sich; Angehörige dürfen eigene Bedürfnisse unabhängig davon ansprechen.',
   },
   {
@@ -1288,8 +1283,8 @@ const PHASEN_VARIANTEN = [
     label: 'Mischzustände',
     sub: 'Zustand: gleichzeitige Symptome',
     path: 'M 0,90 L 30,80 Q 50,55 70,100 Q 90,140 110,75 Q 130,40 155,120 Q 175,150 200,80 Q 220,55 250,135 Q 280,155 305,90 Q 325,55 350,130 L 400,110',
-    desc: 'Aktivierung und depressive Symptome können gleichzeitig auftreten, etwa Getriebenheit und Hoffnungslosigkeit. Gereiztheit oder rasche Wechsel allein sind kein Mischzustand. Rapid Cycling meint mindestens vier abgrenzbare affektive Episoden in zwölf Monaten.',
-    angehoerige: 'Für Angehörige gehören Mischzustände zu den schwersten Phasen, weil Energie und Verzweiflung zusammenkommen — und weil die übliche Phasenlehre nicht greift.',
+    desc: 'Die Abbildung zeigt erhöhte Aktivierung und depressive Stimmung im gleichen Zeitraum. Ob und wie solche Erfahrungen als Mischzustand einzuordnen sind, wird fachlich anhand des Gesamtverlaufs und der verwendeten Klassifikation beurteilt. Die Linien sind keine Messung.',
+    angehoerige: 'Gleichzeitige Aktivierung und depressive Symptome können für Angehörige besonders belastend und schwer verständlich sein; die Belastung ist individuell.',
   },
   {
     key: 'stabil',
@@ -1402,7 +1397,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
 
   // Drei Episoden mit Erklärungen
   const episoden = [
-    { x: 110, y: 60,  label: 'Erste Episode', text: 'Frühphase — Notfallmodus. Sie schalten in den Krisenmodus: organisieren, Verantwortung übernehmen, funktionieren. Die eigene Erschöpfung ist noch zweitrangig.' },
+    { x: 110, y: 60,  label: 'Erste Episode', text: 'Manche Angehörige reagieren zunächst mit viel Organisieren und Helfen; andere fühlen sich unsicher oder überfordert. Ihre eigene Belastung darf von Anfang an Aufmerksamkeit bekommen.' },
     { x: 220, y: 95, label: 'Wiederkehr', text: 'Nach einer weiteren Krise kann Erholung Zeit brauchen. Manche Angehörige erleben mehr Belastung, andere finden wieder zu Ruhe und Vertrauen. Eine feste Reihenfolge gibt es nicht.' },
     { x: 330, y: 130, label: 'Längerfristige Belastung', text: 'Bei manchen Angehörigen bleibt Belastung länger bestehen. Andere erleben lange stabile Zeiten. Neue Aufgabenverteilung, eigene Behandlung bei Bedarf und praktische Hilfe können wichtig sein.' },
   ];
@@ -1518,7 +1513,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
         {activeEpisode !== null && (
           <div className="ee-detail">
             <div className="ee-detail-head">
-              <span className="ee-detail-num">Phase {activeEpisode + 1}</span>
+              <span className="ee-detail-num">Mögliche Erfahrung</span>
               <h3>{episoden[activeEpisode].label}</h3>
             </div>
             <div className="ee-detail-body">

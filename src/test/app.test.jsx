@@ -1,9 +1,28 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../app.jsx';
 
 describe('App navigation', () => {
+  it('keeps numbered crisis guidance on the dedicated crisis page across navigation', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await screen.findByRole('heading', { name: /wenn jemand, den sie lieben/i });
+    expect(screen.queryByRole('link', { name: /SOS Krise — 144/ })).not.toBeInTheDocument();
+    expect(within(screen.getByRole('main')).queryByText(/akute Gefahr/i)).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('link', { name: 'SOS Krise' }));
+    expect(await screen.findByRole('link', { name: /SOS Krise — 144/ })).toBeInTheDocument();
+    await screen.findByRole('heading', { level: 1, name: /SOS Krise — wenn jetzt/i });
+    expect(within(screen.getByRole('main')).getAllByText(/144/).length).toBeGreaterThan(0);
+
+    await user.click(screen.getByRole('link', { name: 'Module' }));
+    await screen.findByRole('heading', { level: 1, name: /Alle sieben Module im Überblick/i });
+    expect(screen.queryByRole('link', { name: /SOS Krise — 144/ })).not.toBeInTheDocument();
+    expect(within(screen.getByRole('main')).queryByText(/akute Gefahr/i)).not.toBeInTheDocument();
+  });
+
   it('navigates between main pages through the shared navigation', async () => {
     const user = userEvent.setup();
 

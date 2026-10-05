@@ -2,7 +2,7 @@
   "status": "prepared-not-approved",
   "reviewedAt": "2026-10-05",
   "reviewerRole": "Technische Bestandsaufnahme anhand des Quellcodes; formelle Datenschutzfreigabe ausstehend",
-  "inventoryVersion": 1,
+  "inventoryVersion": 2,
   "profileCompatibility": {
     "requestedProfile": "PUK-Websiteprofil 1.10.1",
     "source": "templates/website/profile.json#formsAndData und Website.prompt.md aus dem bereitgestellten Website Kit",
@@ -171,7 +171,29 @@
     "indexedDB": [],
     "cacheStorage": [],
     "serviceWorkers": [],
-    "ephemeralToolState": "Alle Übungen einschliesslich Krisenplan und Kommunikations-Trainer halten Eingaben nur im flüchtigen Komponenten-Zustand; keine Wiederherstellung durch die Anwendung nach Schliessen oder Neuladen."
+    "ephemeralToolState": "Alle Übungen einschliesslich Krisenplan und Kommunikations-Trainer halten Eingaben nur im flüchtigen Komponenten-Zustand; keine Wiederherstellung durch die Anwendung nach Schliessen oder Neuladen.",
+    "ephemeralInputFields": {
+      "krisenplan": [
+        "name",
+        "fruehzeichen",
+        "schritte",
+        "kontakte",
+        "klinik",
+        "hilft",
+        "nichthilft",
+        "ausweichkontakt",
+        "betreuung",
+        "geprueft",
+        "_updated"
+      ],
+      "kommunikation": [
+        "anlass",
+        "beobachtung",
+        "wirkung",
+        "bitte",
+        "grenze"
+      ]
+    }
   },
   "exports": [
     {
@@ -179,7 +201,7 @@
       "feature": "Kommunikations-Trainer",
       "trigger": "Skript kopieren oder manuelles Kopieren",
       "api": "navigator.clipboard.writeText bei sicherem Kontext; andernfalls manuelles Markieren und Kopieren",
-      "content": "Gesprächseröffnung, Beobachtung, Wirkung und Bitte",
+      "content": "Gesprächseröffnung, Beobachtung, Wirkung und Bitte; bei Grenzsetzung zusätzlich die eigene umsetzbare Grenze",
       "retention": "Vom Betriebssystem und Browser bestimmt; Zwischenablage-Verlauf oder Synchronisierung können zusätzliche Kopien behalten",
       "deletion": "Zwischenablage und Verlauf separat über die Geräte-Einstellungen löschen; «Entwurf löschen» greift darauf nicht zu"
     },

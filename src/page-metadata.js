@@ -36,7 +36,7 @@ const PAGE_METADATA = {
   },
   datenschutz: {
     title: 'Datenschutz — Was passiert mit Ihren Daten? | PUK Zürich',
-    description: 'Informationen zur Datenbearbeitung und zur Speicherung von Werkzeug-Entwürfen in Ihrem Browser.',
+    description: 'Informationen zur Datenbearbeitung, zur vorübergehenden Nutzung von Werkzeug-Eingaben und zum Entfernen früherer Browser-Entwürfe.',
   },
   barrierefreiheit: {
     title: 'Erklärung zur Barrierefreiheit | PUK Zürich',
@@ -44,7 +44,7 @@ const PAGE_METADATA = {
   },
   schweigepflicht: {
     title: 'Schweigepflicht bei Angehörigengesprächen | PUK Zürich',
-    description: 'Amtlich belegte Orientierung für Angehörige zu Schweigepflicht, Einwilligung und dem offiziellen PUK-Formular.',
+    description: 'Orientierung für Angehörige zu Schweigepflicht, Einwilligung und dem offiziellen PUK-Formular.',
   },
 };
 
