@@ -36,6 +36,30 @@ describe('WerkzeugePage', () => {
 });
 
 describe('KrisenplanTool privacy', () => {
+  it('exports the full current text for print without examples or stale deleted input', () => {
+    const { container } = render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
+    const printValues = [...container.querySelectorAll('.krisenplan-print-value')];
+    expect(printValues).toHaveLength(10);
+    printValues.forEach(value => expect(value.textContent).toBe(''));
+
+    const name = 'Plan für <M. & Christine> '.repeat(20);
+    const warningSigns = Array.from({ length: 40 }, (_, index) => `Persönliche Vereinbarung ${index + 1}`).join('\n');
+    const nameInput = screen.getByRole('textbox', { name: /Plan für/i });
+    const warningInput = screen.getByRole('textbox', { name: /^Frühwarnzeichen/i });
+    fireEvent.change(nameInput, { target: { value: name } });
+    fireEvent.change(warningInput, { target: { value: warningSigns } });
+
+    expect(nameInput.parentElement.querySelector('.krisenplan-print-value').textContent).toBe(name);
+    expect(warningInput.parentElement.querySelector('.krisenplan-print-value').textContent).toBe(warningSigns);
+    expect(nameInput.parentElement.querySelector('.krisenplan-print-value').children).toHaveLength(0);
+    expect(window.localStorage.length).toBe(0);
+    expect(window.sessionStorage.length).toBe(0);
+
+    vi.spyOn(window, 'confirm').mockReturnValue(true);
+    fireEvent.click(screen.getByRole('button', { name: 'Entwurf löschen' }));
+    printValues.forEach(value => expect(value.textContent).toBe(''));
+  });
+
   it('keeps new input only in the open tool and offers no persistent-storage option', async () => {
     const user = userEvent.setup();
     render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);

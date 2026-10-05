@@ -3,6 +3,21 @@ import { Eisberg } from './modul2.jsx';
 import { clearStoredDraft } from './storage.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 
+// Announce a user-selected step through its focused heading. The dialog itself
+// owns initial focus; timed breathing phases must not repeatedly move it.
+function useToolStepFocus(step) {
+  const headingRef = React.useRef(null);
+  const initialStep = React.useRef(true);
+  React.useEffect(() => {
+    if (initialStep.current) {
+      initialStep.current = false;
+      return;
+    }
+    headingRef.current?.focus();
+  }, [step]);
+  return headingRef;
+}
+
 // WAI-ARIA-konforme Pfeil-Navigation für role="tablist": ArrowLeft/Right
 // wechseln + aktivieren den Nachbartab, Home/End springen an die Enden.
 // Voraussetzung: Tab-Buttons haben tabIndex roving (selected=0, sonst -1).
@@ -24,13 +39,14 @@ const ATEM_PHASEN = [
   { name: 'einatmen', label: 'Einatmen', duration: 4000, scale: 1 },
   { name: 'halten',   label: 'Halten',   duration: 2000, scale: 1 },
   { name: 'ausatmen', label: 'Ausatmen', duration: 6000, scale: 0.4 },
-  { name: 'pause',    label: '',         duration: 2000, scale: 0.4 },
+  { name: 'pause',    label: 'Pause',    duration: 2000, scale: 0.4 },
 ];
 const ATEM_ZYKLEN = 5;
 
 function AtemuebungTool({ onClose }) {
   const [phase, setPhase] = React.useState('intro'); // intro | einatmen | halten | ausatmen | pause | done
   const [zyklus, setZyklus] = React.useState(0);
+  const stepRef = useToolStepFocus(phase === 'intro' || phase === 'done' ? phase : 'running');
 
   React.useEffect(() => {
     if (phase === 'intro' || phase === 'done') return;
@@ -58,10 +74,11 @@ function AtemuebungTool({ onClose }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Atemübung Durchatmen">
       <span className="kicker">Werkzeug · Pause</span>
+      <span className="tool-announcement" role="status" aria-live="polite" aria-atomic="true">{aktiv ? label : ''}</span>
 
         {phase === 'intro' && (
           <>
-            <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Durchatmen</h2>
+            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Durchatmen</h2>
             <p className="lede" style={{ maxWidth: '40ch' }}>Wenn Ihnen gerade alles zu viel ist, können Sie mit fünf geführten Atemzügen eine Pause machen. Atmen Sie so, wie es sich für Sie angenehm anfühlt.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '40ch' }}>Der Rhythmus ist: 4 Sekunden einatmen, 2 Sekunden halten, 6 Sekunden ausatmen und 2 Sekunden Pause. Er wiederholt sich fünfmal und dauert etwa 70 Sekunden. Das Atemhalten können Sie auslassen. Stoppen Sie bei Unwohlsein und atmen Sie normal weiter. Als Alternative können Sie den Kontakt zum Boden spüren und drei Dinge im Raum anschauen.</p>
             <div style={{ marginTop: 24 }}>
@@ -72,7 +89,7 @@ function AtemuebungTool({ onClose }) {
 
         {(phase !== 'intro' && phase !== 'done') && (
           <>
-            <div className="atem-stage">
+            <div ref={stepRef} tabIndex={-1} role="group" aria-label="Geführte Atemübung" className="atem-stage">
               <div
                 className={`atem-circle atem-${phase}`}
                 style={{
@@ -80,7 +97,7 @@ function AtemuebungTool({ onClose }) {
                   transitionDuration: `${dur}ms`,
                 }}
               />
-              <div className="atem-label">{label}</div>
+              <div className="atem-label" aria-hidden="true">{label}</div>
             </div>
             <div className="atem-meta">Atemzug {Math.min(zyklus + 1, ATEM_ZYKLEN)} von {ATEM_ZYKLEN}</div>
             <button className="tool-quiet-btn" onClick={stop}>Abbrechen</button>
@@ -89,7 +106,7 @@ function AtemuebungTool({ onClose }) {
 
         {phase === 'done' && (
           <>
-            <div className="atem-stage atem-done">
+            <div ref={stepRef} tabIndex={-1} role="group" aria-label="Atemübung beendet" className="atem-stage atem-done">
               <div className="atem-circle" style={{ transform: 'scale(0.7)' }} />
               <div className="atem-label">Fertig</div>
             </div>
@@ -155,6 +172,7 @@ const SELBSTTEST_FRAGEN = [
 function SelbsttestTool({ onClose, onNavigate }) {
   const [phase, setPhase] = React.useState('intro');
   const [answers, setAnswers] = React.useState([]);
+  const stepRef = useToolStepFocus(`${phase}-${answers.length}`);
   const start = () => { setAnswers([]); setPhase('running'); };
   const answer = (optionIndex) => {
     const next = [...answers, optionIndex];
@@ -170,7 +188,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
       <span className="kicker">Werkzeug · Persönliche Reflexion</span>
       {phase === 'intro' && (
         <>
-          <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Meine Belastung wahrnehmen</h2>
+          <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Meine Belastung wahrnehmen</h2>
           <p className="lede" style={{ maxWidth: '44ch' }}>Mit fünf Fragen können Sie Ihren Schlaf, Alltag, Ihre Kontakte und Ihr Befinden anschauen. Danach sehen Sie Ihre eigenen Antworten und können überlegen, welche Unterstützung Sie brauchen.</p>
           <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Die Fragen dienen der persönlichen Reflexion und sind kein Test mit wissenschaftlich bestätigter Aussagekraft. Sie erhalten weder eine Gesamtpunktzahl noch eine Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert.</p>
           <div style={{ marginTop: 24 }}><button className="btn btn-primary" onClick={start}>Beginnen →</button></div>
@@ -182,7 +200,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
             Frage {qIdx + 1} von {SELBSTTEST_FRAGEN.length}
             <span className="selbsttest-progress-bar"><span style={{ width: `${(qIdx / SELBSTTEST_FRAGEN.length) * 100}%` }} /></span>
           </div>
-          <div className="selbsttest-q">{SELBSTTEST_FRAGEN[qIdx].q}</div>
+          <h2 ref={stepRef} tabIndex={-1} className="selbsttest-q">{SELBSTTEST_FRAGEN[qIdx].q}</h2>
           <div className="selbsttest-options">
             {SELBSTTEST_FRAGEN[qIdx].opts.map((option, index) => (
               <button key={option.label} className="selbsttest-opt" onClick={() => answer(index)}>{option.label}</button>
@@ -193,7 +211,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
       )}
       {phase === 'result' && (
         <div className="selbsttest-result">
-          <h2>Was Sie gerade beschreiben</h2>
+          <h2 ref={stepRef} tabIndex={-1}>Was Sie gerade beschreiben</h2>
           <p>Ihre Antworten stehen nebeneinander. Eine gute Erfahrung in einem Bereich hebt eine Belastung in einem anderen nicht auf.</p>
           <dl>
             {SELBSTTEST_FRAGEN.map((question, index) => (
@@ -357,6 +375,9 @@ function KrisenplanTool({ onClose, onNavigate }) {
                   placeholder={f.placeholder}
                 />
               )}
+              <div className={`krisenplan-print-value${f.kind === 'textarea' ? ' krisenplan-print-value-multiline' : ''}`}>
+                {data[f.id] || ''}
+              </div>
             </div>
           ))}
         </div>
@@ -490,6 +511,7 @@ const SAEULEN_BY_KEY = Object.fromEntries(SAEULEN_DEF.map((s) => [s.key, s]));
 function SaeulenCheckTool({ onClose, onNavigate }) {
   const [phase, setPhase] = React.useState('intro'); // intro | running | result
   const [answers, setAnswers] = React.useState([]); // flat array of scores
+  const stepRef = useToolStepFocus(`${phase}-${answers.length}`);
 
 
   const start  = () => { setAnswers([]); setPhase('running'); };
@@ -527,7 +549,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
 
         {phase === 'intro' && (
           <>
-            <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Säulen-Check</h2>
+            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Säulen-Check</h2>
             <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu dem, was Sie im Alltag unterstützt: Körper, Beziehungen, eigene Welt und fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie können überlegen, was Sie bewahren möchten und wo Sie Unterstützung wünschen. Ihre gesundheitliche Stabilität oder Tragfähigkeit lässt sich damit nicht messen.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Die Reflexion dauert etwa drei Minuten und findet anonym im Browser statt. Sie liefert keine klinische Auswertung mit wissenschaftlich bestätigter Aussagekraft und keine Diagnose. Bei starkem oder anhaltendem Unterstützungsbedarf ist fachliche Beratung sinnvoll.</p>
             <div style={{ marginTop: 24 }}>
@@ -543,7 +565,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
               <span style={{ color: 'var(--ink-mute)', fontSize: '0.72rem' }}>Frage {qIdx + 1} von {SAEULEN_ALL_QUESTIONS.length}</span>
               <span className="selbsttest-progress-bar"><span style={{ width: `${(qIdx / SAEULEN_ALL_QUESTIONS.length) * 100}%` }}></span></span>
             </div>
-            <div className="selbsttest-q">{cur.q}</div>
+            <h2 ref={stepRef} tabIndex={-1} className="selbsttest-q">{cur.q}</h2>
             <div className="selbsttest-options">
               {cur.opts.map((o, i) => (
                 <button key={i} className="selbsttest-opt" onClick={() => answer(o.score)}>
@@ -561,7 +583,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
           <div className="selbsttest-result">
             <div className="selbsttest-zone">
               <span className="selbsttest-zone-kicker">Ihre Einschätzungen jetzt</span>
-              <h2>Meine Ressourcen</h2>
+              <h2 ref={stepRef} tabIndex={-1}>Meine Ressourcen</h2>
               <p className="selbsttest-zone-sub">Die Höhe der Balken fasst Ihre Antworten vereinfacht zusammen. Sie zeigt keinen gemessenen Wert Ihrer Belastbarkeit.</p>
             </div>
 
@@ -705,6 +727,7 @@ const EISBERG_BY_KEY = Object.fromEntries(
 
 function EisbergTool({ onClose, onNavigate }) {
   const [phase, setPhase] = React.useState('intro'); // intro | explore | result
+  const stepRef = useToolStepFocus(phase);
   const [selected, setSelected] = React.useState(null);
   const [marked, setMarked] = React.useState(new Set());
 
@@ -731,7 +754,7 @@ function EisbergTool({ onClose, onNavigate }) {
 
         {phase === 'intro' && (
           <>
-            <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Der Eisberg Ihrer Belastung</h2>
+            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Der Eisberg Ihrer Belastung</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>Der Eisberg ist eine Metapher, keine Messung: Manche Belastungen sind sichtbar, andere bleiben verborgen. Die Begriffe sind mögliche Erfahrungen; nicht alle müssen auf Sie zutreffen.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Wählen Sie einen Begriff, um mehr über diese mögliche Erfahrung zu lesen. Markieren Sie, was Sie wiedererkennen. Am Ende sehen Sie Ihre Auswahl im Überblick.</p>
             <div style={{ marginTop: 24 }}>
@@ -742,6 +765,7 @@ function EisbergTool({ onClose, onNavigate }) {
 
         {phase === 'explore' && (
           <div className="eisberg-tool">
+            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Der Eisberg Ihrer Belastung</h2>
             <div className="eisberg-tool-zones">
               <div className="eisberg-zone-top">
                 <span className="eisberg-zone-kicker">Was andere sehen</span>
@@ -819,7 +843,7 @@ function EisbergTool({ onClose, onNavigate }) {
           <div className="selbsttest-result">
             <div className="selbsttest-zone">
               <span className="selbsttest-zone-kicker">Was Sie tragen</span>
-              <h2>{marked.size === 1 ? 'Ein Begriff wiedererkannt' : `${marked.size} Begriffe wiedererkannt`}</h2>
+              <h2 ref={stepRef} tabIndex={-1}>{marked.size === 1 ? 'Ein Begriff wiedererkannt' : `${marked.size} Begriffe wiedererkannt`}</h2>
               <p className="selbsttest-zone-sub">Sie entscheiden, was Sie daran belastet und was auch eine Ressource sein kann. Eigene Gefühle und Bedürfnisse verdienen Aufmerksamkeit; sie sind keine Schwäche und kein Charakterfehler.</p>
             </div>
 
@@ -898,6 +922,7 @@ const KOMMUNIKATION_DEFAULT = { anlass: '', beobachtung: '', wirkung: '', bitte:
 
 function KommunikationsTrainerTool({ onClose, onNavigate }) {
   const [step, setStep] = React.useState('intro'); // intro | anlass | beobachtung | wirkung | bitte | result
+  const stepRef = useToolStepFocus(step);
   const [data, setData] = React.useState({ ...KOMMUNIKATION_DEFAULT });
   const [storageHint, setStorageHint] = React.useState('');
   const [copyHint, setCopyHint] = React.useState({ tone: '', text: '' });
@@ -956,7 +981,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
         {step === 'intro' && (
           <>
-            <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Kommunikations-Trainer</h2>
+            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Kommunikations-Trainer</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>In vier kurzen Schritten bereiten Sie ein schwieriges Gespräch vor. Sie formulieren Ihr Anliegen, eine konkrete Bitte und bei Bedarf eine eigene Grenze. Daraus entsteht ein Skript in Ihren Worten. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
             <div className="tool-intro-notes kommunikation-intro-notes">
               <p>Ein vorbereitetes Skript kann helfen, Ihr Anliegen auch in einem angespannten Gespräch im Blick zu behalten. Die Beispielsätze sind Anregungen: Passen Sie Inhalt und Anrede an Ihre Beziehung an.</p>
@@ -971,7 +996,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
         {step === 'anlass' && (
           <div className="kommunikation-step">
             <div className="kommunikation-progress">Schritt 1 von 4 · Anlass</div>
-            <h3 className="kommunikation-q">Worum geht es im Gespräch?</h3>
+            <h2 ref={stepRef} tabIndex={-1} className="kommunikation-q">Worum geht es im Gespräch?</h2>
             <div className="kommunikation-anlaesse">
               {KOMMUNIKATION_ANLAESSE.map((a) => (
                 <button
@@ -995,7 +1020,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
         {step === 'beobachtung' && (
           <div className="kommunikation-step">
             <div className="kommunikation-progress">Schritt 2 von 4 · Beobachtung</div>
-            <h3 className="kommunikation-q"><label htmlFor="kommunikation-beobachtung">Was haben Sie konkret beobachtet?</label></h3>
+            <h2 ref={stepRef} tabIndex={-1} className="kommunikation-q"><label htmlFor="kommunikation-beobachtung">Was haben Sie konkret beobachtet?</label></h2>
             <p className="kommunikation-hint">{KOMMUNIKATION_HINWEISE.beobachtung}</p>
             <textarea
               id="kommunikation-beobachtung"
@@ -1015,7 +1040,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
         {step === 'wirkung' && (
           <div className="kommunikation-step">
             <div className="kommunikation-progress">Schritt 3 von 4 · Wie es mir damit geht</div>
-            <h3 className="kommunikation-q"><label htmlFor="kommunikation-wirkung">Wie geht es Ihnen damit?</label></h3>
+            <h2 ref={stepRef} tabIndex={-1} className="kommunikation-q"><label htmlFor="kommunikation-wirkung">Wie geht es Ihnen damit?</label></h2>
             <p className="kommunikation-hint">{KOMMUNIKATION_HINWEISE.wirkung}</p>
             <textarea
               id="kommunikation-wirkung"
@@ -1035,7 +1060,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
         {step === 'bitte' && (
           <div className="kommunikation-step">
             <div className="kommunikation-progress">Schritt 4 von 4 · {isBoundary ? 'Bitte und eigene Grenze' : 'Bitte'}</div>
-            <h3 className="kommunikation-q"><label htmlFor="kommunikation-bitte">{isBoundary ? 'Welche Bitte möchten Sie ergänzen? (optional)' : 'Was wäre Ihr Anliegen oder Ihre Bitte?'}</label></h3>
+            <h2 ref={stepRef} tabIndex={-1} className="kommunikation-q"><label htmlFor="kommunikation-bitte">{isBoundary ? 'Welche Bitte möchten Sie ergänzen? (optional)' : 'Was wäre Ihr Anliegen oder Ihre Bitte?'}</label></h2>
             <p className="kommunikation-hint">{KOMMUNIKATION_HINWEISE.bitte}</p>
             <textarea
               id="kommunikation-bitte"
@@ -1070,7 +1095,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
           <div className="kommunikation-result">
             <div className="selbsttest-zone">
               <span className="selbsttest-zone-kicker">Ihr Gesprächs-Skript</span>
-              <h2>{anlass.label.replace('Ich möchte ', '').replace(/^./, c => c.toUpperCase())}</h2>
+              <h2 ref={stepRef} tabIndex={-1}>{anlass.label.replace('Ich möchte ', '').replace(/^./, c => c.toUpperCase())}</h2>
             </div>
 
             <div className="kommunikation-skript">
@@ -1181,6 +1206,7 @@ const EE_ASPEKTE = [
 function EeKreislaufTool({ onClose, onNavigate }) {
   const [selected, setSelected] = React.useState('schuld');
   const [view, setView] = React.useState('was'); // 'was' | 'unterbrechen'
+  const panelId = React.useId();
 
 
   const cur = EE_ASPEKTE.find((p) => p.key === selected);
@@ -1220,9 +1246,11 @@ function EeKreislaufTool({ onClose, onNavigate }) {
             <span className="ee-detail-num">Mögliche Erfahrung</span>
             <h3>{cur.label}</h3>
           </div>
-          <div className="ee-detail-tabs" role="tablist">
+          <div className="ee-detail-tabs" role="tablist" aria-label="Ansicht zur ausgewählten Erfahrung">
             <button
+              id={`${panelId}-was`}
               role="tab"
+              aria-controls={panelId}
               aria-selected={view === 'was'}
               tabIndex={view === 'was' ? 0 : -1}
               className={`ee-detail-tab ${view === 'was' ? 'is-active' : ''}`}
@@ -1232,7 +1260,9 @@ function EeKreislaufTool({ onClose, onNavigate }) {
               Mögliche Erfahrung
             </button>
             <button
+              id={`${panelId}-unterbrechen`}
               role="tab"
+              aria-controls={panelId}
               aria-selected={view === 'unterbrechen'}
               tabIndex={view === 'unterbrechen' ? 0 : -1}
               className={`ee-detail-tab ${view === 'unterbrechen' ? 'is-active' : ''}`}
@@ -1242,7 +1272,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
               Was helfen kann
             </button>
           </div>
-          <div className="ee-detail-body">
+          <div id={panelId} className="ee-detail-body" role="tabpanel" aria-labelledby={`${panelId}-${view}`} tabIndex={0}>
             <p>{view === 'was' ? cur.desc : cur.unterbrechen}</p>
           </div>
         </div>
@@ -1300,6 +1330,7 @@ const PHASEN_VARIANTEN = [
 
 function PhasenverlaufTool({ onClose, onNavigate }) {
   const [active, setActive] = React.useState('bipolar1');
+  const panelId = React.useId();
 
 
   const cur = PHASEN_VARIANTEN.find((p) => p.key === active);
@@ -1310,11 +1341,13 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
         <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Bipolarer Phasenverlauf</h2>
         <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Wählen Sie eine der fiktiven Skizzen und lesen Sie dazu mögliche Erfahrungen von Angehörigen. Wie sich die Diagnosen Bipolar I und II unterscheiden, erklärt Modul 1. Die Skizzen haben keinen Zeitmassstab und erlauben weder eine Diagnose noch eine Vorhersage des Verlaufs einer bestimmten Person.</p>
 
-        <div className="phasen-tabs" role="tablist">
+        <div className="phasen-tabs" role="tablist" aria-label="Fiktive bipolare Verläufe">
           {PHASEN_VARIANTEN.map((p) => (
             <button
               key={p.key}
+              id={`${panelId}-${p.key}`}
               role="tab"
+              aria-controls={panelId}
               aria-selected={active === p.key}
               tabIndex={active === p.key ? 0 : -1}
               className={`phasen-tab ${active === p.key ? 'is-active' : ''}`}
@@ -1327,6 +1360,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
           ))}
         </div>
 
+        <div id={panelId} role="tabpanel" aria-labelledby={`${panelId}-${active}`} tabIndex={0}>
         {active === 'misch' ? (
           <figure className="phasen-figure">
             <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Fiktives Beispiel: Erhöhte Aktivierung und depressive Stimmung bestehen gleichzeitig und werden als zwei getrennte Linien dargestellt.">
@@ -1381,6 +1415,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
           <div className="ee-detail-body">
             <p>{cur.angehoerige}</p>
           </div>
+        </div>
         </div>
 
         <div className="selbsttest-actions">

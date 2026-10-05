@@ -27,7 +27,7 @@ function HomePage({ onNavigate }) {
           </h1>
           <p className="hero-lede animate-in delay-2">Informationen und Anregungen für Partnerinnen und Partner, Eltern, Geschwister, erwachsene Kinder, Freundinnen und Freunde. Hier geht es um die Erkrankung und um Ihre eigenen Bedürfnisse als Angehörige oder nahestehende Person.</p>
           <div className="hero-actions animate-in delay-3">
-            <a className="hero-cta puk-link--action" href="#triage" onClick={(e) => { e.preventDefault(); document.getElementById('triage').scrollIntoView({ behavior: 'smooth' }); }}>
+            <a className="hero-cta puk-link--action" href={navHref('start', 'triage')} onClick={navHandler('start', onNavigate, 'triage')}>
               Wo soll ich anfangen? →
             </a>
             <a className="hero-cta-secondary puk-link--action" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)} {...navPreloadProps('modul1')}>Direkt zu Modul 1</a>

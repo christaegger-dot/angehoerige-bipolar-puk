@@ -6,6 +6,8 @@ import { scrollToAnchorWhenReady } from './anchor-scroll.js';
 import { PAGE_RENDERERS } from './page-registry.js';
 import { useBrowserNavigation } from './use-browser-navigation.js';
 import { applyPageMetadata } from './page-metadata.js';
+import { LoadErrorBoundary } from './load-error-boundary.jsx';
+import { navHandler, navHref } from './nav-handler.js';
 
 function PageLoadingFallback() {
   return (
@@ -16,22 +18,51 @@ function PageLoadingFallback() {
   );
 }
 
+function PageContent({ page, anchor, onNavigate, onReady }) {
+  React.useEffect(() => onReady(page, anchor), [page, anchor, onReady]);
+  const renderPage = PAGE_RENDERERS[page] || PAGE_RENDERERS.start;
+  return renderPage({ onNavigate, anchor });
+}
+
+function PageLoadError({ page, onNavigate, onReady }) {
+  React.useEffect(() => onReady(page, null), [page, onReady]);
+  return (
+    <div className="page-loading" role="alert">
+      <h1>Die Seite konnte nicht geöffnet werden.</h1>
+      <p>Laden Sie die Seite erneut oder wechseln Sie zur Startseite.</p>
+      <p><button type="button" className="btn btn-primary" onClick={() => window.location.reload()}>Seite neu laden</button></p>
+      <p><a className="link-underline" href={navHref('start')} onClick={navHandler('start', onNavigate)}>Zur Startseite</a></p>
+      <p>Bei Lebensgefahr: <a className="link-underline" href="tel:144">144 · Sanität</a>. Bei Gewalt oder Bedrohung: <a className="link-underline" href="tel:117">117 · Polizei</a>.</p>
+    </div>
+  );
+}
+
 function App() {
   const [nav, onNavigate] = useBrowserNavigation();
   const page = nav.page;
 
-  // Bei Page-Wechsel: zum Anchor scrollen falls gesetzt, sonst zum Seitenanfang.
-  // Lazy geladene Seiten können ein paar Frames brauchen, bis das Ziel existiert.
-  React.useEffect(() => {
-    return scrollToAnchorWhenReady(nav.anchor);
-  }, [nav.anchor, nav.page]);
+  const committedLocation = React.useRef(null);
+  // Run after the Suspense content has committed, even on a slow connection.
+  // Dialogs own their focus and scroll; closing them restores their trigger.
+  const onPageReady = React.useCallback((readyPage, anchor) => {
+    const previous = committedLocation.current;
+    const dialogOpen = Boolean(document.querySelector('[role="dialog"]'));
+    committedLocation.current = { page: readyPage, anchor, dialogOpen };
+    if (dialogOpen || (previous?.dialogOpen && previous.page === readyPage && !anchor)) return undefined;
+    if (previous && (previous.page !== readyPage || (anchor && previous.anchor !== anchor))) {
+      const section = anchor ? document.getElementById(anchor) : null;
+      const destination = section?.querySelector('h1, h2, h3') || section || document.getElementById('main-content');
+      if (destination) {
+        if (!destination.hasAttribute('tabindex')) destination.setAttribute('tabindex', '-1');
+        destination.focus({ preventScroll: true });
+      }
+    }
+    return scrollToAnchorWhenReady(anchor);
+  }, []);
 
   React.useEffect(() => {
     applyPageMetadata(page);
   }, [page]);
-
-  const renderPage = PAGE_RENDERERS[page] || PAGE_RENDERERS.start;
-  const content = renderPage({ onNavigate, anchor: nav.anchor });
 
   return (
     <>
@@ -43,7 +74,11 @@ function App() {
       {page === 'notfall' && <CrisisBar onNavigate={onNavigate} />}
       <Nav page={page} onNavigate={onNavigate} />
       <main id="main-content" tabIndex={-1}>
-        <React.Suspense fallback={<PageLoadingFallback />}>{content}</React.Suspense>
+        <LoadErrorBoundary resetKey={page} fallback={<PageLoadError page={page} onNavigate={onNavigate} onReady={onPageReady} />}>
+          <React.Suspense fallback={<PageLoadingFallback />}>
+            <PageContent page={page} anchor={nav.anchor} onNavigate={onNavigate} onReady={onPageReady} />
+          </React.Suspense>
+        </LoadErrorBoundary>
       </main>
       <Footer page={page} onNavigate={onNavigate} />
     </>
