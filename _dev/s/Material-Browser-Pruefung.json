@@ -1,0 +1,5825 @@
+{
+  "started": "2026-10-05T15:30:55.826Z",
+  "basis": "Stabiler lokal neu gebauter S-Dist-Stand vom 5. Oktober 2026, ca. 15:15 UTC; keine Prüfung der veröffentlichten Website.",
+  "scope": "Alle acht Materialdialoge und fünf FAQ-Antworten auf Unterstützung sowie Schweigepflicht bei 320 und 360 CSS-Pixeln Breite und 100/200 Prozent tatsächlicher HTML-Textvergrösserung. Krisen-DL-02/04/05 nur Darstellungsregression.",
+  "restrictions": "Keine Druck-/PDF- oder echte Assistive-Technology-Freigabe; keine Fach-, Rechts- oder Angebotsoriginale verifiziert. Browsermessungen ersetzen keine manuelle Screenreader-Prüfung.",
+  "method": "Jeder Zustand wird auf einer frischen Seite bei 100 Prozent geoeffnet und einmal vergroessert. Vor dem Helper werden die Schriftgroessen gesichert; nach zwei Paint-Frames werden alle sichtbaren HTML-Elemente erneut gegen diese Baseline gemessen. Bei reducedMotion liefert die unmittelbare Helpermessung vor Abschluss der kurzen CSS-Transition voruebergehende Abweichungen. Dekorative aria-hidden Zeichen werden separat erfasst.",
+  "checks": [
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 100,
+      "material": "dl-01",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 131,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 247,
+              "right": 291,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 3740.765625,
+              "bottom": 3825.265625,
+              "width": 141.40625,
+              "height": 84.5
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 3745.671875,
+              "bottom": 3820.34375,
+              "width": 64.59375,
+              "height": 74.671875
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-01",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 100,
+      "material": "dl-02",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1156.28125,
+                "bottom": 1178.28125,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1224.875,
+                "bottom": 1246.875,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1279.171875,
+                "bottom": 1301.171875,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1333.46875,
+                "bottom": 1355.46875,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1402.0625,
+                "bottom": 1424.0625,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1456.359375,
+                "bottom": 1478.359375,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1539.25,
+                "bottom": 1561.25,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1607.84375,
+                "bottom": 1629.84375,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1676.4375,
+                "bottom": 1698.4375,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1730.734375,
+                "bottom": 1752.734375,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1799.328125,
+                "bottom": 1821.328125,
+                "width": 222,
+                "height": 22
+              }
+            }
+          ],
+          "textRectCount": 77,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 247,
+              "right": 291,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 2366.484375,
+              "bottom": 2450.984375,
+              "width": 141.40625,
+              "height": 84.5
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 2371.390625,
+              "bottom": 2446.0625,
+              "width": 64.59375,
+              "height": 74.671875
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-02",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 100,
+      "material": "dl-04",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 108,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 247,
+              "right": 291,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 3145.84375,
+              "bottom": 3230.34375,
+              "width": 141.40625,
+              "height": 84.5
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 3150.75,
+              "bottom": 3225.421875,
+              "width": 64.59375,
+              "height": 74.671875
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-04",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 100,
+      "material": "dl-05",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 88,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 247,
+              "right": 291,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 2592.671875,
+              "bottom": 2677.171875,
+              "width": 141.40625,
+              "height": 84.5
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 2597.578125,
+              "bottom": 2672.25,
+              "width": 64.59375,
+              "height": 74.671875
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-05",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 100,
+      "material": "dl-06",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 150,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 247,
+              "right": 291,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 4220.71875,
+              "bottom": 4305.21875,
+              "width": 141.40625,
+              "height": 84.5
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 4225.625,
+              "bottom": 4300.296875,
+              "width": 64.59375,
+              "height": 74.671875
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-06",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 100,
+      "material": "dl-07",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 114,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 247,
+              "right": 291,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 3251.34375,
+              "bottom": 3335.84375,
+              "width": 141.40625,
+              "height": 84.5
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 3256.25,
+              "bottom": 3330.921875,
+              "width": 64.59375,
+              "height": 74.671875
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-07",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 100,
+      "material": "dl-08",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 160,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 247,
+              "right": 291,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 4435.046875,
+              "bottom": 4519.546875,
+              "width": 141.40625,
+              "height": 84.5
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 4439.953125,
+              "bottom": 4514.625,
+              "width": 64.59375,
+              "height": 74.671875
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-08",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 100,
+      "material": "dl-09",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 108,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 247,
+              "right": 291,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Plan gemeinsam vorbereiten · Modul 6 →",
+              "left": 49,
+              "right": 271,
+              "top": 619.046875,
+              "bottom": 676.828125,
+              "width": 222,
+              "height": 57.78125
+            },
+            {
+              "tag": "INPUT",
+              "text": "kp-name",
+              "left": 49,
+              "right": 271,
+              "top": 1335.8125,
+              "bottom": 1384.3125,
+              "width": 222,
+              "height": 48.5
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-fruehzeichen",
+              "left": 49,
+              "right": 271,
+              "top": 1542.171875,
+              "bottom": 1680.671875,
+              "width": 222,
+              "height": 138.5
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-schritte",
+              "left": 49,
+              "right": 271,
+              "top": 1824.078125,
+              "bottom": 1962.578125,
+              "width": 222,
+              "height": 138.5
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-kontakte",
+              "left": 49,
+              "right": 271,
+              "top": 2125.171875,
+              "bottom": 2241.171875,
+              "width": 222,
+              "height": 116
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-klinik",
+              "left": 49,
+              "right": 271,
+              "top": 2403.765625,
+              "bottom": 2483.765625,
+              "width": 222,
+              "height": 80
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-hilft",
+              "left": 49,
+              "right": 271,
+              "top": 2603.25,
+              "bottom": 2719.25,
+              "width": 222,
+              "height": 116
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-nichthilft",
+              "left": 49,
+              "right": 271,
+              "top": 2838.734375,
+              "bottom": 2954.734375,
+              "width": 222,
+              "height": 116
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-ausweichkontakt",
+              "left": 49,
+              "right": 271,
+              "top": 3117.328125,
+              "bottom": 3210.828125,
+              "width": 222,
+              "height": 93.5
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-betreuung",
+              "left": 49,
+              "right": 271,
+              "top": 3354.234375,
+              "bottom": 3447.734375,
+              "width": 222,
+              "height": 93.5
+            },
+            {
+              "tag": "INPUT",
+              "text": "kp-geprueft",
+              "left": 49,
+              "right": 271,
+              "top": 3605.59375,
+              "bottom": 3654.09375,
+              "width": 222,
+              "height": 48.5
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 271,
+              "top": 3851.421875,
+              "bottom": 3916.421875,
+              "width": 222,
+              "height": 65
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Entwurf löschen",
+              "left": 49,
+              "right": 271,
+              "top": 3932.421875,
+              "bottom": 3976.421875,
+              "width": 222,
+              "height": 44
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-09",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 320,
+      "percent": 100,
+      "faqIndex": 0,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "question": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?\n+",
+        "answer": "Ja. Die Fachstelle Angehörigenarbeit berät Sie zu Ihren eigenen Fragen. Sie bietet auch Informationen und Gespräche zum Umgang mit der Erkrankung, die sogenannte Psychoedukation. Sie können Unterstützung für sich suchen, ohne die erkrankte Person erst davon zu überzeugen.",
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 280,
+            "scrollWidth": 288,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 341.296875,
+              "bottom": 735.703125,
+              "width": 280,
+              "height": 394.40625
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+Ja. Die Fachstelle Angehörigenarbei",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 288,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 341.296875,
+                "bottom": 735.703125,
+                "width": 280,
+                "height": 394.40625
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 288,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 341.296875,
+                "bottom": 459.1875,
+                "width": 280,
+                "height": 117.890625
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 277.6996765136719,
+                "right": 308.2378234863281,
+                "top": 362.5903015136719,
+                "bottom": 393.12847900390625,
+                "width": 30.53814697265625,
+                "height": 30.538177490234375
+              }
+            }
+          ],
+          "textRectCount": 12,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+",
+              "left": 20,
+              "right": 300,
+              "top": 341.296875,
+              "bottom": 459.1875,
+              "width": 280,
+              "height": 117.890625
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 320,
+      "percent": 100,
+      "faqIndex": 1,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "question": "Ist die Beratung kostenpflichtig?\n+",
+        "answer": "Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist kostenlos und vertraulich.",
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 280,
+            "scrollWidth": 288,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 353.1875,
+              "bottom": 565.953125,
+              "width": 280,
+              "height": 212.765625
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Ist die Beratung kostenpflichtig?+Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist koste",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 288,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 353.1875,
+                "bottom": 565.953125,
+                "width": 280,
+                "height": 212.765625
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Ist die Beratung kostenpflichtig?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 288,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 353.1875,
+                "bottom": 447.78125,
+                "width": 280,
+                "height": 94.59375
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 277.6996765136719,
+                "right": 308.2378234863281,
+                "top": 374.4809265136719,
+                "bottom": 405.01910400390625,
+                "width": 30.53814697265625,
+                "height": 30.538177490234375
+              }
+            }
+          ],
+          "textRectCount": 5,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Ist die Beratung kostenpflichtig?+",
+              "left": 20,
+              "right": 300,
+              "top": 353.1875,
+              "bottom": 447.78125,
+              "width": 280,
+              "height": 94.59375
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 320,
+      "percent": 100,
+      "faqIndex": 2,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "question": "Muss ich wissen, was ich sagen will, bevor ich anrufe?\n+",
+        "answer": "Nein. Sie brauchen noch keine klar formulierte Frage. Im Gespräch können Sie gemeinsam klären, was Sie beschäftigt und welche Unterstützung Sie suchen.",
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 280,
+            "scrollWidth": 288,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 340.78125,
+              "bottom": 629.625,
+              "width": 280,
+              "height": 288.84375
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+Nein. Sie brauchen noch keine klar formulierte Frage. I",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 288,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 340.78125,
+                "bottom": 629.625,
+                "width": 280,
+                "height": 288.84375
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 288,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 340.78125,
+                "bottom": 458.671875,
+                "width": 280,
+                "height": 117.890625
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 277.6996765136719,
+                "right": 308.2378234863281,
+                "top": 362.0746765136719,
+                "bottom": 392.61285400390625,
+                "width": 30.53814697265625,
+                "height": 30.538177490234375
+              }
+            }
+          ],
+          "textRectCount": 8,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+",
+              "left": 20,
+              "right": 300,
+              "top": 340.78125,
+              "bottom": 458.671875,
+              "width": 280,
+              "height": 117.890625
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 320,
+      "percent": 100,
+      "faqIndex": 3,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "question": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?\n+",
+        "answer": "Die Beratung steht auch Angehörigen offen, deren Familienmitglied anderswo behandelt wird oder gar nicht in Behandlung ist. Wir vermitteln bei Bedarf weiter.",
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 280,
+            "scrollWidth": 288,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 340.671875,
+              "bottom": 629.515625,
+              "width": 280,
+              "height": 288.84375
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+Die Beratung steht auch Angehörigen offen, der",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 288,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 340.671875,
+                "bottom": 629.515625,
+                "width": 280,
+                "height": 288.84375
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 288,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 340.671875,
+                "bottom": 458.5625,
+                "width": 280,
+                "height": 117.890625
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 277.6996765136719,
+                "right": 308.2378234863281,
+                "top": 361.9653015136719,
+                "bottom": 392.50347900390625,
+                "width": 30.53814697265625,
+                "height": 30.538177490234375
+              }
+            }
+          ],
+          "textRectCount": 8,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+",
+              "left": 20,
+              "right": 300,
+              "top": 340.671875,
+              "bottom": 458.5625,
+              "width": 280,
+              "height": 117.890625
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 320,
+      "percent": 100,
+      "faqIndex": 4,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "question": "Wie ist es mit der Schweigepflicht?\n+",
+        "answer": "Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.\n\nSchweigepflicht beim Behandlungsteam vertiefen",
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 280,
+            "scrollWidth": 288,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 352.5625,
+              "bottom": 829.234375,
+              "width": 280,
+              "height": 476.671875
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Wie ist es mit der Schweigepflicht?+Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlic",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 288,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 352.5625,
+                "bottom": 829.234375,
+                "width": 280,
+                "height": 476.671875
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Wie ist es mit der Schweigepflicht?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 288,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 352.5625,
+                "bottom": 447.15625,
+                "width": 280,
+                "height": 94.59375
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 277.6996765136719,
+                "right": 308.2378234863281,
+                "top": 373.8559265136719,
+                "bottom": 404.39410400390625,
+                "width": 30.53814697265625,
+                "height": 30.538177490234375
+              }
+            }
+          ],
+          "textRectCount": 15,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Wie ist es mit der Schweigepflicht?+",
+              "left": 20,
+              "right": 300,
+              "top": 352.5625,
+              "bottom": 447.15625,
+              "width": 280,
+              "height": 94.59375
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "confidentiality-page-and-long-box-reflow",
+      "width": 320,
+      "percent": 100,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 320,
+            "scrollWidth": 320,
+            "rect": {
+              "left": 0,
+              "right": 320,
+              "top": 249.453125,
+              "bottom": 11626.59375,
+              "width": 320,
+              "height": 11377.140625
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 357,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [],
+          "undersizedControls": []
+        },
+        "boxMeasured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 237,
+            "scrollWidth": 237,
+            "rect": {
+              "left": 40,
+              "right": 280,
+              "top": 8531.40625,
+              "bottom": 9104.28125,
+              "width": 240,
+              "height": 572.875
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 21,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 200,
+      "material": "dl-01",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 266,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 215,
+          "settledMeasuredElements": 266,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 260,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 231.6875,
+              "right": 291,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 12993.734375,
+              "bottom": 13253.734375,
+              "width": 141.40625,
+              "height": 260
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 13027.234375,
+              "bottom": 13220.21875,
+              "width": 64.59375,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-01",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 200,
+      "material": "dl-02",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 292,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 237,
+          "settledMeasuredElements": 292,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "handout-body",
+              "text": "Notrufnummern144Sanität · Lebensgefahr · 24 h117Polizei · bei Gewalt oder Bedrohung143Dargebotene Hand · anony",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 250,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1477.328125,
+                "bottom": 5455.25,
+                "width": 222,
+                "height": 3977.921875
+              }
+            },
+            {
+              "tag": "UL",
+              "className": "handout-phonelist",
+              "text": "144Sanität · Lebensgefahr · 24 h117Polizei · bei Gewalt oder Bedrohung143Dargebotene Hand · anonyme Beratung ·",
+              "insidePhoneList": true,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 250,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1584.984375,
+                "bottom": 2693.046875,
+                "width": 222,
+                "height": 1108.0625
+              }
+            },
+            {
+              "tag": "LI",
+              "className": "",
+              "text": "0800 33 66 55Ärztefon Notfalldienst ZH · 24 h",
+              "insidePhoneList": true,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 247,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 2156.8125,
+                "bottom": 2347.421875,
+                "width": 222,
+                "height": 190.609375
+              }
+            },
+            {
+              "tag": "LI",
+              "className": "",
+              "text": "058 384 20 00PUK Notfall Erwachsene · 24 h",
+              "insidePhoneList": true,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 249,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 2347.421875,
+                "bottom": 2501.4375,
+                "width": 222,
+                "height": 154.015625
+              }
+            },
+            {
+              "tag": "LI",
+              "className": "",
+              "text": "058 384 38 00Fachstelle Angehörigenarbeit · werktags",
+              "insidePhoneList": true,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 250,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 2501.4375,
+                "bottom": 2692.046875,
+                "width": 222,
+                "height": 190.609375
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": true,
+          "decorativeBounds": [
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 2987.546875,
+                "bottom": 3009.546875,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 3113.328125,
+                "bottom": 3135.328125,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 3239.109375,
+                "bottom": 3261.109375,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 3364.890625,
+                "bottom": 3386.890625,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 3519.265625,
+                "bottom": 3541.265625,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 3616.453125,
+                "bottom": 3638.453125,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 3799.421875,
+                "bottom": 3821.421875,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 3953.796875,
+                "bottom": 3975.796875,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 4108.171875,
+                "bottom": 4130.171875,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 4205.359375,
+                "bottom": 4227.359375,
+                "width": 222,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 4359.734375,
+                "bottom": 4381.734375,
+                "width": 222,
+                "height": 22
+              }
+            }
+          ],
+          "textRectCount": 141,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 231.6875,
+              "right": 291,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 6162,
+              "bottom": 6422,
+              "width": 141.40625,
+              "height": 260
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 6195.5,
+              "bottom": 6388.484375,
+              "width": 64.59375,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-02",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 200,
+      "material": "dl-04",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 273,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 220,
+          "settledMeasuredElements": 273,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "handout-body",
+              "text": "Direkt fragen löst keine Suizidgedanken ausStudien zeigen: die direkte Frage «Denkst du daran, dir etwas anzut",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 249,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1253.40625,
+                "bottom": 9388.109375,
+                "width": 222,
+                "height": 8134.703125
+              }
+            },
+            {
+              "tag": "UL",
+              "className": "handout-phonelist",
+              "text": "144Sanität · Lebensgefahr · 24 h143Dargebotene Hand · anonyme Beratung · 24 h0800 33 66 55Ärztefon Notfalldien",
+              "insidePhoneList": true,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 249,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 8661.265625,
+                "bottom": 9388.109375,
+                "width": 222,
+                "height": 726.84375
+              }
+            },
+            {
+              "tag": "LI",
+              "className": "",
+              "text": "0800 33 66 55Ärztefon Notfalldienst ZH · 24 h",
+              "insidePhoneList": true,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 247,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 9042.484375,
+                "bottom": 9233.09375,
+                "width": 222,
+                "height": 190.609375
+              }
+            },
+            {
+              "tag": "LI",
+              "className": "",
+              "text": "058 384 20 00PUK Notfall Erwachsene · 24 h",
+              "insidePhoneList": true,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 249,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 9233.09375,
+                "bottom": 9387.109375,
+                "width": 222,
+                "height": 154.015625
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": true,
+          "decorativeBounds": [],
+          "textRectCount": 208,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 231.6875,
+              "right": 291,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 10094.859375,
+              "bottom": 10354.859375,
+              "width": 141.40625,
+              "height": 260
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 10128.359375,
+              "bottom": 10321.34375,
+              "width": 64.59375,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-04",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 200,
+      "material": "dl-05",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 267,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 215,
+          "settledMeasuredElements": 267,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "handout-body",
+              "text": "Was passiertDie Person hört, sieht oder denkt Dinge, die für andere nicht stimmig sind. Wahnvorstellungen könn",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 249,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 1493.625,
+                "bottom": 7362.25,
+                "width": 222,
+                "height": 5868.625
+              }
+            },
+            {
+              "tag": "UL",
+              "className": "handout-phonelist",
+              "text": "058 384 20 00PUK Notfall Erwachsene · 24 h144Sanität · bei akuter Gefahr117Polizei · bei Gewalt oder Bedrohung",
+              "insidePhoneList": true,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 249,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 6862.609375,
+                "bottom": 7362.25,
+                "width": 222,
+                "height": 499.640625
+              }
+            },
+            {
+              "tag": "LI",
+              "className": "",
+              "text": "058 384 20 00PUK Notfall Erwachsene · 24 h",
+              "insidePhoneList": true,
+              "overflowX": "visible",
+              "clientWidth": 222,
+              "scrollWidth": 249,
+              "rect": {
+                "left": 49,
+                "right": 271,
+                "top": 6863.609375,
+                "bottom": 7016.625,
+                "width": 222,
+                "height": 153.015625
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": true,
+          "decorativeBounds": [],
+          "textRectCount": 168,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 231.6875,
+              "right": 291,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 8069,
+              "bottom": 8329,
+              "width": 141.40625,
+              "height": 260
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 8102.5,
+              "bottom": 8295.484375,
+              "width": 64.59375,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-05",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 200,
+      "material": "dl-06",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 271,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 221,
+          "settledMeasuredElements": 271,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 301,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 231.6875,
+              "right": 291,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 14820.171875,
+              "bottom": 15080.171875,
+              "width": 141.40625,
+              "height": 260
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 14853.671875,
+              "bottom": 15046.65625,
+              "width": 64.59375,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-06",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 200,
+      "material": "dl-07",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 265,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 215,
+          "settledMeasuredElements": 265,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 227,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 231.6875,
+              "right": 291,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 11113.796875,
+              "bottom": 11373.796875,
+              "width": 141.40625,
+              "height": 260
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 11147.296875,
+              "bottom": 11340.28125,
+              "width": 64.59375,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-07",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 200,
+      "material": "dl-08",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 277,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 227,
+          "settledMeasuredElements": 277,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 320,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 231.6875,
+              "right": 291,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 190.40625,
+              "top": 15804.890625,
+              "bottom": 16064.890625,
+              "width": 141.40625,
+              "height": 260
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 206.40625,
+              "right": 271,
+              "top": 15838.390625,
+              "bottom": 16031.375,
+              "width": 64.59375,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-08",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 320,
+      "percent": 200,
+      "material": "dl-09",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 292,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 231,
+          "settledMeasuredElements": 292,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 278,
+            "scrollWidth": 278,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 24,
+              "bottom": 776,
+              "width": 280,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 222,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 231.6875,
+              "right": 291,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Plan gemeinsam vorbereiten · Modul 6 →",
+              "left": 49,
+              "right": 271,
+              "top": 2265.84375,
+              "bottom": 2425.03125,
+              "width": 222,
+              "height": 159.1875
+            },
+            {
+              "tag": "INPUT",
+              "text": "kp-name",
+              "left": 49,
+              "right": 271,
+              "top": 5109.3125,
+              "bottom": 5180.3125,
+              "width": 222,
+              "height": 71
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-fruehzeichen",
+              "left": 49,
+              "right": 271,
+              "top": 5736.265625,
+              "bottom": 5987.265625,
+              "width": 222,
+              "height": 251
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-schritte",
+              "left": 49,
+              "right": 271,
+              "top": 6523.703125,
+              "bottom": 6774.703125,
+              "width": 222,
+              "height": 251
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-kontakte",
+              "left": 49,
+              "right": 271,
+              "top": 7272.75,
+              "bottom": 7478.75,
+              "width": 222,
+              "height": 206
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-klinik",
+              "left": 49,
+              "right": 271,
+              "top": 8053.578125,
+              "bottom": 8169.578125,
+              "width": 222,
+              "height": 116
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-hilft",
+              "left": 49,
+              "right": 271,
+              "top": 8485.75,
+              "bottom": 8691.75,
+              "width": 222,
+              "height": 206
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-nichthilft",
+              "left": 49,
+              "right": 271,
+              "top": 9055.75,
+              "bottom": 9261.75,
+              "width": 222,
+              "height": 206
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-ausweichkontakt",
+              "left": 49,
+              "right": 271,
+              "top": 9827.140625,
+              "bottom": 9988.140625,
+              "width": 222,
+              "height": 161
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-betreuung",
+              "left": 49,
+              "right": 271,
+              "top": 10438.359375,
+              "bottom": 10599.359375,
+              "width": 222,
+              "height": 161
+            },
+            {
+              "tag": "INPUT",
+              "text": "kp-geprueft",
+              "left": 49,
+              "right": 271,
+              "top": 11116.921875,
+              "bottom": 11187.921875,
+              "width": 222,
+              "height": 71
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 271,
+              "top": 11677.84375,
+              "bottom": 11820.84375,
+              "width": 222,
+              "height": 143
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Entwurf löschen",
+              "left": 49,
+              "right": 271,
+              "top": 11836.84375,
+              "bottom": 11928.4375,
+              "width": 222,
+              "height": 91.59375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-09",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 320,
+      "percent": 200,
+      "faqIndex": 0,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 221,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 175,
+          "settledMeasuredElements": 221,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "question": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?\n+",
+        "answer": "Ja. Die Fachstelle Angehörigenarbeit berät Sie zu Ihren eigenen Fragen. Sie bietet auch Informationen und Gespräche zum Umgang mit der Erkrankung, die sogenannte Psychoedukation. Sie können Unterstützung für sich suchen, ohne die erkrankte Person erst davon zu überzeugen.",
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 280,
+            "scrollWidth": 296,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 2161.421875,
+              "bottom": 3523.71875,
+              "width": 280,
+              "height": 1362.296875
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+Ja. Die Fachstelle Angehörigenarbei",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 296,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 2161.421875,
+                "bottom": 3523.71875,
+                "width": 280,
+                "height": 1362.296875
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 296,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 2161.421875,
+                "bottom": 2587.171875,
+                "width": 280,
+                "height": 425.75
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 255.39151000976562,
+                "right": 316.4678649902344,
+                "top": 2182.0009765625,
+                "bottom": 2243.0771484375,
+                "width": 61.07635498046875,
+                "height": 61.076171875
+              }
+            }
+          ],
+          "textRectCount": 25,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+",
+              "left": 20,
+              "right": 300,
+              "top": 2161.421875,
+              "bottom": 2587.171875,
+              "width": 280,
+              "height": 425.75
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 320,
+      "percent": 200,
+      "faqIndex": 1,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 221,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 175,
+          "settledMeasuredElements": 221,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "question": "Ist die Beratung kostenpflichtig?\n+",
+        "answer": "Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist kostenlos und vertraulich.",
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 280,
+            "scrollWidth": 296,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 998.171875,
+              "bottom": 1593.328125,
+              "width": 280,
+              "height": 595.15625
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Ist die Beratung kostenpflichtig?+Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist koste",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 296,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 998.171875,
+                "bottom": 1593.328125,
+                "width": 280,
+                "height": 595.15625
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Ist die Beratung kostenpflichtig?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 296,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 998.171875,
+                "bottom": 1237.546875,
+                "width": 280,
+                "height": 239.375
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 255.39151000976562,
+                "right": 316.4678649902344,
+                "top": 1018.7509155273438,
+                "bottom": 1079.8272705078125,
+                "width": 61.07635498046875,
+                "height": 61.07635498046875
+              }
+            }
+          ],
+          "textRectCount": 10,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Ist die Beratung kostenpflichtig?+",
+              "left": 20,
+              "right": 300,
+              "top": 998.171875,
+              "bottom": 1237.546875,
+              "width": 280,
+              "height": 239.375
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 320,
+      "percent": 200,
+      "faqIndex": 2,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 221,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 175,
+          "settledMeasuredElements": 221,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "question": "Muss ich wissen, was ich sagen will, bevor ich anrufe?\n+",
+        "answer": "Nein. Sie brauchen noch keine klar formulierte Frage. Im Gespräch können Sie gemeinsam klären, was Sie beschäftigt und welche Unterstützung Sie suchen.",
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 280,
+            "scrollWidth": 296,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 1098.546875,
+              "bottom": 2004.28125,
+              "width": 280,
+              "height": 905.734375
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+Nein. Sie brauchen noch keine klar formulierte Frage. I",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 296,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 1098.546875,
+                "bottom": 2004.28125,
+                "width": 280,
+                "height": 905.734375
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 296,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 1098.546875,
+                "bottom": 1384.515625,
+                "width": 280,
+                "height": 285.96875
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 255.39151000976562,
+                "right": 316.4678649902344,
+                "top": 1119.1258544921875,
+                "bottom": 1180.2022705078125,
+                "width": 61.07635498046875,
+                "height": 61.076416015625
+              }
+            }
+          ],
+          "textRectCount": 16,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+",
+              "left": 20,
+              "right": 300,
+              "top": 1098.546875,
+              "bottom": 1384.515625,
+              "width": 280,
+              "height": 285.96875
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 320,
+      "percent": 200,
+      "faqIndex": 3,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 221,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 175,
+          "settledMeasuredElements": 221,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "question": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?\n+",
+        "answer": "Die Beratung steht auch Angehörigen offen, deren Familienmitglied anderswo behandelt wird oder gar nicht in Behandlung ist. Wir vermitteln bei Bedarf weiter.",
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 280,
+            "scrollWidth": 296,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 961.515625,
+              "bottom": 1861.046875,
+              "width": 280,
+              "height": 899.53125
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+Die Beratung steht auch Angehörigen offen, der",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 296,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 961.515625,
+                "bottom": 1861.046875,
+                "width": 280,
+                "height": 899.53125
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 296,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 961.515625,
+                "bottom": 1294.078125,
+                "width": 280,
+                "height": 332.5625
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 255.39151000976562,
+                "right": 316.4678649902344,
+                "top": 982.0946655273438,
+                "bottom": 1043.1710205078125,
+                "width": 61.07635498046875,
+                "height": 61.07635498046875
+              }
+            }
+          ],
+          "textRectCount": 16,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+",
+              "left": 20,
+              "right": 300,
+              "top": 961.515625,
+              "bottom": 1294.078125,
+              "width": 280,
+              "height": 332.5625
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 320,
+      "percent": 200,
+      "faqIndex": 4,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 223,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 176,
+          "settledMeasuredElements": 223,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "question": "Wie ist es mit der Schweigepflicht?\n+",
+        "answer": "Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.\n\nSchweigepflicht beim Behandlungsteam vertiefen",
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 280,
+            "scrollWidth": 296,
+            "rect": {
+              "left": 20,
+              "right": 300,
+              "top": 1188.078125,
+              "bottom": 2944.765625,
+              "width": 280,
+              "height": 1756.6875
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Wie ist es mit der Schweigepflicht?+Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlic",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 296,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 1188.078125,
+                "bottom": 2944.765625,
+                "width": 280,
+                "height": 1756.6875
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Wie ist es mit der Schweigepflicht?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 280,
+              "scrollWidth": 296,
+              "rect": {
+                "left": 20,
+                "right": 300,
+                "top": 1188.078125,
+                "bottom": 1427.453125,
+                "width": 280,
+                "height": 239.375
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 255.39151000976562,
+                "right": 316.4678649902344,
+                "top": 1208.6571044921875,
+                "bottom": 1269.7335205078125,
+                "width": 61.07635498046875,
+                "height": 61.076416015625
+              }
+            }
+          ],
+          "textRectCount": 32,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Wie ist es mit der Schweigepflicht?+",
+              "left": 20,
+              "right": 300,
+              "top": 1188.078125,
+              "bottom": 1427.453125,
+              "width": 280,
+              "height": 239.375
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "confidentiality-page-and-long-box-reflow",
+      "width": 320,
+      "percent": 200,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 110,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 91,
+          "settledMeasuredElements": 110,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 320,
+            "scrollWidth": 320,
+            "rect": {
+              "left": 0,
+              "right": 320,
+              "top": 417.734375,
+              "bottom": 42366.703125,
+              "width": 320,
+              "height": 41948.96875
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 729,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [],
+          "undersizedControls": []
+        },
+        "boxMeasured": {
+          "viewport": 320,
+          "pageWidth": 320,
+          "card": {
+            "width": 237,
+            "scrollWidth": 237,
+            "rect": {
+              "left": 40,
+              "right": 280,
+              "top": 30854.53125,
+              "bottom": 33227.96875,
+              "width": 240,
+              "height": 2373.4375
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 47,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 100,
+      "material": "dl-01",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 107,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 287,
+              "right": 331,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 3187.609375,
+              "bottom": 3252.609375,
+              "width": 171.875,
+              "height": 65
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 3191.21875,
+              "bottom": 3249,
+              "width": 74.125,
+              "height": 57.78125
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-01",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 100,
+      "material": "dl-02",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1039.703125,
+                "bottom": 1061.703125,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1094,
+                "bottom": 1116,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1148.296875,
+                "bottom": 1170.296875,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1202.59375,
+                "bottom": 1224.59375,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1256.890625,
+                "bottom": 1278.890625,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1311.1875,
+                "bottom": 1333.1875,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1379.78125,
+                "bottom": 1401.78125,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1448.375,
+                "bottom": 1470.375,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1516.96875,
+                "bottom": 1538.96875,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1571.265625,
+                "bottom": 1593.265625,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 1639.859375,
+                "bottom": 1661.859375,
+                "width": 262,
+                "height": 22
+              }
+            }
+          ],
+          "textRectCount": 64,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 287,
+              "right": 331,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 2143.234375,
+              "bottom": 2208.234375,
+              "width": 171.875,
+              "height": 65
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 2146.84375,
+              "bottom": 2204.625,
+              "width": 74.125,
+              "height": 57.78125
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-02",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 100,
+      "material": "dl-04",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 87,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 287,
+              "right": 331,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 2671.84375,
+              "bottom": 2736.84375,
+              "width": 171.875,
+              "height": 65
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 2675.453125,
+              "bottom": 2733.234375,
+              "width": 74.125,
+              "height": 57.78125
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-04",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 100,
+      "material": "dl-05",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 74,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 287,
+              "right": 331,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 2298.328125,
+              "bottom": 2363.328125,
+              "width": 171.875,
+              "height": 65
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 2301.9375,
+              "bottom": 2359.71875,
+              "width": 74.125,
+              "height": 57.78125
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-05",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 100,
+      "material": "dl-06",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 123,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 287,
+              "right": 331,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 3646.78125,
+              "bottom": 3711.78125,
+              "width": 171.875,
+              "height": 65
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 3650.390625,
+              "bottom": 3708.171875,
+              "width": 74.125,
+              "height": 57.78125
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-06",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 100,
+      "material": "dl-07",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 95,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 287,
+              "right": 331,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 2844.3125,
+              "bottom": 2909.3125,
+              "width": 171.875,
+              "height": 65
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 2847.921875,
+              "bottom": 2905.703125,
+              "width": 74.125,
+              "height": 57.78125
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-07",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 100,
+      "material": "dl-08",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 126,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 287,
+              "right": 331,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 3663.125,
+              "bottom": 3728.125,
+              "width": 171.875,
+              "height": 65
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 3666.734375,
+              "bottom": 3724.515625,
+              "width": 74.125,
+              "height": 57.78125
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-08",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 100,
+      "material": "dl-09",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 96,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 287,
+              "right": 331,
+              "top": 33,
+              "bottom": 81,
+              "width": 44,
+              "height": 48
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Plan gemeinsam vorbereiten · Modul 6 →",
+              "left": 49,
+              "right": 311,
+              "top": 569.671875,
+              "bottom": 627.453125,
+              "width": 262,
+              "height": 57.78125
+            },
+            {
+              "tag": "INPUT",
+              "text": "kp-name",
+              "left": 49,
+              "right": 311,
+              "top": 1240.8125,
+              "bottom": 1289.3125,
+              "width": 262,
+              "height": 48.5
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-fruehzeichen",
+              "left": 49,
+              "right": 311,
+              "top": 1427.984375,
+              "bottom": 1566.484375,
+              "width": 262,
+              "height": 138.5
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-schritte",
+              "left": 49,
+              "right": 311,
+              "top": 1709.890625,
+              "bottom": 1848.390625,
+              "width": 262,
+              "height": 138.5
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-kontakte",
+              "left": 49,
+              "right": 311,
+              "top": 1991.796875,
+              "bottom": 2107.796875,
+              "width": 262,
+              "height": 116
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-klinik",
+              "left": 49,
+              "right": 311,
+              "top": 2270.390625,
+              "bottom": 2350.390625,
+              "width": 262,
+              "height": 80
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-hilft",
+              "left": 49,
+              "right": 311,
+              "top": 2469.875,
+              "bottom": 2585.875,
+              "width": 262,
+              "height": 116
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-nichthilft",
+              "left": 49,
+              "right": 311,
+              "top": 2686.171875,
+              "bottom": 2802.171875,
+              "width": 262,
+              "height": 116
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-ausweichkontakt",
+              "left": 49,
+              "right": 311,
+              "top": 2940.84375,
+              "bottom": 3034.34375,
+              "width": 262,
+              "height": 93.5
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-betreuung",
+              "left": 49,
+              "right": 311,
+              "top": 3153.828125,
+              "bottom": 3247.328125,
+              "width": 262,
+              "height": 93.5
+            },
+            {
+              "tag": "INPUT",
+              "text": "kp-geprueft",
+              "left": 49,
+              "right": 311,
+              "top": 3386,
+              "bottom": 3434.5,
+              "width": 262,
+              "height": 48.5
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 311,
+              "top": 3607.140625,
+              "bottom": 3652.640625,
+              "width": 262,
+              "height": 45.5
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Entwurf löschen",
+              "left": 49,
+              "right": 311,
+              "top": 3668.640625,
+              "bottom": 3712.640625,
+              "width": 262,
+              "height": 44
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-09",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 360,
+      "percent": 100,
+      "faqIndex": 0,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "question": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?\n+",
+        "answer": "Ja. Die Fachstelle Angehörigenarbeit berät Sie zu Ihren eigenen Fragen. Sie bietet auch Informationen und Gespräche zum Umgang mit der Erkrankung, die sogenannte Psychoedukation. Sie können Unterstützung für sich suchen, ohne die erkrankte Person erst davon zu überzeugen.",
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 320,
+            "scrollWidth": 328,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 340.6875,
+              "bottom": 682.3125,
+              "width": 320,
+              "height": 341.625
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+Ja. Die Fachstelle Angehörigenarbei",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 328,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 340.6875,
+                "bottom": 682.3125,
+                "width": 320,
+                "height": 341.625
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 328,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 340.6875,
+                "bottom": 458.578125,
+                "width": 320,
+                "height": 117.890625
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 317.6996765136719,
+                "right": 348.2378234863281,
+                "top": 361.9809265136719,
+                "bottom": 392.51910400390625,
+                "width": 30.53814697265625,
+                "height": 30.538177490234375
+              }
+            }
+          ],
+          "textRectCount": 10,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+",
+              "left": 20,
+              "right": 340,
+              "top": 340.6875,
+              "bottom": 458.578125,
+              "width": 320,
+              "height": 117.890625
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 360,
+      "percent": 100,
+      "faqIndex": 1,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "question": "Ist die Beratung kostenpflichtig?\n+",
+        "answer": "Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist kostenlos und vertraulich.",
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 320,
+            "scrollWidth": 328,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 363.578125,
+              "bottom": 554.875,
+              "width": 320,
+              "height": 191.296875
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Ist die Beratung kostenpflichtig?+Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist koste",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 328,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 363.578125,
+                "bottom": 554.875,
+                "width": 320,
+                "height": 191.296875
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Ist die Beratung kostenpflichtig?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 328,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 363.578125,
+                "bottom": 436.703125,
+                "width": 320,
+                "height": 73.125
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 317.6996765136719,
+                "right": 348.2378234863281,
+                "top": 384.8715515136719,
+                "bottom": 415.40972900390625,
+                "width": 30.53814697265625,
+                "height": 30.538177490234375
+              }
+            }
+          ],
+          "textRectCount": 4,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Ist die Beratung kostenpflichtig?+",
+              "left": 20,
+              "right": 340,
+              "top": 363.578125,
+              "bottom": 436.703125,
+              "width": 320,
+              "height": 73.125
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 360,
+      "percent": 100,
+      "faqIndex": 2,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "question": "Muss ich wissen, was ich sagen will, bevor ich anrufe?\n+",
+        "answer": "Nein. Sie brauchen noch keine klar formulierte Frage. Im Gespräch können Sie gemeinsam klären, was Sie beschäftigt und welche Unterstützung Sie suchen.",
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 320,
+            "scrollWidth": 328,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 352.703125,
+              "bottom": 591.859375,
+              "width": 320,
+              "height": 239.15625
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+Nein. Sie brauchen noch keine klar formulierte Frage. I",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 328,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 352.703125,
+                "bottom": 591.859375,
+                "width": 320,
+                "height": 239.15625
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 328,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 352.703125,
+                "bottom": 447.296875,
+                "width": 320,
+                "height": 94.59375
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 317.6996765136719,
+                "right": 348.2378234863281,
+                "top": 373.9965515136719,
+                "bottom": 404.53472900390625,
+                "width": 30.53814697265625,
+                "height": 30.538177490234375
+              }
+            }
+          ],
+          "textRectCount": 6,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+",
+              "left": 20,
+              "right": 340,
+              "top": 352.703125,
+              "bottom": 447.296875,
+              "width": 320,
+              "height": 94.59375
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 360,
+      "percent": 100,
+      "faqIndex": 3,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "question": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?\n+",
+        "answer": "Die Beratung steht auch Angehörigen offen, deren Familienmitglied anderswo behandelt wird oder gar nicht in Behandlung ist. Wir vermitteln bei Bedarf weiter.",
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 320,
+            "scrollWidth": 328,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 352.296875,
+              "bottom": 591.453125,
+              "width": 320,
+              "height": 239.15625
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+Die Beratung steht auch Angehörigen offen, der",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 328,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 352.296875,
+                "bottom": 591.453125,
+                "width": 320,
+                "height": 239.15625
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 328,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 352.296875,
+                "bottom": 446.890625,
+                "width": 320,
+                "height": 94.59375
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 317.6996765136719,
+                "right": 348.2378234863281,
+                "top": 373.5903015136719,
+                "bottom": 404.12847900390625,
+                "width": 30.53814697265625,
+                "height": 30.538177490234375
+              }
+            }
+          ],
+          "textRectCount": 6,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+",
+              "left": 20,
+              "right": 340,
+              "top": 352.296875,
+              "bottom": 446.890625,
+              "width": 320,
+              "height": 94.59375
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 360,
+      "percent": 100,
+      "faqIndex": 4,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "question": "Wie ist es mit der Schweigepflicht?\n+",
+        "answer": "Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.\n\nSchweigepflicht beim Behandlungsteam vertiefen",
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 320,
+            "scrollWidth": 328,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 352.890625,
+              "bottom": 803.171875,
+              "width": 320,
+              "height": 450.28125
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Wie ist es mit der Schweigepflicht?+Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlic",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 328,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 352.890625,
+                "bottom": 803.171875,
+                "width": 320,
+                "height": 450.28125
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Wie ist es mit der Schweigepflicht?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 328,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 352.890625,
+                "bottom": 447.484375,
+                "width": 320,
+                "height": 94.59375
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 317.6996765136719,
+                "right": 348.2378234863281,
+                "top": 374.1840515136719,
+                "bottom": 404.72222900390625,
+                "width": 30.53814697265625,
+                "height": 30.538177490234375
+              }
+            }
+          ],
+          "textRectCount": 14,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Wie ist es mit der Schweigepflicht?+",
+              "left": 20,
+              "right": 340,
+              "top": 352.890625,
+              "bottom": 447.484375,
+              "width": 320,
+              "height": 94.59375
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "confidentiality-page-and-long-box-reflow",
+      "width": 360,
+      "percent": 100,
+      "passed": true,
+      "evidence": {
+        "enlargement": null,
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 360,
+            "scrollWidth": 360,
+            "rect": {
+              "left": 0,
+              "right": 360,
+              "top": 249.453125,
+              "bottom": 10015.59375,
+              "width": 360,
+              "height": 9766.140625
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 299,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [],
+          "undersizedControls": []
+        },
+        "boxMeasured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 277,
+            "scrollWidth": 277,
+            "rect": {
+              "left": 40,
+              "right": 320,
+              "top": 7314.3125,
+              "bottom": 7784.8125,
+              "width": 280,
+              "height": 470.5
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 17,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 200,
+      "material": "dl-01",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 266,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 215,
+          "settledMeasuredElements": 266,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 218,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 271.6875,
+              "right": 331,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 10921,
+              "bottom": 11142,
+              "width": 171.875,
+              "height": 221
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 10935,
+              "bottom": 11127.984375,
+              "width": 74.125,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-01",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 200,
+      "material": "dl-02",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 292,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 237,
+          "settledMeasuredElements": 292,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 2754.34375,
+                "bottom": 2776.34375,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 2880.125,
+                "bottom": 2902.125,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 2977.3125,
+                "bottom": 2999.3125,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 3074.5,
+                "bottom": 3096.5,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 3171.6875,
+                "bottom": 3193.6875,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 3268.875,
+                "bottom": 3290.875,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 3423.25,
+                "bottom": 3445.25,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 3549.03125,
+                "bottom": 3571.03125,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 3674.8125,
+                "bottom": 3696.8125,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 3743.40625,
+                "bottom": 3765.40625,
+                "width": 262,
+                "height": 22
+              }
+            },
+            {
+              "text": "",
+              "rect": {
+                "left": 49,
+                "right": 311,
+                "top": 3869.1875,
+                "bottom": 3891.1875,
+                "width": 262,
+                "height": 22
+              }
+            }
+          ],
+          "textRectCount": 121,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 271.6875,
+              "right": 331,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 5443.59375,
+              "bottom": 5664.59375,
+              "width": 171.875,
+              "height": 221
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 5457.59375,
+              "bottom": 5650.578125,
+              "width": 74.125,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-02",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 200,
+      "material": "dl-04",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 273,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 220,
+          "settledMeasuredElements": 273,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 177,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 271.6875,
+              "right": 331,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 8638.0625,
+              "bottom": 8859.0625,
+              "width": 171.875,
+              "height": 221
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 8652.0625,
+              "bottom": 8845.046875,
+              "width": 74.125,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-04",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 200,
+      "material": "dl-05",
+      "crisisRegressionOnly": true,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 267,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 215,
+          "settledMeasuredElements": 267,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 142,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 271.6875,
+              "right": 331,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 6847.28125,
+              "bottom": 7068.28125,
+              "width": 171.875,
+              "height": 221
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 6861.28125,
+              "bottom": 7054.265625,
+              "width": 74.125,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-05",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 200,
+      "material": "dl-06",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 271,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 221,
+          "settledMeasuredElements": 271,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 254,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 271.6875,
+              "right": 331,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 12577.328125,
+              "bottom": 12798.328125,
+              "width": 171.875,
+              "height": 221
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 12591.328125,
+              "bottom": 12784.3125,
+              "width": 74.125,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-06",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 200,
+      "material": "dl-07",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 265,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 215,
+          "settledMeasuredElements": 265,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 189,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 271.6875,
+              "right": 331,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 9313.09375,
+              "bottom": 9534.09375,
+              "width": 171.875,
+              "height": 221
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 9327.09375,
+              "bottom": 9520.078125,
+              "width": 74.125,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-07",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 200,
+      "material": "dl-08",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 277,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 227,
+          "settledMeasuredElements": 277,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 263,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 271.6875,
+              "right": 331,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 220.875,
+              "top": 13049.5,
+              "bottom": 13270.5,
+              "width": 171.875,
+              "height": 221
+            },
+            {
+              "tag": "BUTTON",
+              "text": "schliessen",
+              "left": 236.875,
+              "right": 311,
+              "top": 13063.5,
+              "bottom": 13256.484375,
+              "width": 74.125,
+              "height": 192.984375
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-08",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "material-dialog-reflow-controls-and-close",
+      "width": 360,
+      "percent": 200,
+      "material": "dl-09",
+      "crisisRegressionOnly": false,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 292,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 231,
+          "settledMeasuredElements": 292,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 318,
+            "scrollWidth": 318,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 24,
+              "bottom": 776,
+              "width": 320,
+              "height": 752
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 188,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Dialog schliessen",
+              "left": 271.6875,
+              "right": 331,
+              "top": 33,
+              "bottom": 109,
+              "width": 59.3125,
+              "height": 76
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Plan gemeinsam vorbereiten · Modul 6 →",
+              "left": 49,
+              "right": 311,
+              "top": 2069.875,
+              "bottom": 2195.265625,
+              "width": 262,
+              "height": 125.390625
+            },
+            {
+              "tag": "INPUT",
+              "text": "kp-name",
+              "left": 49,
+              "right": 311,
+              "top": 4339.28125,
+              "bottom": 4410.28125,
+              "width": 262,
+              "height": 71
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-fruehzeichen",
+              "left": 49,
+              "right": 311,
+              "top": 4889.453125,
+              "bottom": 5140.453125,
+              "width": 262,
+              "height": 251
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-schritte",
+              "left": 49,
+              "right": 311,
+              "top": 5600.109375,
+              "bottom": 5851.109375,
+              "width": 262,
+              "height": 251
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-kontakte",
+              "left": 49,
+              "right": 311,
+              "top": 6272.375,
+              "bottom": 6478.375,
+              "width": 262,
+              "height": 206
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-klinik",
+              "left": 49,
+              "right": 311,
+              "top": 7005.375,
+              "bottom": 7121.375,
+              "width": 262,
+              "height": 116
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-hilft",
+              "left": 49,
+              "right": 311,
+              "top": 7399.15625,
+              "bottom": 7605.15625,
+              "width": 262,
+              "height": 206
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-nichthilft",
+              "left": 49,
+              "right": 311,
+              "top": 7882.9375,
+              "bottom": 8088.9375,
+              "width": 262,
+              "height": 206
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-ausweichkontakt",
+              "left": 49,
+              "right": 311,
+              "top": 8529.71875,
+              "bottom": 8690.71875,
+              "width": 262,
+              "height": 161
+            },
+            {
+              "tag": "TEXTAREA",
+              "text": "kp-betreuung",
+              "left": 49,
+              "right": 311,
+              "top": 9102.546875,
+              "bottom": 9263.546875,
+              "width": 262,
+              "height": 161
+            },
+            {
+              "tag": "INPUT",
+              "text": "kp-geprueft",
+              "left": 49,
+              "right": 311,
+              "top": 9742.71875,
+              "bottom": 9813.71875,
+              "width": 262,
+              "height": 71
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Drucken / als PDF speichern",
+              "left": 49,
+              "right": 311,
+              "top": 10254.25,
+              "bottom": 10358.25,
+              "width": 262,
+              "height": 104
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Entwurf löschen",
+              "left": 49,
+              "right": 311,
+              "top": 10374.25,
+              "bottom": 10432.046875,
+              "width": 262,
+              "height": 57.796875
+            }
+          ],
+          "undersizedControls": []
+        },
+        "focusedWithin": true,
+        "closeFocus": "dl-09",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 360,
+      "percent": 200,
+      "faqIndex": 0,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 221,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 175,
+          "settledMeasuredElements": 221,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "question": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?\n+",
+        "answer": "Ja. Die Fachstelle Angehörigenarbeit berät Sie zu Ihren eigenen Fragen. Sie bietet auch Informationen und Gespräche zum Umgang mit der Erkrankung, die sogenannte Psychoedukation. Sie können Unterstützung für sich suchen, ohne die erkrankte Person erst davon zu überzeugen.",
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 320,
+            "scrollWidth": 336,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 1946.703125,
+              "bottom": 3209.609375,
+              "width": 320,
+              "height": 1262.90625
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+Ja. Die Fachstelle Angehörigenarbei",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 336,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 1946.703125,
+                "bottom": 3209.609375,
+                "width": 320,
+                "height": 1262.90625
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 336,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 1946.703125,
+                "bottom": 2325.859375,
+                "width": 320,
+                "height": 379.15625
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 295.3915100097656,
+                "right": 356.4678649902344,
+                "top": 1967.2821044921875,
+                "bottom": 2028.3585205078125,
+                "width": 61.07635498046875,
+                "height": 61.076416015625
+              }
+            }
+          ],
+          "textRectCount": 23,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?+",
+              "left": 20,
+              "right": 340,
+              "top": 1946.703125,
+              "bottom": 2325.859375,
+              "width": 320,
+              "height": 379.15625
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 360,
+      "percent": 200,
+      "faqIndex": 1,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 221,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 175,
+          "settledMeasuredElements": 221,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "question": "Ist die Beratung kostenpflichtig?\n+",
+        "answer": "Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist kostenlos und vertraulich.",
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 320,
+            "scrollWidth": 336,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 961.859375,
+              "bottom": 1557.015625,
+              "width": 320,
+              "height": 595.15625
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Ist die Beratung kostenpflichtig?+Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist koste",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 336,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 961.859375,
+                "bottom": 1557.015625,
+                "width": 320,
+                "height": 595.15625
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Ist die Beratung kostenpflichtig?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 336,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 961.859375,
+                "bottom": 1201.234375,
+                "width": 320,
+                "height": 239.375
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 295.3915100097656,
+                "right": 356.4678649902344,
+                "top": 982.4384155273438,
+                "bottom": 1043.5147705078125,
+                "width": 61.07635498046875,
+                "height": 61.07635498046875
+              }
+            }
+          ],
+          "textRectCount": 10,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Ist die Beratung kostenpflichtig?+",
+              "left": 20,
+              "right": 340,
+              "top": 961.859375,
+              "bottom": 1201.234375,
+              "width": 320,
+              "height": 239.375
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 360,
+      "percent": 200,
+      "faqIndex": 2,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 221,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 175,
+          "settledMeasuredElements": 221,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "question": "Muss ich wissen, was ich sagen will, bevor ich anrufe?\n+",
+        "answer": "Nein. Sie brauchen noch keine klar formulierte Frage. Im Gespräch können Sie gemeinsam klären, was Sie beschäftigt und welche Unterstützung Sie suchen.",
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 320,
+            "scrollWidth": 336,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 1084.234375,
+              "bottom": 1884.375,
+              "width": 320,
+              "height": 800.140625
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+Nein. Sie brauchen noch keine klar formulierte Frage. I",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 336,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 1084.234375,
+                "bottom": 1884.375,
+                "width": 320,
+                "height": 800.140625
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 336,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 1084.234375,
+                "bottom": 1370.203125,
+                "width": 320,
+                "height": 285.96875
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 295.3915100097656,
+                "right": 356.4678649902344,
+                "top": 1104.8133544921875,
+                "bottom": 1165.8897705078125,
+                "width": 61.07635498046875,
+                "height": 61.076416015625
+              }
+            }
+          ],
+          "textRectCount": 14,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Muss ich wissen, was ich sagen will, bevor ich anrufe?+",
+              "left": 20,
+              "right": 340,
+              "top": 1084.234375,
+              "bottom": 1370.203125,
+              "width": 320,
+              "height": 285.96875
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 360,
+      "percent": 200,
+      "faqIndex": 3,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 221,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 175,
+          "settledMeasuredElements": 221,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "question": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?\n+",
+        "answer": "Die Beratung steht auch Angehörigen offen, deren Familienmitglied anderswo behandelt wird oder gar nicht in Behandlung ist. Wir vermitteln bei Bedarf weiter.",
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 320,
+            "scrollWidth": 336,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 1273.203125,
+              "bottom": 2119.9375,
+              "width": 320,
+              "height": 846.734375
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+Die Beratung steht auch Angehörigen offen, der",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 336,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 1273.203125,
+                "bottom": 2119.9375,
+                "width": 320,
+                "height": 846.734375
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 336,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 1273.203125,
+                "bottom": 1605.765625,
+                "width": 320,
+                "height": 332.5625
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 295.3915100097656,
+                "right": 356.4678649902344,
+                "top": 1293.7821044921875,
+                "bottom": 1354.8585205078125,
+                "width": 61.07635498046875,
+                "height": 61.076416015625
+              }
+            }
+          ],
+          "textRectCount": 15,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Was, wenn die erkrankte Person nicht in der PUK behandelt wird?+",
+              "left": 20,
+              "right": 340,
+              "top": 1273.203125,
+              "bottom": 1605.765625,
+              "width": 320,
+              "height": 332.5625
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "faq-answer-reflow-and-controls",
+      "width": 360,
+      "percent": 200,
+      "faqIndex": 4,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 223,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 176,
+          "settledMeasuredElements": 223,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "question": "Wie ist es mit der Schweigepflicht?\n+",
+        "answer": "Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.\n\nSchweigepflicht beim Behandlungsteam vertiefen",
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 320,
+            "scrollWidth": 336,
+            "rect": {
+              "left": 20,
+              "right": 340,
+              "top": 1204.765625,
+              "bottom": 2750.265625,
+              "width": 320,
+              "height": 1545.5
+            }
+          },
+          "overflowingElements": [
+            {
+              "tag": "DIV",
+              "className": "faq-item open",
+              "text": "Wie ist es mit der Schweigepflicht?+Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlic",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 336,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 1204.765625,
+                "bottom": 2750.265625,
+                "width": 320,
+                "height": 1545.5
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "className": "faq-q",
+              "text": "Wie ist es mit der Schweigepflicht?+",
+              "insidePhoneList": false,
+              "overflowX": "visible",
+              "clientWidth": 320,
+              "scrollWidth": 336,
+              "rect": {
+                "left": 20,
+                "right": 340,
+                "top": 1204.765625,
+                "bottom": 1444.140625,
+                "width": 320,
+                "height": 239.375
+              }
+            }
+          ],
+          "onlyDecorativeOverflow": true,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [
+            {
+              "text": "+",
+              "rect": {
+                "left": 295.3915100097656,
+                "right": 356.4678649902344,
+                "top": 1225.3446044921875,
+                "bottom": 1286.4210205078125,
+                "width": 61.07635498046875,
+                "height": 61.076416015625
+              }
+            }
+          ],
+          "textRectCount": 28,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [
+            {
+              "tag": "BUTTON",
+              "text": "Wie ist es mit der Schweigepflicht?+",
+              "left": 20,
+              "right": 340,
+              "top": 1204.765625,
+              "bottom": 1444.140625,
+              "width": 320,
+              "height": 239.375
+            }
+          ],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "confidentiality-page-and-long-box-reflow",
+      "width": 360,
+      "percent": 200,
+      "passed": true,
+      "evidence": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "measuredElements": 110,
+          "failedEnlargements": 0,
+          "immediateFailedEnlargements": 91,
+          "settledMeasuredElements": 110,
+          "settledFailures": [],
+          "settlingFrames": 2,
+          "verification": "Original computed font sizes retained; each font enlarged once; visible HTML sizes remeasured after paint/finite animations, at most eight animation frames"
+        },
+        "measured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 360,
+            "scrollWidth": 360,
+            "rect": {
+              "left": 0,
+              "right": 360,
+              "top": 417.734375,
+              "bottom": 35832.390625,
+              "width": 360,
+              "height": 35414.65625
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 610,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [],
+          "undersizedControls": []
+        },
+        "boxMeasured": {
+          "viewport": 360,
+          "pageWidth": 360,
+          "card": {
+            "width": 277,
+            "scrollWidth": 277,
+            "rect": {
+              "left": 40,
+              "right": 320,
+              "top": 26801.90625,
+              "bottom": 28509.90625,
+              "width": 280,
+              "height": 1708
+            }
+          },
+          "overflowingElements": [],
+          "onlyDecorativeOverflow": false,
+          "onlyPhonePaddingOverflow": false,
+          "decorativeBounds": [],
+          "textRectCount": 34,
+          "textOutsideCard": [],
+          "textOutsideViewport": [],
+          "controls": [],
+          "undersizedControls": []
+        }
+      }
+    },
+    {
+      "name": "dist-stable-and-no-javascript-errors",
+      "passed": true,
+      "evidence": {
+        "buildBefore": "4724bec8a631e766db7d3a4202df8ee9f464783f234ee17b4459e2bc3a1bca1a",
+        "buildAfter": "4724bec8a631e766db7d3a4202df8ee9f464783f234ee17b4459e2bc3a1bca1a",
+        "pageErrors": 0,
+        "consoleErrors": 0
+      }
+    }
+  ],
+  "failures": [],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "requestFailures": [],
+  "screenshots": [
+    "/workspace/cloud-setup/s/material-dl08-320-200.png",
+    "/workspace/cloud-setup/s/material-dl08-320-200-viewport.png",
+    "/workspace/cloud-setup/s/schweigepflicht-320-200.png",
+    "/workspace/cloud-setup/s/schweigepflicht-320-200-viewport.png"
+  ],
+  "buildBefore": "4724bec8a631e766db7d3a4202df8ee9f464783f234ee17b4459e2bc3a1bca1a",
+  "buildAfter": "4724bec8a631e766db7d3a4202df8ee9f464783f234ee17b4459e2bc3a1bca1a",
+  "buildStable": true,
+  "serverClosed": true,
+  "finished": "2026-10-05T15:31:49.564Z",
+  "nonBlockingObservations": [
+    {
+      "width": 320,
+      "percent": 200,
+      "material": "dl-02",
+      "scope": "excluded crisis handout rendering only",
+      "observation": "Long unchanged phone links extend into the dialog body padding but stay fully inside the card and viewport; no clipping or page/card horizontal scroll. Raw scrollWidth values retained in evidence."
+    },
+    {
+      "width": 320,
+      "percent": 200,
+      "material": "dl-04",
+      "scope": "excluded crisis handout rendering only",
+      "observation": "Long unchanged phone links extend into the dialog body padding but stay fully inside the card and viewport; no clipping or page/card horizontal scroll. Raw scrollWidth values retained in evidence."
+    },
+    {
+      "width": 320,
+      "percent": 200,
+      "material": "dl-05",
+      "scope": "excluded crisis handout rendering only",
+      "observation": "Long unchanged phone links extend into the dialog body padding but stay fully inside the card and viewport; no clipping or page/card horizontal scroll. Raw scrollWidth values retained in evidence."
+    }
+  ],
+  "counts": {
+    "total": 57,
+    "passed": 57,
+    "failed": 0
+  }
+}

@@ -30,7 +30,7 @@ describe('WerkzeugePage', () => {
   it('uses canonical hrefs for cross-page support links', () => {
     render(<WerkzeugePage onNavigate={() => {}} />);
 
-    expect(screen.getByRole('link', { name: /sieben Modulen/i })).toHaveAttribute('href', '/module');
+    expect(screen.getByRole('link', { name: /sieben Module/i })).toHaveAttribute('href', '/module');
     expect(screen.queryByRole('link', { name: /Notfallweg/i })).not.toBeInTheDocument();
   });
 });
@@ -67,7 +67,7 @@ describe('KrisenplanTool privacy', () => {
     render(<WerkzeugePage onNavigate={() => {}} />);
     await user.click(screen.getByRole('button', { name: /Krisenplan/i }));
     await user.type(await screen.findByRole('textbox', { name: /Plan für/i }), 'Private current draft');
-    await user.click(screen.getByRole('button', { name: 'schliessen' }));
+    await user.click(screen.getAllByRole('button', { name: 'Dialog schliessen' }).find(button => button.classList.contains('tool-close')));
     await user.click(screen.getByRole('button', { name: /Krisenplan/i }));
 
     expect(await screen.findByRole('textbox', { name: /Plan für/i })).toHaveValue('');
@@ -94,7 +94,7 @@ describe('KrisenplanTool privacy', () => {
     expect(window.localStorage.getItem('puk-krisenplan-v1')).toBeNull();
     expect(window.sessionStorage.getItem('puk-krisenplan-v1')).toBeNull();
     expect(window.localStorage.getItem('puk-kommunikation-v1')).toContain('Other tool');
-    expect(screen.getByRole('status')).toHaveTextContent('Aktuelle Eingaben und frühere Browser-Kopien gelöscht.');
+    expect(screen.getByRole('status')).toHaveTextContent('Ihre aktuellen Eingaben und frühere Kopien in diesem Browser sind gelöscht.');
   });
 
   it('warns when a historical copy cannot be deleted while still clearing current input', async () => {
@@ -108,7 +108,7 @@ describe('KrisenplanTool privacy', () => {
     await user.click(screen.getByRole('button', { name: 'Entwurf löschen' }));
 
     expect(screen.getByRole('textbox', { name: /Plan für/i })).toHaveValue('');
-    expect(screen.getByRole('status')).toHaveTextContent('Frühere Browser-Kopien konnten nicht vollständig gelöscht werden.');
+    expect(screen.getByRole('status')).toHaveTextContent('Frühere Kopien in diesem Browser konnten nicht vollständig gelöscht werden.');
     expect(window.localStorage.getItem('puk-krisenplan-v1')).toContain('Private old draft');
   });
 
@@ -126,14 +126,14 @@ describe('Kommunikations-Trainer privacy', () => {
     window.sessionStorage.setItem('puk-kommunikation-v1', JSON.stringify({ beobachtung: 'Old session copy' }));
     render(<TOOL_COMPONENTS.kommunikation onClose={() => {}} onNavigate={() => {}} />);
     await user.click(screen.getByRole('button', { name: /Beginnen/ }));
-    expect(screen.getByRole('button', { name: /weiter/ })).toBeDisabled();
+    expect(screen.getByRole('button', { name: /Weiter/ })).toBeDisabled();
     await user.click(screen.getByRole('button', { name: /Ein anderes Anliegen/ }));
-    await user.click(screen.getByRole('button', { name: /weiter/ }));
+    await user.click(screen.getByRole('button', { name: /Weiter/ }));
     expect(screen.getByRole('textbox', { name: 'Was haben Sie konkret beobachtet?' })).toHaveValue('');
     await user.type(screen.getByRole('textbox', { name: 'Was haben Sie konkret beobachtet?' }), 'Current observation');
-    await user.click(screen.getByRole('button', { name: /weiter/ }));
-    await user.type(screen.getByRole('textbox', { name: 'Was macht das mit Ihnen?' }), 'Current feeling');
-    await user.click(screen.getByRole('button', { name: /weiter/ }));
+    await user.click(screen.getByRole('button', { name: /Weiter/ }));
+    await user.type(screen.getByRole('textbox', { name: 'Wie geht es Ihnen damit?' }), 'Current feeling');
+    await user.click(screen.getByRole('button', { name: /Weiter/ }));
     await user.type(screen.getByRole('textbox', { name: 'Was wäre Ihr Anliegen oder Ihre Bitte?' }), 'Current request');
     await user.click(screen.getByRole('button', { name: 'Skript ansehen →' }));
 
@@ -155,7 +155,7 @@ describe('Kommunikations-Trainer privacy', () => {
 
     expect(window.localStorage.getItem('puk-kommunikation-v1')).toBeNull();
     expect(window.sessionStorage.getItem('puk-kommunikation-v1')).toBeNull();
-    expect(screen.getByRole('status')).toHaveTextContent('Aktuelle Eingaben und frühere Browser-Kopien gelöscht.');
+    expect(screen.getByRole('status')).toHaveTextContent('Ihre aktuellen Eingaben und frühere Kopien in diesem Browser sind gelöscht.');
     expect(screen.getByRole('heading', { name: 'Worum geht es im Gespräch?' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Entwurf löschen' })).toBeInTheDocument();
   });
@@ -171,11 +171,11 @@ describe('personal boundary preparation', () => {
       render(<TOOL_COMPONENTS.kommunikation onClose={() => {}} onNavigate={() => {}} />);
       await user.click(screen.getByRole('button', { name: /Beginnen/ }));
       await user.click(screen.getByRole('button', { name: /Ich möchte eine Grenze setzen/ }));
-      await user.click(screen.getByRole('button', { name: /weiter/ }));
+      await user.click(screen.getByRole('button', { name: /Weiter/ }));
       await user.type(screen.getByRole('textbox', { name: 'Was haben Sie konkret beobachtet?' }), 'Im Gespräch wird es laut.');
-      await user.click(screen.getByRole('button', { name: /weiter/ }));
-      await user.type(screen.getByRole('textbox', { name: 'Was macht das mit Ihnen?' }), 'Ich fühle mich angespannt.');
-      await user.click(screen.getByRole('button', { name: /weiter/ }));
+      await user.click(screen.getByRole('button', { name: /Weiter/ }));
+      await user.type(screen.getByRole('textbox', { name: 'Wie geht es Ihnen damit?' }), 'Ich fühle mich angespannt.');
+      await user.click(screen.getByRole('button', { name: /Weiter/ }));
 
       expect(screen.getByRole('button', { name: 'Skript ansehen →' })).toBeDisabled();
       const action = 'Wenn das Gespräch laut wird, gehe ich für heute nach Hause.';
@@ -188,7 +188,7 @@ describe('personal boundary preparation', () => {
 
       await user.click(screen.getByRole('button', { name: 'Skript bearbeiten' }));
       await user.click(screen.getByRole('button', { name: /Ein anderes Anliegen/ }));
-      for (let step = 0; step < 3; step++) await user.click(screen.getByRole('button', { name: /weiter/ }));
+      for (let step = 0; step < 3; step++) await user.click(screen.getByRole('button', { name: /Weiter/ }));
       expect(screen.queryByRole('textbox', { name: 'Welche eigene Grenze können Sie umsetzen?' })).not.toBeInTheDocument();
       await user.click(screen.getByRole('button', { name: 'Skript ansehen →' }));
       await user.click(screen.getByRole('button', { name: 'Skript kopieren' }));
@@ -223,8 +223,8 @@ describe('tool regressions', () => {
     fireEvent.click(screen.getByRole('button', { name: /erschöpfung/i }));
     expect(screen.getByRole('heading', { level: 3, name: 'Erschöpfung' })).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('tab', { name: /wo unterbrechen/i }));
-    expect(screen.getByText(/sie messen keine grenze/i)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: /was helfen kann/i }));
+    expect(screen.getByText(/Ob für Sie eine Grenze erreicht ist, können diese Werkzeuge nicht messen/i)).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: /modul 5 — loyalitätskonflikte/i }));
     expect(onNavigate).toHaveBeenCalledWith('modul5', 's3');
@@ -305,7 +305,7 @@ it('completes the resource reflection with finite values and without health reas
   const dialog = screen.getByRole('dialog', { name: 'Säulen-Check' });
   expect(dialog).not.toHaveTextContent('NaN');
   expect(dialog).not.toHaveTextContent('undefined');
-  expect(dialog).toHaveTextContent('keine gesundheitliche Entwarnung');
+  expect(dialog).toHaveTextContent('Die Darstellung kann nicht zeigen, ob gesundheitlich alles in Ordnung ist.');
 });
 
 describe('resource reflection comparisons', () => {

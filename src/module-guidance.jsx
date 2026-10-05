@@ -1,35 +1,35 @@
 import { navHandler, navHref } from './nav-handler.js';
 
 const SHORT_GUIDES = {
-  1: ['Was bedeutet die Diagnose?', 'Manie, Hypomanie und Depression werden anhand des Gesamtverlaufs fachlich eingeordnet. Sie müssen keine Diagnose stellen.', 'Notieren Sie eine Beobachtung und eine Frage für das Behandlungsteam.'],
+  1: ['Was bedeutet die Diagnose?', 'Fachpersonen beurteilen Manie, Hypomanie und Depression anhand des gesamten Verlaufs. Als Angehörige brauchen Sie selbst keine Diagnose zu stellen.', 'Notieren Sie eine Beobachtung und eine Frage für das Behandlungsteam.'],
   2: ['Wie geht es mir heute?', 'Belastung ist unterschiedlich. Eigene Bedürfnisse zählen auch dann, wenn die andere Person gerade mehr Hilfe braucht.', 'Wählen Sie eine Aufgabe, bei der Sie heute Entlastung wünschen.'],
-  3: ['Was verändert sich zwischen uns?', 'Krisen können Vertrauen und Aufgabenverteilung belasten. Beziehungserosion ist kein zwangsläufiger Verlauf.', 'Besprechen Sie in einem ruhigen Moment eine Zuständigkeit, die neu verteilt werden könnte.'],
-  4: ['Was brauche ich, wenn die Kraft nachlässt?', 'Erschöpfung verdient Aufmerksamkeit. Diese Seite stellt keine Diagnose und misst Ihre Belastbarkeit nicht.', 'Suchen Sie eine konkrete Entlastung oder vereinbaren Sie eine eigene Beratung.'],
-  5: ['Welche Grenze ist mir wichtig?', 'Schuldgefühle beweisen keine Schuld. Zuwendung und Selbstschutz können nebeneinander bestehen.', 'Formulieren Sie eine Grenze, die Sie selbst umsetzen können.'],
+  3: ['Was verändert sich zwischen uns?', 'Krisen können Vertrauen und die Verteilung von Aufgaben belasten. Das bedeutet nicht, dass eine Beziehung zwangsläufig zerfällt.', 'Besprechen Sie in einem ruhigen Moment eine Aufgabe, die neu verteilt werden könnte.'],
+  4: ['Was brauche ich, wenn die Kraft nachlässt?', 'Es lohnt sich, die eigene Erschöpfung ernst zu nehmen. Diese Seite bietet Orientierung; sie stellt keine Diagnose und misst Ihre Belastbarkeit nicht.', 'Suchen Sie eine konkrete Entlastung oder vereinbaren Sie eine eigene Beratung.'],
+  5: ['Welche Grenze ist mir wichtig?', 'Wenn Sie sich schuldig fühlen, heisst das nicht automatisch, dass Sie Schuld haben. Sie können jemandem zugewandt bleiben und sich zugleich schützen.', 'Formulieren Sie eine Grenze, die Sie selbst umsetzen können.'],
   6: ['Was ist der nächste passende Schritt?', 'Vorbereitung, Gespräche und eigene Grenzen sind unterschiedliche Aufgaben. Ein Krisenplan erleichtert Absprachen und ersetzt keine fachliche Einschätzung.', 'Klären Sie einen erreichbaren Kontakt und einen Ausweichkontakt.'],
-  7: ['Was trägt mein eigenes Leben?', 'Lange stabile Zeiten und ein gutes gemeinsames Leben sind möglich. Sie dürfen eigene Pläne und Beziehungen pflegen.', 'Wählen Sie etwas, das Ihnen wichtig ist, und die Unterstützung, die dafür nötig wäre.'],
+  7: ['Was ist mir für mein eigenes Leben wichtig?', 'Lange stabile Zeiten und ein gutes gemeinsames Leben sind möglich. Auch Ihre eigenen Pläne und Beziehungen haben Platz.', 'Wählen Sie etwas, das Ihnen wichtig ist, und überlegen Sie, welche Unterstützung Sie dafür brauchen.'],
 };
 
 const ROLE_GUIDES = {
-  1: 'Als Elternteil eines erwachsenen Kindes, Geschwister, erwachsenes Kind oder nahe Freundin bzw. naher Freund können Sie Beobachtungen beitragen. Die Behandlung und die Beziehung brauchen jeweils eigene Absprachen.',
+  1: 'Als erwachsenes Kind, Elternteil eines erwachsenen Kindes, Schwester, Bruder, Freundin oder Freund können Sie Beobachtungen beitragen. Besprechen Sie getrennt, was die Behandlung betrifft und was Sie sich für Ihre Beziehung wünschen.',
   2: 'Wenn Sie nicht zusammenwohnen, kann besonders die Unsicherheit zwischen Kontakten belasten. Vereinbaren Sie erreichbare Kontakte und Zeiten, in denen Sie nicht verfügbar sind.',
   3: 'Auch Eltern-Kind-, Geschwister- und Freundschaftsbeziehungen brauchen Gegenseitigkeit. Nähe kann einen regelmässigen Anruf bedeuten; sie setzt weder Zusammenwohnen noch eine dauernde Begleitung voraus.',
-  4: 'Ein erwachsenes Kind kann Nähe wünschen und dennoch Abstand brauchen. Eltern und Geschwister dürfen Hilfe organisieren, ohne die ganze Versorgung selbst zu übernehmen. Minderjährige bleiben Kinder und übernehmen keine Erwachsenenverantwortung.',
-  5: 'Eltern dürfen die Eigenständigkeit ihres erwachsenen Kindes anerkennen und eigene Grenzen halten. Geschwister oder erwachsene Kinder müssen nicht die Rolle einer behandelnden Fachperson oder eines Ersatzelternteils übernehmen.',
+  4: 'Ein erwachsenes Kind kann Nähe wünschen und zugleich Abstand brauchen. Eltern und Geschwister können Hilfe organisieren, ohne die gesamte Versorgung selbst zu übernehmen. Minderjährige brauchen Unterstützung durch Erwachsene; sie übernehmen keine Erwachsenenverantwortung.',
+  5: 'Eltern können die Eigenständigkeit ihres erwachsenen Kindes achten und zugleich eigene Grenzen setzen. Geschwister oder erwachsene Kinder brauchen weder eine behandelnde Fachperson noch ein Elternteil zu ersetzen.',
   6: 'Ein Krisenplan kann auch ohne gemeinsamen Haushalt helfen. Klären Sie, wer vor Ort erreichbar ist. Kinderbetreuung und Unterstützung für Sie selbst gehören in die Vorbereitung.',
-  7: 'Wie viel Kontakt passt, hängt von Ihrer Beziehung und Lebenslage ab. Eigene Freundschaften, Beruf und Interessen dürfen für Eltern, Geschwister und erwachsene Kinder ebenso Platz haben wie für Partnerinnen und Partner.',
+  7: 'Wie viel Kontakt passt, hängt von Ihrer Beziehung und Lebenslage ab. Eigene Freundschaften, Beruf und Interessen haben für Eltern, Geschwister und erwachsene Kinder ebenso einen Platz wie für Partnerinnen und Partner.',
 };
 
 function ModuleQuickStart({ number, onNavigate }) {
   const [question, point, action] = SHORT_GUIDES[number];
   return (
     <aside className="callout callout-soft">
-      <span className="callout-label">Kurzweg · {question}</span>
+      <span className="callout-label">Kurzüberblick · {question}</span>
       <p>{point}</p>
       <p><strong>Ein möglicher nächster Schritt:</strong> {action}</p>
-      <p>Die Fallbeispiele und beispielhaften Ich-Sätze sind redaktionell formuliert und fiktiv. Sie sind keine dokumentierten Originalzitate von Angehörigen oder erkrankten Personen.</p>
+      <p>Die Fallbeispiele und Ich-Sätze sind fiktive, redaktionell formulierte Anregungen. Es sind keine dokumentierten Originalzitate von Angehörigen oder erkrankten Personen. Passen Sie Gesprächsbeispiele an Ihre Situation an.</p>
       <p><a className="puk-link--inline" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Konkrete Hilfen</a> · <a className="puk-link--inline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Beratung und Entlastung</a> · <a className="puk-link--inline" href={navHref('modul4', 's6')} onClick={navHandler('modul4', onNavigate, 's6')}>Kinder unterstützen</a></p>
-      <details><summary>Andere Angehörigenrollen</summary><p>{ROLE_GUIDES[number]}</p></details>
+      <details><summary>Verschiedene Beziehungen und Angehörigenrollen</summary><p>{ROLE_GUIDES[number]}</p></details>
     </aside>
   );
 }
@@ -51,8 +51,8 @@ const REFS = {
   substance: ['Gold et al. (2018): Substance use comorbidity in bipolar disorder', 'https://consensus.app/papers/substance-use-comorbidity-in-bipolar-disorder-a-gold-otto/9b078a01d9b95b1db1ade45f3aaed89d/', 'Bipolare Störung und Substanzprobleme; fachliche Abstimmung von Behandlung besprechen.'],
   suicide: ['NICE NG225: Self-harm — assessment, management and preventing recurrence', 'https://www.nice.org.uk/guidance/ng225/chapter/recommendations', 'Fachliche Einschätzung und Vorbereitung von Unterstützung; britische Versorgungswege sind nicht unmittelbar auf Zürich übertragbar.'],
   confidentiality: ['Bundesamt für Gesundheit: Berufs- oder Arztgeheimnis', 'https://www.bag.admin.ch/de/berufs-oder-arztgeheimnis', 'Einwilligung, Vertraulichkeit und gesetzliche Ausnahmen.'],
-  rights: ['Gesundheitsdirektion Zürich (2012): Kindes- und Erwachsenenschutzrecht für Spitäler', 'https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/familie/kindesschutz/zusammenarbeit-kesb/erwachsenenschutz/leitfaden_gd_egkesr_spit%C3%A4ler.pdf', 'Erläuterung zur Vertrauensperson und Behandlungsplanung bei FU; rechtliche Rolle und geltendes Recht im Einzelfall klären.'],
-  mandate: ['Stadt Zürich: Merkblatt Vorsorgeauftrag', 'https://www.stadt-zuerich.ch/content/dam/web/de/lebenslagen/kindes-und-erwachsenenschutz/dokumente/vorsorge-auftrag-merkblatt.pdf', 'Voraussetzungen und Wirksamkeitsprüfung durch die KESB.'],
+  rights: ['Gesundheitsdirektion Zürich (2012): Kindes- und Erwachsenenschutzrecht für Spitäler', 'https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/familie/kindesschutz/zusammenarbeit-kesb/erwachsenenschutz/leitfaden_gd_egkesr_spit%C3%A4ler.pdf', 'Erläuterung zur Vertrauensperson und Behandlungsplanung bei Fürsorgerischer Unterbringung (FU); rechtliche Rolle und geltendes Recht im Einzelfall klären.'],
+  mandate: ['Stadt Zürich: Merkblatt Vorsorgeauftrag', 'https://www.stadt-zuerich.ch/content/dam/web/de/lebenslagen/kindes-und-erwachsenenschutz/dokumente/vorsorge-auftrag-merkblatt.pdf', 'Voraussetzungen und Wirksamkeitsprüfung durch die Kindes- und Erwachsenenschutzbehörde (KESB).'],
   work: ['SECO: Freizeit und Feiertage', 'https://www.seco.admin.ch/de/faq-freizeit-und-feiertage', 'Betreuungsurlaub: drei Tage pro Ereignis und grundsätzlich zehn Tage pro Jahr; Geltungsrahmen und weitere Ansprüche beachten.'],
 };
 const MODULE_REFS = {
@@ -68,8 +68,8 @@ function EvidenceSources({ number }) {
   return (
     <details className="module-credits">
       <summary>Quellen und Grenzen der Aussagen</summary>
-      <p>Forschungsergebnisse über Gruppen sagen den Verlauf einer einzelnen Person oder Beziehung nicht voraus. Grafiken sind vereinfachte Bilder, keine Messungen. Die redaktionellen Fallbeispiele sind fiktiv; sie sind keine Originalzitate aus den verlinkten Quellen.</p>
-      <p data-source-status="verification-pending">Die folgenden Literaturhinweise dienen der Vertiefung. Der Abgleich mit den Originalen und die Vervollständigung der Publikationsangaben stehen aus. Beim Abrufversuch am 5. Oktober 2026 waren die verlinkten Inhalte nicht zugänglich; Aktualität und Aussageabdeckung wurden dadurch nicht bestätigt.</p>
+      <p>Forschungsergebnisse über Gruppen lassen nicht vorhersagen, wie sich die Erkrankung oder eine einzelne Beziehung entwickelt. Die Grafiken veranschaulichen Zusammenhänge; sie beruhen nicht auf Messungen. Die Fallbeispiele sind fiktiv und keine Originalzitate aus den verlinkten Quellen.</p>
+      <p data-source-status="verification-pending">Die folgenden Literaturhinweise dienen der Vertiefung. Sie sind noch nicht anhand der Originale geprüft, und die Angaben zu den Publikationen sind noch unvollständig. Beim Abrufversuch am 5. Oktober 2026 waren die verlinkten Inhalte nicht zugänglich. Daher ist noch nicht bestätigt, ob sie aktuell sind und die Aussagen dieser Website belegen.</p>
       <ul>{MODULE_REFS[number].map(key => {
         const [title, url, note] = REFS[key];
         return <li key={key}><a href={url} target="_blank" rel="noopener noreferrer">{title}</a><br />{note}</li>;

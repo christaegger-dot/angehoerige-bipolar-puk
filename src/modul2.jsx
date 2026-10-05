@@ -222,7 +222,7 @@ function HypervigilanzFigur() {
       <figcaption><strong id="m2-hypervigilanz-title">Viele Signale gleichzeitig wahrnehmen.</strong> Ein Bild dafür, wie erhöhte Wachsamkeit Aufmerksamkeit binden kann.</figcaption>
       <FigureText visualId="m2-hypervigilanz">
         <p>In der Mitte steht eine Person. Feine Linien verbinden sie mit sechs Alltagssignalen: Tür, Anruf, Zeit, Medikation, Schlaf und Tonfall. Die vielen Verbindungen zeigen gleichzeitig gebundene Aufmerksamkeit.</p>
-        <p>Die Darstellung ist kein festgelegter Ablauf und keine Anweisung, alle diese Signale überwachen zu müssen.</p>
+        <p>Das Bild zeigt keinen festen Ablauf. Es bedeutet auch nicht, dass Sie all diese Signale überwachen sollen.</p>
       </FigureText>
     </figure>
   );
@@ -230,14 +230,14 @@ function HypervigilanzFigur() {
 
 function SchritteBlock() {
   const schritte = [
-    { num: 'I', label: 'Sich selbst als Betroffene anerkennen', body: 'Sie sind nicht «nur» Angehörige — Sie sind mitbetroffen. Das anzuerkennen ist kein Selbstmitleid, sondern die Grundlage dafür, dass Sie sich Unterstützung holen.' },
-    { num: 'II', label: 'Eigene Belastung wahrnehmen', body: 'Wenn Sie möchten, notieren Sie eine Woche lang: Was belastet mich heute? Was entlastet mich? Die Notizen dienen Ihrer persönlichen Reflexion, nicht einer Diagnose oder Einstufung. Sie entscheiden, ob Sie sie für sich behalten oder mit einer Vertrauensperson oder in einer Beratung teilen.' },
-    { num: 'III', label: 'Einer Person davon erzählen', body: 'Brechen Sie die Isolation — erzählen Sie einer Vertrauensperson von Ihrer Situation. «Es ist gerade schwierig zu Hause» reicht als Anfang.' },
+    { num: 'I', label: 'Eigene Bedürfnisse ernst nehmen', body: 'Auch Sie können durch die Erkrankung eines nahestehenden Menschen belastet sein. Ihre eigenen Bedürfnisse sind ein Grund, sich Unterstützung zu holen.' },
+    { num: 'II', label: 'Eigene Belastung wahrnehmen', body: 'Wenn Sie möchten, notieren Sie eine Woche lang, was Sie belastet und was Sie entlastet. Die Notizen helfen Ihnen, über Ihre Situation nachzudenken; sie ergeben keine Diagnose oder Einstufung. Sie entscheiden, ob Sie sie für sich behalten, mit einer Vertrauensperson besprechen oder in eine Beratung mitnehmen.' },
+    { num: 'III', label: 'Einer Person davon erzählen', body: 'Wenn Sie Ihre Situation mit jemandem teilen möchten, wählen Sie eine Vertrauensperson. Ein Gespräch könnte so beginnen: «Bei uns ist es gerade schwierig. Hast du Zeit, mir zuzuhören?»' },
   ];
   return (
     <div className="eisberg-schritte">
       <span className="kicker">Drei mögliche Schritte für heute</span>
-      <h3>Auch wenn Sie erschöpft sind.</h3>
+      <h3>Wählen Sie, was zu Ihnen passt.</h3>
       <ol>
         {schritte.map(s => (
           <li key={s.num}>
@@ -303,7 +303,7 @@ function Modul2Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 12–15 Minuten · 8 Abschnitte</span>
             </div>
             <h1>Die eigene <em>Belastung</em> verstehen</h1>
-            <p className="lede">Belastung als Angehörige kann für andere unsichtbar bleiben. Erhöhte Wachsamkeit ist eine mögliche Reaktion nach belastenden Erfahrungen. Information kann Orientierung geben; Entlastung braucht möglicherweise auch konkrete Hilfe im Alltag.</p>
+            <p className="lede">Als Angehörige können Sie belastet sein, ohne dass andere es bemerken. Nach schwierigen Erfahrungen bleiben Sie möglicherweise besonders wachsam. Wissen kann helfen, dies einzuordnen; für Entlastung braucht es manchmal auch konkrete Hilfe im Alltag.</p>
           </div>
         </header>
 
@@ -336,13 +336,13 @@ function Modul2Page({ onNavigate }) {
 
             <aside className="callout">
               <span className="callout-label">Auf einen Blick</span>
-              <p>Ihre Belastung und Ihre eigenen Bedürfnisse zählen. Unsicherheit, erhöhte Wachsamkeit oder Sorgen um die erkrankte Person können Sie beschäftigen. Welche Entlastung passt, hängt von Ihrer Situation ab. Sie dürfen Beratung, Austausch und praktische Unterstützung für sich nutzen.</p>
+              <p>Ihre Belastung und Ihre eigenen Bedürfnisse zählen. Wenn Unsicherheit, erhöhte Wachsamkeit oder Sorgen um die erkrankte Person Sie beschäftigen, können Sie Beratung, Austausch oder praktische Unterstützung nutzen. Welche Entlastung passt, hängt von Ihrer Situation ab.</p>
             </aside>
 
             <section id="s1">
               <h2>Was Angehörige belasten kann</h2>
-              <p>Angehörige können erheblich belastet sein. Wie stark, hängt unter anderem von den Symptomen, dem gemeinsamen Alltag und verfügbaren Hilfen ab. Ein Teil bleibt für das Umfeld unsichtbar. Ebenso gibt es Angehörige, die sich gut unterstützt fühlen und lange stabile Zeiten erleben.</p>
-              <p>Unsicherheit und fehlende Information können belasten. Ebenso können Schlafmangel, finanzielle Sorgen, zu viel Verantwortung oder fehlende praktische Unterstützung eine Rolle spielen. Wissen kann beim Einordnen helfen; für Entlastung brauchen Sie möglicherweise auch konkrete Hilfe im Alltag.</p>
+              <p>Wie stark Angehörige belastet sind, hängt unter anderem von den Symptomen, dem gemeinsamen Alltag und verfügbaren Hilfen ab. Die Belastung kann erheblich sein und für andere dennoch unsichtbar bleiben. Andere Angehörige fühlen sich gut unterstützt und erleben lange stabile Zeiten.</p>
+              <p>Neben Unsicherheit und fehlenden Informationen können Schlafmangel, finanzielle Sorgen, zu viele Aufgaben oder fehlende praktische Unterstützung belasten. Wissen hilft möglicherweise beim Einordnen; manchmal braucht es zusätzlich konkrete Hilfe im Alltag.</p>
 
               <h3>Mögliche Belastungsquellen</h3>
               <p>Studien und Erfahrungsbeschreibungen nennen unterschiedliche Belastungsquellen. Welche davon treffen auf Sie zu?</p>
@@ -353,9 +353,9 @@ function Modul2Page({ onNavigate }) {
                 <li>Einsamkeit und zu viel Verantwortung</li>
                 <li>Schlafmangel, finanzielle oder berufliche Belastungen</li>
               </ul>
-              <p>Wissen kann Fragen klären. Ob daraus Entlastung entsteht, hängt auch von erreichbaren Hilfen, Entlastung im Alltag und Ihrer eigenen Situation ab. Sie müssen Ihre Belastung nicht mit einer Prozentzahl rechtfertigen.</p>
+              <p>Welche Hilfe erreichbar ist und was Sie im Alltag entlastet, hängt von Ihrer Situation ab. Ihre Belastung braucht dabei keine bestimmte Zahl oder Einstufung, um ernst genommen zu werden.</p>
 
-              <p>Das tägliche Gleichgewichthalten — zwischen Fürsorge und eigenen Grenzen, zwischen Präsenz und Abstand — ist eine eigene Leistung, die selten gesehen wird. Dieses Modul hilft Ihnen, diese Leistung zu benennen und zu verstehen, was sie kostet.</p>
+              <p>Die Balance zwischen Unterstützung und eigenen Grenzen kann im Alltag viel Kraft kosten, auch wenn andere wenig davon mitbekommen. Dieses Modul hilft Ihnen, Ihre Erfahrungen zu beschreiben und auf Ihre eigene Belastung zu achten.</p>
             </section>
 
             <section id="s2">
@@ -365,7 +365,7 @@ function Modul2Page({ onNavigate }) {
               <EisbergFigur />
 
               <p>Manches ist nach aussen sichtbar: erschöpft wirken, Termine begleiten oder Sorgen äussern. Anderes kann im Verborgenen bleiben, etwa erhöhte Wachsamkeit, Schlafprobleme, Schuldgefühle, Einsamkeit, Angst vor einem Rückfall, Trauer oder widersprüchliche Gefühle.</p>
-              <p>Wenn Sie im Alltag funktionieren und zugleich belastet sind, dürfen Sie beides ernst nehmen. Sie müssen nicht erst zusammenbrechen, um Unterstützung für sich zu nutzen.</p>
+              <p>Auch wenn Sie im Alltag zurechtkommen, können Sie zugleich belastet sein. Sie können Unterstützung suchen, bevor Sie nicht mehr weiterkönnen.</p>
 
               <blockquote className="module-quote" id="quote-m2-02">
                 <p>«Meine Freundin hat mich gefragt, wie es mir geht. Ich habe gesagt: ‹Gut, danke.› Aber in Wahrheit hatte ich seit Wochen nicht mehr durchgeschlafen, weil ich auf jedes Geräusch im Haus horche.»</p>
@@ -374,36 +374,36 @@ function Modul2Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Wichtig zu wissen</span>
-                <p>Die Gefühle unter der Oberfläche bedeuten <strong>nicht</strong>, dass Sie zu wenig lieben oder zu wenig leisten. Sie bedeuten, dass Sie <strong>genug</strong> tragen, um etwas darunter zu spüren. Das ist ein Signal, kein Urteil.</p>
+                <p>Auch schwer aussprechbare Gefühle sind kein Urteil darüber, wie viel Sie lieben oder leisten. Sie können Anlass sein, auf Ihre eigene Belastung und Ihre Bedürfnisse zu achten.</p>
               </aside>
             </section>
 
             <section id="s3">
               <h2>Hypervigilanz — erhöhte Wachsamkeit verstehen</h2>
-              <p>Hypervigilanz bedeutet hier erhöhte Wachsamkeit. Nach belastenden Krisen können Sie sich immer wieder mit Schlaf, Stimmung oder Rückzug der erkrankten Person beschäftigen. Wenn diese Alarmbereitschaft anhält, kann sie Erholung erschweren. Die folgende Grafik ist ein Bild für gleichzeitig gebundene Aufmerksamkeit, kein für alle geltender Ablauf.</p>
+              <p>Mit Hypervigilanz ist hier erhöhte Wachsamkeit gemeint. Nach belastenden Krisen beschäftigen Sie sich möglicherweise immer wieder mit Schlaf, Stimmung oder Rückzug der erkrankten Person. Anhaltende Alarmbereitschaft kann Ihre Erholung erschweren. Das folgende Bild zeigt, wie viele Dinge gleichzeitig Aufmerksamkeit binden können; einen für alle geltenden Ablauf beschreibt es nicht.</p>
 
               <HypervigilanzFigur />
 
               <h3>Vier Aspekte zur persönlichen Reflexion</h3>
-              <p>Die folgenden Beschreibungen sind eine Reflexionshilfe, kein geprüftes Modell und keine festgelegte Reihenfolge. Welche davon passen zu Ihrer Situation?</p>
+              <p>Die vier Beschreibungen sollen Ihnen helfen, über Ihre Situation nachzudenken. Sie sind kein geprüftes Modell und geben keine Reihenfolge vor. In welchen Beschreibungen erkennen Sie sich wieder?</p>
               <p><strong>1 — Beobachten.</strong> Vielleicht achten Sie immer wieder auf die Stimmung oder auf Verhaltensänderungen. Wie viel Aufmerksamkeit bindet das bei Ihnen?</p>
-              <p><strong>2 — Anspannung.</strong> Sie fühlen sich innerlich oder körperlich angespannt; Abschalten und Schlafen können schwerfallen.</p>
+              <p><strong>2 — Anspannung.</strong> Innere oder körperliche Anspannung kann es erschweren, abzuschalten und zu schlafen.</p>
               <p><strong>3 — Erschöpfung.</strong> Konzentration und Kraft können nachlassen. Welche Entlastung wäre jetzt erreichbar?</p>
               <p><strong>4 — Erholung.</strong> Ruhe kann entlasten. Nach einer Krise braucht es manchmal Zeit, bis die Wachsamkeit zurückgeht.</p>
-              <p>Diese Erfahrungen können sich gegenseitig verstärken, müssen es aber nicht. Gemeinsam vereinbarte Zuständigkeiten, verlässliche Hilfe und eigene Erholung können Raum schaffen. Neue oder anhaltende Beschwerden sollten auch medizinisch abgeklärt werden.</p>
+              <p>Solche Erfahrungen können sich gegenseitig verstärken, treten aber nicht bei allen gleich auf. Gemeinsam vereinbarte Zuständigkeiten und verlässliche Hilfe können Ihnen mehr Raum für Erholung geben. Neue oder anhaltende Beschwerden sollten auch medizinisch abgeklärt werden.</p>
             </section>
 
             <section id="s4">
               <h2>Beobachten, begleiten, loslassen — wo ist die Grenze?</h2>
-              <p>Es gibt einen Unterschied zwischen aufmerksam sein und kontrollieren. Gemeinsam vereinbarte Zuständigkeiten und eigene Grenzen können beim Einordnen helfen. Ob Sie sich entlastet fühlen, hängt auch von Ihrer Situation und erreichbarer Unterstützung ab.</p>
+              <p>Aufmerksam zu sein bedeutet nicht, die andere Person zu kontrollieren. Besprechen Sie, welche Unterstützung gewünscht ist und welche Aufgaben Sie übernehmen möchten und können. Klare Absprachen und eigene Grenzen können beim Einordnen helfen; ob sie Sie entlasten, hängt auch von Ihrer Situation und erreichbarer Unterstützung ab.</p>
 
               <div className="do-dont">
                 <div className="do-col">
-                  <h3>Was Sie dürfen und sollen</h3>
+                  <h3>Mögliche Unterstützung im vereinbarten Umfang</h3>
                   <ul>
-                    <li>Veränderungen benennen, die Sie wahrnehmen — als Ich-Botschaft</li>
+                    <li>Beobachtete Veränderungen aus Ihrer Sicht beschreiben: «Mir ist aufgefallen, dass …»</li>
                     <li>Frühwarnzeichen beobachten, die gemeinsam im Krisenplan vereinbart wurden</li>
-                    <li>Das Behandlungsteam informieren — Sie teilen Beobachtungen, nicht Diagnosen</li>
+                    <li>Dem Behandlungsteam konkrete Beobachtungen mitteilen, ohne daraus eine Diagnose abzuleiten</li>
                     <li>Eigene Grenzen setzen: «Ich kann das nicht mehr mittragen»</li>
                   </ul>
                 </div>
@@ -411,52 +411,54 @@ function Modul2Page({ onNavigate }) {
                   <h3>Was nicht hilft</h3>
                   <ul>
                     <li>Heimlich Handy, E-Mails oder Kontoauszüge kontrollieren</li>
-                    <li>Medikamenteneinnahme überwachen statt begleiten</li>
+                    <li>Die Medikamenteneinnahme kontrollieren, ohne die eigene Aufgabe und Befugnis zu klären</li>
                     <li>Jede Stimmungsschwankung als Vorbote einer Episode deuten</li>
                     <li>Entscheidungen treffen, die die erkrankte Person selbst treffen kann</li>
                   </ul>
                 </div>
               </div>
 
+              <p>Wenn Sie bei der Medikamenteneinnahme unterstützen, klären Sie mit der betroffenen Person und dem Behandlungsteam, welche Aufgaben und Befugnisse tatsächlich bei Ihnen liegen. Berücksichtigen Sie dabei auch bestehende Betreuungs- und Schutzaufgaben. Besprechen Sie, wer eine notwendige Aufgabe übernimmt, wenn Sie sie nicht weiter übernehmen können.</p>
+
               <aside className="callout">
                 <span className="callout-label">Entlastender Grundsatz</span>
-                <p>Sie sind nicht das Frühwarnsystem — Sie sind ein Teil davon. Das Behandlungsteam, der Krisenplan und die erkrankte Person selbst tragen Mitverantwortung. Klären Sie in einer ruhigen Phase gemeinsam: «Welche Veränderungen soll ich ansprechen? Wie soll ich es tun?» Was vereinbart ist, dürfen Sie ansprechen — ohne Schuldgefühle.</p>
+                <p>Wenn Sie Beobachtungen beitragen möchten, vereinbaren Sie in einer ruhigen Phase, welche Veränderungen Sie ansprechen und wie Sie dabei vorgehen. Sie könnten fragen: «Was möchtest du, dass ich anspreche, wenn mir etwas auffällt?» Halten Sie auch fest, welche Aufgaben die erkrankte Person und das Behandlungsteam übernehmen. Sie brauchen weder alle Veränderungen zu überwachen noch die fachliche Einschätzung zu übernehmen.</p>
               </aside>
 
               <h3>Als erwachsenes Kind einen Elternteil begleiten</h3>
-              <p><strong>Fiktives Kurzbeispiel.</strong> Eine erwachsene Tochter wohnt nicht bei ihrem Vater. Er bittet sie, ihn zu einem Behandlungsgespräch zu begleiten. Sie möchte dabei sein, kann aber nicht alle Termine für ihn organisieren. Ihr nächster Schritt ist eine konkrete Absprache: «Ich begleite dich am Dienstag. Bitte vereinbare die weiteren Termine selbst; wir können vorher zusammen überlegen, welche Fragen du stellen möchtest.» Eigene Belastungen kann sie unabhängig davon in einer Angehörigenberatung besprechen.</p>
+              <p><strong>Fiktives Kurzbeispiel.</strong> Eine erwachsene Tochter wohnt nicht bei ihrem Vater. Er bittet sie, ihn zu einem Behandlungsgespräch zu begleiten. Sie möchte dabei sein, kann aber nicht alle Termine für ihn organisieren. Sie könnte sagen: «Ich begleite dich am Dienstag. Die weiteren Termine kann ich aber nicht organisieren. Wollen wir vorher kurz besprechen, welche Fragen du stellen möchtest?» Eigene Belastungen kann sie unabhängig davon in einer Angehörigenberatung besprechen.</p>
             </section>
 
             <section id="s5">
               <h2>Wenn Sie Elternteil eines erwachsenen Kindes sind</h2>
-              <p>Vielleicht erkennen Sie sich als Elternteil in den Beschreibungen wieder. Ihr erwachsenes Kind entscheidet grundsätzlich selbst. Eltern haben nicht automatisch ein Auskunfts- oder Entscheidungsrecht; mit Einwilligung oder je nach rechtlicher Rolle können sie einbezogen werden. Beobachtungen dürfen Sie dem Behandlungsteam mitteilen. Was dies für Vertraulichkeit und Rückmeldung bedeutet, erklärt die <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflichtseite</a>. Eigene Beratung dürfen Sie unabhängig davon nutzen.</p>
-              <p>Als Elternteil können Sie sich zwischen dem Wunsch zu helfen und dem Bedürfnis nach Abstand wiederfinden. Vielleicht beschäftigen Sie auch Fragen wie: Habe ich etwas übersehen? Bin ich verantwortlich? Eine Diagnose ist keine Feststellung einer Schuld der Eltern. Sie dürfen solche Fragen und Ihre eigene Belastung in einer Angehörigenberatung besprechen.</p>
+              <p>Als Elternteil eines erwachsenen Kindes können Sie unterstützen; Ihr Kind entscheidet grundsätzlich selbst. Ein Auskunfts- oder Entscheidungsrecht haben Eltern nicht automatisch. Mit Einwilligung oder je nach rechtlicher Rolle können sie einbezogen werden. Ihre Beobachtungen können Sie dem Behandlungsteam mitteilen. Was dabei für Vertraulichkeit und Rückmeldung gilt, erklärt die <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflichtseite</a>. Eigene Beratung können Sie unabhängig davon nutzen.</p>
+              <p>Der Wunsch zu helfen und das Bedürfnis nach Abstand können nebeneinander bestehen. Auch Fragen wie «Habe ich etwas übersehen?» oder «Bin ich verantwortlich?» können Sie beschäftigen. Eine Diagnose stellt keine Schuld der Eltern fest. In einer Angehörigenberatung können Sie diese Fragen und Ihre eigene Belastung besprechen.</p>
 
               <aside className="callout">
                 <span className="callout-label">Auch für Eltern</span>
-                <p>Was Eltern erwachsener Kinder besonders hilft: Angehörigenberatung, die auch die Loslassen-Thematik adressiert, und Austausch mit anderen Eltern in derselben Situation. Die Fachstelle Angehörigenarbeit PUK Zürich ist auch für Eltern da: <strong>058 384 38 00</strong>.</p>
+                <p>In einer Angehörigenberatung können Sie auch besprechen, wie viel Unterstützung oder Abstand für Sie und Ihr erwachsenes Kind passt. Ebenso kann ein Austausch mit anderen Eltern in ähnlichen Situationen hilfreich sein. Die Fachstelle Angehörigenarbeit PUK Zürich ist auch für Eltern da: <strong>058 384 38 00</strong>.</p>
               </aside>
             </section>
 
             <section id="s6">
               <h2>Was Suizidangst mit Ihnen macht</h2>
-              <p>Manche Angehörige haben Angst, dass sich die erkrankte Person etwas antun könnte. Vielleicht beschäftigen Sie solche Sorgen oder Erfahrungen auch dann noch, wenn eine belastende Phase vorbei ist. Dieser Abschnitt handelt davon, wie Sie Ihre eigene Belastung wahrnehmen und Unterstützung für sich nutzen können.</p>
+              <p>Die Angst, dass sich die erkrankte Person etwas antun könnte, kann auch nach einer belastenden Phase bestehen bleiben. Wenn solche Sorgen oder Erfahrungen Sie beschäftigen, können Sie Unterstützung für sich nutzen. Darum geht es in diesem Abschnitt.</p>
 
               <blockquote className="module-quote" id="quote-m2-03">
-                <p>«Nach seinem zweiten Suizidversuch habe ich drei Monate lang jede Nacht wach gelegen. Nicht weil ich Angst hatte, dass er es wieder tut — das auch — sondern weil ich nicht wusste, ob ich das noch aushalte.»</p>
+                <p>«Nach seinem zweiten Suizidversuch habe ich drei Monate lang jede Nacht wach gelegen. Ich hatte Angst, dass es wieder passiert. Und ich wusste nicht, wie lange ich das selbst noch aushalte.»</p>
                 <cite>Redaktionelles Fallbeispiel (fiktiv) · Ehemann</cite>
               </blockquote>
 
-              <p><strong>Erhöhte Wachsamkeit.</strong> Vielleicht achten Sie nach einer belastenden Erfahrung wiederholt auf mögliche Warnzeichen und merken, dass Ruhe schwerfällt. Welche Unterstützung könnte Ihnen helfen, Verantwortung zu teilen und selbst Erholung zu finden?</p>
+              <p><strong>Erhöhte Wachsamkeit.</strong> Nach einer belastenden Erfahrung achten Sie möglicherweise immer wieder auf Warnzeichen und kommen schwer zur Ruhe. Welche Hilfe könnte Sie bei den vereinbarten Aufgaben entlasten und Ihnen selbst Erholung ermöglichen?</p>
               <p><strong>Belastungsreaktionen.</strong> Nach dem Erleben oder Entdecken eines Suizidversuchs können wiederkehrende Bilder, Vermeidung oder innere Anspannung auftreten. Solche Reaktionen allein ergeben keine Diagnose einer posttraumatischen Belastungsstörung (PTBS). Wenn Sie anhaltend belastet sind, können Sie eigene Beratung oder eine fachliche Abklärung nutzen.</p>
-              <p><strong>Eigenes Wohlbefinden.</strong> Hohe anhaltende Belastung steht in Studien mit eigenen psychischen Beschwerden in Zusammenhang. Frühere Belastungen, körperliche Gesundheit, Schlaf und Unterstützung spielen ebenfalls eine Rolle. Das ist ein Grund, die eigene Gesundheit ernst zu nehmen; es ist keine Vorhersage für Sie persönlich.</p>
+              <p><strong>Eigenes Wohlbefinden.</strong> Hohe anhaltende Belastung steht in Studien mit eigenen psychischen Beschwerden in Zusammenhang. Frühere Belastungen, körperliche Gesundheit, Schlaf und Unterstützung spielen ebenfalls eine Rolle. Diese Zusammenhänge sind ein Grund, auf Ihre eigene Gesundheit zu achten, sagen aber nicht voraus, wie es Ihnen persönlich ergehen wird.</p>
 
               <p>Behandlung kann die Erkrankung stabilisieren. Lithium ist eine etablierte Option und kann zur langfristigen Schutzplanung gehören. Wie stark es Suizide verhindert, ist wegen seltener Ereignisse und uneinheitlicher Studienergebnisse nicht abschliessend geklärt. Fragen zur Behandlung können Sie mit dem Behandlungsteam besprechen.</p>
               <p>Anregungen zur gemeinsamen Krisenvorbereitung finden Sie in <a className="puk-link--inline" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a>.</p>
 
               <aside className="callout callout-soft">
-                <span className="callout-label">Atmen Sie durch</span>
-                <p>Was Sie gerade gelesen haben, ist schwer. Wenn Sie eine Pause brauchen, machen Sie eine. Dieses Modul wartet auf Sie.</p>
+                <span className="callout-label">Bei Bedarf eine Pause machen</span>
+                <p>Wenn Sie der Abschnitt belastet oder Sie eine Pause brauchen, können Sie die Lektüre unterbrechen und später weiterlesen.</p>
               </aside>
             </section>
 
@@ -478,7 +480,7 @@ function Modul2Page({ onNavigate }) {
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeug — Meine Belastung wahrnehmen</h3>
-                    <p>Fünf Fragen zur persönlichen Reflexion, ohne Gesamtpunktzahl oder Einstufung. Im Browser.</p>
+                    <p>Fünf Fragen zum Nachdenken über Ihre Situation, direkt im Browser und ohne Gesamtpunktzahl oder Einstufung.</p>
                   </div>
                 </a>
               </div>
@@ -490,7 +492,7 @@ function Modul2Page({ onNavigate }) {
                 <li><strong>Ihre Belastung zählt.</strong> Wissen kann Orientierung geben; praktische Entlastung und Unterstützung sind ebenso wichtig.</li>
                 <li><strong>Belastung kann unsichtbar bleiben.</strong> Sie dürfen eigene Bedürfnisse benennen, auch wenn andere Ihre Erschöpfung nicht sehen.</li>
                 <li><strong>Erhöhte Wachsamkeit ist eine mögliche Reaktion.</strong> Vereinbarte Zuständigkeiten, Grenzen und Unterstützung können entlasten; es gibt keinen für alle geltenden Ablauf oder einzelnen Lösungsschritt.</li>
-                <li><strong>Sie dürfen Hilfe für sich selbst holen</strong> — das ist keine Illoyalität, sondern Voraussetzung dafür, dass Sie langfristig begleiten können.</li>
+                <li><strong>Hilfe für Sie selbst ist berechtigt.</strong> Sie können Unterstützung suchen, unabhängig davon, wie viel Begleitung Sie weiter übernehmen möchten oder können.</li>
               </ul>
             </section>
 

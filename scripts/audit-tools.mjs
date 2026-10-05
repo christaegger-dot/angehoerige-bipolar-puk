@@ -243,13 +243,13 @@ try {
           record('privacy/legacy-delete', zoom, tool, await field.inputValue() === '' && await page.evaluate(() => !localStorage.getItem('puk-krisenplan-v1') && !sessionStorage.getItem('puk-krisenplan-v1')));
         } else if (tool === 'kommunikation') {
           await dialog.getByRole('button', { name: /Beginnen/ }).click();
-          record('privacy/legacy-not-restored', zoom, tool, await dialog.getByRole('button', { name: /weiter/ }).isDisabled());
+          record('privacy/legacy-not-restored', zoom, tool, await dialog.getByRole('button', { name: /Weiter/ }).isDisabled());
           await dialog.getByRole('button', { name: /Ein anderes Anliegen/ }).click();
-          await dialog.getByRole('button', { name: /weiter/ }).click();
+          await dialog.getByRole('button', { name: /Weiter/ }).click();
           await dialog.getByRole('textbox', { name: 'Was haben Sie konkret beobachtet?' }).fill('Current observation fixture');
-          await dialog.getByRole('button', { name: /weiter/ }).click();
-          await dialog.getByRole('textbox', { name: 'Was macht das mit Ihnen?' }).fill('Current feeling fixture');
-          await dialog.getByRole('button', { name: /weiter/ }).click();
+          await dialog.getByRole('button', { name: /Weiter/ }).click();
+          await dialog.getByRole('textbox', { name: 'Wie geht es Ihnen damit?' }).fill('Current feeling fixture');
+          await dialog.getByRole('button', { name: /Weiter/ }).click();
           await dialog.getByRole('textbox', { name: 'Was wäre Ihr Anliegen oder Ihre Bitte?' }).fill('Current request fixture');
           await dialog.getByRole('button', { name: /Skript ansehen/ }).click();
           await dialog.getByRole('button', { name: 'Skript kopieren' }).click();
@@ -258,7 +258,7 @@ try {
 
           await dialog.getByRole('button', { name: 'Skript bearbeiten' }).click();
           await dialog.getByRole('button', { name: /Ich möchte eine Grenze setzen/ }).click();
-          for (let step = 0; step < 3; step++) await dialog.getByRole('button', { name: /weiter/ }).click();
+          for (let step = 0; step < 3; step++) await dialog.getByRole('button', { name: /Weiter/ }).click();
           const boundaryField = dialog.getByRole('textbox', { name: 'Welche eigene Grenze können Sie umsetzen?', exact: true });
           record('interaction/boundary-own-action-required', zoom, tool, await boundaryField.inputValue() === '' && await dialog.getByRole('button', { name: /Skript ansehen/ }).isDisabled());
           const boundaryAction = 'Wenn das Gespräch laut wird, beende ich es für heute.';
@@ -279,9 +279,9 @@ try {
           record('privacy/legacy-delete', zoom, tool, await page.evaluate(() => !localStorage.getItem('puk-kommunikation-v1') && !sessionStorage.getItem('puk-kommunikation-v1')));
         } else if (tool === 'ee') {
           await dialog.getByRole('button', { name: /Erschöpfung/ }).click();
-          await dialog.getByRole('tab', { name: 'Was passiert' }).focus();
+          await dialog.getByRole('tab', { name: 'Mögliche Erfahrung' }).focus();
           await page.keyboard.press('ArrowRight');
-          record('keyboard/tabs-arrow', zoom, tool, await dialog.getByRole('tab', { name: 'Wo unterbrechen' }).getAttribute('aria-selected') === 'true');
+          record('keyboard/tabs-arrow', zoom, tool, await dialog.getByRole('tab', { name: 'Was helfen kann' }).getAttribute('aria-selected') === 'true');
         } else if (tool === 'belastungsverlauf') {
           await dialog.getByRole('button', { name: 'Weitere mögliche Verläufe' }).click();
           const marker = dialog.getByRole('button', { name: 'Wiederkehr', exact: true });
@@ -293,7 +293,7 @@ try {
         } else if (tool === 'atem') {
           await dialog.getByRole('button', { name: /Beginnen/ }).click();
           record('interaction/breath-start', zoom, tool, (/atemzug\s+1\s+von\s+5/i).test(await dialog.locator('.atem-meta').textContent()));
-          await dialog.getByRole('button', { name: 'abbrechen' }).click();
+          await dialog.getByRole('button', { name: 'Abbrechen' }).click();
           record('interaction/breath-cancel', zoom, tool, await dialog.getByRole('button', { name: /Beginnen/ }).count() === 1);
         }
         await enlargeState(page, zoom, tool, 'interaction');

@@ -1,0 +1,132 @@
+{
+  "part": "Werkzeugübersicht, alle neun Werkzeuge und gemeinsamer Dialograhmen",
+  "base": "main 26da414; Arbeitskopie fix/s-language-review",
+  "files": ["src/werkzeuge.jsx", "src/werkzeuge-tools.jsx", "src/tool-overlay.jsx"],
+  "status": "Vollständig sprachlich geprüft und umgesetzt; ausschliesslich sichtbare oder zugängliche Texte geändert.",
+  "assumptions": {
+    "material": "Website «Bipolar & Angehörige»",
+    "audience": "Angehörige und nahestehende Menschen mit unterschiedlichen Beziehungen zur betroffenen Person",
+    "address": "Sie für Lesende; du in ausdrücklich anpassbaren Gesprächsbeispielen",
+    "sender": "Fachstelle Angehörigenarbeit PUK; Angehörigenberatung und Psychoedukation",
+    "use": "Selbstständige Nutzung und Nutzung in Angehörigenberatung",
+    "language": "Schweizer Hochdeutsch, ss, «Guillemets»",
+    "reviews": "W1, W2 und das W2-Umsetzungsprotokoll berücksichtigt; offene Verifikationen bleiben offen."
+  },
+  "scope": [
+    {"tool": "Übersicht und Dialograhmen", "reviewed": ["Einleitung", "Modulverweis", "Speicherhinweise", "Ladezustand", "Bestätigung zum Löschen früherer Entwürfe", "Lösch-Erfolg und Lösch-Fehler", "zugängliche Schliessbeschriftungen"], "method": "Vollständiger Quelltext"},
+    {"tool": "Meine Belastung wahrnehmen", "reviewed": ["Einleitung", "alle fünf Fragen mit je vier Antwortmöglichkeiten", "Zurück", "Zusammenfassung aller Antworten", "bedingter Hinweis bei kaum gelingendem Alltag", "Unterstützung und Entlastungswege", "erneute Nutzung und Schliessen"], "method": "Alle definierten Zustände vollständig im Quelltext geprüft"},
+    {"tool": "Bipolarer Phasenverlauf", "reviewed": ["Einleitung", "Bipolar I", "Bipolar II", "Mischzustände", "stabile Phase", "alle vier Darstellungstexte und Angehörigenerfahrungen", "Kurvenbeschriftungen und Legenden", "zugängliche Mischsymptom-Beschreibung", "Rückweg zu M1 s5"], "method": "Alle vier auswählbaren Varianten vollständig im Quelltext geprüft"},
+    {"tool": "Eisberg-Modell", "reviewed": ["Einleitung", "elf Begriffe mit vollständigen Detailtexten", "leere Auswahl", "Markieren und Aufheben", "Zähler für keine/eine/mehrere Markierungen", "Zusammenfassung markierter Begriffe", "erneute Nutzung", "Modulverweis"], "method": "Alle Begriffe und bedingten Texte vollständig im Quelltext geprüft"},
+    {"tool": "Krisenplan", "reviewed": ["Einleitung und gemeinsame Vorbereitung", "alle zehn Felder mit Beschriftung, Erklärung und Platzhalter", "Datenschutz- und Speicherhinweise", "Datum der letzten Bearbeitung", "Druck/PDF-Export", "Löschbestätigung", "Lösch-Erfolg und Lösch-Fehler", "Kopien und fremde Geräte", "Beratungsangabe", "Modulverweis"], "method": "Vollständige psychoedukative Planvorlage im Quelltext geprüft; kein akutes Krisenhandout"},
+    {"tool": "Kommunikations-Trainer", "reviewed": ["Einleitung und Nutzungsgrenze", "alle fünf Anlässe mit Einleitungssätzen", "alle vier Schritte", "Fragen, Hilfen und Platzhalter", "eigene Grenze und optionale Bitte", "Ergebnis mit und ohne Grenzanteil", "leere Ergebnisfelder und Export-Platzhalter", "Gesprächsvorbereitung", "Kopier-Erfolg, Kopier-Fehler und nicht verfügbare Kopierfunktion", "Speicher-/Zwischenablagehinweise", "Löschbestätigung, Lösch-Erfolg und Lösch-Fehler"], "method": "Alle definierten Schritte, Ergebniszweige und Meldungen vollständig im Quelltext geprüft"},
+    {"tool": "Säulen-Check", "reviewed": ["Einleitung", "alle acht Fragen mit je vier Antwortmöglichkeiten", "Zurück", "Ergebnisbalken und Zahlen", "Gleichstand aller vier Bereiche", "geringer und höher eingeschätzte Bereiche", "mehrere gleich hoch eingeschätzte Bereiche", "Modell-/Gesundheitsgrenzen", "Unterstützungswege", "erneute Nutzung"], "method": "Alle Fragen und bedingten Ergebnisformulierungen vollständig im Quelltext geprüft; Antwortwerte und Berechnungen unverändert"},
+    {"tool": "Wenn Belastung Gespräche verändert", "reviewed": ["Einleitung", "alle vier frei auswählbaren Aspekte", "beide Detailansichten je Aspekt", "Schuldgefühle", "Zusätzliche Verantwortung", "Erschöpfung", "Kritik", "eigene Grenzen", "Modulverweise"], "method": "Alle acht Detailtexte vollständig im Quelltext geprüft; keine feste Abfolge oder Gleichsetzung mit EE eingeführt"},
+    {"tool": "Belastungsverlauf", "reviewed": ["Einleitung", "beide Kurvenansichten", "alle drei ausgewählten Erfahrungsmarker", "Bildbeschriftungen und zugängliche Beschreibung", "Legende", "Modellgrenzen", "Unterstützung und Modulverweise"], "method": "Alle Ansichten und Detailtexte vollständig im Quelltext geprüft"},
+    {"tool": "Durchatmen", "reviewed": ["Einleitung", "Atemrhythmus und Zeitangaben", "freiwilliges Atemhalten", "Abbruch bei Unwohlsein und Alternative", "alle vier Rhythmusphasen", "Zähler", "Abbrechen", "Abschluss", "Wiederholen und Schliessen"], "method": "Alle definierten Zustände vollständig im Quelltext geprüft; Rhythmus und Dauer unverändert"}
+  ],
+  "findings": [
+    {
+      "id": "S-T-01", "priority": "wichtig", "location": "werkzeuge-tools.jsx:118, 126, 397, 419",
+      "pattern": "Abstrakte oder künstliche Fragen erschweren das Erkennen der eigenen Alltagssituation.",
+      "before": "Wie geht es Ihnen mit dem täglichen Funktionieren?",
+      "after": "Wie kommen Sie mit Ihrem Alltag zurecht?",
+      "change": "Fragen konkretisiert. «Menschen ausserhalb der Erkrankung» wird als eigener Kontakt erläutert, bei dem die Erkrankung nicht im Vordergrund steht. Gegenstand, Zeiträume, Antwortmöglichkeiten und Auswertungswerte erhalten.",
+      "implemented": true
+    },
+    {
+      "id": "S-T-02", "priority": "wichtig", "location": "werkzeuge-tools.jsx:861–892, 960–963, 991–1095",
+      "pattern": "Gesprächseinstiege und Hilfen klingen stellenweise therapeutisch oder verwaltungssprachlich.",
+      "before": "Ich brauche, dass wir kurz über etwas Wichtiges reden. Es geht um etwas, das ich so nicht mehr halten kann.",
+      "after": "Ich möchte mit dir über etwas reden, das mir zu viel wird.",
+      "change": "Gesprächsbeispiele natürlicher formuliert und ausdrücklich als Anregungen bezeichnet, deren Inhalt und Anrede an die Beziehung angepasst werden. «Wirkung auf mich» wird mit «Wie es mir damit geht» konkret; Ich-Botschaft wird verständlich erklärt. Bitte und selbst umsetzbare Grenze bleiben getrennt; weder Gesprächszustimmung noch späteres Hilfsangebot werden verlangt.",
+      "implemented": true
+    },
+    {
+      "id": "S-T-03", "priority": "wichtig", "location": "werkzeuge-tools.jsx:175, 531–532, 1272–1311, 1339–1362",
+      "pattern": "Mehrere abrupte Negativhinweise und unerklärte Fachwörter unterbrechen den Gedanken.",
+      "before": "Die Auswahlfelder Bipolar I und II sind keine Erklärung der Diagnoseunterscheidung; diese finden Sie in Modul 1. Die Kurven haben keinen Zeitmassstab und geben keine individuelle Prognose. Keine Diagnose lässt sich an einer Kurve ablesen.",
+      "after": "Wie sich die Diagnosen Bipolar I und II unterscheiden, erklärt Modul 1. Die Skizzen haben keinen Zeitmassstab und erlauben weder eine Diagnose noch eine Vorhersage des Verlaufs einer bestimmten Person.",
+      "change": "Hinweise verbunden und «Klassifikation» in jeder auswählbaren Fachbeschreibung erklärt. Fehlende Validierung wird mit fehlender wissenschaftlich bestätigter Aussagekraft verständlich benannt. Fiktion, fehlender Zeitmassstab, fehlende Mess-/Diagnose-/Prognosemöglichkeit, fachliche Zuständigkeit und offene Kriterien bleiben erhalten.",
+      "implemented": true
+    },
+    {
+      "id": "S-T-04", "priority": "wichtig", "location": "werkzeuge-tools.jsx:632–696, 1156–1260",
+      "pattern": "Satzfragmente und bildhafte Sprache unterstellen teilweise ein Erleben oder verschleiern, was der eigene Beitrag sein kann.",
+      "before": "Nicht sofort reagieren, eine Viertelstunde durchatmen, einen Streit nicht eskalieren lassen. Geduld kostet Energie — nicht weniger, weil sie still ist.",
+      "after": "Geduld kann heissen, nicht sofort zu reagieren, eine Viertelstunde durchzuatmen oder sich in einem Streit mit einer Antwort Zeit zu lassen. Das kostet Energie, auch wenn andere es kaum bemerken.",
+      "change": "Eisberg-Details als nachvollziehbare Gedanken formuliert; konkrete eigene Reaktion statt Kontrolle über den Streit. Gewünschte Hilfe, unterschiedliche Gefühle und Belastungsursachen, eigene fachliche Abklärung sowie offene W1-Häufigkeits-/Begriffsfragen erhalten. Beziehungsaspekte benennen einen möglichen eigenen Schritt statt «Unterbrechen» einer vermeintlich zwingenden Folge.",
+      "implemented": true
+    },
+    {
+      "id": "S-T-05", "priority": "wichtig", "location": "werkzeuge.jsx:59–60, werkzeuge-tools.jsx:305–308, 925–950, 1140–1142",
+      "pattern": "Technische Meldungen und lange Exportwarnsätze sind schwerer umzusetzen als nötig.",
+      "before": "Beim Kopieren liegt Ihr Skript zusätzlich in der Zwischenablage; das Gerät kann es in einem Verlauf behalten oder synchronisieren.",
+      "after": "Beim Kopieren liegt Ihr Skript zusätzlich in der Zwischenablage. Ihr Gerät kann solche Inhalte in einem Verlauf aufbewahren oder auf andere Geräte übertragen.",
+      "change": "Lösch-, Kopier- und Exporttexte auf konkrete Handlungen bezogen. Keine automatische Speicherung/Versendung, Verlust beim Schliessen/Neuladen, alte Browser-Kopien, mögliche Löschfehler, separat zu löschende exportierte Kopien sowie offene Tabs erhalten.",
+      "implemented": true
+    },
+    {
+      "id": "S-T-06", "priority": "optional", "location": "werkzeuge-tools.jsx:65–99",
+      "pattern": "Abgehackte Übungsanleitung und künstliche Wärme im Abschluss.",
+      "before": "Wenn es noch einmal sein soll, gerne. Ihre Pause wartet.",
+      "after": "Sie können die Übung wiederholen oder hier beenden.",
+      "change": "Atemanleitung als zusammenhängende Erklärung, Zeiteinheiten ausdrücklich als Sekunden. Fünf Zyklen, 4/2/6/2 Sekunden, etwa 70 Sekunden, angenehme Anpassung, freiwilliges Halten, Stoppen bei Unwohlsein und die Alternative bleiben vollständig erhalten.",
+      "implemented": true
+    },
+    {
+      "id": "S-T-07", "priority": "optional", "location": "werkzeuge-tools.jsx:565, 583–594, 1414, 1432, 1498",
+      "pattern": "Abstrakte Bildbegriffe erschweren die Zuordnung zur angezeigten Darstellung.",
+      "before": "Die Höhe fasst Ihre Antworten schematisch zusammen. Sie ist kein gemessener Wert Ihrer Belastbarkeit.",
+      "after": "Die Höhe der Balken fasst Ihre Antworten vereinfacht zusammen. Sie zeigt keinen gemessenen Wert Ihrer Belastbarkeit.",
+      "change": "Balken und nummerierte Stellen konkret benannt. Fiktive Verläufe, individuelle Unterstützungsbedürfnisse, nicht gemessene Werte und nicht vorgegebene Entwicklungsstufen bleiben erhalten.",
+      "implemented": true
+    },
+    {
+      "id": "S-T-08", "priority": "optional", "location": "werkzeuge.jsx:33; tool-overlay.jsx:65, 67; Werkzeugschaltflächen",
+      "pattern": "Unvollständige Ladeüberschrift und wenig eindeutige zugängliche Schliessnamen.",
+      "before": "Wird geöffnet … / Hintergrund — schliessen",
+      "after": "Werkzeug wird geöffnet … / Dialog schliessen",
+      "change": "Ladezustand und zugängliche Schliessbeschriftung eindeutig benannt; wiederkehrende Schaltflächen Schliessen, Zurück und Weiter einheitlich grossgeschrieben. Funktionen und zugängliche Struktur unverändert.",
+      "implemented": true
+    }
+  ],
+  "critical_findings": [],
+  "subject_matter_corrections": [],
+  "review_needed": [
+    {"status": "Prüfbedarf aus W1 bleibt offen", "location": "Eisberg-Detailtexte, insbesondere Scham/Schuldgefühle/Trauer; werkzeuge-tools.jsx:661, 675, 682", "item": "Allgemeine Aussagen über Scham und Häufigkeit/Einordnung von Schuldgefühlen sowie die bestehende Ambiguous-Loss-Definition sind sprachlich lesbarer, aber dadurch nicht fachlich bestätigt. Keine neue Quelle oder Definition ergänzt."},
+    {"status": "Prüfbedarf aus W1 bleibt offen", "location": "Fachstelle-Beratungsangaben; werkzeuge-tools.jsx:215, 364", "item": "Telefon, aktuelle reguläre Erreichbarkeit und kostenlose Beratung nicht institutionell neu bestätigt; Angaben inhaltlich unverändert."},
+    {"status": "Prüfbedarf aus W1 bleibt offen", "location": "Phasenverlauf, Planvorbereitung, Säulen/Beziehungsaspekte und verlinkte Module", "item": "Originalquellen, verwendete Klassifikation und fachliche bzw. organisatorische Freigaben bleiben Gegenstand des W1-Registers. S ergänzt keine Diagnosekriterien, klinische Validierung oder neue Rechtsaussage."}
+  ],
+  "terminology": [
+    {"term": "Validierung", "variants": "validierter Test / validierte klinische Auswertung", "chosen": "Test bzw. klinische Auswertung mit wissenschaftlich bestätigter Aussagekraft; fehlender Anspruch wird ausdrücklich erhalten", "locations": ["werkzeuge-tools.jsx:175", "werkzeuge-tools.jsx:532"]},
+    {"term": "Wirkung auf die eigene Person", "variants": "Wirkung auf mich / Wirkung / Wirkung auf Sie", "chosen": "Wie es mir damit geht bzw. Wie es Ihnen damit geht", "locations": ["werkzeuge-tools.jsx:937", "werkzeuge-tools.jsx:1017", "werkzeuge-tools.jsx:1086"]},
+    {"term": "Auswahl im Belastungsverlauf", "variants": "Marker / nummerierte Marker", "chosen": "nummerierte Stellen", "locations": ["werkzeuge-tools.jsx:1414", "werkzeuge-tools.jsx:1432", "werkzeuge-tools.jsx:1498"]},
+    {"term": "Beziehungsaspekt-Ansichten", "variants": "Was passiert / Wo unterbrechen", "chosen": "Mögliche Erfahrung / Was helfen kann", "locations": ["werkzeuge-tools.jsx:1232", "werkzeuge-tools.jsx:1242"]}
+  ],
+  "retained_terms": ["Meine Belastung wahrnehmen", "Bipolarer Phasenverlauf", "Eisberg-Modell", "Krisenplan", "Kommunikations-Trainer", "Säulen-Check", "Wenn Belastung Gespräche verändert", "Zusätzliche Verantwortung", "Schuldgefühle", "Erschöpfung", "Kritik", "Ressourcen", "fachlicher Halt", "Bipolar I", "Bipolar II", "Mischzustände", "stabile Phase"],
+  "more_space": [
+    {"location": "werkzeuge-tools.jsx:66", "element": "Atem-Einleitung", "reason": "Ausgeschriebene Sekunden und vollständige Sätze statt Telegrammstil; merklich längerer Hinweistext."},
+    {"location": "werkzeuge-tools.jsx:126, 419", "element": "Kontaktfragen in Belastungs- und Säulenreflexion", "reason": "«Menschen ausserhalb der Erkrankung» wird verständlich erläutert; längere Frageüberschrift."},
+    {"location": "werkzeuge-tools.jsx:1017, 1086", "element": "Schritt-/Ergebnisbeschriftung des Kommunikations-Trainers", "reason": "«Wie es mir damit geht» ist länger als «Wirkung»; Umbruch auf schmalen Displays prüfen."},
+    {"location": "werkzeuge-tools.jsx:1272, 1280, 1288", "element": "Phasenverlauf-Detailkarten", "reason": "Notwendiger Fachbegriff Klassifikation wird für jeden unmittelbar auswählbaren Zustand erläutert; mehr Textplatz."},
+    {"location": "werkzeuge-tools.jsx:962", "element": "Kommunikations-Einleitung", "reason": "Kurzer Hinweis zur Anpassung von Beispielen und Anrede ergänzt."}
+  ],
+  "checks_performed": [
+    "Vollständige Lektüre der drei Dateien und aller darin definierten sichtbaren/zugänglichen Textzustände vor der Überarbeitung.",
+    "Abgleich mit S-Auftrag, einschlägigen W1-/W2-Ergebnissen und W2-Umsetzung.",
+    "Änderungen mit gesicherten Originaldateien verglichen; Gesprächsbeispiele auf Alltagstauglichkeit und anpassbare Anrede geprüft.",
+    "Original und neue Dateien mit Espree erfolgreich geparst; nach Ausblendung von String-/JSX-Textinhalten sind die ASTs identisch. Struktur, Logik und numerische Werte bleiben unverändert; zusätzlich keine IDs, Routen, Steuerwerte, Speicherkeys, CSS oder Tests geändert.",
+    "Reguläre Beratungsangaben erhalten; keine Krisennummer oder kein Notfallblock ergänzt.",
+    "Nach zusätzlicher Zuweisung die bestehenden drei Werkzeug-/Übersicht-/Dialog-Tests und reinen Textselektoren des Werkzeugaudits aktualisiert. DEBUG_PRINT_LIMIT=0 npx vitest run src/test/werkzeuge.test.jsx src/test/werkzeuge-page.test.jsx src/test/tool-overlay.test.jsx: 27 Tests in drei Dateien bestanden. Speicher-, Lösch-, Export-, Grenz- und Ressourcen-Assertions erhalten.",
+    "Keine fachliche Korrektur, keine Quelle, keine klinische Einstufung oder kein neues Erfolgsversprechen ergänzt."
+  ],
+  "technical_evidence": "/workspace/cloud-setup/s/tools-ast-check.json",
+  "unavailable_or_not_checked": [
+    "Browserbedienung, Layout/Überläufe und tatsächliche Bild-/Textvergrösserung werden im zentralen Integrationsdurchlauf geprüft; dieser Teilbericht behauptet dafür noch keinen erfolgreichen Durchlauf.",
+    "Physischer Ausdruck/PDF, reale assistive Technologien und gerätespezifische Zwischenablage-Synchronisierung nicht praktisch geprüft.",
+    "Kopier-/Lösch-Fehlerzustände vollständig im Quelltext geprüft, nicht durch absichtliche Browserfehler ausgelöst.",
+    "Originalquellen und Fachstellenabläufe nicht neu extern verifiziert."
+  ],
+  "continuation": "Keine weitere sprachliche Werkzeugrunde erforderlich. Zentrale Integrationskontrolle sowie die unverändert offenen W1-Prüfungen und spätere W3-/Druckprüfungen folgen separat.",
+  "freeze": true
+}

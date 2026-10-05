@@ -28,7 +28,7 @@ function ZweiLinien() {
         <text x="80" y="28" textAnchor="middle">RUHE</text>
         <text x="220" y="28" textAnchor="middle">EPISODE</text>
         <text x="340" y="28" textAnchor="middle">DRUCK</text>
-        <text x="460" y="28" textAnchor="middle">REPARATUR</text>
+        <text x="460" y="28" textAnchor="middle">ANNÄHERUNG</text>
       </g>
 
       <g stroke="var(--paper-edge)" strokeWidth="1" strokeDasharray="2 4">
@@ -74,7 +74,7 @@ function ZweiLinien() {
       <g transform="translate(40 282)">
         <text fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" fontWeight="500">LESEN</text>
         <text x="62" y="0" fontFamily="var(--serif-display)" fontSize="11" fill="var(--ink-soft)" fontStyle="normal">
-          Beide Linien werden in jeder Phase bewegt — nicht nur die erkrankte.
+          Das Beispiel zeigt Veränderungen bei beiden Personen.
         </text>
       </g>
     </svg>
@@ -89,7 +89,7 @@ function ZweiLinienFigur() {
       </div>
       <figcaption><strong id="m3-zwei-linien-title">Zwei Personen, unterschiedliche Erfahrungen.</strong> Fiktives Beispiel während und nach einer Episode. Die Linien bilden weder einen typischen Verlauf noch eine Prognose ab.</figcaption>
       <FigureText visualId="m3-zwei-linien">
-        <p>Die durchgezogene Linie steht für die erkrankte Person, die gestrichelte für die angehörige Person. Von links nach rechts sind Ruhe, Episode, Druck und Reparatur benannt. Beide Linien verändern sich; in der letzten Bildphase nähern sie sich wieder an und bleiben leicht versetzt.</p>
+        <p>Die durchgezogene Linie steht für die erkrankte Person, die gestrichelte für die angehörige Person. Von links nach rechts sind Ruhe, Episode, Druck und Annäherung benannt. Beide Linien verändern sich; in der letzten Bildphase nähern sie sich wieder an und bleiben leicht versetzt.</p>
         <p>Die Linien sind ein fiktives Bild für unterschiedliche Erfahrungen, keine Messung von Stimmung oder Belastung. Es gibt keine Zeitskala und keine vorgeschriebene Folge dieser Phasen.</p>
       </FigureText>
     </figure>
@@ -101,32 +101,32 @@ function Druckpunkte() {
     {
       num: '01',
       titel: 'Vertrauen',
-      sub: 'wenn Wahrnehmung zur Streitfrage wird',
-      body: 'Impulsives Verhalten in einer Manie kann Vertrauen belasten, etwa durch verletzende Handlungen, Geldausgaben oder nicht eingehaltene Versprechen. Vielleicht fragen Sie sich danach, wie Sie Aussagen und Absprachen einordnen können. Was würde Ihnen helfen, wieder Vertrauen zu entwickeln? Es gibt dafür keinen festgelegten Verlauf.'
+      sub: 'wenn Absprachen nicht mehr verlässlich wirken',
+      body: 'Impulsives Verhalten in einer Manie kann Vertrauen belasten, etwa durch verletzende Handlungen, Geldausgaben oder nicht eingehaltene Versprechen. Danach fragen Sie sich möglicherweise, wie verlässlich Aussagen und Absprachen sind. Wenn Sie wieder Vertrauen entwickeln möchten, was würde Ihnen dabei helfen? Wie sich Vertrauen verändert, ist bei jedem Paar anders.'
     },
     {
       num: '02',
       titel: 'Nähe',
       sub: 'wenn sich Wünsche nach Nähe verändern',
-      body: 'Sexualität, Zärtlichkeit und das einfache Nebeneinander können sich in belastenden Phasen verändern. Wie Sie beide Nähe erleben und wünschen, ist unterschiedlich. Wenn Sie Fragen zu möglichen Einflüssen der Behandlung haben, können Sie diese mit der behandelnden Fachperson klären. Auch nach einer Episode kann es hilfreich sein, über unterschiedliche Wünsche nach Nähe und Abstand zu sprechen.'
+      body: 'Sexualität, Zärtlichkeit und das Zusammensein im Alltag können sich in belastenden Phasen verändern. Sie beide erleben oder wünschen sich Nähe möglicherweise unterschiedlich. Über Wünsche nach Nähe und Abstand zu sprechen kann auch nach einer Episode hilfreich sein. Fragen zu möglichen Einflüssen der Behandlung können Sie mit der behandelnden Fachperson klären.'
     },
     {
       num: '03',
       titel: 'Leichtigkeit',
       sub: 'wenn spontane Momente schwerfallen',
-      body: 'Spontanität kann schwerer fallen, wenn Stimmungsschwankungen ständig beobachtet werden. Eine dauernde Kontrollrolle kann es erschweren, sich als Liebespaar zu begegnen. Vielleicht wünschen Sie sich wieder mehr Raum für einen Witz, einen Ausflug oder ein gemeinsames Schweigen. Solche Momente dürfen auch nach belastenden Phasen Platz haben.'
+      body: 'Wenn Sie ständig auf Stimmungsschwankungen achten, können spontane gemeinsame Momente schwerfallen. Eine dauernde Kontrollrolle kann es erschweren, sich als Liebespaar zu begegnen. Vielleicht wünschen Sie sich mehr Raum für einen Witz, einen Ausflug oder ein gemeinsames Schweigen. Auch nach belastenden Phasen können solche Momente Platz haben.'
     },
     {
       num: '04',
       titel: 'Gegenseitigkeit',
       sub: 'wenn Aufgaben ungleich verteilt sind',
-      body: 'Wenn eine Person viele Aufgaben übernimmt, kann sie sich mehr Gegenseitigkeit wünschen. Welche Aufgaben sind gemeinsam vereinbart, welche könnten neu verteilt werden? Auch die Bedürfnisse der angehörigen Person dürfen dabei zur Sprache kommen.'
+      body: 'Wenn viele Aufgaben bei einer Person liegen, kann der Wunsch nach mehr Gegenseitigkeit entstehen. Welche Aufgaben sind gemeinsam vereinbart, welche könnten Sie neu verteilen? Auch Ihre eigenen Bedürfnisse gehören in dieses Gespräch.'
     },
   ];
   return (
     <div className="druckpunkte">
       <span className="kicker">Vier Bereiche, die unter Druck geraten können</span>
-      <h3>Was Aufmerksamkeit und Unterstützung brauchen kann.</h3>
+      <h3>Vertrauen, Nähe, Leichtigkeit und Gegenseitigkeit</h3>
       <ol>
         {punkte.map(p => (
           <li key={p.num}>
@@ -162,7 +162,7 @@ function Modul3Page({ onNavigate }) {
   }, []);
 
   const sections = [
-    { id: 's1', label: 'Wenn Beziehung zur Funktion wird' },
+    { id: 's1', label: 'Wenn Aufgaben die Beziehung bestimmen' },
     { id: 's2', label: 'Wenn Verantwortung die Beziehung verändert' },
     { id: 's3', label: 'Mögliche Druckpunkte' },
     { id: 's4', label: 'Was Episoden hinterlassen' },
@@ -192,7 +192,7 @@ function Modul3Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 10–12 Minuten · 7 Abschnitte</span>
             </div>
             <h1>Wie Beziehungen unter <em>Druck</em> geraten</h1>
-            <p className="lede">Wiederholte Krisen können Rollen, Vertrauen und Nähe belasten. Wie stark und wie lange, ist unterschiedlich. Neue Absprachen und Entlastung können Raum für Beziehung schaffen. Tabuthemen wie Gewalt, Geldverlust oder sexuelle Enthemmung dürfen benannt werden.</p>
+            <p className="lede">Wiederholte Krisen können Aufgabenverteilung, Vertrauen und Nähe unterschiedlich stark und lange belasten. Neue Absprachen und Entlastung können Ihnen mehr Raum füreinander geben. Auch schwer ansprechbare Erfahrungen wie Gewalt, Geldverlust oder sexuelle Enthemmung haben hier Platz.</p>
           </div>
         </header>
 
@@ -224,27 +224,27 @@ function Modul3Page({ onNavigate }) {
             </blockquote>
 
             <section id="s1">
-              <h2>Wenn Beziehung zur Funktion wird</h2>
-              <p className="dropcap">Die Erkrankung kann die Aufgabenverteilung in einer Beziehung verändern: Wer organisiert, erinnert oder übernimmt zusätzliche Verantwortung? Manche Paare erleben, dass solche Aufgaben viel Raum einnehmen. Andere finden tragbare Absprachen oder können gemeinsame Zeit und Gegenseitigkeit erhalten. Es gibt keinen notwendigen Verlauf.</p>
-              <p>Solche Veränderungen können beeinflussen, wie Sie Nähe, Streit oder Vertrauen erleben. Dieses Modul schaut deshalb nicht zuerst auf Ihre Erschöpfung oder auf die Frage «Gehen oder Bleiben», sondern darauf, was Sie in Ihrer Beziehung wahrnehmen und wünschen.</p>
+              <h2>Wenn Aufgaben die Beziehung bestimmen</h2>
+              <p className="dropcap">Die Erkrankung kann die Aufgabenverteilung in einer Beziehung verändern: Wer organisiert, erinnert oder übernimmt zusätzliche Verantwortung? Bei manchen Paaren nehmen diese Aufgaben viel Raum ein. Andere finden tragbare Absprachen und erhalten sich gemeinsame Zeit und Gegenseitigkeit. Wie sich Ihre Beziehung verändert, ist nicht vorgegeben.</p>
+              <p>Das kann beeinflussen, wie Sie Nähe, Streit und Vertrauen erleben. Dieses Modul hilft Ihnen, Ihre Erfahrungen und Wünsche in der Beziehung zu beschreiben. Ihre eigene Erschöpfung und die Frage nach Bleiben oder Abstand stehen in den folgenden Modulen im Mittelpunkt.</p>
 
               <aside className="callout callout-soft">
-                <span className="callout-label">Hinweis zur Sprache</span>
+                <span className="callout-label">Unterschiedliche Beziehungen</span>
                 <p>Dieses Modul spricht vor allem Paare an. Ähnliche Fragen zu Nähe, Aufgaben und eigenen Grenzen können auch Eltern, Geschwister und andere Nahestehende beschäftigen. Welche Absprachen passen, hängt von der jeweiligen Beziehung ab.</p>
               </aside>
             </section>
 
             <section id="s2">
               <h2>Wenn Verantwortung die Beziehung verändert</h2>
-              <p>Eine Rollenverschiebung kann sich nach und nach entwickeln, etwa wenn Sie zusätzliche Aufgaben aus Fürsorge übernehmen. Wenn Sie sich hier wiedererkennen, ist das kein Versagen. Sie dürfen prüfen, was gewünscht und für Sie tragbar ist.</p>
+              <p>Wenn Sie zusätzliche Aufgaben aus Fürsorge übernehmen, kann sich Ihre Rolle in der Beziehung nach und nach verändern. Das bedeutet nicht, dass Sie versagt haben. Prüfen Sie gemeinsam, welche Unterstützung gewünscht und für Sie tragbar ist.</p>
 
               <ZweiLinienFigur />
 
               <h3>Mögliche Veränderungen</h3>
-              <p><strong>Nach der Diagnose.</strong> Vielleicht wünschen Sie sich Informationen oder möchten bei Terminen unterstützen. Welche Beteiligung gewünscht ist, können Sie gemeinsam besprechen.</p>
-              <p><strong>Zusätzliche Aufgaben.</strong> Manchmal übernehmen Angehörige Termine, Erinnerungen oder Organisation. Was ist gewünscht und für Sie tragbar?</p>
+              <p><strong>Nach der Diagnose.</strong> Informationen können wichtig werden, oder Sie möchten bei Terminen unterstützen. Besprechen Sie gemeinsam, welche Beteiligung gewünscht ist.</p>
+              <p><strong>Zusätzliche Aufgaben.</strong> Angehörige übernehmen manchmal die Terminplanung, erinnern an Absprachen oder organisieren den Alltag. Welche dieser Aufgaben sind gewünscht und für Sie tragbar?</p>
               <p><strong>Wachsende Belastung.</strong> Nach Krisen kann Alarmbereitschaft bleiben. Dann lohnt es sich, Aufgaben und Unterstützung neu zu besprechen.</p>
-              <p><strong>Neue Verteilung.</strong> In stabileren Zeiten können Aufgaben wieder zurückgegeben werden. Eigene Interessen und gemeinsame Zeit dürfen Platz haben. Diese Möglichkeiten bilden keine feste Jahresfolge.</p>
+              <p><strong>Neue Verteilung.</strong> In stabileren Zeiten können Sie Aufgaben neu verteilen, sodass auch eigene Interessen und gemeinsame Zeit mehr Platz bekommen. Die Beispiele beschreiben Möglichkeiten, keine feste Abfolge über die Jahre.</p>
 
               <blockquote className="module-quote" id="quote-m3-02">
                 <p>«Ich merkte es erst, als wir mal einen ganzen Abend ohne Thema Bipolar verbracht haben — und ich nicht wusste, worüber wir reden sollten. Wir zwei hatten verlernt, einfach zusammen zu sein.»</p>
@@ -258,7 +258,7 @@ function Modul3Page({ onNavigate }) {
 
               <Druckpunkte />
 
-              <p>Vielleicht wünschen Sie sich mehr Gegenseitigkeit, wenn viele Aufgaben bei Ihnen liegen. Sie dürfen ansprechen, welche Unterstützung Sie brauchen und was Ihnen als Paar wichtig ist.</p>
+              <p>Wenn viele Aufgaben bei Ihnen liegen, können Sie ansprechen, welche Unterstützung Sie brauchen und was Ihnen als Paar wichtig ist.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Nach wiederholten Krisen</span>
@@ -266,14 +266,14 @@ function Modul3Page({ onNavigate }) {
               </aside>
 
               <blockquote className="module-quote" id="quote-m3-03">
-                <p>«Die Manie hat uns fast zerstört — nicht wegen der Symptome, sondern wegen des Vertrauensbruchs danach. Er hat Dinge getan, die ich rational einordnen kann, aber emotional nicht vergessen. Jetzt ist er stabil, und ich frage mich: Darf ich ihm noch böse sein, wenn es eine Krankheit war? Meine Therapeutin hat gesagt: Ja, beides darf nebeneinander existieren.»</p>
+                <p>«Nach der Manie war mein Vertrauen schwer erschüttert. Ich verstehe, dass vieles mit der Krankheit zu tun hatte, aber ich bin noch verletzt. Jetzt geht es ihm besser, und ich frage mich, ob ich noch wütend sein darf. Meine Therapeutin sagte, dass das Verständnis für die Krankheit und meine Wut sich nicht ausschliessen.»</p>
                 <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
               </blockquote>
             </section>
 
             <section id="s4">
               <h2>Was Episoden in Beziehungen hinterlassen</h2>
-              <p>Die Folgen einer Episode für eine Beziehung können weiterbestehen, auch wenn die akuten Symptome abgeklungen sind. Das ist etwas anderes als die Frage, ob die Episode klinisch beendet ist. Vielleicht bleiben Scham, Misstrauen, Leere, Vorsicht, innere Distanz oder die Frage, wie Sie wieder an gemeinsame Erfahrungen anknüpfen können.</p>
+              <p>Auch wenn die akuten Symptome abgeklungen sind, können die Folgen für Ihre Beziehung weiterbestehen. Scham, Misstrauen, Leere, Vorsicht oder innere Distanz können Sie weiterhin beschäftigen. Ob die Episode medizinisch beendet ist und wie Sie die Beziehung erleben, sind daher unterschiedliche Fragen.</p>
 
               <h3>Nach Manien</h3>
               <p>Nach einer Manie können Vertrauensfragen bleiben: Was wurde gesagt, getan, ausgegeben oder versprochen? Vielleicht können Sie das Geschehen einordnen und fühlen sich zugleich verletzt.</p>
@@ -285,12 +285,12 @@ function Modul3Page({ onNavigate }) {
               <p>Vielleicht fragen Sie sich auch in guten Wochen, wie lange die Ruhe bestehen bleibt. Andere erleben diese Zeit als Entlastung. Beides darf benannt werden.</p>
 
               <aside className="callout">
-                <span className="callout-label">Doppelwahrheit</span>
-                <p><strong>Krankheitsbedingt</strong> und <strong>verletzend</strong> dürfen gleichzeitig wahr sein. Damit umzugehen kann schwierig sein. Sie dürfen in einer geeigneten ruhigen Phase über Nachwirkungen sprechen — ohne vorschnelle Entlastung und ohne moralische Abrechnung.</p>
+                <span className="callout-label">Erkrankung und Verletzung</span>
+                <p>Ein Verhalten kann <strong>krankheitsbedingt</strong> sein und Sie zugleich <strong>verletzen</strong>. Wenn Sie in einem ruhigen Moment über die Folgen sprechen möchten, müssen weder Ihre Verletzung noch die Erkrankung übergangen werden.</p>
               </aside>
 
               <h3>Nähe und Sexualität nach Episoden</h3>
-              <p>Nähe und Sexualität können sich während und nach belastenden Phasen verändern. Wie Sie und Ihr Gegenüber dies erleben, ist unterschiedlich. Wenn Sie Fragen zu möglichen Einflüssen der Erkrankung oder Behandlung haben, können Sie diese mit einer geeigneten Fachperson besprechen. Aus diesem Text lässt sich nicht ableiten, ob oder wie sich die Medikation in Ihrem Fall auswirkt.</p>
+              <p>Nähe und Sexualität können sich während und nach belastenden Phasen verändern. Sie und Ihr Gegenüber erleben das möglicherweise unterschiedlich. Ob die Erkrankung oder die Behandlung dabei eine Rolle spielt, lässt sich für Ihren Fall nicht aus diesem Text ableiten. Mit solchen Fragen können Sie sich an eine geeignete Fachperson wenden.</p>
               <p>Wenn Sie viel begleitet oder organisiert haben, wünschen Sie sich vielleicht wieder mehr Raum als Paar. Sie können miteinander besprechen, welche Form von Nähe für beide passt.</p>
 
               <div className="do-dont">
@@ -299,8 +299,8 @@ function Modul3Page({ onNavigate }) {
                   <ul>
                     <li>Fragen zu möglichen Einflüssen der Behandlung mit der behandelnden Fachperson besprechen.</li>
                     <li>Nähe in kleinen Schritten suchen, wenn beide das möchten: Berührung ohne sexuelle Erwartung, gemeinsame Zeit ohne Krankheitsthema.</li>
-                    <li>Offen benennen, was zwischen Ihnen steht: «Ich merke, dass ich mich zurückziehe. Das hat nichts mit dir zu tun — ich brauche Zeit, um aus der Kontrollrolle herauszukommen.»</li>
-                    <li>Bei Bedarf mit einer geeigneten Fachperson klären, welcher Rahmen für ein Gespräch über Intimität zu Ihnen passt.</li>
+                    <li>Eigene Bedürfnisse benennen. So könnte es klingen: «Ich merke, dass ich gerade Abstand brauche. Ich habe in den letzten Wochen viel organisiert und bin erschöpft.»</li>
+                    <li>Bei Bedarf mit einer geeigneten Fachperson klären, wie und mit wem Sie über Intimität sprechen möchten.</li>
                   </ul>
                 </div>
                 <div className="dont-col">
@@ -316,34 +316,34 @@ function Modul3Page({ onNavigate }) {
 
             <section id="s5">
               <h2>Was selten ausgesprochen wird</h2>
-              <p>Manche Erfahrungen in Episoden werden kaum benannt, obwohl sie Beziehungen tief prägen. Sie sind real — und sie verletzen, auch wenn sie krankheitsbedingt sind. <em>«Krankheitsbedingt»</em> bedeutet nicht, dass Sie es aushalten oder verschweigen müssen.</p>
+              <p>Über manche Erfahrungen während einer Episode wird wenig gesprochen, obwohl sie eine Beziehung stark belasten können. Auch <em>krankheitsbedingtes</em> Verhalten kann verletzen. Sie brauchen Verletzungen nicht auszuhalten oder zu verschweigen.</p>
 
               <h3>Finanzielle Folgen</h3>
               <p>Geldausgaben während einer Episode können finanzielle Folgen für Angehörige haben. Anregungen zum gemeinsamen Besprechen finanzieller Vorkehrungen finden Sie in <a className="puk-link--inline" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a>.</p>
 
               <h3>Sexuelle Enthemmung</h3>
-              <p>Grenzüberschreitungen, die die Beziehung tief verletzen. Das ist ein Thema für professionelle Begleitung — nicht für Alleinbewältigung. Anlaufstellen nach Situation finden Sie unter <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>
+              <p>Sexuelle Grenzüberschreitungen können eine Beziehung tief verletzen. Dabei können Sie professionelle Begleitung nutzen und brauchen die Folgen nicht allein zu bewältigen. Anlaufstellen nach Situation finden Sie unter <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>
 
               <h3>Verbale und körperliche Gewalt</h3>
-              <p>Aggression, die verletzt — auch wenn sie krankheitsbedingt ist. Wenn Sie Gewalt erfahren: Sie haben das Recht, sich in Sicherheit zu bringen. Immer.</p>
+              <p>Verbale oder körperliche Gewalt verletzt, auch wenn sie mit der Erkrankung zusammenhängt. Wenn Sie Gewalt erfahren, haben Sie das Recht, sich in Sicherheit zu bringen.</p>
 
               <blockquote className="module-quote" id="quote-m3-04">
-                <p>«Am schwersten war nicht nur, was passiert ist. Am schwersten war, dass ich lange dachte, ich dürfte es nicht einmal aussprechen. Als wäre schon das Benennen ein Verrat. Erst als ich es gesagt habe, wurde es überhaupt bearbeitbar.»</p>
+                <p>«Ich dachte lange, dass ich niemandem erzählen darf, was passiert ist. Das fühlte sich wie Verrat an. Als ich endlich darüber gesprochen habe, konnte ich mir Hilfe holen.»</p>
                 <cite>Redaktionelles Fallbeispiel (fiktiv) · Partner</cite>
               </blockquote>
             </section>
 
             <section id="s6">
               <h2>Was Sie jetzt tun können</h2>
-              <p>Vier Schritte, die helfen können, die Beziehung wieder bewusster als Beziehung zu sehen — nicht nur als Funktionsträgerin der Krise.</p>
+              <p>Die folgenden Anregungen können helfen, neben den Aufgaben rund um die Erkrankung auch Ihre Wünsche an die Beziehung im Blick zu behalten. Wählen Sie, was für Sie passt.</p>
 
-              <h3>1. Rollenverschiebung bewusst wahrnehmen</h3>
+              <h3>1. Auf die Aufgabenverteilung schauen</h3>
               <p>Wenn Sie möchten, fragen Sie sich: Welche Aufgaben übernehme ich? Welche sind gemeinsam vereinbart? Wie viel Raum haben unsere gemeinsamen Interessen und meine eigenen Bedürfnisse?</p>
 
-              <h3>2. Eine «krankheitsfreie Insel» pro Woche</h3>
-              <p>Vereinbaren Sie eine feste Zeit, in der die Erkrankung kein Thema ist — kein Symptom-Monitoring, keine Medikamentendiskussion. Nur Sie beide als Paar.</p>
+              <h3>2. Gemeinsame Zeit ohne Krankheitsthema</h3>
+              <p>Wenn Sie beide das möchten, können Sie regelmässig Zeit miteinander verbringen, in der die Erkrankung kein Thema ist, zum Beispiel einmal pro Woche. Dabei geht es um gemeinsame Interessen und Erlebnisse, ohne Symptome oder Medikamente zu besprechen.</p>
 
-              <h3>3. Vertrauensbrüche benennen — nicht schlucken</h3>
+              <h3>3. Über Verletzungen sprechen</h3>
               <p>Wenn Sie sich durch Handlungen in einer Episode verletzt fühlen, dürfen Sie dies ansprechen. Wählen Sie einen geeigneten ruhigen Moment; bei Bedarf können Sie professionelle Begleitung nutzen.</p>
 
               <h3>4. Passende Unterstützung klären</h3>
@@ -351,7 +351,7 @@ function Modul3Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Reflexion</span>
-                <p>Wann waren Sie zuletzt einfach ein Paar? Vielleicht erinnern Sie sich an gemeinsame Zeit, in der die Erkrankung kein Thema war. Was war Ihnen dabei wichtig? Wenn Ihnen nichts einfällt, müssen Sie daraus kein Urteil über Ihre Beziehung ableiten.</p>
+                <p>Erinnern Sie sich an gemeinsame Zeit, in der die Erkrankung kein Thema war? Was war Ihnen dabei wichtig? Auch wenn Ihnen gerade nichts einfällt, sagt das allein nichts über Ihre Beziehung aus.</p>
               </aside>
 
               <div className="next-modules">
@@ -359,14 +359,14 @@ function Modul3Page({ onNavigate }) {
                   <span className="next-module-num">06</span>
                   <div>
                     <h3>Was Sie konkret tun können</h3>
-                    <p>Werkzeuge für Gespräche, Krisenpläne und konkrete Schritte — wenn Sie nicht mehr nur lesen, sondern handeln möchten.</p>
+                    <p>Anregungen für Gespräche, gemeinsam vorbereitete Krisenpläne und eigene nächste Schritte.</p>
                   </div>
                 </a>
                 <a className="next-module" href={navHref('werkzeuge', 'kommunikation')} onClick={navHandler('werkzeuge', onNavigate, 'kommunikation')}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeug — Kommunikations-Trainer</h3>
-                    <p>Vier Schritte für schwierige Gespräche nach einer Episode — mit Beispielsätzen und klarer Struktur.</p>
+                    <p>Ein Gespräch vorbereiten: das eigene Anliegen, eine Bitte und bei Bedarf eine selbst umsetzbare Grenze formulieren.</p>
                   </div>
                 </a>
               </div>
@@ -376,9 +376,9 @@ function Modul3Page({ onNavigate }) {
               <h2>Worauf es ankommt</h2>
               <ul className="key-points">
                 <li><strong>Aufgaben können sich verändern.</strong> Sie dürfen gemeinsam prüfen, was gewünscht, vereinbart und für Sie tragbar ist.</li>
-                <li><strong>Es gibt keine feste Beziehungsprognose.</strong> Vertrauen, Nähe und Leichtigkeit können belastet werden, erhalten bleiben oder wieder Raum finden. Welche Unterstützung passt, ist unterschiedlich.</li>
+                <li><strong>Jede Beziehung entwickelt sich anders.</strong> Vertrauen, Nähe und Leichtigkeit können belastet werden, erhalten bleiben oder wieder mehr Raum bekommen. Welche Unterstützung passt, hängt von Ihrer Situation ab.</li>
                 <li><strong>Was in Episoden passiert, darf benannt werden</strong> — auch wenn es krankheitsbedingt ist. Krankheitsbedingt heisst nicht automatisch unverletzend oder folgenlos.</li>
-                <li><strong>Ruhigere Phasen bieten Raum.</strong> Für Erholung, gemeinsame Freude und — wenn es für Sie passt — Gespräche oder neue Absprachen.</li>
+                <li><strong>Ruhigere Phasen bieten Raum</strong> für Erholung, gemeinsame Freude und, wenn es für Sie passt, Gespräche oder neue Absprachen.</li>
               </ul>
             </section>
 

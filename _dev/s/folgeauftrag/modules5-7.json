@@ -1,0 +1,152 @@
+{
+  "scope": {
+    "base": "fix/s-language-review 3765dfe",
+    "files": [
+      "src/modul5.jsx",
+      "src/modul6.jsx",
+      "src/modul7.jsx"
+    ],
+    "pages": [
+      "/module/5",
+      "/module/6",
+      "/module/7"
+    ],
+    "method": "Umgebenden Kontext der acht beauftragten Stellen gelesen, verbleibende Sprach-/Rollenbefunde umgesetzt und Endfassung mit Original verglichen. Keine erneute Fach-, Quellen- oder Rechtsfreigabe."
+  },
+  "findings": [
+    {
+      "id": "S-F-M5-01",
+      "file": "src/modul5.jsx",
+      "line": 195,
+      "location": "lede",
+      "before": "<p className=\"lede\">Loyalitätskonflikte sind selten laut. Vielleicht möchten Sie einem Menschen nahe bleiben und spüren zugleich, dass Sie mehr Raum für sich brauchen. Diese widersprüchlichen Bedürfnisse können es schwer machen, Grenzen zu setzen oder über die Beziehung zu entscheiden. Das Modul bietet Fragen, mit denen Sie Ihre Lage und Ihre eigenen Wünsche besser verstehen können.</p>",
+      "after": "<p className=\"lede\">Vielleicht möchten Sie einem Menschen nahe bleiben und spüren zugleich, dass Sie mehr Raum für sich brauchen. Diese widersprüchlichen Bedürfnisse können es schwer machen, Grenzen zu setzen oder über die Beziehung zu entscheiden. Das Modul bietet Fragen, mit denen Sie Ihre Lage und Ihre eigenen Wünsche besser verstehen können.</p>",
+      "status": "redaktionell umgesetzt; keine Originalquellen/Fachfreigabe",
+      "reason": "Häufigkeitsbehauptung entfernt; der Einstieg beschreibt die bestehende mögliche Spannung zwischen Nähe und eigenen Bedürfnissen."
+    },
+    {
+      "id": "S-F-M6-01",
+      "file": "src/modul6.jsx",
+      "line": 360,
+      "location": "s5 Kommunikation in der Manie",
+      "before": "<p><strong>Kurz und klar — ein Thema pro Gespräch.</strong> Lange Gespräche eskalieren schnell. Beschränken Sie sich auf das, was jetzt wichtig ist, und beenden Sie das Gespräch danach.</p>",
+      "after": "<p><strong>Kurz und klar — ein Thema pro Gespräch.</strong> Beschränken Sie sich auf das, was jetzt wichtig ist, und beenden Sie das Gespräch danach.</p>",
+      "status": "redaktionell umgesetzt; keine Originalquellen/Fachfreigabe",
+      "reason": "Pauschale Eskalationsbehauptung entfernt. Bestehende konkrete Begrenzung auf wichtige Inhalte bleibt; Pause, Selbstschutz und Sicherheit bei einer Fortsetzung im folgenden Absatz erhalten."
+    },
+    {
+      "id": "S-F-M6-02",
+      "file": "src/modul6.jsx",
+      "line": 361,
+      "location": "s5 ruhige Stimme",
+      "before": "<p><strong>Ruhige Stimme — auch wenn Sie nicht ruhig sind.</strong> Lautstärke und Tempo sind ansteckend. Langsamer sprechen kann die Situation ohne Worte entschärfen.</p>",
+      "after": "<p><strong>Ruhige Stimme — auch wenn Sie nicht ruhig sind.</strong> Achten Sie auf Ihr eigenes Tempo und versuchen Sie, langsamer zu sprechen, ohne die Stimme zu heben.</p>",
+      "status": "redaktionell umgesetzt; keine Originalquellen/Fachfreigabe",
+      "reason": "Mechanismus- und Wirkbehauptung ersetzt durch Handlungen beim eigenen Sprechen; kein Versprechen, Symptome oder die Reaktion des Gegenübers kontrollieren zu können."
+    },
+    {
+      "id": "S-F-M6-03",
+      "file": "src/modul6.jsx",
+      "line": 371,
+      "location": "s5 Dialog bei fehlender Lösung",
+      "before": "So könnte es klingen: «Ich weiss gerade auch keine Lösung, aber ich bin hier.» Dieser Satz entlastet Sie beide. <em>Vermeiden:</em> Immer neue Lösungsvorschläge oder die ständige Frage «Geht es dir besser?»</p>",
+      "after": "So könnte es klingen: «Ich weiss gerade auch keine Lösung, aber ich bin hier.» Damit drücken Sie aus, dass Sie gerade da sind, ohne eine Lösung zu versprechen. <em>Vermeiden:</em> Immer neue Lösungsvorschläge oder die ständige Frage «Geht es dir besser?»</p>",
+      "status": "redaktionell umgesetzt; keine Originalquellen/Fachfreigabe",
+      "reason": "Entlastungsgarantie entfernt. Erläutert wird lediglich, welches Angebot der Beispielsatz ausdrückt."
+    },
+    {
+      "id": "S-F-M6-04",
+      "file": "src/modul6.jsx",
+      "line": 464,
+      "location": "s7 Medikamenteneinnahme/Warnhinweis",
+      "before": "<p>✗ Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · ✗ Tägliche Kontrollfragen («Hast du deine Tabletten genommen?») — sie erzeugen Scham und Widerstand · ✗ Ultimaten stellen, die Sie nicht einhalten können · ✗ Behandlung und Unterstützung allein koordinieren wollen — nutzen Sie ein bestehendes Behandlungsteam oder eigene Angehörigenberatung.</p>",
+      "after": "<p>✗ Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · ✗ Vorwurfsvolle Kontrollen der Medikamenteneinnahme oder Kontrollen ohne geklärte Aufgabe und Befugnis · ✗ Ultimaten stellen, die Sie nicht einhalten können · ✗ Behandlung und Unterstützung allein koordinieren wollen — nutzen Sie ein bestehendes Behandlungsteam oder eigene Angehörigenberatung.</p>\n<p>Gemeinsam vereinbarte Erinnerungen und notwendige Hilfe bei der Einnahme sind davon zu unterscheiden. Klären Sie, welche Unterstützung gewünscht oder im Rahmen bestehender Sorgeaufgaben nötig ist und wer sie übernimmt.</p>",
+      "status": "redaktionell umgesetzt; keine Originalquellen/Fachfreigabe",
+      "reason": "Pauschale Scham-/Widerstandsbehauptung entfernt und vorwurfsvolle Kontrollen bzw. fehlende geklärte Aufgabe/Befugnis von vereinbarten Erinnerungen und notwendiger Hilfe bei der Einnahme unterschieden. Heimliche Medikamentengabe bleibt ausdrücklich unverändert ausgeschlossen."
+    },
+    {
+      "id": "S-F-M6-05",
+      "file": "src/modul6.jsx",
+      "line": 491,
+      "location": "s9 während des Aufenthalts",
+      "before": "<p><strong>Was nicht hilft:</strong> Tägliche Kontrollanrufe auf der Station oder Behandlungsentscheidungen unbedacht infrage zu stellen. Auch Schuldgefühle wegen der Einweisung und das Übergehen der eigenen Erschöpfung helfen nicht weiter, selbst wenn es der anderen Person gerade schlechter geht.</p>",
+      "after": "<p><strong>Fragen und eigene Entlastung:</strong> Bei Fragen zu Behandlungsentscheidungen können Sie das Team ansprechen. Vereinbaren Sie mit der Station, wann und bei wem Rückfragen möglich sind. Wenn Sie wegen der Einweisung Schuldgefühle haben, können Sie diese in einer Angehörigenberatung besprechen. Auch Ihre Erschöpfung verdient Aufmerksamkeit, unabhängig davon, wie es der anderen Person geht.</p>",
+      "status": "redaktionell umgesetzt; keine Originalquellen/Fachfreigabe",
+      "reason": "Keine negative Bewertung von Schuldgefühlen mehr. Rückfragen zu Behandlungsentscheidungen, vereinbarte Kontaktwege, eigene Beratung und eigene Erschöpfung werden benannt; angrenzende Einverständnisbedingung und praktische Beteiligungsmöglichkeiten bleiben erhalten."
+    },
+    {
+      "id": "S-F-M7-01",
+      "file": "src/modul7.jsx",
+      "line": 103,
+      "location": "EigeneWeltGrid kleine Pausen",
+      "before": "text: 'Eine halbe Stunde im Tag für etwas anderes als die Erkrankung: einen Kaffee, ein Buch oder einen Spaziergang ohne Telefon. Klein heisst nicht weniger wirksam. Eine kleine Pause hält im Alltag oft besser als ein grosser Plan.',",
+      "after": "text: 'Eine halbe Stunde im Tag für etwas anderes als die Erkrankung: einen Kaffee, ein Buch oder einen Spaziergang ohne Telefon. Überlegen Sie, ob ein solcher kurzer Zeitraum gerade zu Ihrem Alltag passt.',",
+      "status": "redaktionell umgesetzt; keine Originalquellen/Fachfreigabe",
+      "reason": "Keine Wirksamkeitsgleichsetzung oder Rangfolge kurzer Pausen mehr; das vorhandene Beispiel bleibt eine zur Lebenslage passende Wahlmöglichkeit."
+    },
+    {
+      "id": "S-F-M6-06",
+      "file": "src/modul6.jsx",
+      "line": 448,
+      "location": "s7 Einleitung, Behandlungsentscheidung und Unterstützung",
+      "before": "<p>Wenn Medikamente verändert oder abgesetzt werden, kann das Angehörigen Sorgen machen. Ob die Änderung abgesprochen ist und welche Folgen oder Alternativen bedacht werden müssen, klären Fachpersonen. Die Behandlung festzulegen oder ihre Einhaltung zu kontrollieren ist nicht Ihre Aufgabe.</p>",
+      "after": "<p>Wenn Medikamente verändert oder abgesetzt werden, kann das Angehörigen Sorgen machen. Ob die Änderung abgesprochen ist und welche Folgen oder Alternativen bedacht werden müssen, klären Fachpersonen. Die Behandlung eigenständig festzulegen ist nicht Ihre Aufgabe.</p>\n<p>Davon zu unterscheiden ist vereinbarte Unterstützung bei der Einnahme. Klären Sie mit der betroffenen Person und dem Behandlungsteam, welche Aufgaben und Befugnisse tatsächlich bei Ihnen liegen. Berücksichtigen Sie dabei bestehende Betreuungs-, Sorge- oder Schutzaufgaben und besprechen Sie, wer notwendige Aufgaben übernimmt, wenn Sie sie nicht weiter übernehmen können.</p>",
+      "status": "redaktionell umgesetzt; keine Originalquellen/Fachfreigabe",
+      "reason": "Eigenständige Behandlungsentscheidungen von vereinbarter Einnahmeunterstützung getrennt. Eigene Aufgaben/Befugnisse, bestehende Betreuungs-/Sorge-/Schutzaufgaben und Übernahme notwendiger Aufgaben bei Rückzug ausdrücklich berücksichtigt. Formulierung mit dem M2-Teilauftrag abgestimmt."
+    }
+  ],
+  "status": "redaktionell umgesetzt; keine Originalquellen/Fachfreigabe",
+  "validation": {
+    "static": {
+      "src/modul5.jsx": {
+        "ids_unchanged": true,
+        "nav_targets_handlers_unchanged": true,
+        "source_components_unchanged": true,
+        "numeric_values_unchanged": true,
+        "ch_ss": true
+      },
+      "src/modul6.jsx": {
+        "ids_unchanged": true,
+        "nav_targets_handlers_unchanged": true,
+        "source_components_unchanged": true,
+        "numeric_values_unchanged": true,
+        "ch_ss": true
+      },
+      "src/modul7.jsx": {
+        "ids_unchanged": true,
+        "nav_targets_handlers_unchanged": true,
+        "source_components_unchanged": true,
+        "numeric_values_unchanged": true,
+        "ch_ss": true
+      }
+    },
+    "preserved": [
+      "keine heimliche Medikamentengabe",
+      "keine eigenständige Festlegung der Behandlung durch Angehörige",
+      "vereinbarte und notwendige Unterstützung bei Medikamenteneinnahme",
+      "bestehende Betreuungs-, Sorge- und Schutzaufgaben",
+      "notwendige Aufgabenübernahme bei Rückzug",
+      "Freiwilligkeit und ausreichende Sicherheit bei Gesprächsfortsetzung",
+      "Einverständnisbedingung bei Behandlungsinformationen",
+      "praktische Beteiligung und Nachfragen zu Behandlungsentscheidungen"
+    ],
+    "not_performed": [
+      "Originalquellenverifikation",
+      "medizinische oder juristische Fachfreigabe",
+      "Tests/Build/Browserprüfung: zentral durch Root"
+    ]
+  },
+  "layout_more_space": [
+    {
+      "file": "src/modul6.jsx",
+      "location": "s7 Einleitung",
+      "note": "Zwei Absätze trennen Behandlungsentscheidung von Einnahmeunterstützung. Der zweite Absatz erläutert notwendige Aufgaben und Befugnisse und braucht zusätzliche Fliesstexthöhe."
+    },
+    {
+      "file": "src/modul6.jsx",
+      "location": "s7 Warnhinweis",
+      "note": "Zusätzlicher kurzer Absatz unterscheidet vereinbarte Erinnerungen/Versorgung von vorwurfsvoller oder ungeklärter Kontrolle."
+    }
+  ],
+  "remaining": "Die beauftragten acht Redaktion-/Rollenstellen sind umgesetzt. Offene Originalquellen-, Rechts- und Angebotsverifikationen aus W1 bleiben separat offen; es wird keine fachliche Validierung behauptet."
+}

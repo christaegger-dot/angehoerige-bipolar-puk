@@ -13,7 +13,7 @@ const TRIAGE_RESULTS = {
 const TRIAGE_STEPS = {
   q1b: {
     progress: 'Frage 1 von bis zu 4',
-    question: 'Haben Sie gerade zum ersten Mal von der Diagnose erfahren?',
+    question: 'Ist die Diagnose für Sie neu?',
     options: [
       { action: 'q1b-yes', label: 'Ja, die Diagnose ist neu' },
       { action: 'q1b-no', label: 'Nein, schon länger' },
@@ -21,7 +21,7 @@ const TRIAGE_STEPS = {
   },
   q2: {
     progress: 'Frage 2 von bis zu 4',
-    question: 'Sind Sie selbst gerade am Limit — erschöpft, überfordert, ausgebrannt?',
+    question: 'Sind Sie gerade so erschöpft oder überfordert, dass Sie an Ihre Grenzen kommen?',
     options: [
       { action: 'q2-yes', label: 'Ja' },
       { action: 'q2-no', label: 'Nein' },
@@ -29,7 +29,7 @@ const TRIAGE_STEPS = {
   },
   q3: {
     progress: 'Frage 3 von bis zu 4',
-    question: 'Brauchen Sie vor allem Grundlagenwissen über die Erkrankung?',
+    question: 'Möchten Sie vor allem mehr über die Erkrankung erfahren?',
     options: [
       { action: 'q3-yes', label: 'Ja' },
       { action: 'q3-both', label: 'Sowohl als auch' },
@@ -72,7 +72,7 @@ function recommendationFor(action, format) {
     label: 'Passende Einstiege',
     links,
     note: format === 'both'
-      ? 'Sie haben Grundlagen und Werkzeuge gewählt. Beginnen Sie mit dem Zugang, der gerade passt; das thematische Modul ist eine weitere Vertiefung.'
+      ? 'Hier finden Sie Grundlagen und ein passendes Werkzeug. Wählen Sie, womit Sie beginnen möchten. Das zusätzliche Modul vertieft Ihr Thema.'
       : 'Das Werkzeug lässt sich direkt nutzen. Wenn Sie danach mehr lesen möchten, finden Sie hier auch das passende Modul.',
   };
 }
@@ -167,7 +167,7 @@ function TriageFlow({ onNavigate }) {
               {link.text} →
             </a>
           ))}
-          {result.secondary && <p>Sie müssen zuerst kein Modul lesen. Wenn Sie in Ruhe mehr verstehen möchten: <a href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>Wenn die Kraft nachlässt</a>.</p>}
+          {result.secondary && <p>Sie können sich direkt beraten lassen. Wenn Sie auch etwas zu Ihrer Situation lesen möchten: <a href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>Wenn die Kraft nachlässt</a>.</p>}
           <button type="button" className="triage-restart" onClick={restart}>Nochmal beantworten</button>
         </div>
       )}

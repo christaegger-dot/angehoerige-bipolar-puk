@@ -82,7 +82,7 @@ describe('UnterstuetzungPage counselling and material boundaries', () => {
     await user.click(screen.getByRole('button', { name: /Fragen für das Arztgespräch/i }));
 
     const dialog = await screen.findByRole('dialog', { name: 'Fragen für das Arztgespräch' });
-    expect(within(dialog).getByText(/Wie kann ich Ihnen meine Beobachtungen mitteilen, und welche Informationen dürfen Sie mir/i))
+    expect(within(dialog).getByText(/Wie kann ich Ihnen meine Beobachtungen mitteilen\? Welche Informationen dürfen Sie mir/i))
       .toBeInTheDocument();
     expect(dialog.textContent).not.toContain('ohne eine Schweigepflichtentbindung zu brechen');
   });

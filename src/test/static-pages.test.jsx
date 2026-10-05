@@ -40,7 +40,7 @@ describe('content pages', () => {
       'href',
       expect.stringContaining('pukzh.ch'),
     );
-    expect(screen.getByText(/angaben können in der patientendokumentation festgehalten werden/i)).toBeInTheDocument();
+    expect(screen.getByText(/angaben können in der patientendokumentation, also den unterlagen zur behandlung, festgehalten werden/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /rechte und pflichten im spital/i })).toHaveAttribute(
       'href',
       expect.stringContaining('pukzh.ch'),

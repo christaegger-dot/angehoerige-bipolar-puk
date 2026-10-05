@@ -51,6 +51,22 @@
 }
 .krisenplan-notruf-label { min-width: 0; flex: 1 1 10rem; }
 
+/* Complete phone numbers wrap at their existing spaces within the handout.
+   Grid children may shrink, while each link retains its full touch target. */
+.handout-phonelist li > * { min-width: 0; }
+.handout-phonelist-num {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: var(--web-touch-target);
+  max-width: 100%;
+  white-space: normal;
+}
+
+@media (max-width: 700px) {
+  .handout-phonelist li { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* Native controls retain their 44px target size as the SVG scales down. */
 .belastung-marker-actions {
   display: grid;

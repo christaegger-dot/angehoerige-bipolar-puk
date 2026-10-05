@@ -62,8 +62,8 @@ function AtemuebungTool({ onClose }) {
         {phase === 'intro' && (
           <>
             <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Durchatmen</h2>
-            <p className="lede" style={{ maxWidth: '40ch' }}>Wenn der Moment gerade zu viel ist. Fünf geführte Atemzüge als freiwillige Pause. Passen Sie die Atmung an das an, was sich angenehm anfühlt.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '40ch' }}>Einatmen 4 · Halten 2 · Ausatmen 6 · Pause 2. Wiederholt sich fünf Mal, etwa 70 Sekunden. Atemhalten ist optional. Bei Unwohlsein stoppen und normal weiteratmen. Alternativ: den Bodenkontakt spüren und drei Dinge im Raum betrachten.</p>
+            <p className="lede" style={{ maxWidth: '40ch' }}>Wenn Ihnen gerade alles zu viel ist, können Sie mit fünf geführten Atemzügen eine Pause machen. Atmen Sie so, wie es sich für Sie angenehm anfühlt.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '40ch' }}>Der Rhythmus ist: 4 Sekunden einatmen, 2 Sekunden halten, 6 Sekunden ausatmen und 2 Sekunden Pause. Er wiederholt sich fünfmal und dauert etwa 70 Sekunden. Das Atemhalten können Sie auslassen. Stoppen Sie bei Unwohlsein und atmen Sie normal weiter. Als Alternative können Sie den Kontakt zum Boden spüren und drei Dinge im Raum anschauen.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>
@@ -83,7 +83,7 @@ function AtemuebungTool({ onClose }) {
               <div className="atem-label">{label}</div>
             </div>
             <div className="atem-meta">Atemzug {Math.min(zyklus + 1, ATEM_ZYKLEN)} von {ATEM_ZYKLEN}</div>
-            <button className="tool-quiet-btn" onClick={stop}>abbrechen</button>
+            <button className="tool-quiet-btn" onClick={stop}>Abbrechen</button>
           </>
         )}
 
@@ -91,12 +91,12 @@ function AtemuebungTool({ onClose }) {
           <>
             <div className="atem-stage atem-done">
               <div className="atem-circle" style={{ transform: 'scale(0.7)' }} />
-              <div className="atem-label">fertig.</div>
+              <div className="atem-label">Fertig</div>
             </div>
-            <p className="lede" style={{ maxWidth: '36ch', textAlign: 'center', margin: '0 auto 24px' }}>Wenn es noch einmal sein soll, gerne. Ihre Pause wartet.</p>
+            <p className="lede" style={{ maxWidth: '36ch', textAlign: 'center', margin: '0 auto 24px' }}>Sie können die Übung wiederholen oder hier beenden.</p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
-              <button className="btn btn-primary" onClick={start}>Nochmal</button>
-              <button className="tool-quiet-btn" onClick={onClose}>schliessen</button>
+              <button className="btn btn-primary" onClick={start}>Wiederholen</button>
+              <button className="tool-quiet-btn" onClick={onClose}>Schliessen</button>
             </div>
           </>
         )}
@@ -109,13 +109,13 @@ const SELBSTTEST_FRAGEN = [
     q: 'Wie ist Ihr Schlaf in den letzten zwei Wochen?',
     opts: [
       { label: 'Erholsam, ich schlafe meistens gut durch' },
-      { label: 'Meist okay, aber mit unruhigen Nächten' },
+      { label: 'Meist in Ordnung, aber mit unruhigen Nächten' },
       { label: 'Oberflächlich — ich werde oft wach' },
       { label: 'Gestört — ich liege wach oder kann nicht abschalten' },
     ],
   },
   {
-    q: 'Wie geht es Ihnen mit dem täglichen Funktionieren?',
+    q: 'Wie kommen Sie mit Ihrem Alltag zurecht?',
     opts: [
       { label: 'Ich habe Energie für mehr als das Nötigste' },
       { label: 'Ich schaffe, was ansteht — manchmal mit Mühe' },
@@ -124,16 +124,16 @@ const SELBSTTEST_FRAGEN = [
     ],
   },
   {
-    q: 'Wie ist Ihr Kontakt zu Menschen ausserhalb der Erkrankung?',
+    q: 'Wie ist Ihr Kontakt zu Menschen, bei denen die Erkrankung nicht im Vordergrund steht?',
     opts: [
       { label: 'Regelmässig — ich pflege eigene Kontakte' },
-      { label: 'Reduziert, aber noch da' },
+      { label: 'Weniger als früher, aber noch vorhanden' },
       { label: 'Stark zurückgegangen' },
       { label: 'Ich bin meist allein damit' },
     ],
   },
   {
-    q: 'Wenn jemand fragt «Wie geht es Ihnen?» — welche Antwort liegt am nächsten?',
+    q: 'Wenn jemand fragt «Wie geht es Ihnen?»: Welche Antwort passt am ehesten?',
     opts: [
       { label: 'Ich kann ehrlich antworten' },
       { label: 'Ich antworte automatisch «gut»' },
@@ -142,12 +142,12 @@ const SELBSTTEST_FRAGEN = [
     ],
   },
   {
-    q: 'In den letzten Wochen — wie geht es Ihnen innerlich?',
+    q: 'Wie geht es Ihnen innerlich, wenn Sie an die letzten Wochen denken?',
     opts: [
       { label: 'Belastet, aber im Gleichgewicht' },
       { label: 'Wechselhaft — gute und schwere Tage' },
       { label: 'Erschöpft, dünnhäutig, gereizt' },
-      { label: 'Leer, abgestumpft oder ständig in Alarm' },
+      { label: 'Leer, abgestumpft oder ständig in Alarmbereitschaft' },
     ],
   },
 ];
@@ -171,8 +171,8 @@ function SelbsttestTool({ onClose, onNavigate }) {
       {phase === 'intro' && (
         <>
           <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Meine Belastung wahrnehmen</h2>
-          <p className="lede" style={{ maxWidth: '44ch' }}>Fünf Fragen zu Schlaf, Alltag, Kontakten und Befinden. Sie sehen danach Ihre eigenen Antworten und können überlegen, welche Unterstützung Sie brauchen.</p>
-          <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Diese Fragen sind kein validierter Test. Es gibt keine Gesamtpunktzahl, Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert.</p>
+          <p className="lede" style={{ maxWidth: '44ch' }}>Mit fünf Fragen können Sie Ihren Schlaf, Alltag, Ihre Kontakte und Ihr Befinden anschauen. Danach sehen Sie Ihre eigenen Antworten und können überlegen, welche Unterstützung Sie brauchen.</p>
+          <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Die Fragen dienen der persönlichen Reflexion und sind kein Test mit wissenschaftlich bestätigter Aussagekraft. Sie erhalten weder eine Gesamtpunktzahl noch eine Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert.</p>
           <div style={{ marginTop: 24 }}><button className="btn btn-primary" onClick={start}>Beginnen →</button></div>
         </>
       )}
@@ -209,7 +209,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
               <p>Sie beschreiben, dass Ihnen der Alltag derzeit sehr schwerfällt. Holen Sie möglichst zeitnah Unterstützung: bei Ihrer Hausärztin, Ihrem Hausarzt oder einer Beratungsstelle. Welche Aufgabe könnte heute jemand übernehmen?</p>
             </aside>
           )}
-          <p className="selbsttest-body">Was fällt Ihnen besonders auf? Was tut Ihnen gut, was fehlt? Sie dürfen Beratung nutzen, auch wenn vieles noch gelingt. Bei anhaltenden Schlafproblemen, Erschöpfung oder anderen Beschwerden ist eine fachliche Abklärung sinnvoll.</p>
+          <p className="selbsttest-body">Was fällt Ihnen besonders auf? Was tut Ihnen gut, und was fehlt Ihnen? Beratung können Sie auch dann nutzen, wenn vieles noch gelingt. Bei anhaltenden Schlafproblemen, Erschöpfung oder anderen Beschwerden ist eine fachliche Abklärung sinnvoll.</p>
           <div className="selbsttest-phone">
             <a href="tel:+41583843800" className="selbsttest-phone-num">058 384 38 00</a>
             <span className="selbsttest-phone-label">Fachstelle Angehörigenarbeit PUK · werktags · kostenlos</span>
@@ -220,7 +220,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
           </div>
           <div className="selbsttest-foot">
             <button className="tool-quiet-btn" onClick={start}>Fragen erneut ansehen</button>
-            <button className="tool-quiet-btn" onClick={onClose}>schliessen</button>
+            <button className="tool-quiet-btn" onClick={onClose}>Schliessen</button>
           </div>
         </div>
       )}
@@ -232,15 +232,15 @@ const KRISENPLAN_FELDER = [
   {
     id: 'name',
     label: 'Plan für',
-    sub: 'Name oder Initialen — optional, bleibt nur in Ihrem Browser.',
-    placeholder: 'z.B. M. & Christine',
+    sub: 'Name oder Initialen sind freiwillig und bleiben nur in Ihrem Browser.',
+    placeholder: 'Zum Beispiel: M. und Christine',
     kind: 'input',
   },
   {
     id: 'fruehzeichen',
     label: 'Frühwarnzeichen',
-    sub: 'Drei bis fünf persönliche Veränderungen, die vor einer Episode auftreten können. Gemeinsam, bei Bedarf mit dem Behandlungsteam, besprechen.',
-    placeholder: 'z.B.\n— deutlich weniger Schlaf als für die Person üblich\n— auffällig viele neue Pläne\n— Geldausgaben verändern sich\n— Reizbarkeit, Rückzug',
+    sub: 'Besprechen Sie gemeinsam drei bis fünf persönliche Veränderungen, die vor einer Episode auftreten können. Beziehen Sie bei Bedarf das Behandlungsteam ein.',
+    placeholder: 'Zum Beispiel:\n— deutlich weniger Schlaf als für die Person üblich\n— auffällig viele neue Pläne\n— veränderte Geldausgaben\n— Reizbarkeit, Rückzug',
     kind: 'textarea',
     rows: 5,
   },
@@ -248,15 +248,15 @@ const KRISENPLAN_FELDER = [
     id: 'schritte',
     label: 'Erste Schritte bei Verschlechterung',
     sub: 'Welche Reihenfolge und Dringlichkeit haben wir gemeinsam mit dem Behandlungsteam besprochen?',
-    placeholder: 'z.B.\n1. Vereinbarte Ansprechperson im Behandlungsteam kontaktieren\n2. Nächste Schritte gemeinsam fachlich klären\n3. Abgesprochene Unterstützung mit der erkrankten Person nutzen\n4. Vereinbarten Ausweichkontakt und besprochenes Vorgehen nutzen',
+    placeholder: 'Zum Beispiel:\n1. Vereinbarte Ansprechperson im Behandlungsteam kontaktieren\n2. Nächste Schritte gemeinsam fachlich klären\n3. Mit der erkrankten Person die abgesprochene Unterstützung nutzen\n4. Vereinbarten Ausweichkontakt und besprochenes Vorgehen nutzen',
     kind: 'textarea',
     rows: 5,
   },
   {
     id: 'kontakte',
-    label: 'Vertrauenspersonen & Behandlungsteam',
-    sub: 'Mit Namen und Telefonnummern. Im Voraus festgehalten — nicht erst suchen müssen.',
-    placeholder: 'z.B.\nSchwester Anna — 079 ... \nHausärztin Dr. ... — 044 ...\nPsychiaterin Dr. ... — 044 ...',
+    label: 'Vertrauenspersonen und Behandlungsteam',
+    sub: 'Halten Sie Namen und Telefonnummern im Voraus fest, damit Sie sie bei Bedarf zur Hand haben.',
+    placeholder: 'Zum Beispiel:\nSchwester Anna — 079 ... \nHausärztin Dr. ... — 044 ...\nPsychiaterin Dr. ... — 044 ...',
     kind: 'textarea',
     rows: 4,
   },
@@ -264,29 +264,29 @@ const KRISENPLAN_FELDER = [
     id: 'klinik',
     label: 'Klinikwunsch (falls stationär nötig)',
     sub: 'Welche Klinik bevorzugt die erkrankte Person, und welche Ansprechperson wurde gemeinsam vereinbart? Ein Wunsch garantiert keine Aufnahme.',
-    placeholder: 'z.B. bevorzugte Klinik / vereinbarte Ansprechperson im Behandlungsteam',
+    placeholder: 'Zum Beispiel: bevorzugte Klinik / vereinbarte Ansprechperson im Behandlungsteam',
     kind: 'textarea',
     rows: 2,
   },
   {
     id: 'hilft',
     label: 'Was hilft',
-    sub: 'In der akuten Phase, gemeinsam in stabiler Phase abgesprochen.',
-    placeholder: 'z.B.\n— ruhige Stimme, kein Streiten\n— gemeinsame Mahlzeiten\n— feste Bettzeiten\n— Reize reduzieren (TV aus, weniger Menschen)',
+    sub: 'Besprechen Sie in einer stabilen Phase gemeinsam, was in einer akuten Phase helfen kann.',
+    placeholder: 'Zum Beispiel:\n— ruhige Stimme, kein Streiten\n— gemeinsame Mahlzeiten\n— feste Bettzeiten\n— weniger Reize (Fernseher aus, weniger Menschen)',
     kind: 'textarea',
     rows: 4,
   },
   {
     id: 'nichthilft',
     label: 'Was nicht hilft',
-    sub: 'Auch wenn es gut gemeint ist — was wir bewusst lassen.',
-    placeholder: 'z.B.\n— lange Diskussionen über die Wahrnehmung\n— Vorhaltungen, Schuldzuweisungen\n— Schweigen aus Angst\n— unklare Zuständigkeiten',
+    sub: 'Was möchten Sie gemeinsam bewusst vermeiden, auch wenn es gut gemeint ist?',
+    placeholder: 'Zum Beispiel:\n— lange Diskussionen über die Wahrnehmung\n— Vorwürfe, Schuldzuweisungen\n— Schweigen aus Angst\n— unklare Zuständigkeiten',
     kind: 'textarea',
     rows: 4,
   },
   { id: 'ausweichkontakt', label: 'Wenn niemand erreichbar ist', sub: 'Welcher vereinbarte Kontakt und welches besprochene Vorgehen gelten, wenn niemand erreichbar ist oder der Plan nicht zur Lage passt?', placeholder: 'Vereinbarter Ausweichkontakt / besprochenes Vorgehen / wer kann übernehmen?', kind: 'textarea', rows: 3 },
-  { id: 'betreuung', label: 'Kinder und eigene Entlastung', sub: 'Wer betreut Kinder oder andere abhängige Personen? Wer übernimmt, wenn ich nicht begleiten kann?', placeholder: 'Betreuung: Name / Telefon / sicherer Ort. Meine Unterstützung: Name / Telefon.', kind: 'textarea', rows: 3 },
-  { id: 'geprueft', label: 'Gemeinsam geprüft am', sub: 'Datum und nächster Überprüfungstermin. Eine private Absprache ersetzt keine rechtliche Vertretungsbefugnis.', placeholder: 'Datum / wer war dabei / erneut prüfen am', kind: 'input' },
+  { id: 'betreuung', label: 'Kinder und eigene Entlastung', sub: 'Wer betreut Kinder oder andere abhängige Personen? Wer übernimmt, wenn Sie nicht begleiten können?', placeholder: 'Betreuung: Name / Telefon / sicherer Ort. Meine Unterstützung: Name / Telefon.', kind: 'textarea', rows: 3 },
+  { id: 'geprueft', label: 'Gemeinsam geprüft am', sub: 'Halten Sie das Datum und den nächsten Überprüfungstermin fest. Dieser Krisenplan ersetzt keine rechtliche Berechtigung, die andere Person zu vertreten.', placeholder: 'Datum / wer war dabei / erneut prüfen am', kind: 'input' },
 ];
 
 const KRISENPLAN_STORAGE_KEY = 'puk-krisenplan-v1';
@@ -302,10 +302,10 @@ function KrisenplanTool({ onClose, onNavigate }) {
   };
 
   const reset = () => {
-    if (window.confirm('Krisenplan löschen? Aktuelle Eingaben und früher gespeicherte Browser-Kopien werden entfernt. Ausdrucke und PDF-Dateien bleiben erhalten.')) {
+    if (window.confirm('Krisenplan löschen? Ihre aktuellen Eingaben und früher gespeicherte Kopien in diesem Browser werden entfernt. Ausdrucke und PDF-Dateien bleiben erhalten.')) {
       setData({});
       const cleared = clearStoredDraft(KRISENPLAN_STORAGE_KEY);
-      setDeletionHint(cleared ? 'Aktuelle Eingaben und frühere Browser-Kopien gelöscht.' : 'Die Eingaben sind hier entfernt. Frühere Browser-Kopien konnten nicht vollständig gelöscht werden. Löschen Sie die Website-Daten in Ihren Browser-Einstellungen.');
+      setDeletionHint(cleared ? 'Ihre aktuellen Eingaben und frühere Kopien in diesem Browser sind gelöscht.' : 'Ihre aktuellen Eingaben sind gelöscht. Frühere Kopien in diesem Browser konnten nicht vollständig gelöscht werden. Löschen Sie die Website-Daten in Ihren Browser-Einstellungen.');
     }
   };
 
@@ -319,11 +319,11 @@ function KrisenplanTool({ onClose, onNavigate }) {
           <span className="kicker">Werkzeug · Krisenplan</span>
           <h2>Krisenplan</h2>
           <p className="krisenplan-intro">Füllen Sie den Plan in einer ruhigen Phase aus. In einer Krise kann er Ihnen helfen, nächste Schritte und passende Kontakte zu finden. Er ersetzt keine fachliche Einschätzung. Holen Sie bei Unsicherheit professionelle Unterstützung.</p>
-          <p>Dies ist die vollständige gemeinsame Vorlage. Besprechen Sie beim Ausfüllen, welche Aufgaben gewünscht und tragbar sind, was fachlich geklärt werden muss und wann Sie die Absprachen erneut prüfen.</p>
+          <p>Diese Vorlage füllen Sie gemeinsam aus. Besprechen Sie dabei, welche Aufgaben gewünscht und für Sie tragbar sind, was Sie mit einer Fachperson klären müssen und wann Sie die Absprachen erneut prüfen.</p>
           <button className="tool-quiet-btn no-print" onClick={() => { onClose(); onNavigate('modul6', 's2'); }}>Plan gemeinsam vorbereiten · Modul 6 →</button>
           <div className="tool-intro-notes krisenplan-intro-notes" data-storage-key={KRISENPLAN_STORAGE_KEY}>
             <p data-storage-notice="memory-only">Ihre Eingaben können persönliche Gesundheits- und Kontaktdaten enthalten. Sie werden nicht automatisch gespeichert oder versendet. Beim Schliessen des Werkzeugs oder Neuladen der Seite gehen sie verloren. Sichern Sie den ausgefüllten Plan bei Bedarf vor dem Schliessen.</p>
-            <p data-storage-notice="legacy-deletion">Entwürfe aus früheren Versionen werden nicht wieder geöffnet. Mit «Entwurf löschen» können Sie aktuelle Eingaben und frühere Browser-Kopien dieses Werkzeugs entfernen.</p>
+            <p data-storage-notice="legacy-deletion">Entwürfe aus früheren Versionen werden nicht wieder geöffnet. Mit «Entwurf löschen» können Sie aktuelle Eingaben und frühere Kopien dieses Werkzeugs aus dem Browser entfernen.</p>
             <p data-export-notice="print-pdf">Drucke und PDF-Dateien sind zusätzliche Kopien, die Sie separat löschen müssen. Auf gemeinsam genutzten Geräten schliessen Sie nach der Nutzung auch andere offene Tabs mit persönlichen Eingaben.</p>
           </div>
           {lastUpdate && (
@@ -388,13 +388,13 @@ const SAEULEN_DEF = [
         q: 'Wie ist Ihr Schlaf in den letzten zwei Wochen?',
         opts: [
           { label: 'Erholsam — meist gut durchgeschlafen', score: 3 },
-          { label: 'Meist okay, aber mit unruhigen Nächten', score: 2 },
+          { label: 'Meist in Ordnung, aber mit unruhigen Nächten', score: 2 },
           { label: 'Oberflächlich — ich werde oft wach', score: 1 },
           { label: 'Gestört — kaum Erholung', score: 0 },
         ],
       },
       {
-        q: 'Wie viel Bewegung oder Pause haben Sie diese Woche bekommen?',
+        q: 'Wie viel Bewegung oder Pause hatten Sie diese Woche?',
         opts: [
           { label: 'Regelmässig — bewusst eingeplant', score: 3 },
           { label: 'Etwas — wenn es sich ergeben hat', score: 2 },
@@ -407,10 +407,10 @@ const SAEULEN_DEF = [
   {
     key: 'beziehungen',
     label: 'Beziehungen',
-    sub: 'ausserhalb der Erkrankung',
+    sub: 'eigene Kontakte',
     questions: [
       {
-        q: 'Wie regelmässig haben Sie Kontakt zu Menschen ausserhalb der Erkrankung?',
+        q: 'Wie regelmässig haben Sie Kontakt zu Menschen, bei denen die Erkrankung nicht im Vordergrund steht?',
         opts: [
           { label: 'Mehrfach pro Woche', score: 3 },
           { label: 'Wöchentlich', score: 2 },
@@ -472,7 +472,7 @@ const SAEULEN_DEF = [
         q: 'Kennen Sie eine Anlaufstelle, an die Sie sich bei Bedarf wenden würden?',
         opts: [
           { label: 'Ja, ich weiss wohin', score: 3 },
-          { label: 'Vage — ich müsste suchen', score: 2 },
+          { label: 'Ungefähr — ich müsste nachsehen', score: 2 },
           { label: 'Eher nicht', score: 1 },
           { label: 'Nein, ich kenne noch keine passende Anlaufstelle', score: 0 },
         ],
@@ -528,8 +528,8 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
         {phase === 'intro' && (
           <>
             <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Säulen-Check</h2>
-            <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu Ihren Ressourcen in vier Bereichen: Körper, Beziehungen, eigene Welt, fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie können überlegen, was Sie bewahren möchten und wo Sie Unterstützung wünschen. Sie misst keine gesundheitliche Stabilität oder Tragfähigkeit.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Etwa drei Minuten. Anonym, im Browser. Eine persönliche Reflexion ohne validierte klinische Auswertung oder Diagnose. Bei starkem oder anhaltendem Unterstützungsbedarf ist fachliche Beratung sinnvoll.</p>
+            <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu dem, was Sie im Alltag unterstützt: Körper, Beziehungen, eigene Welt und fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie können überlegen, was Sie bewahren möchten und wo Sie Unterstützung wünschen. Ihre gesundheitliche Stabilität oder Tragfähigkeit lässt sich damit nicht messen.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Die Reflexion dauert etwa drei Minuten und findet anonym im Browser statt. Sie liefert keine klinische Auswertung mit wissenschaftlich bestätigter Aussagekraft und keine Diagnose. Bei starkem oder anhaltendem Unterstützungsbedarf ist fachliche Beratung sinnvoll.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Beginnen →</button>
             </div>
@@ -562,7 +562,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
             <div className="selbsttest-zone">
               <span className="selbsttest-zone-kicker">Ihre Einschätzungen jetzt</span>
               <h2>Meine Ressourcen</h2>
-              <p className="selbsttest-zone-sub">Die Höhe fasst Ihre Antworten schematisch zusammen. Sie ist kein gemessener Wert Ihrer Belastbarkeit.</p>
+              <p className="selbsttest-zone-sub">Die Höhe der Balken fasst Ihre Antworten vereinfacht zusammen. Sie zeigt keinen gemessenen Wert Ihrer Belastbarkeit.</p>
             </div>
 
             <div className="saeulen-result">
@@ -586,13 +586,13 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
                   <>Ihre Einschätzungen sind in allen vier Bereichen gleich hoch. Es gibt keine stärkste oder schwächste Säule. Welchen Bereich möchten Sie näher anschauen?</>
                 ) : (
                   <>
-                    Weniger Raum zeigen Ihre Antworten für <strong style={{ color: 'var(--accent)' }}>{leastRoom.map(s => s.label).join(', ')}</strong>. Besonders viel Raum zeigen sie für <strong style={{ color: 'var(--accent)' }}>{mostRoom.map(s => s.label).join(', ')}</strong>.
+                    Nach Ihren Antworten gibt es derzeit weniger Raum für <strong style={{ color: 'var(--accent)' }}>{leastRoom.map(s => s.label).join(', ')}</strong> und mehr für <strong style={{ color: 'var(--accent)' }}>{mostRoom.map(s => s.label).join(', ')}</strong>.
                     {(leastRoom.length > 1 || mostRoom.length > 1) && <> Gleich hoch eingeschätzte Bereiche stehen nebeneinander; ihre Reihenfolge ist keine Rangfolge.</>}
                     {' '}Was möchten Sie bewahren, und wo wünschen Sie sich Unterstützung? Sie entscheiden, welcher Bereich für Sie gerade wichtig ist.
                   </>
                 )}
               </p>
-              <p className="selbsttest-body">Kleine Schritte können helfen; bei starker oder anhaltender Belastung braucht es möglicherweise mehr Entlastung und fachliche Hilfe. Diese Darstellung gibt keine gesundheitliche Entwarnung.</p>
+              <p className="selbsttest-body">Kleine Schritte können helfen. Bei starker oder anhaltender Belastung brauchen Sie möglicherweise zusätzliche Entlastung und fachliche Hilfe. Die Darstellung kann nicht zeigen, ob gesundheitlich alles in Ordnung ist.</p>
             </section>
 
             <div className="selbsttest-actions">
@@ -606,7 +606,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
 
             <div className="selbsttest-foot">
               <button className="tool-quiet-btn" onClick={start}>Fragen erneut ansehen</button>
-              <button className="tool-quiet-btn" onClick={onClose}>schliessen</button>
+              <button className="tool-quiet-btn" onClick={onClose}>Schliessen</button>
             </div>
           </div>
         )}
@@ -621,21 +621,21 @@ const EISBERG_LABELS = {
       label: 'Sorge',
       kind: 'primary',
       x: 50, y: 18,
-      desc: 'Ihre Aufmerksamkeit, Ihr Mitgefühl, das Fragen wie es geht. Andere sehen das oft als Stärke — und übersehen, was es kostet.',
+      desc: 'Aufmerksamkeit und Mitgefühl zeigen sich zum Beispiel darin, dass Sie fragen, wie es der anderen Person geht. Andere sehen darin oft eine Stärke und übersehen, wie viel Kraft das kostet.',
     },
     {
       key: 'geduld',
       label: 'Geduld',
       kind: 'tertiary',
       x: 72, y: 28,
-      desc: 'Nicht sofort reagieren, eine Viertelstunde durchatmen, einen Streit nicht eskalieren lassen. Geduld kostet Energie — nicht weniger, weil sie still ist.',
+      desc: 'Geduld kann heissen, nicht sofort zu reagieren, eine Viertelstunde durchzuatmen oder sich in einem Streit mit einer Antwort Zeit zu lassen. Das kostet Energie, auch wenn andere es kaum bemerken.',
     },
     {
       key: 'hilfsbereitschaft',
       label: 'Hilfsbereitschaft',
       kind: 'secondary',
       x: 28, y: 30,
-      desc: 'Termine begleiten, Medikamente erinnern, beruhigen. Wirkt nach aussen wie Selbstverständlichkeit. Ist es nicht.',
+      desc: 'Wenn es gewünscht ist, können Sie zu Terminen begleiten, an Medikamente erinnern oder versuchen, die andere Person zu beruhigen. Von aussen wirkt solche Hilfe manchmal selbstverständlich. Sie braucht aber Zeit und Kraft.',
     },
   ],
   unten: [
@@ -651,49 +651,49 @@ const EISBERG_LABELS = {
       label: 'Wut',
       kind: 'secondary',
       x: 26, y: 52,
-      desc: 'Auf die Erkrankung, manchmal auf die Person, manchmal auf sich selbst. Oft ein Signal, dass eine Grenze erreicht ist — kein Charakterproblem.',
+      desc: 'Wut kann sich auf die Erkrankung, auf die andere Person oder auf sich selbst richten. Oft ist sie ein Signal, dass eine Grenze erreicht ist, und kein Charakterproblem.',
     },
     {
       key: 'scham',
       label: 'Scham',
       kind: 'tertiary',
       x: 74, y: 50,
-      desc: 'Für eigene Bedürfnisse, eigene Müdigkeit, eigene Wut. Scham macht still in genau den Momenten, in denen Sprechen helfen würde.',
+      desc: 'Scham kann sich auf eigene Bedürfnisse, Müdigkeit oder Wut beziehen. Sie bringt Menschen gerade dann zum Schweigen, wenn ein Gespräch helfen würde.',
     },
     {
       key: 'einsamkeit',
       label: 'Einsamkeit',
       kind: 'secondary',
       x: 30, y: 76,
-      desc: 'Auch mitten in der Beziehung. Das Gefühl, vieles allein zu tragen, weil es niemanden gibt, mit dem Sie es so teilen könnten, wie es ist.',
+      desc: 'Einsamkeit lässt sich auch in einer Beziehung erleben: Sie tragen vieles allein und finden niemanden, mit dem Sie offen darüber sprechen können.',
     },
     {
       key: 'schuld',
       label: 'Schuldgefühle',
       kind: 'tertiary',
       x: 70, y: 76,
-      desc: 'Wenn Sie sich für eigene Pausen, eigene Freude, eigenen Abstand schuldig fühlen. Diese Gefühle sind häufig — und meistens kein Hinweis darauf, dass etwas falsch ist.',
+      desc: 'Vielleicht fühlen Sie sich wegen eigener Pausen, Freude oder Abstand schuldig. Diese Gefühle sind häufig und meist kein Hinweis darauf, dass Sie etwas falsch machen.',
     },
     {
       key: 'trauer',
       label: 'Trauer',
       kind: 'tertiary',
       x: 50, y: 88,
-      desc: 'Um das, was war. Um die Pläne, die nicht so kamen. Um veränderte Nähe oder Erwartungen. «Ambiguous Loss» beschreibt einen uneindeutigen Verlust; das Bild erklärt nicht die ganze Person oder jede Angehörigenerfahrung.',
+      desc: 'Trauer kann sich auf vergangene gemeinsame Zeiten, unerfüllte Pläne oder veränderte Nähe und Erwartungen beziehen. «Ambiguous Loss» bezeichnet einen uneindeutigen Verlust. Dieses Bild erklärt weder die ganze Person noch jede Erfahrung von Angehörigen.',
     },
     {
       key: 'angst',
       label: 'Angst',
       kind: 'tertiary',
       x: 22, y: 90,
-      desc: 'Vor der nächsten Episode. Vor einem Anruf nachts. Manchmal vor sich selbst — vor dem, was Sie nicht mehr halten können.',
+      desc: 'Angst kann die nächste Episode oder einen Anruf in der Nacht betreffen. Manchmal richtet sie sich auch auf die eigenen Reaktionen, wenn die Belastung nicht mehr zu tragen ist.',
     },
     {
       key: 'erstarrung',
       label: 'Erstarrung',
       kind: 'tertiary',
       x: 78, y: 90,
-      desc: 'Wenn das Gefühl gar nicht mehr durchkommt. Manche Angehörige beschreiben es als Glaswand — Sie sehen, was passiert, aber Sie spüren es nicht mehr.',
+      desc: 'Manche Angehörige beschreiben das Gefühl, innerlich kaum noch etwas zu spüren. Sie vergleichen es mit einer Glaswand: Sie sehen, was passiert, fühlen sich aber davon getrennt.',
     },
   ],
 };
@@ -733,7 +733,7 @@ function EisbergTool({ onClose, onNavigate }) {
           <>
             <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Der Eisberg Ihrer Belastung</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>Der Eisberg ist eine Metapher, keine Messung: Manche Belastungen sind sichtbar, andere bleiben verborgen. Die Begriffe sind mögliche Erfahrungen; nicht alle müssen auf Sie zutreffen.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Klicken Sie auf einen Begriff, um zu lesen, was er für viele Angehörige bedeutet. Markieren Sie, was Sie wiedererkennen — am Ende sehen Sie eine Übersicht.</p>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Wählen Sie einen Begriff, um mehr über diese mögliche Erfahrung zu lesen. Markieren Sie, was Sie wiedererkennen. Am Ende sehen Sie Ihre Auswahl im Überblick.</p>
             <div style={{ marginTop: 24 }}>
               <button className="btn btn-primary" onClick={start}>Eisberg ansehen →</button>
             </div>
@@ -796,11 +796,11 @@ function EisbergTool({ onClose, onNavigate }) {
                     onClick={() => toggleMark(sel.key)}
                     aria-pressed={marked.has(sel.key)}
                   >
-                    {marked.has(sel.key) ? '✓ markiert' : 'Trifft auf mich zu'}
+                    {marked.has(sel.key) ? '✓ Markiert' : 'Trifft auf mich zu'}
                   </button>
                 </>
               ) : (
-                <p className="eisberg-tool-hint">Klicken Sie auf einen Begriff im Eisberg, um zu lesen, was er bedeutet.</p>
+                <p className="eisberg-tool-hint">Wählen Sie einen Begriff im Eisberg, um seine Erklärung zu lesen.</p>
               )}
             </div>
 
@@ -846,7 +846,7 @@ function EisbergTool({ onClose, onNavigate }) {
 
             <div className="selbsttest-foot">
               <button className="tool-quiet-btn" onClick={() => { reset(); setPhase('explore'); }}>Erneut ansehen</button>
-              <button className="tool-quiet-btn" onClick={onClose}>schliessen</button>
+              <button className="tool-quiet-btn" onClick={onClose}>Schliessen</button>
             </div>
           </div>
         )}
@@ -858,39 +858,39 @@ const KOMMUNIKATION_ANLAESSE = [
   {
     key: 'fruehzeichen',
     label: 'Ich möchte Frühwarnzeichen ansprechen',
-    sub: 'In stabiler Phase oder beginnender Verschlechterung.',
-    eroeffnung: 'Ich möchte mit dir über eine Beobachtung sprechen; passt der Moment dafür?',
+    sub: 'Wenn die Situation stabil ist oder sich zu verschlechtern beginnt.',
+    eroeffnung: 'Mir ist etwas aufgefallen, das ich mit dir besprechen möchte. Passt es jetzt?',
   },
   {
     key: 'nachher',
     label: 'Ich möchte nach einer Episode reden',
-    sub: 'Wenn die akute Phase vorbei ist und die Person wieder ansprechbar.',
+    sub: 'Wenn die akute Phase vorbei ist und ein Gespräch wieder möglich ist.',
     eroeffnung: 'Ich würde gern über die letzten Wochen reden, wenn du bereit bist. Es muss nicht heute sein.',
   },
   {
     key: 'grenze',
     label: 'Ich möchte eine Grenze setzen',
-    sub: 'Wenn etwas nicht mehr tragbar ist — Verhalten, Verantwortung, Aufgabenverteilung.',
-    eroeffnung: 'Ich brauche, dass wir kurz über etwas Wichtiges reden. Es geht um etwas, das ich so nicht mehr halten kann.',
+    sub: 'Wenn ein Verhalten, übernommene Verantwortung oder die Aufgabenverteilung für Sie nicht mehr tragbar ist.',
+    eroeffnung: 'Ich möchte mit dir über etwas reden, das mir zu viel wird.',
   },
   {
     key: 'behandlung',
     label: 'Ich möchte über Behandlung sprechen',
-    sub: 'Medikamente, Therapie, Termine — Themen, die schnell heikel werden.',
-    eroeffnung: 'Ich mache mir Gedanken zu deiner Behandlung. Können wir das zusammen anschauen, in Ruhe?',
+    sub: 'Wenn Sie Medikamente, Therapie oder Termine besprechen möchten.',
+    eroeffnung: 'Ich möchte mit dir in Ruhe über deine Behandlung sprechen. Passt es jetzt?',
   },
   {
     key: 'anderes',
     label: 'Ein anderes Anliegen',
-    sub: 'Ein eigenes Thema, das nicht in die Kategorien oben passt.',
+    sub: 'Wenn Ihr Thema nicht zu den anderen Anlässen passt.',
     eroeffnung: 'Ich möchte etwas mit dir besprechen. Ist gerade ein guter Moment?',
   },
 ];
 
 const KOMMUNIKATION_HINWEISE = {
-  beobachtung: 'Beschreiben Sie konkret, was Sie wahrgenommen haben — mit Zeitfenster, ohne Interpretation. «Mir ist in den letzten drei Wochen aufgefallen, dass …»',
-  wirkung: 'Sagen Sie, was es mit Ihnen macht — nicht «du machst», sondern «bei mir kommt das so an». Eine Ich-Botschaft.',
-  bitte: 'Formulieren Sie eine Bitte oder Frage, keinen Befehl. Konkret und klein. «Können wir vielleicht zusammen …»',
+  beobachtung: 'Beschreiben Sie, was Ihnen aufgefallen ist und wann. Bleiben Sie bei Ihrer Beobachtung, ohne die Gründe dafür zu deuten. Zum Beispiel: «Mir ist in den letzten drei Wochen aufgefallen, dass …»',
+  wirkung: 'Sagen Sie, wie es Ihnen damit geht oder was sich dadurch in Ihrem Alltag verändert. So sprechen Sie von Ihrer eigenen Erfahrung, statt der anderen Person einen Vorwurf zu machen. Das nennt man eine Ich-Botschaft.',
+  bitte: 'Formulieren Sie eine kleine, konkrete Bitte oder Frage statt eines Befehls. Zum Beispiel: «Können wir zusammen überlegen, welche Unterstützung passen würde?»',
 };
 
 const KOMMUNIKATION_STORAGE_KEY = 'puk-kommunikation-v1';
@@ -922,10 +922,10 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
   const start = () => setStep('anlass');
   const reset = () => {
-    if (window.confirm('Entwurf löschen? Aktuelle Eingaben und früher gespeicherte Browser-Kopien werden entfernt. Zwischenablage und geteilte Kopien bleiben erhalten.')) {
+    if (window.confirm('Entwurf löschen? Ihre aktuellen Eingaben und früher gespeicherte Kopien in diesem Browser werden entfernt. Inhalte in der Zwischenablage und geteilte Kopien bleiben erhalten.')) {
       setData({ ...KOMMUNIKATION_DEFAULT });
       const cleared = clearStoredDraft(KOMMUNIKATION_STORAGE_KEY);
-      setStorageHint(cleared ? 'Aktuelle Eingaben und frühere Browser-Kopien gelöscht.' : 'Die Eingaben sind hier entfernt. Frühere Browser-Kopien konnten nicht vollständig gelöscht werden. Löschen Sie die Website-Daten in Ihren Browser-Einstellungen.');
+      setStorageHint(cleared ? 'Ihre aktuellen Eingaben und frühere Kopien in diesem Browser sind gelöscht.' : 'Ihre aktuellen Eingaben sind gelöscht. Frühere Kopien in diesem Browser konnten nicht vollständig gelöscht werden. Löschen Sie die Website-Daten in Ihren Browser-Einstellungen.');
       setStep('anlass');
     }
   };
@@ -934,7 +934,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
   const eroeffnung = anlass.eroeffnung;
   const isBoundary = data.anlass === 'grenze';
 
-  const scriptParts = [eroeffnung, data.beobachtung || '[Ihre Beobachtung]', data.wirkung || '[Wirkung auf Sie]'];
+  const scriptParts = [eroeffnung, data.beobachtung || '[Ihre Beobachtung]', data.wirkung || '[Wie es Ihnen damit geht]'];
   if (data.bitte || !isBoundary) scriptParts.push(data.bitte || '[Ihre Bitte]');
   if (isBoundary) scriptParts.push(data.grenze || '[Ihre eigene Grenze]');
   const skript = scriptParts.join('\n\n');
@@ -943,10 +943,10 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(skript).then(
         () => { showCopyHint('ok', 'Skript kopiert.'); },
-        () => { showCopyHint('warn', 'Konnte nicht in die Zwischenablage kopieren — bitte das Skript manuell markieren und kopieren.'); },
+        () => { showCopyHint('warn', 'Das Skript konnte nicht kopiert werden. Markieren Sie den Text und kopieren Sie ihn selbst.'); },
       );
     } else {
-      showCopyHint('warn', 'Kopieren nicht verfügbar — bitte das Skript manuell markieren und kopieren.');
+      showCopyHint('warn', 'Die Kopierfunktion ist hier nicht verfügbar. Markieren Sie den Text und kopieren Sie ihn selbst.');
     }
   };
 
@@ -957,9 +957,9 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
         {step === 'intro' && (
           <>
             <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Kommunikations-Trainer</h2>
-            <p className="lede" style={{ maxWidth: '46ch' }}>Vier kurze Schritte für ein schwieriges Gespräch. Sie formulieren Ihr Anliegen, eine konkrete Bitte und bei Bedarf eine eigene Grenze. Am Ende haben Sie ein Skript in Ihren Worten. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
+            <p className="lede" style={{ maxWidth: '46ch' }}>In vier kurzen Schritten bereiten Sie ein schwieriges Gespräch vor. Sie formulieren Ihr Anliegen, eine konkrete Bitte und bei Bedarf eine eigene Grenze. Daraus entsteht ein Skript in Ihren Worten. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
             <div className="tool-intro-notes kommunikation-intro-notes">
-              <p>Nicht jedes Gespräch funktioniert nach Plan. Aber ein vorbereitetes Skript hilft, in der Spannung nicht das eigene Anliegen zu verlieren.</p>
+              <p>Ein vorbereitetes Skript kann helfen, Ihr Anliegen auch in einem angespannten Gespräch im Blick zu behalten. Die Beispielsätze sind Anregungen: Passen Sie Inhalt und Anrede an Ihre Beziehung an.</p>
               <p>Dieses Werkzeug dient der Gesprächsvorbereitung; es ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht.</p>
             </div>
             <div style={{ marginTop: 18 }}>
@@ -986,8 +986,8 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               ))}
             </div>
             <div className="kommunikation-nav">
-              <button className="tool-quiet-btn" onClick={() => setStep('intro')}>← zurück</button>
-              <button className="btn btn-primary" onClick={() => setStep('beobachtung')} disabled={!data.anlass}>weiter →</button>
+              <button className="tool-quiet-btn" onClick={() => setStep('intro')}>← Zurück</button>
+              <button className="btn btn-primary" onClick={() => setStep('beobachtung')} disabled={!data.anlass}>Weiter →</button>
             </div>
           </div>
         )}
@@ -1003,19 +1003,19 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               rows={5}
               value={data.beobachtung}
               onChange={(e) => updateField('beobachtung', e.target.value)}
-              placeholder="z.B. Mir ist in den letzten drei Wochen aufgefallen, dass du nachts oft auf bist und tagsüber wenig isst."
+              placeholder="Zum Beispiel: Mir ist in den letzten drei Wochen aufgefallen, dass du nachts oft wach bist und tagsüber wenig isst."
             />
             <div className="kommunikation-nav">
-              <button className="tool-quiet-btn" onClick={() => setStep('anlass')}>← zurück</button>
-              <button className="btn btn-primary" onClick={() => setStep('wirkung')}>weiter →</button>
+              <button className="tool-quiet-btn" onClick={() => setStep('anlass')}>← Zurück</button>
+              <button className="btn btn-primary" onClick={() => setStep('wirkung')}>Weiter →</button>
             </div>
           </div>
         )}
 
         {step === 'wirkung' && (
           <div className="kommunikation-step">
-            <div className="kommunikation-progress">Schritt 3 von 4 · Wirkung auf mich</div>
-            <h3 className="kommunikation-q"><label htmlFor="kommunikation-wirkung">Was macht das mit Ihnen?</label></h3>
+            <div className="kommunikation-progress">Schritt 3 von 4 · Wie es mir damit geht</div>
+            <h3 className="kommunikation-q"><label htmlFor="kommunikation-wirkung">Wie geht es Ihnen damit?</label></h3>
             <p className="kommunikation-hint">{KOMMUNIKATION_HINWEISE.wirkung}</p>
             <textarea
               id="kommunikation-wirkung"
@@ -1023,11 +1023,11 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               rows={5}
               value={data.wirkung}
               onChange={(e) => updateField('wirkung', e.target.value)}
-              placeholder="z.B. Das macht mir Sorgen — und ich merke, dass ich selbst nicht mehr richtig schlafe, weil ich darauf höre."
+              placeholder="Zum Beispiel: Das macht mir Sorgen. Ich schlafe selbst nicht mehr richtig, weil ich nachts auf jedes Geräusch höre."
             />
             <div className="kommunikation-nav">
-              <button className="tool-quiet-btn" onClick={() => setStep('beobachtung')}>← zurück</button>
-              <button className="btn btn-primary" onClick={() => setStep('bitte')}>weiter →</button>
+              <button className="tool-quiet-btn" onClick={() => setStep('beobachtung')}>← Zurück</button>
+              <button className="btn btn-primary" onClick={() => setStep('bitte')}>Weiter →</button>
             </div>
           </div>
         )}
@@ -1043,7 +1043,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               rows={5}
               value={data.bitte}
               onChange={(e) => updateField('bitte', e.target.value)}
-              placeholder="z.B. Können wir vielleicht zusammen schauen, ob ein Termin bei der Ärztin schon Sinn machen würde?"
+              placeholder="Zum Beispiel: Können wir gemeinsam überlegen, ob ein Termin bei deiner Ärztin sinnvoll wäre?"
             />
             {isBoundary && (
               <>
@@ -1055,12 +1055,12 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
                   rows={4}
                   value={data.grenze}
                   onChange={(e) => updateField('grenze', e.target.value)}
-                  placeholder="z.B. Wenn das Gespräch verletzend wird, beende ich es für heute."
+                  placeholder="Zum Beispiel: Wenn das Gespräch verletzend wird, beende ich es für heute."
                 />
               </>
             )}
             <div className="kommunikation-nav">
-              <button className="tool-quiet-btn" onClick={() => setStep('wirkung')}>← zurück</button>
+              <button className="tool-quiet-btn" onClick={() => setStep('wirkung')}>← Zurück</button>
               <button className="btn btn-primary" onClick={() => setStep('result')} disabled={isBoundary && !data.grenze.trim()}>Skript ansehen →</button>
             </div>
           </div>
@@ -1083,7 +1083,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
                 <p>«{data.beobachtung || '— noch nicht ausgefüllt —'}»</p>
               </div>
               <div className="kommunikation-zeile">
-                <span className="kommunikation-rolle">Wirkung</span>
+                <span className="kommunikation-rolle">Wie es mir damit geht</span>
                 <p>«{data.wirkung || '— noch nicht ausgefüllt —'}»</p>
               </div>
               {(!isBoundary || data.bitte) && (
@@ -1100,16 +1100,16 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               )}
               <div className="kommunikation-zeile">
                 <span className="kommunikation-rolle">Pause</span>
-                <p className="kommunikation-pause">— stille zulassen, antwort abwarten —</p>
+                <p className="kommunikation-pause">Zeit für eine Antwort lassen.</p>
               </div>
             </div>
 
             <aside className="kommunikation-tipp">
               <span className="kommunikation-tipp-kicker">Vor dem Gespräch</span>
               <ul>
-                <li>Bewusst gewählter Moment — nicht direkt nach einer Episode oder im Stress</li>
-                <li>Reize reduzieren — TV aus, Telefon stumm</li>
-                <li>Eine Pause oder ein Gesprächsende ist erlaubt: «Ich beende das Gespräch für heute.» Eine Fortsetzung bleibt freiwillig.</li>
+                <li>Wählen Sie einen ruhigen Moment, nicht direkt nach einer Episode oder im Stress.</li>
+                <li>Vermeiden Sie Ablenkung: Schalten Sie zum Beispiel den Fernseher aus und das Telefon stumm.</li>
+                <li>Sie können eine Pause machen oder das Gespräch beenden, zum Beispiel: «Ich beende das Gespräch für heute.» Ob Sie es später fortsetzen, bleibt Ihre Entscheidung.</li>
                 <li>Lassen Sie nach Ihrer Bitte eine Pause, damit die andere Person antworten kann.</li>
               </ul>
             </aside>
@@ -1132,14 +1132,14 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
             <div className="selbsttest-foot">
               <button className="tool-quiet-btn" onClick={() => setStep('anlass')}>Skript bearbeiten</button>
-              <button className="tool-quiet-btn" onClick={onClose}>schliessen</button>
+              <button className="tool-quiet-btn" onClick={onClose}>Schliessen</button>
             </div>
           </div>
         )}
         <div className="tool-intro-notes no-print" data-storage-key={KOMMUNIKATION_STORAGE_KEY}>
           <p data-storage-notice="memory-only">Ihr Entwurf kann persönliche Gesundheits- und Beziehungsdaten enthalten. Er wird nicht automatisch gespeichert oder versendet. Beim Schliessen des Werkzeugs oder Neuladen der Seite geht er verloren. Kopieren Sie wichtige Inhalte bei Bedarf vor dem Schliessen.</p>
-          <p data-storage-notice="legacy-deletion">Entwürfe aus früheren Versionen werden nicht wieder geöffnet. Mit «Entwurf löschen» können Sie aktuelle Eingaben und frühere Browser-Kopien dieses Werkzeugs entfernen.</p>
-          <p data-export-notice="clipboard">Beim Kopieren liegt Ihr Skript zusätzlich in der Zwischenablage; das Gerät kann es in einem Verlauf behalten oder synchronisieren. «Entwurf löschen» entfernt diese Kopien nicht. Löschen Sie die Zwischenablage und geteilte Kopien separat und schliessen Sie auf gemeinsam genutzten Geräten auch andere offene Tabs mit persönlichen Eingaben.</p>
+          <p data-storage-notice="legacy-deletion">Entwürfe aus früheren Versionen werden nicht wieder geöffnet. Mit «Entwurf löschen» können Sie aktuelle Eingaben und frühere Kopien dieses Werkzeugs aus dem Browser entfernen.</p>
+          <p data-export-notice="clipboard">Beim Kopieren liegt Ihr Skript zusätzlich in der Zwischenablage. Ihr Gerät kann solche Inhalte in einem Verlauf aufbewahren oder auf andere Geräte übertragen. «Entwurf löschen» entfernt diese Kopien nicht. Löschen Sie Inhalte in der Zwischenablage und geteilte Kopien separat. Schliessen Sie auf gemeinsam genutzten Geräten auch andere offene Tabs mit persönlichen Eingaben.</p>
           <button className="tool-quiet-btn" onClick={reset} data-storage-delete={KOMMUNIKATION_STORAGE_KEY} data-storage-scope="session local">Entwurf löschen</button>
           <p role="status" aria-live="polite">{storageHint}</p>
         </div>
@@ -1153,28 +1153,28 @@ const EE_ASPEKTE = [
     label: 'Schuldgefühle',
     pos: { left: '50%', top: '14%' },
     desc: '«Hätte ich die Warnzeichen früher erkannt? Mache ich genug?» Schuldgefühle können zusätzliche Kontrolle oder Aufmerksamkeit auslösen; andere Reaktionen sind ebenso möglich.',
-    unterbrechen: 'Schuldgefühle bemerken, nicht als Urteil übernehmen. Modul 5 vertieft: «Schuldgefühl ist kein Beweis von Schuld.» Es kann auch dann kommen, wenn Sie etwas Richtiges tun.',
+    unterbrechen: 'Nehmen Sie Schuldgefühle wahr, ohne daraus zu schliessen, dass Sie etwas falsch gemacht haben. Wie Modul 5 erklärt, können Schuldgefühle auch dann auftreten, wenn Sie etwas Richtiges tun.',
   },
   {
     key: 'engagement',
     label: 'Zusätzliche Verantwortung',
     pos: { left: '86%', top: '50%' },
-    desc: 'Vielleicht begleiten Sie Termine, unterstützen bei Alltagsaufgaben oder besprechen vereinbarte Beobachtungen. Prüfen Sie gemeinsam, welche Hilfe gewünscht und für Sie tragbar ist, was die andere Person selbst übernehmen möchte und wo Sie Entlastung brauchen. Diagnose und Behandlung bleiben fachliche Aufgaben.',
-    unterbrechen: 'Wählen Sie eine Aufgabe, die Sie neu besprechen möchten: Was können und möchten Sie übernehmen, wo liegt Ihre eigene Grenze und wer könnte Sie entlasten? Eine neue Aufgabenverteilung braucht Absprachen; Verantwortung für den Krankheitsverlauf wird daraus nicht abgeleitet.',
+    desc: 'Vielleicht begleiten Sie zu Terminen, unterstützen im Alltag oder teilen Beobachtungen, wie Sie es gemeinsam vereinbart haben. Prüfen Sie gemeinsam, welche Hilfe gewünscht und für Sie tragbar ist, was die andere Person selbst übernehmen möchte und wo Sie Entlastung brauchen. Diagnose und Behandlung bleiben fachliche Aufgaben.',
+    unterbrechen: 'Wählen Sie eine Aufgabe, die Sie neu besprechen möchten: Was können und möchten Sie übernehmen, wo liegt Ihre eigene Grenze und wer könnte Sie entlasten? Vereinbaren Sie eine neue Aufgabenverteilung gemeinsam. Dadurch übernehmen Sie keine Verantwortung für den Krankheitsverlauf.',
   },
   {
     key: 'erschoepfung',
     label: 'Erschöpfung',
     pos: { left: '50%', top: '86%' },
-    desc: 'Unter Belastung können Energie und Geduld nachlassen. Gereiztheit ist keine zwangsläufige Folge. Entlastung darf früh beginnen.',
-    unterbrechen: 'Eigene Belastung ansprechen. Die Fragen «Meine Belastung wahrnehmen» oder der Säulen-Check helfen bei der Reflexion; sie messen keine Grenze.',
+    desc: 'Unter Belastung können Energie und Geduld nachlassen, ohne dass daraus zwangsläufig Gereiztheit entsteht. Entlastung können Sie früh suchen.',
+    unterbrechen: 'Sprechen Sie Ihre eigene Belastung an. Mit den Fragen «Meine Belastung wahrnehmen» oder dem Säulen-Check können Sie Ihre Situation anschauen. Ob für Sie eine Grenze erreicht ist, können diese Werkzeuge nicht messen.',
   },
   {
     key: 'kritik',
     label: 'Kritik',
     pos: { left: '14%', top: '50%' },
     desc: 'Unter Belastung können verletzende Sätze fallen. Das muss keinen festen Kreislauf auslösen. Eine Pause, eine spätere Klärung oder Unterstützung können helfen.',
-    unterbrechen: 'Pause statt Reaktion. «Ich brauche kurz Pause» ist kein Aufgeben. Eine Pause kann Raum schaffen. Sie dürfen das Gespräch beenden; eine Fortsetzung bleibt freiwillig.',
+    unterbrechen: 'Eine Pause kann helfen, nicht sofort zu reagieren. So könnte es klingen: «Ich brauche eine Pause.» Sie können das Gespräch auch beenden. Ob Sie es später fortsetzen, bleibt Ihre Entscheidung.',
   },
 ];
 
@@ -1189,7 +1189,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
     <ToolOverlay onClose={onClose} ariaLabel="Wenn Belastung Gespräche verändert" cardClass="ee-card">
       <span className="kicker">Werkzeug · Beziehung</span>
         <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Wenn Belastung Gespräche verändert</h2>
-        <p className="ee-intro">Vier mögliche Erfahrungen im Umgang mit Belastung. Die Zusammenstellung dient der persönlichen Reflexion; sie ist kein Test und gibt keine feste Reihenfolge vor. Wählen Sie, was Sie wiedererkennen.</p>
+        <p className="ee-intro">Hier finden Sie vier mögliche Erfahrungen, mit denen Sie Ihre eigene Belastung anschauen können. Sie sind keine Testfragen und geben keine feste Reihenfolge vor. Wählen Sie, was Sie wiedererkennen.</p>
 
         <div className="ee-stage">
           <svg viewBox="0 0 400 400" className="ee-svg" aria-hidden="true">
@@ -1229,7 +1229,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
               onClick={() => setView('was')}
               onKeyDown={handleTabKeyDown}
             >
-              Was passiert
+              Mögliche Erfahrung
             </button>
             <button
               role="tab"
@@ -1239,7 +1239,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
               onClick={() => setView('unterbrechen')}
               onKeyDown={handleTabKeyDown}
             >
-              Wo unterbrechen
+              Was helfen kann
             </button>
           </div>
           <div className="ee-detail-body">
@@ -1257,7 +1257,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
         </div>
 
         <p className="ee-foot-note">
-          Eigene Grenzen sind erlaubt. Schuldgefühle sind kein Urteil über Ihre Verantwortung. Modul 5 vertieft, wie Zuwendung und Selbstschutz nebeneinander Platz haben können.
+          Schuldgefühle allein zeigen nicht, wofür Sie verantwortlich sind. Eigene Grenzen können neben der Zuwendung zur anderen Person Platz haben. Modul 5 vertieft dieses Abwägen.
         </p>
     </ToolOverlay>
   );
@@ -1269,7 +1269,7 @@ const PHASEN_VARIANTEN = [
     label: 'Bipolar I',
     sub: 'Diagnose: fachlich einzuordnen',
     path: 'M 0,90 L 60,90 Q 90,30 120,55 Q 150,90 180,135 Q 210,160 230,140 Q 260,90 320,90 Q 350,40 380,75 L 400,90',
-    desc: 'Die Kurve ist ein fiktives Beispiel, keine Diagnosehilfe. Die diagnostischen Kriterien richten sich nach der verwendeten Klassifikation; eine Fachperson beurteilt den bisherigen Verlauf, Dauer, Begleitsymptome und Beeinträchtigung gemeinsam.',
+    desc: 'Diese Kurve zeigt ein erfundenes Beispiel und hilft nicht dabei, eine Diagnose zu stellen. Dafür beurteilt eine Fachperson den bisherigen Verlauf, die Dauer, weitere Symptome und die Beeinträchtigung zusammen. Welche Kriterien dabei gelten, hängt von der verwendeten Klassifikation ab, also dem System zur Einordnung von Erkrankungen.',
     angehoerige: 'Bei einer schweren Manie können Kontrollverlust und Angst im Vordergrund stehen. Welche Belastung entsteht, ist individuell.',
   },
   {
@@ -1277,15 +1277,15 @@ const PHASEN_VARIANTEN = [
     label: 'Bipolar II',
     sub: 'Diagnose: fachlich einzuordnen',
     path: 'M 0,90 L 50,90 Q 70,60 95,75 Q 110,90 135,140 Q 175,165 215,160 Q 250,150 280,90 Q 295,68 320,80 Q 340,90 360,140 Q 380,160 400,150',
-    desc: 'Auch dieses Beispiel beschreibt keine diagnostischen Kriterien. Eine Fachperson ordnet den bisherigen Verlauf und die einzelnen Episoden anhand der verwendeten Klassifikation ein. An der Form der Kurve lässt sich keine Diagnose ablesen.',
-    angehoerige: 'Depressionen können erheblich belasten. Dauer und Sichtbarkeit unterscheiden sich; Angehörige dürfen eigene Bedürfnisse unabhängig davon ansprechen.',
+    desc: 'Auch diese Kurve zeigt ein erfundenes Beispiel und erklärt keine Diagnosekriterien. Eine Fachperson ordnet den bisherigen Verlauf und die einzelnen Episoden anhand der verwendeten Klassifikation ein, also dem System zur Einordnung von Erkrankungen. Die Form der Kurve allein erlaubt keine Diagnose.',
+    angehoerige: 'Depressionen können erheblich belasten. Wie lange sie dauern und wie gut sie von aussen erkennbar sind, unterscheidet sich. Ihre eigenen Bedürfnisse können Sie unabhängig davon ansprechen.',
   },
   {
     key: 'misch',
     label: 'Mischzustände',
     sub: 'Zustand: gleichzeitige Symptome',
     path: 'M 0,90 L 30,80 Q 50,55 70,100 Q 90,140 110,75 Q 130,40 155,120 Q 175,150 200,80 Q 220,55 250,135 Q 280,155 305,90 Q 325,55 350,130 L 400,110',
-    desc: 'Die Abbildung zeigt erhöhte Aktivierung und depressive Stimmung im gleichen Zeitraum. Ob und wie solche Erfahrungen als Mischzustand einzuordnen sind, wird fachlich anhand des Gesamtverlaufs und der verwendeten Klassifikation beurteilt. Die Linien sind keine Messung.',
+    desc: 'Die Abbildung zeigt erhöhte Aktivierung und depressive Stimmung im gleichen Zeitraum. Fachpersonen beurteilen anhand des gesamten Verlaufs und der verwendeten Klassifikation, ob und wie diese Erfahrungen als Mischzustand einzuordnen sind. Die Klassifikation ist das System zur Einordnung von Erkrankungen. Die Linien zeigen keine Messwerte.',
     angehoerige: 'Gleichzeitige Aktivierung und depressive Symptome können für Angehörige besonders belastend und schwer verständlich sein; die Belastung ist individuell.',
   },
   {
@@ -1293,7 +1293,7 @@ const PHASEN_VARIANTEN = [
     label: 'Stabile Phase',
     sub: 'Zustand: ausserhalb einer Episode',
     path: 'M 0,92 Q 50,85 100,93 Q 150,88 200,92 Q 250,87 300,90 Q 350,93 400,88',
-    desc: 'Stabile Phasen können lange dauern und Erholung, eigene Pläne und gute gemeinsame Zeit ermöglichen. Manchmal bestehen Restsymptome oder eigene Wachsamkeit fort.',
+    desc: 'Stabile Phasen können lange dauern und Erholung, eigene Pläne und gute gemeinsame Zeit ermöglichen. Manchmal bleiben einzelne Symptome bestehen. Auch die eigene Wachsamkeit kann anhalten.',
     angehoerige: 'Stabile Phasen sind wertvoll für Planung und Gespräche, aber nicht automatisch entlastend. Viele Angehörige bleiben innerlich wachsam, auch wenn nach aussen Ruhe sichtbar ist.',
   },
 ];
@@ -1308,7 +1308,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
     <ToolOverlay onClose={onClose} ariaLabel="Bipolarer Phasenverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Interaktiv</span>
         <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Bipolarer Phasenverlauf</h2>
-        <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Wählen Sie eine fiktive Verlaufsskizze und lesen Sie dazu mögliche Erfahrungen von Angehörigen. Die Auswahlfelder Bipolar I und II sind keine Erklärung der Diagnoseunterscheidung; diese finden Sie in Modul 1. Die Kurven haben keinen Zeitmassstab und geben keine individuelle Prognose. Keine Diagnose lässt sich an einer Kurve ablesen.</p>
+        <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Wählen Sie eine der fiktiven Skizzen und lesen Sie dazu mögliche Erfahrungen von Angehörigen. Wie sich die Diagnosen Bipolar I und II unterscheiden, erklärt Modul 1. Die Skizzen haben keinen Zeitmassstab und erlauben weder eine Diagnose noch eine Vorhersage des Verlaufs einer bestimmten Person.</p>
 
         <div className="phasen-tabs" role="tablist">
           {PHASEN_VARIANTEN.map((p) => (
@@ -1329,14 +1329,14 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
 
         {active === 'misch' ? (
           <figure className="phasen-figure">
-            <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Fiktives Beispiel: erhöhte Aktivierung und depressive Stimmung bestehen gleichzeitig. Zwei getrennte Linien zeigen die beiden Dimensionen.">
+            <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Fiktives Beispiel: Erhöhte Aktivierung und depressive Stimmung bestehen gleichzeitig und werden als zwei getrennte Linien dargestellt.">
               <text x="10" y="20" fontFamily="var(--sans)" fontSize="11" fill="var(--accent)">Erhöhte Aktivierung / Getriebenheit</text>
               <path d="M 10,65 Q 100,40 190,60 T 400,50" fill="none" stroke="var(--accent)" strokeWidth="2.5" />
               <text x="10" y="120" fontFamily="var(--sans)" fontSize="11" fill="var(--ink)">Depressive Stimmung / Hoffnungslosigkeit</text>
               <path d="M 10,160 Q 100,140 190,160 T 400,150" fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeDasharray="6 3" />
               <text x="400" y="192" textAnchor="end" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)">Gleicher Zeitraum →</text>
             </svg>
-            <figcaption>Zwei gleichzeitige Dimensionen, kein rascher Wechsel zwischen Hoch und Tief. Fiktive Darstellung, keine Messung oder Diagnose.</figcaption>
+            <figcaption>Die beiden Linien zeigen gleichzeitige Symptome, keinen raschen Wechsel zwischen Hoch und Tief. Die Darstellung ist fiktiv und erlaubt weder eine Messung noch eine Diagnose.</figcaption>
           </figure>
         ) : (
         <figure className="phasen-figure">
@@ -1359,7 +1359,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
             <path d={cur.path + ' L 400,90 L 10,90 Z'} transform="translate(10 0)" fill="url(#phasen-fill)" />
             <path d={cur.path} transform="translate(10 0)" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <figcaption>Schematische Darstellung zur Orientierung — kein Diagnosewerkzeug. Reale Verläufe, Übergänge und Zwischenphasen variieren stark.</figcaption>
+          <figcaption>Eine vereinfachte Darstellung zur Orientierung, kein Diagnosewerkzeug. Tatsächliche Verläufe, Übergänge und Zwischenphasen können sehr unterschiedlich sein.</figcaption>
         </figure>
 
         )}
@@ -1399,9 +1399,9 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
 
   // Drei Episoden mit Erklärungen
   const episoden = [
-    { x: 110, y: 60,  label: 'Erste Episode', text: 'Manche Angehörige reagieren zunächst mit viel Organisieren und Helfen; andere fühlen sich unsicher oder überfordert. Ihre eigene Belastung darf von Anfang an Aufmerksamkeit bekommen.' },
-    { x: 220, y: 95, label: 'Wiederkehr', text: 'Nach einer weiteren Krise kann Erholung Zeit brauchen. Manche Angehörige erleben mehr Belastung, andere finden wieder zu Ruhe und Vertrauen. Eine feste Reihenfolge gibt es nicht.' },
-    { x: 330, y: 130, label: 'Längerfristige Belastung', text: 'Bei manchen Angehörigen bleibt Belastung länger bestehen. Andere erleben lange stabile Zeiten. Neue Aufgabenverteilung, eigene Behandlung bei Bedarf und praktische Hilfe können wichtig sein.' },
+    { x: 110, y: 60,  label: 'Erste Episode', text: 'Manche Angehörige organisieren und helfen zunächst viel, andere fühlen sich unsicher oder überfordert. Ihre eigene Belastung verdient von Anfang an Aufmerksamkeit.' },
+    { x: 220, y: 95, label: 'Wiederkehr', text: 'Nach einer weiteren Krise kann es Zeit brauchen, sich zu erholen. Manche Angehörige erleben mehr Belastung, andere finden wieder zu Ruhe und Vertrauen. Diese Erfahrungen folgen keiner festen Reihenfolge.' },
+    { x: 330, y: 130, label: 'Längerfristige Belastung', text: 'Bei manchen Angehörigen bleibt die Belastung länger bestehen. Andere erleben lange stabile Zeiten. Es kann wichtig sein, Aufgaben neu zu verteilen, praktische Hilfe zu nutzen oder bei Bedarf eine eigene Behandlung zu beginnen.' },
   ];
   const activateEpisode = React.useCallback((index) => {
     setActiveEpisode(index);
@@ -1411,7 +1411,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
     <ToolOverlay onClose={onClose} ariaLabel="Belastungsverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Verlauf</span>
         <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Mögliche Belastungsverläufe</h2>
-        <p className="ee-intro">Die eigene Kraft kann nach Krisen abnehmen, sich erholen oder weitgehend stabil bleiben. Drei fiktive Beispiele zeigen diese Unterschiede. Die Linien sind keine Messwerte und kein Nachweis einer bestimmten Behandlung. Wählen Sie einen Marker für eine mögliche Erfahrung.</p>
+        <p className="ee-intro">Die eigene Kraft kann nach Krisen abnehmen, sich erholen oder weitgehend stabil bleiben. Drei fiktive Beispiele zeigen diese Unterschiede. Die Linien sind keine Messwerte und belegen nicht die Wirkung einer bestimmten Behandlung. Wählen Sie eine der nummerierten Stellen, um eine mögliche Erfahrung zu lesen.</p>
 
         <div className="belastung-toggle">
           <button
@@ -1429,7 +1429,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
         </div>
 
         <figure className="phasen-figure">
-          <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Belastungsverlauf von Angehörigen über mehrere Episoden, mit drei nummerierten Markern. Die zugehörigen Erfahrungen können unterhalb der Abbildung ausgewählt werden.">
+          <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Möglicher Belastungsverlauf von Angehörigen über mehrere Episoden, mit drei nummerierten Stellen. Die zugehörigen Erfahrungen können unterhalb der Abbildung ausgewählt werden.">
             {/* Achsen */}
             <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" fontWeight="500">VOLL</text>
             <text x="6" y="178" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" fontWeight="500">RESERVE</text>
@@ -1495,7 +1495,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
               </g>
             ))}
           </svg>
-          <figcaption>Fiktive Beispiele ohne Zeitmassstab. Verlauf und Unterstützungsbedarf sind individuell. Die Marker bezeichnen mögliche Erfahrungen, keine Entwicklungsstufen.</figcaption>
+          <figcaption>Die Beispiele sind fiktiv und haben keinen Zeitmassstab. Verlauf und Unterstützungsbedarf sind individuell. Die nummerierten Stellen zeigen mögliche Erfahrungen, keine Entwicklungsstufen.</figcaption>
         </figure>
 
         <ol className="belastung-marker-actions" aria-label="Mögliche Erfahrungen auswählen">
@@ -1525,7 +1525,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
         )}
 
         <p className="ee-foot-note">
-          Unterstützung kann entlasten, bestimmt aber nicht allein den Verlauf. Welche Hilfe passt, hängt von Ihrer Situation ab. Sie dürfen sie nutzen, bevor Sie an eine Grenze kommen.
+          Unterstützung kann entlasten, bestimmt aber nicht allein den Verlauf. Welche Hilfe passt, hängt von Ihrer Situation ab. Sie können sie nutzen, bevor Sie an eine Grenze kommen.
         </p>
 
         <div className="selbsttest-actions">

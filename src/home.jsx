@@ -23,17 +23,15 @@ function HomePage({ onNavigate }) {
             <a aria-label="Schnelleinstieg Unterstützung" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>Unterstützung</a>
           </div>
           <h1 className="animate-in delay-1">
-            Wenn jemand, den Sie lieben, eine <em>bipolare Störung</em> hat — und Sie selbst dabei oft vergessen werden.
+            Wenn jemand in Ihrem Umfeld eine <em>bipolare Störung</em> hat.
           </h1>
-          <p className="hero-lede animate-in delay-2">Eine Lese-Begleitung für Partnerinnen und Partner, Eltern, Geschwister, erwachsene Kinder und Menschen in Freundschaften.
-
-          </p>
+          <p className="hero-lede animate-in delay-2">Informationen und Anregungen für Partnerinnen und Partner, Eltern, Geschwister, erwachsene Kinder, Freundinnen und Freunde. Hier geht es um die Erkrankung und um Ihre eigenen Bedürfnisse als Angehörige oder nahestehende Person.</p>
           <div className="hero-actions animate-in delay-3">
             <a className="hero-cta puk-link--action" href="#triage" onClick={(e) => { e.preventDefault(); document.getElementById('triage').scrollIntoView({ behavior: 'smooth' }); }}>
               Wo soll ich anfangen? →
             </a>
             <a className="hero-cta-secondary puk-link--action" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)} {...navPreloadProps('modul1')}>Direkt zu Modul 1</a>
-            <a className="hero-cta-secondary puk-link--action" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Ich brauche jetzt eine konkrete Hilfe</a>
+            <a className="hero-cta-secondary puk-link--action" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Konkrete Hilfen für den Alltag</a>
           </div>
           <div className="hero-illustration animate-in delay-3">
             <Ill.Hero size={420} />
@@ -57,7 +55,7 @@ function HomePage({ onNavigate }) {
         <div className="col-wide">
           <span className="kicker">Drei Wege zum Einstieg</span>
           <h2 style={{ maxWidth: '20ch', marginBottom: 8 }}>Wählen Sie den Zugang, der gerade passt.</h2>
-          <p style={{ color: 'var(--ink-soft)', maxWidth: '52ch', marginBottom: 32 }}>Die Startseite hilft beim Sortieren. Den vollständigen Lernpfad mit allen sieben Modulen finden Sie gesammelt unter <a className="link-underline puk-link--inline" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>Module</a>.</p>
+          <p style={{ color: 'var(--ink-soft)', maxWidth: '52ch', marginBottom: 32 }}>Sie können ein Thema lesen, ein Werkzeug ausprobieren oder Beratung suchen. Alle sieben Module finden Sie unter <a className="link-underline puk-link--inline" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>Module</a>.</p>
           <ul className="module-list" role="list" aria-label="Drei Wege zum Einstieg">
             <li>
               <a className="module-row" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>
@@ -115,8 +113,8 @@ function HomePage({ onNavigate }) {
           <p className="kicker">Redaktionelles Fallbeispiel (fiktiv)</p>
           <p className="story-quote">«Meistens stand da, was <em>er</em> braucht. Selten, was mit <em>mir</em> passiert.»</p>
           <div className="story-body">
-            <p>Als mein Partner vor sechs Jahren die Diagnose bekam, habe ich zuerst alles gelesen, was ich finden konnte. Die ersten zwei Jahre habe ich durchgehalten — Arzttermine, Krisen, bei der Arbeit funktioniert. Irgendwann konnte ich abends nicht mehr weinen und auch nicht mehr lachen.</p>
-            <p>Der Wendepunkt war kein grosser Moment. Die Frau am Telefon der Fachstelle hat nicht erklärt, was bipolare Störung ist. Sie hat gefragt, wie es <em>mir</em> geht. Das war das Erste, was geholfen hat.</p>
+            <p>Als mein Partner vor sechs Jahren die Diagnose bekam, habe ich zuerst alles gelesen, was ich finden konnte. In den ersten zwei Jahren habe ich ihn zu Arztterminen begleitet, Krisen erlebt und nebenbei weitergearbeitet. Irgendwann konnte ich abends weder weinen noch lachen.</p>
+            <p>Ein Gespräch mit der Fachstelle war für mich ein Wendepunkt. Die Frau am Telefon hat gefragt, wie es <em>mir</em> geht. Das war das Erste, was mir geholfen hat.</p>
           </div>
           <p className="story-attribution">
             Perspektive einer Partnerin
@@ -131,7 +129,7 @@ function HomePage({ onNavigate }) {
           <div className="tools-teaser-head">
             <div>
               <span className="kicker">Werkzeuge</span>
-              <h2>Direkt nutzen — ohne vorher zu lesen.</h2>
+              <h2>Werkzeuge direkt ausprobieren.</h2>
             </div>
             <a className="tools-teaser-link" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')}>Alle neun Werkzeuge →</a>
           </div>
@@ -153,8 +151,8 @@ function HomePage({ onNavigate }) {
       {/* INVITATION */}
       <section className="invitation">
         <div className="invitation-inner">
-          <span className="kicker rule-center">Sie dürfen anrufen</span>
-          <h2>Sie müssen nicht wissen, was Sie sagen wollen.</h2>
+          <span className="kicker rule-center">Beratung für Angehörige</span>
+          <h2>Auch ohne vorbereitete Fragen.</h2>
           <p>Die Fachstelle Angehörigenarbeit bietet Beratung und Psychoedukation für Angehörige – auch wenn Sie noch nicht sicher sind, ob Sie Unterstützung brauchen.</p>
           <div className="invitation-contact">
             <a className="invitation-phone" href="tel:+41583843800">058 384 38 00</a>

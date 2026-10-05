@@ -13,7 +13,7 @@ function Reservoir() {
     { from: 70, to: 95, key: 'getragen', label: 'Getragen', sub: 'es geht — auch wenn es manchmal anstrengend ist' },
     { from: 35, to: 70, key: 'schmal', label: 'Schmal', sub: 'es funktioniert — aber nichts Zusätzliches geht mehr' },
     { from: 12, to: 35, key: 'reserve', label: 'Reserve', sub: 'aus Routine und Pflichtgefühl, nicht mehr aus Kraft' },
-    { from: 0, to: 12, key: 'notlage', label: 'Kaum Kraft', sub: 'Ruhe und Unterstützung gewünscht' },
+    { from: 0, to: 12, key: 'notlage', label: 'Kaum Kraft', sub: 'Wunsch nach Ruhe und Unterstützung' },
   ];
   const top = 50, bot = 320;
   const yFor = (val) => bot - ((val / 100) * (bot - top));
@@ -75,19 +75,19 @@ function ReservoirFigur() {
       </div>
       <figcaption>
         <strong id="m4-reservoir-title">Das Kraft-Reservoir.</strong>{' '}
-        Ein Bild für eigene Kräfte, keine Messung. Die eingezeichnete Füllhöhe ist ein fiktives Beispiel.
-        {' '}Die Bereiche sind keine geprüften Schwellen für Belastung oder Dringlichkeit.
+        Ein Bild für die eigenen Kräfte, keine Messung. Die eingezeichnete Füllhöhe ist ein fiktives Beispiel.
+        {' '}Die Bereiche sind keine geprüften Schwellenwerte für Belastung oder Dringlichkeit.
       </figcaption>
       <FigureText visualId="m4-reservoir">
-        <p>Ein Behälter zeigt eigene Kraft als Metapher. Daneben stehen von oben nach unten fünf Beschreibungen:</p>
+        <p>Der Behälter steht für die eigenen Kräfte. Daneben stehen von oben nach unten fünf Beschreibungen:</p>
         <ul>
           <li><strong>Voll:</strong> getragen, mit Spielraum.</li>
           <li><strong>Getragen:</strong> es geht, auch wenn es manchmal anstrengend ist.</li>
           <li><strong>Schmal:</strong> es funktioniert, aber nichts Zusätzliches geht mehr.</li>
           <li><strong>Reserve:</strong> aus Routine und Pflichtgefühl, nicht mehr aus Kraft.</li>
-          <li><strong>Kaum Kraft:</strong> Ruhe und Unterstützung gewünscht.</li>
+          <li><strong>Kaum Kraft:</strong> Wunsch nach Ruhe und Unterstützung.</li>
         </ul>
-        <p>Der eingezeichnete Füllstand ist fiktiv. Die Bereiche sind keine geprüften Schwellen für Belastung oder Dringlichkeit und ergeben keinen persönlichen Score.</p>
+        <p>Der eingezeichnete Füllstand ist fiktiv. Die Bereiche sind keine geprüften Schwellenwerte für Belastung oder Dringlichkeit. Aus dem Bild lässt sich kein persönlicher Belastungswert ablesen.</p>
       </FigureText>
     </figure>
   );
@@ -115,7 +115,7 @@ function Warnzeichen() {
     <div className="warnzeichen">
       <span className="kicker">Eigene Beobachtungen</span>
       <h3>Was Sie an sich selbst bemerken können.</h3>
-      <p className="warnzeichen-lead">Die folgenden Beispiele können Ihnen helfen, ein Gespräch über Ihre eigene Lage vorzubereiten. Sie sind keine Diagnose- oder Prüfliste. Aus der Anzahl oder Kombination lässt sich weder Erschöpfung noch die Ursache von Beschwerden bestimmen.</p>
+      <p className="warnzeichen-lead">Die folgenden Beispiele können Ihnen helfen, ein Gespräch über Ihre eigene Lage vorzubereiten. Sie dienen nicht dazu, eine Diagnose zu stellen oder Ihre Lage zu bewerten. Auch wenn mehrere Beobachtungen zusammenkommen, lässt sich daraus weder Erschöpfung noch die Ursache von Beschwerden bestimmen.</p>
       <div className="warnzeichen-grid">
         {groups.map(g => (
           <div key={g.titel} className="warnzeichen-col">
@@ -151,12 +151,12 @@ function Modul4Page({ onNavigate }) {
 
   const sections = [
     { id: 's1', label: 'Trauer ohne klaren Abschied' },
-    { id: 's2', label: 'Wie Erschöpfung sich aufbaut' },
+    { id: 's2', label: 'Wie sich Belastung verändern kann' },
     { id: 's3', label: 'Eigene Beobachtungen' },
-    { id: 's4', label: 'Schonhaltung & eigene Bedürfnisse' },
+    { id: 's4', label: 'Rücksicht und eigene Bedürfnisse' },
     { id: 's5', label: 'Was auf der Strecke bleibt' },
-    { id: 's6', label: 'Wenn Kinder mittragen' },
-    { id: 's7', label: 'Eigene Lage & nächste Schritte' },
+    { id: 's6', label: 'Wenn Kinder mitbetroffen sind' },
+    { id: 's7', label: 'Eigene Lage und nächste Schritte' },
     { id: 's8', label: 'Worauf es ankommt' },
   ];
 
@@ -181,7 +181,7 @@ function Modul4Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 14–16 Minuten · 8 Abschnitte</span>
             </div>
             <h1>Wenn die Kraft <em>nachlässt</em></h1>
-            <p className="lede">Anhaltende Belastung kann die eigene Kraft und Gesundheit beeinträchtigen, auch zwischen Episoden. Dauer und Ausmass sind unterschiedlich; Erholung und neue Handlungsspielräume bleiben möglich. Dieses Modul schaut weniger auf Beziehung oder Akuthilfe als auf das, was Dauerbelastung mit Ihnen selbst macht.</p>
+            <p className="lede">Anhaltende Belastung kann Ihre Kraft und Gesundheit beeinträchtigen, auch zwischen Krankheitsphasen. Wie lange und wie stark Sie belastet sind, ist von Mensch zu Mensch unterschiedlich. Auch Erholung und mehr Spielraum im Alltag sind möglich. Im Mittelpunkt dieses Moduls steht, wie es Ihnen selbst unter dieser Belastung geht.</p>
           </div>
         </header>
 
@@ -208,14 +208,14 @@ function Modul4Page({ onNavigate }) {
             <ModuleQuickStart number={4} onNavigate={onNavigate} />
 
             <blockquote className="module-quote" id="quote-m4-01">
-              <p>«Ich sage allen, es geht mir gut. Aber nachts liege ich wach und frage mich, wie lange ich das noch schaffe. Ich bin so müde — nicht körperlich, sondern in meiner Seele.»</p>
+              <p>«Ich sage allen, es geht mir gut. Aber nachts liege ich wach und frage mich, wie lange ich das noch schaffe. Ich bin müde, und auch innerlich fehlt mir die Kraft.»</p>
               <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
             </blockquote>
 
             <section id="s1">
               <h2>Da und doch nicht da — Trauer ohne klaren Abschied</h2>
-              <p className="dropcap">Vielleicht ist Ihnen die andere Person nah, und gleichzeitig vermissen Sie Vertrautes: gemeinsame Pläne, Nähe oder einen Alltag, auf den Sie sich verlassen konnten. Auch solche Veränderungen dürfen Sie betrauern.</p>
-              <p>Sie können sich verbunden und zugleich einsam fühlen, zuversichtlich sein und trotzdem vorsichtig bleiben. Vielleicht finden Sie für diese Trauer wenig Verständnis im Umfeld. Sie müssen Ihr Erleben weder rechtfertigen noch zu einem bestimmten Zeitpunkt abschliessen.</p>
+              <p className="dropcap">Vielleicht fühlen Sie sich der anderen Person nah und vermissen gleichzeitig Vertrautes: gemeinsame Pläne, Nähe oder einen Alltag, auf den Sie sich verlassen konnten. Auch solche Veränderungen können Anlass für Trauer sein.</p>
+              <p>Verbundenheit und Einsamkeit können nebeneinander bestehen, ebenso Zuversicht und Vorsicht. Nicht immer findet diese Trauer im Umfeld Verständnis. Sie müssen Ihr Erleben weder rechtfertigen noch zu einem bestimmten Zeitpunkt abschliessen.</p>
 
               <h3>Worüber manche Angehörige trauern</h3>
               <p><strong>Gemeinsame Zukunft.</strong> Pläne — Kinder, Reisen, gemeinsames Altern — können neu besprochen oder angepasst werden.</p>
@@ -225,53 +225,53 @@ function Modul4Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Wenn diese Trauer gross wird</span>
-                <p>Sie dürfen Unterstützung suchen, etwa eine eigene Beratung oder den Austausch mit anderen Angehörigen. Ob Einzel- oder Paartherapie für Ihre Situation passt, können Sie mit einer Fachperson klären. Fragen Sie bei Angeboten wie VASK Zürich oder Selbsthilfe Zürich nach aktuellen Möglichkeiten. Weitere Anlaufstellen finden Sie unter <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>
+                <p>Eine eigene Beratung oder der Austausch mit anderen Angehörigen kann eine Möglichkeit sein. Ob Einzel- oder Paartherapie für Ihre Situation passt, können Sie mit einer Fachperson klären. Fragen Sie bei VASK Zürich oder Selbsthilfe Zürich nach aktuellen Angeboten. Weitere Anlaufstellen finden Sie unter <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>
               </aside>
 
-              <p>Vielleicht gibt es zwischendurch auch ruhige Tage, ein gutes Gespräch oder andere Momente, die Ihnen guttun. Sie dürfen diese wahrnehmen, ohne die schwierigen Zeiten kleinzureden.</p>
+              <p>Wenn es zwischendurch ruhige Tage, ein gutes Gespräch oder andere wohltuende Momente gibt, können Sie sich darüber freuen, ohne die schwierigen Zeiten kleinzureden.</p>
             </section>
 
             <section id="s2">
-              <h2>Wie Erschöpfung sich über Zeit aufbaut</h2>
+              <h2>Wie sich Belastung über die Zeit verändern kann</h2>
               <p>Belastung kann sich ansammeln, abnehmen oder über längere Zeit gering bleiben. Die folgenden Erfahrungen können einzeln, gemeinsam oder gar nicht auftreten. Es gibt keine festgelegte Reihenfolge. Erholung und Entlastung sind auch nach schweren Zeiten möglich.</p>
 
               <ReservoirFigur />
 
-              <h3>Mögliche Erfahrung: Notfallmodus</h3>
-              <p>In einer schweren Zeit kann viel Organisation nötig sein. Vielleicht übernehmen Sie vereinbarte Aufgaben und stellen eigene Bedürfnisse zunächst zurück. Behandlung bleibt Aufgabe der zuständigen Fachpersonen; auch Ihre Entlastung darf Teil der Absprachen sein.</p>
+              <h3>Wenn vieles gleichzeitig organisiert werden muss</h3>
+              <p>In einer schweren Zeit kann viel zu organisieren sein. Vielleicht übernehmen Sie vereinbarte Aufgaben und stellen eigene Bedürfnisse zurück. Die Behandlung bleibt Aufgabe der zuständigen Fachpersonen. Besprechen Sie auch, wie Sie selbst entlastet werden können.</p>
 
-              <h3>Mögliche Erfahrung: wiederholte Belastung</h3>
-              <p>Wiederholte Episoden können Spuren hinterlassen — Schlafmangel, Misstrauen gegenüber Ruhe, mehr Wachsamkeit, weniger Spielraum. Die Hoffnung wird vorsichtiger: «Schon wieder.»</p>
+              <h3>Wenn belastende Zeiten wiederkehren</h3>
+              <p>Wiederholte Krankheitsphasen können Spuren hinterlassen. Vielleicht schlafen Sie zu wenig, beobachten Veränderungen genauer oder können ruhigeren Zeiten schwer vertrauen. Auch die Hoffnung kann vorsichtiger werden: «Schon wieder.»</p>
 
-              <h3>Mögliche Erfahrung: anhaltende Wachsamkeit</h3>
+              <h3>Wenn Sie weiter auf Veränderungen achten</h3>
               <p>Vielleicht fällt es Ihnen auch in ruhigeren Zeiten schwer, sich zu entspannen. Eigene Sorgen oder Beschwerden verdienen Aufmerksamkeit, unabhängig davon, ob die andere Person gerade eine Episode erlebt.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Wichtig zu wissen</span>
-                <p>Überlastung ist kein persönliches Versagen. Die Grafik stuft Sie nicht ein. Wenn Beschwerden anhalten oder der Alltag kaum gelingt, suchen Sie passende Unterstützung oder eine medizinische Abklärung.</p>
+                <p>Überlastung ist kein persönliches Versagen, und die Grafik bewertet Ihre Lage nicht. Wenn Beschwerden anhalten oder Sie den Alltag kaum bewältigen können, suchen Sie passende Unterstützung oder lassen Sie Ihre Beschwerden medizinisch abklären.</p>
               </aside>
             </section>
 
             <section id="s3">
-              <h2>Was Sie in Körper, Gefühl und Alltag bemerken</h2>
+              <h2>Was Sie körperlich, in Ihren Gefühlen und im Alltag bemerken</h2>
               <p>Vielleicht hat sich etwas in Ihrem Alltag verändert, das Sie besprechen möchten. Die Beispiele unten sind Anregungen zum Nachdenken, keine nachgewiesenen Warnzeichen für einen bestimmten Verlauf.</p>
 
               <Warnzeichen />
 
-              <p>Sie müssen keine bestimmte Anzahl von Punkten erfüllen, um Unterstützung zu suchen. Die Liste bewertet Sie nicht und erklärt keine Beschwerden. Neue, starke oder anhaltende Beschwerden können Sie medizinisch abklären lassen.</p>
+              <p>Sie brauchen keine bestimmte Anzahl von Beobachtungen, um Unterstützung zu suchen. Die Liste bewertet Sie nicht und erklärt keine Beschwerden. Neue, starke oder anhaltende Beschwerden können Sie medizinisch abklären lassen.</p>
             </section>
 
             <section id="s4">
-              <h2>Schonhaltung, gemeinsamer Rückzug und eigene Bedürfnisse</h2>
+              <h2>Rücksicht, Rückzug und eigene Bedürfnisse</h2>
               <p>Vielleicht sprechen Sie aus Rücksicht weniger über eigene Wünsche oder ziehen sich mit der anderen Person zurück. Schauen Sie darauf, wie sich das für Sie auswirkt und welche Kontakte oder Bedürfnisse wieder mehr Raum bekommen könnten.</p>
 
-              <h3>Schonhaltung</h3>
-              <p>Damit ist hier gemeint: eigene Sorgen und Bedürfnisse zurückhalten, um die andere Person nicht zu belasten. «Ich muss stark sein.» Vielleicht bleibt dadurch Wichtiges unausgesprochen. Sie dürfen einen passenden Zeitpunkt oder Unterstützung für ein Gespräch suchen.</p>
+              <h3>Eigene Sorgen zurückhalten</h3>
+              <p>«Ich muss stark sein.» Wenn Sie eigene Sorgen und Bedürfnisse zurückhalten, um die andere Person nicht zu belasten, bleibt vielleicht Wichtiges unausgesprochen. Sie können überlegen, wann Sie darüber sprechen möchten oder wer Sie bei einem Gespräch unterstützen könnte.</p>
 
               <h3>Gemeinsamer Rückzug</h3>
               <p>Vielleicht ziehen Sie sich beide zurück, etwa weil Kontakte gerade anstrengend sind oder Erklärungen Kraft kosten. Dadurch können Kontakte seltener werden. Sie können überlegen, welche Verbindung Ihnen wichtig ist und wie viel Kontakt im Moment passt.</p>
 
-              <h3>Der unsichtbare Rucksack — wenig Raum für das Eigene</h3>
+              <h3>Wenn für eigene Wünsche wenig Raum bleibt</h3>
               <p>Wenn Unterstützungsaufgaben viel Platz einnehmen, können eigene Themen in den Hintergrund geraten. Sie bleiben eine Person mit eigenen Interessen, Wünschen und Beziehungen, auch wenn dafür gerade wenig Raum ist.</p>
 
               <blockquote className="module-quote" id="quote-m4-02">
@@ -288,7 +288,7 @@ function Modul4Page({ onNavigate }) {
               </ul>
 
               <aside className="callout callout-soft">
-                <span className="callout-label">Nicht nur Wut kann sich aufstauen</span>
+                <span className="callout-label">Wenn Geduld und Mitgefühl nachlassen</span>
                 <p>Vielleicht bemerken Sie weniger Geduld oder Mitgefühl als früher. Daraus allein lässt sich weder eine Ursache noch fehlende Liebe ableiten. Nehmen Sie Ihr Erleben ernst und sprechen Sie darüber, wenn Sie Unterstützung wünschen.</p>
               </aside>
 
@@ -300,34 +300,34 @@ function Modul4Page({ onNavigate }) {
 
             <section id="s5">
               <h2>Was auf der Strecke bleibt</h2>
-              <p>Vielleicht haben Sie eigene Pläne aufgeschoben: einen Urlaub, einen beruflichen Schritt oder Zeit mit Freunden. Auch darüber dürfen Sie sprechen.</p>
+              <p>Ein Urlaub, ein beruflicher Schritt oder Zeit mit Freunden: Vielleicht haben Sie eigene Pläne aufgeschoben, über die Sie sprechen möchten.</p>
               <p>Was nicht möglich war, kann Ihnen fehlen. Vielleicht sind Sie darüber traurig oder enttäuscht. <strong>Das anzuerkennen ist keine Undankbarkeit.</strong> Sie können überlegen, was heute wieder möglich wäre und welche Unterstützung Sie dafür brauchen.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Reflexion</span>
-                <p>Gibt es Träume, Pläne oder Lebensphasen, die Sie aufgeschoben haben? Nicht als Vorwurf — sondern als ehrliche Bestandsaufnahme: Was gehört Ihnen, das Sie noch nicht gelebt haben?</p>
+                <p>Gibt es Wünsche oder Pläne, die Sie aufgeschoben haben? Was davon ist Ihnen heute wichtig? Es geht dabei um Ihr eigenes Leben, nicht um einen Vorwurf an die andere Person.</p>
               </aside>
 
-              <h3>Was es beruflich kostet</h3>
-              <p>Unterstützungsaufgaben können mit Arbeitszeiten kollidieren: etwa ein Klinikbesuch oder ein vereinbartes Gespräch mit dem Behandlungsteam. Vielleicht fragen Sie sich, wie viel Sie am Arbeitsplatz erzählen möchten oder wie sich Entlastung organisieren lässt.</p>
-              <p>Vielleicht haben Sie Ihr Pensum reduziert oder einen beruflichen Schritt verschoben. Wenn berufliche oder finanzielle Fragen Sie beschäftigen, dürfen Sie dafür Beratung suchen.</p>
+              <h3>Belastung im Berufsalltag</h3>
+              <p>Wenn Sie jemanden unterstützen, kann das mit Ihren Arbeitszeiten zusammenfallen, etwa bei einem Klinikbesuch oder einem vereinbarten Gespräch mit dem Behandlungsteam. Dann stellt sich vielleicht die Frage, wie viel Sie am Arbeitsplatz erzählen möchten und welche Entlastung möglich ist.</p>
+              <p>Vielleicht haben Sie Ihr Pensum reduziert oder einen beruflichen Schritt verschoben. Auch für die beruflichen oder finanziellen Fragen, die Sie beschäftigen, können Sie Beratung suchen.</p>
 
               <h3>Was helfen kann</h3>
               <ul>
-                <li><strong>Am Arbeitsplatz nur Nötiges mitteilen</strong> — zum Beispiel: «Ich unterstütze eine nahestehende Person mit einer Erkrankung und möchte meine Arbeitszeiten besprechen.» Klären Sie, welche Angaben tatsächlich nötig sind. Fragen Sie bei Bedarf nach einer betrieblichen Sozialberatung und deren Vertraulichkeit.</li>
+                <li><strong>Am Arbeitsplatz nur Nötiges mitteilen</strong> — so könnte es klingen: «Ich unterstütze gerade jemanden, der krank ist. Können wir besprechen, ob ich meine Arbeitszeiten anpassen kann?» Klären Sie, welche Angaben tatsächlich nötig sind. Fragen Sie bei Bedarf nach einer betrieblichen Sozialberatung und danach, wie vertraulich Ihre Angaben dort behandelt werden.</li>
                 <li><strong>Betreuungsurlaub und Arbeitszeiten klären</strong> — Art. 329h OR sieht in privatrechtlichen Arbeitsverhältnissen bezahlten Urlaub für die notwendige Betreuung gesundheitlich beeinträchtigter Familienmitglieder oder der Lebenspartnerin bzw. des Lebenspartners vor: höchstens drei Tage pro Ereignis und grundsätzlich zehn Tage pro Jahr. Für Kinder und weitere Ansprüche gelten Besonderheiten; öffentlich-rechtliche Anstellungen können anderen Regeln folgen. Flexible Arbeitszeiten sind gesondert zu vereinbaren. Klären Sie die konkrete Situation mit der Personalabteilung.</li>
-                <li><strong>Die eigene berufliche Rolle beachten</strong> — was gibt Ihnen die Arbeit, und was belastet Sie? Auch Ihre beruflichen Wünsche dürfen in Absprachen Platz haben.</li>
+                <li><strong>Eigene berufliche Wünsche berücksichtigen</strong> — was gibt Ihnen die Arbeit, und was belastet Sie? Beziehen Sie auch Ihre beruflichen Wünsche in die Absprachen ein.</li>
               </ul>
             </section>
 
             <section id="s6">
-              <h2>Wenn Kinder mittragen</h2>
-              <p>Relevant, wenn Kinder im Haushalt mitbetroffen sind. Sonst können Sie bei «Eigene Lage und nächste Schritte» weiterlesen.</p>
+              <h2>Wenn Kinder mitbetroffen sind</h2>
+              <p>Dieser Abschnitt richtet sich an Familien mit Kindern im Haushalt. Wenn das auf Ihre Situation nicht zutrifft, können Sie bei «Eigene Lage und nächste Schritte» weiterlesen.</p>
               <p>Vielleicht bemerken Kinder Veränderungen zu Hause oder haben Fragen zur Erkrankung eines Elternteils. Geben Sie Raum für ihre Sicht und organisieren Sie Unterstützung, die zu ihrer Situation passt.</p>
 
               <div className="do-dont">
                 <div className="dont-col">
-                  <h3>Was Kinder wahrnehmen</h3>
+                  <h3>Was Kinder wahrnehmen können</h3>
                   <ul>
                     <li>Veränderungen in Stimmung und Verhalten</li>
                     <li>Überlastung des betreuenden Elternteils</li>
@@ -338,22 +338,22 @@ function Modul4Page({ onNavigate }) {
                 <div className="do-col">
                   <h3>Was Kinder brauchen</h3>
                   <ul>
-                    <li>Ehrliche Erklärung: «Mama/Papa ist krank — nicht wegen dir.»</li>
+                    <li>Eine ehrliche Erklärung, zum Beispiel: «Mama ist krank. Das ist nicht deine Schuld.»</li>
                     <li>Stabilität durch Routinen: Schulweg, Mahlzeiten, Schlafzeiten</li>
                     <li>Eine Vertrauensperson ausserhalb der Familie</li>
-                    <li>Erlaubnis, eigene Gefühle zu haben — auch Wut</li>
+                    <li>Raum für eigene Gefühle, auch für Wut</li>
                   </ul>
                 </div>
               </div>
 
               <h3>Mit Kindern sprechen — je nach Alter</h3>
-              <p>Die folgenden Sätze sind redaktionelle Gesprächsbeispiele. Die Altersangaben dienen der groben Orientierung, nicht als feste Entwicklungsgrenzen. Passen Sie Sprache und Umfang daran an, was Ihr Kind versteht und wissen möchte; lassen Sie Fragen zu.</p>
+              <p>So könnte ein Gespräch klingen. Die Altersangaben geben eine grobe Orientierung und sind keine festen Entwicklungsgrenzen. Passen Sie die Worte und den Umfang daran an, was Ihr Kind versteht und wissen möchte, und lassen Sie Fragen zu.</p>
 
-              <p><strong>Zum Beispiel mit 4–6 Jahren: Einfach und konkret.</strong> «Mama ist krank. Manchmal geht es ihr sehr schlecht oder sie ist sehr aufgeregt. Das ist nicht deine Schuld. Wir Erwachsenen kümmern uns um Hilfe und darum, dass du gut betreut bist.» Bekannte Abläufe und eine verfügbare Vertrauensperson können Teil Ihrer Absprachen sein.</p>
+              <p><strong>Zum Beispiel mit 4–6 Jahren: Einfach und konkret.</strong> «Mama ist krank. Manchmal geht es ihr sehr schlecht oder sie ist sehr aufgeregt. Das ist nicht deine Schuld. Wir Erwachsenen holen Hilfe und kümmern uns um dich.» Besprechen Sie auch, wie vertraute Abläufe erhalten bleiben können und wer als Vertrauensperson für das Kind erreichbar ist.</p>
 
-              <p><strong>Zum Beispiel mit 7–12 Jahren: Mehr Zusammenhang.</strong> «Papa hat eine Krankheit. Sie heisst bipolare Störung. Vielleicht hast du bemerkt, dass es ihm in manchen Zeiten anders geht. Was möchtest du dazu wissen?» Erklären Sie die konkrete Situation in verständlichen Worten und erlauben Sie Fragen.</p>
+              <p><strong>Zum Beispiel mit 7–12 Jahren: Mehr erklären.</strong> «Papa hat eine Krankheit. Sie heisst bipolare Störung. Vielleicht hast du bemerkt, dass es ihm manchmal anders geht. Was möchtest du darüber wissen?» Erklären Sie die konkrete Situation in verständlichen Worten und geben Sie Raum für Fragen.</p>
 
-              <p><strong>Zum Beispiel ab 13 Jahren: Offen und respektvoll.</strong> «Wenn du Fragen hast, beantworte ich sie so ehrlich ich kann.» Klären Sie, was der junge Mensch wissen möchte. Unterstützung für Ihre eigenen Sorgen holen Sie bei Erwachsenen oder einer Beratungsstelle; Kinder und Jugendliche müssen diese Verantwortung nicht übernehmen.</p>
+              <p><strong>Zum Beispiel ab 13 Jahren: Offen und respektvoll.</strong> «Wenn du Fragen hast, beantworte ich sie so ehrlich, wie ich kann.» Fragen Sie, was der junge Mensch wissen möchte. Unterstützung für Ihre eigenen Sorgen holen Sie bei Erwachsenen oder einer Beratungsstelle. Kinder und Jugendliche müssen diese Verantwortung nicht übernehmen.</p>
 
               <h3>Wenn Kinder zu viel Verantwortung übernehmen</h3>
               <p>Vielleicht bemerken Sie, dass Ihr Kind häufig Erwachsene beruhigt, beobachtet oder sich für die Stimmung zu Hause verantwortlich fühlt. Klären Sie mit Unterstützung, welche Aufgaben altersangemessen sind und welche Erwachsene übernehmen sollten. Sie können sagen: «Das ist nicht deine Aufgabe. Wir Erwachsenen kümmern uns darum.»</p>
@@ -364,8 +364,8 @@ function Modul4Page({ onNavigate }) {
               </blockquote>
 
               <aside className="callout">
-                <span className="callout-label">Verantwortung wieder zu Erwachsenen holen</span>
-                <p>Wenn Sie merken, dass Ihr Kind zu viel trägt, können Sie Unterstützung organisieren. Sprechen Sie das Kind direkt an: «Du darfst Kind sein.» Vereinbaren Sie, welche Erwachsenen Aufgaben übernehmen. Je nach Situation kann ein Gespräch mit der Schule passen. Unter <strong>kinderseele.ch</strong> können Sie nach aktueller Fachunterstützung und deren Bedingungen suchen.</p>
+                <span className="callout-label">Erwachsene übernehmen die Verantwortung</span>
+                <p>Wenn Sie merken, dass Ihr Kind zu viele Aufgaben übernimmt, können Sie Unterstützung organisieren. Sie können zum Beispiel sagen: «Du musst dich nicht um uns Erwachsene kümmern. Das übernehmen wir.» Vereinbaren Sie dann konkret, welche Erwachsenen diese Aufgaben übernehmen. Je nach Situation kann ein Gespräch mit der Schule passen. Unter <strong>kinderseele.ch</strong> können Sie nach aktuellen Angeboten suchen und klären, für wen sie gedacht sind und welche Bedingungen gelten.</p>
               </aside>
 
               <h3>Sorgen um die Gesundheit des Kindes</h3>
@@ -379,13 +379,13 @@ function Modul4Page({ onNavigate }) {
               <h3>1. Veränderungen bei sich wahrnehmen</h3>
               <p>Was hat sich in Ihrem Alltag verändert, und wie geht es Ihnen damit? Ihre eigenen Beobachtungen und Fragen verdienen Aufmerksamkeit.</p>
 
-              <h3>2. Eigene Bedürfnisse beachten — ohne Schuld</h3>
+              <h3>2. Eigene Bedürfnisse ernst nehmen</h3>
               <p>Wenn Sie weniger Mitgefühl oder Geduld bemerken oder kaum noch Raum für eigene Bedürfnisse haben, dürfen Sie Unterstützung suchen. Ihr Erleben ist kein moralisches Urteil über Sie oder Ihre Beziehung.</p>
 
-              <h3>3. Einen passenden Zeitraum für sich planen</h3>
-              <p>Vielleicht ein Spaziergang, ein Telefonat oder Zeit für ein Hobby: Wählen Sie etwas, das zu Ihren Möglichkeiten passt. Wenn Sie möchten, planen Sie einen regelmässigen Zeitraum und klären Unterstützung bei der Organisation. Auch kurze Pausen zählen. Wenn ein Termin ausfällt oder verschoben werden muss, ist das kein Scheitern.</p>
+              <h3>3. Zeit für sich einplanen</h3>
+              <p>Ein Spaziergang, ein Telefonat oder Zeit für ein Hobby: Wählen Sie etwas, das zu Ihren Möglichkeiten passt. Wenn Sie möchten, planen Sie dafür regelmässig Zeit ein und besprechen, ob jemand Sie bei der Organisation unterstützen kann. Auch kurze Pausen zählen. Wenn ein Termin ausfällt oder verschoben werden muss, ist das kein Scheitern.</p>
 
-              <h3>4. Hausarzt einbeziehen</h3>
+              <h3>4. Mit der Hausärztin oder dem Hausarzt sprechen</h3>
               <p>Auch Ihre eigene Gesundheit verdient Aufmerksamkeit. Besprechen Sie neue, starke oder anhaltende Beschwerden mit Ihrer Hausärztin oder Ihrem Hausarzt. Dabei kann auch zur Sprache kommen, welche Belastungen Sie gerade tragen.</p>
 
               <h3>5. Austausch mit anderen Angehörigen erwägen</h3>
@@ -393,7 +393,7 @@ function Modul4Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Reflexion</span>
-                <p>Um wen trauern Sie? Vielleicht um den Partner, der er einmal war. Vielleicht um die gemeinsame Zukunft. Diese Trauer braucht keinen Abschluss. Aber sie verdient, gesehen zu werden — zumindest von Ihnen selbst.</p>
+                <p>Was vermissen Sie: etwas Vertrautes in Ihrer Beziehung, gemeinsame Pläne oder etwas anderes? Ihre Trauer muss nicht zu einem bestimmten Zeitpunkt abgeschlossen sein. Nehmen Sie ernst, was Ihnen fehlt.</p>
               </aside>
 
               <div className="next-modules">
@@ -408,7 +408,7 @@ function Modul4Page({ onNavigate }) {
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeug — Meine Belastung wahrnehmen</h3>
-                    <p>Fünf Fragen zu Ihrer eigenen Lage, ohne Reservoir-Wert, Gesamtpunktzahl oder Einstufung.</p>
+                    <p>Fünf Fragen zu Ihrer eigenen Lage. Sie erhalten weder einen Reservoir-Wert noch eine Gesamtpunktzahl oder Einstufung.</p>
                   </div>
                 </a>
               </div>
@@ -417,7 +417,7 @@ function Modul4Page({ onNavigate }) {
             <section id="s8">
               <h2>Worauf es ankommt</h2>
               <ul className="key-points">
-                <li><strong>Veränderungen dürfen Sie betrauern</strong> — auch wenn Ihnen die andere Person weiterhin nah ist.</li>
+                <li><strong>Auch Veränderungen können Anlass für Trauer sein</strong> — selbst wenn Ihnen die andere Person weiterhin nah ist.</li>
                 <li><strong>Ihre Lage verdient Aufmerksamkeit</strong> — auch in ruhigeren Zeiten und ohne eine bestimmte Zahl von Beschwerden.</li>
                 <li><strong>Eigene Bedürfnisse dürfen Platz haben</strong> — sprechen Sie über Rücksicht, Aufgaben und Kontakte, die Ihnen wichtig sind.</li>
                 <li><strong>Aufgeschobene Pläne dürfen Ihnen fehlen</strong> — überlegen Sie, was heute möglich wäre und welche Unterstützung Sie brauchen.</li>

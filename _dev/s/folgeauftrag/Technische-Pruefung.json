@@ -1,0 +1,96 @@
+{
+  "review": "S – Nachprüfung der Umsetzung offener Erkenntnisse",
+  "baseCommit": "3765dfe744608a9ed7e7271d5c4c9b5db5c5fa3b",
+  "branch": "fix/s-language-review",
+  "lint": "passed",
+  "build": "passed",
+  "diffCheck": "passed",
+  "tests": {
+    "files": 18,
+    "tests": 113,
+    "failed": 0,
+    "coverageGate": "passed",
+    "coveragePercent": {
+      "statements": 83.59,
+      "branches": 79.09,
+      "functions": 79.79,
+      "lines": 88.08
+    }
+  },
+  "browser": {
+    "website": {
+      "checks": 636,
+      "failed": 0,
+      "viewportWidths": [
+        320,
+        360,
+        768,
+        1440
+      ],
+      "textPercent": [
+        100,
+        200
+      ]
+    },
+    "phoneLists": {
+      "comparisonPairs": 12,
+      "failed": 0,
+      "materialDialogs": [
+        "DL-02",
+        "DL-04",
+        "DL-05"
+      ],
+      "viewportWidths": [
+        320,
+        360
+      ],
+      "textPercent": [
+        100,
+        200
+      ],
+      "checkedPhoneLinkOccurrences": 52,
+      "phoneTextAndUriUnchanged": true,
+      "allTargetsAtLeast44px": true,
+      "closingReturnFocus": "passed",
+      "observationsResolved": [
+        {
+          "material": "dl-02",
+          "beforeLinksOutsideContent": 3,
+          "afterLinksOutsideContent": 0
+        },
+        {
+          "material": "dl-04",
+          "beforeLinksOutsideContent": 2,
+          "afterLinksOutsideContent": 0
+        },
+        {
+          "material": "dl-05",
+          "beforeLinksOutsideContent": 1,
+          "afterLinksOutsideContent": 0
+        }
+      ],
+      "buildSha256": "b684fa2f26f237d0c2ac3d4ad152886c531d99689c2c1826b3ecd02ee0af70af",
+      "buildUnchanged": true,
+      "pageErrors": 0,
+      "consoleErrors": 0,
+      "requestFailures": 0,
+      "evidenceFile": "Telefon-Umbruchpruefung.json"
+    }
+  },
+  "sourceInvariants": {
+    "applicationJsxFiles": 5,
+    "passed": 5,
+    "permittedStructureChanges": "Attributlose Absatzergänzungen und Absatzteilungen für die präzisierte Aufgabenklärung",
+    "existingCssRulesPreserved": true,
+    "newCssScope": "Three rules restricted to .handout-phonelist",
+    "sourceRegistryAndCrisisContentByteEqual": true
+  },
+  "independentMeaningReview": "passed; all nine findings implemented",
+  "previewProcessesClosed": true,
+  "limits": [
+    "Keine Originalquellen-, Rechts- oder Angebotsverifikation; W1 bleibt offen",
+    "Keine neue klinische oder rechtliche Einzelfallfreigabe",
+    "Keine echte VoiceOver-/NVDA-Prüfung",
+    "Keine physische Druck- oder PDF-Freigabe"
+  ]
+}

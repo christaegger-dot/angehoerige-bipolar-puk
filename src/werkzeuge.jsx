@@ -30,7 +30,7 @@ function ToolLoadingOverlay({ onClose }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Werkzeug wird geöffnet">
       <span className="kicker">Werkzeug</span>
-      <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Wird geöffnet …</h2>
+      <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Werkzeug wird geöffnet …</h2>
       <p className="lede" style={{ maxWidth: '40ch' }}>
         Das interaktive Werkzeug wird geladen.
       </p>
@@ -56,8 +56,8 @@ function WerkzeugePage({ onNavigate, anchor }) {
     // Attempt both keys even if one of the storage areas is blocked.
     const cleared = LEGACY_DRAFT_KEYS.map(key => clearStoredDraft(key)).every(Boolean);
     setLegacyDeletionHint(cleared
-      ? 'Alte Browser-Entwürfe gelöscht. Schliessen Sie auch andere offene Tabs mit alten Entwürfen. Drucke, PDF-Dateien und die Zwischenablage müssen Sie separat löschen.'
-      : 'Frühere Browser-Kopien konnten nicht vollständig gelöscht werden. Löschen Sie die Website-Daten in Ihren Browser-Einstellungen. Andere offene Tabs und exportierte Kopien müssen Sie ebenfalls separat bereinigen.');
+      ? 'Alte Entwürfe in diesem Browser sind gelöscht. Schliessen Sie auch andere offene Tabs mit alten Entwürfen. Drucke, PDF-Dateien und Inhalte in der Zwischenablage löschen Sie separat.'
+      : 'Frühere Kopien in diesem Browser konnten nicht vollständig gelöscht werden. Löschen Sie die Website-Daten in Ihren Browser-Einstellungen. Schliessen Sie auch andere offene Tabs mit alten Entwürfen und löschen Sie exportierte Kopien separat.');
   };
 
   return (
@@ -66,7 +66,7 @@ function WerkzeugePage({ onNavigate, anchor }) {
         <div className="container">
           <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Interaktiv</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '20ch' }}>Werkzeuge im Überblick.</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Hier finden Sie alle interaktiven Hilfen an einem Ort. Die Werkzeuge sind dafür gedacht, Muster sichtbarer zu machen, Gespräche vorzubereiten und konkrete nächste Schritte leichter festzuhalten.</p>
+          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Mit diesen Werkzeugen können Sie eigene Erfahrungen anschauen, Gespräche vorbereiten und nächste Schritte festhalten.</p>
         </div>
       </header>
 
@@ -75,12 +75,12 @@ function WerkzeugePage({ onNavigate, anchor }) {
           <div className="info-stripe">
             <div>
               <span className="kicker">Wenn Sie lieber lesen als klicken</span>
-              <p>Die inhaltliche Einordnung finden Sie in den <a className="link-underline" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>sieben Modulen</a>. Die Werkzeuge sind eine Ergänzung, kein Ersatz für Orientierung und Kontext.</p>
+              <p>Die <a className="link-underline" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>sieben Module</a> erklären die Themen ausführlicher. Die Werkzeuge ergänzen diese Informationen.</p>
             </div>
           </div>
 
           <div className="tool-intro-notes no-print" data-storage-key={LEGACY_DRAFT_KEYS.join(' ')}>
-            <p data-storage-notice="memory legacy">Aktuelle Eingaben bleiben nur im geöffneten Werkzeug und gehen beim Schliessen verloren. Entwürfe aus früheren Versionen werden nicht geladen. Auf Wunsch können Sie diese alten Browser-Kopien hier löschen.</p>
+            <p data-storage-notice="memory legacy">Ihre aktuellen Eingaben bleiben nur im geöffneten Werkzeug und gehen beim Schliessen verloren. Entwürfe aus früheren Versionen werden nicht geöffnet. Wenn Sie möchten, können Sie diese alten Kopien hier aus dem Browser löschen.</p>
             <button type="button" className="tool-quiet-btn" onClick={clearLegacyDrafts} disabled={Boolean(openTool)} data-storage-delete="legacy-drafts" data-storage-scope="session local">Alte gespeicherte Entwürfe löschen</button>
             {legacyDeletionHint && <p role="status" aria-live="polite">{legacyDeletionHint}</p>}
           </div>
