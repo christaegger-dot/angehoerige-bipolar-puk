@@ -60,7 +60,7 @@ function Modul1Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 12–15 Minuten · 10 Abschnitte</span>
             </div>
             <h1>Die bipolare Störung <em>verstehen</em></h1>
-            <p className="lede">Die bipolare Störung verändert Verhalten, Schlaf und Beziehungen oft auf schwer vorhersehbare Weise. Wissen darüber hilft beim Einordnen, gibt Ihnen aber keine Kontrolle über die Erkrankung. Für wichtige Gespräche sind stabile Phasen am besten geeignet.</p>
+            <p className="lede">Die bipolare Störung verändert Verhalten, Schlaf und Beziehungen oft auf schwer vorhersehbare Weise. Wissen darüber hilft beim Einordnen, gibt Ihnen aber keine Kontrolle über die Erkrankung. Für wichtige Gespräche können Sie gemeinsam einen Zeitpunkt suchen, an dem ausreichend Ruhe, Zeit und Kraft vorhanden sind.</p>
             <div className="module-detail-illu">
               <Ill.M1 size={200} />
             </div>
@@ -180,7 +180,7 @@ function Modul1Page({ onNavigate }) {
               <p>Stabile Phasen bieten Zeit für Erholung, Gespräche und gemeinsame Vorbereitung.</p>
               <p><strong>Raum für Erholung.</strong> Stabile Phasen können lange dauern und echte Entlastung ermöglichen. Ihre eigene Erholung darf ein anderes Tempo haben.</p>
               <p><strong>Restsymptome möglich.</strong> Zwischen Episoden können milde Symptome bestehen bleiben. <em>«Ist diese gute Laune echt — oder schon der Beginn einer Manie?»</em></p>
-              <p><strong>Zeit für Krisenplanung.</strong> Stabile Phasen sind der richtige Moment für wichtige Gespräche. <em>«Jetzt können wir reden — über Grenzen, Vereinbarungen, Notfallplan.»</em></p>
+              <p><strong>Zeit für Krisenplanung.</strong> In einer stabilen Phase können Sie besprechen, wann und wie Sie gemeinsame Absprachen vorbereiten möchten. <em>«Hast du Zeit, über unsere Grenzen und den Krisenplan zu sprechen?»</em></p>
 
               <h3>Depression</h3>
               <p>Eine Depression kann sich neben Traurigkeit auch in Leere und Verlangsamung zeigen und bei beiden Personen lange Hilflosigkeit auslösen. Ob sie im Rahmen einer bipolaren Störung auftritt, beurteilt eine Fachperson anhand des gesamten bisherigen Verlaufs. Als Angehörige können Sie konkrete Veränderungen beschreiben, ohne die Diagnose selbst einordnen zu müssen.</p>

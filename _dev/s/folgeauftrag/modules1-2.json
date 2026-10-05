@@ -1,0 +1,34 @@
+{
+  "review": "S – Umsetzung offener Erkenntnisse, M1/M2",
+  "baseCommit": "3765dfe744608a9ed7e7271d5c4c9b5db5c5fa3b",
+  "branch": "fix/s-language-review",
+  "authorization": "Folgeauftrag vom 5. Oktober 2026: bitte setze die erkenntnisse aus der review um",
+  "findings": [
+    {
+      "id": "S-F01",
+      "location": "M1 Einleitung und s4: Zeitpunkt wichtiger Gespräche",
+      "before": [
+        "<p className=\"lede\">Die bipolare Störung verändert Verhalten, Schlaf und Beziehungen oft auf schwer vorhersehbare Weise. Wissen darüber hilft beim Einordnen, gibt Ihnen aber keine Kontrolle über die Erkrankung. Für wichtige Gespräche sind stabile Phasen am besten geeignet.</p>",
+        "<p><strong>Zeit für Krisenplanung.</strong> Stabile Phasen sind der richtige Moment für wichtige Gespräche. <em>«Jetzt können wir reden — über Grenzen, Vereinbarungen, Notfallplan.»</em></p>"
+      ],
+      "after": [
+        "<p className=\"lede\">Die bipolare Störung verändert Verhalten, Schlaf und Beziehungen oft auf schwer vorhersehbare Weise. Wissen darüber hilft beim Einordnen, gibt Ihnen aber keine Kontrolle über die Erkrankung. Für wichtige Gespräche können Sie gemeinsam einen Zeitpunkt suchen, an dem ausreichend Ruhe, Zeit und Kraft vorhanden sind.</p>",
+        "<p><strong>Zeit für Krisenplanung.</strong> In einer stabilen Phase können Sie besprechen, wann und wie Sie gemeinsame Absprachen vorbereiten möchten. <em>«Hast du Zeit, über unsere Grenzen und den Krisenplan zu sprechen?»</em></p>"
+      ],
+      "implementation": "implemented",
+      "change": "Pauschale Rangbehauptung ersetzt durch situationsbezogene Gesprächsvorbereitung und anpassbare Frage."
+    },
+    {
+      "id": "S-F02",
+      "location": "M2 s4; parallel M6 s7: Medikamenteneinnahme und Betreuungsaufgaben",
+      "before": "<li>Medikamenteneinnahme überwachen statt begleiten</li>",
+      "after": [
+        "<li>Die Medikamenteneinnahme kontrollieren, ohne die eigene Aufgabe und Befugnis zu klären</li>",
+        "<p>Wenn Sie bei der Medikamenteneinnahme unterstützen, klären Sie mit der betroffenen Person und dem Behandlungsteam, welche Aufgaben und Befugnisse tatsächlich bei Ihnen liegen. Berücksichtigen Sie dabei auch bestehende Betreuungs- und Schutzaufgaben. Besprechen Sie, wer eine notwendige Aufgabe übernimmt, wenn Sie sie nicht weiter übernehmen können.</p>"
+      ],
+      "implementation": "implemented",
+      "change": "Kontrolle von geklärter Unterstützung und tatsächlich bestehenden Betreuungs-/Schutzaufgaben unterschieden; notwendige Weiterbetreuung bei Aufgabenwechsel ansprechen."
+    }
+  ],
+  "limits": "Redaktionelle Umsetzung, keine Originalquellenprüfung, Einzelfallentscheidung oder Fachfreigabe. Fachliche Dringlichkeits- und Schutzanweisungen bleiben unverändert."
+}

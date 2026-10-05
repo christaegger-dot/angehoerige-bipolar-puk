@@ -357,8 +357,8 @@ function Modul6Page({ onNavigate }) {
               <p>Ein Gespräch kann nur helfen, wenn noch ausreichend Kontakt möglich ist. Bei Manie, starker Gereiztheit oder Depression funktionieren gewohnte Gespräche oft nicht mehr. Dann kommt es darauf an, wie Sie miteinander sprechen, statt das überzeugendste Argument zu finden.</p>
 
               <h3>Kommunikation in der Manie</h3>
-              <p><strong>Kurz und klar — ein Thema pro Gespräch.</strong> Lange Gespräche eskalieren schnell. Beschränken Sie sich auf das, was jetzt wichtig ist, und beenden Sie das Gespräch danach.</p>
-              <p><strong>Ruhige Stimme — auch wenn Sie nicht ruhig sind.</strong> Lautstärke und Tempo sind ansteckend. Langsamer sprechen kann die Situation ohne Worte entschärfen.</p>
+              <p><strong>Kurz und klar — ein Thema pro Gespräch.</strong> Beschränken Sie sich auf das, was jetzt wichtig ist, und beenden Sie das Gespräch danach.</p>
+              <p><strong>Ruhige Stimme — auch wenn Sie nicht ruhig sind.</strong> Achten Sie auf Ihr eigenes Tempo und versuchen Sie, langsamer zu sprechen, ohne die Stimme zu heben.</p>
               <p><strong>Das Gespräch beenden, wenn es zu viel wird.</strong> «Ich brauche eine Pause» kann Abstand schaffen. Ob Sie das Gespräch später fortsetzen möchten, entscheiden Sie selbst. Voraussetzung ist, dass die Situation ausreichend sicher ist.</p>
 
               <h3>Kommunikation in der Depression</h3>
@@ -368,7 +368,7 @@ function Modul6Page({ onNavigate }) {
               Sie können kurze, ruhige Anwesenheit anbieten: «Ich kann eine Weile bei dir sein. Du musst nichts sagen.» Fragen Sie, ob das willkommen ist. <em>Vermeiden:</em> «Komm, steh auf», «Du musst doch mal raus».</p>
 
               <p><strong>«Ich habe schon alles versucht — nichts hilft.»</strong><br/>
-              So könnte es klingen: «Ich weiss gerade auch keine Lösung, aber ich bin hier.» Dieser Satz entlastet Sie beide. <em>Vermeiden:</em> Immer neue Lösungsvorschläge oder die ständige Frage «Geht es dir besser?»</p>
+              So könnte es klingen: «Ich weiss gerade auch keine Lösung, aber ich bin hier.» Damit drücken Sie aus, dass Sie gerade da sind, ohne eine Lösung zu versprechen. <em>Vermeiden:</em> Immer neue Lösungsvorschläge oder die ständige Frage «Geht es dir besser?»</p>
 
               <p><strong>«Ich bin eine Last für euch alle.»</strong><br/>
               So könnte es klingen: «Ich höre, wie schwer das für dich ist. Du bist mir wichtig.» Das Gefühl lässt sich anerkennen, ohne es ausreden zu wollen. <em>Vermeiden:</em> «Quatsch, du bist doch keine Last».</p>
@@ -445,7 +445,8 @@ function Modul6Page({ onNavigate }) {
 
             <section id="s7">
               <h2>«Sie hat die Medikamente abgesetzt» — was Sie tun können</h2>
-              <p>Wenn Medikamente verändert oder abgesetzt werden, kann das Angehörigen Sorgen machen. Ob die Änderung abgesprochen ist und welche Folgen oder Alternativen bedacht werden müssen, klären Fachpersonen. Die Behandlung festzulegen oder ihre Einhaltung zu kontrollieren ist nicht Ihre Aufgabe.</p>
+              <p>Wenn Medikamente verändert oder abgesetzt werden, kann das Angehörigen Sorgen machen. Ob die Änderung abgesprochen ist und welche Folgen oder Alternativen bedacht werden müssen, klären Fachpersonen. Die Behandlung eigenständig festzulegen ist nicht Ihre Aufgabe.</p>
+              <p>Davon zu unterscheiden ist vereinbarte Unterstützung bei der Einnahme. Klären Sie mit der betroffenen Person und dem Behandlungsteam, welche Aufgaben und Befugnisse tatsächlich bei Ihnen liegen. Berücksichtigen Sie dabei bestehende Betreuungs-, Sorge- oder Schutzaufgaben und besprechen Sie, wer notwendige Aufgaben übernimmt, wenn Sie sie nicht weiter übernehmen können.</p>
 
               <h3>Nach Gründen und Absprachen fragen</h3>
               <p>Nebenwirkungen, schlechte Erfahrungen oder Fragen zu Nutzen und Dauer der Behandlung können die Person beschäftigen. Fragen Sie nach ihrer Sicht, ohne den Grund schon zu kennen. Bedenken und mögliche Änderungen können mit der behandelnden Fachperson besprochen werden.</p>
@@ -460,7 +461,8 @@ function Modul6Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Was Sie vermeiden sollten</span>
-                <p>✗ Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · ✗ Tägliche Kontrollfragen («Hast du deine Tabletten genommen?») — sie erzeugen Scham und Widerstand · ✗ Ultimaten stellen, die Sie nicht einhalten können · ✗ Behandlung und Unterstützung allein koordinieren wollen — nutzen Sie ein bestehendes Behandlungsteam oder eigene Angehörigenberatung.</p>
+                <p>✗ Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · ✗ Vorwurfsvolle Kontrollen der Medikamenteneinnahme oder Kontrollen ohne geklärte Aufgabe und Befugnis · ✗ Ultimaten stellen, die Sie nicht einhalten können · ✗ Behandlung und Unterstützung allein koordinieren wollen — nutzen Sie ein bestehendes Behandlungsteam oder eigene Angehörigenberatung.</p>
+                <p>Gemeinsam vereinbarte Erinnerungen und notwendige Hilfe bei der Einnahme sind davon zu unterscheiden. Klären Sie, welche Unterstützung gewünscht oder im Rahmen bestehender Sorgeaufgaben nötig ist und wer sie übernimmt.</p>
               </aside>
             </section>
 
@@ -486,7 +488,7 @@ function Modul6Page({ onNavigate }) {
 
               <h3>Während des Aufenthalts</h3>
               <p><strong>Was Sie tun können:</strong> An Angehörigengesprächen teilnehmen, Praktisches wie Post, Rechnungen oder den Kontakt zum Arbeitgeber organisieren und eigene Entlastung klären. Mit entsprechendem Einverständnis können Sie sich über den Behandlungsplan informieren. Auch den Krisenplan können Sie aktualisieren.</p>
-              <p><strong>Was nicht hilft:</strong> Tägliche Kontrollanrufe auf der Station oder Behandlungsentscheidungen unbedacht infrage zu stellen. Auch Schuldgefühle wegen der Einweisung und das Übergehen der eigenen Erschöpfung helfen nicht weiter, selbst wenn es der anderen Person gerade schlechter geht.</p>
+              <p><strong>Fragen und eigene Entlastung:</strong> Bei Fragen zu Behandlungsentscheidungen können Sie das Team ansprechen. Vereinbaren Sie mit der Station, wann und bei wem Rückfragen möglich sind. Wenn Sie wegen der Einweisung Schuldgefühle haben, können Sie diese in einer Angehörigenberatung besprechen. Auch Ihre Erschöpfung verdient Aufmerksamkeit, unabhängig davon, wie es der anderen Person geht.</p>
 
               <h3>Entlassung — der Übergang nach Hause</h3>
               <p>Die Klinik bietet in der Regel ein Austrittsgespräch an. <strong>Bitten Sie darum, an diesem Gespräch teilzunehmen.</strong> Nehmen Sie den Medikationsplan mit und klären Sie, wie die ambulante Behandlung weitergeht. Besprechen Sie Frühwarnzeichen, den Krisenplan und Ihre eigenen Grenzen. «Stabil genug für zu Hause» bedeutet nicht «geheilt»; auch das ist wichtig für Ihre Erwartungen.</p>

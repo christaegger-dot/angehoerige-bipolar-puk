@@ -1,0 +1,3391 @@
+{
+  "started": "2026-10-05T16:30:59.839Z",
+  "scope": "DL-02, DL-04 und DL-05: Telefonnummern bei 320/360 CSS-Pixeln und 100/200 Prozent tatsächlicher HTML-Textvergrösserung.",
+  "method": "Vorher und nachher auf jeweils frischen Seiten desselben stabilen finalen Builds. Vorher stellt ein ausschliesslich im Browser eingesetzter Stil die alten fünf CSS-Eigenschaften und die alte mobile Grid-Spalte wieder her. Nummerntext und tel-URI werden paarweise bytegleich verglichen. Jeder sichtbare Text-Teil muss vollständig in der Inhaltsbreite des Handout-Bodys bleiben; die äussere Dialogkarte allein genügt nicht. Text wird genau einmal vergrössert und nach zwei Paint-Frames gegen gespeicherte Originalgrössen überprüft. Alle Telefonlinks werden bei unterdrücktem externen tel-Protokoll geklickt.",
+  "checks": [
+    {
+      "width": 320,
+      "percent": 100,
+      "material": "dl-02",
+      "passed": true,
+      "before": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 1618.671875
+          },
+          "clientWidth": 222,
+          "scrollWidth": 222
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 72.609375,
+                "width": 23.609375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 77.859375,
+                "width": 28.859375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 172.21875,
+                "width": 123.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "058 384 38 00",
+            "href": "tel:+41583843800",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.96875,
+                "width": 124.96875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 6
+      },
+      "after": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 1739.140625
+          },
+          "clientWidth": 222,
+          "scrollWidth": 222
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 72.609375,
+                "width": 23.609375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 77.859375,
+                "width": 28.859375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 172.21875,
+                "width": 123.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 38 00",
+            "href": "tel:+41583843800",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.96875,
+                "width": 124.96875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 6,
+        "closingReturnFocus": "dl-02",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 320,
+      "percent": 100,
+      "material": "dl-04",
+      "passed": true,
+      "before": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 2463.546875
+          },
+          "clientWidth": 222,
+          "scrollWidth": 222
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 77.859375,
+                "width": 28.859375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 172.21875,
+                "width": 123.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 4
+      },
+      "after": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 2543.859375
+          },
+          "clientWidth": 222,
+          "scrollWidth": 222
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 77.859375,
+                "width": 28.859375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 172.21875,
+                "width": 123.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 4,
+        "closingReturnFocus": "dl-04",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 320,
+      "percent": 100,
+      "material": "dl-05",
+      "passed": true,
+      "before": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 1863.984375
+          },
+          "clientWidth": 222,
+          "scrollWidth": 222
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 72.609375,
+                "width": 23.609375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 3
+      },
+      "after": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 1924.21875
+          },
+          "clientWidth": 222,
+          "scrollWidth": 222
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 72.609375,
+                "width": 23.609375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 3,
+        "closingReturnFocus": "dl-05",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 320,
+      "percent": 200,
+      "material": "dl-02",
+      "passed": true,
+      "before": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 237,
+          "settledFrames": 2,
+          "measuredElements": 292,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 3977.921875
+          },
+          "clientWidth": 222,
+          "scrollWidth": 250
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 96.21875,
+                "width": 47.21875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 106.734375,
+                "width": 57.734375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 295.546875,
+              "width": 246.546875,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 295.546875,
+                "width": 246.546875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [
+              {
+                "left": 49,
+                "right": 295.546875,
+                "width": 246.546875,
+                "height": 43
+              }
+            ],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 298.375,
+              "width": 249.375,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 38 00",
+            "href": "tel:+41583843800",
+            "rect": {
+              "left": 49,
+              "right": 299.046875,
+              "width": 250.046875,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 299.046875,
+                "width": 250.046875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [
+              {
+                "left": 49,
+                "right": 299.046875,
+                "width": 250.046875,
+                "height": 43
+              }
+            ],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [
+          {
+            "tag": "DIV",
+            "classes": "handout-body",
+            "clientWidth": 222,
+            "scrollWidth": 250
+          },
+          {
+            "tag": "UL",
+            "classes": "handout-phonelist",
+            "clientWidth": 222,
+            "scrollWidth": 250
+          },
+          {
+            "tag": "LI",
+            "classes": "",
+            "clientWidth": 222,
+            "scrollWidth": 247
+          },
+          {
+            "tag": "LI",
+            "classes": "",
+            "clientWidth": 222,
+            "scrollWidth": 249
+          },
+          {
+            "tag": "LI",
+            "classes": "",
+            "clientWidth": 222,
+            "scrollWidth": 250
+          }
+        ],
+        "outOfContentCount": 3,
+        "undersizedCount": 0
+      },
+      "after": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 237,
+          "settledFrames": 2,
+          "measuredElements": 292,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 4158
+          },
+          "clientWidth": 222,
+          "scrollWidth": 222
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 96.21875,
+                "width": 47.21875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 106.734375,
+                "width": 57.734375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 95.65625
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 191.625,
+                "width": 142.625,
+                "height": 43
+              },
+              {
+                "left": 49,
+                "right": 143.421875,
+                "width": 94.421875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 95.65625
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 190.78125,
+                "width": 141.78125,
+                "height": 43
+              },
+              {
+                "left": 49,
+                "right": 147.109375,
+                "width": 98.109375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 38 00",
+            "href": "tel:+41583843800",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 95.65625
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 190.78125,
+                "width": 141.78125,
+                "height": 43
+              },
+              {
+                "left": 49,
+                "right": 147.765625,
+                "width": 98.765625,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 6,
+        "closingReturnFocus": "dl-02",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 320,
+      "percent": 200,
+      "material": "dl-04",
+      "passed": true,
+      "before": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 220,
+          "settledFrames": 2,
+          "measuredElements": 273,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 8134.703125
+          },
+          "clientWidth": 222,
+          "scrollWidth": 249
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 106.734375,
+                "width": 57.734375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 295.546875,
+              "width": 246.546875,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 295.546875,
+                "width": 246.546875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [
+              {
+                "left": 49,
+                "right": 295.546875,
+                "width": 246.546875,
+                "height": 43
+              }
+            ],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 298.375,
+              "width": 249.375,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [
+          {
+            "tag": "DIV",
+            "classes": "handout-body",
+            "clientWidth": 222,
+            "scrollWidth": 249
+          },
+          {
+            "tag": "UL",
+            "classes": "handout-phonelist",
+            "clientWidth": 222,
+            "scrollWidth": 249
+          },
+          {
+            "tag": "LI",
+            "classes": "",
+            "clientWidth": 222,
+            "scrollWidth": 247
+          },
+          {
+            "tag": "LI",
+            "classes": "",
+            "clientWidth": 222,
+            "scrollWidth": 249
+          }
+        ],
+        "outOfContentCount": 2,
+        "undersizedCount": 0
+      },
+      "after": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 220,
+          "settledFrames": 2,
+          "measuredElements": 273,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 8266.953125
+          },
+          "clientWidth": 222,
+          "scrollWidth": 222
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 106.734375,
+                "width": 57.734375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 95.65625
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 191.625,
+                "width": 142.625,
+                "height": 43
+              },
+              {
+                "left": 49,
+                "right": 143.421875,
+                "width": 94.421875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 95.65625
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 190.78125,
+                "width": 141.78125,
+                "height": 43
+              },
+              {
+                "left": 49,
+                "right": 147.109375,
+                "width": 98.109375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 4,
+        "closingReturnFocus": "dl-04",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 320,
+      "percent": 200,
+      "material": "dl-05",
+      "passed": true,
+      "before": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 215,
+          "settledFrames": 2,
+          "measuredElements": 267,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 5868.625
+          },
+          "clientWidth": 222,
+          "scrollWidth": 249
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 298.375,
+              "width": 249.375,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "undersizedTarget": false
+          },
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 96.21875,
+                "width": 47.21875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [
+          {
+            "tag": "DIV",
+            "classes": "handout-body",
+            "clientWidth": 222,
+            "scrollWidth": 249
+          },
+          {
+            "tag": "UL",
+            "classes": "handout-phonelist",
+            "clientWidth": 222,
+            "scrollWidth": 249
+          },
+          {
+            "tag": "LI",
+            "classes": "",
+            "clientWidth": 222,
+            "scrollWidth": 249
+          }
+        ],
+        "outOfContentCount": 1,
+        "undersizedCount": 0
+      },
+      "after": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 215,
+          "settledFrames": 2,
+          "measuredElements": 267,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 271
+          },
+          "rect": {
+            "left": 49,
+            "right": 271,
+            "width": 222,
+            "height": 5953.046875
+          },
+          "clientWidth": 222,
+          "scrollWidth": 222
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 300,
+            "width": 280,
+            "height": 752
+          },
+          "clientWidth": 278,
+          "scrollWidth": 278
+        },
+        "viewport": 320,
+        "pageWidth": 320,
+        "links": [
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 95.65625
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 190.78125,
+                "width": 141.78125,
+                "height": 43
+              },
+              {
+                "left": 49,
+                "right": 147.109375,
+                "width": 98.109375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 271,
+              "width": 222,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 96.21875,
+                "width": 47.21875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 3,
+        "closingReturnFocus": "dl-05",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 360,
+      "percent": 100,
+      "material": "dl-02",
+      "passed": true,
+      "before": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 1514.09375
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 72.609375,
+                "width": 23.609375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 77.859375,
+                "width": 28.859375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 172.21875,
+                "width": 123.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "058 384 38 00",
+            "href": "tel:+41583843800",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.96875,
+                "width": 124.96875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 6
+      },
+      "after": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 1634.5625
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 72.609375,
+                "width": 23.609375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 77.859375,
+                "width": 28.859375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 172.21875,
+                "width": 123.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 38 00",
+            "href": "tel:+41583843800",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.96875,
+                "width": 124.96875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 6,
+        "closingReturnFocus": "dl-02",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 360,
+      "percent": 100,
+      "material": "dl-04",
+      "passed": true,
+      "before": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 2089.09375
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 77.859375,
+                "width": 28.859375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 172.21875,
+                "width": 123.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 4
+      },
+      "after": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 2169.40625
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 77.859375,
+                "width": 28.859375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 172.21875,
+                "width": 123.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 4,
+        "closingReturnFocus": "dl-04",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 360,
+      "percent": 100,
+      "material": "dl-05",
+      "passed": true,
+      "before": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 1669.1875
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 23.921875
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 72.609375,
+                "width": 23.609375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": true
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 3
+      },
+      "after": {
+        "enlargement": null,
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 1729.421875
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 173.640625,
+                "width": 124.640625,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 78.21875,
+                "width": 29.21875,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 44
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 72.609375,
+                "width": 23.609375,
+                "height": 22
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 3,
+        "closingReturnFocus": "dl-05",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 360,
+      "percent": 200,
+      "material": "dl-02",
+      "passed": true,
+      "before": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 237,
+          "settledFrames": 2,
+          "measuredElements": 292,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 3496.875
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 96.21875,
+                "width": 47.21875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 106.734375,
+                "width": 57.734375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 295.546875,
+                "width": 246.546875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 38 00",
+            "href": "tel:+41583843800",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 299.046875,
+                "width": 250.046875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0
+      },
+      "after": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 237,
+          "settledFrames": 2,
+          "measuredElements": 292,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 3496.875
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 96.21875,
+                "width": 47.21875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 106.734375,
+                "width": 57.734375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 295.546875,
+                "width": 246.546875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 38 00",
+            "href": "tel:+41583843800",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 299.046875,
+                "width": 250.046875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 6,
+        "closingReturnFocus": "dl-02",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 360,
+      "percent": 200,
+      "material": "dl-04",
+      "passed": true,
+      "before": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 220,
+          "settledFrames": 2,
+          "measuredElements": 273,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 6915.265625
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 106.734375,
+                "width": 57.734375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 295.546875,
+                "width": 246.546875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0
+      },
+      "after": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 220,
+          "settledFrames": 2,
+          "measuredElements": 273,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 6915.265625
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "143",
+            "href": "tel:143",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 106.734375,
+                "width": 57.734375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "0800 33 66 55",
+            "href": "tel:+41800336655",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 295.546875,
+                "width": 246.546875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 4,
+        "closingReturnFocus": "dl-04",
+        "closedRoute": "/unterstuetzung"
+      }
+    },
+    {
+      "width": 360,
+      "percent": 200,
+      "material": "dl-05",
+      "passed": true,
+      "before": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 215,
+          "settledFrames": 2,
+          "measuredElements": 267,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 4900.5625
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 96.21875,
+                "width": 47.21875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "nowrap",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0
+      },
+      "after": {
+        "enlargement": {
+          "method": "Each computed HTML font size doubled; root rem geometry enlarged too; SVG text represented by visible HTML alternatives",
+          "enlargedOnce": true,
+          "immediateFailedEnlargements": 215,
+          "settledFrames": 2,
+          "measuredElements": 267,
+          "failedEnlargements": 0
+        },
+        "body": {
+          "content": {
+            "left": 49,
+            "right": 311
+          },
+          "rect": {
+            "left": 49,
+            "right": 311,
+            "width": 262,
+            "height": 4900.5625
+          },
+          "clientWidth": 262,
+          "scrollWidth": 262
+        },
+        "card": {
+          "rect": {
+            "left": 20,
+            "right": 340,
+            "width": 320,
+            "height": 752
+          },
+          "clientWidth": 318,
+          "scrollWidth": 318
+        },
+        "viewport": 360,
+        "pageWidth": 360,
+        "links": [
+          {
+            "text": "058 384 20 00",
+            "href": "tel:+41583842000",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 298.375,
+                "width": 249.375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "144",
+            "href": "tel:144",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 107.4375,
+                "width": 58.4375,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          },
+          {
+            "text": "117",
+            "href": "tel:117",
+            "rect": {
+              "left": 49,
+              "right": 311,
+              "width": 262,
+              "height": 47.828125
+            },
+            "fragments": [
+              {
+                "left": 49,
+                "right": 96.21875,
+                "width": 47.21875,
+                "height": 43
+              }
+            ],
+            "whiteSpace": "normal",
+            "outsideContent": [],
+            "undersizedTarget": false
+          }
+        ],
+        "overflows": [],
+        "outOfContentCount": 0,
+        "undersizedCount": 0,
+        "clicksVerified": 3,
+        "closingReturnFocus": "dl-05",
+        "closedRoute": "/unterstuetzung"
+      }
+    }
+  ],
+  "failures": [],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "requestFailures": [],
+  "buildBefore": "b684fa2f26f237d0c2ac3d4ad152886c531d99689c2c1826b3ecd02ee0af70af",
+  "buildAfter": "b684fa2f26f237d0c2ac3d4ad152886c531d99689c2c1826b3ecd02ee0af70af",
+  "buildStable": true,
+  "serverClosed": true,
+  "finished": "2026-10-05T16:31:25.962Z",
+  "counts": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "documentedObservationsResolved": [
+    {
+      "material": "dl-02",
+      "beforeLinksOutsideContent": 3,
+      "afterLinksOutsideContent": 0
+    },
+    {
+      "material": "dl-04",
+      "beforeLinksOutsideContent": 2,
+      "afterLinksOutsideContent": 0
+    },
+    {
+      "material": "dl-05",
+      "beforeLinksOutsideContent": 1,
+      "afterLinksOutsideContent": 0
+    }
+  ],
+  "visualReview": {
+    "material": "dl-02",
+    "width": 320,
+    "textPercent": 200,
+    "screenshot": "/workspace/cloud-setup/s-followup/phone-reflow-dl02-320-200.png",
+    "method": "Separater eigener Preview desselben finalen Builds auf Port 4573; geschlossen. Einmalige tatsächliche HTML-Textvergrösserung und zwei Paint-Frames. Manuelle Bildsichtung ergänzend zu den 12 gemessenen Vorher-/Nachher-Paaren.",
+    "observations": "Nummern an bestehenden Leerzeichen in zwei Zeilen; vollständige Ziffernfolgen und Beschriftungen sichtbar; gleichmässiger innerer Abstand ohne horizontalen Anschnitt. Keine Inhalts- oder Nummernänderungen."
+  }
+}

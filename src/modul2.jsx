@@ -411,12 +411,14 @@ function Modul2Page({ onNavigate }) {
                   <h3>Was nicht hilft</h3>
                   <ul>
                     <li>Heimlich Handy, E-Mails oder Kontoauszüge kontrollieren</li>
-                    <li>Medikamenteneinnahme überwachen statt begleiten</li>
+                    <li>Die Medikamenteneinnahme kontrollieren, ohne die eigene Aufgabe und Befugnis zu klären</li>
                     <li>Jede Stimmungsschwankung als Vorbote einer Episode deuten</li>
                     <li>Entscheidungen treffen, die die erkrankte Person selbst treffen kann</li>
                   </ul>
                 </div>
               </div>
+
+              <p>Wenn Sie bei der Medikamenteneinnahme unterstützen, klären Sie mit der betroffenen Person und dem Behandlungsteam, welche Aufgaben und Befugnisse tatsächlich bei Ihnen liegen. Berücksichtigen Sie dabei auch bestehende Betreuungs- und Schutzaufgaben. Besprechen Sie, wer eine notwendige Aufgabe übernimmt, wenn Sie sie nicht weiter übernehmen können.</p>
 
               <aside className="callout">
                 <span className="callout-label">Entlastender Grundsatz</span>

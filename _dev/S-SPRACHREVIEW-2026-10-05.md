@@ -4,6 +4,8 @@
 
 Die psychoedukative Website ist vollständig sprachlich geprüft und im eigenen Branch überarbeitet. Gelungene Passagen bleiben erhalten. Die ursprüngliche Fassung bleibt auf `main` nachvollziehbar; der Vergleich mit der Ausgangsfassung zeigt die Änderungen.
 
+Nach dem Folgeauftrag «bitte setze die erkenntnisse aus der review um» sind auch die neun verbliebenen redaktionellen Prüfstellen und die drei Beobachtungen zum Umbruch langer Telefonnummern bearbeitet. Der [Umsetzungsnachtrag](s/Umsetzung-offener-Erkenntnisse.md) dokumentiert die weiteren Änderungen gegenüber der S-Erstfassung `3765dfe` und deren Nachprüfung. Die Bereichsregister und Erstprüfnachweise unten beziehen sich auf die ursprüngliche S-Fassung; ihre damaligen offenen Textbefunde sind durch den Nachtrag fortgeschrieben.
+
 ## Kontext und Umfang
 
 Aus W1/W2 übernommene Annahmen: erwachsene Angehörige und nahestehende Personen, einschliesslich Partnerinnen/Partnern, Eltern, Geschwistern, erwachsenen Kindern und Freundschaften; Anrede «Sie»; Fachstelle Angehörigenarbeit der PUK Zürich als Anbieterin von Beratung und Psychoedukation; selbständiges Lesen und Verwendung in der Beratung; Schweizer Hochdeutsch mit ss und «Guillemets». Gesprächsbeispiele können je nach Beziehung die Anrede «du» verwenden und sind als anpassbare Anregungen gekennzeichnet.
@@ -19,7 +21,7 @@ Die reine Notfallseite und die Krisen-Handouts DL-02/04/05 sind gemäss Auftrag 
 | kritisch | M1 s9 fordert mit «Nicht die halbe Version» eine umfassende Offenlegung. | Die Person entscheidet, wem sie wie viel mitteilen möchte; die Privatsphäre der erkrankten Person wird berücksichtigt. |
 | kritisch | M2 s4 setzt Angehörige als Teil eines Frühwarnsystems voraus. | Beobachtungen sind an gewünschte, gemeinsam vereinbarte Aufgaben gebunden. Fachliche Einschätzung bleibt beim Behandlungsteam. |
 | kritisch | M2 s8 begründet eigene Hilfe als Voraussetzung weiterer Begleitung. | Eigene Beratung und Unterstützung sind auch unabhängig von weiterer Begleitung berechtigt. |
-| kritisch · Prüfbedarf | Bereits bestehende unbedingte Wirkzusagen, besonders M6 s5 «Dieser Satz entlastet Sie beide». | Im Fachprüfregister ausdrücklich markiert. Der fachliche Inhalt bleibt gemäss S-Auftrag erhalten, bis die Fachredaktion ihn beurteilt. |
+| kritisch · umgesetzt nach Folgeauftrag | Bereits bestehende unbedingte Wirkzusagen, besonders M6 s5 «Dieser Satz entlastet Sie beide». | Die pauschale Wirkung entfällt. Stattdessen wird erklärt, was das anpassbare Gesprächsbeispiel ausdrückt, ohne Entlastung zu versprechen. |
 | wichtig | Abstrakte oder künstliche Begriffe wie «sprachfähiger», «Funktionsträgerin der Krise», «Grenzenot» und «Zeit-/Verfügbarkeit» in Modulen, Teasern und DL-01. | Konkrete Erfahrungen, Handlungen und Fragen ersetzen die Formeln. Erforderliche Fachbegriffe bleiben und werden verständlich erklärt. |
 | wichtig | Stakkato aus kurzen Anweisungen und unvermittelten Negativhinweisen, besonders M6 und Phasenverlauf. | Zusammengehörige Aussagen sind verbunden; Diagnose-, Prognose- und Modellgrenzen bleiben ausdrücklich enthalten. |
 | wichtig | Gesprächsbeispiele wirken therapeutisch oder verwaltungssprachlich, besonders M6 und Kommunikations-Trainer. | Alltagstaugliche Beobachtungen, Wünsche, Bitten und eigene umsetzbare Grenzen; keine verpflichtenden Folgeangebote. |
@@ -56,7 +58,7 @@ Der Originalvergleich erfolgte je Bereich und zusätzlich unabhängig über die 
 
 Es wurden keine neuen medizinischen oder rechtlichen Fakten, Diagnosekriterien, Zahlen, Primärquellen oder Behandlungsempfehlungen eingeführt. Sprachliche Rollen- und Bezugspräzisierungen, ausgeschriebene Abkürzungen und der beschriebene Schlussabgleich sind dokumentiert. Die vorhandenen Quellen, Bedingungen, Betreuungsaufgaben und Unsicherheiten bleiben erhalten.
 
-Die **35 offenen Quellen-, Rechts- und Angebotsverifikationen aus W1** bleiben im [W1-Register](w1/Befunde-und-Umsetzung.json) offen. Die folgenden bestehenden Aussagen werden zusätzlich konkret als **Prüfbedarf** benannt. Ihr fachlicher Inhalt wurde in S nicht stillschweigend korrigiert:
+Die **35 offenen Quellen-, Rechts- und Angebotsverifikationen aus W1** bleiben im [W1-Register](w1/Befunde-und-Umsetzung.json) offen. Die folgenden Aussagen wurden in der S-Erstfassung als **Prüfbedarf** markiert. Nach dem ausdrücklichen Folgeauftrag sind sie redaktionell bereinigt: pauschale Wirkungen und Häufigkeitsangaben entfallen, Aufgaben werden präzisiert und Schuldgefühle anerkennend behandelt. Die konkrete Umsetzung steht im [Nachtrag](s/Umsetzung-offener-Erkenntnisse.md); dadurch wird keine fachliche Originaldeckung behauptet.
 
 | Fundstelle | Aussage / Frage für die Fachredaktion |
 | --- | --- |
@@ -101,7 +103,7 @@ Einzelne Erklärungen sind länger, weil sie Fachwörter, Bedingungen oder Handl
 - Schweigepflicht: Box «Vertrauliche Angaben und Behandlungsunterlagen».
 - Barrierefreiheit: ausgeschriebene Technikbegriffe in Einleitung und Funktionsliste.
 
-## Abschlussprüfung und Grenzen
+## Abschlussprüfung der S-Erstfassung und Grenzen
 
 - Original-/Bedeutungsabgleich je Bereich und [unabhängiger Gesamtvergleich](s/Unabhaengiger-Abgleich.md): abgeschlossen.
 - [Strukturvergleich der 23 geänderten Anwendungsdateien](s/source-invariants.json): bestanden; Quellenlinks, IDs, Navigation, Werte, Speicherverhalten und die ausgeschlossenen Krisentexte erhalten.
@@ -114,8 +116,8 @@ Einzelne Erklärungen sind länger, weil sie Fachwörter, Bedingungen oder Handl
 
 Die bestehenden Verhaltenstests und die Textselektoren des Werkzeugaudits sind an die neuen Beschriftungen angepasst. Speicher-, Lösch-, Export-, Grenz- und Aussagegrenzenprüfungen wurden nicht entfernt oder abgeschwächt.
 
-Der zusätzliche Browserlauf verwendet reduzierte Bewegung. Unmittelbar nach der Textvergrösserung gemessene Schriftgrössen waren wegen der kurzen CSS-Übergänge teilweise noch unverändert. Nach zwei Zeichenframes besteht die erneute Messung gegen die ursprünglichen Schriftgrössen: alle sichtbaren HTML-Texte sind tatsächlich verdoppelt. Dafür wurde nur die externe Messroutine ergänzt; die Website blieb unverändert. Drei Darstellungsbeobachtungen bleiben für W3 dokumentiert: Bei 320 px und 200 % reichen lange, unveränderte Telefonlinks in DL-02/04/05 in den inneren Abstand hinein. Sie bleiben vollständig innerhalb von Dialog und Bildschirm sichtbar; kein Abschneiden oder horizontaler Überlauf der Seite.
+Der zusätzliche Browserlauf verwendet reduzierte Bewegung. Unmittelbar nach der Textvergrösserung gemessene Schriftgrössen waren wegen der kurzen CSS-Übergänge teilweise noch unverändert. Nach zwei Zeichenframes besteht die erneute Messung gegen die ursprünglichen Schriftgrössen: alle sichtbaren HTML-Texte sind tatsächlich verdoppelt. Dafür wurde nur die externe Messroutine ergänzt; die Website blieb während dieser Erstprüfung unverändert. Drei Darstellungsbeobachtungen wurden festgehalten: Bei 320 px und 200 % reichen lange, unveränderte Telefonlinks in DL-02/04/05 in den inneren Abstand hinein. Sie blieben vollständig innerhalb von Dialog und Bildschirm sichtbar; kein Abschneiden oder horizontaler Überlauf der Seite. Der Folgeauftrag korrigiert auch diese inneren Umbrüche; der Vorher-/Nachher-Nachweis steht im Nachtrag.
 
 Keine interne Seite war für die Quelltextprüfung unzugänglich. Die externen Originalquellen wurden in S nicht neu geprüft. Physische Ausdrucke, exportierte PDFs und reale VoiceOver-/NVDA-Nutzung sind nicht abgenommen. Der automatische Browseraudit der Atemübung prüft Start/Abbruch; die vollständige zeitgesteuerte Übung ist im Quelltext gelesen, aber nicht als reale Langzeitbedienung geprüft.
 
-Fortsetzung: Alle Inhalte im S-Geltungsbereich sind bearbeitet; es gibt keinen noch ausstehenden Sprachabschnitt. Die aufgeführten Fachprüfungen bleiben gesonderte Aufgaben. Nach Freigabe dieser Sprachfassung bildet sie die Textgrundlage für W3; ein Merge oder eine Veröffentlichung wird durch diesen S-Auftrag nicht vorgenommen.
+Fortsetzung: Alle Inhalte im S-Geltungsbereich und die neun redaktionellen Folgepunkte sind bearbeitet; es gibt keinen noch ausstehenden Sprachabschnitt. Die Quellen-, Rechts- und Angebotsprüfungen aus W1 bleiben gesonderte Aufgaben. Nach Freigabe dieser Sprachfassung bildet sie die Textgrundlage für W3; ein Merge oder eine Veröffentlichung wird durch diesen S-Auftrag nicht vorgenommen.

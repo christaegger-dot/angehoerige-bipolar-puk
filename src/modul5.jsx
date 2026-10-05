@@ -192,7 +192,7 @@ function Modul5Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 14–16 Minuten · 10 Abschnitte</span>
             </div>
             <h1>Zwischen <em>Treue</em> und <em>Selbstschutz</em></h1>
-            <p className="lede">Loyalitätskonflikte sind selten laut. Vielleicht möchten Sie einem Menschen nahe bleiben und spüren zugleich, dass Sie mehr Raum für sich brauchen. Diese widersprüchlichen Bedürfnisse können es schwer machen, Grenzen zu setzen oder über die Beziehung zu entscheiden. Das Modul bietet Fragen, mit denen Sie Ihre Lage und Ihre eigenen Wünsche besser verstehen können.</p>
+            <p className="lede">Vielleicht möchten Sie einem Menschen nahe bleiben und spüren zugleich, dass Sie mehr Raum für sich brauchen. Diese widersprüchlichen Bedürfnisse können es schwer machen, Grenzen zu setzen oder über die Beziehung zu entscheiden. Das Modul bietet Fragen, mit denen Sie Ihre Lage und Ihre eigenen Wünsche besser verstehen können.</p>
           </div>
         </header>
 

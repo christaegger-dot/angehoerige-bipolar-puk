@@ -100,7 +100,7 @@ function EigeneWeltGrid() {
   const bewegungen = [
     {
       label: 'kleine Pausen',
-      text: 'Eine halbe Stunde im Tag für etwas anderes als die Erkrankung: einen Kaffee, ein Buch oder einen Spaziergang ohne Telefon. Klein heisst nicht weniger wirksam. Eine kleine Pause hält im Alltag oft besser als ein grosser Plan.',
+      text: 'Eine halbe Stunde im Tag für etwas anderes als die Erkrankung: einen Kaffee, ein Buch oder einen Spaziergang ohne Telefon. Überlegen Sie, ob ein solcher kurzer Zeitraum gerade zu Ihrem Alltag passt.',
     },
     {
       label: 'vertraute Beziehungen',

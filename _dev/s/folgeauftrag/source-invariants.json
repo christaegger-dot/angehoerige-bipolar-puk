@@ -1,0 +1,230 @@
+{
+  "baseCommit": "3765dfe744608a9ed7e7271d5c4c9b5db5c5fa3b",
+  "checkedCommit": "3765dfe744608a9ed7e7271d5c4c9b5db5c5fa3b",
+  "checkedAtUtc": "2026-10-05T16:30:18.196Z",
+  "purpose": "Read-only final comparison of the authorized S follow-up (nine language findings plus phone-list CSS) against the exact supplied commit; no application edits, tests, builds or git mutations performed.",
+  "permittedChanges": "Visible text, title/placeholder/alt and textual ARIA labels; attribute-free em/strong/b/i emphasis and plain paragraph additions/splits are allowed. Plain p wrappers are flattened while functional expressions, links and protected attributes are preserved. The separately authorized phone-list CSS additions are assessed independently. No automatic clinical or legal assessment.",
+  "actualChangedPaths": [
+    "_dev/S-SPRACHREVIEW-2026-10-05.md",
+    "src/modul1.jsx",
+    "src/modul2.jsx",
+    "src/modul5.jsx",
+    "src/modul6.jsx",
+    "src/modul7.jsx",
+    "src/tool-reflow.css"
+  ],
+  "authorizedChangedPaths": [
+    "src/modul1.jsx",
+    "src/modul2.jsx",
+    "src/modul5.jsx",
+    "src/modul6.jsx",
+    "src/modul7.jsx",
+    "src/tool-reflow.css"
+  ],
+  "unexpectedSourceChanges": [],
+  "files": [
+    {
+      "file": "src/modul1.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "d8febba165d2de11e44ff61186331076013847f534608f5ab2f0f2b304387a61",
+      "afterHash": "f7333354caaa6a86c8ce847c0226c4a27daf3dccea4d9a348ec811d1142f5d6f"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "0eaee26abd47054e2dd610ef0e6c8811b79602a2b7488aba53128954061a6a6a",
+      "afterHash": "bddeeb303fb66ce5081a4f254f8323cfe0328751de60e1913b3a5abeacb924f7"
+    },
+    {
+      "file": "src/modul5.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "9bbf000a05d6c04ebe581900c613480844431361aaa5d8306e87fd534874be3a",
+      "afterHash": "0cf9051701aa4d5c7cc14993b0c1e08f4dcac524e07d57b1de15bf3db7682f44"
+    },
+    {
+      "file": "src/modul6.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "d26861fcb32a9442f6197b574212b0e75437ac92bc5149e355be9c3df5d5535a",
+      "afterHash": "4200e43de5b5325f838f1c515154f3548fb07755be8f043fbb8ce5613c55493e"
+    },
+    {
+      "file": "src/modul7.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "d97e806786990aba0a643b489fe70d9918aa6670ca1b043936ac3f1c8d56e6de",
+      "afterHash": "05d137b009c1e41f8edefa5308be5b63cc187366c55d822738e4e12942410ad4"
+    }
+  ],
+  "crisisExclusions": [
+    {
+      "file": "src/notfall.jsx",
+      "byteIdentical": true,
+      "beforeSha256": "38cf3f712d83d9023fd89f1c13cfd514c0f866a1cca322a0158767424f0afc38",
+      "afterSha256": "38cf3f712d83d9023fd89f1c13cfd514c0f866a1cca322a0158767424f0afc38"
+    },
+    {
+      "file": "src/crisis-content.js",
+      "byteIdentical": true,
+      "beforeSha256": "59f873169ec15dc9d4652a0d3e246275e7f61b7375e8824d2203e33583f1484a",
+      "afterSha256": "59f873169ec15dc9d4652a0d3e246275e7f61b7375e8824d2203e33583f1484a"
+    }
+  ],
+  "handoutExclusions": [
+    {
+      "file": "src/unterstuetzung.jsx",
+      "id": "DL-02",
+      "completeHandoutsObjectEntryByteIdentical": true,
+      "beforeSha256": "67b6cc6c7c386c660c713c45863889c6fe5d2ada99864721f1a6858601e29c0c",
+      "afterSha256": "67b6cc6c7c386c660c713c45863889c6fe5d2ada99864721f1a6858601e29c0c"
+    },
+    {
+      "file": "src/unterstuetzung.jsx",
+      "id": "DL-04",
+      "completeHandoutsObjectEntryByteIdentical": true,
+      "beforeSha256": "004f2d48ea80213933a74ec0a40f621fac8390c699e92a9d59473b68256adfa2",
+      "afterSha256": "004f2d48ea80213933a74ec0a40f621fac8390c699e92a9d59473b68256adfa2"
+    },
+    {
+      "file": "src/unterstuetzung.jsx",
+      "id": "DL-05",
+      "completeHandoutsObjectEntryByteIdentical": true,
+      "beforeSha256": "da8350d6659aa030ed6aa043d27242bf29b9d1381fcc45d941c621b829b3f610",
+      "afterSha256": "da8350d6659aa030ed6aa043d27242bf29b9d1381fcc45d941c621b829b3f610"
+    }
+  ],
+  "numericTextChanges": [],
+  "templateTextChanges": [],
+  "standardCitationRegistry": {
+    "file": "src/module-guidance.jsx",
+    "byteIdentical": true,
+    "beforeSha256": "5d0bb2585a70cfb83e7e638a49ee600623852893fba86443b3a83a7d975fe0b6",
+    "afterSha256": "5d0bb2585a70cfb83e7e638a49ee600623852893fba86443b3a83a7d975fe0b6"
+  },
+  "phoneListCss": {
+    "file": "src/tool-reflow.css",
+    "originalRulesPreserved": true,
+    "additionsMatchAuthorizedPhoneRules": true,
+    "addedNodes": [
+      {
+        "type": "rule",
+        "selector": ".handout-phonelist li > *",
+        "nodes": [
+          {
+            "type": "decl",
+            "prop": "min-width",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "type": "rule",
+        "selector": ".handout-phonelist-num",
+        "nodes": [
+          {
+            "type": "decl",
+            "prop": "display",
+            "value": "flex"
+          },
+          {
+            "type": "decl",
+            "prop": "align-items",
+            "value": "center"
+          },
+          {
+            "type": "decl",
+            "prop": "min-width",
+            "value": "0"
+          },
+          {
+            "type": "decl",
+            "prop": "min-height",
+            "value": "var(--web-touch-target)"
+          },
+          {
+            "type": "decl",
+            "prop": "max-width",
+            "value": "100%"
+          },
+          {
+            "type": "decl",
+            "prop": "white-space",
+            "value": "normal"
+          }
+        ]
+      },
+      {
+        "type": "atrule",
+        "name": "media",
+        "params": "(max-width: 700px)",
+        "nodes": [
+          {
+            "type": "rule",
+            "selector": ".handout-phonelist li",
+            "nodes": [
+              {
+                "type": "decl",
+                "prop": "grid-template-columns",
+                "value": "minmax(0, 1fr)"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "beforeSha256": "2b23cc68516a6abf68ea3e77f0bb2d104b026880d878c33b62ca763d28e58aa2",
+    "afterSha256": "413994bc1b5fd77ebd07f961a66b57b21f4a4098ed259dcf61dc33758d9360df",
+    "purpose": "Only existing phone-list items/number links: shrinking grid children, flex-aligned links with retained minimum touch height, whitespace wrapping and one column up to 700px. Actual phone text, href/contact destinations and crisis content are unchanged."
+  },
+  "summary": {
+    "filesChecked": 5,
+    "unexpectedSourceChanges": [],
+    "exactCitationRegistryPreserved": true,
+    "authorizedPhoneCssOnly": true,
+    "sourceInvariantPasses": 5,
+    "needsReview": [],
+    "crisisFilesByteIdentical": true,
+    "excludedHandoutEntriesByteIdentical": true,
+    "numericTextFilesFlagged": [],
+    "templateTextFilesFlagged": [],
+    "limitation": "Text meaning, new promises and complete WCAG/legal/clinical approval are outside this structural check. Read the language-review reports and independent review separately."
+  }
+}
