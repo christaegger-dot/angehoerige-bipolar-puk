@@ -76,7 +76,7 @@ function Footer({ page, onNavigate }) {
           <div className="footer-credit">
             <strong style={{color: 'var(--ink)', fontWeight: 500}}>Fachstelle Angehörigenarbeit</strong><br/>
             Psychiatrische Universitätsklinik Zürich (PUK)
-            <span className="footer-credit-attr">Inhaltliche Verantwortung: Ch. Egger · Stand: April 2026</span>
+            <span className="footer-credit-attr">Inhaltliche Verantwortung: Ch. Egger · Redaktioneller Stand: Oktober 2026</span>
           </div>
           <div className="footer-links">
             <a className="puk-web-nav__link" aria-current={page === 'impressum' ? 'page' : undefined} href={navHref('impressum')} onClick={navHandler('impressum', onNavigate)} {...navPreloadProps('impressum')}>Impressum</a>
@@ -86,7 +86,7 @@ function Footer({ page, onNavigate }) {
           </div>
         </div>
         <p className="footer-disclaimer">
-          Ein Angebot der Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK). Die Inhalte basieren auf aktueller Fachliteratur und ersetzen keine ärztliche oder psychotherapeutische Beratung. In akuten Lagen hat der Notfallweg Vorrang.
+          Die Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) bietet Beratung und Psychoedukation für Angehörige. Die Inhalte ersetzen keine ärztliche oder psychotherapeutische Beratung. Für akute Krisen sind die behandelnde Stelle und die zuständigen Notfalldienste zuständig.
         </p>
       </div>
     </footer>

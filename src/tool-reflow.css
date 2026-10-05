@@ -9,6 +9,28 @@
   text-underline-offset: .18em;
 }
 
+/* Long aspect labels need growing controls on narrow or enlarged-text views. */
+.ee-card { container-name: tool-aspects; container-type: inline-size; }
+
+@container tool-aspects (width < 24rem) {
+  .ee-stage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+    gap: 8px;
+    max-width: none;
+    aspect-ratio: auto;
+  }
+  .ee-stage .ee-svg { display: none; }
+  .ee-stage .ee-node {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+    min-height: var(--web-touch-target);
+    padding: 12px 16px;
+  }
+}
+
 .saeulen-result {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 6rem), 1fr));
 }

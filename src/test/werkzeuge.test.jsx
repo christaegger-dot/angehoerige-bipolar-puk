@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { WerkzeugePage } from '../werkzeuge.jsx';
 import { KrisenplanTool, TOOL_COMPONENTS } from '../werkzeuge-tools.jsx';
@@ -31,7 +31,7 @@ describe('WerkzeugePage', () => {
     render(<WerkzeugePage onNavigate={() => {}} />);
 
     expect(screen.getByRole('link', { name: /sieben Modulen/i })).toHaveAttribute('href', '/module');
-    expect(screen.getByRole('link', { name: /Notfallweg/i })).toHaveAttribute('href', '/notfall');
+    expect(screen.queryByRole('link', { name: /Notfallweg/i })).not.toBeInTheDocument();
   });
 });
 
@@ -112,9 +112,10 @@ describe('KrisenplanTool privacy', () => {
     expect(window.localStorage.getItem('puk-krisenplan-v1')).toContain('Private old draft');
   });
 
-  it('uses a canonical href for the crisis path link in the disclaimer', () => {
+  it('keeps regular counselling contact separate from crisis orientation', () => {
     render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
-    expect(screen.getByRole('link', { name: /Notfallweg/i })).toHaveAttribute('href', '/notfall');
+    expect(screen.getByRole('link', { name: '058 384 38 00' })).toHaveAttribute('href', 'tel:+41583843800');
+    expect(screen.queryByRole('link', { name: /Notfallweg/i })).not.toBeInTheDocument();
   });
 });
 
@@ -160,6 +161,46 @@ describe('Kommunikations-Trainer privacy', () => {
   });
 });
 
+describe('personal boundary preparation', () => {
+  it('requires an own action for a boundary and exports it only for that occasion', async () => {
+    const user = userEvent.setup();
+    const writeText = vi.spyOn(navigator.clipboard, 'writeText').mockResolvedValue();
+    const secureContextDescriptor = Object.getOwnPropertyDescriptor(window, 'isSecureContext');
+    Object.defineProperty(window, 'isSecureContext', { configurable: true, value: true });
+    try {
+      render(<TOOL_COMPONENTS.kommunikation onClose={() => {}} onNavigate={() => {}} />);
+      await user.click(screen.getByRole('button', { name: /Beginnen/ }));
+      await user.click(screen.getByRole('button', { name: /Ich möchte eine Grenze setzen/ }));
+      await user.click(screen.getByRole('button', { name: /weiter/ }));
+      await user.type(screen.getByRole('textbox', { name: 'Was haben Sie konkret beobachtet?' }), 'Im Gespräch wird es laut.');
+      await user.click(screen.getByRole('button', { name: /weiter/ }));
+      await user.type(screen.getByRole('textbox', { name: 'Was macht das mit Ihnen?' }), 'Ich fühle mich angespannt.');
+      await user.click(screen.getByRole('button', { name: /weiter/ }));
+
+      expect(screen.getByRole('button', { name: 'Skript ansehen →' })).toBeDisabled();
+      const action = 'Wenn das Gespräch laut wird, gehe ich für heute nach Hause.';
+      await user.type(screen.getByRole('textbox', { name: 'Welche eigene Grenze können Sie umsetzen?' }), action);
+      await user.click(screen.getByRole('button', { name: 'Skript ansehen →' }));
+      expect(screen.getByText(`«${action}»`)).toBeInTheDocument();
+      await user.click(screen.getByRole('button', { name: 'Skript kopieren' }));
+      expect(writeText).toHaveBeenLastCalledWith(expect.stringContaining(action));
+      expect(writeText.mock.lastCall[0]).not.toContain('[Ihre Bitte]');
+
+      await user.click(screen.getByRole('button', { name: 'Skript bearbeiten' }));
+      await user.click(screen.getByRole('button', { name: /Ein anderes Anliegen/ }));
+      for (let step = 0; step < 3; step++) await user.click(screen.getByRole('button', { name: /weiter/ }));
+      expect(screen.queryByRole('textbox', { name: 'Welche eigene Grenze können Sie umsetzen?' })).not.toBeInTheDocument();
+      await user.click(screen.getByRole('button', { name: 'Skript ansehen →' }));
+      await user.click(screen.getByRole('button', { name: 'Skript kopieren' }));
+      expect(writeText.mock.lastCall[0]).not.toContain(action);
+      expect(screen.queryByText(`«${action}»`)).not.toBeInTheDocument();
+    } finally {
+      if (secureContextDescriptor) Object.defineProperty(window, 'isSecureContext', secureContextDescriptor);
+      else delete window.isSecureContext;
+    }
+  });
+});
+
 describe('tool regressions', () => {
   it('starts the breathing exercise and can reset to the intro state', async () => {
     const AtemuebungTool = TOOL_COMPONENTS.atem;
@@ -180,7 +221,7 @@ describe('tool regressions', () => {
     render(<TOOL_COMPONENTS.ee onClose={onClose} onNavigate={onNavigate} />);
 
     fireEvent.click(screen.getByRole('button', { name: /erschöpfung/i }));
-    expect(screen.getByText(/aspekt 3 von 4/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: 'Erschöpfung' })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('tab', { name: /wo unterbrechen/i }));
     expect(screen.getByText(/sie messen keine grenze/i)).toBeInTheDocument();
@@ -249,7 +290,7 @@ describe('fachreview safety regressions', () => {
     expect(screen.getByRole('img', { name: /gleichzeitig/i }).querySelectorAll('path')).toHaveLength(2);
     await user.click(screen.getByRole('tab', { name: /bipolar ii/i }));
     expect(screen.queryByRole('img', { name: /gleichzeitig/i })).not.toBeInTheDocument();
-    expect(screen.getByText(/keine feste obergrenze von sieben tagen/i)).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: /bipolar ii/i })).toHaveAttribute('aria-selected', 'true');
   });
 });
 
@@ -265,4 +306,38 @@ it('completes the resource reflection with finite values and without health reas
   expect(dialog).not.toHaveTextContent('NaN');
   expect(dialog).not.toHaveTextContent('undefined');
   expect(dialog).toHaveTextContent('keine gesundheitliche Entwarnung');
+});
+
+describe('resource reflection comparisons', () => {
+  function completeReflection(optionIndices) {
+    render(<TOOL_COMPONENTS.saeulen onClose={() => {}} onNavigate={() => {}} />);
+    fireEvent.click(screen.getByRole('button', { name: /beginnen/i }));
+    for (const index of optionIndices) {
+      fireEvent.click(document.querySelectorAll('.selbsttest-opt')[index]);
+    }
+    return screen.getByRole('region', { name: 'Einordnung Ihrer Antworten' });
+  }
+
+  it('does not single out a strongest or weakest area when all four are equal', () => {
+    const reflection = completeReflection([0, 0, 0, 0, 0, 0, 0, 0]);
+    expect(reflection).toHaveTextContent('in allen vier Bereichen gleich hoch');
+    expect(within(reflection).queryByText('Fachlicher Halt', { exact: true })).not.toBeInTheDocument();
+    expect(within(reflection).queryByText('Körper', { exact: true })).not.toBeInTheDocument();
+  });
+
+  it('keeps every equally rated area visible in a partial tie', () => {
+    const reflection = completeReflection([0, 0, 0, 0, 3, 3, 3, 3]);
+    expect(within(reflection).getByText('Eigene Welt, Fachlicher Halt', { exact: true })).toBeInTheDocument();
+    expect(within(reflection).getByText('Körper, Beziehungen', { exact: true })).toBeInTheDocument();
+    expect(reflection).toHaveTextContent('ihre Reihenfolge ist keine Rangfolge');
+  });
+
+  it('identifies unique lower and higher areas from the chosen answers', () => {
+    const reflection = completeReflection([0, 0, 1, 1, 3, 3, 2, 2]);
+    expect(within(reflection).getByText('Eigene Welt', { exact: true })).toBeInTheDocument();
+    expect(within(reflection).getByText('Körper', { exact: true })).toBeInTheDocument();
+    expect(within(reflection).queryByText('Fachlicher Halt', { exact: true })).not.toBeInTheDocument();
+    expect(within(reflection).queryByText('Beziehungen', { exact: true })).not.toBeInTheDocument();
+    expect(reflection).not.toHaveTextContent('gleich hoch');
+  });
 });

@@ -46,8 +46,8 @@ function ImpressumPage() {
 
             <h2>Haftungsausschluss</h2>
             <p>
-              Die Inhalte dieser Lese-Begleitung wurden mit Sorgfalt zusammengestellt und beruhen auf aktueller
-              Fachliteratur. Sie ersetzen keine ärztliche, psychotherapeutische oder rechtliche Beratung. Eine
+              Die Inhalte dieser Lese-Begleitung dienen der psychoedukativen Orientierung für Angehörige.
+              Sie ersetzen keine ärztliche, psychotherapeutische oder rechtliche Beratung. Eine
               Haftung für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte sowie für Schäden, die
               aus der Nutzung der Inhalte entstehen, wird — soweit gesetzlich zulässig — ausgeschlossen.
             </p>
@@ -65,7 +65,7 @@ function ImpressumPage() {
             </p>
 
             <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: '0.875rem' }}>
-              Stand: April 2026
+              Redaktioneller Stand: Oktober 2026
             </p>
           </article>
         </div>

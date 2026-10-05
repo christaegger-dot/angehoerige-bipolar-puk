@@ -219,7 +219,7 @@ function HypervigilanzFigur() {
       <div className="hv-stage">
         <Hypervigilanz />
       </div>
-      <figcaption><strong id="m2-hypervigilanz-title">Viele Signale gleichzeitig wahrnehmen.</strong> Eine sinnvolle Anpassung — und ein Dauerzustand: das Mitlesen vieler kleiner Signale gleichzeitig.</figcaption>
+      <figcaption><strong id="m2-hypervigilanz-title">Viele Signale gleichzeitig wahrnehmen.</strong> Ein Bild dafür, wie erhöhte Wachsamkeit Aufmerksamkeit binden kann.</figcaption>
       <FigureText visualId="m2-hypervigilanz">
         <p>In der Mitte steht eine Person. Feine Linien verbinden sie mit sechs Alltagssignalen: Tür, Anruf, Zeit, Medikation, Schlaf und Tonfall. Die vielen Verbindungen zeigen gleichzeitig gebundene Aufmerksamkeit.</p>
         <p>Die Darstellung ist kein festgelegter Ablauf und keine Anweisung, alle diese Signale überwachen zu müssen.</p>
@@ -231,12 +231,12 @@ function HypervigilanzFigur() {
 function SchritteBlock() {
   const schritte = [
     { num: 'I', label: 'Sich selbst als Betroffene anerkennen', body: 'Sie sind nicht «nur» Angehörige — Sie sind mitbetroffen. Das anzuerkennen ist kein Selbstmitleid, sondern die Grundlage dafür, dass Sie sich Unterstützung holen.' },
-    { num: 'II', label: 'Eigene Belastung messen', body: 'Führen Sie eine Woche lang ein einfaches Belastungstagebuch: Wie geht es mir heute? (1–10). Zeigen Sie es niemandem — es ist nur für Sie. Muster erkennen ist der erste Schritt.' },
+    { num: 'II', label: 'Eigene Belastung wahrnehmen', body: 'Wenn Sie möchten, notieren Sie eine Woche lang: Was belastet mich heute? Was entlastet mich? Die Notizen dienen Ihrer persönlichen Reflexion, nicht einer Diagnose oder Einstufung. Sie entscheiden, ob Sie sie für sich behalten oder mit einer Vertrauensperson oder in einer Beratung teilen.' },
     { num: 'III', label: 'Einer Person davon erzählen', body: 'Brechen Sie die Isolation — erzählen Sie einer Vertrauensperson von Ihrer Situation. «Es ist gerade schwierig zu Hause» reicht als Anfang.' },
   ];
   return (
     <div className="eisberg-schritte">
-      <span className="kicker">Drei Schritte für heute</span>
+      <span className="kicker">Drei mögliche Schritte für heute</span>
       <h3>Auch wenn Sie erschöpft sind.</h3>
       <ol>
         {schritte.map(s => (
@@ -272,9 +272,9 @@ function Modul2Page({ onNavigate }) {
   }, []);
 
   const sections = [
-    { id: 's1', label: 'Was am meisten belastet' },
+    { id: 's1', label: 'Was belasten kann' },
     { id: 's2', label: 'Der Belastungs-Eisberg' },
-    { id: 's3', label: 'Hypervigilanz-Kreislauf' },
+    { id: 's3', label: 'Erhöhte Wachsamkeit' },
     { id: 's4', label: 'Beobachten oder kontrollieren' },
     { id: 's5', label: 'Eltern erwachsener Kinder' },
     { id: 's6', label: 'Was Suizidangst macht' },
@@ -303,7 +303,7 @@ function Modul2Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 12–15 Minuten · 8 Abschnitte</span>
             </div>
             <h1>Die eigene <em>Belastung</em> verstehen</h1>
-            <p className="lede">Ihre Belastung als Angehörige ist real, messbar — und zu einem grossen Teil unsichtbar. Hypervigilanz ist eine verständliche Reaktion, lässt sich aber unterbrechen. Information und Einordnung können Orientierung geben; Entlastung braucht oft auch konkrete Hilfe.</p>
+            <p className="lede">Belastung als Angehörige kann für andere unsichtbar bleiben. Erhöhte Wachsamkeit ist eine mögliche Reaktion nach belastenden Erfahrungen. Information kann Orientierung geben; Entlastung braucht möglicherweise auch konkrete Hilfe im Alltag.</p>
           </div>
         </header>
 
@@ -336,15 +336,15 @@ function Modul2Page({ onNavigate }) {
 
             <aside className="callout">
               <span className="callout-label">Auf einen Blick</span>
-              <p>Ihre Belastung als Angehörige und Nahestehende ist real, messbar — und zu einem grossen Teil unsichtbar. Hypervigilanz ist eine verständliche Reaktion, lässt sich aber unterbrechen. Suizidangst gehört zu den schwersten Belastungen — Sie müssen das nicht allein tragen. Information, Austausch und praktische Unterstützung können hilfreich sein.</p>
+              <p>Ihre Belastung und Ihre eigenen Bedürfnisse zählen. Unsicherheit, erhöhte Wachsamkeit oder Sorgen um die erkrankte Person können Sie beschäftigen. Welche Entlastung passt, hängt von Ihrer Situation ab. Sie dürfen Beratung, Austausch und praktische Unterstützung für sich nutzen.</p>
             </aside>
 
             <section id="s1">
-              <h2>Was Angehörige am meisten belastet</h2>
+              <h2>Was Angehörige belasten kann</h2>
               <p>Angehörige können erheblich belastet sein. Wie stark, hängt unter anderem von den Symptomen, dem gemeinsamen Alltag und verfügbaren Hilfen ab. Ein Teil bleibt für das Umfeld unsichtbar. Ebenso gibt es Angehörige, die sich gut unterstützt fühlen und lange stabile Zeiten erleben.</p>
-              <p>Viele der häufigsten Belastungen drehen sich um Unsicherheit, Informationsmangel und fehlende Einordnung. Das macht die Erkrankung nicht kleiner, zeigt aber: Ein Teil Ihrer Belastung ist verstehbar und beeinflussbar.</p>
+              <p>Unsicherheit und fehlende Information können belasten. Ebenso können Schlafmangel, finanzielle Sorgen, zu viel Verantwortung oder fehlende praktische Unterstützung eine Rolle spielen. Wissen kann beim Einordnen helfen; für Entlastung brauchen Sie möglicherweise auch konkrete Hilfe im Alltag.</p>
 
-              <h3>Die häufigsten Belastungsquellen</h3>
+              <h3>Mögliche Belastungsquellen</h3>
               <p>Studien und Erfahrungsbeschreibungen nennen unterschiedliche Belastungsquellen. Welche davon treffen auf Sie zu?</p>
               <ul>
                 <li>Unsicherheit über Symptome und Verlauf</li>
@@ -360,12 +360,12 @@ function Modul2Page({ onNavigate }) {
 
             <section id="s2">
               <h2>Der Belastungs-Eisberg</h2>
-              <p>Der grösste Teil Ihrer Belastung ist unsichtbar — für Ihr Umfeld, manchmal sogar für Sie selbst.</p>
+              <p>Ein Teil Ihrer Belastung kann für Ihr Umfeld unsichtbar bleiben. Vielleicht fällt es auch Ihnen schwer, dafür Worte zu finden.</p>
 
               <EisbergFigur />
 
-              <p>Was nach aussen sichtbar wird — Erschöpft wirken, Termine begleiten, Sorgen äussern — ist nur die Spitze. Darunter liegt das, was Angehörige selten zeigen, oft nicht einmal vor sich selbst zugeben: Hypervigilanz, Schlafstörungen, Schuldgefühle, Einsamkeit, Angst vor Rückfall, Trauer, Ambivalenz.</p>
-              <p>Das ist kein Zeichen von Schwäche, sondern ein Merkmal chronischer Belastung: Viele Angehörige lernen, zu funktionieren, lange bevor sie merken, wie viel sie innerlich schon mittragen.</p>
+              <p>Manches ist nach aussen sichtbar: erschöpft wirken, Termine begleiten oder Sorgen äussern. Anderes kann im Verborgenen bleiben, etwa erhöhte Wachsamkeit, Schlafprobleme, Schuldgefühle, Einsamkeit, Angst vor einem Rückfall, Trauer oder widersprüchliche Gefühle.</p>
+              <p>Wenn Sie im Alltag funktionieren und zugleich belastet sind, dürfen Sie beides ernst nehmen. Sie müssen nicht erst zusammenbrechen, um Unterstützung für sich zu nutzen.</p>
 
               <blockquote className="module-quote" id="quote-m2-02">
                 <p>«Meine Freundin hat mich gefragt, wie es mir geht. Ich habe gesagt: ‹Gut, danke.› Aber in Wahrheit hatte ich seit Wochen nicht mehr durchgeschlafen, weil ich auf jedes Geräusch im Haus horche.»</p>
@@ -379,13 +379,14 @@ function Modul2Page({ onNavigate }) {
             </section>
 
             <section id="s3">
-              <h2>Der Hypervigilanz-Kreislauf — und wie Sie ihn unterbrechen</h2>
-              <p>Nach belastenden Krisen kann erhöhte Wachsamkeit entstehen: Schlaf, Stimmung oder Rückzug werden immer wieder überprüft. Wenn diese Alarmbereitschaft anhält, kann sie Erholung erschweren. Die folgende Grafik ist ein vereinfachtes Reflexionsmodell, kein für alle geltender Ablauf.</p>
+              <h2>Hypervigilanz — erhöhte Wachsamkeit verstehen</h2>
+              <p>Hypervigilanz bedeutet hier erhöhte Wachsamkeit. Nach belastenden Krisen können Sie sich immer wieder mit Schlaf, Stimmung oder Rückzug der erkrankten Person beschäftigen. Wenn diese Alarmbereitschaft anhält, kann sie Erholung erschweren. Die folgende Grafik ist ein Bild für gleichzeitig gebundene Aufmerksamkeit, kein für alle geltender Ablauf.</p>
 
               <HypervigilanzFigur />
 
-              <h3>Der Kreislauf der chronischen Anspannung</h3>
-              <p><strong>1 — Beobachten.</strong> Sie scannen permanent die Stimmung — jede Verhaltensänderung wird geprüft. Das aktiviert Ihren Körper.</p>
+              <h3>Vier Aspekte zur persönlichen Reflexion</h3>
+              <p>Die folgenden Beschreibungen sind eine Reflexionshilfe, kein geprüftes Modell und keine festgelegte Reihenfolge. Welche davon passen zu Ihrer Situation?</p>
+              <p><strong>1 — Beobachten.</strong> Vielleicht achten Sie immer wieder auf die Stimmung oder auf Verhaltensänderungen. Wie viel Aufmerksamkeit bindet das bei Ihnen?</p>
               <p><strong>2 — Anspannung.</strong> Sie fühlen sich innerlich oder körperlich angespannt; Abschalten und Schlafen können schwerfallen.</p>
               <p><strong>3 — Erschöpfung.</strong> Konzentration und Kraft können nachlassen. Welche Entlastung wäre jetzt erreichbar?</p>
               <p><strong>4 — Erholung.</strong> Ruhe kann entlasten. Nach einer Krise braucht es manchmal Zeit, bis die Wachsamkeit zurückgeht.</p>
@@ -394,7 +395,7 @@ function Modul2Page({ onNavigate }) {
 
             <section id="s4">
               <h2>Beobachten, begleiten, loslassen — wo ist die Grenze?</h2>
-              <p>Es gibt einen Unterschied zwischen aufmerksam sein und kontrollieren. Dieser Unterschied entscheidet darüber, ob Ihre Beobachtung Sie schützt oder erschöpft.</p>
+              <p>Es gibt einen Unterschied zwischen aufmerksam sein und kontrollieren. Gemeinsam vereinbarte Zuständigkeiten und eigene Grenzen können beim Einordnen helfen. Ob Sie sich entlastet fühlen, hängt auch von Ihrer Situation und erreichbarer Unterstützung ab.</p>
 
               <div className="do-dont">
                 <div className="do-col">
@@ -421,12 +422,15 @@ function Modul2Page({ onNavigate }) {
                 <span className="callout-label">Entlastender Grundsatz</span>
                 <p>Sie sind nicht das Frühwarnsystem — Sie sind ein Teil davon. Das Behandlungsteam, der Krisenplan und die erkrankte Person selbst tragen Mitverantwortung. Klären Sie in einer ruhigen Phase gemeinsam: «Welche Veränderungen soll ich ansprechen? Wie soll ich es tun?» Was vereinbart ist, dürfen Sie ansprechen — ohne Schuldgefühle.</p>
               </aside>
+
+              <h3>Als erwachsenes Kind einen Elternteil begleiten</h3>
+              <p><strong>Fiktives Kurzbeispiel.</strong> Eine erwachsene Tochter wohnt nicht bei ihrem Vater. Er bittet sie, ihn zu einem Behandlungsgespräch zu begleiten. Sie möchte dabei sein, kann aber nicht alle Termine für ihn organisieren. Ihr nächster Schritt ist eine konkrete Absprache: «Ich begleite dich am Dienstag. Bitte vereinbare die weiteren Termine selbst; wir können vorher zusammen überlegen, welche Fragen du stellen möchtest.» Eigene Belastungen kann sie unabhängig davon in einer Angehörigenberatung besprechen.</p>
             </section>
 
             <section id="s5">
               <h2>Wenn Sie Elternteil eines erwachsenen Kindes sind</h2>
               <p>Vielleicht erkennen Sie sich als Elternteil in den Beschreibungen wieder. Ihr erwachsenes Kind entscheidet grundsätzlich selbst. Eltern haben nicht automatisch ein Auskunfts- oder Entscheidungsrecht; mit Einwilligung oder je nach rechtlicher Rolle können sie einbezogen werden. Beobachtungen dürfen Sie dem Behandlungsteam mitteilen. Was dies für Vertraulichkeit und Rückmeldung bedeutet, erklärt die <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflichtseite</a>. Eigene Beratung dürfen Sie unabhängig davon nutzen.</p>
-              <p>Typisch für Eltern ist der Pendelschlag zwischen Überengagement (anrufen, kontrollieren, einspringen) und schmerzlichem Rückzug (weil die eigenen Grenzen oder die des Kindes erreicht sind). Viele Eltern tragen zusätzlich die Schuldfrage mit sich: Habe ich etwas übersehen? Liegt es an der Erziehung? Die Antwort der Forschung ist klar: Bipolare Störung ist eine neurobiologische Erkrankung — sie wird nicht durch Erziehung verursacht. Aber das Wissen nimmt nicht immer das Gefühl.</p>
+              <p>Als Elternteil können Sie sich zwischen dem Wunsch zu helfen und dem Bedürfnis nach Abstand wiederfinden. Vielleicht beschäftigen Sie auch Fragen wie: Habe ich etwas übersehen? Bin ich verantwortlich? Eine Diagnose ist keine Feststellung einer Schuld der Eltern. Sie dürfen solche Fragen und Ihre eigene Belastung in einer Angehörigenberatung besprechen.</p>
 
               <aside className="callout">
                 <span className="callout-label">Auch für Eltern</span>
@@ -436,23 +440,19 @@ function Modul2Page({ onNavigate }) {
 
             <section id="s6">
               <h2>Was Suizidangst mit Ihnen macht</h2>
-              <p>Die bipolare Störung trägt eines der höchsten Suizidrisiken aller psychiatrischen Erkrankungen. Als Angehörige und Nahestehende leben Sie mit dieser Angst — oft allein. Dieser Abschnitt handelt nicht von den Zahlen, sondern von dem, was diese Angst mit Ihnen macht.</p>
+              <p>Manche Angehörige haben Angst, dass sich die erkrankte Person etwas antun könnte. Vielleicht beschäftigen Sie solche Sorgen oder Erfahrungen auch dann noch, wenn eine belastende Phase vorbei ist. Dieser Abschnitt handelt davon, wie Sie Ihre eigene Belastung wahrnehmen und Unterstützung für sich nutzen können.</p>
 
               <blockquote className="module-quote" id="quote-m2-03">
                 <p>«Nach seinem zweiten Suizidversuch habe ich drei Monate lang jede Nacht wach gelegen. Nicht weil ich Angst hatte, dass er es wieder tut — das auch — sondern weil ich nicht wusste, ob ich das noch aushalte.»</p>
                 <cite>Redaktionelles Fallbeispiel (fiktiv) · Ehemann</cite>
               </blockquote>
 
-              <p><strong>Hypervigilanz.</strong> Angehörige, die mit dem Suizidrisiko ihres Partners leben, scannen oft ständig nach Warnzeichen. Diese dauerhafte Anspannung kann zu Schlafstörungen, Reizbarkeit und eigenen Angstsymptomen führen.</p>
-              <p><strong>Trauma.</strong> Das Erleben oder Entdecken eines Suizidversuchs kann bei Angehörigen selbst PTBS-Symptome auslösen — wiederkehrende Bilder, Vermeidung, innere Anspannung. Diese Traumatisierung wird in der klinischen Versorgung häufig nicht erkannt.</p>
+              <p><strong>Erhöhte Wachsamkeit.</strong> Vielleicht achten Sie nach einer belastenden Erfahrung wiederholt auf mögliche Warnzeichen und merken, dass Ruhe schwerfällt. Welche Unterstützung könnte Ihnen helfen, Verantwortung zu teilen und selbst Erholung zu finden?</p>
+              <p><strong>Belastungsreaktionen.</strong> Nach dem Erleben oder Entdecken eines Suizidversuchs können wiederkehrende Bilder, Vermeidung oder innere Anspannung auftreten. Solche Reaktionen allein ergeben keine Diagnose einer posttraumatischen Belastungsstörung (PTBS). Wenn Sie anhaltend belastet sind, können Sie eigene Beratung oder eine fachliche Abklärung nutzen.</p>
               <p><strong>Eigenes Wohlbefinden.</strong> Hohe anhaltende Belastung steht in Studien mit eigenen psychischen Beschwerden in Zusammenhang. Frühere Belastungen, körperliche Gesundheit, Schlaf und Unterstützung spielen ebenfalls eine Rolle. Das ist ein Grund, die eigene Gesundheit ernst zu nehmen; es ist keine Vorhersage für Sie persönlich.</p>
 
-              <aside className="callout">
-                <span className="callout-label">Bei akuter Suizidgefahr</span>
-                <p>Wenn unmittelbare Gefahr besteht oder die Person akut handelt: <strong>144</strong>. Wenn Sie dringende medizinische Einschätzung brauchen, die Lage aber nicht unmittelbar lebensbedrohlich ist: <strong>0800 33 66 55</strong> — Ärztefon Notfalldienst ZH (24/7, kostenlos). Konkrete Schritte zur Vorbereitung finden Sie in Modul 6. Alle Notrufnummern: <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
-              </aside>
-
-              <p>Behandlung kann die Erkrankung stabilisieren. Lithium ist eine etablierte Option und kann zur langfristigen Schutzplanung gehören. Wie stark es Suizide verhindert, ist wegen seltener Ereignisse und uneinheitlicher Studienergebnisse nicht abschliessend geklärt. Auch bei laufender Behandlung braucht akute Suizidgefahr sofort professionelle Hilfe.</p>
+              <p>Behandlung kann die Erkrankung stabilisieren. Lithium ist eine etablierte Option und kann zur langfristigen Schutzplanung gehören. Wie stark es Suizide verhindert, ist wegen seltener Ereignisse und uneinheitlicher Studienergebnisse nicht abschliessend geklärt. Fragen zur Behandlung können Sie mit dem Behandlungsteam besprechen.</p>
+              <p>Anregungen zur gemeinsamen Krisenvorbereitung finden Sie in <a className="puk-link--inline" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a>.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Atmen Sie durch</span>
@@ -462,7 +462,7 @@ function Modul2Page({ onNavigate }) {
 
             <section id="s7">
               <h2>Was Sie jetzt tun können</h2>
-              <p>Drei Schritte, die Sie heute gehen können — auch wenn Sie erschöpft sind.</p>
+              <p>Sie können einen dieser Schritte wählen, wenn er heute zu Ihnen passt. Sie müssen nicht alles auf einmal tun.</p>
 
               <SchritteBlock />
 
@@ -471,10 +471,10 @@ function Modul2Page({ onNavigate }) {
                   <span className="next-module-num">04</span>
                   <div>
                     <h3>Wenn die Kraft nachlässt</h3>
-                    <p>Burnout-Risiko, Erschöpfungszeichen und was hilft, wenn man selbst an der Grenze ist.</p>
+                    <p>Erschöpfungszeichen und mögliche Unterstützung für Sie selbst.</p>
                   </div>
                 </a>
-                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge', 'selbsttest')} onClick={navHandler('werkzeuge', onNavigate, 'selbsttest')}>
                   <span className="next-module-num">W</span>
                   <div>
                     <h3>Werkzeug — Meine Belastung wahrnehmen</h3>
@@ -487,9 +487,9 @@ function Modul2Page({ onNavigate }) {
             <section id="s8">
               <h2>Worauf es ankommt</h2>
               <ul className="key-points">
-                <li><strong>Ihre Belastung ist real und messbar</strong> — die häufigsten Belastungen betreffen Informationsmangel und sind damit beeinflussbar.</li>
-                <li><strong>Ein grosser Teil Ihrer Last ist unsichtbar</strong> — das erklärt, warum andere Ihre Erschöpfung nicht sehen.</li>
-                <li><strong>Hypervigilanz ist ein Kreislauf</strong> — er lässt sich unterbrechen, wenn Sie Beobachtung und Kontrolle voneinander trennen.</li>
+                <li><strong>Ihre Belastung zählt.</strong> Wissen kann Orientierung geben; praktische Entlastung und Unterstützung sind ebenso wichtig.</li>
+                <li><strong>Belastung kann unsichtbar bleiben.</strong> Sie dürfen eigene Bedürfnisse benennen, auch wenn andere Ihre Erschöpfung nicht sehen.</li>
+                <li><strong>Erhöhte Wachsamkeit ist eine mögliche Reaktion.</strong> Vereinbarte Zuständigkeiten, Grenzen und Unterstützung können entlasten; es gibt keinen für alle geltenden Ablauf oder einzelnen Lösungsschritt.</li>
                 <li><strong>Sie dürfen Hilfe für sich selbst holen</strong> — das ist keine Illoyalität, sondern Voraussetzung dafür, dass Sie langfristig begleiten können.</li>
               </ul>
             </section>

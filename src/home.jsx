@@ -46,7 +46,7 @@ function HomePage({ onNavigate }) {
         <div className="triage-inner">
           <span className="kicker">Orientierung</span>
           <h2>Den passenden Einstieg finden</h2>
-          <p className="triage-intro">Bis zu fünf kurze Fragen führen Sie zum passenden Einstieg — oder direkt zum Notfallweg, wenn das jetzt wichtiger ist.</p>
+          <p className="triage-intro">Bis zu vier kurze Fragen helfen Ihnen, einen passenden Einstieg in Wissen, Werkzeuge oder Beratung zu finden.</p>
 
           <TriageFlow onNavigate={onNavigate} />
         </div>
@@ -138,7 +138,7 @@ function HomePage({ onNavigate }) {
           <ul className="tools-row" role="list" aria-label="Ausgewählte Werkzeuge">
             {[TOOLS[0], TOOLS[3], TOOLS[1]].map((t) =>
               <li key={t.tool}>
-                <a className="tools-row-item" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')}>
+                <a className="tools-row-item" href={navHref('werkzeuge', t.tool)} onClick={navHandler('werkzeuge', onNavigate, t.tool)} {...navPreloadProps('werkzeuge')}>
                   <span className="tools-row-tag">{t.tag}</span>
                   <h3>{t.title}</h3>
                   <p>{t.desc}</p>
@@ -155,7 +155,7 @@ function HomePage({ onNavigate }) {
         <div className="invitation-inner">
           <span className="kicker rule-center">Sie dürfen anrufen</span>
           <h2>Sie müssen nicht wissen, was Sie sagen wollen.</h2>
-          <p>Die Fachstelle Angehörigenarbeit berät auch Sie — nicht nur die erkrankte Person. Auch wenn Sie sich noch nicht sicher sind, ob Sie Hilfe brauchen.</p>
+          <p>Die Fachstelle Angehörigenarbeit bietet Beratung und Psychoedukation für Angehörige – auch wenn Sie noch nicht sicher sind, ob Sie Unterstützung brauchen.</p>
           <div className="invitation-contact">
             <a className="invitation-phone" href="tel:+41583843800">058 384 38 00</a>
             <a className="invitation-email" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a>

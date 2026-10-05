@@ -1,0 +1,1471 @@
+[
+  {
+    "id": "H-01",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«SOS Krise — 144 / 117 / 143 →»",
+    "problem": "Die oberhalb der Startseite eingeblendete Krisenleiste enthält Krisennummern; sicherer Verstoss gegen den ausdrücklich vorgegebenen psychoedukativen Kontext.",
+    "proposal": "Krisenleiste auf dieser Seite entfernen; falls gewünscht nur der feste, nummernfreie Zuständigkeitsverweis.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Krisenleiste wird ausschliesslich auf /notfall angezeigt, nicht mehr auf der Startseite."
+    }
+  },
+  {
+    "id": "H-02",
+    "priority": "kritisch",
+    "criterion": "A, B",
+    "quote": "«Die Fachstelle Angehörigenarbeit berät auch Sie — nicht nur die erkrankte Person.»",
+    "problem": "Schreibt der Fachstelle auch die Beratung der erkrankten Person als Aufgabe zu; der verbindliche Kontext beschreibt Beratung und Psychoedukation für Angehörige.",
+    "proposal": "«Die Fachstelle Angehörigenarbeit bietet Beratung und Psychoedukation für Angehörige – auch wenn Sie noch nicht sicher sind, ob Sie Unterstützung brauchen.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Einladung und gemeinsamer Footer benennen Beratung und Psychoedukation für Angehörige als Fachstellenauftrag."
+    }
+  },
+  {
+    "id": "H-03",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Ist gerade jemand in akuter Gefahr — die erkrankte Person oder Sie selbst?»",
+    "problem": "Der erste Zweig der Orientierung enthält eine Akutgefährdungsfrage mit eigenem Notfallergebnis: «Ja oder unklar» → «Notfallweg». Das ist ein Notfallblock innerhalb einer psychoedukativen Einstiegsseite, unabhängig davon, dass dieser Zweig selbst keine Nummer enthält.",
+    "proposal": "Orientierung auf den Lese- und Beratungsbedarf beschränken und mit der Diagnose-/Belastungsfrage beginnen; keine Akutgefährdung abfragen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Akutgefährdungsfrage und Notfallergebnis aus der gemeinsamen Orientierung entfernt; vier Fragen zum Lese- und Beratungsbedarf."
+    }
+  },
+  {
+    "id": "MO-01",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Ist gerade jemand in akuter Gefahr — die erkrankte Person oder Sie selbst?»",
+    "problem": "Die auch hier eingebundene Orientierung enthält einen eigenen Notfallzweig; gleicher sicherer Kontextverstoss wie H-03.",
+    "proposal": "Nur psychoedukativen Lese-/Beratungsbedarf abfragen; akute Gefährdungsabfrage und Notfallergebnis aus dieser Einblendung entfernen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Gemeinsame Orientierung auf /module enthält keinen Notfallzweig mehr."
+    }
+  },
+  {
+    "id": "M1-01",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Bei akuter Gefahr: 144 oder Notfallweg.»",
+    "problem": "Abschnitt 4, Infobox «Bei Suizidgedanken», enthält eine Krisennummer und einen eigenen Notfallblock auf einer psychoedukativen Seite. Das ist ein belegter Verstoss gegen die ausdrücklich vorgegebene Zuständigkeit; die Richtigkeit der Nummer ist nicht der Gegenstand dieses Befunds.",
+    "proposal": "Nummer und Notfallblock entfernen. Die Belastung durch Suizidsorge kann in einem ruhigen Absatz mit Verweis auf Modul 2 behandelt werden. Keine Ersatznummer und keinen neuen Notfallblock ergänzen; ein knapper nummernloser Zuständigkeitsverweis an der festen gemeinsamen Stelle ist zulässig.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Notfallkasten mit 144 entfernt und durch einen ruhigen Absatz zur Belastung der Angehörigen mit Modul-2-Link ersetzt. Auch der lokale Notfallverweis im Psychoseabschnitt ist entfernt; fachliche Einschätzung, reguläre Angehörigenberatung und Krisenplanung bleiben erhalten. Kein neuer Notfallblock."
+    }
+  },
+  {
+    "id": "M1-02",
+    "priority": "wichtig",
+    "criterion": "B",
+    "quote": "«Schnelle Aggression bei Widerstand oder Kritik.»",
+    "problem": "Abschnitt 4 erklärt «Reizbarkeit» unmittelbar durch Aggression; Abschnitt 6 verbindet gereizte Manie mit «aggressiv, misstrauisch oder explosiv». Die mögliche Erfahrung wird damit als typisches Erscheinungsbild nahegelegt. Gereiztheit, Aggression und tatsächliches verletzendes Verhalten werden sprachlich nicht sauber getrennt; das beeinträchtigt die entstigmatisierende Haltung.",
+    "proposal": "Reizbarkeit als mögliche erhöhte Empfindlichkeit oder rasche Verärgerung beschreiben; aggressives Verhalten als mögliche, gesondert zu benennende Erfahrung darstellen. «Nicht jede Manie ist euphorisch; manche Menschen sind vor allem gereizt oder innerlich angespannt.» Eigene Schutzbedürfnisse bleiben legitim.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Reizbarkeit als mögliche erhöhte Empfindlichkeit beziehungsweise rasche Verärgerung formuliert und von aggressivem Verhalten getrennt; eigene Schutzbedürfnisse ausdrücklich anerkannt. Gereizte Manie ohne pauschale Verknüpfung mit Aggression, Misstrauen oder Explosivität beschrieben. Das erste fiktive Beispiel behauptet keine sichere symptomatische Ursache oder fehlende persönliche Absicht mehr."
+    }
+  },
+  {
+    "id": "M1-03",
+    "priority": "wichtig",
+    "criterion": "B",
+    "quote": "«Ich war die Einzige, die wusste: Das ist keine gute Phase.»",
+    "problem": "Das fiktive Fallbeispiel am Ende von Abschnitt 5 vermittelt diagnostische Gewissheit und eine besondere Verantwortung der Angehörigen, den Beginn zu erkennen. Dies steht innerhalb derselben Seite neben der entlastenden Aussage, dass Angehörige keine Diagnose stellen müssen. Die Kennzeichnung als Fiktion löst diese Rollenbotschaft nicht auf.",
+    "proposal": "Beobachtung und Unsicherheit statt Gewissheit modellieren: «Mir fielen wenig Schlaf und ungewöhnlich viele Projekte auf. Ich war unsicher, wie ich das einordnen sollte, und wollte meine Beobachtungen mit dem Behandlungsteam besprechen.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Das fiktive Fallbeispiel beschreibt nun beobachteten Schlaf und viele Projekte, Unsicherheit und den Wunsch nach fachlicher Einordnung. Keine Diagnosegewissheit oder alleinige Früherkennungsverantwortung der Angehörigen."
+    }
+  },
+  {
+    "id": "M1-04",
+    "priority": "wichtig",
+    "criterion": "C",
+    "quote": "Eine bipolare Depression kann nach aussen wie eine «gewöhnliche» Depression wirken; der Unterschied zeigt sich oft erst im Gesamtverlauf mit Hochphasen, Mischzuständen oder kippriger Aktivierung.",
+    "problem": "«Kipprige Aktivierung» wird weder definiert noch klar von Stimmungsschwankungen, Unruhe und einer diagnostisch eingeordneten Episode getrennt. In dieser Aufzählung kann ein einzelnes unspezifisches Zeichen wie eine Alternative zur fachlichen Diagnose wirken. Ob die konkrete Aussage klassifikatorisch gedeckt ist, bleibt Quellen-Prüfbedarf.",
+    "proposal": "«Ob eine Depression im Rahmen einer bipolaren Störung auftritt, wird anhand des gesamten bisherigen Verlaufs fachlich beurteilt. Angehörige können konkrete Veränderungen beschreiben; sie müssen die Diagnose nicht selbst einordnen.» Den Ausdruck «kipprige Aktivierung» hier streichen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Kipprige Aktivierung und die mehrdeutige Aufzählung als diagnostische Unterscheidung ersetzt: Die Depression wird anhand des Gesamtverlaufs fachlich eingeordnet; Angehörige können Veränderungen beschreiben und müssen keine Diagnose stellen. Die Originalquellen-Verifikation bleibt unter M1-08 offen."
+    }
+  },
+  {
+    "id": "M1-05",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "«Oft nur 2–3 Stunden Schlaf bei voller Energie.»",
+    "problem": "Abschnitt 4 nennt eine präzise Stundenzahl zusammen mit einer Häufigkeitsbehauptung, ohne Fundstelle oder Erläuterung, dass keine Stundenschwelle gemeint ist. Die Originaldeckung konnte nicht geprüft werden. Für Leserinnen und Leser kann daraus ein irreführender eigener Massstab werden, obwohl derselbe Abschnitt eine fachliche Gesamtbeurteilung verlangt.",
+    "proposal": "«Die Person braucht deutlich weniger Schlaf als sonst und fühlt sich trotzdem ungewöhnlich wenig müde.» Falls das Zahlenbeispiel beibehalten werden soll: als einzelnes mögliches Beispiel kennzeichnen und anhand einer erreichbaren Originalquelle überprüfen; «oft» nur mit entsprechendem Beleg.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Die unbelegte Häufigkeits-/Stundenangabe von 2–3 Stunden entfernt. Vermindertes Schlafbedürfnis wird relativ zum gewohnten Schlaf und zur Müdigkeit beschrieben; auch das fiktive Uhrzeitbeispiel ist ohne Stundenzahl formuliert. Keine neue Schwelle oder Zahlenquelle ergänzt."
+    }
+  },
+  {
+    "id": "M1-06",
+    "priority": "wichtig",
+    "criterion": "C",
+    "quote": "Solche Mischbilder können klinisch hochriskant sein — auch dann, wenn sie von aussen nicht wie eine «klassische» Episode aussehen.",
+    "problem": "Die Infobox in Abschnitt 6 nennt keinen konkreten Bedeutungsgehalt von «hochriskant» und gibt Angehörigen keine Grenze zwischen Beobachtung und professioneller Bewertung. Das steigert Alarmierung, obwohl unmittelbar davor bereits ruhig zu zeitnaher fachlicher Einschätzung geraten wird. Das Ausmass des behaupteten Risikos bleibt Originalquellen-Prüfbedarf.",
+    "proposal": "«Wenn Hoffnungslosigkeit, starke innere Unruhe und deutlich weniger Schlaf zusammenkommen, ist eine zeitnahe fachliche Einschätzung wichtig. Sie müssen selbst nicht beurteilen, welcher Episode diese Veränderungen zuzuordnen sind.» Keine Krisennummer ergänzen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Die unbestätigte, unbestimmte Hochrisikoformulierung entfernt. Die Infobox benennt zeitnahe fachliche Einschätzung bei zusammenkommender Hoffnungslosigkeit, Unruhe und deutlich weniger Schlaf; Angehörige sollen die Episodenzuordnung nicht selbst übernehmen. Die Originalquellen-Verifikation bleibt unter M1-08 offen."
+    }
+  },
+  {
+    "id": "M1-07",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "«Gesprächstherapien und familienbezogene Behandlungsformen helfen, Warnzeichen früher zu erkennen, Rückfälle einzuordnen und den Alltag verlässlicher zu gestalten.»",
+    "problem": "Die generelle Wirkformulierung gilt sprachlich für die gesamte Gruppe der «Gesprächstherapien». Der anschliessende Absatz und die Quellennotiz beziehen sich enger auf strukturierte Programme ergänzend zur medizinischen Behandlung. Art und Endpunkte der tatsächlich untersuchten Interventionen konnten nicht geprüft werden.",
+    "proposal": "«Bestimmte strukturierte psychotherapeutische und familienbezogene Programme können die medizinische Behandlung ergänzen und dabei unterstützen, Warnzeichen und Alltagsschwierigkeiten zu bearbeiten. Welche Form passt, besprechen Betroffene und Behandlungsteam.» Die genaue Wirkung erst nach Abgleich der Originalstudie benennen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Redaktionell umgesetzt: Die allgemeine Wirkungszusage für Gesprächstherapien ist durch eine begrenzte Kann-Aussage zu bestimmten strukturierten psychotherapeutischen und familienbezogenen Programmen ergänzend zur medizinischen Behandlung ersetzt. Die Wahl liegt bei der betroffenen Person und dem Behandlungsteam. Die tatsächlich untersuchten Therapieformen, Populationen und Endpunkte der Originalstudien konnten nicht abgerufen werden; die Quellenprüfung und fachliche Freigabe dieser Wirkaussage bleiben offen."
+    }
+  },
+  {
+    "id": "M1-08",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "«Diese Beschreibungen orientieren sich an den gebräuchlichen Diagnose-Systemen ICD-11 und DSM-5-TR, sind hier aber bewusst in Alltagssprache übersetzt.»",
+    "problem": "Die sechs sichtbaren Quellenhinweise sind bibliografisch unvollständig und ohne Abrufdatum; der Diagnosehinweis nennt lediglich DSM-5-Vergleichstabellen von 2016. Die Zuordnung zu ICD-11 und DSM-5-TR ist damit nicht nachvollziehbar dokumentiert. Der undatierte Swissmedic-Archiveintrag lässt die Aktualität und die Deckung der Aussage zu Männern mit Kinderwunsch offen. **Prüfbedarf, kein nachgewiesener Diagnose- oder Arzneimittelfehler.**",
+    "proposal": "Nach tatsächlichem Originalabgleich vollständige Literaturangaben und konkrete Fundstellen ergänzen; die jeweils verwendete Klassifikation ausdrücklich zuordnen. Valproat-Aussagen mit konkret datierten aktuellen Schweizer Sicherheitsinformationen abgleichen. Den Consensus-Link nach verifizierter Identifikation durch einen Originalnachweis ergänzen oder ersetzen. Keine Metadaten aus Erinnerung ergänzen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Redaktionell teilweise umgesetzt: Unbestätigte konkrete DSM-5-TR-/ICD-11-Zuordnung, Episoden-Zeitgrenzen und Rapid-Cycling-Zahlenschwelle durch zurückhaltende fachliche Einordnung ohne eigene Klassifikation ersetzt. Die Valproat-Passage verlangt individuelle fachärztliche Klärung der Schutzvorgaben bei Kinderwunsch oder Schwangerschaft und schliesst eigenständige Medikamentenänderungen aus; aktuelle Schwangerschafts-/Fortpflanzungsvorgaben sind nicht als überprüft ausgegeben. Die unbelegte Mehrheitsaussage über Internetseiten ist entfernt. Bibliografische Vollständigkeit, Aktualität und Deckung aller sechs Originalquellen sowie aktuelle Schweizer Valproat-Vorgaben bleiben nach den blockierten Abrufen offen. Keine Literaturdaten ergänzt, kein Quellenabgleich oder fachliche Freigabe behauptet; das von root betreute Quellenregister wurde nicht geändert."
+    }
+  },
+  {
+    "id": "M1-09",
+    "priority": "optional",
+    "criterion": "D",
+    "quote": "«Notieren Sie drei Frühwarnzeichen aus der letzten deutlichen Verschlechterung.»",
+    "problem": "Abschnitt 9 setzt für den empfohlenen einzigen Schritt voraus, dass bereits eine frühere Verschlechterung bekannt ist und drei Beobachtungen identifiziert werden können. Das Modul richtet sich zugleich ausdrücklich an Menschen unmittelbar nach einer neuen Diagnose.",
+    "proposal": "«Wenn Sie eine frühere Verschlechterung miterlebt haben, notieren Sie eine bis drei konkrete Veränderungen. Wenn nicht, reicht eine Frage, die Sie dem Behandlungsteam stellen möchten.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Die Empfehlung ist in Infobox und Handlungstext auch bei einer neuen Diagnose umsetzbar: Bei bekannter früherer Verschlechterung eine bis drei Beobachtungen notieren, andernfalls eine offene Frage für das Behandlungsteam. Keine Pflicht, drei Frühwarnzeichen zu kennen."
+    }
+  },
+  {
+    "id": "M1-10",
+    "priority": "wichtig",
+    "criterion": "B, D",
+    "quote": "«Sie müssen jetzt nicht alles wissen, nichts lösen und keine Entscheidungen treffen.»",
+    "problem": "Die entlastend gemeinte Einladung unterscheidet keine aufschiebbaren von notwendigen Alltags-/Behandlungsabsprachen. «Keine Entscheidungen» ist absolut; die direkt folgende Liste ist bereits genauer und spricht von grossen Entscheidungen, die warten können.",
+    "proposal": "«Sie müssen jetzt nicht alles verstehen oder alle Fragen auf einmal lösen. Grosse Entscheidungen, die warten können, dürfen Sie aufschieben. Für den nächsten nötigen Schritt können Sie Unterstützung nutzen.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Die absolute Aufforderung, keine Entscheidungen zu treffen, entfernt. Nur grosse Entscheidungen, die warten können, dürfen aufgeschoben werden; Unterstützung für den nächsten nötigen Schritt wird angeboten."
+    }
+  },
+  {
+    "id": "M2-01",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "„Wenn unmittelbare Gefahr besteht oder die Person akut handelt: 144.“",
+    "problem": "Der Callout „Bei akuter Suizidgefahr“ in `s6` enthält einen Notfallablauf, Krisennummern und einen Nummernverweis. Das verstösst unabhängig von der sachlichen Richtigkeit der Kontakte gegen die neue Kontextvorgabe.",
+    "proposal": "Diesen Callout entfernen, ohne einen neuen lokalen Notfallblock einzusetzen. Der Verweis auf psychoedukative Krisenvorbereitung in Modul 6 darf als normaler Weiterlink bleiben. Eine optionale zentrale Zuständigkeitsformulierung bleibt knapp und nummernlos.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Lokalen Callout zur akuten Suizidgefahr mit Krisennummern und Notfallseitenverweis entfernt. Nummernlose Verlinkung zur gemeinsamen Krisenvorbereitung in Modul 6 bleibt als normaler Weiterlink; kein lokaler Ersatzblock. Normale Angehörigenberatung bleibt erhalten."
+    }
+  },
+  {
+    "id": "M2-02",
+    "priority": "kritisch",
+    "criterion": "A, B",
+    "quote": "„Ihre Belastung ist real und messbar — die häufigsten Belastungen betreffen Informationsmangel und sind damit beeinflussbar.“",
+    "problem": "Die Schlussfolgerung macht Informationsmangel zum dominierenden Belastungsgrund und führt daraus Beeinflussbarkeit ab. Für diese Häufigkeitsrangfolge gibt es keinen zugeordneten Nachweis. Die sichtbaren Quellenhinweise beschreiben unterschiedliche Belastungsquellen, nicht diese Rangfolge; der tatsächliche Quelleninhalt bleibt Prüfbedarf. Die Differenzierung in `s1` geht in der Kernaussage verloren.",
+    "proposal": "Unterschiedliche Belastungsquellen nennen und Wissensvermittlung von praktischer Entlastung unterscheiden. Die Rangbehauptungen in `s1` und der Schlussfolgerung gemeinsam korrigieren; nicht bloss eine Studienreferenz pauschal anhängen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Titel, Einleitung, Überblick, Belastungsabschnitt und Schlussliste auf mögliche unterschiedliche Belastungsquellen umgestellt. Informationsmangel erhält keine Häufigkeitsrangfolge; Wissensvermittlung wird von praktischer Entlastung unterschieden. Unbelegte Messbarkeits- und Unsichtbarkeitsverallgemeinerungen entfernt. Die fachliche Prüfung der verbleibenden Belastungsaussagen und ihres Quellenbezugs bleibt offen."
+    }
+  },
+  {
+    "id": "M2-03",
+    "priority": "kritisch",
+    "criterion": "A, B",
+    "quote": "„Die Antwort der Forschung ist klar: Bipolare Störung ist eine neurobiologische Erkrankung — sie wird nicht durch Erziehung verursacht.“",
+    "problem": "Für die hier behauptete eindeutige Ursachenfeststellung wird keine ätiologische Quelle angegeben. Die Seite reduziert ihre entlastende Botschaft auf eine Forschungsgewissheit, die aus den zugeordneten Belastungs-/Interventionsquellen nicht überprüfbar hervorgeht. **Die Entlastung der Eltern ist nicht der Fehler**; eine unbelegte Erklärung darf sie nicht begründen.",
+    "proposal": "Eltern ohne monokausale Krankheitsbehauptung entlasten. Falls eine Aussage zur Krankheitsentstehung erhalten bleibt, eine einschlägige aktuelle Quelle tatsächlich prüfen und differenziert zuordnen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Elternabsatz gemäss W1-Vorschlag ersetzt: Entlastung ohne eindeutige neurobiologische Ursachen- oder Erziehungsbehauptung, eigene Beratung als Möglichkeit. Keine neue Ätiologiequelle behauptet. Fachliche Verifikation einer etwaigen künftigen Ursachenbeschreibung bleibt offen."
+    }
+  },
+  {
+    "id": "M2-04",
+    "priority": "kritisch",
+    "criterion": "A, B",
+    "quote": "„Die bipolare Störung trägt eines der höchsten Suizidrisiken aller psychiatrischen Erkrankungen.“",
+    "problem": "Eine vergleichende epidemiologische Rangbehauptung ohne zugeordnete Vergleichsquelle eröffnet den Angehörigenabschnitt. Die genannten Lithium-Reviews werden auf der Website als Studien zur Prävention eingeordnet; ein Vergleich aller psychiatrischen Erkrankungen ist damit nicht dokumentiert. Ob eine passende Primärquelle existiert, bleibt Prüfbedarf. Der Folgesatz setzt die Angst zusätzlich bei allen Angehörigen voraus.",
+    "proposal": "Den Abschnitt auf mögliche Suizidangst und deren Belastung für Angehörige beziehen; die nicht nachgewiesene Rangbehauptung und die universelle Zuschreibung streichen. Kein neuer Krisenblock und keine neue Risikozahl.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Psychiatrische Suizidrisiko-Rangbehauptung und universelle Angstzuschreibung gestrichen; Einstieg beschreibt mögliche Sorgen und eigene Belastung. Keine Risikozahl ergänzt. Die verbleibende vorsichtige Lithium-Einordnung erhält keine neue fachliche Freigabe: klinische Verifikation und Prüfung der tatsächlich verlinkten Behandlungsquellen bleiben offen."
+    }
+  },
+  {
+    "id": "M2-05",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "„Diese Traumatisierung wird in der klinischen Versorgung häufig nicht erkannt.“",
+    "problem": "Diese Versorgungs- und Häufigkeitsbehauptung hat keinen konkreten Nachweis. Im selben Absatz wird „PTBS“ ohne ausgeschriebene Bezeichnung verwendet. Es bleibt unklar, dass genannte Belastungsreaktionen keine Diagnose ergeben.",
+    "proposal": "„PTBS“ ausschreiben, Symptome von Diagnose unterscheiden und die Behauptung häufiger Nichterkennung streichen oder mit einer tatsächlich geprüften passenden Quelle belegen. Bei anhaltender Belastung eine freiwillige eigene Beratung/Abklärung nennen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Behauptung häufiger klinischer Nichterkennung entfernt. PTBS als posttraumatische Belastungsstörung ausgeschrieben; mögliche Belastungsreaktionen ausdrücklich von einer Diagnose getrennt. Freiwillige Beratung oder Abklärung bei anhaltender Belastung genannt. Klinische Verifikation des verbleibenden Symptomabsatzes bleibt offen."
+    }
+  },
+  {
+    "id": "M2-06",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "„Hypervigilanz ist ein Kreislauf — er lässt sich unterbrechen, wenn Sie Beobachtung und Kontrolle voneinander trennen.“",
+    "problem": "Die Zusammenfassung behandelt das zuvor ausdrücklich begrenzte Reflexionsmodell als gesicherten Mechanismus mit einer eindeutigen Lösung. Die Figur ist ein Aufmerksamkeitsstern, die vier Textpunkte enden bei Erholung, und die Legende spricht zugleich von einem „Dauerzustand“. Das erklärt den Begriff nicht konsistent.",
+    "proposal": "Erhöhte Wachsamkeit als mögliche Reaktion erklären; das vierteilige Beispiel als Reflexionshilfe begrenzen. Die Trennung von Beobachtung und Kontrolle als eine mögliche Entlastung, nicht als hinreichende Unterbrechung darstellen. „Kreislauf“/„Dauerzustand“ in Überschrift, Legende und Kernaussage entsprechend überprüfen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Hypervigilanz als erhöhte Wachsamkeit erklärt. Inhaltsverzeichnis, Überschrift, Legende, Vier-Punkte-Text und Schlussliste konsistent als mögliche Reaktion beziehungsweise persönliche Reflexionshilfe formuliert, ohne geprüften Kreislauf, Dauerzustand oder garantierte Unterbrechung. Aufmerksamkeitsstern, zugängliche Textfassung und Hinweis auf fehlende feste Reihenfolge bleiben erhalten. Klinische Verifikation und fachliche Abbildungsprüfung bleiben offen."
+    }
+  },
+  {
+    "id": "M2-07",
+    "priority": "wichtig",
+    "criterion": "A, D",
+    "quote": "„Zeigen Sie es niemandem — es ist nur für Sie.“",
+    "problem": "Der Schritt „Eigene Belastung messen“ führt eine unbeschriebene 1–10-Selbsteinschätzung ein und verbietet kategorisch ihre Weitergabe. Das erschwert eine mögliche Nutzung im Beratungsgespräch und nennt eine persönliche Notiz eine Messung, ohne deren Grenzen zu erklären.",
+    "proposal": "Freiwillige Selbstbeobachtung statt Messung formulieren; Endpunkte einer optionalen Skala erklären, keine Diagnose/Einstufung ableiten und die Entscheidung über vertrauliches Teilen bei der Person lassen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Unverankerte 1–10-Skala und Messanspruch entfernt. Freiwillige persönliche Notizen zu Belastung und Entlastung eingeführt, ausdrücklich ohne Diagnose oder Einstufung. Über vertrauliches Behalten oder Teilen mit Vertrauensperson/Beratung entscheidet die Person selbst."
+    }
+  },
+  {
+    "id": "M2-08",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "„Roxburgh et al. (2025): Experiences of informal caregivers supporting individuals diagnosed with bipolar disorder“",
+    "problem": "Alle sieben bibliografischen Einträge bestehen aus verkürzten Autor:innen-/Titelangaben und Links; Publikationsorgane bzw. amtliche Versionsangaben und Abrufdaten fehlen. Die vorgesehenen Aussagen werden erläutert, mehrere zentrale Aussagen — etwa Suizidrisiko-Rang, Krankheitsursache, Untererkennung von Traumafolgen — erhalten jedoch keine spezifische Zuordnung.",
+    "proposal": "Vollständige, tatsächlich verifizierte Bibliografie mit URL/Abrufdatum und Aussagezuordnung ergänzen. Die unten dokumentierten gescheiterten Abrufe als Prüfbedarf führen und nicht als fachlich geprüfte Quellen darstellen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Bibliografische Identität, vollständige Metadaten, Aktualität und Aussagezuordnung der sieben vorhandenen Einträge sind weiter unbestätigt. Die W1-Abrufversuche am 05.10.2026 scheiterten am HTTPS-Proxy mit 403; kein Originaltext wurde erreicht. Das gemeinsame Quellenregister liegt im Besitz des Hauptagenten. Keine Quellen, Publikationsangaben, Abrufbestätigungen oder menschlichen Freigaben erfunden."
+    }
+  },
+  {
+    "id": "M3-01",
+    "priority": "kritisch",
+    "criterion": "A, B",
+    "quote": "„117 Polizei bei akuter Gewalt · 144 bei Verletzung oder unmittelbarer medizinischer Gefahr · 044 455 21 42 Opferhilfe Zürich (24/7, Beratung & Begleitung) · 058 384 38 00 Fachstelle PUK (werktags, vertraulich).“",
+    "problem": "Der Callout „Bei Gewalt“ enthält Krisennummern und einen Notfallblock entgegen der neuen Kontextvorgabe. Er reiht die Angehörigenfachstelle mit akuten und gewaltbezogenen Angeboten aneinander; trotz „werktags“ bleibt ihr nichtinterventioneller Auftrag undeutlich.",
+    "proposal": "Den nummernhaltigen Akutblock entfernen. Die ruhige Aussage über das Recht auf Sicherheit und die Möglichkeit professioneller Begleitung darf erhalten bleiben. Keine lokale Ersatzliste; allenfalls zentraler nummernloser Zuständigkeitsverweis.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Lokalen Gewalt-Callout mit Polizei-/Rettungs-/Beratungsnummern und Notfallwegverweis entfernt. Ruhige Aussage zum Recht auf Sicherheit und normaler Unterstützungsverweis bleiben erhalten. Keine lokale Ersatzliste oder neuer Notfallblock."
+    }
+  },
+  {
+    "id": "M3-02",
+    "priority": "kritisch",
+    "criterion": "A, D",
+    "quote": "„FFT (Family-Focused Therapy) ist speziell für bipolare Störungen entwickelt.“",
+    "problem": "Der Satz steht unter „Paartherapie als Investition“ unmittelbar nach der Behauptung, Paartherapie sei Prävention/Reparaturraum. Das lässt offen, ob Paartherapie und FFT gleichgesetzt werden, wer beteiligt ist und welcher Behandlungskontext gemeint ist. Keine der drei auf dieser Seite ausgegebenen Quellen wird für diese Therapieaussagen zugeordnet. Die sachgerechte Definition/Anwendung der FFT ist **Prüfbedarf**, keine aus Erinnerung ergänzte Freigabe.",
+    "proposal": "Paar-/Beziehungsunterstützung als Auswahlfrage formulieren. FFT entweder herausnehmen oder als eigenständiges, tatsächlich belegtes familienbezogenes Behandlungsangebot mit Beteiligten/Ziel/Kontext erläutern; keine automatische Empfehlung für jedes Paar.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "FFT-Nennung und pauschale Paartherapie-Wirkungs-/Präventionsbehauptung entfernt. Neuer Schritt klärt passende professionelle Unterstützung, Beteiligte und Ziele. Keine Gleichsetzung mit FFT und keine automatische Therapieempfehlung. Klinische Verifikation beziehungsweise tatsächlich belegte Definition vor einer künftigen FFT-Nennung bleibt offen."
+    }
+  },
+  {
+    "id": "M3-03",
+    "priority": "kritisch",
+    "criterion": "A, B",
+    "quote": "„Dazu kommen Medikamenten-Nebenwirkungen (besonders SSRIs und einige Stimmungsstabilisierer), die die Libido dauerhaft dämpfen können.“",
+    "problem": "Konkrete Arzneimittelgruppen und ein nicht eingeordneter „dauerhafter“ Effekt werden ohne Medikamenten-/Behandlungsquelle dargestellt. Leser:innen können „dauerhaft“ als irreversible Prognose verstehen. Im selben Absatz sind „am seltensten“, „am meisten“ und „oft vollständig“ unzugeordnete Zuspitzungen zu Intimität und Verlangen. Der zweite Druckpunkt „Nähe“ setzt Libidoverlust durch Medikamente ebenfalls voraus. Die vorliegenden Quellenhinweise zu Belastung und Vertraulichkeit verifizieren diese Aussagen nicht.",
+    "proposal": "Den gesamten Absatz und den entsprechenden Druckpunkt differenzieren, Rangbehauptungen und unbestimmte Dauerprognose entfernen. Mögliche Einflüsse von Erkrankung und Behandlung ohne Einzelfallzuschreibung zur fachlichen Besprechung nennen. Spezifische Medikamentenaussagen nur nach geprüftem Quellenabgleich.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Nähe-/Sexualitätsabsatz und Druckpunkt Nähe vollständig differenziert. Unbelegte Häufigkeitsrangfolgen, universeller Libidoverlust, konkrete SSRI-/Stimmungsstabilisierergruppen und dauerhafte Arzneimittelprognose entfernt. Fachliche Fragen zu möglichen Behandlungseinflüssen statt Einzelfallzuschreibung; keine versprochenen Dosisanpassungen oder Alternativen. Gegenseitiger Wunsch nach Nähe wird berücksichtigt. Klinische Verifikation und Quellenprüfung möglicher Behandlungseinflüsse bleiben offen."
+    }
+  },
+  {
+    "id": "M3-04",
+    "priority": "wichtig",
+    "criterion": "A, B",
+    "quote": "„Sie verändert nach und nach die ganze Beziehungslogik: Wer trägt, wer beobachtet, wer reguliert, wer erinnert, wer absichert.“",
+    "problem": "Die Einleitung in `s1` beschreibt eine notwendige Veränderung; spätere Abschnitte und Schlussfolgerungen („Von selbst ordnet sich das selten wieder“) verstärken den Verlauf. Das steht innerhalb dieser Seite neben ausdrücklichen Grenzen, dass Beziehungserosion nicht zwangsläufig ist und keine feste Prognose besteht.",
+    "proposal": "Durchgängig Möglichkeiten und verschiedene Verläufe beschreiben. Das gilt auch für „Dieselben Dynamiken … entstehen“ im Rollenhinweis und die Schlussliste, nicht nur für den Kurzweg oder die Quellenfussnote.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Einleitung, Rollenhinweis, Rollenverschiebung, alle Druckpunkte samt Untertiteln, Nachwirkungsabsätze, Reflexion und Schlussliste durchgehend auf Möglichkeiten und unterschiedliche Verläufe umgestellt. Keine notwendige Beziehungserosion oder seltene Selbstreparatur; ruhige Phasen dürfen auch Erholung und Freude bieten. Fiktives Zwei-Linien-Bild bleibt ausdrücklich ohne typische Verlaufs- oder Prognoseaussage. Klinische Verifikation und fachliche Abbildungsprüfung bleiben offen."
+    }
+  },
+  {
+    "id": "M3-05",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "„Eine Episode endet nicht automatisch dann, wenn die Stimmung sich beruhigt oder eine Klinikphase vorbei ist.“",
+    "problem": "Unter der Überschrift zu Beziehungsnachwirkungen wird das klinische Ende einer Episode mit fortbestehender Verletzung/Distanz vermischt. Auch wenn Entlassung keine Remission beweist, ist die hier folgende Erklärung gerade keine Definition der Episodendauer.",
+    "proposal": "„Die Folgen einer Episode für eine Beziehung können weiterbestehen, auch wenn die akuten Symptome abgeklungen sind“ als Einstieg verwenden. Die Unterscheidung zwischen Erkrankungssymptomen und Beziehungsnachwirkungen explizit halten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Einstieg zu Episodenfolgen ersetzt: Beziehungsauswirkungen können nach Abklingen akuter Symptome fortbestehen; dies wird ausdrücklich vom klinischen Ende einer Episode unterschieden. Keine Episodendauer oder Remissionsdefinition ergänzt. Klinische Verifikation der Abgrenzung bleibt offen."
+    }
+  },
+  {
+    "id": "M3-06",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "„Renes et al. (2025): Caregivers’ burden and psychological distress in everyday clinical practice“",
+    "problem": "Die drei bibliografischen Einträge sind unvollständig und nicht mit Abrufdatum versehen. Qualitative Erfahrungen und eine Stichprobe von Dyaden werden als allgemeiner Quellenrahmen genutzt; Aussagen zu Medikamenten, Therapie, finanziellen Vorkehrungen und Häufigkeitsrangfolgen erhalten keine spezifische Quellenzuordnung.",
+    "proposal": "Vollständige geprüfte Literatur-/Primärquellen mit Aussagezuordnung ergänzen. Angaben zum Vorsorgeauftrag/Bankvollmacht in der verlinkten Vertiefung amtlich gegenprüfen; die Unzugänglichkeit der vorliegenden URLs transparent als Prüfbedarf führen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Vollständige Bibliografie, Originalquellen und spezifische Aussagezuordnung der drei ausgegebenen Quellen bleiben unbestätigt; W1-Abrufe am 05.10.2026 endeten mit Proxy-403. Unbelegte Therapie-, Arzneimittel- und Häufigkeitsbehauptungen redaktionell entfernt. Konkrete Finanzvertretungsinstrumente hier durch allgemeinen Weiterlink nach Modul 6 ersetzt; amtliche Verifikation der Vertiefung bleibt offen. Das gemeinsame Quellenregister liegt im Besitz des Hauptagenten. Keine Metadaten oder fachliche Freigabe erfunden."
+    }
+  },
+  {
+    "id": "M4-01",
+    "priority": "kritisch",
+    "criterion": "A, D",
+    "quote": "«Aufmerksam sein reicht — bei Schlafveränderungen, extremen Stimmungsschwankungen in der Pubertät oder anhaltendem Rückzug.»",
+    "problem": "Abschnitt 6 verbindet Aussagen über Familien- und Zwillingsstudien, «deutlich erhöhtes» familiäres Risiko und «die meisten Kinder» mit einer pauschalen Entwarnung und einer Beobachtungsliste. Für diesen Absatz ist keine genetische, epidemiologische oder leitlinienbasierte Quelle angegeben. Fachliche Richtigkeit, Bezugsgruppe und angemessener Umgang mit Beschwerden: **Prüfbedarf**. Die unbelegte Aussage «reicht» beantwortet eine individuelle Unterstützungsfrage zu weitgehend.",
+    "proposal": "Aussage und Zielgruppe mit tatsächlich überprüfter Fachquelle belegen; bis dahin keine allgemeine Risikoprognose und keine Entwarnung aus Aufmerksamkeit ableiten. Sorge um ein Kind als Anlass für Beratung formulieren, ohne Angehörige zur diagnostischen Überwachung anzuhalten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: unbelegte genetische/familiäre Risikoprognose, Entwarnung und diagnostische Beobachtungsliste durch Beratung bei eigenen Sorgen ersetzt; keine Kontroll- oder Diagnoserolle der Angehörigen. Prüfung der ursprünglichen Risikoevidenz bleibt offen, keine fachliche Freigabe behauptet."
+    }
+  },
+  {
+    "id": "M4-02",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Studien zeigen ein erhöhtes Risiko für spätere psychische Belastungen (Hooper et al., 2011).»",
+    "problem": "Das behauptete Studienergebnis zur Parentifizierung ist eine zentrale Risikobotschaft. Hooper et al. erscheint nur als Kurzverweis im Fliesstext, nicht in der Quellenbox; Titel, Publikationsort, URL und Abrufdatum fehlen. Studie, Aussageumfang und Übertragbarkeit auf Kinder eines Elternteils mit bipolarer Störung: **Prüfbedarf**. Ein bibliografisch nicht identifizierter Studienverweis darf keine gesicherte Entwicklungsprognose vermitteln.",
+    "proposal": "Originalarbeit vollständig identifizieren und die tatsächlich untersuchte Gruppe, Art der Verantwortungsübernahme und Unsicherheit berücksichtigen. Bis zur Prüfung den Forschungs- und Risikosatz streichen; beim konkreten, entlastenden Hinweis auf altersangemessene Aufgaben bleiben.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: nicht identifizierter Hooper-Verweis, spätere Belastungsprognose und ungesicherte Fachbegriffsdefinition entfernt; konkrete altersangemessene Aufgaben/Entlastung beschrieben. Originalstudie und fachliche Quellenprüfung bleiben offen."
+    }
+  },
+  {
+    "id": "M4-03",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Chronische Belastung hat körperliche Folgen — Blutdruck, Immunsystem, Schlaf.»",
+    "problem": "Abschnitt 7 stellt drei körperliche Folgen als allgemeine Kausalfolge dar, ohne dafür einen überprüfbaren Beleg zuzuordnen. Der Quellenhinweis zu Perlick benennt einen Zusammenhang mit depressiven Symptomen; er dokumentiert keine Deckung dieser drei körperlichen Aussagen. Deckung und kausale Stärke: **Prüfbedarf**.",
+    "proposal": "Entweder passende, überprüfte Quellen und eine ihrer Evidenz entsprechende Formulierung ergänzen oder auf die praktische Aussage begrenzen: eigene neue, starke oder anhaltende Beschwerden medizinisch abklären lassen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: pauschale Kausalbehauptung zu Blutdruck/Immunsystem/Schlaf entfernt, medizinische Abklärung eigener Beschwerden empfohlen. Prüfung gesundheitlicher Fachangaben weiterhin offen; Modulcredits weisen dies aus."
+    }
+  },
+  {
+    "id": "M4-04",
+    "priority": "wichtig",
+    "criterion": "B, C",
+    "quote": "«Eigene Gesundheit ist hier keine Kür — sie entscheidet mit darüber, ob Sie nur noch weiterfunktionieren oder wieder als Person erkennbar werden.»",
+    "problem": "Der Schlusssatz setzt belastete Angehörige mit einer blossen Funktion gleich und knüpft das Wiedererkennbarwerden «als Person» an ihre Gesundheit. Dazu passen die allgemein formulierte Veränderung des geliebten Menschen in Abschnitt 1 und die deterministischen Pfeile «Führt zu» bei Schonhaltung und Co-Isolation. Diese Formulierungen können Erschöpfung zusätzlich als Verlust von Personsein darstellen; die differenzierte Einleitung und der Kurzweg werden damit nicht durchgehalten.",
+    "proposal": "Personsein und Würde voraussetzen; von weniger Raum für Bedürfnisse und möglichen Veränderungen sprechen. Beispiel: «Ihre Gesundheit und Ihre Bedürfnisse zählen auch unter hoher Belastung. Entlastung kann wieder mehr Raum für das eigene Leben schaffen.» Die beiden «Führt zu»-Sätze als mögliche Entwicklungen formulieren.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Personsein wird vorausgesetzt; Verlust-von-Personsein-/Identitäts-Prognosen, deterministische Folgepfeile und allgemeine Veränderung der geliebten Person ersetzt. Text/TOC/Schlusszusammenfassung beschreiben mögliche Erfahrungen und Raum für eigene Bedürfnisse."
+    }
+  },
+  {
+    "id": "M4-05",
+    "priority": "wichtig",
+    "criterion": "B, D",
+    "quote": "«Absagen nur im echten Notfall.»",
+    "problem": "Die Empfehlung eines «nicht-verhandelbaren» wöchentlichen Termins setzt verfügbare Betreuung, Zeit und Geld voraus. Der kategorische Absagesatz kann gerade Angehörigen mit wenig Entlastung eine weitere Pflicht auferlegen.",
+    "proposal": "Einen geschützten eigenen Zeitraum als Möglichkeit anbieten, kleine Formen und Unterstützung bei der Organisation einschliessen; Ausfallen oder Verschieben nicht als Scheitern behandeln.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Nicht verhandelbare Wochenpflicht und Absageverbot entfernt; flexible kurze eigene Zeit, Organisationshilfe und Verschieben ohne Scheiternszuweisung angeboten."
+    }
+  },
+  {
+    "id": "M4-06",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "«Pauline Boss nennt das ‹Ambiguous Loss›: eine Trauer ohne Abschluss, weil der Verlust nicht endgültig ist und sich deshalb nicht einfach verarbeiten lässt.»",
+    "problem": "Boss und Doka werden voneinander abgegrenzt, aber beide ohne vollständige Quelle eingeführt. Auch «opportunity costs of caregiving», die entwicklungsbezogenen Altersgruppen und die Behauptung «Kinder tragen meist mehr mit, als Erwachsene denken» sind nicht konkret belegt. Die drei Einträge der Quellenbox erlauben keine nachvollziehbare Zuordnung dieser unterschiedlichen Aussagen. Definitionen, Alterszuordnung und verallgemeinernde Häufigkeitswörter: **Prüfbedarf**, keine bestätigten fachlichen Fehler.",
+    "proposal": "Für die benannten Konzepte identifizierbare Quellen und Aussagezuordnungen ergänzen. Altersgruppen als flexible redaktionelle Gesprächsbeispiele kennzeichnen; pauschale «meist»-/«fast nie»-Aussagen ohne Daten durch mögliche Erfahrungen ersetzen. Quellen vollständig mit Publikationsort und Abrufdatum ausweisen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: unverifizierte Boss-/Doka-/Opportunitätskosten-Zuschreibungen und unbelegte Häufigkeitswörter durch Erfahrungshinweise ersetzt; Altersbänder ausdrücklich flexible redaktionelle Beispiele. Therapie/Angebote als zu klärende Möglichkeiten formuliert. Differenzierter Betreuungsurlaub-Absatz wortgleich erhalten; amtliche Rechts-/Angebots-/Fachquellenprüfung offen. Gemeinsame Quellenbox liegt ausserhalb dieser Datei-Ownership."
+    }
+  },
+  {
+    "id": "M4-07",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "«Erschöpfung zeigt sich selten als ein einzelnes Symptom.»",
+    "problem": "Die Warnzeichenbox behauptet ein typisches Mehrsymptommuster und ordnet unter anderem anhaltende Erkältungen, Appetitveränderungen und häufigeren Substanzgebrauch der Erschöpfung zu. Eine Quelle für Auswahl, Häufigkeit oder diagnostische Zuordnung wird nicht genannt. **Prüfbedarf**. Der spätere Hinweis auf fehlende Schwellen und medizinische Abklärung ist hilfreich, beseitigt aber nicht die behauptete Typik.",
+    "proposal": "Als mögliche Beobachtungen für ein Gespräch darstellen, ohne aus Anzahl oder Kombination auf Erschöpfung zu schliessen. Klar sagen, dass die Liste nicht die Ursache von Beschwerden bestimmt; Quellen und Grenzen für die verwendeten Beispiele prüfen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: Symptomtypik und Diagnoselogik entfernt; Raster sind mögliche Beobachtungen ohne Ursache, Anzahlsschwelle oder Kombinationstest. Reservoirlabel und Textfassung synchron als Entlastungswunsch formuliert; Abschnitt 7/TOC verwenden eigene Lage statt vermeintlich geprüfter Warnsignale. Fachprüfung der Beispiele und didaktische Freigabe bleiben offen."
+    }
+  },
+  {
+    "id": "M5-01",
+    "priority": "kritisch",
+    "criterion": "A, B",
+    "quote": "«Ungelöste Loyalitätskonflikte führen häufig zu chronischem Stress, Erschöpfung und innerer Lähmung — und verschlechtern damit oft auch die Situation der erkrankten Person (Kim & Miklowitz, 2004).»",
+    "problem": "Abschnitt 2 verknüpft eine häufige Kausalkette mit einer Verschlechterung bei der erkrankten Person. Der Kurzverweis ist nicht vollständig identifiziert und fehlt in der Quellenbox. Ob die genannte Arbeit Loyalitätskonflikte und diese Kette untersucht, ist **Prüfbedarf**. Die nicht belegte Folgenbehauptung kann ausgerechnet beim Selbstschutz weitere Verantwortung für die Erkrankung vermitteln.",
+    "proposal": "Kausale und Häufigkeitsbehauptung bis zur Prüfung entfernen. Innere Konflikte als mögliche belastende Erfahrung benennen und Beratung anbieten; daraus keine Verschlechterung der erkrankten Person ableiten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: ungesicherte Kim-/Miklowitz-Kausalkette und Verantwortungszuweisung für Verschlechterung der anderen Person entfernt; mögliche innere Belastung und Beratung benannt. Originalquelle/Deckung weiterhin ungeprüft."
+    }
+  },
+  {
+    "id": "M5-02",
+    "priority": "wichtig",
+    "criterion": "A, B, C",
+    "quote": "«Wo stehen Sie im EE-Kreislauf?»",
+    "problem": "Der Seitentext definiert EE in Abschnitt 3 ausdrücklich als eigenständigen Forschungsbegriff und sagt, EE sei keine feste Vierphasenfolge. Inhaltsverzeichnis, Abschnitt 9 und Schlusszusammenfassung nennen das zuvor als eigenes Reflexionsmodell eingeführte Muster dennoch «EE-Kreislauf» bzw. setzen EE mit Schuld, Überengagement, Erschöpfung und Kritik gleich. Dieser innere Widerspruch ist direkt am Text nachweisbar; die externe EE-Evidenz bleibt **Prüfbedarf**. Die Frage «Wo stehen Sie» suggeriert zusätzlich eine Einstufung.",
+    "proposal": "Überall denselben Status verwenden: vier mögliche Aspekte eines redaktionellen Belastungs-/Reflexionsmodells, ohne feste Folge. EE davon getrennt erklären und belegen. Frage etwa: «Welche dieser Erfahrungen kennen Sie gerade?» Schlusszusammenfassung entsprechend ändern; Kontroll- und Kritikschritte konsequent als Möglichkeiten statt Automatismus schreiben.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "EE-Kreislauf in Inhaltsverzeichnis, Rückfrage und Zusammenfassung entfernt. Vier mögliche redaktionelle Aspekte sind überall unabhängig von EE und ohne Phasenfolge/Einstufung benannt; Kontroll-/Kritikautomatismen entfernt. EE-Definition und Literatur bleiben ausdrücklich ungeprüft; keine unbestätigte Rückfallbehauptung oder neue Definition aus Erinnerung eingeführt."
+    }
+  },
+  {
+    "id": "M5-03",
+    "priority": "kritisch",
+    "criterion": "A, D",
+    "quote": "«In stabilen Phasen steht dem gemeinsamen Sorgerecht in der Regel nichts entgegen.»",
+    "problem": "Abschnitt 9 enthält eine rechtliche Prognose und eine Darstellung gerichtlicher Kriterien ohne amtliche Primärquelle. «Stabile Phase» ersetzt keine belegte Darstellung der einschlägigen Voraussetzungen. Ob die Aussagen zur elterlichen Sorge und zum Kindeswohl korrekt und ausreichend vollständig sind, bleibt **Prüfbedarf**; der Leser erhält dennoch eine weitreichende Entwarnung für den Einzelfall.",
+    "proposal": "Schweizer Rechtslage anhand tatsächlich abgerufener amtlicher Quellen prüfen. Bis dahin keine Prognose aus der Diagnose oder einer Phase ableiten; elterliche Sorge, Betreuung/Kontakte und konkrete Beratung unterscheiden. Keine Gesetzesartikel aus Erinnerung ergänzen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: Gerichts-/Sorgerechtsprognosen aus Diagnose/stabiler Phase entfernt; elterliche Sorge, Betreuung/Kontakte und individuelle Beratung statt Rechtsfreigabe. Amtliche Rechtsprüfung weiterhin offen, keine Gesetzesangaben aus Erinnerung."
+    }
+  },
+  {
+    "id": "M5-04",
+    "priority": "kritisch",
+    "criterion": "A, B, D",
+    "quote": "«Verträge und Entscheidungen, die während einer manischen Episode getroffen werden, können juristisch anfechtbar sein.»",
+    "problem": "Der folgende Absatz verbindet Episode, Anfechtbarkeit, «Schützen Sie gemeinsame Finanzen», Dokumentation des Zustands und Beistandschaft durch die KESB. Für keine dieser rechtlich handlungsrelevanten Aussagen gibt es eine amtliche Quelle. Voraussetzungen, Bedeutung von «Entscheidungen», Befugnisse der Angehörigen und Schwelle einer behördlichen Massnahme bleiben unklar: **Prüfbedarf**. Die Diagnose/Phase darf hier nicht als bereits geleistete rechtliche Beurteilung dienen.",
+    "proposal": "Absatz bis zu einer amtlich belegten juristischen Prüfung auf individuelle Beratung vor Vertrags-, Konto- oder Betreuungsschritten begrenzen. Keine eigenmächtige Veränderung gemeinsamer Finanzen nahelegen; Beobachtungen für Beratung von eigener medizinischer/rechtlicher Beurteilung trennen. KESB/Beistandschaft nur mit überprüften Voraussetzungen erläutern, andernfalls weglassen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: Episode-zu-Anfechtbarkeit, unklarer Finanzschutzauftrag und KESB-/Beistandschaftszusage entfernt; vor Konto-/Vertragsänderungen eigene Befugnisse beraten lassen, konkrete Beobachtungen ohne eigene medizinisch-juristische Beurteilung notieren. Amtliche Prüfung dieser Fachfragen bleibt offen."
+    }
+  },
+  {
+    "id": "M5-05",
+    "priority": "wichtig",
+    "criterion": "A, D",
+    "quote": "«Bei Kindern oder Finanzen: Pro Mente Sana berät kostenlos.»",
+    "problem": "In Abschnitt 8 wird ein breites kostenloses Angebot zu Kindern/Finanzen zugesagt; Abschnitt 9 wiederholt dies für psychische Erkrankung und Sorgerecht. Auf dieser Seite gibt es weder einen direkten Angebotslink noch eine geprüfte Darstellung von Umfang, Zielgruppe und Kostenbedingungen. Ob das Angebot die genannten Familienrechts-/Finanzfragen umfasst, ist **Prüfbedarf**.",
+    "proposal": "Aktuelle offizielle Angebotsbeschreibung abrufen, einschlägige Zuständigkeit und Kostenbedingungen präzise nennen und direkt verlinken. Bis dahin spezialisierte Beratung empfehlen und Umfang/Kosten erfragen lassen, ohne Zusicherung.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: unverifizierte kostenlosen Pro-Mente-Sana-Zusagen für Kinder/Finanzen/Sorge entfernt. Passende Beratung mit vorheriger Klärung von Themen, Zuständigkeit und Kosten empfohlen. Aktuelles offizielles Angebot nicht verifiziert; weiter offen."
+    }
+  },
+  {
+    "id": "M5-06",
+    "priority": "wichtig",
+    "criterion": "B, D",
+    "quote": "«Mindestens einer Person alles erzählen»",
+    "problem": "Die anschliessenden Anweisungen «Nicht die halbe Wahrheit. Alles.» verlangen vollständige Offenlegung. Sie lassen Wahl, Tempo, Vertraulichkeit und die Privatsphäre der erkrankten Person ausser Acht. Für Angehörige kann daraus eine weitere Pflicht werden, obwohl bereits ein begrenztes Beratungsgespräch helfen kann. Dies ist ein Haltungs-/Praxisbefund, keine behauptete Rechtsverletzung.",
+    "proposal": "Wahlfreiheit und abgestufte Offenlegung ermöglichen: «Sprechen Sie mit einer vertrauten Person oder Beratungsstelle über das, was Sie belastet. Sie entscheiden, was Sie teilen möchten.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Pflicht, mindestens einer Person alles offenzulegen, entfernt. Eigenes Tempo, ausgewählter Inhalt und Privatsphäre der anderen Person werden respektiert; passende Vertrauensperson oder Beratung als Möglichkeit."
+    }
+  },
+  {
+    "id": "M5-07",
+    "priority": "wichtig",
+    "criterion": "B, C",
+    "quote": "«Schuld kann auch dann auftreten, wenn die Alternative — alles weiter wie bisher — Sie zerstören würde.»",
+    "problem": "«Zerstören», «Nähe Sie auffrisst» und «zum Verschwinden» dramatisieren die Selbstschutzbotschaft. Zugleich legt die Mythenantwort «Das ist kein Ende» nahe, Abstand müsse weiterhin eine tragfähige Beziehung erhalten. Der ausdrücklich offene Entscheidungsraum der Grafik wird dadurch im Text enger.",
+    "proposal": "Belastung ruhig beschreiben; Abstand als mögliche Entlastung, veränderten Kontakt und auch ein Beenden von Kontakt ohne moralische Vorgabe zulassen. Beispiel: «Schuldgefühle können auch auftreten, wenn Sie eine notwendige Grenze setzen.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Zerstörung/Auffressen/Verschwinden als fachliche Selbstschutzbotschaft entfernt; Text, Kipppunktkarten, Mythenantworten und Grafikcaption ruhiger und ohne fortgesetzten Kontakt als Pflicht. Veränderte Unterstützung oder Ende von Kontakt bleiben eigene Entscheidungen."
+    }
+  },
+  {
+    "id": "M5-08",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "«‹Affiliate Stigma› — Stigma durch Assoziation — beschreibt, wie gesellschaftliche Vorurteile auf Angehörige abfärben (Mak & Cheung, 2008).»",
+    "problem": "Mak & Cheung fehlt als identifizierbare Quelle. Für «Excessive Reassurance Seeking», «Enabling», höhere Trennungsraten und die daraus abgeleitete strukturelle Belastung sind ebenfalls keine konkreten Quellen angegeben. Die zwei Quellenbox-Einträge dokumentieren keine Zuordnung zu diesen Konstrukten und Ergebnissen. Definitionen, Anwendungsbereich und Kausal-/Häufigkeitswörter: **Prüfbedarf**, keine verifizierte fachliche Widerlegung.",
+    "proposal": "Originalquellen vollständig zuordnen und Konstrukte von Alltagserfahrungen unterscheiden. Trennungsraten nur mit identifizierbarer Population, Zeitraum und Quelle nennen; aus einer Assoziation keine Ursache ableiten. Ohne geprüften Beleg die konkreten Erfahrungsbeispiele verwenden und Forschungs-/Häufigkeitsbehauptungen weglassen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: unverifizierte Mak-/Cheung-Zuschreibung, ERS-/Enabling-Konstrukte, Befragungs-/Trennungsstatistik und kausale/häufigste Stigmaprognosen entfernt; konkrete mögliche Erfahrungen in Alltagssprache beschrieben. Originalquellen/Übertragbarkeit weiterhin ungeprüft; keine Ersatzbibliografie erfunden."
+    }
+  },
+  {
+    "id": "M5-09",
+    "priority": "wichtig",
+    "criterion": "A, D",
+    "quote": "«Regelmässige Paartherapie als gemeinsame Basis, klare Absprachen über Verantwortlichkeiten, eigene Auszeiten ohne Schuldgefühle, Bereitschaft der erkrankten Person zur Mitarbeit an der Behandlung.»",
+    "problem": "Unter «Bewusst bleiben» erscheint regelmässige Paartherapie als standardmässige Grundlage. Eignung, Wunsch beider Personen und vorhandene Beratungsmöglichkeiten werden nicht eingeordnet; eine überprüfte Therapiequelle fehlt. **Prüfbedarf** zur fachlichen Empfehlung, keine behauptete Kontraindikation. Die formulierten eigenen Auszeiten «ohne Schuldgefühle» setzen ausserdem ein Gefühl als Ergebnis voraus, das Leser nicht auf Knopfdruck herstellen können.",
+    "proposal": "Absprachen und Unterstützung als Optionen formulieren. Beispiel: «Wenn Sie bleiben möchten, können klare Zuständigkeiten, eigene Auszeiten und Beratung helfen. Ob gemeinsame Gespräche oder Paartherapie für Sie beide passen, lässt sich mit einer Fachperson klären.» Schuldgefühle können dabei weiter bestehen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textumsetzung abgeschlossen: regelmässige Paartherapie nicht länger Standardbasis; gemeinsame Gespräche/Paartherapie als mit Fachperson zu klärende Option. Eigene Auszeiten verlangen keine sofortige Schuldgefühlsfreiheit. Fachliche Eignungs-/Therapiequellenprüfung offen."
+    }
+  },
+  {
+    "id": "M6-01",
+    "priority": "kritisch",
+    "criterion": "A: Kontext/Zuständigkeit",
+    "quote": "«Bei unmittelbarer Gefahr rufen Sie 144.»",
+    "problem": "Der aus `SUICIDE_SAFETY` eingebundene Text und der hervorgehobene Suizidblock in Abschnitt s5 enthalten konkrete Notfallanweisungen und Krisennummern. Weitere Krisennummern stehen in der Krisenplan-Strukturvorlage und im Depressionsbeispiel. Akute Abläufe stehen auch im Handlungsfeld III, in der Faustregel zu Substanzen und im unmittelbaren Notfallseiten-Aufruf. Damit übernimmt diese psychoedukative Seite Krisenorientierung entgegen der ausdrücklichen Kontextregel. Der Beratungsanschluss Pro Mente Sana ist davon zu unterscheiden: Seine reguläre Beratungsnummer ist keine automatisch verbotene Krisennummer.",
+    "proposal": "Krisennummern und akute Handlungsabläufe aus diesem Seitenkörper entfernen; Vorbereitungsinhalte, Frühzeichen, erreichbare persönliche Kontakte und Ausweichkontakte erhalten. Die ausformulierten Ersatzfassungen unten beziehen sich nur auf die psychoedukative Seite, nicht auf eigenständige Krisenmaterialien. Einen optionalen Zuständigkeitsverweis ausschliesslich knapp und nummernlos an einer festen Stelle führen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Krisennummern, lokale Akutabläufe, Notfallseiten-Aufrufe und SUICIDE_SAFETY-Import aus Modul 6 entfernt. Handlungsfeld III behandelt vereinbarte Unterstützung. Krisenplanung, persönliche Kontakte, Ausweichkontakt, Kinderbetreuung, eigene Grenzen und Frühzeichen bleiben erhalten. Keine Änderung an crisis-content.js oder reinen Krisenmaterialien."
+    }
+  },
+  {
+    "id": "M6-02",
+    "priority": "wichtig",
+    "criterion": "A, C: Begriffe/Evidenz",
+    "quote": "«Bipolare Störung und Sucht teilen Störungen im Dopamin- und Belohnungssystem.»",
+    "problem": "Die biologische Erklärung wird als feststehende gemeinsame Ursache präsentiert, ohne konkret zugeordnete Originalquelle oder Einschränkung. Im selben Abschnitt wechseln Substanzkonsum, Substanzgebrauchsstörung und Sucht, obwohl die Seite selbst festhält, dass nicht jeder Konsum ein Symptom oder eine Abhängigkeit ist. Die behaupteten erhöhten Raten betreffen laut Text Substanzgebrauchsstörungen, nicht beliebigen Konsum. **Prüfbedarf**, kein nachgewiesener fachlicher Fehler: Die verlinkte Quelle konnte nicht gelesen werden.",
+    "proposal": "Konsum und diagnostizierte Substanzgebrauchsstörung ausdrücklich unterscheiden. Die biologische Aussage bis zur Prüfung einer passenden Originalquelle streichen oder als offene Forschungsfrage kennzeichnen; mögliche Motive nicht als abschliessende Ursachenliste formulieren.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Substanzkonsum von einer fachlich zu beurteilenden Substanzgebrauchsstörung unterschieden. Unbestätigte Häufigkeits-/Risikorangbehauptungen und gemeinsame Dopamin-/Belohnungssystem-Erklärung entfernt. Mögliche Gründe ausdrücklich nicht abschliessend und nicht als Diagnose des Einzelfalls dargestellt. Biologische oder epidemiologische Aussagen erst nach Prüfung einer passenden Originalquelle wieder aufnehmen."
+    }
+  },
+  {
+    "id": "M6-03",
+    "priority": "wichtig",
+    "criterion": "A, D: Behandlung/Umsetzbarkeit",
+    "quote": "«Bipolare Störung und Substanzkonsum müssen gleichzeitig behandelt werden — nicht nacheinander.»",
+    "problem": "Eine absolute Behandlungsreihenfolge wird als Aufgabe der Angehörigen formuliert. Im Quellenhinweis wird demgegenüber eine Abstimmung beider Behandlungen beschrieben. Ob die angegebene Studie eine ausnahmslose zeitgleiche Behandlung begründet, ist nicht geprüft; der Text unterscheidet zudem hier nicht Konsum von einer behandlungsbedürftigen Störung.",
+    "proposal": "«Sprechen Sie beide Probleme beim Behandlungsteam an und fragen Sie nach einem abgestimmten Vorgehen. Welche Schritte wann nötig sind, wird fachlich und gemeinsam mit der betroffenen Person geklärt.» Die genaue Leitliniengrundlage nachprüfen und angeben.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Einfordern einer ausnahmslos gleichzeitigen Dualdiagnose-Behandlung durch Frage nach abgestimmtem Vorgehen ersetzt. Reihenfolge und Behandlungsschritte werden fachlich mit der betroffenen Person geklärt; Angehörige koordinieren nicht allein. Unverifizierte Studien-Erfolgsbehauptung entfernt. Konkrete Leitlinien-/Interventionsergebnisse bleiben vor einer Wiederaufnahme zu prüfen."
+    }
+  },
+  {
+    "id": "M6-04",
+    "priority": "wichtig",
+    "criterion": "B, C: Grenzen/Entlastung",
+    "quote": "«Drohungen, die Sie halten müssten, kosten die Beziehung.»",
+    "problem": "Das Anti-Pattern macht den Verlust der Beziehung zur zwangsläufigen Folge einer angekündigten Konsequenz. Zusammen mit der Aussage, Schweigen werde langfristig giftig, kann das Angehörige sowohl für klare Schutzgrenzen als auch für vorübergehenden Rückzug beschämen. Die Seite erlaubt an anderer Stelle ausdrücklich das Beenden eines Gesprächs und eine nur freiwillige Rückkehr.",
+    "proposal": "Drohungen von selbst umsetzbaren Schutzgrenzen unterscheiden; Folgen nicht vorhersagen. Beispielsweise: «Drohungen können ein Gespräch belasten. Eine klare Grenze benennt, was Sie zum eigenen Schutz tun. Sie dürfen Abstand nehmen und müssen eine spätere Fortsetzung nicht versprechen.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Zwangsläufiger Beziehungs-/Vertrauensverlust durch Konsequenzen und giftige Langzeitwirkung von Schweigen entfernt. Drohungen von eigenen Schutzgrenzen unterschieden; Pausen, Abstand und freiwillige spätere Fortsetzung anerkannt. Auch die pauschale Wirkungslosigkeit aller Argumente wurde begrenzt."
+    }
+  },
+  {
+    "id": "M6-05",
+    "priority": "wichtig",
+    "criterion": "A, B: Autonomie/Behandlung",
+    "quote": "«Dann müssen wir über die Klinik reden.»",
+    "problem": "Das als hilfreiche Grenze markierte Beispiel folgt unmittelbar auf das Absetzen von Medikamenten. Dadurch kann ein Klinikaufenthalt als regelhafte Konsequenz einer Medikationsentscheidung erscheinen. Im späteren Abschnitt ist die Grenze differenzierter an eine auftretende Episode und übernommene Verantwortung gebunden. Ob eine Medikamentenänderung abgesprochen ist und welche Alternativen es gibt, bleibt im kurzen Beispiel offen.",
+    "proposal": "Die eigene Tragfähigkeit benennen, ohne eine Behandlung vorzugeben: «Ich mache mir Sorgen und kann die Verantwortung zu Hause nicht allein tragen. Lass uns mit dem Behandlungsteam klären, welche Unterstützung und Absprachen jetzt passen.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Klinik als Konsequenz des Medikamentenabsetzens aus dem positiv markierten Grenzbeispiel entfernt. Beispiel benennt Sorge, eigene Tragfähigkeit und gemeinsame Klärung von Unterstützung mit dem Behandlungsteam. Medikamentenabschnitt unterscheidet mögliche abgesprochene Änderungen von Angehörigenkontrolle."
+    }
+  },
+  {
+    "id": "M6-06",
+    "priority": "wichtig",
+    "criterion": "A: Schweizer Recht/Quellen",
+    "quote": "«Sie ist in der Regel auf höchstens sechs Wochen befristet.»",
+    "problem": "Die konkrete Zürcher Frist zur ärztlich angeordneten FU sowie die Angaben zu Behandlungsplanung, Vertrauensperson und Wirksamkeitsprüfung des Vorsorgeauftrags müssen mit geltenden amtlichen Primärquellen abgesichert werden. Angegeben sind ein Leitfaden von 2012 und ein undatiertes Merkblatt; beide Abrufe blieben ohne Inhalt. Die Frist wird hier **nicht als falsch**, sondern als unbestätigte aktuelle Rechtsangabe markiert.",
+    "proposal": "Geltendes Bundes- und Zürcher Recht mit konkreten Artikeln/Paragrafen, Fassungsstand und Abrufdatum nachprüfen und ergänzen; amtliche Erläuterungen zusätzlich verwenden. Anhörung, Informationsweitergabe und stellvertretende Entscheidung weiterhin getrennt halten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Unbestätigte konkrete FU-Sechswochenfrist entfernt, ohne alternative Frist zu behaupten. FU-Abschnitt fragt nach geltender Grundlage, Fristen, Überprüfung, Rechtsmitteln und Rollen; Anhörung, Informationsweitergabe und stellvertretende Entscheidung bleiben unterschieden. Aktuelles Bundes-/Zürcher Recht, Vertrauensperson und Behandlungsplanungsrechte sowie Vorsorgeauftrag-/KESB-Angaben des unveränderten FINANCIAL_SAFETY-Imports benötigen amtliche Primärprüfung. Der Leitfaden 2012 wird nicht als bestätigter aktueller Rechtsstand behandelt. Quellenregister gehört dem Hauptagenten."
+    }
+  },
+  {
+    "id": "M6-07",
+    "priority": "wichtig",
+    "criterion": "A: Nachprüfbarkeit",
+    "quote": "«CANMAT/ISBD (2023): Guidelines summary and evidence update»",
+    "problem": "Die wissenschaftlichen Einträge sind bibliografisch verkürzt; Publikationsorgan, vollständige Publikationsdaten und Abrufdatum fehlen. Gold et al. wird über eine Consensus-Seite statt über das identifizierte Original verlinkt. Auch zentrale Allgemeinaussagen zu eigenmächtigem Absetzen, Hospitalisation und Aufenthaltsdauern sind keiner konkreten Stelle einer überprüften Quelle zugeordnet. Ein redaktioneller Inhaltsabgleich vom Oktober 2026 ersetzt die Quellenprüfung nicht.",
+    "proposal": "Originalpublikationen/Leitlinien eindeutig identifizieren, vollständige Angaben und direkt überprüfbare Links ergänzen; zentrale Aussagen gezielt zuordnen. Aussagen, deren Beleg noch offen ist, vorläufig als Prüfbedarf behandeln oder weniger behauptend formulieren.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Nicht zugeordnete Häufigkeitsbehauptungen zu eigenmächtigem Absetzen und Hospitalisation, allgemeine Aufenthaltsdauern und behauptete integrierte Behandlungserfolge im Seitenkörper entfernt bzw. durch konkrete Fragen ersetzt. Beratungskontakt ohne unbestätigte Telefonnummer, Kosten- oder Leistungszusage formuliert. Primärquellen CANMAT/ISBD, Gold-Original, BAG und amtliche Rechts-/Formulartexte müssen bibliografisch identifiziert, vollständig dokumentiert und Aussagen zugeordnet werden; keine Quellenmetadaten ergänzt. EvidenceSources/module-guidance.jsx wird vom Hauptagenten bearbeitet."
+    }
+  },
+  {
+    "id": "S-01",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "«Das aktuelle PUK-Formular ist breit gefasst und gilt bis zum Widerruf.»",
+    "problem": "**Prüfbedarf:** Genau diese Formularaussage und die spätere Beschreibung konnten im verlinkten Original nicht nachgeprüft werden. Der Linktext verspricht einen PDF-Aufruf; tatsächliches Dateiformat und Weiterleitungsziel konnten wegen der Cloud-Proxyblockade nicht geprüft werden. Kein belegter defekter Link.",
+    "proposal": "Offizielles Formular samt Version/Datum gegenlesen; Linktext an das tatsächlich geprüfte Ziel anpassen. Aussage nur nach Abgleich beibehalten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Unbestätigte Aussagen zu Formulargeltung, Widerruf und PDF-Direktaufruf ersetzt durch Fragen zu Umfang, Dauer, Widerruf und Dokumentation. Aktuelle amtliche Formularprüfung und Fach-/Rechtsfreigabe ausstehend."
+    }
+  },
+  {
+    "id": "S-02",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "«Bei urteilsunfähigen Erwachsenen richtet sich die Vertretung bei medizinischen Massnahmen grundsätzlich nach Patientenverfügung, Vorsorgeauftrag und der gesetzlichen Reihenfolge.»",
+    "problem": "**Prüfbedarf:** Zentrale differenzierte Rechtsaussage, aber Quellenliste weist keine konkreten Rechtsartikel/Abschnitte zu; die besonderen Regeln der psychiatrischen Behandlung und die Regeln für Minderjährige müssen mit amtlichen Primärquellen bestätigt werden. Kein festgestellter Rechtsfehler.",
+    "proposal": "Amtliche Grundlage und genaue Zuordnung für Einwilligung, Minderjährige, Vertretungsfolge und psychiatrische Sonderregeln ergänzen; Rechtsfreigabe dokumentieren.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Unverifizierte Detailregeln zu Minderjährigen/Vertretung durch Klärungsfragen an das Behandlungsteam ersetzt. Beobachtungsmitteilung und Rückauskunft getrennt; aktuelle amtliche Rechtsprüfung ausstehend."
+    }
+  },
+  {
+    "id": "S-03",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "«Im Kanton Zürich ist die Einwilligung an keine bestimmte Form gebunden.»",
+    "problem": "**Prüfbedarf:** Formfreiheit und Dokumentationsempfehlung sind rechtlich handlungsleitend; der allgemeine Gesundheitsberufe-Link lässt die konkrete Fundstelle nicht erkennen und war nicht abrufbar.",
+    "proposal": "Geprüfte kantonale Fundstelle mit Datum/Abschnitt ergänzen; ohne Bestätigung auf «Klären Sie mit der behandelnden Stelle, wie Ihre Einwilligung dokumentiert werden soll» beschränken.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Unbestätigte Formfreiheit ersetzt durch Nachfrage nach Dokumentation und aktuellem Formular. Quellenprüfdatum nicht mehr als bestätigte Originalprüfung ausgewiesen; amtliche Verifikation offen."
+    }
+  },
+  {
+    "id": "M7-01",
+    "priority": "kritisch",
+    "criterion": "A: Häufigkeit/Beleg",
+    "quote": "«Co-Isolation — der schleichende Rückzug aus dem eigenen sozialen Netz — ist eine der häufigsten Langzeitfolgen für Angehörige (Perlick et al., 2007).»",
+    "problem": "Eine hervorgehobene Häufigkeitsrangfolge wird mit einer nicht identifizierbaren Literaturangabe begründet. Im Quellenverzeichnis steht nur Perlick et al. 2016 zu Belastung/depressiven Symptomen; die Veröffentlichung von 2007 fehlt mit Titel, Publikationsdaten und URL. Damit ist der konkrete behauptete Beleg auf der Seite nicht nachprüfbar. **Prüfbedarf hinsichtlich der fachlichen Richtigkeit**, kein behaupteter Nachweis einer falschen Studie. Kritisch ist die unbelegte zentrale Rangbehauptung.",
+    "proposal": "Rangbehauptung entfernen, den sozialen Rückzug als mögliche Erfahrung formulieren; die Quelle von 2007 erst nach eindeutiger Identifikation und Lektüre zuordnen. Ersatz unten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Unbelegte Rangbehauptung häufigster Langzeitfolgen und nicht identifizierter Perlick-2007-Verweis entfernt. Co-Isolation als hier verwendete Bezeichnung für sozialen Rückzug knapp erklärt; weniger Kontakt als mögliche Erfahrung formuliert. Wiederaufnahme einer wissenschaftlichen Häufigkeitsbehauptung erfordert Identifikation und Lektüre der tatsächlich passenden Originalpublikation."
+    }
+  },
+  {
+    "id": "M7-02",
+    "priority": "kritisch",
+    "criterion": "B, C: Hoffnung/individueller Verlauf",
+    "quote": "«Jetzt wissen Sie, was kommt — und genau dieses Wissen macht es schwerer, nicht leichter.»",
+    "problem": "Der Abschnitt zum Rückfall nach stabilen Jahren legt der Leserin/dem Leser eine feststehende Verschlechterung, Verlust der Hoffnung, frühere Reserven und eine umfassende Identitätskrise nahe. Der Text stellt dies nicht als mögliche Erfahrung dar. Auch die pauschale Antwort Nein auf die individuelle Verhinderbarkeitsfrage ist aus diesem Seitenmaterial nicht ableitbar. Das kann Hoffnung, Autonomie und Entlastung beeinträchtigen; die Seite erklärt an anderer Stelle selbst, Forschung sage keinen individuellen Verlauf voraus.",
+    "proposal": "Den gesamten betreffenden Abschnitt als unterschiedliche mögliche Reaktionen formulieren, frühere stabile Jahre und erreichbare Unterstützung anerkennen; einen Rückfall nicht als Beweis persönlicher Schuld werten, ohne einen einzelnen Verlauf ursächlich zu beurteilen. Alle betroffenen Passagen unten umformuliert.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Gesamten Abschnitt zur erneuten Episode nach stabilen Jahren umformuliert: unterschiedliche Gefühle und Ressourcen, Wert früherer Stabilität und erreichbare Entlastung. Feststehender Hoffnungsverlust, zwingend schwerere Erschöpfung, umfassende Identitätskrise und pauschales Nein zur individuellen Verhinderbarkeit entfernt. Vorbereiteter Plan bietet Orientierung und ersetzt keine fachliche Einschätzung."
+    }
+  },
+  {
+    "id": "M7-03",
+    "priority": "wichtig",
+    "criterion": "A, B: Verlauf/Normalitätsdruck",
+    "quote": "«Typischer emotionaler Verlauf nach einer Episode»",
+    "problem": "Die Box ordnet Gefühle dem unmittelbaren Danach, den ersten Wochen und einer späteren Bilanz zu; Kopftext und Zusammenfassung sprechen von einer eigenen Nachkrisenphase. Die Einschränkung unterschiedlicher Reihenfolge hilft, beseitigt aber die Behauptung eines typischen zeitlichen Verlaufs nicht. Ein überprüfter Beleg für genau diese Zeitordnung fehlt. Das kann Leserinnen und Leser mit anderen Reaktionen unnötig verunsichern.",
+    "proposal": "«Mögliche Reaktionen nach einer Episode»; Gefühle ohne zeitliche Norm als Beispiele nennen. Etwa: «Erschöpfung, Leere, Wut, Schuldgefühle oder Erleichterung können auftreten, müssen aber nicht. Wann Sie ein Gespräch führen möchten, hängt von Ihrer Situation und der Bereitschaft beider Personen ab.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Kopftext, s2, Gefühlserläuterungen, Callout und Zusammenfassung enthalten keine typische zeitliche Nachkrisenordnung mehr. Gefühle sind mögliche Reaktionen ohne Pflicht oder festgelegte Reihenfolge. Gesprächsbereitschaft und Zeitpunkt hängen von beiden Personen und ihrer Situation ab."
+    }
+  },
+  {
+    "id": "M7-04",
+    "priority": "wichtig",
+    "criterion": "B, D: Selbstfürsorge/Realismus",
+    "quote": "«Wenn etwas ausschliesslich dann passiert, wenn es ohnehin gut läuft, ist es keine Stütze, sondern ein Bonus.»",
+    "problem": "Die Kriterien echte Stütze, Eigenständigkeit und Nicht-Verhandelbarkeit werten unregelmässige oder gemeinsam ermöglichte Entlastung ab. Die Anweisung eines nicht verhandelbaren Termins und die Formulierung «keine Frage der Zeit» lassen reale Betreuungspflichten und Ressourcenknappheit ausser Acht. Die Bildunterschrift und ein anderer Absatz nennen Zeit, Geld und praktische Entlastung bereits ausdrücklich.",
+    "proposal": "Eigenschaften als mögliche Orientierung statt als Zugangskriterien formulieren. Auch kurze, unregelmässige und gemeinsam organisierte Entlastung anerkennen; nach einem realistischen Termin plus nötiger Unterstützung fragen, statt einen unverhandelbaren Termin zu verlangen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Echte-Stütze-Zugangskriterien durch frei wählbare Anregungen ersetzt. Kurze, unregelmässige und gemeinsam ermöglichte Entlastung anerkannt; Zeit, Kraft, Betreuung und finanzielle Möglichkeiten berücksichtigt. Nicht verhandelbarer Selbstfürsorgetermin und fixe Vergleichsvorgaben gestrichen; Termin und Reflexionsnotizen sind freiwillig und anpassbar. Metaphorische Säulenabbildung mit ihren Grenzen erhalten."
+    }
+  },
+  {
+    "id": "M7-05",
+    "priority": "wichtig",
+    "criterion": "A, C: wissenschaftlicher Begriff",
+    "quote": "«Posttraumatisches Wachstum beschreibt nur, dass manche Menschen mit der Zeit neue Sprache, klarere Grenzen oder veränderte Prioritäten entwickeln.»",
+    "problem": "Ein wissenschaftlicher Begriff wird eingeführt und in eine allgemeine Definition übersetzt, ohne zugeordnete Quelle. Die vier Quellen im Verzeichnis werden auf der Seite als Belastungs-, Unterstützungs- und Interventionsforschung beschrieben; keine ist ausdrücklich als Beleg dieses Konstrukts bezeichnet. Seine Passung zu unterschiedlichen Angehörigenerfahrungen ist **Prüfbedarf**, nicht hier als widerlegt beurteilt.",
+    "proposal": "Entweder den wissenschaftlichen Begriff anhand eines wirklich geprüften Originalbelegs erklären und seine Grenzen benennen, oder bei «möglichen persönlichen Veränderungen nach belastenden Erfahrungen» bleiben. Die entlastende Aussage, Wachstum sei keine Pflicht, erhalten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Wissenschaftliches Etikett posttraumatisches Wachstum und unbestätigte Konstruktdefinition entfernt. Abschnitt beschreibt mögliche persönliche Veränderungen ohne Wachstumsauftrag oder Sinnzuschreibung an Leid. Bei späterer Wiedereinführung des Konstrukts sind Originalbeleg und Passung für Angehörige zu prüfen."
+    }
+  },
+  {
+    "id": "M7-06",
+    "priority": "wichtig",
+    "criterion": "A, C, D: Intervention/Ziel",
+    "quote": "«Paartherapie als Prävention»",
+    "problem": "Es bleibt offen, was verhindert werden soll: Beziehungskonflikte, eigene Beschwerden oder Rückfälle der erkrankten Person. Dadurch entsteht ein möglicher Behandlungserfolg, ohne Ziel, Indikation oder geprüft zugeordneten Beleg. Die Seite richtet sich zugleich an Angehörige ausserhalb von Paarbeziehungen.",
+    "proposal": "«Bei Bedarf Paarberatung oder Paartherapie zur Klärung gemeinsamer Fragen und Absprachen»; für andere Angehörigenrollen entsprechende Gesprächs-/Beratungsangebote nennen. Rückfallprävention nicht ohne spezifischen überprüften Beleg zuschreiben.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Unbestimmte Präventionsbehauptung zur Paartherapie durch bedarfsbezogene Paarberatung/-therapie zur Klärung gemeinsamer Fragen ersetzt. Angehörigen-/Familiengespräche für andere Rollen ergänzt. Kein bestätigter Rückfallpräventionseffekt behauptet."
+    }
+  },
+  {
+    "id": "M7-07",
+    "priority": "wichtig",
+    "criterion": "B: Beziehung/Autonomie",
+    "quote": "«Sie ist die Voraussetzung dafür, dass diese Beziehung weiterhin eine Beziehung sein kann — und nicht ein Verhältnis von Pflegeperson zu Patient:in.»",
+    "problem": "Ein eigenes Leben wird als notwendige Voraussetzung einer echten Beziehung dargestellt; Beziehungen mit viel Sorgearbeit werden dabei sprachlich abgewertet. Menschen mit knappen eigenen Räumen oder hohem Unterstützungsbedarf bekommen so zusätzlich eine Bewertung ihrer Beziehung.",
+    "proposal": "«Eigene Interessen und Kontakte können Ihnen guttun und zusätzliche Spielräume eröffnen. Auch wenn Sorgearbeit viel Raum einnimmt, bleiben Ihre Beziehung und Ihre eigenen Bedürfnisse wichtig.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Eigenes Leben nicht mehr als Bedingung einer echten Beziehung oder Gegenbild zu Pflege dargestellt. Eigene Interessen, Bedürfnisse und Beziehungen bleiben auch bei viel Sorgearbeit wertvoll."
+    }
+  },
+  {
+    "id": "M7-08",
+    "priority": "wichtig",
+    "criterion": "A, B: verallgemeinerte Erfahrung",
+    "quote": "«Was bei fast allen gleich ist: Was anfangs als endgültige Form schien, hat sich später als Zwischenform erwiesen.»",
+    "problem": "Die ansonsten als mögliche, nicht validierte Erfahrungen erläuterte Zeitleiste endet mit einer fast allgemeinen Häufigkeitsbehauptung. Ein Beleg für diese Reichweite fehlt; die Einschränkung verschiedener Lebenslagen wird innerhalb der Seite wieder aufgehoben.",
+    "proposal": "«Eine zunächst passend erscheinende Form kann sich später verändern. Sie muss es nicht. Absprachen dürfen zu Ihrer aktuellen Lebenslage passen und bei Bedarf neu besprochen werden.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Fast allgemeine Häufigkeitsbehauptung am Ende der Zeitleiste entfernt; Änderungen können stattfinden oder ausbleiben. Diagnose-/Neuverhandlungsbeispiele ebenfalls als Möglichkeiten ohne feste Reihenfolge oder Normalverlauf formuliert."
+    }
+  },
+  {
+    "id": "M7-09",
+    "priority": "wichtig",
+    "criterion": "A: Nachprüfbarkeit",
+    "quote": "«Roxburgh et al. (2025): Experiences of informal caregivers supporting individuals diagnosed with bipolar disorder»",
+    "problem": "Die drei über Consensus vermittelten Einträge und die DOI-Angabe enthalten keine vollständigen Publikationsdaten und kein Abrufdatum. Aussagen zu Co-Isolation, emotionalen Zeitphasen, Paartherapie und Wachstum sind nicht gezielt den Quellen zugeordnet. Die Quellen konnten weder bibliografisch noch inhaltlich bestätigt werden.",
+    "proposal": "Originalpublikationen eindeutig identifizieren, vollständige Angaben mit Abrufdatum ergänzen und Aussagegruppen zuordnen; offene Theorie-/Wirkungsaussagen als Prüfbedarf markieren oder vorläufig zurücknehmen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Unbestätigte wissenschaftliche Hintergrundbehauptung zu späteren depressiven Symptomen im Körper durch Hinweise auf eigene Bedürfnisse und Beratung ersetzt. Problematische Theorie-/Häufigkeits-/Präventionsaussagen nach M7-01/03/05/06/08 zurückgenommen. Die vier verlinkten Originale (Roxburgh, Renes, Perlick 2016, Baruch) bleiben bibliografisch und inhaltlich zu prüfen; insbesondere Quellenregisterangabe 777 Dyaden und jeweilige Ergebnisreichweite. Beobachtungsmitteilung/Vertraulichkeit zusätzlich anhand aktueller amtlicher Primärquelle prüfen. Keine Literaturangaben aus Erinnerung ergänzt; module-guidance.jsx gehört dem Hauptagenten."
+    }
+  },
+  {
+    "id": "WZ-01",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«In Krisen oder bei unmittelbarer Gefahr ist der Notfallweg wichtiger als jedes Werkzeug.»",
+    "problem": "Der eigene Infoblock «Wenn es akut ist» übernimmt Notfallorientierung auf der psychoedukativen Werkzeugseite und widerspricht damit dem ausdrücklich vorgegebenen Zuständigkeitsrahmen. Die Richtigkeit eines Notfallwegs ist hier nicht die Streitfrage.",
+    "proposal": "Diesen lokalen Notfallblock entfernen; die Werkzeuge nach ihrem psychoedukativen Zweck einordnen. Falls gewünscht, nur den erlaubten allgemeinen nummernfreien Zuständigkeitshinweis an der festgelegten gemeinsamen Stelle führen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Lokalen Akut-/Notfallblock aus der Werkzeugübersicht entfernt; Modulverweis und Werkzeugauswahl bleiben erhalten."
+    }
+  },
+  {
+    "id": "WZ-02",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Bei akuter Gefahr: 144.»",
+    "problem": "Eine Krisennummer steht im Einführungstext der persönlichen Reflexion; eindeutiger Verstoss gegen die Kontextvorgabe.",
+    "proposal": "Diese Nummer und den anschliessenden lokalen Notfallhinweis entfernen. Den bereits vorhandenen Hinweis «kein validierter Test» und die regulären Beratungs-/Abklärungsempfehlungen erhalten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Krisennummer und lokale Notfallverweise aus Einführung und Ergebnis der Belastungsreflexion entfernt; reguläre Beratung und Abklärungsempfehlungen erhalten."
+    }
+  },
+  {
+    "id": "WZ-03",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Hypomanie: nach DSM-5-TR mindestens vier aufeinanderfolgende Tage, nach ICD-11 mehrere Tage; keine feste Obergrenze von sieben Tagen.»",
+    "problem": "Konkrete aktuelle Klassifikationskriterien werden ohne zugeordnete Primärquelle im Werkzeug angegeben. Das verlinkte Modul nennt unter anderem DSM-5-Vergleichstabellen von 2016, nicht eine unmittelbar nachvollziehbare Belegstelle für DSM-5-TR und ICD-11. Wegen gesperrter Quellenabrufe ist die aktuelle Deckung nicht verifiziert; dies ist kein nachgewiesener Definitionsfehler.",
+    "proposal": "Diagnose-/Zustandsdefinitionen, Zeitkriterien und Rapid-Cycling-Definition anhand der tatsächlich verwendeten aktuellen Klassifikation fachlich gegenprüfen und einzeln mit vollständigen Primärbelegen verknüpfen. Bis dahin unbestätigte Details durch die unten vorgeschlagene allgemeine Formulierung ersetzen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Präzise unbestätigte Kriterien für Bipolar I/II, Hypomanie, Psychose und Rapid Cycling aus Texten und Auswahluntertiteln vorläufig zurückgenommen. Fachliche Einordnung nach Gesamtverlauf/Klassifikation bleibt, fiktive Kurven bleiben. Aktuelle Primärquellenprüfung und vollständige Belegzuordnung weiterhin offen: die W1-Abrufe waren durch CONNECT 403 blockiert; keine neue Quelle erfunden."
+    }
+  },
+  {
+    "id": "WZ-04",
+    "priority": "wichtig",
+    "criterion": "A, B",
+    "quote": "«Für Angehörige gehören Mischzustände zu den schwersten Phasen, weil Energie und Verzweiflung zusammenkommen — und weil die übliche Phasenlehre nicht greift.»",
+    "problem": "Eine allgemeine Rangfolge der Schwere wird ohne Beleg behauptet; «Phasenlehre greift nicht» klingt, als seien Mischsymptome fachlich nicht einordenbar. Das passt auch nicht zur unmittelbar davor gegebenen Erklärung gleichzeitiger Dimensionen.",
+    "proposal": "«Gleichzeitige Aktivierung und depressive Symptome können für Angehörige besonders belastend und schwer verständlich sein; die Belastung ist individuell.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Unbelegte allgemeine Schwere-Rangfolge und Aussage zur nicht greifenden Phasenlehre durch mögliche individuell unterschiedliche Belastung ersetzt."
+    }
+  },
+  {
+    "id": "WZ-05",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Der Effekt einer langen, stillen Daueraufmerksamkeit.»",
+    "problem": "Die zuvor als auch durch Schlaf nicht verschwindend beschriebene Erschöpfung wird kategorisch einer einzigen Ursache zugeschrieben. Eine solche Ursache ist für die einzelne Person weder erhoben noch belegt; andere psychische oder körperliche Ursachen bleiben unsichtbar. Es wird nicht behauptet, dass Daueraufmerksamkeit keine Rolle spielen könne.",
+    "proposal": "Den gesamten Erschöpfungs-Detailtext vorsichtig formulieren: mögliche Belastungszusammenhänge benennen und bei anhaltender Erschöpfung eine eigene fachliche Abklärung ermöglichen, siehe Umformulierung.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Gesamten Erschöpfungsdetailtext ersetzt: Belastung/Aufmerksamkeit als mögliche Zusammenhänge, andere Ursachen und eigene fachliche Abklärung bei anhaltender Beeinträchtigung sichtbar."
+    }
+  },
+  {
+    "id": "WZ-06",
+    "priority": "wichtig",
+    "criterion": "B, C",
+    "quote": "«Eine Belastung erkannt»",
+    "problem": "Dieses Ergebnis erscheint auch, wenn ausschliesslich «Sorge», «Geduld» oder «Hilfsbereitschaft» markiert wird. Die Auswahl fragt Wiedererkennen ab, stellt aber daraus eine Belastungsfeststellung her; die Mehrzahl zählt entsprechend sämtliche Begriffe als Belastungen.",
+    "proposal": "«Ein Begriff wiedererkannt» bzw. «X Begriffe wiedererkannt»; erläutern, dass die Person selbst entscheidet, was davon belastet und was auch eine Ressource sein kann.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Ergebnis zählt wiedererkannte Begriffe statt festgestellter Belastungen; Auswahl kann nach eigener Einschätzung auch Ressourcen enthalten."
+    }
+  },
+  {
+    "id": "WZ-07",
+    "priority": "wichtig",
+    "criterion": "C",
+    "quote": "«Wenn Sie mehr über diese Innenseite verstehen wollen — Modul 2 ordnet ein, was bei Angehörigen typisch ist und wie Hypervigilanz, Eisberg und Schonhaltung zusammenhängen.»",
+    "problem": "Im Ergebnis werden «Hypervigilanz» und «Schonhaltung» erstmals ohne lokale Kurzdefinition vorausgesetzt. Bei einer freiwilligen Einzelnutzung ist damit die Einordnung der eigenen Übersicht unnötig schwer.",
+    "proposal": "Die Begriffe kurz erläutern oder hier in Alltagssprache ersetzen, etwa «anhaltende Wachsamkeit und das Zurückstellen eigener Anliegen»; Modul 2 als Vertiefung verlinkt lassen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Hypervigilanz und Schonhaltung im Ergebnis durch anhaltende Wachsamkeit und Zurückstellen eigener Anliegen ersetzt; Modul-2-Vertiefung bleibt."
+    }
+  },
+  {
+    "id": "WZ-08",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Notfallnummern · Schweiz»",
+    "problem": "Ein eigener Notfallblock listet 144, 117, 143, 147, Ärztefon und PUK-Notfall neben der regulären Fachstelle. Er ist auch in der Website-Druckfassung enthalten. Das widerspricht dem verbindlichen Rahmen und vermischt Beratung mit Krisenzuständigkeit.",
+    "proposal": "Den Notfallnummernblock aus der psychoedukativen Websitevorlage und ihrer Druckfassung entfernen. Die reguläre Fachstelle **058 384 38 00, werktags** darf separat unter «Beratung» stehen. Individuell vereinbarte Kontaktfelder beibehalten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Kompletten siebenzeiligen Notfallnummernblock mitsamt Konstanten aus Website-Krisenplan und damit dessen Druckinhalt entfernt. Reguläre Fachstelle separat als Beratung mit 058 384 38 00/werktags beibehalten; individuelle Kontakte bleiben."
+    }
+  },
+  {
+    "id": "WZ-09",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«4. Bei akuter Gefährdung → 144 / 117»",
+    "problem": "Der Platzhalter des Felds «Erste Schritte bei Verschlechterung» enthält Krisennummern.",
+    "proposal": "«4. Den gemeinsam vereinbarten Ausweichkontakt und das besprochene Vorgehen nutzen.» Die Reihenfolge/Dringlichkeit bleibt eine gemeinsam fachlich abzusprechende Planung, kein universelles Schema.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Notrufnummern aus Erste-Schritte-Platzhalter entfernt; Reihenfolge/Dringlichkeit nun als gemeinsam fachlich abgesprochene Planung, mit vereinbartem Ausweichkontakt."
+    }
+  },
+  {
+    "id": "WZ-10",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«z.B. PUK Zürich · Notfall Erwachsene 058 384 20 00»",
+    "problem": "Der Klinikwunsch-Platzhalter führt eine Krisennummer ein und macht aus der Wunschklärung eine Notfallorientierung.",
+    "proposal": "«z.B. bevorzugte Klinik / vereinbarte Ansprechperson im Behandlungsteam».",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Klinikwunsch-Platzhalter enthält bevorzugte Klinik/vereinbarte Ansprechperson statt PUK-Notfallnummer."
+    }
+  },
+  {
+    "id": "WZ-11",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«— unklare Zuständigkeiten; bei akuter Bedrohung 117 rufen»",
+    "problem": "Krisennummer in einem Beispiel für «Was nicht hilft»; zusätzlich werden ein ungünstiger Umstand und ein akuter Handlungsauftrag vermischt.",
+    "proposal": "«— unklare Zuständigkeiten»; Zuständigkeiten separat im gemeinsam vereinbarten Plan klären.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Polizeinummer und akuten Handlungsauftrag aus Was-nicht-hilft-Beispiel entfernt; unklare Zuständigkeiten bleiben als zu vermeidender Umstand."
+    }
+  },
+  {
+    "id": "WZ-12",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Bei unmittelbarer Gefahr 144 / 117.»",
+    "problem": "Krisennummern im erläuternden Text zum Ausweichkontakt.",
+    "proposal": "Die Nummern entfernen; die Planfrage beibehalten: «Welcher vereinbarte Kontakt und welches besprochene Vorgehen gelten, wenn niemand erreichbar ist oder der Plan nicht zur Lage passt?»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Krisennummern aus Ausweichkontakt-Hinweis entfernt; Frage zielt auf vereinbarten Kontakt und besprochenes Vorgehen."
+    }
+  },
+  {
+    "id": "WZ-13",
+    "priority": "wichtig",
+    "criterion": "B, D",
+    "quote": "«Wo möchten wir eine Behandlung — und wer ist Ansprechperson?»",
+    "problem": "Bei einem Klinikwunsch ist nicht klar, wessen Wunsch massgeblich ist. Das «wir» kann die Entscheidung der erkrankten Person und die unterstützende Rolle der Angehörigen verwischen.",
+    "proposal": "«Welche Klinik bevorzugt die erkrankte Person, falls stationäre Behandlung nötig wird, und welche Ansprechperson wurde gemeinsam vereinbart?» Wünsche von tatsächlich garantierter Aufnahme unterscheiden.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Klinikwunsch benennt Präferenz der erkrankten Person, gemeinsam vereinbarte Ansprechperson und fehlende Aufnahmegarantie."
+    }
+  },
+  {
+    "id": "WZ-14",
+    "priority": "wichtig",
+    "criterion": "A, D",
+    "quote": "«— Schlaf unter 5 Stunden»",
+    "problem": "Ein festes Zahlenbeispiel kann als allgemeiner Frühwarn-Grenzwert gelesen werden. Weder Individualbezug noch Begründung für fünf Stunden sind angegeben.",
+    "proposal": "«— deutlich weniger Schlaf als für die Person üblich»; konkrete persönliche Frühzeichen gemeinsam, bei Bedarf mit dem Behandlungsteam, vereinbaren.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Unbegründetes Fünf-Stunden-Schlafbeispiel durch weniger Schlaf als persönlich üblich ersetzt; Frühzeichen als individuelle gemeinsame Absprache formuliert."
+    }
+  },
+  {
+    "id": "WZ-15",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Bei akuter Gefahr: 144.»",
+    "problem": "Krisennummer im psychoedukativen Gesprächswerkzeug.",
+    "proposal": "Nummer und anschliessenden lokalen Notfallverweis entfernen. Die sachliche Begrenzung «nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht» darf als Nutzungskontext bleiben, ohne einen Notfallblock zu bilden.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Krisennummer und lokalen Notfallverweis aus Kommunikationsintro entfernt. Sachliche Nutzungsgrenze zur Gesprächsvorbereitung bleibt erhalten."
+    }
+  },
+  {
+    "id": "WZ-16",
+    "priority": "wichtig",
+    "criterion": "B, D",
+    "quote": "«Formulieren Sie eine Bitte oder Frage, keinen Befehl.»",
+    "problem": "Dies ist auch für den Anlass «eine Grenze setzen» der einzige Abschlussauftrag. Eine eigene umsetzbare Grenze wird dadurch zu einer Bitte, deren Erfüllung von der anderen Person abhängt; die Karte verspricht aber, Anliegen und Grenze unterscheiden zu helfen.",
+    "proposal": "Beim Anlass Grenze zusätzlich die eigene Handlung formulieren lassen, z.B. «Wenn das Gespräch verletzend wird, beende ich es für heute.» Bitten bleiben möglich; Selbstschutz braucht nicht die Zustimmung der anderen Person.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Grenzanlass erhält im vierten Schritt ein eigenes gelabeltes Handlungsfeld grenze; Bitte ist hier optional, eigene Grenze vor Ergebnis erforderlich. Persönliche Handlung wird in Ergebnis/Zwischenablage übernommen und bei anderem Anlass nicht mitexportiert. Flüchtiger Zustand ohne Browserpersistenz bleibt. Gezielte Regression bestanden."
+    }
+  },
+  {
+    "id": "WZ-17",
+    "priority": "wichtig",
+    "criterion": "A, D",
+    "quote": "«Ich möchte etwas mit dir besprechen — nichts Dringendes, aber etwas Wichtiges.»",
+    "problem": "Derselbe vorgegebene Satz gilt laut Anlassbeschreibung in stabiler Phase und bei beginnender Verschlechterung. «Nichts Dringendes» legt die Dringlichkeit fest, obwohl das Werkzeug sie nicht beurteilt.",
+    "proposal": "«Ich möchte mit dir über eine Beobachtung sprechen; passt der Moment dafür?» Keine Dringlichkeitsentwarnung aus dem Gesprächsanlass ableiten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Vorgegebene Frühzeichen-Eröffnung enthält keine Dringlichkeitsentwarnung mehr und fragt nach passendem Gesprächsmoment."
+    }
+  },
+  {
+    "id": "WZ-18",
+    "priority": "optional",
+    "criterion": "B",
+    "quote": "«Wer zu schnell weiterspricht, raubt der anderen Person den Raum für eine echte Antwort»",
+    "problem": "«Raubt» setzt einen moralisch wertenden Akzent in einer ansonsten entlastenden Gesprächshilfe. Unter Stress lässt sich die konkrete Empfehlung hilfreicher ohne diesen Vorwurf formulieren.",
+    "proposal": "«Lassen Sie nach Ihrer Bitte eine Pause, damit die andere Person antworten kann.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Moralisch wertendes raubt durch konkrete Empfehlung ersetzt, nach der Bitte eine Antwortpause zu lassen."
+    }
+  },
+  {
+    "id": "WZ-19",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Bei akuter Gefahr: 144.»",
+    "problem": "Krisennummer in einer ausdrücklich nicht klinisch validierten persönlichen Reflexion.",
+    "proposal": "Nummer und anschliessenden lokalen Notfallverweis entfernen; den Hinweis auf die begrenzte Aussagekraft und die reguläre professionelle Unterstützung beibehalten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Krisennummer und lokalen Notfallverweis aus Säulenintro entfernt; Grenzen der nicht validierten Reflexion und reguläre fachliche Beratung bei anhaltendem Bedarf bleiben."
+    }
+  },
+  {
+    "id": "WZ-20",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "«Besonders viel Raum hat in Ihren Antworten Fachlicher Halt — was davon möchten Sie bewahren?»",
+    "problem": "Dieser konkrete Ergebnistext erscheint bei achtmal der ersten Antwort, obwohl alle vier Bereiche gleichauf bei 6/6 stehen. Die Reihenfolge erklärt «Fachlicher Halt» zur stärksten und «Körper» zur ergänzungsbedürftigen Säule; auch bei anderen Gleichständen werden Bereiche willkürlich hervorgehoben. Trotz guter Disclaimer suggeriert das eine individuell begründete Rangfolge.",
+    "proposal": "Gleichstände ausdrücklich als solche benennen und die Person selbst einen Bereich wählen lassen. Keine eindeutige stärkste/schwächste Säule aus identischen Summen ableiten; Antworten/Bedürfnisse sichtbar lassen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Säulenvergleich erfasst sämtliche gleichauf liegenden Bereiche. Bei Gleichstand aller vier keine stärkste/schwächste Auswahl; bei teilweisen Gleichständen werden alle betreffenden Bereiche genannt, bei klaren Unterschieden die passenden Bereiche. Keine klinische Entwarnung; eigene Auswahl des wichtigen Bereichs bleibt offen. Drei gezielte Regressionen für diese Fälle bestanden."
+    }
+  },
+  {
+    "id": "WZ-21",
+    "priority": "wichtig",
+    "criterion": "C, D",
+    "quote": "«Kennen Sie eine Anlaufstelle, an die Sie sich bei Bedarf wenden würden?»",
+    "problem": "Die letzte Antwort «Keine passende Hilfe erreichbar» beantwortet Erreichbarkeit, nicht Kenntnis; das gleiche Hindernis wird schon in der vorherigen Frage erfasst. Die Auswertung vermischt Wissen, Versorgungszugang und persönliche Ressourcen.",
+    "proposal": "Die Kenntnisfrage mit dazu passenden Antworten versehen, z.B. «Nein, ich kenne noch keine passende Anlaufstelle». Erreichbarkeitsprobleme getrennt sichtbar machen und als Unterstützungsbedarf, nicht als persönliche Schwäche behandeln.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Letzte Antwort der Kenntnisfrage lautet Nein, ich kenne noch keine passende Anlaufstelle; Frage zur Erreichbarkeit behält ihre dazu passende Antwort. Wissen und Versorgungszugang werden nicht mehr durch die identische Antwort vermischt."
+    }
+  },
+  {
+    "id": "WZ-22",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "«EE bezeichnet in der Forschung Kritik, Feindseligkeit und emotionale Überinvolviertheit.»",
+    "problem": "Fachlicher Forschungsbegriff und Rückfallzusammenhang werden im Dialog ohne zugeordneten Beleg eingeführt. Der Modul-5-Verweis führt zum Registereintrag Tong et al. 2026; vollständige bibliografische Daten, Definition und Deckung sind wegen des blockierten Abrufs nicht verifiziert. Das redaktionelle Vieraspektmodell wird immerhin ausdrücklich von EE abgegrenzt.",
+    "proposal": "Definition/Rückfallzusammenhang an eine überprüfte vollständige Quelle binden; «emotionale Überinvolviertheit» in Alltagssprache erläutern. Falls EE hier nicht fachlich erklärt werden soll, die Forschungsdefinition in die verlinkte Vertiefung verschieben.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Nicht verifizierte lokale EE-Definition/Rückfallbehauptung aus dem Reflexionstool entfernt; keine Forschungsdefinition wird vorgetäuscht. Modul-5-Vertiefung bleibt, deren Quellenregister/Primärbelegprüfung liegt beim Root. Originalquellenverifikation weiterhin offen wegen CONNECT 403; keine neuen bibliografischen Angaben erfunden."
+    }
+  },
+  {
+    "id": "WZ-23",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "«Kreislauf»",
+    "problem": "Vier nummerierte Knoten und gleichgerichtete Pfeile zeigen weiterhin Schuld → Überengagement → Erschöpfung → Kritik → Schuld. Die Grafik vermittelt damit genau die feste Folge, die der Einführungstext verneint; für diesen Ablauf ist kein Nachweis angegeben.",
+    "proposal": "Vier mögliche Aspekte ohne zwingende Nummernfolge darstellen und Verbindungen als mögliche, nicht notwendige Zusammenhänge kennzeichnen. Die entlastenden Unterbrechungs-/Grenzhinweise erhalten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Gerichtete SVG-Bögen, Pfeilmarker, Kreislaufetikett und feste Knotennummern entfernt. Vier unabhängig auswählbare Aspekte, bestehende echte Buttons/Detailtabs, Farben und Fokusführung bleiben. Detailkopf nennt mögliche Erfahrung statt Position in einer Folge."
+    }
+  },
+  {
+    "id": "WZ-24",
+    "priority": "wichtig",
+    "criterion": "B, C",
+    "quote": "«Schuld»",
+    "problem": "Der Knoten und die Detailüberschrift benennen Schuld, während der Text tatsächlich Schuldgefühle beschreibt. Gerade in einer Angehörigenreflexion verwischt das Gefühl und tatsächliche Verantwortlichkeit.",
+    "proposal": "Knoten und Detailtitel «Schuldgefühle» nennen; die vorhandene Unterscheidung «Gefühl, nicht Urteil» beibehalten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Knoten und Detailtitel heissen Schuldgefühle; Unterbrechungstext trennt Gefühl und Urteil ausdrücklich."
+    }
+  },
+  {
+    "id": "WZ-25",
+    "priority": "wichtig",
+    "criterion": "B",
+    "quote": "«Sie schalten in den Krisenmodus: organisieren, Verantwortung übernehmen, funktionieren.»",
+    "problem": "Obwohl die Einführung fiktive, unterschiedliche Erfahrungen ankündigt, schreibt dieser Marker der angesprochenen Person eine bestimmte Reaktion und die Übernahme von Verantwortung zu. Anschliessend wird ihre Erschöpfung als zweitrangig gesetzt. Das kann Angehörige in eine erwartete Versorgungsrolle drängen.",
+    "proposal": "«Manche Angehörige reagieren zunächst mit viel Organisieren und Helfen; andere fühlen sich unsicher oder überfordert. Ihre eigene Belastung darf von Anfang an Aufmerksamkeit bekommen.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Erster Verlaufsmarker beschreibt mögliche unterschiedliche Reaktionen statt obligatorischer Verantwortung/Funktionsrolle und gibt eigener Belastung von Anfang an Raum. Detailkopf ebenfalls als mögliche Erfahrung statt Entwicklungsphase formuliert."
+    }
+  },
+  {
+    "id": "U-01",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«AKUTE LAGE (24/7)»",
+    "problem": "Der eigene Kontaktblock zeigt `144`, `117` und `0800 33 66 55` (`unterstuetzung.jsx:723–727`): ausdrücklicher Verstoss gegen die neue Kontextvorgabe für diese psychoedukative Seite. Die Nähe zu «Direkt zur Fachstelle» kann ausserdem Zuständigkeiten verwischen.",
+    "proposal": "Diesen Akutblock einschliesslich Krisennummern aus der psychoedukativen Seite entfernen. Die normale Beratungsnummer, E-Mail und Postanschrift können bleiben; gegebenenfalls ein einziger kurzer nummernfreier Zuständigkeitshinweis an der zentral festgelegten Stelle.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "AKUTE-LAGE-Block mit Krisennummern von /unterstuetzung entfernt. Normale Telefonnummer, E-Mail und Postanschrift der Angehörigenberatung bleiben; kein zusätzlicher Zuständigkeitshinweis oder Ersatz-Akutblock. Gezielter Seitentest bestanden."
+    }
+  },
+  {
+    "id": "U-02",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Anonyme Krisenhilfe rund um die Uhr — auch für Angehörige, die selbst am Limit sind.»",
+    "problem": "In der Beratungs-/Angebotsliste wird die Krisennummer `143` als direktes Ziel gezeigt (`unterstuetzung.jsx:629`). Das ist ungeachtet der tatsächlichen Zuständigkeit des externen Dienstes auf dieser W1-Seite nicht zulässig.",
+    "proposal": "Die nummernbewehrte Krisenhilfezeile hier entfernen. Keine Ersatz-Krisennummer ergänzen. Normale Angehörigenberatung und Selbsthilfeangebote beibehalten, mit überprüften Angebotsangaben.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Dargebotene-Hand-Zeile samt 143 aus dem psychoedukativen Angebotsverzeichnis entfernt. Beratungs- und Selbsthilfeeinträge bleiben. Gezielter Seitentest bestanden."
+    }
+  },
+  {
+    "id": "U-03",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Notrufnummern»",
+    "problem": "Die **gemischten psychoedukativen** Webdialoge DL-06 und DL-07 enthalten Notfall-/Notrufblöcke (`unterstuetzung.jsx:268–279`, `333–343`); DL-07 enthält Krisennummern auch im Fliesstext und im gemeinsamen Sicherheitsbaustein. Reine Krisenmaterialien DL-02/DL-04/DL-05 sind ausdrücklich nicht Gegenstand dieses Befunds.",
+    "proposal": "In der psychoedukativen Webdarstellung DL-06/DL-07 Nummernblöcke und eingebettete Krisennummern entfernen. Frühwarnzeichen, ruhige Gesprächsführung, eigene Grenzen und gemeinsam vorbereitete Kontaktwege erhalten; keine neue Akut-Hilfeleiste hinzufügen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "DL-06/DL-07 enthalten keine Krisennummern oder Notruflisten mehr. DL-07 verwendet den gemeinsamen SUICIDE_SAFETY-Baustein nicht mehr; Vorbereitung, freiwillige Begleitung, Grenzen und fachliche Einschätzung bleiben. Psychoedukative Handout-Fusszeilen ohne zusätzlichen Akuthinweis. DL-02/DL-04/DL-05 sind von W1 ausgenommen und inhaltlich unverändert; SUICIDE_SAFETY bleibt nur für DL-04 importiert. Gezielte Tests für psychoedukative Nummernfreiheit und erhaltene reine Krisenkontakte bestanden."
+    }
+  },
+  {
+    "id": "U-04",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Notfallnummern · Schweiz»",
+    "problem": "Das vorsorgliche Webwerkzeug DL-09 zeigt eine sieben Einträge umfassende Notfallliste, darunter die Angehörigenberatung, und vorgegebene Krisennummern in mehreren Feldern (`werkzeuge-tools.jsx:253,269,285,289,294–301,374–384`). Das verletzt die neue Vorgabe und ordnet die Fachstelle optisch einer Krisenliste zu.",
+    "proposal": "Den vorgegebenen Notfallnummernblock und die vorgegebenen Krisennummern entfernen; Felder für **individuell vereinbarte** Kontakte und Vorgehen belassen. Die Beratung der Fachstelle nur als Angehörigenberatung bezeichnen, ohne Akut-Verfügbarkeit zu suggerieren.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Delegiert an den Owner von werkzeuge-tools.jsx: nach dessen vom Hauptagenten bestätigtem Umsetzungsstatus sind vorgegebene Krisennummern, Nummernblock und entsprechende Krisenplan-Platzhalter entfernt; individuelle Kontaktfelder und normale Angehörigenberatung bleiben. Kein eigener Edit der Werkzeugdatei. Finale Integration prüft der Hauptagent."
+    }
+  },
+  {
+    "id": "U-05",
+    "priority": "kritisch",
+    "criterion": "A, C",
+    "quote": "«Wie kann ich Beobachtungen weitergeben, ohne eine Schweigepflichtentbindung zu brechen?»",
+    "problem": "DL-08 vermischt die Erlaubnis zur Auskunft durch das Behandlungsteam mit dem Mitteilen eigener Beobachtungen (`unterstuetzung.jsx:426`). Das kann Angehörige davon abhalten, wichtige Informationen weiterzugeben. Das FAQ derselben Seite unterscheidet diese Ebenen bereits klarer. Der genaue Rechtsrahmen benötigt amtliche Quellenprüfung; eine fremde Schweigepflichtentbindung ist jedenfalls kein sinnvoll benannter Gegenstand eines «Bruchs» durch die eigene Beobachtungsmitteilung.",
+    "proposal": "Als offene Frage formulieren: «Wie kann ich Ihnen meine Beobachtungen mitteilen, und welche Informationen dürfen Sie mir mit Einwilligung der betroffenen Person oder auf gesetzlicher Grundlage zurückgeben?» Rechtliche Erläuterung mit geprüfter amtlicher Quelle ergänzen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textkorrektur umgesetzt und gezielt getestet: die DL-08-Frage trennt Mitteilen eigener Beobachtungen von Auskünften des Behandlungsteams mit Einwilligung oder gesetzlicher Grundlage. Keine neue juristische Freigabe behauptet. Offen bleibt die im Review verlangte amtliche Prüfung der Rechtsgrundlagen beider Informationsrichtungen: BAG-Berufsgeheimnis-Abruf am 05.10.2026 durch CONNECT 403 blockiert, Ziel-HTTP-Status 000."
+    }
+  },
+  {
+    "id": "U-06",
+    "priority": "wichtig",
+    "criterion": "A, D",
+    "quote": "«Unterstützung bei Gewalt durch Angehörige — 24/7, kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.»",
+    "problem": "Für den konkreten Dienst hinter `044 455 21 42`, seine Bezeichnung und die `24/7`-Verfügbarkeit ist keine prüfbare Primärquelle angegeben (`unterstuetzung.jsx:633`). Ebenso fehlen Angebotsbelege für genaue Zuständigkeiten, Zeiten, Zugang und Kosten der übrigen Kontakte und für die FAQ-Zugangszusagen. **Prüfbedarf, kein nachgewiesener falscher Dienst oder falsche Nummer**: die Kontrollabrufe waren blockiert.",
+    "proposal": "Jede operative Angabe beim jeweiligen Anbieter bestätigen und die offizielle Angebotsseite mit Prüfdatum ausweisen. Eine unbestätigte `24/7`-Zusage bis dahin weglassen; keine neuen Zeiten oder Telefonnummern aus Erinnerung einsetzen. Falls der Eintrag als Krisenhilfe gedacht ist, gilt zusätzlich die Kontextgrenze aus U-01/U-02.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textkorrektur umgesetzt: unbestätigte 24/7-Zusage der Opferhilfe entfernt; normale Beratungsnummer und übrige Angebote beibehalten, keine neuen Zeiten/Nummern ergänzt. Offen ist die organisatorische Bestätigung von Anbieter/Nummer, Zuständigkeit, Erreichbarkeit, Zugang, Kosten und Vertraulichkeit bei PUK/Fachstelle, Pro Mente Sana, EQUILIBRIUM, VASK, Selbsthilfe Zürich und konkreter Opferhilfe-Stelle. Die im Review dokumentierten offiziellen Kontrollabrufe am 05.10.2026 scheiterten an CONNECT 403 (Ziel-Status 000); Inhalte wurden nicht verifiziert."
+    }
+  },
+  {
+    "id": "U-07",
+    "priority": "kritisch",
+    "criterion": "B, A",
+    "quote": "«Die Fachstelle Angehörigenarbeit berät auch Sie — nicht nur die erkrankte Person.»",
+    "problem": "Diese Aussage (`unterstuetzung.jsx:708`) und die erste FAQ schreiben der Fachstelle die Beratung der erkrankten Person als zusätzliche Aufgabe zu. Der verbindliche Kontext beschreibt Angehörigenberatung/Psychoedukation. Gleicher Kontextbefund wie H-02.",
+    "proposal": "«Die Fachstelle Angehörigenarbeit ist für Ihre eigenen Fragen als Angehörige oder nahestehende Person da.» Die erste FAQ entsprechend auf den Zugang zu **eigener** Angehörigenberatung beziehen, ohne eine Behandlung der erkrankten Person zu behaupten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Einladung und erste FAQ beziehen sich ausdrücklich auf eigene Fragen Angehöriger/nahestehender Personen und Angehörigenberatung/Psychoedukation. Keine zusätzliche Patientenbehandlung als Auftrag der Fachstelle behauptet. FAQ-Bedienung mit neuem Titel gezielt getestet. Organisatorische Zugangsbestätigung bleibt in U-06 erfasst."
+    }
+  },
+  {
+    "id": "U-08",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Etwa 1 bis 2 von 100 Menschen erleben im Lauf ihres Lebens eine bipolare Störung.»",
+    "problem": "Zentrale Prävalenzzahl in DL-01 ohne Quelle, Definition des erfassten Spektrums oder Klassifikation (`unterstuetzung.jsx:19`). Ob dieser Zahlenbereich in der gemeinten Population zutrifft, ist ungeprüft; ein Datenfehler wird nicht behauptet. Unter dem verbindlichen Quellenstandard ist die unbelegte zentrale Zahl nicht publikationsreif.",
+    "proposal": "Zahl bis zum Nachweis einer vollständigen, aktuellen Quelle mit klar benanntem Diagnoseumfang weglassen; alternativ nach überprüftem Originalbeleg präzise definieren. Keine Ersatzprävalenz erfinden.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Unbelegte Lebenszeitprävalenz 1 bis 2 von 100 aus DL-01 entfernt. Keine Ersatzprävalenz eingesetzt; eine künftige Ergänzung benötigt verifizierte Diagnose-/Populationsdefinition und Originalquelle."
+    }
+  },
+  {
+    "id": "U-09",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "«Eine bipolare Störung ist eine wiederkehrende, oft schwer kalkulierbare Erkrankung mit Phasen erhöhten Antriebs (Manie/Hypomanie) und Phasen gesenkten Antriebs (Depression).»",
+    "problem": "DL-01 reduziert die Einordnung auf hohen/niedrigen Antrieb, unterscheidet Manie und Hypomanie nicht und macht den schwer vorhersehbaren Verlauf zum Eingangsblick. Für ein als «Erste Orientierung» angebotenes Material ist das unvollständig; eine individuelle Episodendiagnose folgt nicht aus Antrieb allein.",
+    "proposal": "Kurz erklären, dass sich Stimmung, Aktivität und Antrieb verändern können und die Einordnung fachlich anhand des Gesamtverlaufs erfolgt; Manie/Hypomanie knapp unterscheiden oder auf die bereits erklärte Diagnostik verweisen. Lange stabile Phasen und unterschiedliche Verläufe im Eingangstext beibehalten. Diagnostische Kurzdefinition mit verifizierter Quelle belegen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textkorrektur umgesetzt: DL-01 beschreibt Veränderungen von Stimmung, Aktivität und Antrieb, fachliche Einordnung anhand des Gesamtverlaufs, individuelle Verläufe und mögliche lange stabile Phasen; Manie und Hypomanie werden anhand der Beeinträchtigung knapp unterschieden. Ein verifizierter Primärbeleg für diese diagnostische Kurzdefinition ist weiterhin offen; kein Quellenabruf oder fachlicher Abgleich wird als erfolgreich ausgegeben. Quellenregister bleibt beim Hauptagenten."
+    }
+  },
+  {
+    "id": "U-10",
+    "priority": "wichtig",
+    "criterion": "A, B",
+    "quote": "«Argumente und Beweise — sie kommen nicht durch»",
+    "problem": "DL-06 behauptet generell fehlende Ansprechbarkeit und ergänzt «Lange Diskussionen — sie eskalieren» (`unterstuetzung.jsx:253–254`). Das macht situativ sinnvolle Deeskalation zu einer pauschalen Aussage über Personen; Schwere, Verlauf und momentane Gesprächsfähigkeit bleiben unberücksichtigt.",
+    "proposal": "«Lange Diskussionen oder wiederholtes Überzeugen können in einer ausgeprägten Episode überfordern oder die Anspannung erhöhen; sprechen Sie kurz und ruhig, respektieren Sie Grenzen und holen Sie fachliche Unterstützung, wenn ein Gespräch nicht weiterhilft.» Keine Erfolgsgarantie aus ruhiger Stimme ableiten.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "DL-06 enthält keine pauschale Unerreichbarkeits- oder Eskalationsbehauptung mehr. Gesprächsangebote sind an Gesprächsmöglichkeit, erkennbare Überforderung/Anspannung, Sicherheit und eigene Grenzen gebunden; fachliche Unterstützung und Beenden eines nicht hilfreichen Gesprächs bleiben möglich."
+    }
+  },
+  {
+    "id": "U-11",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "«Übersteigertes Selbstwertgefühl, Realitätsverlust»",
+    "problem": "In DL-06 stehen mögliche Frühsignale und Merkmale einer bereits ausgeprägten Episode unter derselben Überschrift «Frühwarnzeichen» (`unterstuetzung.jsx:230–239`). «Realitätsverlust» ist ungenau und wird im Material nicht erklärt; das Zahlenbeispiel «oft unter 5 Stunden» ist unbelegt und darf nicht als allgemeine Schwelle gelesen werden.",
+    "proposal": "Als früh mögliche **individuelle Veränderungen gegenüber dem gewohnten Zustand** formulieren; bereits ausgeprägte oder neue ungewöhnliche Wahrnehmungen/Überzeugungen gesondert als Anlass für fachliche Einschätzung benennen. Keine allgemeine Schlafstunden-Schwelle setzen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "DL-06 behandelt mögliche individuelle Frühsignale als Veränderungen gegenüber dem gewohnten Zustand, ohne allgemeine Schlafstunden-Schwelle. Ungewöhnliche Wahrnehmungen/feste Überzeugungen werden gesondert als Anlass für fachliche Einschätzung benannt; einzelne Beobachtungen werden nicht als Diagnose dargestellt. Fachlicher Quellenabgleich der Episodenbeschreibung bleibt zusammen mit U-09 offen."
+    }
+  },
+  {
+    "id": "U-12",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "«Depression ist nicht Traurigkeit.»",
+    "problem": "DL-07 beschreibt anschliessend nur Leere, Schwere und «ein tatsächliches Nicht-Können» (`unterstuetzung.jsx:286`). Das kann Traurigkeit als mögliches Erleben ausschliessen und unterschiedliche Ausprägungen verdecken.",
+    "proposal": "«Eine Depression ist mehr als vorübergehende Traurigkeit; sie kann sich zum Beispiel durch gedrückte Stimmung, Leere, fehlende Freude oder veränderten Antrieb zeigen.» Nicht jedes Symptom muss bei jeder Person vorliegen; die fachliche Definition benötigt einen überprüften Beleg.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textkorrektur umgesetzt: DL-07 beschreibt Depression als mehr als vorübergehende Traurigkeit und nennt mögliche unterschiedliche Symptome ohne Vollständigkeits- oder Gleichförmigkeitsbehauptung. Ein verifizierter fachlicher Beleg für die depressive Kurzbeschreibung ist weiterhin offen; keine Quelle oder fachliche Freigabe erfunden."
+    }
+  },
+  {
+    "id": "U-13",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "«Direkt nach Suizidgedanken fragen — das löst keine aus, es schafft Erleichterung»",
+    "problem": "DL-07 verspricht mit «es schafft Erleichterung» eine Reaktion (`unterstuetzung.jsx:304`), ohne eine Quelle zu nennen. Die in **DL-04** genannte Kurzreferenz «Dazzi et al., 2014» ist kein vollständiger und auf DL-07 zuordenbarer Beleg; DL-04 bleibt hier von W1 ausgenommen.",
+    "proposal": "Das Kommunikationsangebot beibehalten, die erwartete Reaktion als Möglichkeit formulieren: «Direktes Ansprechen kann es erleichtern, über belastende Gedanken zu sprechen; wie die Person reagiert, ist unterschiedlich.» Die Begründung der Empfehlung anhand einer vollständigen, überprüften Quelle dokumentieren.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Textkorrektur umgesetzt: direktes Ansprechen ist ein vorsichtiges Kommunikationsangebot; mögliche Erleichterung des Sprechens wird nicht garantiert, individuelle Reaktionen werden genannt. Offen bleibt der vollständige geprüfte Originalbeleg für die Empfehlung, einschliesslich Überprüfung der Dazzi-et-al.-Referenz und ihrer tatsächlichen Aussageabdeckung. Der im Review vorgesehene NICE-Kontrollabruf war am 05.10.2026 durch CONNECT 403 blockiert (Ziel-Status 000). Das von W1 ausgenommene DL-04 bleibt unverändert."
+    }
+  },
+  {
+    "id": "U-14",
+    "priority": "optional",
+    "criterion": "B, D",
+    "quote": "«Ich kann das nicht lösen, aber ich bin hier.»",
+    "problem": "DL-07 bietet hilfreiche Sätze, aber keine Variante mit zeitlich begrenzter Verfügbarkeit, obwohl Angehörige eigene Belastung ernst nehmen sollen (`unterstuetzung.jsx:322–326`).",
+    "proposal": "Ein zusätzliches Beispiel mit eigener Grenze anbieten: «Du bist mir wichtig. Ich kann jetzt eine Weile bei dir sein; danach brauche ich eine Pause.» Keine verpflichtende Dauerpräsenz nahelegen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "DL-07 ergänzt das Beispiel freiwilliger zeitlich begrenzter Anwesenheit mit angekündigter Pause. Ergänzender Grenzentext schliesst eine Pflicht zur alleinigen Dauerbegleitung aus."
+    }
+  },
+  {
+    "id": "D-01",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Rechtsgrundlage: berechtigtes Interesse am technisch sicheren Betrieb (Art. 31 Abs. 2 lit. d revDSG).»",
+    "problem": "**Prüfbedarf, kein bestätigter Rechtsfehler:** Konkrete Rechtsgrundlage ohne amtlichen Beleg und ohne bestätigte Einordnung der PUK-Datenbearbeitung. Eine blosse Verweisung auf das revDSG belegt weder die anwendbare kantonale/bundesrechtliche Grundlage noch die Richtigkeit dieses Artikels.",
+    "proposal": "Konkrete Artikelzuweisung vorerst entfernen; zuständiges Datenschutzrecht, verantwortliches Rechtssubjekt und Hostinggrundlage durch PUK-Datenschutz bestätigen und dann exakt belegen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Unbestätigte Zuordnung zu revDSG und Art. 31 entfernt; technischer Verarbeitungszweck beschrieben. Anwendbares Datenschutzrecht, verantwortliche Rechtseinheit und Rechtsgrundlage müssen bestätigt und ergänzt werden."
+    }
+  },
+  {
+    "id": "D-02",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Netlify ist nach dem EU-US Data Privacy Framework zertifiziert.»",
+    "problem": "**Prüfbedarf:** Für die unmittelbar zuvor genannte Schweizer Übermittlung wird nur ein EU–US-Rahmen genannt; aktuelle Zertifizierung, Geltung für Schweizer Daten, Vertrags-/Übermittlungsschutz und tatsächliche Hostingkonfiguration sind nicht belegt. Eine EU–US-Nennung allein erläutert die Schweizer Übermittlungsgrundlage nicht.",
+    "proposal": "Nur bestätigte Hostingfakten nennen; nach Prüfung die für Schweizer Daten tatsächlich verwendeten Vorkehrungen samt amtlichem/vertraglichem Nachweis ergänzen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Nicht belegte EU–US-Zertifizierungszusage entfernt; Hostingdienst und mögliche US-Bearbeitung benannt. Schweizer Übermittlungsgrundlage, Verträge, Schutzvorkehrungen und konkrete Hostingkonfiguration bleiben offen."
+    }
+  },
+  {
+    "id": "D-03",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Keine Profilbildung, kein Verkauf von Daten, keine Weitergabe an Dritte.»",
+    "problem": "Absolute Aussage widerspricht der auf derselben Seite beschriebenen Verarbeitung von Verbindungsdaten durch den externen Hoster Netlify. Für Werkzeug-Eingaben ist die engere Aussage plausibel; für alle Seitendaten ist sie zu weit.",
+    "proposal": "«Wir verwenden Ihre Werkzeug-Eingaben weder für Profilbildung noch für Werbung und übermitteln sie nicht an Dritte. Verbindungsdaten werden durch unseren Hostingdienst verarbeitet, wie oben beschrieben.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Aussage zur Nichtübermittlung auf Werkzeug-Eingaben begrenzt und von Verbindungsdaten beim Hostingdienst getrennt."
+    }
+  },
+  {
+    "id": "D-04",
+    "priority": "kritisch",
+    "criterion": "A",
+    "quote": "«Sie haben jederzeit das Recht auf Auskunft über die zu Ihrer Person bearbeiteten Daten, auf deren Berichtigung oder Löschung, auf Einschränkung der Bearbeitung sowie auf Datenübertragbarkeit.»",
+    "problem": "**Prüfbedarf:** Alle Rechte werden uneingeschränkt als jederzeit verfügbar zugesagt, ohne anwendbare Normen, Voraussetzungen oder Ausnahmen. Solche handlungsleitenden Rechtszusagen erfüllen den Quellenstandard nicht.",
+    "proposal": "Rechte mit geprüftem kantonalem/bundesrechtlichem Geltungsbereich und Voraussetzungen erläutern; bis dahin zurückhaltend zur Anfrage an die zuständige Stelle formulieren.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Unbedingte Rechtezusage ersetzt durch Kontaktmöglichkeit und Hinweis auf Voraussetzungen des anwendbaren Rechts. Bestätigte Ansprüche für die endgültige Datenschutzerklärung fehlen weiterhin."
+    }
+  },
+  {
+    "id": "D-05",
+    "priority": "kritisch",
+    "criterion": "A, B",
+    "quote": "«Inhalte werden nicht ohne Ihre Zustimmung an die erkrankte Person oder das Behandlungsteam weitergegeben.»",
+    "problem": "**Prüfbedarf:** Eine absolute Vertraulichkeitszusage für E-Mails erfordert bestätigte interne Abläufe, Dokumentation und gesetzliche Ausnahmen; dafür liegt im Review kein Nachweis vor. Für Gesundheits-/Drittpersonendaten kann diese Zusage die Entscheidung zum Offenlegen beeinflussen.",
+    "proposal": "Erst organisatorisch und rechtlich freigeben; vorab allgemein zur vertraulichen Behandlung und zur Klärung besonders vertraulicher Angaben formulieren.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Absolute E-Mail-Weitergabezusage ersetzt durch vorherige Klärung von Dokumentation und Grenzen der Vertraulichkeit. Verbindliche interne Abläufe/gesetzliche Ausnahmen organisatorisch und rechtlich zu bestätigen."
+    }
+  },
+  {
+    "id": "D-06",
+    "priority": "wichtig",
+    "criterion": "A",
+    "quote": "«Sind Sie der Auffassung, dass die Bearbeitung Ihrer Daten gegen das Datenschutzrecht verstösst, haben Sie das Recht, eine Beschwerde beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) einzureichen.»",
+    "problem": "**Prüfbedarf:** Für das Angebot einer Zürcher Institution ist die tatsächlich zuständige Aufsicht und das Verfahren nicht amtlich belegt. Kein im Review bestätigter Zuständigkeitsfehler.",
+    "proposal": "Zuständigkeit durch PUK-Datenschutz klären; geprüfte Aufsichts-/Beschwerdestelle mit offiziellem Link und Verfahrensbezeichnung nennen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Unbestätigte EDÖB-Zuständigkeit entfernt; zuständige Aufsicht und Verfahren bei PUK erfragen. Amtliche Zuständigkeitsprüfung bleibt offen."
+    }
+  },
+  {
+    "id": "BF-01",
+    "priority": "wichtig",
+    "criterion": "C",
+    "quote": "«Keine selbst startenden Videos, Audios oder Animationen, die Aufmerksamkeit beanspruchen.»",
+    "problem": "Die Aussage ist für das aktuelle Portal zu pauschal: Das PUK-Logo startet regulär animiert und wird nach vier Sekunden statisch; bei reduzierter Bewegung erscheint es statisch. Das ist kein festgestellter WCAG-Verstoss, aber eine ungenaue Nutzerinformation.",
+    "proposal": "«Es gibt keine automatisch startenden Videos oder Audios. Das PUK-Logo wird beim ersten Laden kurz animiert und danach statisch angezeigt; bei reduzierter Bewegung bleibt es statisch.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Kurz animiertes Logo und statische Darstellung bei reduzierter Bewegung korrekt beschrieben; keine pauschale Zusage ohne Animation mehr."
+    }
+  },
+  {
+    "id": "BF-02",
+    "priority": "wichtig",
+    "criterion": "A, D",
+    "quote": "«Antwort innerhalb von zwei Werktagen.»",
+    "problem": "**Prüfbedarf:** Ein verbindliches Serviceniveau ist ohne bestätigten Fachstellenprozess zugesagt.",
+    "proposal": "Nur nach organisatorischer Bestätigung beibehalten; sonst «Bitte schildern Sie das Problem so konkret wie möglich. Wir prüfen Ihre Rückmeldung.»",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Unbestätigte Antwortfrist von zwei Werktagen entfernt; Rückmeldungsprüfung beschrieben. Verbindlicher Kontakt-/Antwortprozess organisatorisch noch zu bestätigen."
+    }
+  },
+  {
+    "id": "BF-03",
+    "priority": "wichtig",
+    "criterion": "A, C",
+    "quote": "«Durchsetzungsverfahren»",
+    "problem": "Die folgende Passage bezeichnet eine Hinwendung zu «Zugang für alle» oder Pro Infirmis als Durchsetzungsverfahren, ohne gesetzliche Grundlage, konkrete Zuständigkeit, Verfahrensweg oder Links. **Prüfbedarf:** Keine behauptete Behörde als falsch nachgewiesen. Beratungsangebote und rechtliche Durchsetzung sind für Leserinnen und Leser nicht erkennbar abgegrenzt.",
+    "proposal": "Überschrift und Text vorerst als Beratung/Unterstützung formulieren; einen gesetzlichen Durchsetzungsweg nur mit bestätigter amtlicher Grundlage aufnehmen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "verification_pending",
+      "notes": "Beratungsangebote von rechtlicher Durchsetzung getrennt. Geltendes Verfahren/Zuständigkeit weiterhin amtlich zu klären; keine Durchsetzungsstelle behauptet."
+    }
+  },
+  {
+    "id": "BF-04",
+    "priority": "wichtig",
+    "criterion": "C",
+    "quote": "«Schaltflächen und Links auf mobilen Geräten mindestens 44 × 44 Pixel.»",
+    "problem": "**Prüfbedarf für W3:** Pauschale Zusage für alle Links ohne benannte Ausnahmen oder umfassenden Nachweis; auch Links im Fliesstext werden erfasst. Der Befund betrifft die zu weit gehende Nutzerinformation, nicht eine hier nachgewiesene technische Abweichung.",
+    "proposal": "«Bei Schaltflächen und eigenständigen Bedienelementen achten wir auf ausreichend grosse Bedienflächen. Eine vollständige Prüfung mit Hilfsmitteln steht noch aus.» Oder die genaue, durch Prüfung belegte Aussage nennen.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "44-Pixel-Zusage für alle Links durch Beschreibung grosser eigenständiger Bedienelemente ersetzt. Vollständige manuelle Hilfsmittel- und Zielgrössenprüfung ist keine W1-Freigabe."
+    }
+  },
+  {
+    "id": "BF-05",
+    "priority": "optional",
+    "criterion": "C",
+    "quote": "«Notfall-Akkordeon»",
+    "problem": "Die öffentlich benannte Bedienform ist veraltet: Die aktuelle Notfallseite hat dauerhaft sichtbare Abschnitte.",
+    "proposal": "Aus der Aufzählung streichen oder «Notfallseite» nennen; das ist eine Textkorrektur, keine W1-Prüfung des Krisenmaterials.",
+    "implementation": {
+      "textChanges": "implemented",
+      "reviewStatus": "implemented",
+      "notes": "Veralteten Hinweis auf Notfall-Akkordeon entfernt; tatsächliche dauerhaft sichtbare Abschnitte als Bedienform beschrieben."
+    }
+  }
+]

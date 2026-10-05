@@ -4,6 +4,7 @@ import React from 'react';
 import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 import { KrisenplanTool } from './werkzeuge-tools.jsx';
+import { navHandler, navHref } from './nav-handler.js';
 
 const HANDOUTS = {
   'DL-01': {
@@ -17,7 +18,11 @@ const HANDOUTS = {
       },
       {
         kind: 'p',
-        text: 'Eine bipolare Störung ist eine wiederkehrende, oft schwer kalkulierbare Erkrankung mit Phasen erhöhten Antriebs (Manie/Hypomanie) und Phasen gesenkten Antriebs (Depression). Dazwischen gibt es oft längere stabile Strecken. Etwa 1 bis 2 von 100 Menschen erleben im Lauf ihres Lebens eine bipolare Störung. Behandlung kann Beschwerden lindern und lange stabile Phasen ermöglichen. Verlauf und Unterstützungsbedarf sind individuell.',
+        text: 'Bei einer bipolaren Störung können sich Stimmung, Aktivität und Antrieb in Episoden deutlich verändern. Die genaue Einordnung erfolgt fachlich anhand des Gesamtverlaufs. Behandlung kann Beschwerden lindern und lange stabile Phasen ermöglichen. Verlauf und Unterstützungsbedarf sind individuell.',
+      },
+      {
+        kind: 'p',
+        text: 'Manie und Hypomanie sind Hochphasen mit veränderter Stimmung und gesteigerter Aktivität. Eine Manie kann den Alltag stark beeinträchtigen; bei einer Hypomanie ist die Beeinträchtigung weniger ausgeprägt. Depressive Episoden können sich etwa durch gedrückte Stimmung, fehlende Freude oder veränderten Antrieb zeigen. Angehörige müssen diese Unterscheidung nicht selbst diagnostizieren.',
       },
       {
         kind: 'p',
@@ -34,7 +39,7 @@ const HANDOUTS = {
           'Sich erlauben, noch nicht alles zu wissen',
         ],
         dont: [
-          'Stundenlang im Internet suchen',
+          'Ohne Pause im Internet weitersuchen, obwohl die Suche Sie zunehmend überfordert',
           'Grosse Entscheidungen treffen, die warten können',
           'Der erkrankten Person sofort «helfen» wollen, bevor Sie selbst orientiert sind',
           'Das ganze Umfeld sofort informieren',
@@ -223,40 +228,50 @@ const HANDOUTS = {
 
   'DL-06': {
     title: 'Umgang mit Manie',
-    sub: 'Frühwarnzeichen, Kommunikation, Schutzmassnahmen und Notfallweg',
-    lede: 'Manie ist nicht «zu gute Laune». Sie ist eine Krise mit eigener Logik — und braucht andere Strategien als ein Streitgespräch.',
+    sub: 'Individuelle Veränderungen, Kommunikation und gemeinsam vorbereitete Schutzschritte',
+    lede: 'In einer manischen Episode können sich Stimmung, Aktivität und Verhalten deutlich verändern. Welche Unterstützung passt, hängt von der Situation ab. Sie dürfen Ihre eigenen Grenzen benennen.',
     sections: [
       {
         kind: 'h',
-        text: 'Frühwarnzeichen',
+        text: 'Mögliche Frühsignale',
+      },
+      {
+        kind: 'p',
+        text: 'Achten Sie auf Veränderungen gegenüber dem gewohnten Zustand. Welche frühen Hinweise wichtig sind, lässt sich in einer ruhigen Phase mit der betroffenen Person und dem Behandlungsteam besprechen. Einzelne Beobachtungen erlauben keine Diagnose.',
       },
       {
         kind: 'list',
         items: [
-          'Schlafbedürfnis sinkt deutlich (oft unter 5 Stunden, ohne Erschöpfung)',
-          'Tempo nimmt zu — schnelles Reden, viele neue Pläne',
-          'Übersteigertes Selbstwertgefühl, Realitätsverlust',
-          'Geld, Verträge, Risikoverhalten ausser Kontrolle',
-          'Reizbarkeit, fehlende Krankheitseinsicht',
+          'Deutlich weniger Schlafbedürfnis als sonst, ohne entsprechende Müdigkeit',
+          'Ungewohnt hohes Tempo — schnelleres Reden oder auffällig viele neue Pläne',
+          'Ungewöhnlich grosses Zutrauen in die eigenen Fähigkeiten',
+          'Veränderte Geldausgaben oder riskantere Vorhaben',
+          'Ungewohnte Gereiztheit oder Enthemmung',
         ],
+      },
+      {
+        kind: 'callout',
+        label: 'Ausgeprägte Veränderungen fachlich einschätzen lassen',
+        text: 'Neue ungewöhnliche Wahrnehmungen oder feste Überzeugungen, die für andere nicht nachvollziehbar sind, können Merkmale einer bereits ausgeprägten Episode sein. Sie brauchen fachliche Einschätzung. Das gilt auch, wenn die Person über längere Zeit kaum schläft. Angehörige müssen dies nicht selbst einordnen.',
       },
       {
         kind: 'do-dont',
         doTitle: 'Was hilft',
         dontTitle: 'Was selten hilft',
         do: [
-          'Reizarme Umgebung herstellen — Licht dimmen, Lautstärke runter',
-          'Ruhige Stimme — auch wenn Sie nicht ruhig sind',
-          'Kurze Sätze, ein Thema pro Gespräch',
-          'Behandelnde Stelle informieren — auch ohne Zustimmung',
-          'In stabiler Phase besprochene Schutzschritte umsetzen',
-          'Wenn die Person tagelang nicht schläft: ärztliche Hilfe ist dringend',
+          'Reize reduzieren, wenn dies gewünscht und sicher möglich ist',
+          'Ruhig und kurz sprechen, wenn ein Gespräch möglich ist',
+          'Ein Thema pro Gespräch ansprechen und Raum für eine Antwort lassen',
+          'Eigene Beobachtungen dem Behandlungsteam mitteilen',
+          'Vereinbarte Schutzschritte prüfen: Welche Befugnisse und eigenen Grenzen gelten?',
+          'Eine eigene Schutzgrenze benennen, die Sie selbst umsetzen können, etwa ein angespanntes Gespräch beenden',
+          'Fachliche Unterstützung holen, wenn Sie Veränderungen oder das weitere Vorgehen nicht einschätzen können',
         ],
         dont: [
-          'Argumente und Beweise — sie kommen nicht durch',
+          'Wiederholtes Überzeugen, wenn das Gespräch die Anspannung erhöht',
           'Grosse Entscheidungen mittragen, auch nicht aus Erleichterung',
-          'Lange Diskussionen — sie eskalieren',
-          'Drohungen, die Sie nicht halten können',
+          'Lange Diskussionen trotz erkennbarer Überforderung fortsetzen',
+          'Drohungen als Druckmittel einsetzen',
         ],
       },
       {
@@ -265,25 +280,16 @@ const HANDOUTS = {
         text: FINANCIAL_SAFETY,
       },
       {
-        kind: 'h',
-        text: 'Notfall',
-      },
-      {
-        kind: 'phonelist',
-        items: [
-          { num: '144', label: 'Sanität · Lebensgefahr' },
-          { num: '117', label: 'Polizei · bei Gewalt' },
-          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h' },
-          { num: '0800 33 66 55', label: 'Ärztefon ZH · 24 h' },
-        ],
+        kind: 'p',
+        text: 'Vereinbaren Sie in einer ruhigen Phase mit der betroffenen Person und dem Behandlungsteam, welche individuellen Veränderungen wichtig sind, wer kontaktiert werden kann und was Sie selbst übernehmen möchten und können. Wenn das Gespräch nicht weiterhilft, dürfen Sie es beenden und Unterstützung holen.',
       },
     ],
   },
 
   'DL-07': {
     title: 'Umgang mit Depression',
-    sub: 'Anwesenheit statt Argumente — wie Sie tragen, ohne sich aufzulösen',
-    lede: 'Depression ist nicht Traurigkeit. Es ist Leere, Schwere, ein tatsächliches Nicht-Können. Was hier hilft, sieht oft anders aus als bei der Manie.',
+    sub: 'Begleitung anbieten und die eigenen Grenzen beachten',
+    lede: 'Eine Depression ist mehr als vorübergehende Traurigkeit. Sie kann sich zum Beispiel durch gedrückte Stimmung, Leere, fehlende Freude oder veränderten Antrieb zeigen. Nicht jedes Symptom liegt bei jeder Person vor.',
     sections: [
       {
         kind: 'h',
@@ -291,7 +297,7 @@ const HANDOUTS = {
       },
       {
         kind: 'p',
-        text: 'In einer depressiven Phase kippt das Bild: der Antrieb fällt manchmal so weit, dass selbst aufstehen, duschen, eine SMS beantworten kaum noch geht. Gedanken werden schwer, dunkel, oft selbstabwertend. Suizidgedanken sind nicht selten — und sie sind ernst zu nehmen.',
+        text: 'In einer depressiven Episode können alltägliche Aufgaben wie aufstehen, duschen oder eine Nachricht beantworten schwerfallen. Manche Menschen erleben Leere oder selbstabwertende Gedanken, andere wirken auch unruhig. Ausmass und Erleben unterscheiden sich. Suizidgedanken können auftreten und brauchen ernsthafte fachliche Einschätzung.',
       },
       {
         kind: 'do-dont',
@@ -299,8 +305,8 @@ const HANDOUTS = {
         dontTitle: 'Was selten hilft',
         do: [
           'Da sein, ohne zu drängen',
-          'Bei ansprechbarer Person: kleine Alltagshilfen anbieten. Bei fehlender Reaktion, Bewegungslosigkeit oder kaum Flüssigkeitsaufnahme dringend medizinisch einschätzen lassen; bei unmittelbarer Gefahr 144.',
-          'Direkt nach Suizidgedanken fragen — das löst keine aus, es schafft Erleichterung',
+          'Kleine Alltagshilfen anbieten, wenn die Person ansprechbar ist und dies möchte. Fehlende Reaktion, Bewegungslosigkeit oder kaum Flüssigkeitsaufnahme brauchen dringend medizinische Einschätzung.',
+          'Suizidgedanken behutsam und direkt ansprechen. Dies kann es erleichtern, über belastende Gedanken zu sprechen; wie die Person reagiert, ist unterschiedlich.',
           'Behandelnde Stelle früh kontaktieren — nicht erst, wenn es kaum noch geht',
           'Ihre eigene Belastung ernst nehmen',
         ],
@@ -321,25 +327,13 @@ const HANDOUTS = {
           '«Ich bin da. Du musst nichts sagen.»',
           '«Ich kann das nicht lösen, aber ich bin hier.»',
           '«Ich verstehe, dass es sich so anfühlt. Du bist mir wichtig.»',
+          '«Du bist mir wichtig. Ich kann jetzt eine Weile bei dir sein; danach brauche ich eine Pause.»',
         ],
       },
       {
         kind: 'callout',
-        label: 'Bei Suizidgedanken',
-        text: SUICIDE_SAFETY,
-      },
-      {
-        kind: 'h',
-        text: 'Notrufnummern',
-      },
-      {
-        kind: 'phonelist',
-        items: [
-          { num: '144', label: 'Sanität · Lebensgefahr · 24 h' },
-          { num: '143', label: 'Dargebotene Hand · anonym · 24 h' },
-          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h' },
-          { num: '058 384 38 00', label: 'Fachstelle Angehörigenarbeit · werktags' },
-        ],
+        label: 'Eigene Grenzen und Unterstützung',
+        text: 'Ihre eigene Sicherheit und Ihre Grenzen zählen. Sie müssen keine alleinige Dauerbegleitung übernehmen. Vereinbaren Sie in einer ruhigen Phase, wer bei Veränderungen Unterstützung organisiert und welche eigenen Kontakte Ihnen Entlastung bieten.',
       },
     ],
   },
@@ -423,7 +417,7 @@ const HANDOUTS = {
         items: [
           'Was darf ich konkret tun — und was sollte ich besser dem Behandlungsteam überlassen?',
           'Gibt es Angehörigengespräche oder Psychoedukation, die wir besuchen können?',
-          'Wie kann ich Beobachtungen weitergeben, ohne eine Schweigepflichtentbindung zu brechen?',
+          'Wie kann ich Ihnen meine Beobachtungen mitteilen, und welche Informationen dürfen Sie mir mit Einwilligung der betroffenen Person oder auf gesetzlicher Grundlage zurückgeben?',
           'Welche Anlaufstellen empfehlen Sie für mich selbst?',
         ],
       },
@@ -516,9 +510,18 @@ function HandoutSection({ section }) {
   }
 }
 
-function HandoutOverlay({ id, onClose }) {
+const HANDOUT_CONTINUATIONS = {
+  'DL-01': { target: 'modul1', label: 'Erkrankung und Behandlung verstehen · Modul 1' },
+  'DL-06': { target: 'modul6', anchor: 's5', label: 'Umgang mit Hochphasen vertiefen · Modul 6' },
+  'DL-07': { target: 'modul6', anchor: 's5', label: 'Begleitung bei Depression vertiefen · Modul 6' },
+  'DL-08': { target: 'schweigepflicht', label: 'Schweigepflicht beim Behandlungsgespräch klären' },
+};
+
+function HandoutOverlay({ id, onClose, onNavigate }) {
   const handout = HANDOUTS[id];
   if (!handout) return null;
+  const crisisOrientation = ['DL-02', 'DL-04', 'DL-05'].includes(id);
+  const continuation = HANDOUT_CONTINUATIONS[id];
 
   return (
     <ToolOverlay onClose={onClose} ariaLabel={handout.title} overlayClass="handout-overlay" cardClass="handout-card" noPrint={true}>
@@ -533,9 +536,24 @@ function HandoutOverlay({ id, onClose }) {
           {handout.sections.map((sec, i) => <HandoutSection key={i} section={sec} />)}
         </div>
 
+        {continuation && (
+          <nav className="handout-callout no-print" aria-label="Passende Vertiefung">
+            <span className="handout-callout-label">Wenn Sie weiterlesen möchten</span>
+            <p>
+              <a
+                className="link-underline"
+                href={navHref(continuation.target, continuation.anchor)}
+                onClick={navHandler(continuation.target, onNavigate, continuation.anchor)}
+              >
+                {continuation.label}
+              </a>
+            </p>
+          </nav>
+        )}
+
         <footer className="handout-foot">
           <p className="handout-credits">
-            Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) · Inhaltliche Verantwortung: Ch. Egger · Redaktioneller Abgleich: Oktober 2026 · Diese Inhalte ersetzen keine fachliche Beratung. In akuten Lagen hat der Notfallweg Vorrang.
+            Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) · Inhaltliche Verantwortung: Ch. Egger · Redaktioneller Abgleich: Oktober 2026 · Diese Inhalte ersetzen keine fachliche Beratung.{crisisOrientation && ' In akuten Lagen hat der Notfallweg Vorrang.'}
           </p>
         </footer>
 
@@ -554,8 +572,8 @@ const MATERIAL_CARDS = [
   { id: 'DL-02', kind: 'handout', metaLabel: 'NOTFALLKARTE', title: 'Notfallkarte fürs Portemonnaie', desc: 'Wichtige Nummern und persönliche Angaben — zum Drucken, Ausfüllen, Falten und Einstecken.' },
   { id: 'DL-04', kind: 'handout', metaLabel: 'GESPRÄCHSHILFE', title: 'Umgang mit Suizidgedanken', desc: 'Anleitung für das direkte Gespräch und Schritte bei akuter Gefährdung.' },
   { id: 'DL-05', kind: 'handout', metaLabel: 'GESPRÄCHSHILFE', title: 'Umgang mit Psychose / Wahn', desc: 'Was Sie sagen können, was Sie nicht sagen sollten, wann professionelle Hilfe nötig ist.' },
-  { id: 'DL-06', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Manie', desc: 'Frühwarnzeichen, Kommunikation, Schutzmassnahmen und Notfallweg.' },
-  { id: 'DL-07', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Depression', desc: 'Anwesenheit statt Argumente. Wie Sie tragen, ohne sich aufzulösen.' },
+  { id: 'DL-06', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Manie', desc: 'Individuelle Veränderungen, Kommunikation und gemeinsam vorbereitete Schutzschritte.' },
+  { id: 'DL-07', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Depression', desc: 'Begleitung anbieten und die eigenen Grenzen beachten.' },
   { id: 'DL-08', kind: 'handout', metaLabel: 'CHECKLISTE', title: 'Fragen für das Arztgespräch', desc: 'Vorbereitete Fragen für Hausärztin, Psychiaterin oder Klinikpersonal — strukturiert nach Thema.' },
   { id: 'DL-09', kind: 'tool', tool: 'krisenplan', metaLabel: 'VORLAGE', cta: '↪ Krisenplan öffnen', title: 'Krisenplan', desc: 'Interaktive Vorlage für Frühwarnzeichen, Kontakte und Klinikwünsche.' },
 ];
@@ -571,23 +589,32 @@ const MATERIAL_TOOL_COMPONENTS = {
 };
 
 const FAQS = [
-  { q: 'Berät die Fachstelle auch mich als Angehörige*r — oder nur die erkrankte Person?', a: 'Ausdrücklich auch Sie. Die Fachstelle Angehörigenarbeit ist genau dafür da. Sie müssen die erkrankte Person nicht erst überzeugen, bevor Sie selbst Unterstützung suchen.' },
+  { q: 'Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?', a: 'Ja. Die Fachstelle Angehörigenarbeit bietet Angehörigenberatung und Psychoedukation für Ihre eigenen Fragen. Sie müssen die erkrankte Person nicht erst überzeugen, bevor Sie selbst Unterstützung suchen.' },
   { q: 'Ist die Beratung kostenpflichtig?', a: 'Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist kostenlos und vertraulich.' },
   { q: 'Muss ich wissen, was ich sagen will, bevor ich anrufe?', a: 'Nein. Sie dürfen unsortiert anrufen. Das Sortieren ist Teil der Beratung — niemand erwartet von Ihnen einen fertigen Auftrag.' },
   { q: 'Was, wenn die erkrankte Person nicht in der PUK behandelt wird?', a: 'Die Beratung steht auch Angehörigen offen, deren Familienmitglied anderswo behandelt wird oder gar nicht in Behandlung ist. Wir vermitteln bei Bedarf weiter.' },
-  { q: 'Wie ist es mit der Schweigepflicht?', a: 'Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.' },
+  { q: 'Wie ist es mit der Schweigepflicht?', a: 'Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.', link: { target: 'schweigepflicht', label: 'Schweigepflicht beim Behandlungsteam vertiefen' } },
 ];
 
-function UnterstuetzungPage({ onNavigate }) {
-  const [openHandout, setOpenHandout] = React.useState(null);
-  const [openTool, setOpenTool] = React.useState(null);
+function UnterstuetzungPage({ onNavigate, anchor }) {
+  const [localMaterialId, setLocalMaterialId] = React.useState(null);
   const [openFaq, setOpenFaq] = React.useState(null);
-  const closeTool = React.useCallback(() => setOpenTool(null), []);
-  const ActiveTool = openTool ? MATERIAL_TOOL_COMPONENTS[openTool] : null;
+  const routedSelection = anchor !== undefined;
+  const selectedCard = routedSelection
+    ? MATERIAL_CARDS.find(card => typeof anchor === 'string' && card.id.toLowerCase() === anchor.toLowerCase())
+    : MATERIAL_CARDS.find(card => card.id === localMaterialId);
+  const openHandout = selectedCard?.kind === 'handout' ? selectedCard.id : null;
+  const ActiveTool = selectedCard?.kind === 'tool' ? MATERIAL_TOOL_COMPONENTS[selectedCard.tool] : null;
+  const selectedMaterialId = selectedCard?.id.toLowerCase();
+  const closeMaterial = React.useCallback(() => {
+    if (routedSelection) onNavigate('unterstuetzung', null, { replace: true });
+    else setLocalMaterialId(null);
+    requestAnimationFrame(() => document.getElementById(selectedMaterialId)?.focus());
+  }, [routedSelection, onNavigate, selectedMaterialId]);
 
   const handleDownload = (card) => {
-    if (card.kind === 'tool') setOpenTool(card.tool);
-    else setOpenHandout(card.id);
+    if (routedSelection) onNavigate('unterstuetzung', card.id.toLowerCase());
+    else setLocalMaterialId(card.id);
   };
 
   return (
@@ -600,16 +627,22 @@ function UnterstuetzungPage({ onNavigate }) {
             <p className="lede" style={{ maxWidth: '34ch' }}>Hier finden Sie Hilfe, Material, Kontakt und häufige Fragen an einem Ort.</p>
             <p className="about-hero-note">Wenn Sie gerade überfordert sind, beginnen Sie am besten bei Hilfe oder Direktkontakt.</p>
             <ul className="about-hero-functions" aria-label="Vier Bereiche">
-              <li className="about-hero-function">Hilfe</li>
-              <li className="about-hero-function">Material</li>
-              <li className="about-hero-function">Kontakt</li>
-              <li className="about-hero-function">Fragen</li>
+              {[
+                ['hilfe', 'Hilfe'],
+                ['material', 'Material'],
+                ['kontakt', 'Kontakt'],
+                ['fragen', 'Fragen'],
+              ].map(([target, label]) => (
+                <li className="about-hero-function" key={target}>
+                  <a className="link-underline" href={navHref('unterstuetzung', target)} onClick={navHandler('unterstuetzung', onNavigate, target)}>{label}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </header>
 
-      <section style={{ paddingTop: 0 }}>
+      <section id="hilfe" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head">
             <div className="label-col">
@@ -618,7 +651,7 @@ function UnterstuetzungPage({ onNavigate }) {
             </div>
             <div>
               <h2>Wenn Sie zuerst Unterstützung brauchen.</h2>
-              <p className="lede">Kostenlos und vertraulich. Sie müssen nicht zuerst der erkrankten Person helfen, um Hilfe für sich anzunehmen.</p>
+              <p className="lede">Sie müssen nicht zuerst der erkrankten Person helfen, um Hilfe für sich anzunehmen.</p>
             </div>
           </div>
 
@@ -626,11 +659,10 @@ function UnterstuetzungPage({ onNavigate }) {
             {[
               { num: '01', title: 'Fachstelle Angehörigenarbeit PUK Zürich', desc: 'Beratung speziell für Angehörige psychisch erkrankter Menschen. Telefonisch, per Mail oder im persönlichen Gespräch.', tag: '058 384 38 00', href: 'tel:+41583843800', kind: 'tel' },
               { num: '02', title: 'Pro Mente Sana — Beratungstelefon', desc: 'Rechtsberatung zu FU, Vorsorgeauftrag, Beistandschaften und Patientenrechten. Werktags.', tag: '0848 800 858', href: 'tel:+41848800858', kind: 'tel' },
-              { num: '03', title: 'Dargebotene Hand', desc: 'Anonyme Krisenhilfe rund um die Uhr — auch für Angehörige, die selbst am Limit sind.', tag: '143', href: 'tel:143', kind: 'tel' },
-              { num: '04', title: 'EQUILIBRIUM', desc: 'Verein der Schweizer Selbsthilfegruppen für Menschen mit affektiven Störungen und ihre Angehörigen.', tag: 'equilibrium-ch.ch', href: 'https://www.equilibrium-ch.ch/', kind: 'web' },
-              { num: '05', title: 'VASK Schweiz', desc: 'Vereinigung der Angehörigen von schizophrenie- und psychisch Kranken — Selbsthilfegruppen in vielen Kantonen.', tag: 'vask.ch', href: 'https://www.vask.ch/', kind: 'web' },
-              { num: '06', title: 'Selbsthilfe Zürich', desc: 'Vermittelt regionale Selbsthilfegruppen — auch spezifisch für Angehörige bipolarer Menschen.', tag: 'selbsthilfezentrum-zh.ch', href: 'https://www.selbsthilfezentrum-zh.ch/', kind: 'web' },
-              { num: '07', title: 'Opferhilfe Zürich', desc: 'Unterstützung bei Gewalt durch Angehörige — 24/7, kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', tag: '044 455 21 42', href: 'tel:+41444552142', kind: 'tel' },
+              { num: '03', title: 'EQUILIBRIUM', desc: 'Verein der Schweizer Selbsthilfegruppen für Menschen mit affektiven Störungen und ihre Angehörigen.', tag: 'equilibrium-ch.ch', href: 'https://www.equilibrium-ch.ch/', kind: 'web' },
+              { num: '04', title: 'VASK Schweiz', desc: 'Vereinigung der Angehörigen von schizophrenie- und psychisch Kranken — Selbsthilfegruppen in vielen Kantonen.', tag: 'vask.ch', href: 'https://www.vask.ch/', kind: 'web' },
+              { num: '05', title: 'Selbsthilfe Zürich', desc: 'Vermittelt regionale Selbsthilfegruppen — auch spezifisch für Angehörige bipolarer Menschen.', tag: 'selbsthilfezentrum-zh.ch', href: 'https://www.selbsthilfezentrum-zh.ch/', kind: 'web' },
+              { num: '06', title: 'Opferhilfe Zürich', desc: 'Unterstützung bei Gewalt durch Angehörige — kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', tag: '044 455 21 42', href: 'tel:+41444552142', kind: 'tel' },
             ].map(r => {
               const external = r.kind === 'web';
               const ariaLabel = r.kind === 'tel'
@@ -656,7 +688,7 @@ function UnterstuetzungPage({ onNavigate }) {
         </div>
       </section>
 
-      <section className="bg-paper">
+      <section id="material" className="bg-paper">
         <div className="container">
           <div className="section-head">
             <div className="label-col">
@@ -674,11 +706,12 @@ function UnterstuetzungPage({ onNavigate }) {
               const meta = KIND_META[d.kind];
               return (
                 <button
+                  id={d.id.toLowerCase()}
                   type="button"
                   key={d.id}
                   className="download-card"
                   onClick={() => handleDownload(d)}
-                  aria-haspopup={d.kind === 'tool' ? 'dialog' : undefined}
+                  aria-haspopup="dialog"
                 >
                   <div className="download-meta">
                     <span className="mono">{d.id} · review_v02 · 2026-10-05</span>
@@ -696,7 +729,7 @@ function UnterstuetzungPage({ onNavigate }) {
         </div>
       </section>
 
-      <section>
+      <section id="kontakt">
         <div className="container">
           <div className="section-head">
             <div className="label-col">
@@ -705,7 +738,7 @@ function UnterstuetzungPage({ onNavigate }) {
             </div>
             <div>
               <h2>Wenn Sie direkt mit der Fachstelle sprechen möchten.</h2>
-              <p className="lede">Die Fachstelle Angehörigenarbeit berät auch Sie — nicht nur die erkrankte Person. Auch wenn Sie sich noch nicht sicher sind, ob Sie Hilfe brauchen.</p>
+              <p className="lede">Die Fachstelle Angehörigenarbeit ist für Ihre eigenen Fragen als Angehörige oder nahestehende Person da. Auch wenn Sie sich noch nicht sicher sind, ob Sie Unterstützung brauchen.</p>
             </div>
           </div>
 
@@ -713,17 +746,12 @@ function UnterstuetzungPage({ onNavigate }) {
             <div className="contact-info-block">
               <div className="label">TELEFON</div>
               <div className="value"><a className="link-underline" href="tel:+41583843800">058 384 38 00</a></div>
-              <div className="sub">Werktags. Bei Nichterreichbarkeit eine Nachricht mit Rückrufmöglichkeit hinterlassen. Für akute Krisen den Notfalldienst nutzen.</div>
+              <div className="sub">Werktags. Bei Nichterreichbarkeit eine Nachricht mit Rückrufmöglichkeit hinterlassen.</div>
             </div>
             <div className="contact-info-block">
               <div className="label">E-MAIL</div>
               <div className="value"><a className="link-underline" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a></div>
-              <div className="sub">Für Beratungsanfragen. Bei dringlichem Hilfebedarf telefonisch den geeigneten Dienst kontaktieren.</div>
-            </div>
-            <div className="contact-info-block">
-              <div className="label">AKUTE LAGE (24/7)</div>
-              <div className="value"><a className="link-underline" href="tel:144">144</a> · <a className="link-underline" href="tel:117">117</a> · <a className="link-underline" href="tel:+41800336655">0800 33 66 55</a></div>
-              <div className="sub">Sanität, Polizei, Ärztefon ZH.</div>
+              <div className="sub">Für Beratungsanfragen.</div>
             </div>
             <div className="contact-info-block">
               <div className="label">POSTANSCHRIFT</div>
@@ -734,7 +762,7 @@ function UnterstuetzungPage({ onNavigate }) {
         </div>
       </section>
 
-      <section className="bg-paper">
+      <section id="fragen" className="bg-paper">
         <div className="container">
           <div className="section-head">
             <div className="label-col">
@@ -772,6 +800,11 @@ function UnterstuetzungPage({ onNavigate }) {
                     hidden={!open}
                   >
                     <p>{f.a}</p>
+                    {f.link && (
+                      <p>
+                        <a className="link-underline" href={navHref(f.link.target)} onClick={navHandler(f.link.target, onNavigate)}>{f.link.label}</a>
+                      </p>
+                    )}
                   </div>
                 </div>
               );
@@ -780,8 +813,8 @@ function UnterstuetzungPage({ onNavigate }) {
         </div>
       </section>
 
-      {openHandout && <HandoutOverlay id={openHandout} onClose={() => setOpenHandout(null)} />}
-      {ActiveTool && <ActiveTool onClose={closeTool} onNavigate={onNavigate} />}
+      {openHandout && <HandoutOverlay id={openHandout} onClose={closeMaterial} onNavigate={onNavigate} />}
+      {ActiveTool && <ActiveTool onClose={closeMaterial} onNavigate={onNavigate} />}
     </>
   );
 }

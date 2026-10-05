@@ -31,7 +31,7 @@ function App() {
   }, [page]);
 
   const renderPage = PAGE_RENDERERS[page] || PAGE_RENDERERS.start;
-  const content = renderPage({ onNavigate });
+  const content = renderPage({ onNavigate, anchor: nav.anchor });
 
   return (
     <>
@@ -40,7 +40,7 @@ function App() {
         const m = document.getElementById('main-content');
         if (m) { m.focus(); m.scrollIntoView({ behavior: 'instant' }); }
       }}>Zum Inhalt springen</a>
-      {(page === 'notfall' || page === 'start') && <CrisisBar onNavigate={onNavigate} />}
+      {page === 'notfall' && <CrisisBar onNavigate={onNavigate} />}
       <Nav page={page} onNavigate={onNavigate} />
       <main id="main-content" tabIndex={-1}>
         <React.Suspense fallback={<PageLoadingFallback />}>{content}</React.Suspense>

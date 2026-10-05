@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-05",
+  "baseCommit": "2e6bae10e6f0bd857605c59fcee228380ff24fa6",
+  "runtime": "Node v24.19.0 / npm 11.9.0",
+  "lint": "passed",
+  "tests": {
+    "passed": 89,
+    "files": 18,
+    "coverageGate": "passed",
+    "coveragePercent": {
+      "statements": 82.32,
+      "branches": 77.02,
+      "functions": 78.21,
+      "lines": 87.31
+    }
+  },
+  "build": "passed",
+  "dependencyAudit": {
+    "auditLevel": "high",
+    "vulnerabilities": 0
+  },
+  "browser": {
+    "website": {
+      "checks": 636,
+      "failures": 0,
+      "startedAt": "2026-10-05T13:21:27.469Z",
+      "completedAt": "2026-10-05T13:23:15.183Z"
+    },
+    "tools": {
+      "checks": 225,
+      "failures": 0,
+      "startedAt": "2026-10-05T13:26:21.409Z",
+      "completedAt": "2026-10-05T13:27:10.009Z",
+      "buildEvidence": {
+        "before": {
+          "sha256": "8a5c136b38920375b633350a24bb8f00fb5d220c40eae6f8d132385867433571",
+          "files": 38
+        },
+        "after": {
+          "sha256": "8a5c136b38920375b633350a24bb8f00fb5d220c40eae6f8d132385867433571",
+          "files": 38
+        },
+        "unchanged": true
+      }
+    }
+  },
+  "scopePreservation": {
+    "notfallSource": "byte-identical to base",
+    "crisisContentSource": "byte-identical to base",
+    "excludedHandoutTextBlocks": [
+      "DL-02",
+      "DL-04",
+      "DL-05"
+    ],
+    "comparison": "exact",
+    "sharedWebsiteFooter": "updated"
+  },
+  "limitations": [
+    "Originalquellenprüfung offen",
+    "Fach-/Rechts-/Datenschutzfreigabe nicht erteilt",
+    "Keine echte VoiceOver-/NVDA-Prüfung",
+    "Keine vollständige Prüfung physischer Ausdrucke oder exportierter PDFs"
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "S-BAG",
+    "url": "https://www.bag.admin.ch/de/berufs-oder-arztgeheimnis",
+    "attempted_on": "2026-10-05",
+    "exit_code": 56,
+    "result": "000\nhttps://www.bag.admin.ch/de/berufs-oder-arztgeheimnis",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "id": "S-ZH",
+    "url": "https://www.zh.ch/de/gesundheit/gesundheitsberufe.html",
+    "attempted_on": "2026-10-05",
+    "exit_code": 56,
+    "result": "000\nhttps://www.zh.ch/de/gesundheit/gesundheitsberufe.html",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "id": "S-PUK-F",
+    "url": "https://www.pukzh.ch/patienten-angehoerige/anfrage-patientendokumentation/anspruch-drittpersonen/entbindung-berufs-und-amtsgeheimnis/",
+    "attempted_on": "2026-10-05",
+    "exit_code": 56,
+    "result": "000\nhttps://www.pukzh.ch/patienten-angehoerige/anfrage-patientendokumentation/anspruch-drittpersonen/entbindung-berufs-und-amtsgeheimnis/",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "id": "S-PUK-R",
+    "url": "https://www.pukzh.ch/sites/default/assets/File/rechte_pflichten_spitalaufenthalt(1).pdf",
+    "attempted_on": "2026-10-05",
+    "exit_code": 56,
+    "result": "000\nhttps://www.pukzh.ch/sites/default/assets/File/rechte_pflichten_spitalaufenthalt(1).pdf",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "id": "A-WCAG",
+    "url": "https://www.w3.org/TR/WCAG21/",
+    "attempted_on": "2026-10-05",
+    "exit_code": 56,
+    "result": "000\nhttps://www.w3.org/TR/WCAG21/",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "id": "D-FEDLEX",
+    "url": "https://www.fedlex.admin.ch/",
+    "attempted_on": "2026-10-05",
+    "exit_code": 56,
+    "result": "000\nhttps://www.fedlex.admin.ch/",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "id": "D-ZH",
+    "url": "https://www.zh.ch/de/politik-staat/datenschutz.html",
+    "attempted_on": "2026-10-05",
+    "exit_code": 56,
+    "result": "000\nhttps://www.zh.ch/de/politik-staat/datenschutz.html",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "id": "D-NETLIFY",
+    "url": "https://www.netlify.com/privacy/",
+    "attempted_on": "2026-10-05",
+    "exit_code": 56,
+    "result": "000\nhttps://www.netlify.com/privacy/",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "id": "D-EDOEB",
+    "url": "https://www.edoeb.admin.ch/",
+    "attempted_on": "2026-10-05",
+    "exit_code": 56,
+    "result": "000\nhttps://www.edoeb.admin.ch/",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "id": "I-PUK",
+    "url": "https://www.pukzh.ch/",
+    "attempted_on": "2026-10-05",
+    "exit_code": 56,
+    "result": "000\nhttps://www.pukzh.ch/",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  }
+]

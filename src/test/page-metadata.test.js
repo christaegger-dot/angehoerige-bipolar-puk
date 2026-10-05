@@ -6,7 +6,7 @@ describe('page metadata', () => {
   it('uses route-specific metadata for the confidentiality reference', () => {
     expect(getPageMetadata('schweigepflicht')).toEqual({
       title: 'Schweigepflicht bei Angehörigengesprächen | PUK Zürich',
-      description: 'Amtlich belegte Orientierung für Angehörige zu Schweigepflicht, Einwilligung und dem offiziellen PUK-Formular.',
+      description: 'Orientierung für Angehörige zu Schweigepflicht, Einwilligung und dem offiziellen PUK-Formular.',
       canonical: 'https://angehoerige-bipolar-puk.netlify.app/schweigepflicht',
     });
   });

@@ -38,10 +38,18 @@ function ToolLoadingOverlay({ onClose }) {
   );
 }
 
-function WerkzeugePage({ onNavigate }) {
-  const [openTool, setOpenTool] = React.useState(null);
+function WerkzeugePage({ onNavigate, anchor }) {
+  const [localOpenTool, setLocalOpenTool] = React.useState(null);
+  const routed = anchor !== undefined;
+  const openTool = routed
+    ? (Object.hasOwn(LAZY_TOOL_COMPONENTS, anchor) ? anchor : null)
+    : localOpenTool;
   const [legacyDeletionHint, setLegacyDeletionHint] = React.useState('');
-  const closeTool = React.useCallback(() => setOpenTool(null), []);
+  const closeTool = React.useCallback(() => {
+    if (routed) onNavigate('werkzeuge', null, { replace: true });
+    else setLocalOpenTool(null);
+    requestAnimationFrame(() => document.getElementById(openTool)?.focus());
+  }, [routed, onNavigate, openTool]);
   const ActiveTool = openTool ? LAZY_TOOL_COMPONENTS[openTool] : null;
   const clearLegacyDrafts = () => {
     if (openTool || !window.confirm('Alte gespeicherte Krisenplan- und Kommunikations-Entwürfe in diesem Browser löschen?')) return;
@@ -69,10 +77,6 @@ function WerkzeugePage({ onNavigate }) {
               <span className="kicker">Wenn Sie lieber lesen als klicken</span>
               <p>Die inhaltliche Einordnung finden Sie in den <a className="link-underline" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>sieben Modulen</a>. Die Werkzeuge sind eine Ergänzung, kein Ersatz für Orientierung und Kontext.</p>
             </div>
-            <div>
-              <span className="kicker">Wenn es akut ist</span>
-              <p>In Krisen oder bei unmittelbarer Gefahr ist der <a className="link-underline" href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>Notfallweg</a> wichtiger als jedes Werkzeug.</p>
-            </div>
           </div>
 
           <div className="tool-intro-notes no-print" data-storage-key={LEGACY_DRAFT_KEYS.join(' ')}>
@@ -83,10 +87,14 @@ function WerkzeugePage({ onNavigate }) {
 
           <ul className="tools-grid" role="list" aria-label="Alle Werkzeuge">
             {TOOLS.map((t) => {
-              const handleClick = () => setOpenTool(t.tool);
+              const handleClick = () => {
+                if (routed) onNavigate('werkzeuge', t.tool);
+                else setLocalOpenTool(t.tool);
+              };
               return (
                 <li key={t.tool}>
                   <button
+                    id={t.tool}
                     type="button"
                     className="tool-card-lg"
                     onClick={handleClick}

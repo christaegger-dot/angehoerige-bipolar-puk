@@ -91,19 +91,19 @@ function Modul1Page({ onNavigate }) {
             <ModuleQuickStart number={1} onNavigate={onNavigate} />
 
             <blockquote className="module-quote" id="quote-m1-01">
-              <p>«Als ich endlich begriffen habe, dass seine Gereiztheit ein Symptom ist und nicht gegen mich gerichtet — das hat alles verändert. Ich war nicht weniger erschöpft, aber ich war nicht mehr wütend.»</p>
+              <p>«Als ich besser verstanden habe, dass seine Gereiztheit auch mit der Erkrankung zusammenhängen kann, konnte ich manches anders einordnen. Ich war weiter erschöpft — und meine Gefühle blieben wichtig.»</p>
               <cite>Redaktionelles Fallbeispiel (fiktiv) · Ehemann</cite>
             </blockquote>
 
             <section id="s1">
               <h2>Wenn die Diagnose gerade neu ist</h2>
-              <p className="dropcap">Sie haben vielleicht gerade erfahren, dass jemand, den Sie lieben, eine bipolare Störung hat. Das kann sich anfühlen wie ein Sturz in unbekanntes Terrain — Schock, Ungewissheit, vielleicht auch Erleichterung, weil endlich ein Name da ist für das, was Sie beobachtet haben. Alle diese Reaktionen sind normal. Sie müssen jetzt nicht alles wissen, nichts lösen und keine Entscheidungen treffen.</p>
+              <p className="dropcap">Sie haben vielleicht gerade erfahren, dass jemand, den Sie lieben, eine bipolare Störung hat. Das kann sich anfühlen wie ein Sturz in unbekanntes Terrain — Schock, Ungewissheit, vielleicht auch Erleichterung, weil endlich ein Name da ist für das, was Sie beobachtet haben. Alle diese Reaktionen sind normal. Sie müssen jetzt nicht alles verstehen oder alle Fragen auf einmal lösen. Grosse Entscheidungen, die warten können, dürfen Sie aufschieben. Für den nächsten nötigen Schritt können Sie Unterstützung nutzen.</p>
 
               <div className="do-dont">
                 <div className="dont-col">
                   <h3>Was in den ersten Tagen oft schadet</h3>
                   <ul>
-                    <li>Stundenlang im Internet suchen — die meisten Seiten sind nicht für Angehörige</li>
+                    <li>Ohne Pause nach immer mehr Informationen suchen, obwohl es Sie zunehmend überfordert</li>
                     <li>Grosse Entscheidungen treffen, die warten können</li>
                     <li>Der erkrankten Person sofort «helfen» wollen, bevor Sie selbst orientiert sind</li>
                     <li>Das ganze Umfeld sofort informieren</li>
@@ -152,11 +152,11 @@ function Modul1Page({ onNavigate }) {
             <section id="s3">
               <h2>Bipolar ist mehr als Hoch und Tief</h2>
               <p>Das gängige Bild ist zu simpel: oben Manie, unten Depression, dazwischen Normalität. In der Realität sind Verläufe oft unruhiger. Es gibt klare Episoden, schleichende Übergänge, gemischte Zustände, scheinbar gute Phasen mit Kipprisiko und stabile Zeiten, die sich für Angehörige trotzdem nicht wirklich sicher anfühlen.</p>
-              <p>Stabile Phasen sind wichtig, aber nicht automatisch entlastend. Viele Angehörige kommen innerlich erst verzögert aus der Alarmbereitschaft heraus. Manchmal bleibt auch zwischen Episoden eine Restanspannung: auf Seiten der erkrankten Person, aber auch bei Ihnen.</p>
+              <p>Stabile Phasen können entlasten. Nach belastenden Episoden kann Ihre eigene Alarmbereitschaft jedoch noch eine Zeit lang anhalten. In <a className="puk-link--inline" href={navHref('modul2', 's3')} onClick={navHandler('modul2', onNavigate, 's3')}>Modul 2: erhöhte Wachsamkeit</a> finden Sie eine ausführlichere Reflexion dazu und zu Ihrer eigenen Entlastung.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Zur Einordnung</span>
-                <p>Diese Beschreibungen orientieren sich an den gebräuchlichen Diagnose-Systemen ICD-11 und DSM-5-TR, sind hier aber bewusst in Alltagssprache übersetzt. Eine Diagnose stellt immer eine Fachperson. Angehörige beobachten Muster, Veränderungen und Verläufe — nicht Diagnosen.</p>
+                <p>Diese Beschreibungen geben einen Überblick in Alltagssprache. Sie sind keine Anleitung, um selbst eine Diagnose zu stellen. Eine Diagnose stellt immer eine Fachperson. Angehörige können Beobachtungen zu Veränderungen und Verläufen beitragen.</p>
               </aside>
             </section>
 
@@ -168,32 +168,28 @@ function Modul1Page({ onNavigate }) {
               <h3>Manie und Hypomanie</h3>
               <p>In beiden Hochphasen verändern sich Stimmung und Aktivität deutlich gegenüber dem gewohnten Zustand. Weniger Schlafbedürfnis, viele Ideen, Rededrang und Gereiztheit können vorkommen. Nicht jede Gereiztheit ist ein Symptom. Krankheitseinsicht kann beeinträchtigt sein; Widerspruch oder ein anderer Behandlungswunsch beweisen das jedoch nicht.</p>
               <p><strong>Übersteigertes Selbstwertgefühl.</strong> Die Person traut sich ungewöhnlich viel zu. Bei einer Manie können Grössenwahn und andere psychotische Symptome auftreten. Eine Hochphase mit psychotischen Symptomen ist keine Hypomanie.</p>
-              <p><strong>Vermindertes Schlafbedürfnis.</strong> Oft nur 2–3 Stunden Schlaf bei voller Energie. <em>«Nachts um 3 Uhr wird die Wohnung umgeräumt — ich kann nicht schlafen.»</em></p>
+              <p><strong>Vermindertes Schlafbedürfnis.</strong> Die Person braucht deutlich weniger Schlaf als sonst und fühlt sich trotzdem ungewöhnlich wenig müde. <em>«Nachts wird die Wohnung umgeräumt — ich kann nicht schlafen.»</em></p>
               <p><strong>Impulsive Entscheidungen.</strong> Grosse Geldausgaben, riskante Investitionen, sexuelle Abenteuer. <em>«Er hat 10'000 Fr. ausgegeben, ohne mich zu fragen.»</em></p>
-              <p><strong>Reizbarkeit.</strong> Schnelle Aggression bei Widerstand oder Kritik. <em>«Jede Nachfrage wird als Angriff gewertet.»</em></p>
-              <p>Bei einer Hypomanie ist die Veränderung erkennbar, führt aber nicht zu der schweren Beeinträchtigung einer Manie. Nach DSM-5-TR dauert sie mindestens vier aufeinanderfolgende Tage; die ICD-11 spricht von mehreren Tagen. Es gibt keine feste Obergrenze von sieben Tagen. Eine Manie dauert nach DSM normalerweise mindestens eine Woche, bei erforderlicher Hospitalisation auch kürzer. Dauer, Schweregrad und Gesamtverlauf werden fachlich beurteilt.</p>
+              <p><strong>Reizbarkeit.</strong> Die Person kann empfindlicher reagieren oder sich rascher ärgern als sonst. Das ist nicht mit aggressivem Verhalten gleichzusetzen. Falls Sie verletzendes oder aggressives Verhalten erleben, dürfen Sie Ihre Schutzbedürfnisse ernst nehmen. <em>«Nachfragen bringen uns manchmal rasch in Streit.»</em></p>
+              <p>Bei einer Hypomanie ist die Veränderung erkennbar, führt aber nicht zu der schweren Beeinträchtigung einer Manie. Wie lange Veränderungen anhalten, wie stark sie den Alltag beeinträchtigen und wie sie in den bisherigen Verlauf passen, wird fachlich beurteilt. Einzelne Beobachtungen reichen für diese Einordnung nicht aus.</p>
 
               <h3>Was psychotische Symptome bedeuten</h3>
-              <p>Wahnvorstellungen oder Wahrnehmungen ohne äussere Entsprechung können während einer schweren Manie oder Depression auftreten. Sie werden von der betroffenen Person häufig als real erlebt. Es handelt sich nicht um eine zweite Persönlichkeit. Neue solche Veränderungen brauchen fachliche Einschätzung; bei unmittelbarer Gefahr nutzen Sie den <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
+              <p>Wahnvorstellungen oder Wahrnehmungen ohne äussere Entsprechung können während einer schweren Manie oder Depression auftreten. Sie werden von der betroffenen Person häufig als real erlebt. Es handelt sich nicht um eine zweite Persönlichkeit. Neue solche Veränderungen brauchen fachliche Einschätzung.</p>
 
               <h3>Stabile Phase (Euthymie)</h3>
-              <p>Wichtige Zeitfenster — aber nicht immer echte innere Entwarnung.</p>
-              <p><strong>Raum für Erholung.</strong> Stabile Phasen können lange dauern und echte Entlastung ermöglichen. Nach einer Krise kann die eigene Wachsamkeit noch eine Zeit lang bestehen bleiben.</p>
+              <p>Zeitfenster für Erholung, Gespräche und gemeinsame Vorbereitung.</p>
+              <p><strong>Raum für Erholung.</strong> Stabile Phasen können lange dauern und echte Entlastung ermöglichen. Ihre eigene Erholung darf ein anderes Tempo haben.</p>
               <p><strong>Restsymptome möglich.</strong> Zwischen Episoden können milde Symptome bestehen bleiben. <em>«Ist diese gute Laune echt — oder schon der Beginn einer Manie?»</em></p>
               <p><strong>Zeit für Krisenplanung.</strong> Stabile Phasen sind der richtige Moment für wichtige Gespräche. <em>«Jetzt können wir reden — über Grenzen, Vereinbarungen, Notfallplan.»</em></p>
-              <p>Stabile Phasen sind wichtig für Planung, Gespräche und Erholung. Sie können echte Entlastung und neue Absprachen ermöglichen. Gleichzeitig sind sie nicht automatisch unbelastet: Viele Angehörige prüfen in dieser Zeit innerlich weiter, ob das wirklich Ruhe ist — oder nur die Vorstufe zur nächsten Welle.</p>
 
               <h3>Depression</h3>
-              <p>Nicht nur Traurigkeit, sondern Leere, Verlangsamung und oft lange Hilflosigkeit auf beiden Seiten. Eine bipolare Depression kann nach aussen wie eine «gewöhnliche» Depression wirken; der Unterschied zeigt sich oft erst im Gesamtverlauf mit Hochphasen, Mischzuständen oder kippriger Aktivierung.</p>
+              <p>Nicht nur Traurigkeit, sondern Leere, Verlangsamung und oft lange Hilflosigkeit auf beiden Seiten. Ob eine Depression im Rahmen einer bipolaren Störung auftritt, wird anhand des gesamten bisherigen Verlaufs fachlich beurteilt. Angehörige können konkrete Veränderungen beschreiben; sie müssen die Diagnose nicht selbst einordnen.</p>
               <p><strong>Tiefe Traurigkeit und Antriebslosigkeit.</strong> Gefühl der Leere, Hoffnungslosigkeit, bleierne Müdigkeit. <em>«Nichts, was ich sage oder tue, hilft — ich fühle mich machtlos.»</em></p>
               <p><strong>Sozialer Rückzug.</strong> Isolation, kein Interesse an Hobbys oder Kontakten. <em>«Wir sehen keine Freunde mehr — ich vereinsame mit.»</em></p>
               <p><strong>Gedankenkreisen.</strong> Konzentrationsstörungen, Schuldgefühle, manchmal Suizidgedanken. <em>«Die Angst, dass er sich etwas antut, lässt mich nicht schlafen.»</em></p>
               <p><strong>Unerreichbarkeit.</strong> Physisch anwesend, emotional hinter einer Glaswand. <em>«Es ist, als würde man zusehen, wie der geliebte Mensch verschwindet.»</em></p>
 
-              <aside className="callout">
-                <span className="callout-label">Bei Suizidgedanken</span>
-                <p>Modul 2 erklärt, was das mit Angehörigen macht — und wo Hilfe ist. Bei akuter Gefahr: <strong>144</strong> oder <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallweg</a>.</p>
-              </aside>
+              <p>Die Sorge um Suizidgedanken kann auch Sie stark belasten. <a href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>Modul 2</a> behandelt diese Sorge aus Angehörigensicht und zeigt Möglichkeiten für Ihre eigene Unterstützung.</p>
             </section>
 
             <section id="s5">
@@ -217,7 +213,7 @@ function Modul1Page({ onNavigate }) {
               <p>Nicht jeder Verlauf passt sauber in Bipolar I oder Bipolar II. Bei einer Zyklothymie wechseln sich über längere Zeit mildere Hochs und Tiefs ab, die trotzdem Beziehungen und Alltag belasten können. Für Angehörige ist wichtig: Auch weniger spektakuläre oder schwer greifbare Verläufe dürfen ernst genommen und fachlich abgeklärt werden.</p>
 
               <blockquote className="module-quote" id="quote-m1-03">
-                <p>«Letzte Woche hat er das ganze Wochenende durchgearbeitet, drei neue Projekte gestartet und war euphorisch. Alle fanden ihn grossartig. Ich war die Einzige, die wusste: Das ist keine gute Phase. Das ist der Anfang.»</p>
+                <p>«Mir fielen wenig Schlaf und ungewöhnlich viele Projekte auf. Ich war unsicher, wie ich das einordnen sollte, und wollte meine Beobachtungen mit dem Behandlungsteam besprechen.»</p>
                 <cite>Redaktionelles Fallbeispiel (fiktiv) · Angehörige</cite>
               </blockquote>
             </section>
@@ -230,17 +226,17 @@ function Modul1Page({ onNavigate }) {
               <p>Bei Mischsymptomen bestehen depressive und manische Symptome gleichzeitig, etwa starke Aktivierung und Hoffnungslosigkeit. Gereiztheit allein bedeutet noch keinen Mischzustand. Bei dieser Kombination ist eine zeitnahe fachliche Einschätzung wichtig.</p>
 
               <h3>Gereizte Manie</h3>
-              <p>Nicht jede Manie ist euphorisch. Manche Menschen wirken vor allem gereizt, aggressiv, misstrauisch oder explosiv. Fachleute sprechen hier auch von dysphorischer Manie.</p>
+              <p>Nicht jede Manie ist euphorisch. Manche Menschen sind vor allem gereizt oder innerlich angespannt. Beschreiben Sie konkrete Veränderungen, ohne jede Verärgerung als Symptom einzuordnen.</p>
 
               <h3>Schnelle Wechsel</h3>
-              <p>Stimmung und Antrieb können schwanken. Das ist nicht automatisch Rapid Cycling: Dieser Fachbegriff bezeichnet mindestens vier abgrenzbare affektive Episoden innerhalb von zwölf Monaten. Angehörige müssen diese Einordnung nicht selbst vornehmen.</p>
+              <p>Stimmung und Antrieb können schwanken. Wechselnde Stimmung allein ist kein Grund, einen Verlauf als Rapid Cycling zu bezeichnen. Dieser Begriff dient der fachlichen Einordnung des Episodenverlaufs. Angehörige müssen diese Einordnung nicht selbst vornehmen.</p>
 
               <h3>Unklare Übergänge</h3>
               <p>Viele Belastungen beginnen nicht eindeutig. Ist das eine echte gute Phase, eine Hypomanie, Erholung oder schon das Kippen? Gerade diese Unschärfe macht Angehörige oft hyperaufmerksam und erschöpft.</p>
 
               <aside className="callout">
                 <span className="callout-label">Wichtig</span>
-                <p>Besonders belastend sind Zustände, in denen Hoffnungslosigkeit, Gereiztheit, innere Unruhe und wenig Schlaf zusammenkommen. Solche Mischbilder können klinisch hochriskant sein — auch dann, wenn sie von aussen nicht wie eine «klassische» Episode aussehen.</p>
+                <p>Wenn Hoffnungslosigkeit, starke innere Unruhe und deutlich weniger Schlaf zusammenkommen, ist eine zeitnahe fachliche Einschätzung wichtig. Sie müssen selbst nicht beurteilen, welcher Episode diese Veränderungen zuzuordnen sind.</p>
               </aside>
             </section>
 
@@ -248,7 +244,6 @@ function Modul1Page({ onNavigate }) {
               <h2>Was das für Angehörige bedeutet</h2>
               <p>Wenn Verläufe unklar, wiederkehrend oder widersprüchlich sind, entsteht bei Angehörigen oft ein Zustand permanenter Einordnung: Sie beobachten Schlaf, Sprache, Tempo, Geld, Rückzug, Gereiztheit — und fragen sich gleichzeitig, ob Sie überreagieren. Genau diese Unsicherheit ist eine eigene Belastung.</p>
               <p>Die Unterscheidung zwischen Person und Symptom kann helfen. Sie verhindert, dass Sie jedes Verhalten nur noch als bösen Willen lesen. Aber sie löst nicht alles. Auch krankheitsbedingtes Verhalten kann verletzen, Angst machen oder Vertrauen erschüttern. Verstehen entlastet also oft die Einordnung — nicht automatisch die Beziehung oder Ihre Erschöpfung.</p>
-              <p>Viele Angehörige erleben stabile Phasen ambivalent: als Erleichterung und gleichzeitig als Zeit erhöhter Wachsamkeit. Nach schweren Episoden kommen oft Scham, vorsichtige Hoffnung und die Frage zusammen, wie viel Normalität man sich überhaupt noch trauen darf.</p>
               <p>In einer Episode können Erleben und Verhalten stark verändert sein. Die Person bleibt mehr als diese Episode: mit ihrer Geschichte, ihren Fähigkeiten, Interessen und Beziehungen. Eine krankheitsbezogene Einordnung hebt Ihre Gefühle oder Schutzbedürfnisse nicht auf.</p>
             </section>
 
@@ -261,13 +256,13 @@ function Modul1Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Kinderwunsch, Schwangerschaft und Zeit nach der Geburt</span>
-                <p>Planen Sie früh mit dem psychiatrischen und gynäkologischen Behandlungsteam. Bei Valproat bestehen besondere Risiken und Schutzvorgaben; zur Behandlung bipolarer Störungen darf es während einer Schwangerschaft nicht eingesetzt werden. Auch für Männer mit Kinderwunsch ist fachliche Beratung wichtig. Änderungen der Behandlung gehören in fachärztliche Hände. Für die Zeit nach der Geburt sind Schlaf, Unterstützung und ein gemeinsam abgestimmter Krisenplan besonders wichtig.</p>
+                <p>Planen Sie früh mit dem psychiatrischen und gynäkologischen Behandlungsteam. Bei Valproat bestehen besondere Risiken und Schutzvorgaben. Klären Sie mit dem fachärztlichen Team, welche Vorgaben bei Kinderwunsch oder Schwangerschaft für Ihre Situation gelten. Fachliche Beratung ist auch für Männer mit Kinderwunsch wichtig. Ändern Sie Medikamente nicht eigenständig. Für die Zeit nach der Geburt sind Schlaf, Unterstützung und ein gemeinsam abgestimmter Krisenplan besonders wichtig.</p>
               </aside>
               <h3>Gemeinsam über Behandlung entscheiden</h3>
               <p>Was ist der betroffenen Person wichtig? Welche Wirkung hilft, welche Nebenwirkung belastet? Welche Unterstützung möchten und können Sie anbieten? Angehörige dürfen eigene Grenzen benennen. Besprechen Sie auch körperliche Gesundheit und die zur jeweiligen Medikation nötigen Kontrollen.</p>
 
               <h3>Psychotherapie</h3>
-              <p>Gesprächstherapien und familienbezogene Behandlungsformen helfen, Warnzeichen früher zu erkennen, Rückfälle einzuordnen und den Alltag verlässlicher zu gestalten.</p>
+              <p>Bestimmte strukturierte psychotherapeutische und familienbezogene Programme können die medizinische Behandlung ergänzen und dabei unterstützen, Warnzeichen und Alltagsschwierigkeiten zu bearbeiten. Welche Form passt, besprechen die betroffene Person und das Behandlungsteam.</p>
 
               <h3>Psychoedukation</h3>
               <p>Strukturierte Psychoedukation und familienbezogene Behandlungen können ergänzend zur medizinischen Behandlung helfen. Sie verbinden Wissen mit Übungen, Austausch und konkreten Strategien. Studien untersuchen solche Programme, nicht bloss das Lesen von Informationen. Diese Website bietet Orientierung; daraus lässt sich keine nachgewiesene Wirkung dieser Website auf Rückfälle oder Belastung ableiten.</p>
@@ -291,11 +286,11 @@ function Modul1Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Wenn Sie nur eines tun</span>
-                <p>Notieren Sie drei Frühwarnzeichen aus der letzten deutlichen Verschlechterung. Alles Weitere ist optional.</p>
+                <p>Wenn Sie eine frühere Verschlechterung miterlebt haben, notieren Sie eine bis drei konkrete Veränderungen. Wenn nicht, reicht eine Frage, die Sie dem Behandlungsteam stellen möchten. Alles Weitere ist optional.</p>
               </aside>
 
               <h3>1. Frühwarnzeichen notieren</h3>
-              <p>Denken Sie an die letzte deutliche Verschlechterung: Was war zuerst auffällig? Weniger Schlaf? Gereiztheit? Rückzug? Übermässige Energie? Schreiben Sie drei Beobachtungen auf. Noch nicht als Diagnose — nur als Muster.</p>
+              <p>Falls Sie eine frühere deutliche Verschlechterung miterlebt haben: Was war zuerst auffällig? Weniger Schlaf? Gereiztheit? Rückzug? Übermässige Energie? Schreiben Sie eine bis drei Beobachtungen auf, ohne daraus eine Diagnose abzuleiten. Wenn Ihnen solche Erfahrungen fehlen, notieren Sie stattdessen eine offene Frage für das Behandlungsteam.</p>
 
               <h3>2. Professionelle Beratung nutzen</h3>
               <p>Wenn Sie nach diesem Modul merken, wie viel Unsicherheit Sie mittragen, ist das bereits ein guter Grund für Beratung. Die Fachstelle Angehörigenarbeit PUK Zürich bietet kostenlose Unterstützung — auch unabhängig davon, ob die erkrankte Person selbst Hilfe sucht. Telefon: <strong>058 384 38 00</strong>.</p>

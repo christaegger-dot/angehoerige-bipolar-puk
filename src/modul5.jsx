@@ -49,10 +49,10 @@ function KnotenFigurWrap() {
       </div>
       <figcaption>
         <strong id="m5-loyalitaetsknoten-title">Der Loyalitätsknoten.</strong>{' '}
-        Loyalitätskonflikte sind keine Schwäche und keine Kälte. Sie entstehen, weil zwei legitime Bindungen — die zur erkrankten Person und die zu sich selbst — gleichzeitig ziehen. Wer das nur als «entweder–oder» denkt, gerät in den Knoten.
+        Das Bild zeigt einen möglichen Konflikt zwischen Nähe zur erkrankten Person und eigenen Bedürfnissen. Beides darf Platz haben. Es bewertet weder Ihre Gefühle noch Ihre Entscheidung.
       </figcaption>
       <FigureText visualId="m5-loyalitaetsknoten">
-        <p>Von links führt eine Linie mit der Bezeichnung „Verpflichtung zur anderen Person“ zu einem Knoten. Von rechts kommt die Linie „Selbstschutz zu sich selbst“. Im Knoten treffen beide zusammen: Beides ist legitim, beides zieht gleichzeitig.</p>
+        <p>Von links führt eine Linie mit der Bezeichnung «Verpflichtung zur anderen Person» zu einem Knoten. Von rechts kommt die Linie «Selbstschutz zu sich selbst». Im Knoten treffen beide zusammen: Beides ist legitim, beides zieht gleichzeitig.</p>
         <p>Das Bild zeigt einen möglichen inneren Konflikt. Es ist kein Ablauf und schreibt keine Entscheidung zum Bleiben oder Gehen vor.</p>
       </FigureText>
     </figure>
@@ -81,19 +81,19 @@ function StimmenBlock() {
 function KipppunkteListe() {
   const punkte = [
     {
-      titel: 'Selbstaufgabe',
-      sub: 'wenn Loyalität zum Verschwinden wird',
-      text: 'Eigene Bedürfnisse werden nicht mehr verschoben — sie tauchen gar nicht mehr auf. Sie wissen nicht mehr, was Sie am Wochenende mögen würden, wenn niemand krank wäre.',
+      titel: 'Wenig Raum für sich',
+      sub: 'wenn eigene Bedürfnisse in den Hintergrund geraten',
+      text: 'Vielleicht fällt es Ihnen schwer zu sagen, was Ihnen selbst guttun würde. Sie dürfen sich Zeit dafür nehmen und Unterstützung suchen, wenn Sie möchten.',
     },
     {
       titel: 'Groll',
-      sub: 'wenn Loyalität bitter wird',
-      text: 'Sie tun weiter, was Sie immer getan haben — aber innerlich kommt Härte rein. Kleine Dinge nerven unverhältnismässig. Das ist kein Charakterfehler. Es ist ein Signal.',
+      sub: 'wenn Ärger dazukommt',
+      text: 'Vielleicht übernehmen Sie weiter Aufgaben und bemerken dabei Ärger oder weniger Geduld. Schauen Sie darauf, was Sie belastet und welche Absprachen Sie verändern möchten. Daraus allein lässt sich keine Ursache ableiten.',
     },
     {
       titel: 'Körper',
       sub: 'wenn körperliche Beschwerden dazukommen',
-      text: 'Anspannung kann sich auch körperlich bemerkbar machen. Neue oder anhaltende Beschwerden wie Herzklopfen, Schmerzen oder Schlafstörungen brauchen medizinische Abklärung. Ein fehlender körperlicher Befund beweist keinen Loyalitätskonflikt.',
+      text: 'Wenn Sie neue, starke oder anhaltende körperliche Beschwerden bemerken, lassen Sie diese medizinisch abklären. Diese Seite erklärt deren Ursache nicht. Auch ein fehlender körperlicher Befund beweist keinen Loyalitätskonflikt.',
     },
   ];
   return (
@@ -115,7 +115,7 @@ function MythenBuster() {
   const mythen = [
     {
       mythos: 'Abstand ist Verrat.',
-      richtig: 'Abstand ist eine Form, die Beziehung tragfähig zu halten — gerade dann, wenn Nähe Sie auffrisst.',
+      richtig: 'Abstand kann eine Möglichkeit sein, für sich zu sorgen. Welche Form von Kontakt für Sie passt, dürfen Sie klären.',
     },
     {
       mythos: 'Wenn ich Grenzen setze, entziehe ich Liebe.',
@@ -123,7 +123,7 @@ function MythenBuster() {
     },
     {
       mythos: 'Loyalität ist endgültig — oder gar nicht.',
-      richtig: 'Loyalität verändert ihre Form. Sie kann von Co-Bewohnen zu telefonisch begleiten werden, von täglich zu wöchentlich, von tragen zu mittragen. Das ist kein Ende.',
+      richtig: 'Kontakt und Unterstützung können sich verändern: etwa seltener sprechen, Aufgaben abgeben oder getrennt wohnen. Sie dürfen auch erwägen, einen Kontakt zu beenden.',
     },
   ];
   return (
@@ -161,11 +161,11 @@ function Modul5Page({ onNavigate }) {
   const sections = [
     { id: 's1', label: 'Innere Zerrissenheit' },
     { id: 's2', label: 'Verpflichtung & Selbstschutz' },
-    { id: 's3', label: 'EE-Kreislauf' },
-    { id: 's4', label: 'Beruhigungs-Dilemma' },
+    { id: 's3', label: 'Vier Aspekte der Belastung' },
+    { id: 's4', label: 'Wiederholte Bestätigung' },
     { id: 's5', label: 'Warum Grenzen schwer fallen' },
-    { id: 's6', label: 'Wenn Stigma abfärbt' },
-    { id: 's7', label: 'Eltern und Geschwister' },
+    { id: 's6', label: 'Wenn Vorurteile belasten' },
+    { id: 's7', label: 'Eltern, Geschwister und Freundschaften' },
     { id: 's8', label: 'Formen von Abstand' },
     { id: 's9', label: 'Was zuerst klar werden muss' },
     { id: 's10', label: 'Worauf es ankommt' },
@@ -220,8 +220,8 @@ function Modul5Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Das Dilemma ist real</h2>
-              <p className="dropcap">Viele Angehörige erleben gleichzeitig zwei gegensätzliche Wahrheiten: «Ich will diesen Menschen nicht im Stich lassen» und «Ich kann so nicht mehr weitermachen.» Dieses Nebeneinander ist kein Zeichen von Unentschlossenheit oder Charakterschwäche. Es ist die innere Logik einer Situation, in der Liebe, Verantwortung, Erschöpfung, Angst und Selbstschutz dauerhaft miteinander kollidieren.</p>
-              <p>Gerade deshalb ist dieses Modul kein Modul für schnelle Lösungen. Es sortiert das Dilemma: Warum gut gemeinte Reaktionen in Muster kippen können, warum Grenzen so schwer sind, warum Isolation alles verschärft und warum die Frage «Gehen oder Bleiben?» selten die erste ist, die man wirklich beantworten muss.</p>
+              <p className="dropcap">Vielleicht kennen Sie beide Gedanken: «Ich will diesen Menschen nicht im Stich lassen» und «Ich kann so nicht mehr weitermachen.» Sie können nebeneinander bestehen. Liebe, Verantwortung und eigene Grenzen müssen sich nicht jederzeit eindeutig anfühlen.</p>
+              <p>Dieses Modul bietet Fragen zum Sortieren Ihrer Lage: Welche Aufgaben übernehmen Sie? Welche Grenze ist Ihnen wichtig? Welche Unterstützung wünschen Sie? Ob Sie bleiben, Abstand nehmen oder gehen möchten, entscheidet die Seite nicht für Sie.</p>
 
               <StimmenBlock />
             </section>
@@ -255,44 +255,44 @@ function Modul5Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Wichtige Erkenntnis</span>
-                <p>Selbstschutz ist nicht automatisch Verrat, und Verpflichtung ist nicht automatisch Stärke. Ungelöste Loyalitätskonflikte führen häufig zu chronischem Stress, Erschöpfung und innerer Lähmung — und verschlechtern damit oft auch die Situation der erkrankten Person (Kim &amp; Miklowitz, 2004).</p>
+                <p>Vielleicht erleben Sie das Abwägen zwischen Nähe und Selbstschutz als belastend. Sie dürfen dafür Unterstützung suchen und die Situation mit einer vertrauten Person oder Beratungsstelle sortieren. Daraus lässt sich nicht ableiten, dass Sie für den Krankheitsverlauf der anderen Person verantwortlich sind.</p>
               </aside>
             </section>
 
             <section id="s3">
-              <h2>Wie Überlastung in Beziehungsmuster kippt</h2>
-              <p>Unter Belastung können sich Sorgen, zusätzliche Verantwortungsübernahme, Erschöpfung und gereizte Gespräche gegenseitig verstärken. Die folgenden vier Aspekte sind ein vereinfachtes Reflexionsmodell. Sie müssen nicht in dieser Reihenfolge auftreten und beschreiben nicht jede Familie.</p>
+              <h2>Vier mögliche Aspekte der Belastung</h2>
+              <p>Die folgenden vier Aspekte sind ein redaktionelles Reflexionsmodell: Sorgen und Schuldgefühle, zusätzliche Verantwortung, Erschöpfung und Kritik. Vielleicht kennen Sie einzelne davon. Sie sind keine geprüften Phasen, müssen nicht in dieser Reihenfolge auftreten und beschreiben nicht jede Familie.</p>
 
-              <h3>Der Teufelskreis — und wo er unterbrechbar ist</h3>
-              <p><strong>1 — Schuldgefühle.</strong> «Hätte ich die Warnzeichen früher erkannt?» Die Schuld treibt Sie zu noch mehr Kontrolle. → Das erschöpft.</p>
-              <p><strong>2 — Zusätzliche Verantwortung.</strong> Sie übernehmen viele Aufgaben. Prüfen Sie gemeinsam, welche Unterstützung gewünscht ist, was die andere Person selbst übernehmen kann und wo Sie Entlastung brauchen.</p>
+              <h3>Fragen zum Nachdenken, keine Einstufung</h3>
+              <p><strong>1 — Schuldgefühle.</strong> «Hätte ich die Warnzeichen früher erkannt?» Vielleicht kennen Sie diesen Gedanken. Prüfen Sie, welche Verantwortung tatsächlich bei Ihnen liegt und was Sie entlasten könnte; Sie müssen die andere Person nicht ständig kontrollieren.</p>
+              <p><strong>2 — Zusätzliche Verantwortung.</strong> Vielleicht übernehmen Sie viele Aufgaben. Prüfen Sie gemeinsam, welche Unterstützung gewünscht ist, was die andere Person selbst übernehmen kann und wo Sie Entlastung brauchen.</p>
               <p><strong>3 — Erschöpfung.</strong> Unter Belastung kann die Geduld nachlassen. Gereiztheit ist kein zwangsläufiger nächster Schritt; frühzeitige Hilfe und Abstand können entlasten.</p>
-              <p><strong>4 — Kritik.</strong> Sätze, die Sie bereuen. Vorwürfe, die verletzen. Danach kommt die Schuld zurück — und der Kreislauf beginnt von vorn.</p>
+              <p><strong>4 — Kritik.</strong> Vielleicht bereuen Sie einen Satz oder wünschen sich ein ruhigeres Gespräch. Sie können überlegen, was Sie anders ausdrücken möchten und ob Abstand oder Unterstützung gerade hilfreich wäre. Daraus entsteht keine vorgeschriebene nächste Phase.</p>
 
               <aside className="callout callout-soft">
-                <span className="callout-label">Warum das lohnt</span>
-                <p>Expressed Emotion (EE) ist ein eigenständiger Forschungsbegriff für kritische Kommentare, Feindseligkeit und emotionale Überinvolviertheit. Er bezeichnet keine feste Vierphasenfolge. Eine systematische Übersicht findet Zusammenhänge mit Rückfällen, besonders depressiven Episoden. Daraus folgt keine individuelle Verursachung durch Angehörige. Legitime Grenzen oder hohe Beteiligung sind nicht automatisch feindselig. Entlastung und familienbezogene Unterstützung können für beide Seiten hilfreich sein.</p>
+                <span className="callout-label">Vom Forschungsbegriff EE unterscheiden</span>
+                <p>Der in der Fachliteratur verwendete Begriff «Expressed Emotion (EE)» bezeichnet nicht das redaktionelle Reflexionsmodell oben. Seine fachliche Definition und die angeführte Literatur sind hier noch nicht abschliessend geprüft. Dieses Modul beurteilt weder Ihr Familienklima noch ein individuelles Rückfallrisiko und weist Angehörigen keine Rückfallschuld zu. Eigene Grenzen und Unterstützung für sich selbst dürfen Platz haben.</p>
               </aside>
             </section>
 
             <section id="s4">
-              <h2>Ein verwandtes Muster: Das Beruhigungs-Dilemma</h2>
-              <p>Manche Menschen fragen in einer Depression wiederholt nach Bestätigung. Das kann mit Unsicherheit und Hoffnungslosigkeit zusammenhängen und Angehörige belasten. In der Depressionsforschung wird ein mögliches Muster als «Excessive Reassurance Seeking» beschrieben. Es ist keine Erklärung für jede Bitte um Nähe und kein speziell für bipolare Störungen gesicherter Ablauf.</p>
+              <h2>Wenn wiederholt nach Bestätigung gefragt wird</h2>
+              <p>Vielleicht kennen Sie Gespräche, in denen die andere Person wiederholt fragt, ob Sie sie noch mögen oder für sie da sind. Diese Seite erklärt nicht, warum das geschieht, und ordnet es keiner Diagnose zu. Sie können besprechen, welche Nähe gewünscht ist und was Sie selbst gerade anbieten können.</p>
               <p>Sie dürfen ehrlich Zuwendung zeigen und zugleich Ihre Verfügbarkeit begrenzen: «Du bist mir wichtig. Ich kann jetzt zehn Minuten bei dir sein. Danach brauche ich eine Pause.» Wenn Fragen und Antworten für beide belastend werden, besprechen Sie das Muster mit dem Behandlungsteam. Es gibt keinen Satz, der zuverlässig alle Zweifel beendet.</p>
             </section>
 
             <section id="s5">
               <h2>Warum Grenzen setzen so schwer fällt</h2>
-              <p>Der Kreislauf zeigt: Ohne Grenzen wird vieles schlimmer. Trotzdem bleiben Grenzen für viele Angehörige eines der schwierigsten Themen überhaupt. Das liegt nicht daran, dass sie unvernünftig wären — sondern daran, dass Grenzen hier nicht nur Verhalten regulieren, sondern Schuld, Moral, Angst und Identität berühren.</p>
+              <p>Vielleicht fällt es Ihnen schwer, eine Grenze auszusprechen oder eine Aufgabe abzugeben. Die folgenden Beispiele können helfen, genauer zu benennen, was Sie beschäftigt. Sie sind keine Erklärung für jede Situation.</p>
 
-              <h3>Vier typische Barrieren</h3>
+              <h3>Vier mögliche Hürden</h3>
               <p><strong>A — Angst.</strong> «Wenn ich Nein sage und etwas passiert — lebe ich mit der Schuld.» Diese Angst ist real. Aber es geht um «welche Grenze, wann, wie» — nicht um Alles oder Nichts.</p>
-              <p><strong>B — Schuld.</strong> Schuldgefühle, die das Belastungsmuster verstärken können, blockiert auch die Grenzsetzung. Das Muster zu erkennen ist der erste Schritt, es zu durchbrechen.</p>
-              <p><strong>C — Moralischer Druck.</strong> «Man lässt einen kranken Menschen nicht im Stich.» Dieses Narrativ ignoriert, dass unbegrenzte Aufopferung beide Seiten schädigt.</p>
-              <p><strong>D — Gewohnheit.</strong> Nach Jahren der Übernahme fällt es schwer, Aufgaben zurückzugeben. Fachleute sprechen hier von «Enabling»: wenn gut gemeinte Hilfe unbeabsichtigt Eigenverantwortung untergräbt. Kein Vorwurf gegen Sie und kein moralisches Urteil über die erkrankte Person — eher ein Muster, das erkennbar und veränderbar ist.</p>
+              <p><strong>B — Schuld.</strong> Vielleicht tauchen Schuldgefühle auf, wenn Sie eine Grenze setzen möchten. Sie können diese Gefühle wahrnehmen und trotzdem prüfen, was Sie leisten können und wollen.</p>
+              <p><strong>C — Moralischer Druck.</strong> «Man lässt einen kranken Menschen nicht im Stich.» Vielleicht hören Sie diesen Satz oder denken ihn selbst. Auch Ihre Bedürfnisse und Grenzen dürfen in die Absprachen eingehen.</p>
+              <p><strong>D — Gewohnheit.</strong> Vielleicht übernehmen Sie Aufgaben, die die andere Person wieder selbst übernehmen möchte. Besprechen Sie gemeinsam, welche Hilfe gewünscht ist, welche Aufgaben zurückgegeben werden können und wo weitere Unterstützung nötig ist.</p>
 
-              <h3>Wenn Loyalität kippt</h3>
-              <p>Loyalität ist nicht das Problem. Das Problem ist, wenn sie über Jahre gegen das eigene System läuft — und beginnt, dort Schaden anzurichten, wo sie eigentlich Halt geben sollte.</p>
+              <h3>Was Sie bei sich bemerken könnten</h3>
+              <p>Schauen Sie auch darauf, wie es Ihnen selbst mit den bisherigen Aufgaben und Absprachen geht. Die drei Beispiele sind Anregungen für ein Gespräch, keine Schwellen für eine Entscheidung.</p>
 
               <KipppunkteListe />
 
@@ -301,52 +301,55 @@ function Modul5Page({ onNavigate }) {
                 <ul className="schuld-list">
                   <li>Schuld kann das Echo eines alten Versprechens sein, nicht eine aktuelle Bewertung.</li>
                   <li>Schuld kann der Preis dafür sein, dass Sie etwas anders machen als bisher — und nicht der Beweis, dass das Neue falsch ist.</li>
-                  <li>Schuld kann auch dann auftreten, wenn die Alternative — alles weiter wie bisher — Sie zerstören würde.</li>
+                  <li>Schuldgefühle können auch auftreten, wenn Sie eine notwendige Grenze setzen.</li>
                 </ul>
               </div>
             </section>
 
             <section id="s6">
               <h2>Wenn Vorurteile auf Sie abfärben</h2>
-              <p>Neben dem inneren Druck gibt es einen äusseren: «Affiliate Stigma» — Stigma durch Assoziation — beschreibt, wie gesellschaftliche Vorurteile auf Angehörige abfärben (Mak &amp; Cheung, 2008). Es macht nicht nur die Isolation schlimmer, sondern oft auch Entscheidungen schwerer: Wer sich schämt, spricht später, holt später Hilfe und bleibt länger allein im Dilemma.</p>
+              <p>Vielleicht begegnen Ihnen Vorurteile über psychische Erkrankungen, die auch Sie als Angehörige treffen. Sie dürfen ansprechen, was diese Erfahrungen mit Ihnen machen. Die folgenden Beispiele beschreiben mögliche Erfahrungen, keinen zwangsläufigen Verlauf.</p>
 
-              <h3>Wie sich Stigma zeigt</h3>
-              <p><strong>Kognitiv.</strong> Selbstabwertung: «Ich bin weniger wert, weil ich es nicht schaffe, meinen Partner zu ‹heilen›.»</p>
-              <p><strong>Affektiv.</strong> Tiefe Scham, Angst vor Verurteilung. Das Erklären wird zu anstrengend — also bleiben Sie zu Hause.</p>
-              <p><strong>Verhalten.</strong> Verheimlichung, Meidung sozialer Kontakte. Sie vereinsamen — nicht weil Ihnen Menschen egal sind, sondern weil «normal wirken» mehr erschöpft als die Einsamkeit.</p>
+              <h3>Was Sie dabei erleben könnten</h3>
+              <p><strong>Gedanken.</strong> «Ich müsste die andere Person doch gesund machen können.» Wenn Sie sich so unter Druck setzen, können Sie mit jemandem darüber sprechen. Behandlung ist nicht Ihre Aufgabe.</p>
+              <p><strong>Gefühle.</strong> Vielleicht schämen Sie sich oder fürchten eine abwertende Reaktion. Sie entscheiden, wem Sie etwas erzählen möchten.</p>
+              <p><strong>Kontakte.</strong> Vielleicht meiden Sie ein Gespräch, weil Erklärungen gerade Kraft kosten. Überlegen Sie, mit wem Sie sich auch ohne viele Details verbunden fühlen können.</p>
 
-              <h3>Die häufigsten Reaktionen des Umfelds</h3>
+              <h3>Mögliche Reaktionen des Umfelds</h3>
               <p><strong>Verharmlosung.</strong> «Jeder hat mal schlechte Tage.» Vergleicht eine schwere Erkrankung mit Alltagstraurigkeit. Fühlt sich an wie: Ihre Erfahrung zählt nicht.</p>
-              <p><strong>Unsichtbarkeit.</strong> «Er/sie sieht doch ganz normal aus!» Entwertet Ihre gesamte Erfahrung. Sie haben schlaflose Nächte hinter sich — und bekommen gesagt, es gebe kein Problem.</p>
-              <p><strong>Simplizität.</strong> «Warum trennst du dich nicht?» Ignoriert die Komplexität. Sie lieben diesen Menschen. Trennung ist möglich — aber nie einfach.</p>
-              <p><strong>Stille.</strong> Freunde, die nicht mehr fragen. Oft die verletzendste Reaktion. Das Schweigen fühlt sich an wie Desinteresse — auch wenn es Hilflosigkeit ist.</p>
+              <p><strong>Nicht gesehen werden.</strong> «Er/sie sieht doch ganz normal aus!» Vielleicht fühlen Sie sich dadurch mit Ihrer Erfahrung nicht ernst genommen.</p>
+              <p><strong>Vereinfachung.</strong> «Warum trennst du dich nicht?» Vielleicht wünschen Sie sich, dass jemand zunächst zuhört, statt eine Entscheidung vorzuschlagen.</p>
+              <p><strong>Stille.</strong> Freunde fragen nicht mehr. Das kann sich wie Desinteresse anfühlen; was dahintersteht, lässt sich nicht allein aus dem Schweigen erkennen.</p>
             </section>
 
             <section id="s7">
-              <h2>Besondere Loyalitätskonflikte für Eltern und Geschwister</h2>
-              <p>Dieses Modul spricht häufig aus der Perspektive von Partnerschaften — aber Loyalitätskonflikte treffen Eltern und Geschwister genauso, oft in anderer Form.</p>
-              <p><strong>Eltern</strong> können sich der Verantwortung nicht entziehen, ohne sich als «schlechte Eltern» zu fühlen — selbst wenn das Kind längst erwachsen ist. Der Satz «Ich kann mein eigenes Kind doch nicht im Stich lassen» hält viele Eltern in einer Dauerfürsorge, die sie aufreibt.</p>
-              <p><strong>Geschwister</strong> stehen häufig in einer Sandwich-Position: Sie spüren Pflichtgefühle gegenüber dem betroffenen Bruder oder der Schwester, gleichzeitig Wut darüber, dass ihre eigenen Bedürfnisse in der Familie untergehen — manchmal seit der Kindheit.</p>
-              <p>Für beide gilt: Die Fragen aus diesem Modul — Wie viel Nähe ist tragbar? Wo endet meine Zuständigkeit? Darf ich mein eigenes Leben leben? — sind ebenso berechtigt wie für Partner. Aber die Antworten sehen oft anders aus, weil Blutsverwandtschaft gesellschaftlich schwerer «aufkündbar» erscheint als eine Partnerschaft.</p>
+              <h2>Loyalitätskonflikte in unterschiedlichen Beziehungen</h2>
+              <p>Einige Beispiele in diesem Modul beziehen sich auf Partnerschaften. Auch als Elternteil oder Geschwister können Sie Nähe, Verantwortung und eigene Bedürfnisse abwägen.</p>
+              <p><strong>Eltern</strong> denken vielleicht: «Ich kann mein eigenes Kind doch nicht im Stich lassen», auch wenn es längst erwachsen ist. Sie dürfen seine Eigenständigkeit respektieren und zugleich klären, welche Unterstützung Sie selbst anbieten möchten.</p>
+              <p><strong>Geschwister</strong> können Pflichtgefühle gegenüber dem Bruder oder der Schwester erleben und gleichzeitig wünschen, dass eigene Bedürfnisse Platz haben. Auch Sie dürfen Aufgaben und Grenzen besprechen.</p>
+              <p>Für beide gilt: Die Fragen aus diesem Modul — Wie viel Nähe ist tragbar? Wo endet meine Zuständigkeit? Was wünsche ich mir für mein eigenes Leben? — sind ebenso berechtigt wie für Partnerinnen und Partner. Die passenden Absprachen hängen von Ihrer Beziehung und Situation ab.</p>
+
+              <h3>Freundschaft ohne gemeinsamen Haushalt</h3>
+              <p><strong>Fiktives Kurzbeispiel.</strong> Zwei Freunde wohnen getrennt. Einer wünscht sich in einer belastenden Zeit häufige Telefonate. Der andere möchte den Kontakt halten und braucht zugleich ungestörte Zeit für Arbeit und Erholung. Sein nächster Schritt ist eine Absprache über die gewünschte Hilfe und seine Verfügbarkeit: «Ich kann morgen Abend eine halbe Stunde telefonieren. Während der Arbeit und nachts beantworte ich keine Nachrichten. Passt dieser Zeitpunkt für dich?» Gemeinsam können sie klären, welche weitere Unterstützung der Freund nutzen möchte; ständige Erreichbarkeit ist keine Voraussetzung für die Freundschaft.</p>
             </section>
 
             <section id="s8">
               <h2>Gehen, Bleiben, Abstand, Neuordnung</h2>
-              <p>Viele Angehörige kennen den Wunsch, einfach weg zu sein. Nicht da zu sein. Nicht mehr zuständig zu sein. In Befragungen berichten viele von Phasen, in denen sie an Trennung oder Rückzug gedacht haben. <strong>Dieser Wunsch ist ein Signal — kein Versagen.</strong> Er sagt: «Ich bin am Limit.»</p>
-              <p>Die Frage, die daraus folgt, ist eine der schwersten: Gehen oder Bleiben? Oft ist aber schon die Frage selbst zu eng. Manche brauchen zunächst Abstand, eine Neuordnung von Zuständigkeiten, eine klare Sicherheitsgrenze oder eine befristete Entlastung. Nicht die Entscheidung allein ist das Lähmende — sondern das dauerhafte Pendeln ohne Klarheit.</p>
+              <p>Vielleicht wünschen Sie sich Abstand oder fragen sich, ob Sie die Beziehung fortsetzen möchten. Sie dürfen diese Gedanken ernst nehmen und sich Zeit oder Beratung zum Sortieren nehmen. Die Seite leitet daraus keine Entscheidung ab.</p>
+              <p>Vielleicht möchten Sie zunächst Abstand, andere Zuständigkeiten oder eine befristete Entlastung besprechen. Vielleicht steht für Sie bereits eine Trennung im Raum. Sie müssen diese unterschiedlichen Fragen nicht alle gleichzeitig beantworten.</p>
 
               <aside className="callout">
                 <span className="callout-label">Zur Einordnung</span>
-                <p>Ältere Bevölkerungsstudien beschreiben bei bipolarer Störung erhöhte Trennungsraten im Vergleich zur Allgemeinbevölkerung. Solche Zahlen sagen nichts über Ihre einzelne Beziehung aus, zeigen aber, wie gross die strukturelle Belastung sein kann.</p>
+                <p>Für Ihre Entscheidung zählen Ihre konkrete Beziehung, Ihre Bedürfnisse und Ihre Möglichkeiten. Diese Seite macht keine Prognose darüber, wie sich Ihre Beziehung entwickeln wird.</p>
               </aside>
 
               <h3>Drei Bewegungen, je nach Lage</h3>
-              <p><strong>Bewusst bleiben.</strong> «Ich bleibe, aber ich brauche…»: Regelmässige Paartherapie als gemeinsame Basis, klare Absprachen über Verantwortlichkeiten, eigene Auszeiten ohne Schuldgefühle, Bereitschaft der erkrankten Person zur Mitarbeit an der Behandlung.</p>
-              <p><strong>Bewusst gehen.</strong> Wenn die eigene Gesundheit massiv leidet, ist Trennung eine legitime Entscheidung — ein Akt des Selbstschutzes. Schuldgefühle sind normal — sie beweisen nicht, dass es falsch ist. Auch danach können Sie da sein — in einem anderen Rahmen. Bei Kindern oder Finanzen: Pro Mente Sana berät kostenlos.</p>
+              <p><strong>Bewusst bleiben.</strong> «Ich bleibe, aber ich brauche…»: Wenn Sie bleiben möchten, können Sie klare Zuständigkeiten, eigene Auszeiten und Unterstützung besprechen. Ob gemeinsame Gespräche oder Paartherapie für Sie beide passen, lässt sich mit einer Fachperson klären. Schuldgefühle können dabei weiter bestehen.</p>
+              <p><strong>Bewusst gehen.</strong> Sie dürfen eine Trennung erwägen. Schuldgefühle allein entscheiden nicht, ob sie für Sie passt. Ob und in welcher Form Sie danach Kontakt wünschen, dürfen Sie ebenfalls klären. Bei Fragen zu Kindern oder Finanzen suchen Sie passende Fachberatung und erfragen deren Zuständigkeit und Kosten.</p>
               <p><strong>Bewusst Abstand.</strong> Manchmal ist nicht sofort Trennung oder vollständiges Bleiben dran, sondern eine Neuordnung: vorübergehend weniger tragen, getrennt schlafen, Hilfe von aussen aktivieren, Zuständigkeiten klären.</p>
 
               <h3>Was Abstand <em>nicht</em> ist</h3>
-              <p>Wer beginnt, Loyalität neu zu verhandeln, stösst meist sofort auf drei Sätze — eigene oder von aussen — die das ganze Vorhaben in Frage stellen. Es lohnt sich, sie sauber anzusehen.</p>
+              <p>Vielleicht begegnen Ihnen die folgenden Sätze, wenn Sie Grenzen oder Abstand erwägen. Die Alternativen bieten einen anderen Blick, schreiben aber keine Entscheidung vor.</p>
 
               <MythenBuster />
 
@@ -361,22 +364,23 @@ function Modul5Page({ onNavigate }) {
               <p>Bevor Sie weitertragen, begrenzen, Abstand nehmen oder gehen, hilft oft nicht die schnelle Antwort, sondern die erste Klärung. Diese vier Schritte ordnen, worum es gerade wirklich geht.</p>
 
               <h3>1. Das eigene Muster erkennen</h3>
-              <p>Wo stehen Sie im EE-Kreislauf? Schuld, Überengagement, Erschöpfung oder Kritik? Schon das Erkennen des Musters kann ein erster Schritt sein.</p>
+              <p>Welche der vier Erfahrungen kennen Sie gerade: Schuldgefühle, zusätzliche Verantwortung, Erschöpfung oder Kritik? Vielleicht hilft es, eine davon aufzuschreiben. Das Reflexionsmodell ist keine Einstufung und kein EE-Test.</p>
 
               <h3>2. Die eigentliche Schutzfrage benennen</h3>
               <p>Geht es gerade vor allem um Ihre Erschöpfung, um die Kinder, um emotionale Grenzverletzungen, um Geld oder um Sicherheit? Solange alles vermischt bleibt, bleibt auch die Entscheidung unscharf.</p>
 
-              <h3>3. Mindestens einer Person alles erzählen</h3>
-              <p>Nicht die halbe Wahrheit. Alles. Eine Person, die weiss, wie es wirklich ist. Isolation macht Dilemmata fast immer schlimmer.</p>
+              <h3>3. Ein Gespräch nach Ihren Bedürfnissen führen</h3>
+              <p>Sprechen Sie mit einer vertrauten Person oder Beratungsstelle über das, was Sie belastet. Sie entscheiden, was Sie teilen möchten und in welchem Tempo. Sie müssen nicht alles offenlegen; beachten Sie dabei auch die Privatsphäre der anderen Person.</p>
 
-              <h3>4. Konkrete Schritte nicht hier lösen, sondern im nächsten Modul</h3>
-              <p>Wenn Sie merken, dass die innere Klarheit noch fehlt, ist das kein Scheitern. Modul 6 geht nicht zurück ins Dilemma, sondern in Krisenplan, Kommunikation und praktische Grenzsetzung.</p>
+              <h3>4. Eine kleine Grenze für das eigene Handeln formulieren</h3>
+              <p>Wenn es zu Ihrer Situation passt, wählen Sie eine Grenze, die Sie selbst umsetzen können. Eine Bitte sagt, was Sie sich von der anderen Person wünschen; Ihre Grenze sagt, was Sie selbst tun werden. Zum Beispiel: «Ich wünsche mir, dass wir ausreden lassen. Wenn wir uns anschreien, beende ich das Gespräch und nehme eine Pause.»</p>
+              <p>Sie müssen damit keine grosse Beziehungsentscheidung treffen. Wenn Ihnen noch Klarheit fehlt, können Sie den Schritt mit einer vertrauten Person oder Beratungsstelle besprechen. Weitere Beispiele finden Sie in <a className="puk-link--inline" href={navHref('modul6', 's8')} onClick={navHandler('modul6', onNavigate, 's8')}>Modul 6: Grenzen formulieren</a>. Der allgemeine Einstieg in Modul 6 unten führt auch zu Vorbereitung und Gesprächen.</p>
 
               <h3>Wenn die Entscheidung fällt — praktische Hinweise</h3>
-              <p>Viele Angehörige bleiben länger als tragbar, weil die praktischen Fragen so überwältigend erscheinen. Ein paar Orientierungspunkte können helfen.</p>
-              <p><strong>Sorgerecht und Co-Parenting.</strong> Eine psychische Erkrankung allein ist kein Grund für alleiniges Sorgerecht. Die Gerichte fragen: Kann das Kindeswohl gewährleistet werden? In stabilen Phasen steht dem gemeinsamen Sorgerecht in der Regel nichts entgegen. Pro Mente Sana berät kostenlos zu rechtlichen Fragen rund um psychische Erkrankungen und Sorgerecht.</p>
-              <p><strong>Kindern die Trennung erklären.</strong> Kinder brauchen zwei Botschaften gleichzeitig: <em>Papa/Mama hat eine Krankheit, und wir haben uns trotzdem getrennt.</em> Die Trennung nicht mit der Erkrankung zu begründen, schützt das Kind davor, die Krankheit als «Schuld» zu erleben.</p>
-              <p><strong>Rechtliche Schritte während einer Episode.</strong> Verträge und Entscheidungen, die während einer manischen Episode getroffen werden, können juristisch anfechtbar sein. Wenn Sie sich trennen, während Ihr Partner in einer Episode ist: Schützen Sie gemeinsame Finanzen, dokumentieren Sie den Zustand und lassen Sie sich beraten, bevor Sie Fakten schaffen. Die KESB kann bei Bedarf eine Beistandschaft einrichten.</p>
+              <p>Vielleicht beschäftigen Sie praktische Fragen zusätzlich. Notieren Sie, was Sie klären möchten, und holen Sie Unterstützung für die konkrete Situation.</p>
+              <p><strong>Elterliche Sorge, Betreuung und Kontakte.</strong> Bei einer Trennung mit Kindern stellen sich unterschiedliche rechtliche und alltägliche Fragen. Lassen Sie Ihre konkrete Situation rechtlich beraten; die Diagnose oder die Bezeichnung einer Krankheitsphase beantwortet diese Fragen hier nicht. Klären Sie vorab, welche Themen eine Beratungsstelle abdeckt und welche Kosten entstehen.</p>
+              <p><strong>Mit Kindern über die Trennung sprechen.</strong> Erklären Sie die konkrete Situation verständlich und ohne Schuldzuweisung an das Kind oder die andere Person. Lassen Sie Fragen und eigene Gefühle zu. Wenn Sie unsicher sind, können Sie Unterstützung für das Gespräch suchen.</p>
+              <p><strong>Verträge und gemeinsame Finanzen.</strong> Wenn Sie sich um Verträge, gemeinsame Finanzen oder die Unterstützung der anderen Person sorgen, holen Sie Beratung zur konkreten Situation ein. Klären Sie vor Änderungen an gemeinsamen Konten, Zahlungen oder Verträgen, welche Schritte Sie selbst vornehmen dürfen. Sie können Ihre konkreten Beobachtungen und Fragen für die Beratung notieren; eine eigene medizinische oder rechtliche Beurteilung wird nicht von Ihnen verlangt.</p>
 
               <div className="next-modules">
                 <a className="next-module" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
@@ -400,9 +404,9 @@ function Modul5Page({ onNavigate }) {
               <h2>Worauf es ankommt</h2>
               <ul className="key-points">
                 <li><strong>Widersprüchliche Gefühle machen die Lage nicht falsch</strong> — Verpflichtung, Liebe, Wut und Selbstschutz können gleichzeitig berechtigt sein.</li>
-                <li><strong>Expressed Emotion ist oft Überlastung in Beziehungssprache</strong> — Schuld, Überengagement, Erschöpfung und Kritik bilden einen Kreislauf, der erkennbar und veränderbar ist.</li>
-                <li><strong>Grenzen scheitern hier selten an fehlendem Wissen</strong> — meist stehen Angst, Schuld, Gewohnheit und moralischer Druck dazwischen.</li>
-                <li><strong>Stigma macht vieles schwerer, nicht nur einsamer</strong> — Scham und Rückzug verschlechtern oft auch die Fähigkeit, klar zu prüfen und Hilfe zu holen.</li>
+                <li><strong>Vier Aspekte können beim Sortieren helfen</strong> — Schuldgefühle, zusätzliche Verantwortung, Erschöpfung und Kritik sind Beispiele im eigenen Reflexionsmodell, keine feste Folge und kein EE-Test.</li>
+                <li><strong>Grenzen dürfen Sie konkret besprechen</strong> — vielleicht beschäftigen Sie dabei Angst, Schuld, Gewohnheit oder moralischer Druck.</li>
+                <li><strong>Vorurteile dürfen Sie ansprechen</strong> — Sie entscheiden, mit wem Sie Ihre Erfahrungen teilen möchten.</li>
                 <li><strong>Klarheit ist nicht immer sofort eine Ja-Nein-Entscheidung</strong> — manchmal ist zuerst Abstand, Schutz oder Neuordnung die eigentlich stimmige nächste Bewegung.</li>
               </ul>
             </section>
@@ -410,7 +414,7 @@ function Modul5Page({ onNavigate }) {
             <footer className="module-article-footer">
               <EvidenceSources number={5} />
 
-              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
+              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Fachliche und rechtliche Quellenprüfung: offen. Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
                 <a className="puk-link--action module-nav-btn" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>

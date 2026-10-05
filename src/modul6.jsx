@@ -4,14 +4,14 @@ import { scrollToSection } from './anchor-scroll.js';
 
 import React from 'react';
 import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
-import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
+import { FINANCIAL_SAFETY } from './crisis-content.js';
 import { navHandler, navHref } from './nav-handler.js';
 
 function HandlungsfelderGrid() {
   const felder = [
     { num: 'I', titel: 'Vorbereiten', sub: 'wenn es ruhig genug ist', text: 'Krisenplan erstellen, Schweigepflicht klären, Finanzen absichern. Dinge, die später Handlungsspielraum schaffen.' },
     { num: 'II', titel: 'Deeskalieren', sub: 'wenn Kontakt noch möglich ist', text: 'Kurz kommunizieren, Reize reduzieren, Grenzen klar halten, Beobachtungen benennen und nicht in Debatten kippen.' },
-    { num: 'III', titel: 'Sofort handeln', sub: 'wenn Schutz vorgeht', text: 'Bei akuter Selbst- oder Fremdgefährdung, schwerer Psychose, Gewalt oder massiver Eskalation nicht länger diskutieren, sondern handeln.' },
+    { num: 'III', titel: 'Unterstützung vereinbaren', sub: 'damit Zuständigkeiten klar sind', text: 'Gemeinsam festhalten, wer Veränderungen fachlich einschätzt, wer erreichbar ist und wer Sie und gegebenenfalls Kinder entlasten kann.' },
   ];
   return (
     <div className="handlungsfelder">
@@ -59,89 +59,39 @@ function GespraechsSkript() {
   );
 }
 
-function Vereinbarung() {
-  return (
-    <div className="vereinbarung">
-      <div className="vereinbarung-head">
-        <span className="kicker">Werkzeug · Vorlage</span>
-        <h4>Vereinbarung in stabiler Phase</h4>
-        <p className="vereinbarung-intro">In ruhigen Wochen gemeinsam festhalten und regelmässig prüfen. Eine Unterschrift dokumentiert die Absprache, schafft aber keine allgemeine Vertretungs- oder Entscheidungsbefugnis.</p>
-      </div>
-
-      <div className="vereinbarung-blatt">
-        <div className="vereinbarung-zeile">
-          <span className="vereinbarung-num">1</span>
-          <div>
-            <h5>Was sind meine drei wichtigsten Frühwarnzeichen?</h5>
-            <div className="vereinbarung-feld">z.B. Schlafbedürfnis fällt auf weniger als 5 Std. · auffällig viele neue Pläne · Geldausgaben verändern sich</div>
-          </div>
-        </div>
-        <div className="vereinbarung-zeile">
-          <span className="vereinbarung-num">2</span>
-          <div>
-            <h5>Wenn du zwei davon bemerkst, was darfst du tun?</h5>
-            <div className="vereinbarung-feld">z.B. mich darauf hinweisen · die Ärztin anrufen, auch ohne meine Erlaubnis · einen Termin vereinbaren</div>
-          </div>
-        </div>
-        <div className="vereinbarung-zeile">
-          <span className="vereinbarung-num">3</span>
-          <div>
-            <h5>Was hilft mir in einer beginnenden Episode?</h5>
-            <div className="vereinbarung-feld">z.B. ruhige Stimme, kein Streiten · gemeinsame Mahlzeiten · feste Zeiten, früh ins Bett</div>
-          </div>
-        </div>
-        <div className="vereinbarung-zeile">
-          <span className="vereinbarung-num">4</span>
-          <div>
-            <h5>Was hilft mir <em>nicht</em>, auch wenn es gut gemeint ist?</h5>
-            <div className="vereinbarung-feld">z.B. lange Diskussionen über meine Wahrnehmung · Vorhaltungen · Schweigen</div>
-          </div>
-        </div>
-        <div className="vereinbarung-fuss">
-          <span>Datum &amp; Unterschriften</span>
-          <div className="vereinbarung-linien">
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Krisenplan() {
+function Krisenplan({ onNavigate }) {
   const felder = [
     {
       titel: 'Frühe Anzeichen',
       sub: 'das, woran wir es früh merken',
-      text: 'Drei bis fünf konkrete Verhaltensänderungen, die typischerweise vor einer Episode auftreten — wenn möglich gemeinsam mit der erkrankten Person definiert.',
-      beispiel: 'Schlaf < 5 Std. · Geldausgaben verändern sich · Reizbarkeit · Rückzug',
+      text: 'Konkrete Veränderungen, die bei dieser Person bisher vor einer Episode aufgefallen sind — wenn möglich gemeinsam mit ihr und dem Behandlungsteam besprechen.',
+      beispiel: 'Deutlich weniger Schlaf als sonst · Geldausgaben verändern sich · Reizbarkeit · Rückzug',
     },
     {
       titel: 'Erste Schritte',
-      sub: 'was wir jetzt tun, in dieser Reihenfolge',
-      text: 'Eine geordnete Liste — kein Chaos, kein «mal schauen». Damit Sie in der Krise nicht improvisieren müssen.',
-      beispiel: '1. Behandelnde Stelle heute kontaktieren · 2. Dringlichkeit fachlich klären · 3. Bei Nichterreichbarkeit Notfalldienst; bei unmittelbarer Gefahr 144 / 117',
+      sub: 'was wir im Voraus vereinbaren',
+      text: 'Mit der betroffenen Person und dem Behandlungsteam besprechen, welche Schritte bei Veränderungen passen und wer welche Aufgabe übernehmen kann.',
+      beispiel: 'Behandelnde Stelle und erreichbaren Ausweichkontakt festhalten · fachliche Einschätzung vereinbaren · Unterstützung für Kinder und Angehörige klären',
     },
     {
       titel: 'Wer wird informiert',
       sub: 'mit Namen und Nummern',
-      text: 'Im Voraus festgehalten: zwei bis drei Vertrauenspersonen, eine Fachperson, eine Krisendienst-Nummer. Nicht erst suchen müssen.',
-      beispiel: 'Schwester · Hausärztin · Krisentelefon 143 · Notfall PUK',
+      text: 'Persönliche Vertrauenspersonen, eine behandelnde Fachperson und einen erreichbaren Ausweichkontakt festhalten. Klären, wer welche Aufgabe übernehmen kann.',
+      beispiel: 'Schwester · Hausärztin · mit dem Behandlungsteam vereinbarter Ausweichkontakt',
     },
     {
       titel: 'Was nicht hilft',
       sub: 'damit Gut-Gemeintes nicht schadet',
       text: 'Was in vergangenen Episoden eskalierend gewirkt hat — als Erinnerung an alle Beteiligten, einschliesslich an Sie selbst im Stress.',
-      beispiel: 'Diskussionen · «vernünftig sein» einfordern · unklare Zuständigkeiten; bei akuter Bedrohung Polizei unabhängig von Vorabsprachen',
+      beispiel: 'Diskussionen über Wahrnehmungen · «vernünftig sein» einfordern · unklare Zuständigkeiten',
     },
   ];
   return (
     <div className="krisenplan">
       <div className="krisenplan-head">
-        <span className="kicker">Werkzeug · Strukturvorlage</span>
-        <h4>Der Krisenplan in vier Feldern</h4>
-        <p className="krisenplan-intro">Eine Karte für den Ernstfall — entworfen in stabiler Phase, ausgedruckt am Kühlschrank. Ergänzen Sie einen Ausweichkontakt, die Betreuung von Kindern, Ihre eigenen Grenzen und das Datum der nächsten Überprüfung. Der Plan erleichtert Entscheidungen. Wenn die Lage davon abweicht oder Sie unsicher sind, holen Sie fachliche Einschätzung.</p>
+        <span className="kicker">Kurzüberblick · Planvorbereitung</span>
+        <h4>Vier Fragen für den gemeinsamen Krisenplan</h4>
+        <p className="krisenplan-intro">Dieser Kurzüberblick erklärt die Grundfragen. Zum gemeinsamen Ausfüllen nutzen Sie die vollständige Vorlage; sie enthält auch hilfreiche Unterstützung, einen Ausweichkontakt, Betreuung und eigene Entlastung sowie einen Überprüfungstermin. Sie brauchen keine zweite Vereinbarung mit denselben Absprachen.</p>
       </div>
       <div className="krisenplan-grid">
         {felder.map((f, i) => (
@@ -154,6 +104,11 @@ function Krisenplan() {
           </div>
         ))}
       </div>
+      <p>
+        <a href={navHref('werkzeuge', 'krisenplan')} onClick={navHandler('werkzeuge', onNavigate, 'krisenplan')}>
+          Vollständigen Krisenplan öffnen
+        </a>
+      </p>
     </div>
   );
 }
@@ -163,17 +118,17 @@ function AntiPatterns() {
     {
       titel: 'Überzeugen wollen',
       kurz: '«Du wirst doch sehen, dass…»',
-      warum: 'In Episoden ist die Wahrnehmung verändert. Argumente bringen die Wahrnehmung nicht zurück — sie verschärfen das Gefühl, missverstanden zu werden. Beziehungsarbeit ja, Überzeugungsarbeit nein.',
+      warum: 'Bei veränderter Wahrnehmung kann eine Debatte wenig weiterhelfen. Benennen Sie Ihre Beobachtung und Ihre Grenze, ohne Zustimmung erzwingen zu wollen.',
     },
     {
       titel: 'Mit Konsequenzen drohen',
       kurz: '«Wenn du jetzt nicht…, dann…»',
-      warum: 'Drohungen, die Sie nicht halten, kosten Vertrauen. Drohungen, die Sie halten müssten, kosten die Beziehung. Beides hilft selten dem akuten Problem.',
+      warum: 'Drohungen können ein Gespräch belasten. Eine klare Grenze benennt, was Sie zum eigenen Schutz tun. Sie dürfen Abstand nehmen und müssen eine spätere Fortsetzung nicht versprechen.',
     },
     {
       titel: 'Schweigen, um nicht zu eskalieren',
       kurz: '«Ich sage besser gar nichts.»',
-      warum: 'Kurzfristig ruhiger, langfristig giftig. Was nicht angesprochen wird, sammelt sich an und kommt später entweder als Explosion oder als innere Distanz wieder hervor.',
+      warum: 'Eine Gesprächspause kann sinnvoll sein. Wenn Sie etwas später besprechen möchten, können Sie einen passenden Zeitpunkt wählen oder Unterstützung dafür suchen. Sie müssen weder alles sofort ansprechen noch eine Fortsetzung versprechen.',
     },
   ];
   return (
@@ -211,7 +166,7 @@ function Modul6Page({ onNavigate }) {
     { id: 's2', label: 'Vorbereitung & Absprachen' },
     { id: 's3', label: 'Spezialfall: Substanzkonsum' },
     { id: 's4', label: 'Gespräche in stabiler Phase' },
-    { id: 's5', label: 'Akut kommunizieren' },
+    { id: 's5', label: 'Kontakt in belastenden Phasen' },
     { id: 's8', label: 'Grenzen setzen' },
     { id: 's6', label: 'Wenn Gespräch nicht mehr reicht' },
     { id: 's7', label: 'Wenn Medikamente abgesetzt werden' },
@@ -240,7 +195,7 @@ function Modul6Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ Kerntext 12 Min · mit Vertiefungen 22 Min</span>
             </div>
             <h1>Was Sie <em>konkret</em> tun können</h1>
-            <p className="lede">Zuerst klären: Geht es um Vorbereitung, Deeskalation oder akuten Schutz? Einen Krisenplan in ruhiger Phase erstellen. Kommunikation in Manie und Depression braucht verschiedene Strategien. Bei akuter Gefahr nicht diskutieren, sondern handeln.</p>
+            <p className="lede">Hier geht es um Vorbereitung in ruhigen Phasen: Absprachen, Gespräche, eigene Grenzen und einen persönlichen Krisenplan. Beobachtungen und passende Unterstützung können Sie mit dem Behandlungsteam klären. Sie müssen diese Aufgaben nicht allein übernehmen.</p>
           </div>
         </header>
 
@@ -273,29 +228,35 @@ function Modul6Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Was in belastenden Situationen zuerst hilft</h2>
-              <p className="dropcap">Dieses Modul ordnet, statt Druck zu erzeugen. Je nach Lage braucht es Vorbereitung, Deeskalation oder sofortiges Handeln — nicht alles auf einmal. <strong>Wenn Sie nur eines klären:</strong> Geht es gerade noch um Gespräch oder schon um Schutz? Für akute Gefährdung gilt immer: <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a> öffnen.</p>
+              <p className="dropcap">Dieses Modul hilft, Gespräche, eigene Grenzen und Unterstützung vorzubereiten. <strong>Wenn Sie nur eines klären:</strong> Welche Aufgabe möchten und können Sie übernehmen — und welche Unterstützung brauchen Sie dafür?</p>
 
               <HandlungsfelderGrid />
 
-              <p>Die Leiter ist kein starres Schema. Sie hilft nur, schneller zu sortieren, ob es im Moment noch um Vorbereitung und Gespräch geht oder ob Schutz und Notfallhandeln Vorrang bekommen. Der Rest dieses Moduls folgt derselben Logik: zuerst vorbereiten, dann Gespräch und Grenzen, dann die Lagen, in denen Behandlungsteam, Klinik oder Notfallpfad wichtiger werden als das bessere Argument.</p>
+              <p>Die Übersicht ist kein Diagnose- oder Entscheidungsschema. Sie hilft, Vorbereitungsaufgaben zu sortieren und eigene Zuständigkeiten von den Aufgaben des Behandlungsteams zu unterscheiden.</p>
             </section>
 
             <section id="s2">
               <h2>Vorbereiten, bevor es kippt</h2>
-              <p>Vorbereitung ist kein Misstrauen. Sie ist der Versuch, in vorhersehbar schwierigen Situationen nicht jedes Mal bei null beginnen zu müssen. Gerade Angehörige tragen in Krisen oft zu viel Entscheidungslast. Alles, was vorher geklärt ist, entlastet später.</p>
+              <p>Vorbereitung ist kein Misstrauen. Sie kann helfen, in schwierigen Situationen auf gemeinsam besprochene Absprachen zurückzugreifen. Dabei zählen auch Ihre eigenen Grenzen und die Frage, wer Sie entlasten kann.</p>
 
               <h3>Der Krisenplan</h3>
-              <p>Ein Krisenplan ist ein schriftliches Dokument, das in einer stabilen Phase gemeinsam erstellt wird. Er legt fest, was bei einer Verschlechterung zu tun ist. Das entlastet Sie in der Krise, weil Sie nicht mehr alles neu entscheiden müssen.</p>
+              <p>Ein Krisenplan ist ein schriftliches Dokument, das in einer stabilen Phase gemeinsam erstellt wird. Er hält vereinbarte nächste Schritte und Kontakte bei einer Verschlechterung fest. Er kann Orientierung geben, ersetzt aber keine fachliche Einschätzung.</p>
 
-              <Krisenplan />
+              <Krisenplan onNavigate={onNavigate} />
 
-              <h3>Vereinbarung in stabiler Phase</h3>
-              <Vereinbarung />
+              <h3>Von den Fragen zur gemeinsamen Absprache</h3>
+              <ol>
+                <li><strong>Verstehen:</strong> Besprechen Sie, welche Veränderungen bisher aufgefallen sind und was der betroffenen Person hilft oder nicht hilft.</li>
+                <li><strong>Gemeinsam ausfüllen:</strong> Halten Sie diese Absprachen in der vollständigen Krisenplan-Vorlage fest, wenn die betroffene Person mitwirken möchte; beziehen Sie bei Bedarf das Behandlungsteam ein.</li>
+                <li><strong>Aufgaben und Zuständigkeiten klären:</strong> Wer übernimmt welche vereinbarte Aufgabe? Wer beurteilt Veränderungen fachlich? Wer kann Sie und gegebenenfalls Kinder entlasten? Ihre eigenen Grenzen gehören dazu.</li>
+                <li><strong>Überprüfung vereinbaren:</strong> Notieren Sie, wann Sie den Plan gemeinsam wieder anschauen möchten und welche Kontakte oder Absprachen inzwischen angepasst werden müssen.</li>
+              </ol>
+              <p>Eine Unterschrift kann eine private Absprache dokumentieren, schafft aber keine allgemeine Vertretungs- oder Entscheidungsbefugnis.</p>
 
               <h3>Schweigepflichtentbindung</h3>
               <p>Ohne Einwilligung darf das Behandlungsteam Angehörigen grundsätzlich keine patientenbezogenen Informationen weitergeben — auch nicht dann, wenn Sie die Situation zu Hause wesentlich mittragen. Eine Schweigepflichtentbindung ist deshalb kein Nebenthema, sondern ein praktisches Schutzinstrument.</p>
               <ol>
-                <li><strong>In stabilen Phasen besprechen:</strong> Erklären Sie, dass die Entbindung Ihnen Sicherheit gibt und Sie im Notfall besser unterstützen können.</li>
+                <li><strong>In stabilen Phasen besprechen:</strong> Klären Sie gemeinsam, welche Informationen für die Zusammenarbeit hilfreich sind und was die betroffene Person weitergeben lassen möchte.</li>
                 <li><strong>Spezifisch entbinden:</strong> Die Entbindung kann auf bestimmte Personen und Informationen begrenzt werden.</li>
                 <li><strong>Vorsorgeauftrag und Patientenverfügung:</strong> Gleichzeitig besprechen — damit bei schweren Episoden klare Regelungen bestehen.</li>
                 <li><strong>Auch ohne Entbindung:</strong> Sie können dem Behandlungsteam Beobachtungen und Sorgen mitteilen und um allgemeine Orientierung bitten. Ohne rechtliche Grundlage darf das Team dabei keine geschützten patientenbezogenen Informationen offenlegen.</li>
@@ -321,38 +282,38 @@ function Modul6Page({ onNavigate }) {
                 <p>{FINANCIAL_SAFETY}</p>
               <p>Eine Patientenverfügung betrifft medizinische Behandlungswünsche; eine Schweigepflichtentbindung regelt Informationsweitergabe. Beide sind vom Vorsorgeauftrag und von einer Bankvollmacht zu unterscheiden.</p>
 
-              <p>Pro Mente Sana (<strong>0848 800 858</strong> · promentesana.ch) ist hier eine gute erste Anlaufstelle für Vorsorgeauftrag, Vollmachten und Patientenverfügung. Diese Fragen lassen sich fast immer besser in ruhigen Phasen klären als mitten in einer Eskalation.</p>
+              <p>Pro Mente Sana (promentesana.ch) bietet Beratung an. Klären Sie vorab, ob Ihre Fragen zu Vorsorgeauftrag, Vollmachten oder Patientenverfügung dort abgedeckt werden und welche Kosten entstehen.</p>
               </aside>
             </section>
 
             <section id="s3">
-              <h2>Wenn Substanzkonsum mitläuft — und warum das so häufig ist</h2>
-              <p>Substanzkonsum ist bei bipolarer Störung keine Ausnahme, sondern eine der häufigsten Begleiterscheinungen. Studien beschreiben deutlich höhere Raten von Substanzgebrauchsstörungen als in der Allgemeinbevölkerung. Für Angehörige wichtiger als eine exakte Zahl ist die Einordnung: Diese Kombination ist häufig, klinisch relevant und erhöht das Krisenrisiko.</p>
+              <h2>Wenn Substanzkonsum eine Rolle spielt</h2>
+              <p>Substanzkonsum bezeichnet den Gebrauch etwa von Alkohol oder anderen Drogen. Er ist nicht gleichbedeutend mit einer Substanzgebrauchsstörung: Ob eine behandlungsbedürftige Störung vorliegt, wird fachlich beurteilt. Wenn Sie Veränderungen oder Belastungen beobachten, können Sie diese beim Behandlungsteam ansprechen, ohne selbst eine Diagnose stellen zu müssen.</p>
 
               <aside className="callout">
-                <span className="callout-label">Faustregel</span>
-                <p>Wenn Substanzkonsum, massive Schlaflosigkeit, Psychose, Suizidalität oder Gewalt zusammen auftreten, behandeln Sie die Situation nicht mehr als Kommunikationsproblem. Dann sind Notfalllogik und professionelle Einschätzung wichtiger als die perfekte Einordnung.</p>
+                <span className="callout-label">Gemeinsam vorausplanen</span>
+                <p>Besprechen Sie mit dem Behandlungsteam, welche Veränderungen fachlich abgeklärt werden sollen und wie die Zusammenarbeit bei einem zusätzlichen Substanzproblem aussehen kann. Angehörige stellen weder die Diagnose noch einen eigenen Behandlungsplan auf.</p>
               </aside>
 
-              <h3>Warum das so oft zusammenfällt</h3>
+              <h3>Mögliche Gründe verstehen</h3>
+              <p>Die folgenden Beispiele sind keine abschliessende Erklärung für den Konsum einer einzelnen Person. Fragen Sie nach ihrer Sicht und lassen Sie mögliche Zusammenhänge fachlich klären.</p>
               <ul>
                 <li><strong>Selbstmedikation:</strong> Manche Menschen versuchen, Unruhe, Schlafprobleme oder belastende Gefühle mit Substanzen zu lindern. Das kann zusätzliche Risiken schaffen und eine gezielte Abklärung erfordern.</li>
-                <li><strong>Impulsivität in der Manie:</strong> Enthemmung und Risikobereitschaft gehören zum Krankheitsbild. Eine Episode kann Entscheidungen beeinflussen. Nicht jeder Konsum ist ein Symptom; auch eine eigenständige Abhängigkeit oder andere Gründe können vorliegen.</li>
-                <li><strong>Nebenwirkungs-Flucht:</strong> Manche Betroffene ersetzen die als belastend empfundenen Medikamente durch Substanzen, die schneller wirken — ein gefährlicher Tausch.</li>
-                <li><strong>Gemeinsame Neurobiologie:</strong> Bipolare Störung und Sucht teilen Störungen im Dopamin- und Belohnungssystem.</li>
+                <li><strong>Veränderte Entscheidungen:</strong> Eine Episode kann Entscheidungen beeinflussen. Nicht jeder Konsum ist ein Symptom; auch eine eigenständige Substanzgebrauchsstörung oder andere Gründe können vorliegen.</li>
+                <li><strong>Belastende Behandlungserfahrungen:</strong> Vielleicht nennt die Person Nebenwirkungen oder andere Bedenken als Grund für den Konsum. Diese Fragen gehören ins Gespräch mit dem Behandlungsteam; Substanzen ersetzen keine abgestimmte Behandlung.</li>
               </ul>
 
               <h3>Konkrete Leitplanken</h3>
               <p><strong>1. Benennen, was Sie sehen — nicht deuten.</strong> «Ich sehe, dass du seit drei Tagen jeden Abend trinkst» ist hilfreicher als «Du bist wieder süchtig». Beobachtungen lassen sich schwerer abstreiten als Bewertungen.</p>
-              <p><strong>2. Dualdiagnose-Behandlung einfordern.</strong> Bipolare Störung und Substanzkonsum müssen gleichzeitig behandelt werden — nicht nacheinander. Anlaufstellen: die Suchtfachstellen der Kantone und die integrierten Psychiatrie-Angebote der PUK.</p>
+              <p><strong>2. Nach einem abgestimmten Vorgehen fragen.</strong> Sprechen Sie bipolare Symptome und Substanzprobleme beim Behandlungsteam an. Welche Schritte wann nötig sind, wird fachlich und gemeinsam mit der betroffenen Person geklärt. Fragen Sie bei Bedarf nach einer passenden Suchtfachstelle oder einem Angebot, das beide Themen berücksichtigt.</p>
               <p><strong>3. Aufgaben und Grenzen klären.</strong> Sie dürfen Hilfe anbieten, ohne Ausreden liefern oder Schulden übernehmen zu müssen. Nicht jede Unterstützung erhält den Konsum aufrecht. Besprechen Sie mit einer Beratungsstelle, was in Ihrer Situation sinnvoll und für Sie tragbar ist.</p>
-              <p><strong>4. Das Behandlungsteam informieren — auch über den Konsum.</strong> Viele Angehörige verschweigen den Substanzkonsum aus Scham oder Loyalität. Aber ohne diese Information kann die Behandlung nicht richtig eingestellt werden. Sie dürfen Informationen geben, auch ohne Einwilligung.</p>
+              <p><strong>4. Beobachtungen zum Konsum mitteilen.</strong> Sie können konkrete Beobachtungen und Sorgen beim Behandlungsteam ansprechen. Informationen mitzuteilen ist von einem Anspruch auf Auskunft über die Behandlung zu unterscheiden. Klären Sie, wie Ihre Angaben dokumentiert werden und welche Grenzen der Vertraulichkeit gelten.</p>
               <p><strong>5. Ihre Grenzen klar halten.</strong> «Wenn du getrunken hast, schlafe ich im anderen Zimmer» ist keine Bestrafung, sondern Schutz.</p>
               <p><strong>6. Sich selbst Hilfe holen.</strong> Selbsthilfegruppen für Angehörige von Suchtkranken (z. B. Al-Anon) und Angehörigenberatung können parallel zur bipolaren Psychoedukation entlasten.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Zur Einordnung</span>
-                <p>Bipolare Symptome und Substanzprobleme sollten gemeinsam berücksichtigt und die Behandlungen abgestimmt werden. Studien zu integrierten Angeboten zeigen unter anderem Verbesserungen des Konsums; ein gleichzeitiger Nutzen für alle Stimmungs- und Konsumendpunkte ist nicht durchgehend belegt. Behandlung bleibt sinnvoll und wird individuell geplant.</p>
+                <p>Sie müssen die Behandlung nicht selbst koordinieren. Fragen Sie, wer für welches Thema zuständig ist und wie die beteiligten Fachpersonen zusammenarbeiten können. Ihre eigenen Unterstützungsbedürfnisse dürfen ebenfalls Teil dieses Gesprächs sein.</p>
               </aside>
             </section>
 
@@ -392,7 +353,7 @@ function Modul6Page({ onNavigate }) {
             </section>
 
             <section id="s5">
-              <h2>Wenn Kommunikation akut schwierig wird</h2>
+              <h2>Kontakt in belastenden Phasen</h2>
               <p>Kommunikation hilft nur, solange noch genug Kontakt möglich ist. In Manie, schwerer Gereiztheit oder Depression greifen viele gewohnte Gesprächsmuster nicht mehr. Entscheidend ist dann weniger das perfekte Argument als die passende Kommunikationsform für die jeweilige Lage.</p>
 
               <h3>Kommunikation in der Manie</h3>
@@ -403,8 +364,8 @@ function Modul6Page({ onNavigate }) {
               <h3>Kommunikation in der Depression</h3>
               <p>Depression ist nicht bloss Traurigkeit. Es ist oft Leere, Schwere und ein tatsächliches Nicht-Können. Deshalb helfen hier andere Formen von Kontakt als in der Manie: weniger Druck, weniger Lösungen, mehr tragfähige Präsenz.</p>
 
-              <p><strong>«Er liegt den ganzen Tag im Bett und reagiert nicht.»</strong><br/>
-              Wenn die Person nicht reagiert oder kaum trinkt: dringend medizinische Einschätzung holen, bei unmittelbarer Gefahr 144. Wenn sie ansprechbar ist, kann kurze, ruhige Anwesenheit helfen: «Ich kann eine Weile bei dir sein. Du musst nichts sagen.» <em>Vermeiden:</em> «Komm, steh auf», «Du musst doch mal raus».</p>
+              <p><strong>«Er ist ansprechbar, möchte aber gerade nicht sprechen.»</strong><br/>
+              Sie können kurze, ruhige Anwesenheit anbieten: «Ich kann eine Weile bei dir sein. Du musst nichts sagen.» Fragen Sie, ob das willkommen ist. <em>Vermeiden:</em> «Komm, steh auf», «Du musst doch mal raus».</p>
 
               <p><strong>«Ich habe schon alles versucht — nichts hilft.»</strong><br/>
               «Ich kann das nicht lösen, aber ich bin hier.» Dieser Satz entlastet Sie beide. <em>Vermeiden:</em> Immer neue Lösungsvorschläge, ständig fragen «Geht es dir besser?»</p>
@@ -413,11 +374,11 @@ function Modul6Page({ onNavigate }) {
               «Ich verstehe, dass es sich so anfühlt. Du bist mir wichtig.» Sie müssen das Gefühl nicht korrigieren — Sie dürfen es stehen lassen. <em>Vermeiden:</em> «Quatsch, du bist doch keine Last».</p>
 
               <p><strong>«Sagst du mir ehrlich, dass ich besser werde?» — immer wieder.</strong><br/>
-              Nicht mehr Bestätigung, sondern Umlenken: «Ich glaube an die Behandlung. Was würde dich gerade konkret beruhigen?» Oder einfach: «Du bist mir wichtig. Ich kann jetzt zehn Minuten bei dir sein. Danach brauche ich eine Pause.» <em>Vermeiden:</em> Mehr versprechen, als Sie wissen oder leisten können. Nicht jede Bitte um Bestätigung ist ein problematisches Muster.</p>
+              Sie dürfen ehrlich Zuwendung bestätigen, ohne eine Genesung zu garantieren: «Ich weiss nicht, wie es weitergeht. Du bist mir wichtig.» Wenn Sie möchten, fragen Sie: «Was würde dir gerade guttun?» Auch Ihre Grenze darf Platz haben: «Ich kann jetzt zehn Minuten bei dir sein. Danach brauche ich eine Pause.» <em>Vermeiden:</em> Mehr versprechen, als Sie wissen oder leisten können. Eine Bitte um Zuwendung ist etwas anderes als die Frage nach einer sicheren Prognose.</p>
 
               <aside className="callout">
-                <span className="callout-label">Bei Suizidgedanken</span>
-                <p>Fragen Sie direkt: «Denkst du daran, dir etwas anzutun?» Diese Frage löst Suizidgedanken nicht aus. {SUICIDE_SAFETY} Für dringende medizinische Einschätzung ohne unmittelbare Lebensgefahr: <strong>0800 33 66 55</strong>. Vollständiger Ablauf auf der <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
+                <span className="callout-label">Sorgen im Voraus besprechen</span>
+                <p>Sorgen um suizidbezogene Äusserungen dürfen Sie mit dem Behandlungsteam besprechen. Vereinbaren Sie in einer ruhigen Phase, wie Sie solche Sorgen ansprechen können und wer die fachliche Einschätzung übernimmt. Sie müssen diese Verantwortung nicht allein tragen.</p>
               </aside>
 
               <blockquote className="module-quote" id="quote-m6-02">
@@ -440,7 +401,7 @@ function Modul6Page({ onNavigate }) {
               ✓ <strong>«Ich lasse mich nicht anschreien. Ich gehe ins Nebenzimmer — wenn wir ruhig reden können, komme ich zurück.»</strong></p>
 
               <p>✗ «Wenn du so weitermachst, gehe ich!»<br/>
-              ✓ <strong>«Wenn du die Medikamente absetzt, kann ich die Verantwortung zu Hause nicht mehr tragen. Dann müssen wir über die Klinik reden.»</strong></p>
+              ✓ <strong>«Ich mache mir Sorgen und kann die Verantwortung zu Hause nicht allein tragen. Lass uns mit dem Behandlungsteam klären, welche Unterstützung und Absprachen jetzt passen.»</strong></p>
 
               <p>✗ «Hast du deine Medikamente genommen? Schon wieder vergessen?»<br/>
               ✓ <strong>«Ich mache mir Sorgen, wenn ich sehe, dass die Packung noch voll ist. Was brauchst du, um dran zu bleiben?»</strong></p>
@@ -458,7 +419,7 @@ function Modul6Page({ onNavigate }) {
                   <h3>Was hilft, wenn Einsicht fehlt</h3>
                   <ul>
                     <li>Sachlich dokumentieren, was Sie beobachten</li>
-                    <li>Behandlungsteam informieren (auch ohne Zustimmung)</li>
+                    <li>Ein bestehendes Behandlungsteam über Beobachtungen informieren; bei fehlender Behandlung eigene Beratung nutzen</li>
                     <li>Vereinbarungen in stabilen Phasen schriftlich treffen</li>
                     <li>Eigene Schutzgrenze halten</li>
                   </ul>
@@ -473,50 +434,54 @@ function Modul6Page({ onNavigate }) {
                 </div>
               </div>
 
-              <p>Daneben gibt es weniger akute Situationen, in denen Behandlung ambivalent, brüchig oder konflikthaft wird. Nebenwirkungen, Scham, Müdigkeit oder das Erleben, dass Hypomanie sich subjektiv nach Kraft anfühlt — all das macht Behandlungstreue zu einem schwierigen Thema. In stabileren Phasen ruhig sprechen, Sorgen als Ich-Botschaft formulieren, Beobachtungen benennen — und das Behandlungsteam informieren, auch ohne Rückmeldung.</p>
+              <p>Daneben gibt es weniger akute Situationen, in denen Behandlung ambivalent, brüchig oder konflikthaft wird. Nebenwirkungen, Scham, Müdigkeit oder das Erleben, dass Hypomanie sich subjektiv nach Kraft anfühlt — all das macht Behandlungstreue zu einem schwierigen Thema. In stabileren Phasen können Sie ruhig sprechen, Sorgen als Ich-Botschaft formulieren und Beobachtungen benennen.</p>
 
-              <p>Wenn Ablehnung mit akuter Gefährdung zusammenfällt, endet der Gesprächsrahmen. Dann zählt Schutz: <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfallseite</a>.</p>
+              <h3>Zwei Wege für die eigene Orientierung</h3>
+              <p><strong>Es gibt ein Behandlungsteam.</strong> Sie können ihm Beobachtungen und Sorgen mitteilen, auch wenn die betroffene Person eine gemeinsame Besprechung ablehnt. Informationen mitzuteilen ist von einem Anspruch auf patientenbezogene Auskunft zu unterscheiden. Klären Sie, wer für fachliche Fragen zuständig ist und welche Aufgaben Sie vereinbart haben.</p>
+              <p><strong>Es gibt kein Behandlungsteam oder die Person möchte nicht mitwirken.</strong> Sie können für sich selbst <a href={navHref('unterstuetzung', 'kontakt')} onClick={navHandler('unterstuetzung', onNavigate, 'kontakt')}>Angehörigenberatung nutzen</a>. Dafür müssen Sie die andere Person nicht zuerst von einer Behandlung überzeugen. Besprechen Sie dort Ihre Beobachtungen, eigene Grenzen und erreichbare Entlastung. Daraus entsteht keine Befugnis, die Behandlung der anderen Person festzulegen.</p>
+
+              <p>Besprechen Sie möglichst in einer ruhigen Phase, welche Aufgaben Sie übernehmen möchten und wann fachliche Unterstützung nötig ist. Eine private Absprache gibt Ihnen keine allgemeine Behandlungs- oder Entscheidungsbefugnis.</p>
             </section>
 
             <section id="s7">
               <h2>«Sie hat die Medikamente abgesetzt» — was Sie tun können</h2>
-              <p>Kaum eine Situation löst bei Angehörigen so viel Angst aus wie das Absetzen der Medikamente. Die Sorge ist berechtigt: Ohne Stimmungsstabilisierung steigt das Rückfallrisiko deutlich. Gleichzeitig ist Medikamenten-Adhärenz bei bipolarer Störung eine der grössten Herausforderungen — viele Betroffene setzen die Medikation im Verlauf mindestens einmal eigenmächtig ab.</p>
+              <p>Eine Änderung oder das Absetzen von Medikamenten kann bei Angehörigen Sorgen auslösen. Ob eine Änderung abgesprochen ist und welche Folgen oder Alternativen zu berücksichtigen sind, gehört in die fachliche Beurteilung. Sie müssen die Behandlung weder selbst festlegen noch ihre Einhaltung kontrollieren.</p>
 
-              <h3>Warum Menschen absetzen — verstehen, nicht billigen</h3>
-              <p>Die Gründe sind oft nachvollziehbar: Nebenwirkungen wie Gewichtszunahme, Tremor oder sexuelle Funktionsstörungen belasten den Alltag. In stabilen Phasen fühlen sich viele «gesund» und sehen keinen Grund mehr für Medikamente. In hypomanen Phasen fühlt sich die Erkrankung nach Kraft an, nicht nach Krankheit. Manchmal spielen auch Scham, Autonomiebedürfnis oder schlechte Erfahrungen eine Rolle.</p>
+              <h3>Nach Gründen und Absprachen fragen</h3>
+              <p>Vielleicht beschäftigen die Person Nebenwirkungen, schlechte Erfahrungen oder Fragen zu Nutzen und Dauer der Behandlung. Fragen Sie nach ihrer Sicht, ohne einen Grund vorauszusetzen. Bedenken und mögliche Änderungen können mit der behandelnden Fachperson besprochen werden.</p>
 
               <h3>Was Sie konkret tun können</h3>
-              <p><strong>1. Nicht sofort konfrontieren.</strong> Die erste Reaktion ist oft Panik oder Wut. Beides ist verständlich, aber ein Streitgespräch über Medikamente führt fast nie dazu, dass die Person sie wieder nimmt. Atmen Sie durch.</p>
+              <p><strong>1. Einen ruhigen Moment wählen.</strong> Sorgen oder Wut können verständlich sein. Sie dürfen eine Pause machen, bevor Sie Ihre Beobachtungen und Fragen ansprechen.</p>
               <p><strong>2. Beobachten und dokumentieren.</strong> Notieren Sie, was Sie sehen: Schlafveränderungen, Reizbarkeit, Energieschübe, Rückzug. Diese Beobachtungen sind später wichtig.</p>
-              <p><strong>3. Das Behandlungsteam informieren.</strong> Rufen Sie die Psychiaterin oder den Hausarzt an — auch wenn die erkrankte Person das nicht möchte. Sie brechen keine Schweigepflicht, wenn Sie <em>Informationen geben</em>.</p>
+              <p><strong>3. Passende Unterstützung ansprechen.</strong> Wenn es eine behandelnde Fachperson gibt, können Sie ihr Beobachtungen mitteilen, auch wenn die erkrankte Person das nicht möchte. Informationen zu geben ist von einem Anspruch auf Auskunft zu unterscheiden. Gibt es keine bestehende Behandlung oder keine gemeinsame Besprechung, können Sie Ihre eigenen Fragen in der <a href={navHref('unterstuetzung', 'kontakt')} onClick={navHandler('unterstuetzung', onNavigate, 'kontakt')}>Angehörigenberatung</a> klären.</p>
               <p><strong>4. In einem ruhigen Moment das Gespräch suchen.</strong> Nicht im Streit. Ich-Botschaften: «Ich mache mir Sorgen, weil ich Veränderungen sehe, seit du die Medikamente nicht mehr nimmst.» Vielleicht lassen sich Nebenwirkungen mit der Ärztin besprechen, statt das Medikament ganz abzusetzen.</p>
               <p><strong>5. Ihre Grenze benennen — klar, nicht drohend.</strong> «Wenn du ohne Medikamente lebst und eine Episode kommt, kann ich die Verantwortung zu Hause nicht allein tragen. Dann brauchen wir einen Plan B.»</p>
               <p><strong>6. Den Krisenplan aktualisieren.</strong> Wenn ein Krisenplan existiert, prüfen Sie: Gelten die Absprachen noch?</p>
 
               <aside className="callout">
                 <span className="callout-label">Was Sie vermeiden sollten</span>
-                <p>✗ Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · ✗ Tägliche Kontrollfragen («Hast du deine Tabletten genommen?») — sie erzeugen Scham und Widerstand · ✗ Ultimaten stellen, die Sie nicht einhalten können · ✗ Allein die Verantwortung tragen — holen Sie das Behandlungsteam dazu.</p>
+                <p>✗ Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · ✗ Tägliche Kontrollfragen («Hast du deine Tabletten genommen?») — sie erzeugen Scham und Widerstand · ✗ Ultimaten stellen, die Sie nicht einhalten können · ✗ Behandlung und Unterstützung allein koordinieren wollen — nutzen Sie ein bestehendes Behandlungsteam oder eigene Angehörigenberatung.</p>
               </aside>
             </section>
 
             <section id="s9">
               <h2>Wenn es zur Klinikeinweisung kommt</h2>
-              <p>Für viele Angehörige ist der Klinikaufenthalt ein Einschnitt, der mit Erleichterung, Schuldgefühlen und Unsicherheit gleichzeitig einhergeht. Gleichzeitig ist stationäre Behandlung bei bipolarer Störung keine Seltenheit — viele Betroffene erleben im Lauf der Erkrankung mindestens eine Hospitalisation.</p>
+              <p>Ein Klinikaufenthalt kann Erleichterung, Schuldgefühle oder Unsicherheit auslösen. Ihre Reaktion muss keinem bestimmten Muster entsprechen. Die folgenden Fragen helfen, Ihre Rolle und die Zusammenarbeit während eines Aufenthalts zu klären.</p>
 
               <h3>Aufnahme — die ersten Stunden</h3>
-              <p>Die Aufnahme erfolgt entweder freiwillig, über den psychiatrischen Notfalldienst oder als Fürsorgerische Unterbringung (FU). In allen Fällen gibt es ein ärztliches Aufnahmegespräch, eine erste Einschätzung und eine Zuweisung auf eine Station. <strong>Bringen Sie mit, was Sie haben:</strong> Medikamentenliste, Krisenplan, Kontaktdaten der ambulanten Psychiaterin, Versichertenkarte.</p>
-              <p>Verwandtschaft allein begründet bei einer fürsorgerischen Unterbringung (FU) kein allgemeines Entscheidungsrecht. Die betroffene Person kann eine Vertrauensperson beiziehen; diese kann auf Wunsch an der Behandlungsplanung beteiligt werden. Anhörung und Beteiligung sind von stellvertretender Entscheidung zu unterscheiden. Beobachtungen dürfen Sie mitteilen. Auskunft und konkrete Vertretungsrechte hängen von Einwilligung und rechtlicher Rolle ab. Mehr auf der <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflichtseite</a>.</p>
+              <p>Fragen Sie die Klinik, welche Angaben und Unterlagen hilfreich sind, etwa eine Medikamentenliste, ein vorhandener Krisenplan oder die Kontaktdaten der ambulanten Fachperson. Klären Sie, wen Sie bei organisatorischen Fragen ansprechen können.</p>
+              <p>Bei einer fürsorgerischen Unterbringung (FU) stellen sich zusätzlich rechtliche Fragen. Lassen Sie sich die geltende Grundlage, die Rolle einer Vertrauensperson und mögliche Beteiligungs- oder Vertretungsrechte für die konkrete Situation erklären. Anhörung, Informationsweitergabe und stellvertretende Entscheidung sind unterschiedliche Dinge. Mehr auf der <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflichtseite</a>.</p>
 
-              <h3>Dauer — womit Sie rechnen können</h3>
+              <h3>Dauer und nächste Schritte klären</h3>
               <ul>
-                <li><strong>Akute Manie:</strong> Oft Tage bis mehrere Wochen. Schwere manische Episoden mit Psychose oder anhaltender Schlaflosigkeit können länger dauern.</li>
-                <li><strong>Schwere Depression:</strong> Häufig mehrere Wochen. Die Erholung verläuft oft langsamer, als Angehörige es sich wünschen.</li>
-                <li><strong>Mischzustände oder Rapid Cycling:</strong> Schwerer vorhersehbar.</li>
-                <li><strong>Ärztlich angeordnete FU im Kanton Zürich:</strong> Sie ist in der Regel auf höchstens sechs Wochen befristet. Wenn eine längere Unterbringung nötig bleibt, braucht es rechtzeitig einen Entscheid der KESB.</li>
+                <li>Was lässt sich zur voraussichtlichen Dauer bereits sagen, und was ist noch offen?</li>
+                <li>Wann werden Behandlung und weitere Planung gemeinsam besprochen?</li>
+                <li>Welche Unterstützung wird für einen möglichen Austritt benötigt?</li>
+                <li>Bei einer FU: Welche Fristen, Überprüfungen und Rechtsmittel gelten, und wer kann diese Fragen verbindlich beantworten?</li>
               </ul>
 
               <h3>Besuch — Ihre Rolle auf der Station</h3>
-              <p>Jede Klinik hat eigene Besuchsregelungen. Fragen Sie beim Aufnahmegespräch direkt nach: Besuchszeiten und -regeln, Kontaktmöglichkeiten (Telefon, WLAN), <strong>Angehörigengespräche</strong> (die meisten Kliniken bieten diese — nutzen Sie sie!), und was Sie mitbringen können (manche Stationen schränken Schnürsenkel, Gürtel, Glasflaschen ein).</p>
+              <p>Fragen Sie die Klinik nach Besuchszeiten und -regeln, Kontaktmöglichkeiten, <strong>Angehörigengesprächen</strong> und danach, was Sie mitbringen können. Sie dürfen auch klären, welche Form und Dauer eines Besuchs für Sie selbst tragbar ist.</p>
               <p>Was oft hilft: kurze, ruhige Besuche. Nicht jedes Mal ein Grundsatzgespräch führen. Manchmal reicht es, da zu sein und ein Stück Normalität mitzubringen.</p>
 
               <h3>Während des Aufenthalts</h3>
@@ -528,15 +493,22 @@ function Modul6Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Zur Einordnung</span>
-                <p>Ein Klinikaufenthalt ist <strong>kein Scheitern</strong>. Er ist — richtig genutzt — eine Chance, die Medikation zu stabilisieren, einen Krisenplan zu schärfen und als Angehörige durchzuatmen. Viele Familien berichten, dass die Zeit <em>nach</em> einem gut begleiteten Aufenthalt stabiler war als die Monate davor.</p>
+                <p>Ein Klinikaufenthalt ist <strong>kein Beweis persönlichen Scheiterns</strong>. Sie können die Zeit nutzen, um Ihre eigene Entlastung und Fragen zur Zusammenarbeit zu klären. Was der Aufenthalt bewirken kann, besprechen Betroffene und Behandlungsteam; ein bestimmter Verlauf wird hier nicht zugesagt.</p>
               </aside>
 
               <div className="next-modules">
-                <a className="next-module" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
+                <a className="next-module" href={navHref('werkzeuge', 'krisenplan')} onClick={navHandler('werkzeuge', onNavigate, 'krisenplan')}>
                   <span className="next-module-num">W</span>
                   <div>
-                    <h3>Werkzeuge und druckbare Materialien</h3>
-                    <p>Krisenplan-Tool, Notfallkarte fürs Portemonnaie, Fragen fürs Arztgespräch — direkt einsatzbereit.</p>
+                    <h3>Gemeinsamer Krisenplan</h3>
+                    <p>Die vollständige Vorlage ausfüllen und vereinbarte Aufgaben, Kontakte und Entlastung festhalten.</p>
+                  </div>
+                </a>
+                <a className="next-module" href={navHref('unterstuetzung', 'dl-08')} onClick={navHandler('unterstuetzung', onNavigate, 'dl-08')}>
+                  <span className="next-module-num next-module-num-resource">→</span>
+                  <div>
+                    <h3>Fragen fürs Arztgespräch</h3>
+                    <p>Die vorhandene Checkliste DL-08 zur Vorbereitung eines Angehörigengesprächs öffnen.</p>
                   </div>
                 </a>
                 <a className="next-module" href={navHref('modul7')} onClick={navHandler('modul7', onNavigate)}>
@@ -552,12 +524,12 @@ function Modul6Page({ onNavigate }) {
             <section id="s10">
               <h2>Worauf es ankommt</h2>
               <ul className="key-points">
-                <li><strong>Hilfreich ist zuerst die richtige Ebene</strong> — vorbereiten, deeskalieren, begrenzen oder sofort handeln sind unterschiedliche Aufgaben.</li>
+                <li><strong>Die eigenen Aufgaben klären</strong> — Vorbereitung, Gespräche, Grenzen und vereinbarte Unterstützung können Sie gemeinsam besprechen.</li>
                 <li><strong>Vorbereitung entlastet später konkret</strong> — Krisenplan, Schweigepflicht und finanzielle Vorkehrungen schaffen Handlungsspielraum, wenn es kippt.</li>
                 <li><strong>Manie und Depression brauchen unterschiedliche Sprache</strong> — kurz und reizarm in der Manie, präsenter und druckärmer in der Depression.</li>
                 <li><strong>Fehlende Einsicht verändert die Gesprächslage</strong> — nicht alles scheitert an fehlendem guten Willen.</li>
                 <li><strong>Grenzen schützen eher, als dass sie bestrafen</strong> — wenn sie Verhalten benennen, Konsequenzen klar machen und nicht als Drohung daherkommen.</li>
-                <li><strong>Manche Situationen brauchen keinen besseren Satz</strong> — sondern schnelleres Handeln und den Wechsel auf den Notfallpfad.</li>
+                <li><strong>Sie müssen schwierige Situationen nicht allein lösen</strong> — ein vorbereiteter Plan klärt eigene Aufgaben und die erreichbare fachliche Unterstützung.</li>
                 <li><strong>Ein Klinikaufenthalt ist kein Scheitern</strong> — sondern eine Chance, die Behandlung zu stabilisieren.</li>
               </ul>
             </section>

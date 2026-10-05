@@ -27,12 +27,12 @@ function BarrierefreiheitPage() {
 
             <h2>Was umgesetzt ist</h2>
             <ul>
-              <li><strong>Tastatur-Bedienbarkeit</strong>: Alle interaktiven Elemente (Navigation, Werkzeuge, Modul-Überblick, Orientierungsfragen, Notfall-Akkordeon) sind ohne Maus erreichbar; sichtbarer Fokusrahmen.</li>
+              <li><strong>Tastatur-Bedienbarkeit</strong>: Navigation, Werkzeuge, Modul-Überblick und Orientierungsfragen sind für die Bedienung ohne Maus ausgelegt; sichtbarer Fokusrahmen.</li>
               <li><strong>Screenreader-Unterstützung</strong>: Semantisches HTML, ARIA-Beschriftungen, Skip-Link zum Hauptinhalt, Fokus-Management in Dialogen.</li>
               <li><strong>Kontrast</strong>: Text gegenüber Hintergrund mindestens 4.5:1, UI-Elemente mindestens 3:1.</li>
               <li><strong>Skalierbarkeit</strong>: Layout bleibt bei 200%-Zoom nutzbar; Schriftgrössen in relativen Einheiten.</li>
-              <li><strong>Touch-Ziele</strong>: Schaltflächen und Links auf mobilen Geräten mindestens 44 × 44 Pixel.</li>
-              <li><strong>Keine Auto-Play-Inhalte</strong>: Keine selbst startenden Videos, Audios oder Animationen, die Aufmerksamkeit beanspruchen.</li>
+              <li><strong>Bedienflächen</strong>: Bei Schaltflächen und eigenständigen Bedienelementen achten wir auf ausreichend grosse Bedienflächen. Eine vollständige Prüfung mit Hilfsmitteln steht noch aus.</li>
+              <li><strong>Bewegung</strong>: Es gibt keine automatisch startenden Videos oder Audios. Das PUK-Logo wird beim ersten Laden kurz animiert und danach statisch angezeigt; bei reduzierter Bewegung bleibt es statisch.</li>
               <li><strong>Druck-Versionen</strong>: Werkzeuge und Handouts sind als saubere PDFs druckbar.</li>
             </ul>
 
@@ -52,7 +52,7 @@ function BarrierefreiheitPage() {
             <div className="contact-info-block">
               <div className="label">E-MAIL</div>
               <div className="value"><a className="link-underline" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a></div>
-              <div className="sub">Bitte schildern Sie das Problem so konkret wie möglich (Seite, Browser, Hilfsmittel). Antwort innerhalb von zwei Werktagen.</div>
+              <div className="sub">Bitte schildern Sie das Problem so konkret wie möglich (Seite, Browser, Hilfsmittel). Wir prüfen Ihre Rückmeldung.</div>
             </div>
             <div className="contact-info-block">
               <div className="label">POSTANSCHRIFT</div>
@@ -60,16 +60,15 @@ function BarrierefreiheitPage() {
               <div className="sub">Lenggstrasse 31, Postfach, 8032 Zürich</div>
             </div>
 
-            <h2>Durchsetzungsverfahren</h2>
+            <h2>Beratung und Unterstützung bei Zugangsproblemen</h2>
             <p>
-              Diese Lese-Begleitung ist ein Angebot der Psychiatrischen Universitätsklinik Zürich (PUK) und
-              fällt unter die Zugänglichkeits-Standards des kantonalen Gesundheitswesens. Sollten Sie auf
-              eine Rückmeldung keine zufriedenstellende Antwort erhalten, können Sie sich an die
-              Schweizerische Stiftung «Zugang für alle» oder an Pro&nbsp;Infirmis wenden.
+              Wenn Sie Unterstützung beim Zugang zu digitalen Angeboten suchen, können Sie bei der
+              Schweizerischen Stiftung «Zugang für alle» oder bei Pro&nbsp;Infirmis nach Beratung fragen.
+              Für Fragen zu einem rechtlichen Verfahren klären Sie mit der PUK, welche Stelle zuständig ist.
             </p>
 
             <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: '0.875rem' }}>
-              Stand: April 2026 · Selbstbewertung
+              Redaktioneller Stand: Oktober 2026 · Selbstbewertung
             </p>
           </article>
         </div>

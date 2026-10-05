@@ -215,7 +215,7 @@ try {
           record('interaction/simultaneous-paths', zoom, tool, await dialog.getByRole('img', { name: /gleichzeitig/ }).locator('path').count() === 2);
           await dialog.getByRole('tab', { name: /Mischzustände/ }).focus();
           await page.keyboard.press('Home');
-          record('keyboard/tabs-home', zoom, tool, await dialog.getByRole('tab', { name: 'Bipolar I Diagnose: mindestens eine Manie' }).getAttribute('aria-selected') === 'true');
+          record('keyboard/tabs-home', zoom, tool, await dialog.getByRole('tab', { name: /^Bipolar I\b/ }).getAttribute('aria-selected') === 'true');
           await page.keyboard.press('End');
           record('keyboard/tabs-end', zoom, tool, await dialog.getByRole('tab', { name: /Stabile Phase/ }).getAttribute('aria-selected') === 'true');
         } else if (tool === 'eisberg') {
@@ -225,7 +225,7 @@ try {
           await enlargeState(page, zoom, tool, 'explore');
           await inspect(page, dialog, zoom, tool, 'explore');
           await dialog.getByRole('button', { name: /Übersicht ansehen/ }).click();
-          record('interaction/marked-result', zoom, tool, await dialog.getByRole('heading', { name: 'Eine Belastung erkannt' }).count() === 1);
+          record('interaction/marked-result', zoom, tool, await dialog.getByRole('heading', { name: 'Ein Begriff wiedererkannt' }).count() === 1);
         } else if (tool === 'krisenplan') {
           const field = dialog.getByRole('textbox', { name: /Plan für/ });
           record('privacy/legacy-not-restored', zoom, tool, await field.inputValue() === '');
@@ -255,6 +255,26 @@ try {
           await dialog.getByRole('button', { name: 'Skript kopieren' }).click();
           record('interaction/clipboard-export', zoom, tool, (await page.evaluate(() => navigator.clipboard.readText())).includes('Current request fixture'));
           record('privacy/no-new-persistence', zoom, tool, await page.evaluate(() => JSON.parse(localStorage.getItem('puk-kommunikation-v1')).beobachtung === 'Legacy fixture' && JSON.parse(sessionStorage.getItem('puk-kommunikation-v1')).beobachtung === 'Legacy session'));
+
+          await dialog.getByRole('button', { name: 'Skript bearbeiten' }).click();
+          await dialog.getByRole('button', { name: /Ich möchte eine Grenze setzen/ }).click();
+          for (let step = 0; step < 3; step++) await dialog.getByRole('button', { name: /weiter/ }).click();
+          const boundaryField = dialog.getByRole('textbox', { name: 'Welche eigene Grenze können Sie umsetzen?', exact: true });
+          record('interaction/boundary-own-action-required', zoom, tool, await boundaryField.inputValue() === '' && await dialog.getByRole('button', { name: /Skript ansehen/ }).isDisabled());
+          const boundaryAction = 'Wenn das Gespräch laut wird, beende ich es für heute.';
+          await boundaryField.fill(boundaryAction);
+          await enlargeState(page, zoom, tool, 'boundary-input');
+          await inspect(page, dialog, zoom, tool, 'boundary-input');
+          await focusLoop(page, dialog, zoom, tool, 'boundary-input');
+          await waitForFiniteMotion(dialog);
+          const boundaryAxe = await new AxeBuilder({ page }).include('.tool-overlay').withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+          record('axe/boundary-input', zoom, tool, boundaryAxe.violations.length === 0, { violations: boundaryAxe.violations.map(v => ({ id: v.id, impact: v.impact, help: v.help, targets: v.nodes.map(n => ({ target: n.target, summary: n.failureSummary })) })), incompleteCount: boundaryAxe.incomplete.length });
+          await dialog.getByRole('button', { name: /Skript ansehen/ }).click();
+          await enlargeState(page, zoom, tool, 'boundary-result');
+          await inspect(page, dialog, zoom, tool, 'boundary-result');
+          await dialog.getByRole('button', { name: 'Skript kopieren' }).click();
+          record('interaction/boundary-clipboard-export', zoom, tool, (await page.evaluate(() => navigator.clipboard.readText())).includes(boundaryAction) && await dialog.getByText(`«${boundaryAction}»`, { exact: true }).count() === 1);
+
           await dialog.getByRole('button', { name: 'Entwurf löschen' }).click();
           record('privacy/legacy-delete', zoom, tool, await page.evaluate(() => !localStorage.getItem('puk-kommunikation-v1') && !sessionStorage.getItem('puk-kommunikation-v1')));
         } else if (tool === 'ee') {
