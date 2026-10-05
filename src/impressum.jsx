@@ -17,9 +17,9 @@ function ImpressumPage() {
           <article className="prose">
             <h2>Trägerschaft</h2>
             <p>
-              Diese Lese-Begleitung ist ein Angebot der <strong>Fachstelle Angehörigenarbeit</strong> der
+              Diese Website ist ein Angebot der <strong>Fachstelle Angehörigenarbeit</strong> der
               Psychiatrischen Universitätsklinik Zürich (PUK). Sie wird ausschliesslich an Angehörige weitergegeben,
-              die sich an die Fachstelle gewandt haben — eine öffentliche Bewerbung findet nicht statt.
+              die sich an die Fachstelle gewandt haben. Das Angebot wird nicht öffentlich beworben.
             </p>
 
             <h2>Inhaltliche Verantwortung</h2>
@@ -46,13 +46,14 @@ function ImpressumPage() {
 
             <h2>Haftungsausschluss</h2>
             <p>
-              Die Inhalte dieser Lese-Begleitung dienen der psychoedukativen Orientierung für Angehörige.
+              Die Inhalte dieser Website bieten Angehörigen Informationen und Orientierung zur Erkrankung
+              und zum eigenen Alltag.
               Sie ersetzen keine ärztliche, psychotherapeutische oder rechtliche Beratung. Eine
               Haftung für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte sowie für Schäden, die
               aus der Nutzung der Inhalte entstehen, wird — soweit gesetzlich zulässig — ausgeschlossen.
             </p>
             <p>
-              Die Lese-Begleitung verlinkt auf externe Anlaufstellen und Hilfsangebote. Für die Inhalte dieser
+              Die Website verlinkt auf externe Anlaufstellen und Hilfsangebote. Für die Inhalte dieser
               externen Seiten ist ausschliesslich deren Betreiber verantwortlich.
             </p>
 
@@ -60,7 +61,7 @@ function ImpressumPage() {
             <p>
               Sämtliche Texte, Illustrationen und Werkzeuge sind urheberrechtlich geschützt. Die Weitergabe an
               andere Angehörige im persönlichen Umfeld ist ausdrücklich erwünscht. Eine Verwendung in
-              Publikationen, Schulungen oder kommerziellen Kontexten bedarf der vorherigen schriftlichen
+              Publikationen, Schulungen oder für kommerzielle Zwecke braucht die vorherige schriftliche
               Zustimmung.
             </p>
 

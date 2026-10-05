@@ -1,0 +1,361 @@
+{
+  "review": "S – Sprach-Review Module 4 und 5",
+  "baseCommit": "26da414",
+  "branch": "fix/s-language-review",
+  "date": "2026-10-05",
+  "context": {
+    "medium": "Website",
+    "audience": "Angehörige und Nahestehende von Menschen mit bipolarer Störung; unterschiedliche Beziehungen, eigenes Leben und Kinder im Haushalt",
+    "address": "Sie; du in fiktiven Gesprächen mit nahestehenden Personen und Kindern",
+    "sender": "Fachstelle Angehörigenarbeit PUK; Beratung und Psychoedukation",
+    "useAssumption": "Selbständig lesbar und in Beratung einsetzbar; aus Website und W1/W2 abgeleitet",
+    "locale": "Schweizer Hochdeutsch, ss und «Guillemets»",
+    "precedingReviews": [
+      "W1 mit weiterhin offenen Fach-/Rechts-/Angebotsprüfungen",
+      "W2 einschließlich zusätzlicher Verantwortung, eigener Grenzhandlung und freiwilliger Unterstützung"
+    ]
+  },
+  "scope": {
+    "files": [
+      "src/modul4.jsx",
+      "src/modul5.jsx"
+    ],
+    "complete": true,
+    "reviewedSections": 18,
+    "reviewedContent": [
+      "Alle Absätze, Überschriften, Zitate, Listen und Inhaltsverzeichnisse",
+      "Reservoir-/Loyalitätsabbildungen samt SVG-Beschriftung und aufklappbarem FigureText",
+      "Warnzeichen-, Reflexions-, Schuld- und Mythenkarten",
+      "Kinder-/Arbeitsplatz-/Freundschafts-/Grenzgespräche",
+      "Navigationskartentexte und Quellen-/Redaktionshinweise"
+    ],
+    "unchangedComponents": "ModuleQuickStart und EvidenceSources werden von anderen Zuständigen in der Gesamtprüfung bearbeitet. Ihre Referenzen und Nummern bleiben unverändert.",
+    "implementation": "Vollständig im eigenen Sprachreview-Branch umgesetzt. main bleibt Original; keine Commits oder Pushes durch diesen Agenten."
+  },
+  "patterns": [
+    {
+      "priority": "wichtig",
+      "pattern": "Abstrakte Metaphern und Verwaltungswörter erschweren das Verständnis.",
+      "change": "Konkrete Aufgaben, Wünsche, Beobachtungen und Entscheidungen benannt."
+    },
+    {
+      "priority": "wichtig",
+      "pattern": "Häufungen von Vielleicht/Sie dürfen, abrupte Absicherungen und Pflichtüberschriften unterbrechen den Lesefluss.",
+      "change": "Zusammenhänge flüssiger verbunden; Wahlmöglichkeiten und notwendige Einschränkungen bleiben präzise erhalten."
+    },
+    {
+      "priority": "wichtig",
+      "pattern": "Einzelne fiktive Gesprächsbeispiele klingen wie Therapie-/Verwaltungsanweisungen.",
+      "change": "Natürlich sprechbare Beispiele mit passenden begrenzten Angeboten; tatsächliche Erwachsenenaufgaben und eigene Grenzhandlung bleiben klar."
+    }
+  ],
+  "examples": [
+    {
+      "id": "S-M4-01",
+      "priority": "wichtig",
+      "file": "src/modul4.jsx",
+      "section": "s7 / eigener Bedarf",
+      "line": 382,
+      "original": "2. Eigene Bedürfnisse beachten — ohne Schuld",
+      "revision": "2. Eigene Bedürfnisse ernst nehmen",
+      "reason": "Die Überschrift verspricht keinen schuldgefühlsfreien Zustand mehr. Eigener Bedarf bleibt berechtigt, ohne ein bestimmtes Gefühl vorauszusetzen."
+    },
+    {
+      "id": "S-M4-02",
+      "priority": "wichtig",
+      "file": "src/modul4.jsx",
+      "section": "s7 / Reflexionsbox",
+      "line": 396,
+      "original": "Um wen trauern Sie? Vielleicht um den Partner, der er einmal war. Vielleicht um die gemeinsame Zukunft. Diese Trauer braucht keinen Abschluss. Aber sie verdient, gesehen zu werden — zumindest von Ihnen selbst.",
+      "revision": "Was vermissen Sie: etwas Vertrautes in Ihrer Beziehung, gemeinsame Pläne oder etwas anderes? Ihre Trauer muss nicht zu einem bestimmten Zeitpunkt abgeschlossen sein. Nehmen Sie ernst, was Ihnen fehlt.",
+      "reason": "Offene Frage statt angenommener Partnerschaft und bildhafter Gleichsetzung einer lebenden Person mit einem Verlust. Fehlende Abschlussfrist bleibt erhalten."
+    },
+    {
+      "id": "S-M4-03",
+      "priority": "wichtig",
+      "file": "src/modul4.jsx",
+      "section": "s6 / Kindergespräch",
+      "line": 368,
+      "original": "Du darfst Kind sein.",
+      "revision": "Du musst dich nicht um uns Erwachsene kümmern. Das übernehmen wir.",
+      "reason": "Im Gespräch wird verständlich ausgesprochen, welche Verantwortung Erwachsene übernehmen. Die anschliessende konkrete Aufgabenvereinbarung bleibt erhalten."
+    },
+    {
+      "id": "S-M4-04",
+      "priority": "wichtig",
+      "file": "src/modul4.jsx",
+      "section": "s5 / Arbeitsplatzgespräch",
+      "line": 317,
+      "original": "Ich unterstütze eine nahestehende Person mit einer Erkrankung und möchte meine Arbeitszeiten besprechen.",
+      "revision": "Ich unterstütze gerade jemanden, der krank ist. Können wir besprechen, ob ich meine Arbeitszeiten anpassen kann?",
+      "reason": "Gesprochene Alltagssprache und konkrete Bitte, ohne eine Änderung der Arbeitszeiten zuzusichern oder eine Angehörigenrolle festzulegen."
+    },
+    {
+      "id": "S-M4-05",
+      "priority": "wichtig",
+      "file": "src/modul4.jsx",
+      "section": "s2 / Überschrift",
+      "line": 235,
+      "original": "Wie Erschöpfung sich über Zeit aufbaut",
+      "revision": "Wie sich Belastung über die Zeit verändern kann",
+      "reason": "Die Überschrift entspricht dem unveränderten Absatz über unterschiedliche Verläufe ohne feste Folge."
+    },
+    {
+      "id": "S-M4-06",
+      "priority": "optional",
+      "file": "src/modul4.jsx",
+      "section": "Reservoir / aufklappbarer Abbildungstext",
+      "line": 90,
+      "original": "Die Bereiche sind keine geprüften Schwellen für Belastung oder Dringlichkeit und ergeben keinen persönlichen Score.",
+      "revision": "Die Bereiche sind keine geprüften Schwellenwerte für Belastung oder Dringlichkeit. Aus dem Bild lässt sich kein persönlicher Belastungswert ablesen.",
+      "reason": "Score wird verständlich erklärt; der Hinweis auf nicht geprüfte Schwellen bleibt an der Abbildung erhalten."
+    },
+    {
+      "id": "S-M4-07",
+      "priority": "optional",
+      "file": "src/modul4.jsx",
+      "section": "s4 / Überschrift",
+      "line": 268,
+      "original": "Schonhaltung",
+      "revision": "Eigene Sorgen zurückhalten",
+      "reason": "Die tatsächlich gemeinte Handlung ersetzt eine abstrakte Bezeichnung; der zugehörige Absatz beschreibt weiterhin das Zurückhalten eigener Sorgen und Bedürfnisse aus Rücksicht."
+    },
+    {
+      "id": "S-M5-01",
+      "priority": "wichtig",
+      "file": "src/modul5.jsx",
+      "section": "Einleitung",
+      "line": 195,
+      "original": "Sie zeigen sich als stille Doppelbewegung: jemandem nahe bleiben wollen — und gleichzeitig sich selbst nicht verlieren wollen.",
+      "revision": "Vielleicht möchten Sie einem Menschen nahe bleiben und spüren zugleich, dass Sie mehr Raum für sich brauchen.",
+      "reason": "Der innere Konflikt wird ohne künstliche Doppelbewegung und dramatischen Selbstverlust verständlich beschrieben."
+    },
+    {
+      "id": "S-M5-02",
+      "priority": "wichtig",
+      "file": "src/modul5.jsx",
+      "section": "s5 / Schuldgefühle",
+      "line": 302,
+      "original": "Schuld kann das Echo eines alten Versprechens sein, nicht eine aktuelle Bewertung.",
+      "revision": "Ein früheres Versprechen kann Schuldgefühle auslösen, auch wenn Sie Ihre heutige Situation anders einschätzen.",
+      "reason": "Konkreter Zusammenhang statt abstrakter Metapher; die Möglichkeitsform bleibt erhalten."
+    },
+    {
+      "id": "S-M5-03",
+      "priority": "wichtig",
+      "file": "src/modul5.jsx",
+      "section": "s9 / kleine eigene Grenze",
+      "line": 376,
+      "original": "Ich wünsche mir, dass wir ausreden lassen. Wenn wir uns anschreien, beende ich das Gespräch und nehme eine Pause.",
+      "revision": "Ich möchte, dass wir einander ausreden lassen. Wenn wir uns anschreien, beende ich das Gespräch und mache eine Pause.",
+      "reason": "Die Bitte ist grammatisch klar und alltagstauglich. Eigene ausführbare Handlung und die Trennung von Bitte und Grenze bleiben erhalten."
+    },
+    {
+      "id": "S-M5-04",
+      "priority": "wichtig",
+      "file": "src/modul5.jsx",
+      "section": "s3 / EE-Abgrenzung",
+      "line": 274,
+      "original": "Der in der Fachliteratur verwendete Begriff «Expressed Emotion (EE)» bezeichnet nicht das redaktionelle Reflexionsmodell oben.",
+      "revision": "In der Fachliteratur gibt es den Begriff «Expressed Emotion (EE)». Er bezeichnet etwas anderes als das Reflexionsmodell oben.",
+      "reason": "Kürzere verständliche Erklärung. Offene Definitions-/Literaturprüfung, fehlende individuelle Risikobewertung und fehlende Rückfallschuld bleiben ausdrücklich benannt."
+    },
+    {
+      "id": "S-M5-05",
+      "priority": "wichtig",
+      "file": "src/modul5.jsx",
+      "section": "s6 / Reaktion des Umfelds",
+      "line": 319,
+      "original": "Vergleicht eine schwere Erkrankung mit Alltagstraurigkeit. Fühlt sich an wie: Ihre Erfahrung zählt nicht.",
+      "revision": "Dieser Satz setzt eine schwere Erkrankung mit alltäglicher Traurigkeit gleich. Vielleicht fühlen Sie sich dadurch mit Ihrer Erfahrung nicht ernst genommen.",
+      "reason": "Vollständige zusammenhängende Sätze; dem Leser wird kein bestimmtes Gefühl mehr unterstellt."
+    },
+    {
+      "id": "S-M5-06",
+      "priority": "wichtig",
+      "file": "src/modul5.jsx",
+      "section": "s9 / Überschrift",
+      "line": 363,
+      "original": "Was vor einer grossen Entscheidung zuerst klar werden muss",
+      "revision": "Eine grosse Entscheidung vorbereiten",
+      "reason": "Die Überschrift macht aus freiwilligen Klärungsfragen keine verpflichtende Voraussetzung vor jeder Entscheidung."
+    },
+    {
+      "id": "S-M5-07",
+      "priority": "wichtig",
+      "file": "src/modul5.jsx",
+      "section": "Körper-Karte",
+      "line": 96,
+      "original": "Auch ein fehlender körperlicher Befund beweist keinen Loyalitätskonflikt.",
+      "revision": "Wird bei einer Untersuchung keine körperliche Ursache gefunden, ist das noch kein Beweis dafür, dass ein Loyalitätskonflikt dahintersteht.",
+      "reason": "Der Fachausdruck wird erläutert, ohne eine Ursachenzuweisung einzuführen. Medizinische Abklärung neuer, starker oder anhaltender Beschwerden bleibt direkt benannt."
+    },
+    {
+      "id": "S-M5-08",
+      "priority": "optional",
+      "file": "src/modul5.jsx",
+      "section": "s8 / Möglichkeiten",
+      "line": 346,
+      "original": "Drei Bewegungen, je nach Lage",
+      "revision": "Drei Möglichkeiten, je nach Situation",
+      "reason": "Konkrete Bezeichnung für Bleiben, Gehen und Abstand statt abstrakter Bewegung; sämtliche Optionen bleiben offen."
+    },
+    {
+      "id": "S-M5-09",
+      "priority": "optional",
+      "file": "src/modul5.jsx",
+      "section": "s7 / Freundschaftsgespräch",
+      "line": 333,
+      "original": "Passt dieser Zeitpunkt für dich?",
+      "revision": "Passt dir morgen Abend?",
+      "reason": "Natürliches Gespräch statt Verwaltungsformulierung. Angebot bleibt genau auf morgen Abend und eine halbe Stunde begrenzt; Arbeits-/Nachtgrenze bleibt bestehen."
+    },
+    {
+      "id": "S-M5-10",
+      "priority": "wichtig",
+      "file": "src/modul5.jsx",
+      "section": "s2 / eigener Schutz",
+      "line": 251,
+      "original": "Meine Kinder brauchen einen gesunden Elternteil.",
+      "revision": "Meine Kinder brauchen mich. Auch dafür brauche ich Kraft.",
+      "reason": "Eigene Kraft wird verständlich angesprochen, ohne Gesundheit zur Voraussetzung für Elternsein zu machen. Dies ist eine Änderung des fiktiven Gedankenbeispiels, keine medizinische Aussage."
+    }
+  ],
+  "terminology": [
+    {
+      "term": "Eigene Sorgen zurückhalten",
+      "originalVariants": [
+        "Schonhaltung, src/modul4.jsx s4 und Inhaltsverzeichnis"
+      ],
+      "selected": "Konkrete Handlung statt des entbehrlichen Fachworts"
+    },
+    {
+      "term": "Belastungswert",
+      "originalVariants": [
+        "persönlicher Score, src/modul4.jsx Reservoir-FigureText"
+      ],
+      "selected": "persönlicher Belastungswert; kein Wert wird berechnet oder diagnostisch interpretiert"
+    },
+    {
+      "term": "Zusätzliche Verantwortung",
+      "originalVariants": [
+        "W2-Begriff, src/modul5.jsx s3/s9/s10"
+      ],
+      "selected": "Unverändert erhalten; Beschreibungen benennen gewünschte Aufgaben und eigene Entlastung"
+    },
+    {
+      "term": "EE / Reflexionsmodell",
+      "originalVariants": [
+        "Expressed Emotion (EE), redaktionelles Reflexionsmodell"
+      ],
+      "selected": "EE bleibt Fachbegriff mit offener Verifikation; das eigene Reflexionsmodell wird verständlich erläutert und bleibt getrennt"
+    }
+  ],
+  "factualCorrections": [],
+  "reviewNeeds": [
+    {
+      "status": "Prüfbedarf offen aus W1",
+      "ids": [
+        "M4-01",
+        "M4-02",
+        "M4-03",
+        "M4-06",
+        "M4-07"
+      ],
+      "scope": "Fachquellen zu Kindern, altersangemessenen Gesprächsbeispielen, möglichen Beobachtungen, körperlichen Angaben sowie Therapie-/Angebots-/Rechtsinformationen. Keine Originalstudien oder amtlichen Angaben neu verifiziert; Art.329h-Absatz vollständig wortgleich erhalten."
+    },
+    {
+      "status": "Prüfbedarf offen aus W1",
+      "ids": [
+        "M5-01",
+        "M5-03",
+        "M5-04",
+        "M5-05",
+        "M5-08",
+        "M5-09"
+      ],
+      "scope": "EE-/Forschungs- und Alltagskonstrukte, individuelle Rechtsfragen (Kinder, Betreuung, Verträge/Finanzen), Angebot/Zuständigkeit/Kosten und Eignung von Paartherapie. Rückfallverantwortung, pauschale Rechtszusagen und Wirkungsversprechen bleiben ausgeschlossen."
+    },
+    {
+      "status": "Prüfbedarf",
+      "location": "src/modul5.jsx Einleitung",
+      "statement": "Loyalitätskonflikte sind selten laut.",
+      "notes": "Aus Original erhalten. Als Bild für einen inneren Konflikt lesbar; falls selten als fachliche Häufigkeitsaussage gemeint ist, bleibt die Aussage ungeprüft. S führt keine fachliche Korrektur oder neue Quelle ein."
+    }
+  ],
+  "moreSpace": [
+    {
+      "file": "src/modul4.jsx",
+      "location": "s6 / Verantwortung-Infobox",
+      "line": 368,
+      "beforeCharacters": 368,
+      "afterCharacters": 482,
+      "growthPercent": 31.0,
+      "check": "Text kann zusätzliche Zeilen benötigen. Reflow, Textvergrösserung und Druckumbrüche in W3 prüfen; hier kein visueller Überlauf behauptet."
+    },
+    {
+      "file": "src/modul4.jsx",
+      "location": "s7 / Hausarzt-Zwischenüberschrift",
+      "line": 388,
+      "beforeCharacters": 23,
+      "afterCharacters": 48,
+      "growthPercent": 108.7,
+      "check": "Text kann zusätzliche Zeilen benötigen. Reflow, Textvergrösserung und Druckumbrüche in W3 prüfen; hier kein visueller Überlauf behauptet."
+    },
+    {
+      "file": "src/modul5.jsx",
+      "location": "s2 / Einführungsabsatz",
+      "line": 231,
+      "beforeCharacters": 119,
+      "afterCharacters": 258,
+      "growthPercent": 116.8,
+      "check": "Text kann zusätzliche Zeilen benötigen. Reflow, Textvergrösserung und Druckumbrüche in W3 prüfen; hier kein visueller Überlauf behauptet."
+    },
+    {
+      "file": "src/modul5.jsx",
+      "location": "s5 / Schuld-Leitsatz",
+      "line": 300,
+      "beforeCharacters": 42,
+      "afterCharacters": 70,
+      "growthPercent": 66.7,
+      "check": "Text kann zusätzliche Zeilen benötigen. Reflow, Textvergrösserung und Druckumbrüche in W3 prüfen; hier kein visueller Überlauf behauptet.",
+      "rootPrecisionFollowUp": "Nach unabhängiger Prüfung ergänzt: automatisch. Schuldgefühle beweisen tatsächliche Schuld nicht; tatsächliche Schuld wird damit nicht pauschal ausgeschlossen."
+    },
+    {
+      "file": "src/modul5.jsx",
+      "location": "s6 / Verharmlosungsbeispiel",
+      "line": 319,
+      "beforeCharacters": 105,
+      "afterCharacters": 155,
+      "growthPercent": 47.6,
+      "check": "Text kann zusätzliche Zeilen benötigen. Reflow, Textvergrösserung und Druckumbrüche in W3 prüfen; hier kein visueller Überlauf behauptet."
+    },
+    {
+      "file": "src/modul5.jsx",
+      "location": "s8 / Abschnitt Abstand nehmen",
+      "line": 349,
+      "beforeCharacters": 194,
+      "afterCharacters": 276,
+      "growthPercent": 42.3,
+      "check": "Text kann zusätzliche Zeilen benötigen. Reflow, Textvergrösserung und Druckumbrüche in W3 prüfen; hier kein visueller Überlauf behauptet."
+    }
+  ],
+  "validation": {
+    "readAndCompared": "Beide Originaldateien vollständig vor Bearbeitung gelesen; Überarbeitung abschnittsweise mit Original und W1/W2 abgeglichen. Die dokumentierten Vorher-/Nachher-Aussagen werden gegen Original und aktuelle Datei validiert.",
+    "checks": [
+      "ESLint src/modul4.jsx src/modul5.jsx bestanden",
+      "git diff --check der beiden Dateien bestanden",
+      "Babel-AST-Vergleich: JSX-/Codestruktur und sämtliche Attribute mit Original identisch, abgesehen von Textinhalten",
+      "Navigation: navHref-/navHandler-Aufrufe identisch",
+      "Art.329h-Absatz wortgleich erhalten",
+      "Keine ß; Sie-Ansprache und Guillemets erhalten"
+    ],
+    "notChecked": [
+      "Browser-Reflow und Druck-/PDF-Umbrüche der längeren Texte (Gesamtprüfung durch Hauptagent/W3)",
+      "Reale Screenreader",
+      "Externe fachliche, rechtliche oder organisatorische Freigabe"
+    ],
+    "newTests": "Keine Tests geändert oder hinzugefügt; dieser Agent führt gezieltes Lint und Strukturabgleich durch, Hauptagent koordiniert Gesamtchecks."
+  },
+  "continuation": "Keine Fortsetzung innerhalb dieser beiden vollständig bearbeiteten Module nötig; übrige Inhalte werden parallel durch andere Agents geprüft."
+}

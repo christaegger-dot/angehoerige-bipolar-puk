@@ -11,7 +11,7 @@ function ModulePage({ onNavigate }) {
         <div className="container">
           <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Lernpfad · Psychoedukation</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '20ch' }}>Alle sieben Module im Überblick.</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Hier finden Sie den Lernpfad: welches Modul welche Frage beantwortet und wie die Strecke aufgebaut ist. Sie können linear lesen oder direkt das Modul wählen, das Ihrer Lage entspricht. Hilfe, Material und Kontakt finden Sie separat unter Unterstützung und Ressourcen.</p>
+          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Die sieben Module behandeln die Erkrankung, das Leben als Angehörige und mögliche Hilfen im Alltag. Sie können sie der Reihe nach lesen oder ein Thema auswählen, das Sie gerade beschäftigt. Beratung, Materialien und Kontaktangaben finden Sie unter Unterstützung und Ressourcen.</p>
         </div>
       </header>
 
@@ -59,14 +59,14 @@ function ModulePage({ onNavigate }) {
           <div className="section-head">
             <div className="label-col">
               <span className="num">— Optionaler Einstieg</span>
-              <span className="eyebrow">Wenn Sie schneller sortieren möchten</span>
+              <span className="eyebrow">Ein Thema auswählen</span>
             </div>
             <div>
-              <h2>Sie wissen noch nicht, welches Modul passt? Die kurze Orientierung von der Startseite hilft auch hier.</h2>
+              <h2>Welcher Einstieg passt zu Ihrer Frage?</h2>
             </div>
           </div>
           <p className="triage-intro" style={{ maxWidth: '50ch', marginTop: 16 }}>
-            Die Modulseite bleibt der Lernpfad. Wenn Sie nicht erst die Titel vergleichen möchten, können Sie hier den schnelleren Einstieg nutzen.
+            Wenn Sie unsicher sind, wo Sie beginnen möchten, können Sie die kurze Orientierung nutzen. Die Fragen führen zu einem passenden Modul, Werkzeug oder Beratungsangebot.
           </p>
           <TriageFlow onNavigate={onNavigate} />
         </div>

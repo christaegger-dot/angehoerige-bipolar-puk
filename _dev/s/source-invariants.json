@@ -1,0 +1,374 @@
+{
+  "baseCommit": "26da414",
+  "checkedCommit": "26da414624cfb3c1cffb1c3df91f741c2190f22a",
+  "checkedAtUtc": "2026-10-05T15:14:41.750Z",
+  "purpose": "Read-only final comparison of language-review source changes; no application edits or tests performed.",
+  "permittedChanges": "Visible text, title/placeholder/alt and textual ARIA labels; attribute-free em/strong/b/i emphasis around existing labels. No automatic clinical or legal assessment.",
+  "files": [
+    {
+      "file": "index.html",
+      "status": "pass",
+      "htmlStructureAndProtectedAttributesPreserved": true,
+      "differences": [],
+      "beforeHash": "fa33c3e6d32e335c1ef0ddaf6cf0fb4de27e426761238434b44f436e1517addd",
+      "afterHash": "4c958d8099a447c22b20178a8b563079cc9bdab85be7d913b2a10de045057d5b"
+    },
+    {
+      "file": "src/barrierefreiheit.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "c6ed86aed4c4a04079fdd0e4711b55b9978f0249a82f083c9ab69ba890373818",
+      "afterHash": "2e7453e849a46b98931afcf0364f29f1c28d92133c60294bf4e692e18fc47129"
+    },
+    {
+      "file": "src/datenschutz.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "3d87de0b82cb8e25fc9d44b51302e4e7607be1cfa7eb4b8f1a84aa7e8a96469e",
+      "afterHash": "fd2647a3ee3f51d49ff38e5440f13a9a0997641831c29afc9946b74da7525997"
+    },
+    {
+      "file": "src/home.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "8170be56138d4f564029a9ccab7f8aa78d5c934125c8681523b4bb4599c98892",
+      "afterHash": "a5a1b526aafcafc58c5bed0bb79a8024cc562eab3aab10402496baf563cce50e"
+    },
+    {
+      "file": "src/impressum.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "e7a2c37755bd8ad45267162fda6412457a54f257d4c98a1cc46d6c750c9788c1",
+      "afterHash": "d1a578a4bb256a42ffdb04a5ec0e516d9cf940edf7702c9feda17dc54d91bf68"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "5dc3ab1cd999c10e3fb722a173080ed676ddd5905c178474af3dfb5e7f03f26b",
+      "afterHash": "d8febba165d2de11e44ff61186331076013847f534608f5ab2f0f2b304387a61"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "525a1b9d15a923995eb897af7e745d0074f35803eaf2943a0cfd07851797076c",
+      "afterHash": "0eaee26abd47054e2dd610ef0e6c8811b79602a2b7488aba53128954061a6a6a"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "f0933bb74e96fd69280481d795ef63f97f829d9c1553e6f3a3d9b8ec288a7002",
+      "afterHash": "551952803b419772499dfce4e338569488d30da0cdaf95a5a246541ad092f459"
+    },
+    {
+      "file": "src/modul4.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "d59a516f0ada4f1c9a0d01e804e650c64892701232ee154c630a6a1a07343f89",
+      "afterHash": "881484011817b6a5f30573285213a05616862c137351636c2e44ae4f2a2c067d"
+    },
+    {
+      "file": "src/modul5.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "85fd0b3cb4311723fa17c6920cb83269519e05cd55622f46effc5c0f9506a834",
+      "afterHash": "9bbf000a05d6c04ebe581900c613480844431361aaa5d8306e87fd534874be3a"
+    },
+    {
+      "file": "src/modul6.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "3d0fb7f357ab94d769eb56b8b7ee4c3fb8e482a87c95828876df87c11001d551",
+      "afterHash": "d26861fcb32a9442f6197b574212b0e75437ac92bc5149e355be9c3df5d5535a"
+    },
+    {
+      "file": "src/modul7.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "81a0d8dbc0c202719628e9f507fe92df68d8358a3aa0d815537f19443ada9dbf",
+      "afterHash": "d97e806786990aba0a643b489fe70d9918aa6670ca1b043936ac3f1c8d56e6de"
+    },
+    {
+      "file": "src/module-guidance.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "8444adec10627d182162261aa92c7f00f4d235e5255728f6ebbbeec73bc73413",
+      "afterHash": "5d0bb2585a70cfb83e7e638a49ee600623852893fba86443b3a83a7d975fe0b6"
+    },
+    {
+      "file": "src/module.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "23e1f25e76af0e055c8582e557ab67d71784e0be7ad5e1d394829a5047b68ae7",
+      "afterHash": "d83ae9546ce29ef5070ec7906fe8827d953498941192430a49db276a3918e2ff"
+    },
+    {
+      "file": "src/page-metadata.js",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "9b6c4f9eb95b7cf8aa444c67088b43a2320516083bdc42026e78bd3885092f35",
+      "afterHash": "223714fd512993b3127253738efe715c5fd236d0489c355e435be2698bff3211"
+    },
+    {
+      "file": "src/schweigepflicht.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "dc9b9e177e73bf6e804259e1f8bab1a9ca57e191a67411e801e6e75c7c55059a",
+      "afterHash": "16b1164d86b52265097992c2ab6fca4d2491872f89d38b45c01325ae402a1339"
+    },
+    {
+      "file": "src/shared.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "f480985a0f6c5d6cf3f814b343a5ee304ef4d998b99816ce6416d264230e4573",
+      "afterHash": "a71d0441ba35c9c6fabd860926f2f2c87121415ba273a94391ff33b886efa909"
+    },
+    {
+      "file": "src/site-content.js",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "760fa24de12869be3616b9f952b4a0a458e3b3157bb5c850be350a18b0ddd0f9",
+      "afterHash": "332d0ac2b16ee2610d0260db9e24ca99e55dabcd0cc4781fe8b11924cfa5fda5"
+    },
+    {
+      "file": "src/tool-overlay.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "7fb026b7c034c3e5d0d526e7399f0897a9b3409208f6e07fc4ab97be61a0353e",
+      "afterHash": "e89128cebc72740d359a90f7f4147885d0e4170e689c36c1d4e830c0b3b79493"
+    },
+    {
+      "file": "src/triage-flow.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "cca0940c607e68cca5cb245e6145443adff5cbebfe49595baf7ae7c94091ca1b",
+      "afterHash": "9d3d78af1308e662a717cfedb5f10a887039aa4633f7c99e0957fc83b4018e54"
+    },
+    {
+      "file": "src/unterstuetzung.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "a039f509bd805665d42c56dd54712eed5dee220ddf8bfcc1d859c7c8e41cac4d",
+      "afterHash": "cbbf71c27e4f7e7eb1d0114d6bd00b4b5248f7d6573256030ac0a21784649893"
+    },
+    {
+      "file": "src/werkzeuge-tools.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "1fa5bde4f37a38abc95905cb8bb97fcd30ed7f2e34a2715a6f49744ad2018bc9",
+      "afterHash": "591686130b47b84b40bf98e8aa8cde23f543f9abd8c4ec8aa45290c77276f2f3"
+    },
+    {
+      "file": "src/werkzeuge.jsx",
+      "status": "pass",
+      "checks": {
+        "codeAndJsxStructureIncludingNumericBooleanAndObjectKeys": true,
+        "protectedAttributesIdsRolesClassesLinkTargets": true,
+        "navigationCalls": true,
+        "exactUrlAndContactLiterals": true,
+        "exactStandardCitationTitlesAndUrls": true
+      },
+      "differences": [],
+      "beforeHash": "8c64daa0b482cc8ca0b0de20b13cdfe1d670ce1aa835259f231e4eea18c324ac",
+      "afterHash": "9abb32d4ee14f7e6dfe647c5705b3b74bd4f9a4f3e475bb8ef4dda082ae03984"
+    }
+  ],
+  "crisisExclusions": [
+    {
+      "file": "src/notfall.jsx",
+      "byteIdentical": true,
+      "beforeSha256": "38cf3f712d83d9023fd89f1c13cfd514c0f866a1cca322a0158767424f0afc38",
+      "afterSha256": "38cf3f712d83d9023fd89f1c13cfd514c0f866a1cca322a0158767424f0afc38"
+    },
+    {
+      "file": "src/crisis-content.js",
+      "byteIdentical": true,
+      "beforeSha256": "59f873169ec15dc9d4652a0d3e246275e7f61b7375e8824d2203e33583f1484a",
+      "afterSha256": "59f873169ec15dc9d4652a0d3e246275e7f61b7375e8824d2203e33583f1484a"
+    }
+  ],
+  "handoutExclusions": [
+    {
+      "file": "src/unterstuetzung.jsx",
+      "id": "DL-02",
+      "completeHandoutsObjectEntryByteIdentical": true,
+      "beforeSha256": "67b6cc6c7c386c660c713c45863889c6fe5d2ada99864721f1a6858601e29c0c",
+      "afterSha256": "67b6cc6c7c386c660c713c45863889c6fe5d2ada99864721f1a6858601e29c0c"
+    },
+    {
+      "file": "src/unterstuetzung.jsx",
+      "id": "DL-04",
+      "completeHandoutsObjectEntryByteIdentical": true,
+      "beforeSha256": "004f2d48ea80213933a74ec0a40f621fac8390c699e92a9d59473b68256adfa2",
+      "afterSha256": "004f2d48ea80213933a74ec0a40f621fac8390c699e92a9d59473b68256adfa2"
+    },
+    {
+      "file": "src/unterstuetzung.jsx",
+      "id": "DL-05",
+      "completeHandoutsObjectEntryByteIdentical": true,
+      "beforeSha256": "da8350d6659aa030ed6aa043d27242bf29b9d1381fcc45d941c621b829b3f610",
+      "afterSha256": "da8350d6659aa030ed6aa043d27242bf29b9d1381fcc45d941c621b829b3f610"
+    }
+  ],
+  "numericTextChanges": [],
+  "templateTextChanges": [],
+  "summary": {
+    "filesChecked": 23,
+    "sourceInvariantPasses": 23,
+    "needsReview": [],
+    "crisisFilesByteIdentical": true,
+    "excludedHandoutEntriesByteIdentical": true,
+    "numericTextFilesFlagged": [],
+    "templateTextFilesFlagged": [],
+    "limitation": "Text meaning, new promises and complete WCAG/legal/clinical approval are outside this structural check. Read the language-review reports and independent review separately."
+  }
+}

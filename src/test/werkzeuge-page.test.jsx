@@ -57,7 +57,7 @@ describe('WerkzeugePage legacy draft deletion', () => {
       LEGACY_KEYS.forEach(key => expect(storage.getItem(key)).toBeNull());
     }
     expect(window.localStorage.getItem('unrelated-setting')).toBe('keep');
-    expect(screen.getByRole('status')).toHaveTextContent('Alte Browser-Entwürfe gelöscht.');
+    expect(screen.getByRole('status')).toHaveTextContent('Alte Entwürfe in diesem Browser sind gelöscht.');
   });
 
   it('attempts the other draft and session copies when one persistent copy cannot be deleted', async () => {
@@ -78,8 +78,8 @@ describe('WerkzeugePage legacy draft deletion', () => {
     expect(window.localStorage.getItem(LEGACY_KEYS[0])).toContain('Old draft');
     expect(window.localStorage.getItem(LEGACY_KEYS[1])).toBeNull();
     expect(window.sessionStorage.length).toBe(0);
-    expect(screen.getByRole('status')).toHaveTextContent('Frühere Browser-Kopien konnten nicht vollständig gelöscht werden.');
-    expect(screen.getByRole('status')).not.toHaveTextContent('Alte Browser-Entwürfe gelöscht.');
+    expect(screen.getByRole('status')).toHaveTextContent('Frühere Kopien in diesem Browser konnten nicht vollständig gelöscht werden.');
+    expect(screen.getByRole('status')).not.toHaveTextContent('Alte Entwürfe in diesem Browser sind gelöscht.');
   });
 
   it('disables the page deletion action while a tool is open and enables it again after closing', async () => {
@@ -97,7 +97,7 @@ describe('WerkzeugePage legacy draft deletion', () => {
     expect(window.localStorage.length).toBe(2);
     expect(window.sessionStorage.length).toBe(2);
 
-    await user.click(screen.getByRole('button', { name: 'schliessen' }));
+    await user.click(screen.getAllByRole('button', { name: 'Dialog schliessen' }).find(button => button.classList.contains('tool-close')));
     expect(deleteOldDrafts).toBeEnabled();
   });
 });

@@ -9,8 +9,8 @@ import { navHandler, navHref } from './nav-handler.js';
 const HANDOUTS = {
   'DL-01': {
     title: 'Erste Orientierung als Angehörige',
-    sub: 'Was die Erkrankung bedeutet — und was Sie in den ersten Tagen dürfen',
-    lede: 'Wenn jemand, den Sie lieben, gerade die Diagnose bipolare Störung bekommen hat. Eine Orientierung für die ersten Tage.',
+    sub: 'Die Erkrankung verstehen und erste Schritte für sich finden',
+    lede: 'Wenn bei einer nahestehenden Person gerade eine bipolare Störung festgestellt wurde, kann vieles unklar sein. Hier finden Sie eine Orientierung für die ersten Tage.',
     sections: [
       {
         kind: 'h',
@@ -18,30 +18,30 @@ const HANDOUTS = {
       },
       {
         kind: 'p',
-        text: 'Bei einer bipolaren Störung können sich Stimmung, Aktivität und Antrieb in Episoden deutlich verändern. Die genaue Einordnung erfolgt fachlich anhand des Gesamtverlaufs. Behandlung kann Beschwerden lindern und lange stabile Phasen ermöglichen. Verlauf und Unterstützungsbedarf sind individuell.',
+        text: 'Bei einer bipolaren Störung können sich Stimmung, Aktivität und Antrieb während einer Krankheitsphase, einer sogenannten Episode, deutlich verändern. Fachpersonen beurteilen die Erkrankung anhand des gesamten Verlaufs. Eine Behandlung kann Beschwerden lindern und lange stabile Phasen ermöglichen. Wie die Erkrankung verläuft und welche Unterstützung gebraucht wird, ist von Person zu Person verschieden.',
       },
       {
         kind: 'p',
-        text: 'Manie und Hypomanie sind Hochphasen mit veränderter Stimmung und gesteigerter Aktivität. Eine Manie kann den Alltag stark beeinträchtigen; bei einer Hypomanie ist die Beeinträchtigung weniger ausgeprägt. Depressive Episoden können sich etwa durch gedrückte Stimmung, fehlende Freude oder veränderten Antrieb zeigen. Angehörige müssen diese Unterscheidung nicht selbst diagnostizieren.',
+        text: 'Manie und Hypomanie sind Hochphasen mit veränderter Stimmung und gesteigerter Aktivität. Eine Manie kann den Alltag stark beeinträchtigen; bei einer Hypomanie ist die Beeinträchtigung weniger ausgeprägt. Depressive Episoden können sich etwa durch gedrückte Stimmung, fehlende Freude oder veränderten Antrieb zeigen. Angehörige müssen diese Unterscheidung nicht selbst treffen; die Diagnose stellen Fachpersonen.',
       },
       {
         kind: 'p',
-        text: 'Verstehen hilft beim Einordnen — was ist Symptom, was Beziehung, was gerade nicht absichtlich gegen mich gerichtet? Es nimmt die Belastung nicht weg, aber es macht sie sprachfähiger.',
+        text: 'Wissen über die Erkrankung kann helfen, Symptome und Schwierigkeiten in der Beziehung auseinanderzuhalten. Es kann auch helfen, eine Reaktion nicht sofort persönlich zu nehmen. Das nimmt die Belastung nicht weg, kann es aber leichter machen, sie zu benennen und Fragen zu stellen.',
       },
       {
         kind: 'do-dont',
-        doTitle: 'Was hingegen hilft',
-        dontTitle: 'Was in den ersten Tagen oft schadet',
+        doTitle: 'Was Ihnen helfen kann',
+        dontTitle: 'Was in den ersten Tagen zusätzlich belasten kann',
         do: [
-          'Eine Vertrauensperson ins Vertrauen ziehen',
+          'Mit einer Person sprechen, der Sie vertrauen',
           'Die Fachstelle anrufen — auch wenn Sie noch nicht wissen, was Sie fragen sollen',
-          'Den nächsten Schritt klein halten: nur einen',
+          'Einen kleinen nächsten Schritt wählen',
           'Sich erlauben, noch nicht alles zu wissen',
         ],
         dont: [
           'Ohne Pause im Internet weitersuchen, obwohl die Suche Sie zunehmend überfordert',
           'Grosse Entscheidungen treffen, die warten können',
-          'Der erkrankten Person sofort «helfen» wollen, bevor Sie selbst orientiert sind',
+          'Der erkrankten Person sofort helfen wollen, bevor Sie für sich Orientierung gefunden haben',
           'Das ganze Umfeld sofort informieren',
         ],
       },
@@ -53,8 +53,8 @@ const HANDOUTS = {
         kind: 'numlist',
         items: [
           '«Wie behandelbar ist diese Erkrankung — und was bedeutet das konkret für uns?»',
-          '«Was kann ich als Angehörige und Nahestehende tun — und was sollte ich besser lassen?»',
-          '«Gibt es eine Angehörigenberatung oder Psychoedukation, die wir besuchen können?»',
+          '«Was kann ich als angehörige oder nahestehende Person tun — und was sollte ich besser lassen?»',
+          '«Gibt es eine Angehörigenberatung oder ein Angebot, bei dem wir mehr über den Umgang mit der Erkrankung erfahren können?»',
         ],
       },
       {
@@ -228,8 +228,8 @@ const HANDOUTS = {
 
   'DL-06': {
     title: 'Umgang mit Manie',
-    sub: 'Individuelle Veränderungen, Kommunikation und gemeinsam vorbereitete Schutzschritte',
-    lede: 'In einer manischen Episode können sich Stimmung, Aktivität und Verhalten deutlich verändern. Welche Unterstützung passt, hängt von der Situation ab. Sie dürfen Ihre eigenen Grenzen benennen.',
+    sub: 'Veränderungen wahrnehmen, Gespräche führen und Schutzschritte gemeinsam vorbereiten',
+    lede: 'In einer manischen Episode können sich Stimmung, Aktivität und Verhalten deutlich verändern. Welche Unterstützung passt, hängt von der Situation ab; auch Ihre eigenen Grenzen sind dabei wichtig.',
     sections: [
       {
         kind: 'h',
@@ -237,7 +237,7 @@ const HANDOUTS = {
       },
       {
         kind: 'p',
-        text: 'Achten Sie auf Veränderungen gegenüber dem gewohnten Zustand. Welche frühen Hinweise wichtig sind, lässt sich in einer ruhigen Phase mit der betroffenen Person und dem Behandlungsteam besprechen. Einzelne Beobachtungen erlauben keine Diagnose.',
+        text: 'Achten Sie darauf, was anders ist als sonst. Welche frühen Hinweise für diese Person wichtig sind, lässt sich in einer ruhigen Phase mit ihr und dem Behandlungsteam besprechen. Aus einzelnen Beobachtungen lässt sich keine Diagnose ableiten.',
       },
       {
         kind: 'list',
@@ -259,12 +259,12 @@ const HANDOUTS = {
         doTitle: 'Was hilft',
         dontTitle: 'Was selten hilft',
         do: [
-          'Reize reduzieren, wenn dies gewünscht und sicher möglich ist',
+          'Lärm und andere Reize verringern, wenn dies gewünscht und sicher möglich ist',
           'Ruhig und kurz sprechen, wenn ein Gespräch möglich ist',
-          'Ein Thema pro Gespräch ansprechen und Raum für eine Antwort lassen',
+          'Ein Thema pro Gespräch ansprechen und Zeit für eine Antwort lassen',
           'Eigene Beobachtungen dem Behandlungsteam mitteilen',
-          'Vereinbarte Schutzschritte prüfen: Welche Befugnisse und eigenen Grenzen gelten?',
-          'Eine eigene Schutzgrenze benennen, die Sie selbst umsetzen können, etwa ein angespanntes Gespräch beenden',
+          'Bei vereinbarten Schutzschritten klären, wozu Sie befugt sind und wo Ihre eigenen Grenzen liegen',
+          'Eine Grenze benennen, die Sie selbst umsetzen können, etwa ein angespanntes Gespräch beenden',
           'Fachliche Unterstützung holen, wenn Sie Veränderungen oder das weitere Vorgehen nicht einschätzen können',
         ],
         dont: [
@@ -281,7 +281,7 @@ const HANDOUTS = {
       },
       {
         kind: 'p',
-        text: 'Vereinbaren Sie in einer ruhigen Phase mit der betroffenen Person und dem Behandlungsteam, welche individuellen Veränderungen wichtig sind, wer kontaktiert werden kann und was Sie selbst übernehmen möchten und können. Wenn das Gespräch nicht weiterhilft, dürfen Sie es beenden und Unterstützung holen.',
+        text: 'KESB steht für Kindes- und Erwachsenenschutzbehörde. Besprechen Sie in einer ruhigen Phase mit der betroffenen Person und dem Behandlungsteam, welche Veränderungen wichtig sind und wer bei Bedarf kontaktiert werden kann. Klären Sie dabei auch, was Sie selbst übernehmen möchten und können. Wenn ein Gespräch nicht weiterhilft, können Sie es beenden und Unterstützung holen.',
       },
     ],
   },
@@ -293,11 +293,11 @@ const HANDOUTS = {
     sections: [
       {
         kind: 'h',
-        text: 'Was es ist',
+        text: 'Wie sich eine Depression zeigen kann',
       },
       {
         kind: 'p',
-        text: 'In einer depressiven Episode können alltägliche Aufgaben wie aufstehen, duschen oder eine Nachricht beantworten schwerfallen. Manche Menschen erleben Leere oder selbstabwertende Gedanken, andere wirken auch unruhig. Ausmass und Erleben unterscheiden sich. Suizidgedanken können auftreten und brauchen ernsthafte fachliche Einschätzung.',
+        text: 'In einer depressiven Episode können alltägliche Aufgaben wie Aufstehen, Duschen oder das Beantworten einer Nachricht schwerfallen. Manche Menschen erleben Leere oder Gedanken, mit denen sie sich selbst abwerten; andere wirken auch unruhig. Wie stark die Beschwerden sind und wie sie erlebt werden, ist unterschiedlich. Suizidgedanken können auftreten und müssen ernst genommen und fachlich eingeschätzt werden.',
       },
       {
         kind: 'do-dont',
@@ -319,21 +319,21 @@ const HANDOUTS = {
       },
       {
         kind: 'h',
-        text: 'Was Sie sagen können',
+        text: 'So könnte es klingen',
       },
       {
         kind: 'numlist',
         items: [
           '«Ich bin da. Du musst nichts sagen.»',
           '«Ich kann das nicht lösen, aber ich bin hier.»',
-          '«Ich verstehe, dass es sich so anfühlt. Du bist mir wichtig.»',
-          '«Du bist mir wichtig. Ich kann jetzt eine Weile bei dir sein; danach brauche ich eine Pause.»',
+          '«Das klingt schwer. Du bist mir wichtig.»',
+          '«Du bist mir wichtig. Ich kann jetzt eine Weile bei dir sein. Danach brauche ich eine Pause.»',
         ],
       },
       {
         kind: 'callout',
         label: 'Eigene Grenzen und Unterstützung',
-        text: 'Ihre eigene Sicherheit und Ihre Grenzen zählen. Sie müssen keine alleinige Dauerbegleitung übernehmen. Vereinbaren Sie in einer ruhigen Phase, wer bei Veränderungen Unterstützung organisiert und welche eigenen Kontakte Ihnen Entlastung bieten.',
+        text: 'Ihre eigene Sicherheit und Ihre Grenzen zählen. Sie müssen die Begleitung nicht rund um die Uhr allein übernehmen. Besprechen Sie in einer ruhigen Phase, wer bei Veränderungen Unterstützung organisiert und an wen Sie sich für Ihre eigene Entlastung wenden können.',
       },
     ],
   },
@@ -341,7 +341,7 @@ const HANDOUTS = {
   'DL-08': {
     title: 'Fragen für das Arztgespräch',
     sub: 'Vorbereitete Fragen für Hausärztin, Psychiaterin oder Klinikpersonal',
-    lede: 'Im Sprechzimmer ist die Zeit knapp und der Kopf oft voll. Diese Fragen helfen, das Gespräch zu strukturieren — als Angehörige und für die erkrankte Person.',
+    lede: 'Bei einem Arztgespräch kann die Zeit knapp sein und es kann schwerfallen, an alles zu denken. Mit diesen Fragen können Sie das Gespräch vorbereiten — für Ihre Anliegen als angehörige Person und für Fragen zur erkrankten Person.',
     sections: [
       {
         kind: 'h',
@@ -350,10 +350,10 @@ const HANDOUTS = {
       {
         kind: 'list',
         items: [
-          'Schreiben Sie zwei oder drei Fragen auf, die Ihnen am wichtigsten sind — die kommen zuerst.',
+          'Schreiben Sie zwei oder drei Fragen auf, die Ihnen am wichtigsten sind, und sprechen Sie diese zuerst an.',
           'Halten Sie konkrete Beobachtungen aus den letzten Wochen bereit (Schlaf, Stimmung, Verhalten).',
-          'Klären Sie vorab: Was darf das Behandlungsteam mit Ihnen besprechen? (Schweigepflichtentbindung).',
-          'Wenn möglich: jemanden mitnehmen, der mitschreibt — vier Ohren hören mehr als zwei.',
+          'Klären Sie vorab, welche Informationen das Behandlungsteam mit Ihnen besprechen darf und ob die betroffene Person dafür ihre Einwilligung gibt (Schweigepflichtentbindung).',
+          'Wenn möglich, nehmen Sie jemanden mit, der zuhört und mitschreibt.',
         ],
       },
       {
@@ -384,7 +384,7 @@ const HANDOUTS = {
       },
       {
         kind: 'h',
-        text: 'Medikation',
+        text: 'Medikamente',
       },
       {
         kind: 'numlist',
@@ -404,27 +404,27 @@ const HANDOUTS = {
         items: [
           'An welchen Frühwarnzeichen erkennen wir den Beginn einer neuen Episode?',
           'Wen rufen wir wann an — Sie, die Notfallnummer, die Klinik?',
-          'Wie verhalten wir uns als Angehörige, wenn die erkrankte Person die Behandlung verweigert?',
+          'Was können wir als Angehörige tun, wenn die erkrankte Person die Behandlung ablehnt?',
           'Wann ist eine Klinikeinweisung sinnvoll, und wie läuft sie ab?',
         ],
       },
       {
         kind: 'h',
-        text: 'Für mich als Angehörige',
+        text: 'Für mich als angehörige Person',
       },
       {
         kind: 'numlist',
         items: [
           'Was darf ich konkret tun — und was sollte ich besser dem Behandlungsteam überlassen?',
           'Gibt es Angehörigengespräche oder Psychoedukation, die wir besuchen können?',
-          'Wie kann ich Ihnen meine Beobachtungen mitteilen, und welche Informationen dürfen Sie mir mit Einwilligung der betroffenen Person oder auf gesetzlicher Grundlage zurückgeben?',
+          'Wie kann ich Ihnen meine Beobachtungen mitteilen? Welche Informationen dürfen Sie mir mit Einwilligung der betroffenen Person oder auf gesetzlicher Grundlage zurückgeben?',
           'Welche Anlaufstellen empfehlen Sie für mich selbst?',
         ],
       },
       {
         kind: 'callout',
         label: 'Nach dem Gespräch',
-        text: 'Schreiben Sie kurz auf, was vereinbart wurde — wer macht was bis wann. Klären Sie die Frage «Was, wenn ich zwischen den Terminen unsicher werde?»: ist eine Mail an die Praxis, ein Anruf, eine Notfallnummer der richtige Weg?',
+        text: 'Notieren Sie nach dem Gespräch, was vereinbart wurde: Wer macht was bis wann? Fragen Sie auch, an wen Sie sich bei Unsicherheit zwischen den Terminen wenden können und welcher Kontakt dafür passt — etwa eine E-Mail an die Praxis, ein Anruf oder eine individuell vereinbarte Notfallnummer.',
       },
     ],
   },
@@ -568,14 +568,14 @@ function HandoutOverlay({ id, onClose, onNavigate }) {
 // Material-Karten — Reihenfolge bestimmt das Grid.
 // kind: 'handout' rendert HandoutOverlay, 'tool' öffnet das interaktive Werkzeug.
 const MATERIAL_CARDS = [
-  { id: 'DL-01', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Erste Orientierung als Angehörige*r', desc: 'Was diese Erkrankung bedeutet, was Sie als Angehörige*r dürfen und nicht müssen.' },
+  { id: 'DL-01', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Erste Orientierung als Angehörige*r', desc: 'Die Erkrankung verstehen und erste Schritte für sich finden.' },
   { id: 'DL-02', kind: 'handout', metaLabel: 'NOTFALLKARTE', title: 'Notfallkarte fürs Portemonnaie', desc: 'Wichtige Nummern und persönliche Angaben — zum Drucken, Ausfüllen, Falten und Einstecken.' },
   { id: 'DL-04', kind: 'handout', metaLabel: 'GESPRÄCHSHILFE', title: 'Umgang mit Suizidgedanken', desc: 'Anleitung für das direkte Gespräch und Schritte bei akuter Gefährdung.' },
   { id: 'DL-05', kind: 'handout', metaLabel: 'GESPRÄCHSHILFE', title: 'Umgang mit Psychose / Wahn', desc: 'Was Sie sagen können, was Sie nicht sagen sollten, wann professionelle Hilfe nötig ist.' },
-  { id: 'DL-06', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Manie', desc: 'Individuelle Veränderungen, Kommunikation und gemeinsam vorbereitete Schutzschritte.' },
+  { id: 'DL-06', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Manie', desc: 'Veränderungen wahrnehmen, Gespräche führen und Schutzschritte gemeinsam vorbereiten.' },
   { id: 'DL-07', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Depression', desc: 'Begleitung anbieten und die eigenen Grenzen beachten.' },
-  { id: 'DL-08', kind: 'handout', metaLabel: 'CHECKLISTE', title: 'Fragen für das Arztgespräch', desc: 'Vorbereitete Fragen für Hausärztin, Psychiaterin oder Klinikpersonal — strukturiert nach Thema.' },
-  { id: 'DL-09', kind: 'tool', tool: 'krisenplan', metaLabel: 'VORLAGE', cta: '↪ Krisenplan öffnen', title: 'Krisenplan', desc: 'Interaktive Vorlage für Frühwarnzeichen, Kontakte und Klinikwünsche.' },
+  { id: 'DL-08', kind: 'handout', metaLabel: 'CHECKLISTE', title: 'Fragen für das Arztgespräch', desc: 'Fragen für das Gespräch in der Praxis oder Klinik, nach Themen geordnet.' },
+  { id: 'DL-09', kind: 'tool', tool: 'krisenplan', metaLabel: 'VORLAGE', cta: '↪ Krisenplan öffnen', title: 'Krisenplan', desc: 'Gemeinsam Frühwarnzeichen, Kontakte und Klinikwünsche festhalten.' },
 ];
 
 const KIND_META = {
@@ -589,9 +589,9 @@ const MATERIAL_TOOL_COMPONENTS = {
 };
 
 const FAQS = [
-  { q: 'Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?', a: 'Ja. Die Fachstelle Angehörigenarbeit bietet Angehörigenberatung und Psychoedukation für Ihre eigenen Fragen. Sie müssen die erkrankte Person nicht erst überzeugen, bevor Sie selbst Unterstützung suchen.' },
+  { q: 'Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?', a: 'Ja. Die Fachstelle Angehörigenarbeit berät Sie zu Ihren eigenen Fragen. Sie bietet auch Informationen und Gespräche zum Umgang mit der Erkrankung, die sogenannte Psychoedukation. Sie können Unterstützung für sich suchen, ohne die erkrankte Person erst davon zu überzeugen.' },
   { q: 'Ist die Beratung kostenpflichtig?', a: 'Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist kostenlos und vertraulich.' },
-  { q: 'Muss ich wissen, was ich sagen will, bevor ich anrufe?', a: 'Nein. Sie dürfen unsortiert anrufen. Das Sortieren ist Teil der Beratung — niemand erwartet von Ihnen einen fertigen Auftrag.' },
+  { q: 'Muss ich wissen, was ich sagen will, bevor ich anrufe?', a: 'Nein. Sie brauchen noch keine klar formulierte Frage. Im Gespräch können Sie gemeinsam klären, was Sie beschäftigt und welche Unterstützung Sie suchen.' },
   { q: 'Was, wenn die erkrankte Person nicht in der PUK behandelt wird?', a: 'Die Beratung steht auch Angehörigen offen, deren Familienmitglied anderswo behandelt wird oder gar nicht in Behandlung ist. Wir vermitteln bei Bedarf weiter.' },
   { q: 'Wie ist es mit der Schweigepflicht?', a: 'Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.', link: { target: 'schweigepflicht', label: 'Schweigepflicht beim Behandlungsteam vertiefen' } },
 ];
@@ -625,7 +625,7 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
           <h1 className="animate-in delay-1" style={{ maxWidth: '22ch' }}>Unterstützung und Ressourcen.</h1>
           <div className="about-hero-copy animate-in delay-2" style={{ marginTop: 28 }}>
             <p className="lede" style={{ maxWidth: '34ch' }}>Hier finden Sie Hilfe, Material, Kontakt und häufige Fragen an einem Ort.</p>
-            <p className="about-hero-note">Wenn Sie gerade überfordert sind, beginnen Sie am besten bei Hilfe oder Direktkontakt.</p>
+            <p className="about-hero-note">Unter «Hilfe» finden Sie Beratungsangebote. Unter «Kontakt» erreichen Sie die Fachstelle direkt, auch wenn Sie sich gerade überfordert fühlen.</p>
             <ul className="about-hero-functions" aria-label="Vier Bereiche">
               {[
                 ['hilfe', 'Hilfe'],
@@ -651,18 +651,18 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
             </div>
             <div>
               <h2>Wenn Sie zuerst Unterstützung brauchen.</h2>
-              <p className="lede">Sie müssen nicht zuerst der erkrankten Person helfen, um Hilfe für sich anzunehmen.</p>
+              <p className="lede">Sie können sich Unterstützung für Ihre eigene Situation holen, unabhängig davon, welche Hilfe die erkrankte Person erhält.</p>
             </div>
           </div>
 
           <div className="resource-list">
             {[
               { num: '01', title: 'Fachstelle Angehörigenarbeit PUK Zürich', desc: 'Beratung speziell für Angehörige psychisch erkrankter Menschen. Telefonisch, per Mail oder im persönlichen Gespräch.', tag: '058 384 38 00', href: 'tel:+41583843800', kind: 'tel' },
-              { num: '02', title: 'Pro Mente Sana — Beratungstelefon', desc: 'Rechtsberatung zu FU, Vorsorgeauftrag, Beistandschaften und Patientenrechten. Werktags.', tag: '0848 800 858', href: 'tel:+41848800858', kind: 'tel' },
-              { num: '03', title: 'EQUILIBRIUM', desc: 'Verein der Schweizer Selbsthilfegruppen für Menschen mit affektiven Störungen und ihre Angehörigen.', tag: 'equilibrium-ch.ch', href: 'https://www.equilibrium-ch.ch/', kind: 'web' },
+              { num: '02', title: 'Pro Mente Sana — Beratungstelefon', desc: 'Rechtsberatung zu Fürsorgerischer Unterbringung (FU), Vorsorgeauftrag, Beistandschaften und Patientenrechten. Werktags.', tag: '0848 800 858', href: 'tel:+41848800858', kind: 'tel' },
+              { num: '03', title: 'EQUILIBRIUM', desc: 'Verein der Schweizer Selbsthilfegruppen für Menschen mit Erkrankungen der Stimmung (affektiven Störungen) und ihre Angehörigen.', tag: 'equilibrium-ch.ch', href: 'https://www.equilibrium-ch.ch/', kind: 'web' },
               { num: '04', title: 'VASK Schweiz', desc: 'Vereinigung der Angehörigen von schizophrenie- und psychisch Kranken — Selbsthilfegruppen in vielen Kantonen.', tag: 'vask.ch', href: 'https://www.vask.ch/', kind: 'web' },
-              { num: '05', title: 'Selbsthilfe Zürich', desc: 'Vermittelt regionale Selbsthilfegruppen — auch spezifisch für Angehörige bipolarer Menschen.', tag: 'selbsthilfezentrum-zh.ch', href: 'https://www.selbsthilfezentrum-zh.ch/', kind: 'web' },
-              { num: '06', title: 'Opferhilfe Zürich', desc: 'Unterstützung bei Gewalt durch Angehörige — kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', tag: '044 455 21 42', href: 'tel:+41444552142', kind: 'tel' },
+              { num: '05', title: 'Selbsthilfe Zürich', desc: 'Vermittelt regionale Selbsthilfegruppen — auch für Angehörige von Menschen mit bipolarer Störung.', tag: 'selbsthilfezentrum-zh.ch', href: 'https://www.selbsthilfezentrum-zh.ch/', kind: 'web' },
+              { num: '06', title: 'Opferhilfe Zürich', desc: 'Unterstützung, wenn Sie Gewalt durch Angehörige erleben — kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', tag: '044 455 21 42', href: 'tel:+41444552142', kind: 'tel' },
             ].map(r => {
               const external = r.kind === 'web';
               const ariaLabel = r.kind === 'tel'
@@ -697,7 +697,7 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
             </div>
             <div>
               <h2>Wenn Sie etwas Konkretes zum Mitnehmen brauchen.</h2>
-              <p className="lede">Kurze Begleitungen — für Sie selbst, für ein Gespräch oder für die nächste Krise. Klick öffnet den Text; «Drucken / als PDF speichern» liefert das druckbare Format.</p>
+              <p className="lede">Hier finden Sie kurze Materialien für sich selbst und zur Vorbereitung von Gesprächen oder Krisen. Wählen Sie eine Karte, um den Text zu lesen. Mit «Drucken / als PDF speichern» öffnen Sie die Druckansicht.</p>
             </div>
           </div>
 
@@ -738,7 +738,7 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
             </div>
             <div>
               <h2>Wenn Sie direkt mit der Fachstelle sprechen möchten.</h2>
-              <p className="lede">Die Fachstelle Angehörigenarbeit ist für Ihre eigenen Fragen als Angehörige oder nahestehende Person da. Auch wenn Sie sich noch nicht sicher sind, ob Sie Unterstützung brauchen.</p>
+              <p className="lede">Die Fachstelle Angehörigenarbeit berät Sie zu Ihren eigenen Fragen als angehörige oder nahestehende Person. Sie können Kontakt aufnehmen, auch wenn Sie noch nicht sicher sind, ob Sie Unterstützung brauchen.</p>
             </div>
           </div>
 
@@ -746,7 +746,7 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
             <div className="contact-info-block">
               <div className="label">TELEFON</div>
               <div className="value"><a className="link-underline" href="tel:+41583843800">058 384 38 00</a></div>
-              <div className="sub">Werktags. Bei Nichterreichbarkeit eine Nachricht mit Rückrufmöglichkeit hinterlassen.</div>
+              <div className="sub">Werktags. Wenn Sie niemanden erreichen, hinterlassen Sie eine Nachricht mit Ihrer Telefonnummer.</div>
             </div>
             <div className="contact-info-block">
               <div className="label">E-MAIL</div>

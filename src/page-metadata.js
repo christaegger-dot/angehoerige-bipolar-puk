@@ -5,14 +5,14 @@ const SITE_ORIGIN = 'https://angehoerige-bipolar-puk.netlify.app';
 
 const DEFAULT_METADATA = {
   title: 'Bipolare Störung — Psychoedukation für Angehörige | PUK Zürich',
-  description: 'Lese-Begleitung für Angehörige und Nahestehende von Menschen mit bipolarer Störung. Sieben Module, neun interaktive Werkzeuge, druckbare Handouts und Notfallweg. Fachstelle Angehörigenarbeit der PUK Zürich.',
+  description: 'Website für Angehörige und nahestehende Personen von Menschen mit bipolarer Störung. Sieben Module, neun interaktive Werkzeuge, druckbare Handouts und Notfallweg. Fachstelle Angehörigenarbeit der PUK Zürich.',
 };
 
 const PAGE_METADATA = {
   start: DEFAULT_METADATA,
   module: {
     title: 'Alle sieben Module im Überblick | PUK Zürich',
-    description: 'Hier finden Sie den Lernpfad: welches Modul welche Frage beantwortet und wie die Strecke aufgebaut ist. Sie können linear lesen oder direkt ein Modul wählen.',
+    description: 'Sieben Module zur Erkrankung, zum Leben als Angehörige und zu möglichen Hilfen im Alltag. Lesen Sie der Reihe nach oder wählen Sie ein Thema aus.',
   },
   ...Object.fromEntries(MODULES.map(module => [
     `modul${module.num}`,
@@ -20,7 +20,7 @@ const PAGE_METADATA = {
   ])),
   werkzeuge: {
     title: 'Werkzeuge im Überblick | PUK Zürich',
-    description: 'Interaktive Hilfen, um Muster sichtbarer zu machen, Gespräche vorzubereiten und konkrete nächste Schritte festzuhalten.',
+    description: 'Interaktive Hilfen, um eigene Erfahrungen zu betrachten, Gespräche vorzubereiten und nächste Schritte festzuhalten.',
   },
   unterstuetzung: {
     title: `${ANLAUFSTELLEN_ENTRY.title} | PUK Zürich`,
@@ -36,11 +36,11 @@ const PAGE_METADATA = {
   },
   datenschutz: {
     title: 'Datenschutz — Was passiert mit Ihren Daten? | PUK Zürich',
-    description: 'Informationen zur Datenbearbeitung, zur vorübergehenden Nutzung von Werkzeug-Eingaben und zum Entfernen früherer Browser-Entwürfe.',
+    description: 'Wie diese Website Daten verarbeitet, was mit Ihren Eingaben in den Werkzeugen passiert und wie Sie frühere Entwürfe aus dem Browser entfernen.',
   },
   barrierefreiheit: {
     title: 'Erklärung zur Barrierefreiheit | PUK Zürich',
-    description: 'Informationen zur Zugänglichkeit dieser Lese-Begleitung, zum Stand der Vereinbarkeit und zum Kontakt bei Barrieren.',
+    description: 'Wie zugänglich diese Website ist, welche Einschränkungen bekannt sind und wie Sie uns Probleme melden können.',
   },
   schweigepflicht: {
     title: 'Schweigepflicht bei Angehörigengesprächen | PUK Zürich',

@@ -1,0 +1,111 @@
+{
+  "review": "S – Technische Prüfung",
+  "baseCommit": "26da414624cfb3c1cffb1c3df91f741c2190f22a",
+  "branch": "fix/s-language-review",
+  "lint": "passed",
+  "build": "passed",
+  "diffCheck": "passed",
+  "tests": {
+    "files": 18,
+    "tests": 113,
+    "failed": 0,
+    "coverageGate": "passed",
+    "coveragePercent": {
+      "statements": 83.59,
+      "branches": 79.09,
+      "functions": 79.79,
+      "lines": 88.08
+    }
+  },
+  "browser": {
+    "website": {
+      "checks": 636,
+      "failed": 0,
+      "viewportWidths": [
+        320,
+        360,
+        768,
+        1440
+      ],
+      "textPercent": [
+        100,
+        200
+      ]
+    },
+    "tools": {
+      "checks": 225,
+      "failed": 0,
+      "toolCount": 9,
+      "viewportWidth": 360,
+      "textPercent": [
+        100,
+        200
+      ],
+      "buildSha256": "5e4627f86b3060dd6a9d0f4fd3f6bd2462d6c5daf57566985b4ca40b1a844cf9",
+      "buildUnchanged": true
+    },
+    "materialsFaqReference": {
+      "checks": 57,
+      "failed": 0,
+      "materialDialogs": 8,
+      "faqAnswers": 5,
+      "referencePages": 1,
+      "viewportWidths": [
+        320,
+        360
+      ],
+      "textPercent": [
+        100,
+        200
+      ],
+      "reducedMotion": "reduce",
+      "crisisHandouts": "rendering regression only; wording excluded",
+      "fontVerification": "Original computed font sizes retained; text enlarged once; remeasured after two paint frames/finite transitions; all visible HTML text doubled",
+      "buildSha256": "4724bec8a631e766db7d3a4202df8ee9f464783f234ee17b4459e2bc3a1bca1a",
+      "buildHashMethod": "Independent harness digest; separate algorithm from tools audit",
+      "buildUnchanged": true,
+      "pageErrors": 0,
+      "consoleErrors": 0,
+      "requestFailures": 0,
+      "nonBlockingObservations": [
+        {
+          "width": 320,
+          "percent": 200,
+          "material": "dl-02",
+          "scope": "excluded crisis handout rendering only",
+          "observation": "Long unchanged phone links extend into the dialog body padding but stay fully inside the card and viewport; no clipping or page/card horizontal scroll. Raw scrollWidth values retained in evidence."
+        },
+        {
+          "width": 320,
+          "percent": 200,
+          "material": "dl-04",
+          "scope": "excluded crisis handout rendering only",
+          "observation": "Long unchanged phone links extend into the dialog body padding but stay fully inside the card and viewport; no clipping or page/card horizontal scroll. Raw scrollWidth values retained in evidence."
+        },
+        {
+          "width": 320,
+          "percent": 200,
+          "material": "dl-05",
+          "scope": "excluded crisis handout rendering only",
+          "observation": "Long unchanged phone links extend into the dialog body padding but stay fully inside the card and viewport; no clipping or page/card horizontal scroll. Raw scrollWidth values retained in evidence."
+        }
+      ],
+      "evidenceFile": "Material-Browser-Pruefung.json"
+    },
+    "totalChecks": 918,
+    "totalFailed": 0
+  },
+  "sourceInvariants": {
+    "applicationFiles": 23,
+    "passed": 23,
+    "crisisContentByteEqual": true
+  },
+  "independentMeaningReview": "passed after corrections",
+  "limits": [
+    "Keine neue Originalquellen-, Rechts- oder Angebotsverifikation",
+    "Keine echte VoiceOver-/NVDA-Prüfung",
+    "Keine physische Druck- oder PDF-Freigabe",
+    "Atemübung: Start/Abbruch im automatischen Browserlauf; vollständiger zeitgesteuerter Text im Quelltext gelesen"
+  ],
+  "previewProcessesClosed": true
+}

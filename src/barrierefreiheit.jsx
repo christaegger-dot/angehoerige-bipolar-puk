@@ -7,8 +7,9 @@ function BarrierefreiheitPage() {
           <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Barrierefreiheit</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '22ch' }}>Erklärung zur Barrierefreiheit.</h1>
           <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '54ch' }}>
-            Diese Lese-Begleitung soll für alle Angehörigen zugänglich sein — auch unter Stress,
-            mit Sehhilfe, mit Tastatur statt Maus, mit Screenreader oder bei langsamer Verbindung.
+            Diese Website soll für alle Angehörigen zugänglich sein, auch wenn sie unter Stress lesen,
+            eine Sehhilfe brauchen, die Tastatur statt der Maus oder ein Vorleseprogramm (Screenreader)
+            nutzen oder eine langsame Internetverbindung haben.
           </p>
         </div>
       </header>
@@ -17,23 +18,24 @@ function BarrierefreiheitPage() {
         <div className="container" style={{ maxWidth: 720 }}>
           <article className="prose">
 
-            <h2>Stand der Vereinbarkeit</h2>
+            <h2>Stand der Barrierefreiheit</h2>
             <p>
-              Die Lese-Begleitung wurde an den <strong>Web Content Accessibility Guidelines (WCAG) 2.1 auf
-              Konformitätsstufe AA</strong> ausgerichtet und intern mit Tastatur, Screenreader-Semantik und
-              responsiven Layouts geprüft. Eine formale externe Konformitätsprüfung mit dokumentierter Freigabe
+              Die Website orientiert sich an den <strong>Web Content Accessibility Guidelines (WCAG) 2.1 auf
+              Konformitätsstufe AA</strong>. Intern wurden die Tastaturbedienung, die Struktur und Beschriftung
+              für Screenreader sowie die Darstellung auf verschiedenen Bildschirmgrössen geprüft. Eine
+              formale externe Prüfung der Konformität mit dokumentierter Freigabe
               liegt derzeit nicht vor.
             </p>
 
             <h2>Was umgesetzt ist</h2>
             <ul>
-              <li><strong>Tastatur-Bedienbarkeit</strong>: Navigation, Werkzeuge, Modul-Überblick und Orientierungsfragen sind für die Bedienung ohne Maus ausgelegt; sichtbarer Fokusrahmen.</li>
-              <li><strong>Screenreader-Unterstützung</strong>: Semantisches HTML, ARIA-Beschriftungen, Skip-Link zum Hauptinhalt, Fokus-Management in Dialogen.</li>
-              <li><strong>Kontrast</strong>: Text gegenüber Hintergrund mindestens 4.5:1, UI-Elemente mindestens 3:1.</li>
-              <li><strong>Skalierbarkeit</strong>: Layout bleibt bei 200%-Zoom nutzbar; Schriftgrössen in relativen Einheiten.</li>
+              <li><strong>Tastaturbedienung</strong>: Navigation, Werkzeuge, Modulübersicht und Orientierungsfragen sind für die Bedienung ohne Maus ausgelegt. Ein sichtbarer Rahmen zeigt, welches Element gerade ausgewählt ist.</li>
+              <li><strong>Unterstützung für Screenreader</strong>: Überschriften, Links und Bedienelemente sind im HTML gekennzeichnet und beschriftet. Ein Sprunglink führt zum Hauptinhalt. In Dialogen wird der Tastaturfokus gezielt geführt.</li>
+              <li><strong>Kontrast</strong>: Zwischen Text und Hintergrund beträgt das Kontrastverhältnis mindestens 4.5:1, bei Bedienelementen mindestens 3:1.</li>
+              <li><strong>Vergrösserung</strong>: Die Darstellung bleibt bei 200 % Zoom nutzbar. Die Schriftgrössen sind so angegeben, dass sie sich vergrössern lassen.</li>
               <li><strong>Bedienflächen</strong>: Bei Schaltflächen und eigenständigen Bedienelementen achten wir auf ausreichend grosse Bedienflächen. Eine vollständige Prüfung mit Hilfsmitteln steht noch aus.</li>
               <li><strong>Bewegung</strong>: Es gibt keine automatisch startenden Videos oder Audios. Das PUK-Logo wird beim ersten Laden kurz animiert und danach statisch angezeigt; bei reduzierter Bewegung bleibt es statisch.</li>
-              <li><strong>Druck-Versionen</strong>: Werkzeuge und Handouts sind als saubere PDFs druckbar.</li>
+              <li><strong>Druckfassungen</strong>: Werkzeuge und Handouts können als PDF gespeichert und gedruckt werden.</li>
             </ul>
 
             <h2>Bekannte Einschränkungen</h2>
@@ -42,12 +44,12 @@ function BarrierefreiheitPage() {
               <li>Einzelne interaktive Visualisierungen werden laufend auf noch stärkere Tastatur- und Screenreader-Unterstützung nachgerüstet.</li>
               <li>Kontrastwerte werden bei jeder Farb- oder Typografie-Anpassung erneut überprüft, sind aber noch nicht separat dokumentiert oder veröffentlicht.</li>
             </ul>
-            <p>Sollten Sie auf eine Barriere stossen — etwa einen unleserlichen Bereich, eine nicht erreichbare Funktion oder einen vom Screenreader falsch ausgesprochenen Text — melden Sie es uns bitte.</p>
+            <p>Wenn Sie auf ein Hindernis stossen, melden Sie es uns bitte. Das kann etwa ein unleserlicher Bereich, eine nicht erreichbare Funktion oder ein Text sein, den der Screenreader falsch ausspricht.</p>
 
-            <h2>Feedback &amp; Kontakt</h2>
+            <h2>Rückmeldung und Kontakt</h2>
             <p>
-              Wenn Sie Schwierigkeiten beim Zugang zu Inhalten feststellen oder Barrierefreiheits-Verbesserungen
-              vorschlagen möchten, freuen wir uns über Ihre Rückmeldung:
+              Schreiben Sie uns, wenn Sie einen Inhalt nicht erreichen können oder eine Verbesserung
+              der Barrierefreiheit vorschlagen möchten:
             </p>
             <div className="contact-info-block">
               <div className="label">E-MAIL</div>

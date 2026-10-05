@@ -26,7 +26,7 @@ function Modul1Page({ onNavigate }) {
 
   const sections = [
     { id: 's1', label: 'Wenn die Diagnose neu ist' },
-    { id: 's2', label: 'Was Sie verstehen müssen' },
+    { id: 's2', label: 'Was beim Verstehen hilft' },
     { id: 's3', label: 'Mehr als Hoch und Tief' },
     { id: 's4', label: 'Wie Episoden sich zeigen' },
     { id: 's5', label: 'Bipolar I und Bipolar II' },
@@ -60,7 +60,7 @@ function Modul1Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 12–15 Minuten · 10 Abschnitte</span>
             </div>
             <h1>Die bipolare Störung <em>verstehen</em></h1>
-            <p className="lede">Die bipolare Störung verändert Verhalten, Schlaf und Beziehungen — oft unberechenbar. Verstehen hilft beim Einordnen, schafft aber keine Kontrolle. Stabile Phasen sind der beste Moment für wichtige Gespräche.</p>
+            <p className="lede">Die bipolare Störung verändert Verhalten, Schlaf und Beziehungen oft auf schwer vorhersehbare Weise. Wissen darüber hilft beim Einordnen, gibt Ihnen aber keine Kontrolle über die Erkrankung. Für wichtige Gespräche sind stabile Phasen am besten geeignet.</p>
             <div className="module-detail-illu">
               <Ill.M1 size={200} />
             </div>
@@ -97,11 +97,11 @@ function Modul1Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Wenn die Diagnose gerade neu ist</h2>
-              <p className="dropcap">Sie haben vielleicht gerade erfahren, dass jemand, den Sie lieben, eine bipolare Störung hat. Das kann sich anfühlen wie ein Sturz in unbekanntes Terrain — Schock, Ungewissheit, vielleicht auch Erleichterung, weil endlich ein Name da ist für das, was Sie beobachtet haben. Alle diese Reaktionen sind normal. Sie müssen jetzt nicht alles verstehen oder alle Fragen auf einmal lösen. Grosse Entscheidungen, die warten können, dürfen Sie aufschieben. Für den nächsten nötigen Schritt können Sie Unterstützung nutzen.</p>
+              <p className="dropcap">Wenn eine nahestehende Person die Diagnose einer bipolaren Störung erhält, kann das vieles auslösen: Schock, Unsicherheit oder auch Erleichterung, weil es eine Erklärung für bisherige Beobachtungen gibt. Das sind verständliche Reaktionen. Sie brauchen nicht sofort auf alle Fragen eine Antwort. Grosse Entscheidungen, die warten können, lassen sich aufschieben; für den nächsten notwendigen Schritt können Sie sich Unterstützung holen.</p>
 
               <div className="do-dont">
                 <div className="dont-col">
-                  <h3>Was in den ersten Tagen oft schadet</h3>
+                  <h3>Was in den ersten Tagen zusätzlich belasten kann</h3>
                   <ul>
                     <li>Ohne Pause nach immer mehr Informationen suchen, obwohl es Sie zunehmend überfordert</li>
                     <li>Grosse Entscheidungen treffen, die warten können</li>
@@ -112,31 +112,31 @@ function Modul1Page({ onNavigate }) {
                 <div className="do-col">
                   <h3>Was hingegen helfen kann</h3>
                   <ul>
-                    <li>Eine einzige Vertrauensperson ins Vertrauen ziehen</li>
+                    <li>Mit einer Vertrauensperson sprechen</li>
                     <li>Die Fachstelle anrufen — auch wenn Sie noch nicht wissen, was Sie fragen sollen</li>
-                    <li>Den nächsten Schritt klein halten: nur einen</li>
+                    <li>Einen kleinen nächsten Schritt wählen</li>
                   </ul>
                 </div>
               </div>
 
-              <h3>Drei Fragen, die Sie dem Behandlungsteam stellen dürfen</h3>
+              <h3>Drei mögliche Fragen an das Behandlungsteam</h3>
               <ol>
                 <li>«Wie behandelbar ist diese Erkrankung — und was bedeutet das konkret für uns?»</li>
-                <li>«Was kann ich als Angehörige und Nahestehende tun — und was sollte ich besser lassen?»</li>
+                <li>«Wie kann ich unterstützen, und welche Aufgaben gehören zum Behandlungsteam?»</li>
                 <li>«Gibt es eine Angehörigenberatung oder Psychoedukation, die wir besuchen können?»</li>
               </ol>
 
               <aside className="callout">
-                <span className="callout-label">Wenn Sie nicht wissen, wo anfangen</span>
-                <p>Fachstelle Angehörigenarbeit PUK Zürich — <strong>058 384 38 00</strong>. Kostenlos, vertraulich, auch wenn Sie noch gar nicht wissen, was Sie fragen sollen.</p>
+                <span className="callout-label">Kontakt zur Angehörigenberatung</span>
+                <p>Die Fachstelle Angehörigenarbeit PUK Zürich bietet kostenlose, vertrauliche Beratung unter <strong>058 384 38 00</strong>. Sie können auch anrufen, wenn Sie Ihre Fragen erst im Gespräch sortieren möchten.</p>
               </aside>
             </section>
 
             <section id="s2">
-              <h2>Was Sie als Angehörige verstehen müssen</h2>
-              <p>Viele Angehörige merken zuerst, <em>dass</em> etwas nicht stimmt — lange bevor sie einordnen können, <em>was</em> gerade passiert. Die bipolare Störung ist nicht einfach «mal hoch, mal tief». Sie ist eine wiederkehrende, oft schwer kalkulierbare Erkrankung, die Verhalten, Selbstwahrnehmung, Schlaf, Antrieb, Urteilsvermögen und Beziehungen verändert.</p>
-              <p>Für Angehörige ist das besonders schwierig, weil Sie nicht nur Symptome beobachten, sondern mit ihnen leben. Sie erleben Gereiztheit, Rückzug, Euphorie, Impulsivität oder Hoffnungslosigkeit nicht aus der Distanz, sondern im gemeinsamen Alltag. Verstehen hilft deshalb vor allem beim Einordnen: Was ist Symptom, was ist Beziehung, was ist gerade nicht absichtlich gegen mich gerichtet? Es nimmt die Belastung nicht weg — aber es macht sie sprachfähiger.</p>
-              <p>Wichtig ist auch: Verstehen schafft keine Kontrolle. Es kann Ihnen helfen, Muster früher zu erkennen und weniger persönlich zu nehmen. Es verhindert aber nicht, dass Episoden Angst machen, dass Unsicherheit bleibt oder dass Sie an Grenzen kommen.</p>
+              <h2>Was Ihnen beim Verstehen helfen kann</h2>
+              <p>Viele Angehörige bemerken Veränderungen, bevor sie diese einordnen können. Bei einer bipolaren Störung geht es um mehr als «mal hoch, mal tief»: Die wiederkehrende Erkrankung ist oft schwer vorherzusehen und verändert unter anderem Verhalten, Selbstwahrnehmung, Schlaf, Antrieb, Urteilsvermögen und Beziehungen.</p>
+              <p>Gereiztheit, Rückzug, ungewöhnliche Hochstimmung, impulsives Handeln oder Hoffnungslosigkeit können Ihre Beziehung unmittelbar betreffen. Wissen über die Erkrankung kann helfen, zu unterscheiden: Was hängt mit Symptomen zusammen, was betrifft unsere Beziehung, und was ist möglicherweise nicht gegen mich gerichtet? Die Belastung verschwindet dadurch nicht, aber sie lässt sich besser beschreiben.</p>
+              <p>Verstehen kann helfen, Muster früher zu erkennen und manches weniger persönlich zu nehmen. Es gibt Ihnen jedoch keine Kontrolle über die Erkrankung: Episoden können weiterhin Angst machen, Unsicherheit auslösen oder Sie an Ihre Grenzen bringen.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Hinweis</span>
@@ -144,29 +144,29 @@ function Modul1Page({ onNavigate }) {
               </aside>
 
               <blockquote className="module-quote" id="quote-m1-02">
-                <p>«Ich wollte am Anfang vor allem wissen, ob das jetzt er ist, die Krankheit ist oder ob ich überreagiere. Erst später habe ich verstanden: Für Angehörige ist genau diese Unklarheit oft die eigentliche Belastung.»</p>
+                <p>«Am Anfang habe ich mich oft gefragt: Hat das mit der Krankheit zu tun, geht es um uns, oder überreagiere ich? Diese Unklarheit hat mich sehr belastet.»</p>
                 <cite>Redaktionelles Fallbeispiel (fiktiv) · Partnerin</cite>
               </blockquote>
             </section>
 
             <section id="s3">
               <h2>Bipolar ist mehr als Hoch und Tief</h2>
-              <p>Das gängige Bild ist zu simpel: oben Manie, unten Depression, dazwischen Normalität. In der Realität sind Verläufe oft unruhiger. Es gibt klare Episoden, schleichende Übergänge, gemischte Zustände, scheinbar gute Phasen mit Kipprisiko und stabile Zeiten, die sich für Angehörige trotzdem nicht wirklich sicher anfühlen.</p>
+              <p>Das Bild eines einfachen Wechsels zwischen Manie, Depression und stabilen Zeiten greift zu kurz. Neben klar erkennbaren Episoden gibt es schleichende Übergänge und gemischte Zustände. Auch in scheinbar guten Phasen kann sich der Zustand wieder verändern.</p>
               <p>Stabile Phasen können entlasten. Nach belastenden Episoden kann Ihre eigene Alarmbereitschaft jedoch noch eine Zeit lang anhalten. In <a className="puk-link--inline" href={navHref('modul2', 's3')} onClick={navHandler('modul2', onNavigate, 's3')}>Modul 2: erhöhte Wachsamkeit</a> finden Sie eine ausführlichere Reflexion dazu und zu Ihrer eigenen Entlastung.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Zur Einordnung</span>
-                <p>Diese Beschreibungen geben einen Überblick in Alltagssprache. Sie sind keine Anleitung, um selbst eine Diagnose zu stellen. Eine Diagnose stellt immer eine Fachperson. Angehörige können Beobachtungen zu Veränderungen und Verläufen beitragen.</p>
+                <p>Die Beschreibungen geben einen Überblick in Alltagssprache. Die Diagnose stellt eine Fachperson; Ihre Beobachtungen zu Veränderungen und zum Verlauf können dabei helfen. Sie brauchen daraus keine eigene Diagnose abzuleiten.</p>
               </aside>
             </section>
 
             <section id="s4">
               <h2>Wie sich Episoden im Alltag zeigen</h2>
-              <p>Die Phasenlehre ist nur dann hilfreich, wenn sie in den Alltag übersetzt wird. Entscheidend ist nicht nur, wie eine Episode diagnostisch heisst, sondern wie sie sich für Sie zu Hause anfühlt: unberechenbar, laut, leer, beschämend, angsteinflössend oder seltsam schwer greifbar.</p>
-              <p>Die kursiven Ich-Sätze in diesem Abschnitt sind fiktive Alltagsbeispiele, keine dokumentierten Angehörigenzitate.</p>
+              <p>Medizinische Begriffe erklären nur einen Teil dessen, was Sie im Alltag erleben. Eine Episode kann sich zum Beispiel unberechenbar, laut, leer, beschämend, beängstigend oder schwer greifbar anfühlen. Die folgenden Beschreibungen verbinden die Begriffe mit solchen Alltagserfahrungen.</p>
+              <p>Die kursiven Ich-Sätze sind frei formulierte Beispiele zur Veranschaulichung, keine dokumentierten Angehörigenzitate.</p>
 
               <h3>Manie und Hypomanie</h3>
-              <p>In beiden Hochphasen verändern sich Stimmung und Aktivität deutlich gegenüber dem gewohnten Zustand. Weniger Schlafbedürfnis, viele Ideen, Rededrang und Gereiztheit können vorkommen. Nicht jede Gereiztheit ist ein Symptom. Krankheitseinsicht kann beeinträchtigt sein; Widerspruch oder ein anderer Behandlungswunsch beweisen das jedoch nicht.</p>
+              <p>In beiden Hochphasen verändern sich Stimmung und Aktivität deutlich gegenüber dem gewohnten Zustand. Möglich sind ein geringeres Schlafbedürfnis, viele Ideen, Rededrang oder Gereiztheit. Gereiztheit ist jedoch nicht immer ein Symptom. Die Fähigkeit, die eigene Erkrankung zu erkennen und einzuschätzen, kann beeinträchtigt sein. Widerspruch oder ein anderer Behandlungswunsch reichen aber nicht aus, um fehlende Krankheitseinsicht anzunehmen.</p>
               <p><strong>Übersteigertes Selbstwertgefühl.</strong> Die Person traut sich ungewöhnlich viel zu. Bei einer Manie können Grössenwahn und andere psychotische Symptome auftreten. Eine Hochphase mit psychotischen Symptomen ist keine Hypomanie.</p>
               <p><strong>Vermindertes Schlafbedürfnis.</strong> Die Person braucht deutlich weniger Schlaf als sonst und fühlt sich trotzdem ungewöhnlich wenig müde. <em>«Nachts wird die Wohnung umgeräumt — ich kann nicht schlafen.»</em></p>
               <p><strong>Impulsive Entscheidungen.</strong> Grosse Geldausgaben, riskante Investitionen, sexuelle Abenteuer. <em>«Er hat 10'000 Fr. ausgegeben, ohne mich zu fragen.»</em></p>
@@ -177,28 +177,28 @@ function Modul1Page({ onNavigate }) {
               <p>Wahnvorstellungen oder Wahrnehmungen ohne äussere Entsprechung können während einer schweren Manie oder Depression auftreten. Sie werden von der betroffenen Person häufig als real erlebt. Es handelt sich nicht um eine zweite Persönlichkeit. Neue solche Veränderungen brauchen fachliche Einschätzung.</p>
 
               <h3>Stabile Phase (Euthymie)</h3>
-              <p>Zeitfenster für Erholung, Gespräche und gemeinsame Vorbereitung.</p>
+              <p>Stabile Phasen bieten Zeit für Erholung, Gespräche und gemeinsame Vorbereitung.</p>
               <p><strong>Raum für Erholung.</strong> Stabile Phasen können lange dauern und echte Entlastung ermöglichen. Ihre eigene Erholung darf ein anderes Tempo haben.</p>
               <p><strong>Restsymptome möglich.</strong> Zwischen Episoden können milde Symptome bestehen bleiben. <em>«Ist diese gute Laune echt — oder schon der Beginn einer Manie?»</em></p>
               <p><strong>Zeit für Krisenplanung.</strong> Stabile Phasen sind der richtige Moment für wichtige Gespräche. <em>«Jetzt können wir reden — über Grenzen, Vereinbarungen, Notfallplan.»</em></p>
 
               <h3>Depression</h3>
-              <p>Nicht nur Traurigkeit, sondern Leere, Verlangsamung und oft lange Hilflosigkeit auf beiden Seiten. Ob eine Depression im Rahmen einer bipolaren Störung auftritt, wird anhand des gesamten bisherigen Verlaufs fachlich beurteilt. Angehörige können konkrete Veränderungen beschreiben; sie müssen die Diagnose nicht selbst einordnen.</p>
+              <p>Eine Depression kann sich neben Traurigkeit auch in Leere und Verlangsamung zeigen und bei beiden Personen lange Hilflosigkeit auslösen. Ob sie im Rahmen einer bipolaren Störung auftritt, beurteilt eine Fachperson anhand des gesamten bisherigen Verlaufs. Als Angehörige können Sie konkrete Veränderungen beschreiben, ohne die Diagnose selbst einordnen zu müssen.</p>
               <p><strong>Tiefe Traurigkeit und Antriebslosigkeit.</strong> Gefühl der Leere, Hoffnungslosigkeit, bleierne Müdigkeit. <em>«Nichts, was ich sage oder tue, hilft — ich fühle mich machtlos.»</em></p>
               <p><strong>Sozialer Rückzug.</strong> Isolation, kein Interesse an Hobbys oder Kontakten. <em>«Wir sehen keine Freunde mehr — ich vereinsame mit.»</em></p>
               <p><strong>Gedankenkreisen.</strong> Konzentrationsstörungen, Schuldgefühle, manchmal Suizidgedanken. <em>«Die Angst, dass er sich etwas antut, lässt mich nicht schlafen.»</em></p>
-              <p><strong>Unerreichbarkeit.</strong> Physisch anwesend, emotional hinter einer Glaswand. <em>«Es ist, als würde man zusehen, wie der geliebte Mensch verschwindet.»</em></p>
+              <p><strong>Emotionale Distanz.</strong> Die Person ist anwesend, wirkt aber emotional kaum erreichbar. <em>«Wir sind im selben Raum, aber ich habe das Gefühl, nicht zu ihm durchzudringen.»</em></p>
 
               <p>Die Sorge um Suizidgedanken kann auch Sie stark belasten. <a href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>Modul 2</a> behandelt diese Sorge aus Angehörigensicht und zeigt Möglichkeiten für Ihre eigene Unterstützung.</p>
             </section>
 
             <section id="s5">
               <h2>Bipolar I und Bipolar II</h2>
-              <p>Die Unterscheidung ist für Angehörige nicht nur medizinisch relevant. Sie verändert oft, welche Belastung im Vordergrund steht: sichtbare Eskalation, lange Depression, fehlende Ernstnahme durch das Umfeld oder wiederkehrende Unsicherheit in scheinbar guten Phasen.</p>
+              <p>Die Unterscheidung kann auch helfen, Belastungen im Alltag einzuordnen. Im Vordergrund stehen je nach Verlauf etwa deutlich sichtbare Zuspitzungen, lange Depressionen, fehlendes Verständnis im Umfeld oder Unsicherheit in scheinbar guten Phasen.</p>
 
               <h3>Bipolar I — mindestens eine manische Episode</h3>
               <p>Für die Diagnose Bipolar I ist mindestens eine manische Episode erforderlich. Depressive Episoden können hinzukommen, sind für diese Diagnose aber nicht zwingend. Eine Manie kann den Alltag stark beeinträchtigen; manchmal ist eine stationäre Behandlung nötig.</p>
-              <p>Die Manie kann so schwer werden, dass eine Hospitalisation nötig wird. Für Angehörige steht hier oft die sichtbare Eskalation im Vordergrund: Kontrollverlust, Angst, Gefahr, Beschämung und das Gefühl, den vertrauten Menschen zeitweise nicht wiederzuerkennen.</p>
+              <p>Für Angehörige steht bei einer Manie oft die deutlich sichtbare Zuspitzung im Vordergrund: Kontrollverlust, Angst, Gefahr oder Beschämung. Manche erleben auch, dass sie den vertrauten Menschen zeitweise kaum wiedererkennen.</p>
 
               <h3>Bipolar II — Hypomanie und depressive Episoden</h3>
               <p>Bei Bipolar II treten mindestens eine hypomanische und eine depressive Episode auf, ohne frühere Manie. Bipolar II ist keine grundsätzlich leichte Form. Eine Hypomanie kann als produktive oder angenehme Phase erlebt und deshalb übersehen werden.</p>
@@ -220,7 +220,7 @@ function Modul1Page({ onNavigate }) {
 
             <section id="s6">
               <h2>Wenn Verläufe nicht sauber in Phasen passen</h2>
-              <p>Gerade Angehörige zweifeln oft an ihrer Wahrnehmung, wenn das Erleben nicht zur klaren Phasenlehre passt. Das ist häufig kein Missverständnis, sondern Teil der Erkrankung: Bipolare Verläufe können widersprüchlich, gereizt, schnell wechselnd oder über Wochen schwer lesbar sein.</p>
+              <p>Wenn Veränderungen nicht zu den Beschreibungen klarer Phasen passen, zweifeln Angehörige oft an ihrer Wahrnehmung. Bipolare Verläufe können jedoch widersprüchlich oder schnell wechselnd erscheinen, von Gereiztheit geprägt sein oder über Wochen schwer einzuordnen bleiben.</p>
 
               <h3>Mischzustände</h3>
               <p>Bei Mischsymptomen bestehen depressive und manische Symptome gleichzeitig, etwa starke Aktivierung und Hoffnungslosigkeit. Gereiztheit allein bedeutet noch keinen Mischzustand. Bei dieser Kombination ist eine zeitnahe fachliche Einschätzung wichtig.</p>
@@ -232,7 +232,7 @@ function Modul1Page({ onNavigate }) {
               <p>Stimmung und Antrieb können schwanken. Wechselnde Stimmung allein ist kein Grund, einen Verlauf als Rapid Cycling zu bezeichnen. Dieser Begriff dient der fachlichen Einordnung des Episodenverlaufs. Angehörige müssen diese Einordnung nicht selbst vornehmen.</p>
 
               <h3>Unklare Übergänge</h3>
-              <p>Viele Belastungen beginnen nicht eindeutig. Ist das eine echte gute Phase, eine Hypomanie, Erholung oder schon das Kippen? Gerade diese Unschärfe macht Angehörige oft hyperaufmerksam und erschöpft.</p>
+              <p>Veränderungen lassen sich nicht immer eindeutig einordnen: Geht es der Person gerade gut, erholt sie sich, oder beginnt eine Hypomanie oder eine andere Verschlechterung? Diese Unsicherheit kann dazu führen, dass Angehörige besonders aufmerksam bleiben und sich erschöpft fühlen.</p>
 
               <aside className="callout">
                 <span className="callout-label">Wichtig</span>
@@ -242,17 +242,17 @@ function Modul1Page({ onNavigate }) {
 
             <section id="s7">
               <h2>Was das für Angehörige bedeutet</h2>
-              <p>Wenn Verläufe unklar, wiederkehrend oder widersprüchlich sind, entsteht bei Angehörigen oft ein Zustand permanenter Einordnung: Sie beobachten Schlaf, Sprache, Tempo, Geld, Rückzug, Gereiztheit — und fragen sich gleichzeitig, ob Sie überreagieren. Genau diese Unsicherheit ist eine eigene Belastung.</p>
-              <p>Die Unterscheidung zwischen Person und Symptom kann helfen. Sie verhindert, dass Sie jedes Verhalten nur noch als bösen Willen lesen. Aber sie löst nicht alles. Auch krankheitsbedingtes Verhalten kann verletzen, Angst machen oder Vertrauen erschüttern. Verstehen entlastet also oft die Einordnung — nicht automatisch die Beziehung oder Ihre Erschöpfung.</p>
+              <p>Unklare oder wiederkehrende Veränderungen können viel Aufmerksamkeit binden. Vielleicht achten Sie auf Schlaf, Sprache, Aktivität, Geldausgaben, Rückzug oder Gereiztheit und fragen sich zugleich, ob Sie überreagieren. Auch diese Unsicherheit kann Sie belasten.</p>
+              <p>Die Unterscheidung zwischen der Person und ihren Symptomen kann helfen, Verhalten nicht allein als bösen Willen zu verstehen. Dennoch kann auch krankheitsbedingtes Verhalten verletzen, Angst machen oder Vertrauen erschüttern. Es besser einordnen zu können bedeutet daher nicht automatisch, dass sich Ihre Beziehung oder Ihre Erschöpfung verändert.</p>
               <p>In einer Episode können Erleben und Verhalten stark verändert sein. Die Person bleibt mehr als diese Episode: mit ihrer Geschichte, ihren Fähigkeiten, Interessen und Beziehungen. Eine krankheitsbezogene Einordnung hebt Ihre Gefühle oder Schutzbedürfnisse nicht auf.</p>
             </section>
 
             <section id="s8">
-              <h2>Behandlung — Was hilft, was schwierig bleibt</h2>
+              <h2>Behandlung: Möglichkeiten und Schwierigkeiten</h2>
               <p>Die bipolare Störung ist behandelbar. Ziele sind unter anderem weniger Rückfälle und Beschwerden, Erholung und ein selbstbestimmter Alltag. Lange stabile Phasen und ein gutes eigenes und gemeinsames Leben sind möglich; der Verlauf bleibt individuell.</p>
 
               <h3>Stimmungsstabilisierer</h3>
-              <p>Die Auswahl richtet sich nach der aktuellen Phase, dem bisherigen Verlauf, Wirkungen und Nebenwirkungen. Eingesetzt werden unter anderem Lithium, bestimmte Antipsychotika und je nach Situation weitere Medikamente. Lamotrigin und Valproat haben unterschiedliche Einsatzgebiete. Notwendige Kontrollen und mögliche Alternativen werden mit dem Behandlungsteam besprochen. Medikamente nicht eigenständig verändern.</p>
+              <p>Welche Medikamente eingesetzt werden, hängt von der aktuellen Phase, dem bisherigen Verlauf sowie von Wirkungen und Nebenwirkungen ab. Dazu gehören unter anderem Lithium, bestimmte Antipsychotika und je nach Situation weitere Medikamente. Lamotrigin und Valproat haben unterschiedliche Einsatzgebiete. Besprechen Sie notwendige Kontrollen und mögliche Alternativen mit dem Behandlungsteam. Verändern Sie Medikamente nicht eigenständig.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Kinderwunsch, Schwangerschaft und Zeit nach der Geburt</span>
@@ -265,24 +265,24 @@ function Modul1Page({ onNavigate }) {
               <p>Bestimmte strukturierte psychotherapeutische und familienbezogene Programme können die medizinische Behandlung ergänzen und dabei unterstützen, Warnzeichen und Alltagsschwierigkeiten zu bearbeiten. Welche Form passt, besprechen die betroffene Person und das Behandlungsteam.</p>
 
               <h3>Psychoedukation</h3>
-              <p>Strukturierte Psychoedukation und familienbezogene Behandlungen können ergänzend zur medizinischen Behandlung helfen. Sie verbinden Wissen mit Übungen, Austausch und konkreten Strategien. Studien untersuchen solche Programme, nicht bloss das Lesen von Informationen. Diese Website bietet Orientierung; daraus lässt sich keine nachgewiesene Wirkung dieser Website auf Rückfälle oder Belastung ableiten.</p>
+              <p>In der strukturierten Psychoedukation wird Wissen über die Erkrankung mit Übungen, Austausch und konkreten Strategien verbunden. Solche Programme und familienbezogene Behandlungen können die medizinische Behandlung ergänzen. Die Studien beziehen sich auf diese Programme; eine Wirkung des Lesens dieser Website auf Rückfälle oder Belastung ist damit nicht nachgewiesen.</p>
 
               <h3>Realistische Erwartungen</h3>
-              <p>Auch unter guter Behandlung können Episoden auftreten. Fortschritt heisst oft: weniger, mildere oder früher erkannte Krisen — nicht null Krisen. Gerade für Angehörige ist diese realistische Erwartung zentral.</p>
+              <p>Auch unter guter Behandlung können Episoden auftreten. Fortschritt kann bedeuten, dass Krisen seltener oder milder werden oder früher erkannt werden. Vollständige Krisenfreiheit ist deshalb nicht der einzige Massstab für den Behandlungserfolg.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Wenn Behandlung schwierig wird</span>
-                <p>Ambivalenz ist häufig: wegen Nebenwirkungen, Scham, fehlender Krankheitseinsicht oder weil Hypomanien als produktiv erlebt werden. Für Angehörige ist wichtig: Widerstand gegen Behandlung ist nicht automatisch Böswilligkeit. Aber er kann die Lage massiv erschweren. Genau dann brauchen auch Sie eigene Beratung und Orientierung.</p>
+                <p>Menschen können einer Behandlung zwiespältig gegenüberstehen, etwa wegen Nebenwirkungen, Scham oder eingeschränkter Krankheitseinsicht. Manche erleben Hypomanien als produktiv. Wenn eine Behandlung abgelehnt wird, bedeutet das nicht automatisch Böswilligkeit, kann die Situation aber erheblich erschweren. Eigene Beratung kann Ihnen helfen, Ihre Fragen und Handlungsmöglichkeiten zu klären.</p>
               </aside>
 
-              <p>Behandlung ist ausserdem mehr als Medikamente: Schlafrhythmus, Reizreduktion, Tagesstruktur, Vorbeugung gegen neue Krisen und klare Absprachen in stabilen Phasen tragen oft viel zur Stabilität bei. Für Angehörige entlastend ist vor allem nicht das Versprechen «Es passiert nie wieder», sondern das Gefühl: Wir erkennen früher, was kippt, und wir sind weniger unvorbereitet.</p>
-              <p>Manche Verläufe werden zusätzlich kompliziert, wenn Alkohol, Cannabis oder andere Substanzen dazukommen — oder wenn starke Angst, Trauma oder weitere psychische Belastungen mitlaufen. Dann ist nicht alles klar «nur bipolar». Für Angehörige macht das die Lage oft schwerer lesbar und konflikthafter.</p>
-              <p>Es gibt Wochen, in denen alles fast normal ist. In denen Sie zusammen lachen, einkaufen gehen, einen Film schauen. Diese Momente sind nicht Selbstbetrug — sie sind echt. Und sie gehören genauso zu dieser Geschichte.</p>
+              <p>Zur Behandlung gehören neben Medikamenten auch ein regelmässiger Schlafrhythmus, weniger belastende Reize, eine Tagesstruktur, Krisenvorbeugung und klare Absprachen in stabilen Phasen. Diese können zur Stabilität beitragen. Für Angehörige kann es entlastend sein, sich besser vorbereitet zu fühlen, statt zu erwarten, dass nie wieder eine Krise auftritt.</p>
+              <p>Alkohol, Cannabis oder andere Substanzen können den Verlauf zusätzlich erschweren. Auch starke Angst, traumatische Erfahrungen oder weitere psychische Belastungen können eine Rolle spielen. Veränderungen lassen sich dann nicht immer eindeutig der bipolaren Störung zuordnen, was für Angehörige die Einordnung und das Zusammenleben erschweren kann.</p>
+              <p>Ebenso kann es Wochen geben, in denen der gemeinsame Alltag weitgehend unbelastet ist: Sie lachen miteinander, gehen einkaufen oder schauen einen Film. Auch solche Erfahrungen gehören zum Leben mit der Erkrankung.</p>
             </section>
 
             <section id="s9">
               <h2>Was Sie jetzt tun können</h2>
-              <p>Dieses Modul soll Ihnen nicht das Gefühl geben, jetzt alles im Griff haben zu müssen. Sinnvoll ist eher der nächste kleine Schritt: etwas klarer einordnen, etwas früher benennen, etwas weniger allein tragen.</p>
+              <p>Sie brauchen nach diesem Modul nicht alles im Griff zu haben. Wählen Sie einen kleinen nächsten Schritt, der zu Ihrer Situation passt: eine Frage klären, eine Beobachtung ansprechen oder sich Unterstützung holen.</p>
 
               <aside className="callout">
                 <span className="callout-label">Wenn Sie nur eines tun</span>
@@ -299,7 +299,7 @@ function Modul1Page({ onNavigate }) {
               <p>Wenn Sie vor allem sich selbst besser verstehen wollen, ist Modul 2 der richtige nächste Schritt. Wenn Sie eher konkrete Hilfen brauchen, gehen Sie direkt zu Modul 6. Sie müssen die Website nicht streng linear lesen.</p>
 
               <h3>4. Eine Vertrauensperson einweihen</h3>
-              <p>Wenn Sie bisher vieles allein eingeordnet haben, entlastet oft schon eine Person, die die Lage kennt. Nicht die halbe Version, sondern die wirkliche: was Sie beobachten, was Sie befürchten und was Sie im Alltag tragen.</p>
+              <p>Wenn Sie bisher vieles mit sich allein ausgemacht haben, kann ein Gespräch mit einer Vertrauensperson entlasten. Sie entscheiden, wie viel Sie erzählen möchten, etwa über Beobachtungen, Sorgen oder das, was Sie im Alltag belastet. Beachten Sie dabei auch die Privatsphäre der anderen Person.</p>
 
               <div className="next-modules">
                 <a className="next-module" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>
@@ -322,10 +322,10 @@ function Modul1Page({ onNavigate }) {
             <section id="s10">
               <h2>Worauf es ankommt</h2>
               <ul className="key-points">
-                <li><strong>Das einfache Bild reicht oft nicht</strong> — bipolare Verläufe können unklar, gemischt, gereizt oder schleichend sein. Gerade das macht sie für Angehörige so schwer lesbar.</li>
-                <li><strong>Verstehen ordnet mehr, als es löst</strong> — Wissen kann Angst, Wut und Verwirrung anders rahmen, verhindert aber nicht automatisch Belastung oder Krisen.</li>
-                <li><strong>Auch ruhige Phasen bleiben oft ambivalent</strong> — viele Angehörige bleiben innerlich wachsam, obwohl nach aussen gerade Stabilität sichtbar ist.</li>
-                <li><strong>Behandlung hilft oft deutlich, aber selten glatt</strong> — realistische Erwartungen schützen davor, Fortschritt nur an Krisenfreiheit zu messen.</li>
+                <li><strong>Verläufe sind unterschiedlich.</strong> Übergänge und gemischte Symptome können die Einordnung erschweren.</li>
+                <li><strong>Wissen hilft beim Einordnen.</strong> Es kann Angst, Wut und Verwirrung verständlicher machen, verhindert aber nicht automatisch Belastung oder Krisen.</li>
+                <li><strong>Eigene Erholung braucht Raum.</strong> Auch wenn die erkrankte Person stabil wirkt, können Angehörige weiterhin wachsam oder angespannt sein.</li>
+                <li><strong>Behandlung kann helfen und schwierig bleiben.</strong> Auch weniger oder mildere Krisen können Fortschritte sein.</li>
               </ul>
             </section>
 

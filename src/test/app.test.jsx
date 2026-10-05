@@ -8,7 +8,7 @@ describe('App navigation', () => {
     const user = userEvent.setup();
     render(<App />);
 
-    await screen.findByRole('heading', { name: /wenn jemand, den sie lieben/i });
+    await screen.findByRole('heading', { name: /wenn jemand in ihrem umfeld/i });
     expect(screen.queryByRole('link', { name: /SOS Krise — 144/ })).not.toBeInTheDocument();
     expect(within(screen.getByRole('main')).queryByText(/akute Gefahr/i)).not.toBeInTheDocument();
 
@@ -28,7 +28,7 @@ describe('App navigation', () => {
 
     render(<App />);
 
-    expect(await screen.findByRole('heading', { name: /wenn jemand, den sie lieben/i })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /wenn jemand in ihrem umfeld/i })).toBeInTheDocument();
 
     await user.click(screen.getByRole('link', { name: 'Werkzeuge' }));
 

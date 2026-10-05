@@ -86,7 +86,7 @@ function Footer({ page, onNavigate }) {
           </div>
         </div>
         <p className="footer-disclaimer">
-          Die Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) bietet Beratung und Psychoedukation für Angehörige. Die Inhalte ersetzen keine ärztliche oder psychotherapeutische Beratung. Für akute Krisen sind die behandelnde Stelle und die zuständigen Notfalldienste zuständig.
+          Die Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) bietet Beratung und Psychoedukation für Angehörige. Die Inhalte ersetzen keine ärztliche oder psychotherapeutische Beratung. Bei akuten Krisen wenden Sie sich an die behandelnde Stelle oder die zuständigen Notfalldienste.
         </p>
       </div>
     </footer>

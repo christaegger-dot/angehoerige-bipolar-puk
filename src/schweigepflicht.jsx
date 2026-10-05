@@ -17,12 +17,13 @@ function SchweigepflichtPage({ onNavigate }) {
             <span className="sep">/</span>
             <span>Schweigepflicht</span>
           </div>
-          <div className="eyebrow animate-in reference-eyebrow"><span className="dot"></span>Praktische Referenz</div>
+          <div className="eyebrow animate-in reference-eyebrow"><span className="dot"></span>Informationen fürs Gespräch</div>
           <h1 className="animate-in delay-1 reference-title">Schweigepflicht bei Angehörigen&shy;gesprächen.</h1>
           <p className="lede animate-in delay-2 reference-lede">
             Das Behandlungsteam darf Angehörigen grundsätzlich nur mit Einwilligung der betroffenen Person
-            Auskunft geben. Hier erfahren Sie, was eine Schweigepflichtentbindung ermöglicht, wo ihre
-            Grenzen liegen und wie Sie das Gespräch darüber vorbereiten können.
+            Auskunft geben. Mit einer Schweigepflichtentbindung erlaubt die betroffene Person einen
+            Informationsaustausch. Hier lesen Sie, was diese Einwilligung ermöglicht, wo ihre Grenzen
+            liegen und wie Sie das Gespräch darüber vorbereiten können.
           </p>
         </div>
       </header>
@@ -38,66 +39,69 @@ function SchweigepflichtPage({ onNavigate }) {
               die zuständige Behörde bleiben vorbehalten.
             </p>
             <p>
-              Sie können dem Behandlungsteam Beobachtungen und Sorgen anbieten. Ob und wie das Team darauf
-              eingehen oder Ihnen etwas zurückmelden darf, hängt von der Einwilligung und der konkreten
+              Sie können dem Behandlungsteam anbieten, Ihre Beobachtungen und Sorgen zu schildern. Ob und
+              wie das Team darauf eingehen oder Ihnen Auskunft geben darf, hängt von der Einwilligung und der konkreten
               Rechtslage ab.
             </p>
 
             <aside className="callout callout-soft">
               <span className="callout-label">Wichtig</span>
               <p>
-                Schweigepflicht bedeutet nicht, dass Angehörige unwichtig sind. Sie schützt die
-                Selbstbestimmung und das Vertrauensverhältnis der behandelten Person. Eine klar besprochene
-                Entbindung kann Zusammenarbeit ermöglichen, ohne Entscheidungsrechte zu übertragen.
+                Die Schweigepflicht schützt die Selbstbestimmung der behandelten Person und ihr Vertrauen
+                in die Fachpersonen. Eine klar besprochene Entbindung kann die Zusammenarbeit mit Angehörigen
+                ermöglichen. Sie überträgt ihnen jedoch keine Entscheidungsrechte.
               </p>
             </aside>
 
             <h2>Wer kann einwilligen?</h2>
             <p>
               Entscheidend ist, ob die betroffene Person die Bedeutung und die Folgen der konkreten
-              Einwilligung verstehen und entsprechend entscheiden kann. Diese Urteilsfähigkeit wird nicht
-              allein aus einer Diagnose oder einer aktuellen Phase abgeleitet.
+              Einwilligung verstehen und entsprechend entscheiden kann. Das wird als Urteilsfähigkeit
+              bezeichnet. Eine Diagnose oder eine aktuelle Phase allein sagt nicht aus, ob diese
+              Urteilsfähigkeit vorliegt.
             </p>
             <ul>
               <li><strong>Urteilsfähige Erwachsene</strong> entscheiden selbst, welche Informationen an wen weitergegeben werden dürfen.</li>
               <li><strong>Bei Minderjährigen</strong> klären Sie mit dem Behandlungsteam, wie Einwilligung, Vertraulichkeit und die Beteiligung der Sorgeberechtigten im konkreten Fall geregelt sind.</li>
-              <li><strong>Wenn die Person über eine konkrete Frage nicht selbst entscheiden kann,</strong> fragen Sie nach der dafür zuständigen Vertretung und der gesetzlichen Grundlage. Vorhandene Dokumente wie eine Patientenverfügung oder ein Vorsorgeauftrag können dabei zu klären sein.</li>
-              <li><strong>Bei psychiatrischer Behandlung</strong> lassen Sie sich erläutern, welche besonderen Regeln für die konkrete Situation gelten. Aus einer Auskunftsberechtigung folgt nicht automatisch eine medizinische Entscheidungsbefugnis.</li>
+              <li><strong>Wenn die Person über eine konkrete Frage nicht selbst entscheiden kann,</strong> fragen Sie, wer sie dabei vertreten darf und auf welcher gesetzlichen Grundlage. Klären Sie auch, ob Dokumente wie eine Patientenverfügung oder ein Vorsorgeauftrag vorliegen und was sie für diese Frage bedeuten.</li>
+              <li><strong>Bei psychiatrischer Behandlung</strong> lassen Sie sich erläutern, welche besonderen Regeln für die konkrete Situation gelten. Dass Sie Auskunft erhalten dürfen, bedeutet nicht automatisch, dass Sie auch über die medizinische Behandlung entscheiden dürfen.</li>
             </ul>
             <p>
-              Klären Sie den konkreten Fall mit dem Behandlungsteam; leiten Sie aus Verwandtschaft oder
-              Betreuung nicht selbst eine pauschale Auskunfts- oder Entscheidungsberechtigung ab.
+              Besprechen Sie mit dem Behandlungsteam, welche Rechte im konkreten Fall bestehen. Gehen Sie
+              nicht allein aufgrund von Verwandtschaft oder Betreuung davon aus, dass Sie generell Auskunft
+              erhalten oder Entscheidungen treffen dürfen.
             </p>
 
             <h2>Was eine Entbindung ermöglicht</h2>
             <p>
-              Eine Schweigepflichtentbindung erlaubt den bezeichneten Fachpersonen, im festgelegten Umfang
-              mit einer bezeichneten Person Informationen auszutauschen. Sie ist keine Vollmacht für
+              Eine Schweigepflichtentbindung erlaubt den dafür genannten Fachpersonen, bestimmte Informationen
+              mit der genannten Person auszutauschen. Welche Informationen das sind, wird in der Entbindung
+              festgelegt. Sie ist keine Vollmacht für
               medizinische Entscheidungen und kein allgemeines Recht auf das gesamte Patientendossier.
             </p>
-            <p>Vor der Unterzeichnung sollten möglichst klar sein:</p>
+            <p>Besprechen Sie vor dem Unterzeichnen möglichst genau:</p>
             <ul>
               <li>welche behandelnde Stelle entbunden wird,</li>
               <li>mit welcher angehörigen oder vertretungsberechtigten Person gesprochen werden darf,</li>
-              <li>welche Informationen und Gesprächsanlässe umfasst sind,</li>
+              <li>welche Informationen weitergegeben und welche Themen besprochen werden dürfen,</li>
               <li>ob Informationen in beide Richtungen ausgetauscht werden dürfen,</li>
-              <li>wie lange die Einwilligung gelten soll und wie sie widerrufen werden kann.</li>
+              <li>wie lange die Einwilligung gelten soll und wie sie zurückgenommen, also widerrufen werden kann.</li>
             </ul>
             <p>
-              Klären Sie vor dem Unterzeichnen mit der PUK, welche Informationen das verwendete Formular
-              umfasst, wie lange die Einwilligung gilt und wie sie eingeschränkt oder widerrufen werden kann.
+              Lassen Sie sich das verwendete PUK-Formular vor dem Unterzeichnen erläutern: Welche Informationen
+              umfasst es, wie lange gilt die Einwilligung und wie lässt sie sich einschränken oder widerrufen?
             </p>
 
             <h2>Wie Sie das Gespräch vorbereiten können</h2>
             <ol>
               <li>Wählen Sie möglichst einen ruhigen Zeitpunkt, an dem die betroffene Person das Anliegen verstehen und abwägen kann.</li>
-              <li>Erklären Sie konkret, wofür der Austausch hilfreich wäre, etwa für Frühwarnzeichen, Krisenplanung oder Nachsorge.</li>
+              <li>Erklären Sie konkret, wofür der Austausch hilfreich wäre, etwa um über Frühwarnzeichen, Krisenplanung oder Nachsorge zu sprechen.</li>
               <li>Besprechen Sie Grenzen: Was soll das Team mitteilen dürfen, und was soll privat bleiben?</li>
               <li>Fragen Sie die behandelnde Stelle nach ihrem Formular und dem vorgesehenen Ablauf.</li>
               <li>Prüfen Sie die Regelung erneut, wenn sich Behandlung, behandelnde Stelle oder Wünsche verändern.</li>
             </ol>
             <p>
-              Klären Sie mit der behandelnden Stelle, wie Ihre Einwilligung dokumentiert werden soll.
+              Klären Sie mit der behandelnden Stelle, wie die Einwilligung festgehalten werden soll.
               Fragen Sie bei der PUK nach dem aktuellen offiziellen Formular und lassen Sie sich dessen
               Umfang, Gültigkeit und Widerruf erläutern.
             </p>
@@ -124,27 +128,27 @@ function SchweigepflichtPage({ onNavigate }) {
               achten, durch seine Antwort keine geschützten Informationen preiszugeben.
             </p>
             <aside className="callout callout-soft">
-              <span className="callout-label">Vertrauliche Angaben</span>
+              <span className="callout-label">Vertrauliche Angaben und Behandlungsunterlagen</span>
               <p>
-                Ihre Angaben können in der Patientendokumentation festgehalten werden. Die behandelte Person
+                Ihre Angaben können in der Patientendokumentation, also den Unterlagen zur Behandlung, festgehalten werden. Die behandelte Person
                 hat grundsätzlich ein Einsichtsrecht. Wenn es um besonders vertrauliche Angaben geht, sprechen
                 Sie vorab mit dem Team darüber, wie diese dokumentiert werden und ob schutzwürdige Interessen
                 im Einzelfall eine eingeschränkte Einsicht rechtfertigen.
               </p>
             </aside>
             <p>
-              Welche Informationen weitergegeben werden dürfen, richtet sich nach der Situation und der Rechtsgrundlage. Diese Seite
-              ersetzt keine Beurteilung des Einzelfalls durch die behandelnde Stelle oder eine rechtliche
-              Fachperson.
+              Welche Informationen weitergegeben werden dürfen, hängt von der Situation und der Rechtsgrundlage
+              ab. Für die Beurteilung Ihres konkreten Falls wenden Sie sich an die behandelnde Stelle oder eine
+              rechtliche Fachperson. Diese Seite kann eine solche Beurteilung nicht ersetzen.
             </p>
 
             <h2>Eigene Beratung und nächste Schritte</h2>
             <p>
-              Der Austausch mit dem Behandlungsteam und Ihre eigene Angehörigenberatung sind unterschiedliche
-              Gesprächssituationen. Für Ihre eigene Belastung, Ihre Fragen und Ihre Grenzen können Sie Beratung
-              nutzen, auch wenn die erkrankte Person nicht in Behandlung ist oder nicht mitwirken möchte.
-              Die Angehörigenberatung ist vertraulich; wenn Sie Beobachtungen einem Behandlungsteam mitteilen,
-              klären Sie dort vorab den Umgang mit diesen Angaben.
+              Im Gespräch mit dem Behandlungsteam geht es um die Behandlung der erkrankten Person. In Ihrer
+              eigenen Angehörigenberatung können Sie Ihre Belastung, Ihre Fragen und Ihre Grenzen besprechen,
+              auch wenn die erkrankte Person nicht in Behandlung ist oder nicht mitwirken möchte.
+              Die Angehörigenberatung ist vertraulich. Wenn Sie einem Behandlungsteam Beobachtungen mitteilen,
+              klären Sie hingegen dort vorab, wie mit diesen Angaben umgegangen wird.
             </p>
             <ul className="reference-sources">
               <li>
@@ -168,9 +172,9 @@ function SchweigepflichtPage({ onNavigate }) {
             </ul>
 
             <p className="reference-status">
-              Fachliche Orientierung, keine Rechtsberatung. Redaktioneller Stand: Oktober 2026.
-              Der Abgleich mit den aktuellen amtlichen Originalen und die fachlich-rechtliche Freigabe
-              vor einer öffentlichen Veröffentlichung stehen aus.
+              Diese Seite gibt allgemeine Orientierung und bietet keine Rechtsberatung. Redaktioneller Stand:
+              Oktober 2026. Die Angaben müssen vor einer Veröffentlichung noch mit den aktuellen amtlichen
+              Originalen abgeglichen und fachlich sowie rechtlich freigegeben werden.
             </p>
           </article>
         </div>

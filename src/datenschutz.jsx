@@ -7,8 +7,9 @@ function DatenschutzPage() {
           <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Datenschutz</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '22ch' }}>Was passiert mit Ihren Daten?</h1>
           <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '54ch' }}>
-            Diese Lese-Begleitung ist bewusst datensparsam aufgebaut. Es gibt keine Tracking-Tools, keine
-            Werbe-Cookies und keine Analytics. Was wir trotzdem erheben — und warum — finden Sie unten.
+            Diese Website verarbeitet möglichst wenige Daten. Es gibt keine Tracking-Tools, keine
+            Werbe-Cookies und keine Reichweitenmessung (Analytics). Hier erfahren Sie, welche Daten
+            dennoch verarbeitet werden und wofür sie gebraucht werden.
           </p>
         </div>
       </header>
@@ -30,45 +31,45 @@ function DatenschutzPage() {
 
             <h2>Welche Daten erhoben werden</h2>
 
-            <h3>Server-Logs des Hosters</h3>
+            <h3>Verbindungsdaten beim Hostingdienst</h3>
             <p>
-              Die Lese-Begleitung wird bei <strong>Netlify, Inc.</strong> (USA) gehostet. Beim Aufruf der Seite
-              werden vom Hoster technisch notwendige Verbindungs- und Logdaten verarbeitet: IP-Adresse bzw.
+              Die Website wird bei <strong>Netlify, Inc.</strong> (USA) betrieben. Beim Aufruf verarbeitet
+              der Hostingdienst technisch notwendige Verbindungsdaten und protokolliert sie in sogenannten
+              Server-Logs: IP-Adresse bzw.
               Client-IP, Zeitpunkt des Zugriffs, abgerufene Ressource, übermittelter Statuscode, übertragene
-              Datenmenge und Browser-Kennung. Diese Daten dienen dem sicheren Betrieb, der Auslieferung und der
-              Fehleranalyse der Seite. Wir setzen selbst keine Analytics- oder Tracking-Tools ein und führen
+              Datenmenge und Browser-Kennung. Diese Daten werden gebraucht, um die Seite sicher bereitzustellen
+              und Fehler zu untersuchen. Wir setzen selbst keine Analytics- oder Tracking-Tools ein und führen
               diese Logdaten nicht mit Werkzeug-Eingaben zusammen.
             </p>
             <p>
-              Unser Hostingdienst Netlify, Inc. hat seinen Sitz in den USA. Die beim Website-Aufruf
-              verarbeiteten Verbindungsdaten können auch in den USA bearbeitet werden.
+              Die beim Website-Aufruf verarbeiteten Verbindungsdaten können auch in den USA bearbeitet werden.
             </p>
 
             <h3>Daten in den Werkzeugen</h3>
             <div data-storage-policy="browser-drafts">
               <p data-storage-notice="memory-only">
                 Die interaktiven Werkzeuge arbeiten <strong>lokal in Ihrem Browser</strong>. Ihre Eingaben bleiben
-                nur während der geöffneten Übung sichtbar. Der Krisenplan und der Kommunikations-Trainer speichern
+                nur sichtbar, solange die Übung geöffnet ist. Der Krisenplan und der Kommunikations-Trainer speichern
                 keine Entwürfe im Browser. Beim Schliessen des Werkzeugs oder Neuladen der Seite gehen die aktuellen
-                Eingaben verloren. Eine Option zum dauerhaften Behalten wird nicht angeboten. Sichern Sie wichtige
+                Eingaben verloren. Sie können sie nicht im Werkzeug speichern. Sichern Sie wichtige
                 Inhalte bei Bedarf vor dem Schliessen durch Kopieren, Drucken oder Speichern als PDF.
               </p>
               <p>
                 Diese Eingaben können besonders schützenswerte Gesundheitsdaten enthalten: etwa Warnzeichen,
                 Behandlungswünsche, eigene Belastungen oder Angaben zu Angehörigen. Im Krisenplan können auch
-                Namen, Telefonnummern und Betreuungsabsprachen stehen. Browser-Speicherung schützt solche
-                Angaben nicht vor anderen Personen, die Ihr Gerät und Browser-Profil benutzen können. Schliessen
+                Namen, Telefonnummern und Betreuungsabsprachen stehen. Auch eine Speicherung im Browser würde solche
+                Angaben nicht vor anderen Personen schützen, die Ihr Gerät und Browser-Profil benutzen können. Schliessen
                 Sie auf gemeinsam genutzten Geräten nach der Nutzung alle offenen Tabs mit persönlichen Eingaben.
                 Andere Werkzeuge wie «Meine Belastung wahrnehmen», Säulen-Check und Phasenverlauf
-                halten Ihre Auswahl nur während der geöffneten Übung vor; sie speichern keine Entwürfe.
+                behalten Ihre Auswahl nur so lange, wie die Übung geöffnet ist; sie speichern keine Entwürfe.
                 Die Website übermittelt Werkzeug-Eingaben nicht an unsere Server, an die PUK oder an Dritte.
               </p>
               <p data-storage-notice="legacy-deletion" data-storage-delete-notice="puk-krisenplan-v1 puk-kommunikation-v1">
-                Frühere Versionen konnten Entwürfe im Browser behalten. Solche alten Entwürfe werden in dieser
+                Frühere Versionen konnten Entwürfe im Browser speichern. Diese alten Entwürfe werden in dieser
                 Fassung weder geladen noch angezeigt. Zum Entfernen öffnen Sie unter
                 <a className="link-underline" href="/werkzeuge"> Werkzeuge</a> den Krisenplan oder den
                 Kommunikations-Trainer und wählen «Entwurf löschen». Nach Ihrer Bestätigung werden die aktuellen
-                Eingaben und alte Browser-Kopien dieses Werkzeugs im aktuellen Tab sowie dessen dauerhafte Kopie
+                Eingaben sowie alte Sitzungs- und dauerhafte Browser-Kopien dieses Werkzeugs im aktuellen Tab
                 entfernt. Das andere Werkzeug bleibt unverändert. Alte Sitzungs-Kopien in anderen Tabs müssen Sie
                 dort ebenfalls entfernen; schliessen Sie auch diese Tabs. Alternativ können Sie in den
                 Browser-Einstellungen die Website-Daten dieser Domain löschen. Falls der Browser die Löschung
@@ -87,15 +88,15 @@ function DatenschutzPage() {
 
             <h3>Auffindbarkeit über Suchmaschinen</h3>
             <p>
-              Die Lese-Begleitung ist derzeit bewusst <strong>nicht</strong> für Suchmaschinen indexiert. Sie ist
+              Die Website ist derzeit bewusst <strong>nicht</strong> für Suchmaschinen indexiert. Sie ist
               über direkte Links erreichbar, soll aber nicht aktiv in öffentlichen Suchergebnissen erscheinen.
             </p>
 
-            <h3>Schriften &amp; Ressourcen</h3>
+            <h3>Schriften und Bilder</h3>
             <p>
               Die verwendete Schrift Rubik und alle Bilder werden
-              unmittelbar von dieser Domain ausgeliefert. Es findet <strong>keine Verbindung zu Google Fonts
-              oder anderen externen CDN</strong> statt.
+              direkt von dieser Website geladen. Dabei entsteht <strong>keine Verbindung zu Google Fonts
+              oder anderen externen Netzwerken zur Bereitstellung von Inhalten (CDN)</strong>.
             </p>
 
             <h3>Was wir nicht tun</h3>
@@ -108,10 +109,10 @@ function DatenschutzPage() {
 
             <h2>Kontaktaufnahme per E-Mail</h2>
             <p>
-              Wenn Sie uns per E-Mail schreiben, werden die übermittelten Inhalte (Name, E-Mail-Adresse,
-              Nachricht) bei uns gespeichert, um Ihre Anfrage zu beantworten. Die Speicherung erfolgt im
-              E-Mail-Postfach der Fachstelle, das den Schweigepflicht- und Sicherheits-Standards der PUK
-              unterliegt. Ihre Anfrage wird vertraulich behandelt. Wenn Sie besonders vertrauliche Angaben
+              Wenn Sie uns eine E-Mail schreiben, speichern wir Ihre Angaben (Name, E-Mail-Adresse und
+              Nachricht), um Ihre Anfrage zu beantworten. Sie werden im
+              E-Mail-Postfach der Fachstelle gespeichert, für das die Schweigepflicht- und Sicherheitsstandards der PUK
+              gelten. Ihre Anfrage wird vertraulich behandelt. Wenn Sie besonders vertrauliche Angaben
               besprechen möchten, klären Sie mit der Fachstelle vorab, wie diese dokumentiert werden und
               welche Grenzen der Vertraulichkeit gelten.
             </p>
@@ -132,7 +133,7 @@ function DatenschutzPage() {
 
             <h2>Änderungen dieser Erklärung</h2>
             <p>
-              Wir passen diese Datenschutzerklärung an, wenn sich die Lese-Begleitung technisch oder
+              Wir passen diese Datenschutzerklärung an, wenn sich die Website technisch oder
               inhaltlich ändert. Massgeblich ist jeweils die aktuelle, hier abrufbare Fassung.
             </p>
 

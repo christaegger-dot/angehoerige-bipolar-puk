@@ -37,7 +37,7 @@ describe('ToolOverlay', () => {
     fireEvent.keyDown(window, { key: 'Escape' });
     expect(onClose).toHaveBeenCalledTimes(1);
 
-    await user.click(screen.getByRole('button', { name: /hintergrund — schliessen/i }));
+    await user.click(screen.getAllByRole('button', { name: 'Dialog schliessen' }).find(button => button.classList.contains('tool-overlay-bg')));
     expect(onClose).toHaveBeenCalledTimes(2);
   });
 
@@ -54,7 +54,7 @@ describe('ToolOverlay', () => {
       </>,
     );
 
-    const closeButton = screen.getByRole('button', { name: /^schliessen$/i });
+    const closeButton = screen.getAllByRole('button', { name: 'Dialog schliessen' }).find(button => button.classList.contains('tool-close'));
     const lastButton = screen.getByRole('button', { name: 'Letztes Feld' });
 
     closeButton.focus();

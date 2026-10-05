@@ -1,0 +1,310 @@
+{
+  "review": "S · Materialien und Schweigepflicht",
+  "base_commit": "26da414624cfb3c1cffb1c3df91f741c2190f22a",
+  "branch": "fix/s-language-review",
+  "reviewed_scope": [
+    {
+      "file": "src/unterstuetzung.jsx",
+      "status": "vollständig sprachlich geprüft innerhalb des Geltungsbereichs",
+      "parts": [
+        "Seitenkopf mit vier Sprunglinks",
+        "alle sechs Hilfe- und Beratungsangebote",
+        "acht Materialkarten (Krisenkarten im Wortlaut erhalten)",
+        "Kontaktangaben und Zugangsformulierungen",
+        "alle fünf FAQ-Fragen und Antworten einschliesslich aufgeklappter Texte",
+        "DL-01 gesamter Dialog: Einstieg, Definition, Listen, Gesprächsfragen, Kontakt",
+        "DL-06 gesamter Dialog: individuelle Veränderungen, Symptome, fachliche Warnhinweise, Kommunikation, Schutzbefugnisse, Grenzen, Vorbereitungsabsprache",
+        "DL-07 gesamter Dialog: Beschreibung, Hilfen, dringend abzuklärende Beobachtungen, Gesprächsbeispiele, eigene Grenzen",
+        "DL-08 gesamter Dialog: Vorbereitung sowie alle Fragegruppen und Nachbereitung",
+        "DL-09 Karte und gemeinsamer Dialograhmen, Werkzeugtext durch anderen Teilreview",
+        "Material-Vertiefungslinks, Druck- und Schliessen-Beschriftungen, reguläre Credits"
+      ],
+      "unchanged_reasons": [
+        "Gelungene Symptome, Dringlichkeits- und Freiwilligkeitsbedingungen beibehalten",
+        "Offizielle Namen und operative Angebotsangaben nicht stillschweigend korrigiert",
+        "Titel, IDs, Routing, Kontaktdaten und bestehende W1/W2-Verbindungen erhalten"
+      ]
+    },
+    {
+      "file": "src/schweigepflicht.jsx",
+      "status": "vollständig sprachlich geprüft",
+      "parts": [
+        "Breadcrumbs und Einstieg",
+        "Grundsatz, gesetzliche Ausnahmen und Mitteilen von Beobachtungen",
+        "Einwilligung und situationsbezogene Urteilsfähigkeit",
+        "Minderjährige, Vertretung und psychiatrische Sonderregeln",
+        "Umfang und Grenzen einer Schweigepflichtentbindung",
+        "Vorbereitungsliste und offizielles Formular",
+        "Zusammenarbeit ohne Entbindung",
+        "Vertrauliche Angaben und Einsichtsrechte",
+        "Eigene Angehörigenberatung und beide Anschlusswege",
+        "alle amtlichen Quellenbeschriftungen und offener Freigabestatus"
+      ]
+    },
+    {
+      "file": "src/crisis-content.js",
+      "status": "eingebundenen FINANCIAL_SAFETY-Text als Teil von DL-06 mitgelesen; keine Bearbeitung, ausserhalb Dateizuteilung"
+    }
+  ],
+  "exclusions": [
+    "HANDOUTS DL-02/DL-04/DL-05 und akuter Hinweis im gemeinsamen Footer exakt unverändert; keine sprachliche oder fachliche Freigabe dieser reinen Krisenmaterialien",
+    "Notfallseite nicht geprüft",
+    "Kein Druck- oder PDF-Review, kein W3-Code-Review"
+  ],
+  "findings": [
+    {
+      "id": "S-MR-01",
+      "priority": "wichtig",
+      "file": "src/unterstuetzung.jsx",
+      "section": "DL-01, Einleitung und Erklärung",
+      "line": 13,
+      "before": "Wenn jemand, den Sie lieben, gerade die Diagnose bipolare Störung bekommen hat. Eine Orientierung für die ersten Tage.",
+      "after": "Wenn bei einer nahestehenden Person gerade eine bipolare Störung festgestellt wurde, kann vieles unklar sein. Hier finden Sie eine Orientierung für die ersten Tage.",
+      "reason": "Die ursprüngliche Anrede setzt Liebe voraus und bleibt ein Satzfragment. Die neue Fassung nennt die Situation und lässt unterschiedliche Beziehungen zu.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-MR-02",
+      "priority": "wichtig",
+      "file": "src/unterstuetzung.jsx",
+      "section": "DL-01, Verstehen und Belastung",
+      "line": 29,
+      "before": "Verstehen hilft beim Einordnen — was ist Symptom, was Beziehung, was gerade nicht absichtlich gegen mich gerichtet? Es nimmt die Belastung nicht weg, aber es macht sie sprachfähiger.",
+      "after": "Wissen über die Erkrankung kann helfen, Symptome und Schwierigkeiten in der Beziehung auseinanderzuhalten. Es kann auch helfen, eine Reaktion nicht sofort persönlich zu nehmen. Das nimmt die Belastung nicht weg, kann es aber leichter machen, sie zu benennen und Fragen zu stellen.",
+      "reason": "«Sprachfähiger» und die Wechsel zwischen Erklärung und innerem Monolog sind abstrakt. Die neue Fassung benennt mögliche praktische Schritte ohne Kontroll- oder Wirkversprechen.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-MR-03",
+      "priority": "wichtig",
+      "file": "src/schweigepflicht.jsx",
+      "section": "Wer kann einwilligen?",
+      "line": 67,
+      "before": "Aus einer Auskunftsberechtigung folgt nicht automatisch eine medizinische Entscheidungsbefugnis.",
+      "after": "Dass Sie Auskunft erhalten dürfen, bedeutet nicht automatisch, dass Sie auch über die medizinische Behandlung entscheiden dürfen.",
+      "reason": "Zwei lange Verwaltungsbegriffe verdecken eine entscheidende Unterscheidung. Die rechtliche Einschränkung bleibt erhalten.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-MR-04",
+      "priority": "wichtig",
+      "file": "src/schweigepflicht.jsx",
+      "section": "Gespräch vorbereiten, Bezug der Einwilligung",
+      "line": 104,
+      "before": "Klären Sie mit der behandelnden Stelle, wie Ihre Einwilligung dokumentiert werden soll.",
+      "after": "Klären Sie mit der behandelnden Stelle, wie die Einwilligung festgehalten werden soll.",
+      "reason": "«Ihre» hat bei einer an Angehörige gerichteten Seite einen unklaren Bezug, nachdem die Einwilligung der betroffenen Person erklärt wurde. Der Bezug wird präzisiert, ohne Einwilligungsrechte neu festzulegen.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-MR-05",
+      "priority": "optional",
+      "file": "src/unterstuetzung.jsx",
+      "section": "FAQ vor dem ersten Kontakt",
+      "line": 594,
+      "before": "Nein. Sie dürfen unsortiert anrufen. Das Sortieren ist Teil der Beratung — niemand erwartet von Ihnen einen fertigen Auftrag.",
+      "after": "Nein. Sie brauchen noch keine klar formulierte Frage. Im Gespräch können Sie gemeinsam klären, was Sie beschäftigt und welche Unterstützung Sie suchen.",
+      "reason": "Die Metapher «unsortiert» und der «fertige Auftrag» klingen künstlich. Die Zugangsaussage wird verständlicher; es wird kein zusätzliches Angebot zugesagt.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-MR-06",
+      "priority": "optional",
+      "file": "src/unterstuetzung.jsx",
+      "section": "DL-07, Gesprächsbeispiele",
+      "line": 329,
+      "before": "«Ich verstehe, dass es sich so anfühlt. Du bist mir wichtig.»",
+      "after": "«Das klingt schwer. Du bist mir wichtig.»",
+      "reason": "Die überarbeitete Anregung ist im Alltag leichter auszusprechen. Die Überschrift «So könnte es klingen» kennzeichnet alle Beispiele als anpassbar; eigene zeitliche Grenzen bleiben enthalten.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-MR-07",
+      "priority": "optional",
+      "file": "src/unterstuetzung.jsx",
+      "section": "DL-06, vereinbarte Schutzschritte",
+      "line": 266,
+      "before": "Vereinbarte Schutzschritte prüfen: Welche Befugnisse und eigenen Grenzen gelten?",
+      "after": "Bei vereinbarten Schutzschritten klären, wozu Sie befugt sind und wo Ihre eigenen Grenzen liegen",
+      "reason": "Die abstrakte Frage wird als konkrete Klärung formuliert. Befugnisse und Grenzen bleiben getrennt von Behandlung und Erkrankungsverlauf.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-MR-08",
+      "priority": "optional",
+      "file": "src/unterstuetzung.jsx",
+      "section": "DL-08, Frage zum Informationsaustausch",
+      "line": 420,
+      "before": "Wie kann ich Ihnen meine Beobachtungen mitteilen, und welche Informationen dürfen Sie mir mit Einwilligung der betroffenen Person oder auf gesetzlicher Grundlage zurückgeben?",
+      "after": "Wie kann ich Ihnen meine Beobachtungen mitteilen? Welche Informationen dürfen Sie mir mit Einwilligung der betroffenen Person oder auf gesetzlicher Grundlage zurückgeben?",
+      "reason": "Zwei unterschiedliche Fragen werden in zwei Sätzen gestellt. Einwilligung und gesetzliche Grundlage bleiben ausdrücklich erhalten.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-MR-09",
+      "priority": "optional",
+      "file": "src/unterstuetzung.jsx",
+      "section": "Kontakt, Telefon",
+      "line": 749,
+      "before": "Werktags. Bei Nichterreichbarkeit eine Nachricht mit Rückrufmöglichkeit hinterlassen.",
+      "after": "Werktags. Wenn Sie niemanden erreichen, hinterlassen Sie eine Nachricht mit Ihrer Telefonnummer.",
+      "reason": "Der Kontakttext nennt die konkrete Handlung. Kontaktzeiten und Nummern bleiben unverändert.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-MR-10",
+      "priority": "optional",
+      "file": "src/schweigepflicht.jsx",
+      "section": "Schweigepflichtentbindung: Urteilsfähigkeit, Widerruf und Dokumentation",
+      "line": null,
+      "before": "Diese Urteilsfähigkeit wird nicht allein aus einer Diagnose oder einer aktuellen Phase abgeleitet.",
+      "after": "Das wird als Urteilsfähigkeit bezeichnet. Eine Diagnose oder eine aktuelle Phase allein sagt nicht aus, ob diese Urteilsfähigkeit vorliegt.",
+      "reason": "Notwendige Fachbegriffe werden im Zusammenhang erklärt. Die Bindung an die konkrete Entscheidung und der Einzelfallvorbehalt bleiben erhalten.",
+      "status": "implemented"
+    }
+  ],
+  "patterns": [
+    "Fragmentierte Einleitungen und abstrakte Metaphern durch zusammenhängende Erklärungen ersetzt",
+    "Keine Liebe oder Nähe vorausgesetzt; Anliegen und eigene Grenzen konkret formuliert",
+    "Fach- und Verwaltungsbegriffe erklärt oder durch Alltagssprache erschlossen",
+    "Gesprächsanregungen laut durchgelesen und als anpassbare Beispiele gekennzeichnet",
+    "Lange zusammengesetzte Fragen in verständliche Einzelfragen geteilt",
+    "Unklare Pronomen bei der Einwilligung präzisiert"
+  ],
+  "technical_or_clinical_corrections": [],
+  "reference_precision": [
+    {
+      "file": "src/schweigepflicht.jsx",
+      "line": 104,
+      "before": "wie Ihre Einwilligung dokumentiert werden soll",
+      "after": "wie die Einwilligung festgehalten werden soll",
+      "note": "Redaktionelle Bezugspräzisierung anhand des bestehenden Absatzes zur Einwilligung der betroffenen Person. Keine neue Rechtsgrundlage oder Entscheidungsbefugnis eingeführt."
+    }
+  ],
+  "remaining_review_needs": [
+    {
+      "topic": "W1 Originalquellen und Fachfreigabe",
+      "status": "bestehend, unverändert offen",
+      "details": "Definitionen von Manie/Hypomanie/Depression sowie Handlungs- und Schutzhinweise sind durch S nicht fachlich verifiziert. Der W1-Beleg- und Freigabebedarf bleibt erhalten."
+    },
+    {
+      "topic": "Amtlicher Rechts- und Formularabgleich",
+      "status": "bestehend, unverändert offen",
+      "details": "Einwilligung, Minderjährige, Vertretung, psychiatrische Sonderregeln, Dokumentations-/Einsichtsfragen und aktuelles PUK-Formular benötigen die bestehenden amtlichen Verifikationen. Sichtbarer Status am Ende der Referenzseite bleibt erhalten."
+    },
+    {
+      "topic": "Angebots- und Kontaktangaben",
+      "status": "bestehend, unverändert offen",
+      "details": "Kosten, Vertraulichkeit, Zugang bei fehlender Behandlung, Weitervermittlung, Zuständigkeiten und Kontaktzeiten weiterhin beim Anbieter bestätigen. Keine neue Verfügbarkeit oder Telefonnummer eingesetzt."
+    },
+    {
+      "topic": "VASK Eigenbezeichnung",
+      "status": "Prüfbedarf im bestehenden Angebotsabgleich",
+      "details": "Die möglicherweise veraltete Organisationserläuterung «Vereinigung der Angehörigen von schizophrenie- und psychisch Kranken» wurde als Eigenbezeichnung nicht sprachlich umbenannt. Aktuelle offizielle Fassung beim Anbieter prüfen."
+    },
+    {
+      "topic": "FINANCIAL_SAFETY: KESB",
+      "status": "Sprachliche Abkürzungserklärung lokal in DL-06 umgesetzt",
+      "details": "FINANCIAL_SAFETY bleibt unverändert, weil der Text auch auf der ausgeschlossenen Notfallseite erscheint. In DL-06 erklärt der anschliessende vorhandene Absatz KESB als Kindes- und Erwachsenenschutzbehörde; keine neue rechtliche Voraussetzung."
+    }
+  ],
+  "terms": [
+    {
+      "term": "Medikamente",
+      "variants": "DL-08 Überschrift «Medikation»",
+      "chosen": "Medikamente"
+    },
+    {
+      "term": "Behandlung ablehnen",
+      "variants": "DL-08 «Behandlung verweigert»",
+      "chosen": "Behandlung ablehnt"
+    },
+    {
+      "term": "Menschen mit bipolarer Störung",
+      "variants": "Unterstützung/Selbsthilfe Zürich «bipolare Menschen»",
+      "chosen": "Menschen mit bipolarer Störung"
+    },
+    {
+      "term": "Episode",
+      "variants": "DL-01 unerklärtes «in Episoden»",
+      "chosen": "Krankheitsphase, eine sogenannte Episode; Fachwort erhalten"
+    },
+    {
+      "term": "FU",
+      "variants": "Hilfe/Pro Mente Sana, unerklärte Abkürzung",
+      "chosen": "Fürsorgerische Unterbringung (FU)"
+    },
+    {
+      "term": "Psychoedukation",
+      "variants": "DL-01 und erste FAQ: Fachwort ohne lokale Erklärung",
+      "chosen": "Alltagssprachliche Frage nach Angeboten zum Umgang mit der Erkrankung; Fachwort in erster FAQ mit Informationen/Gesprächen erklärt"
+    },
+    {
+      "term": "affektive Störungen",
+      "variants": "Hilfe/EQUILIBRIUM, unerklärter Fachbegriff",
+      "chosen": "Erkrankungen der Stimmung (affektive Störungen)"
+    },
+    {
+      "term": "Schweigepflichtentbindung/Einwilligung",
+      "variants": "Referenzseite: Fachwort im Einstieg",
+      "chosen": "Schweigepflichtentbindung mit ausdrücklicher Erklärung als erlaubter Informationsaustausch; formaler Begriff bleibt erhalten"
+    },
+    {
+      "term": "Widerruf",
+      "variants": "Referenzseite: widerrufen ohne Alltagserklärung",
+      "chosen": "zurückgenommen, also widerrufen"
+    },
+    {
+      "term": "Patientendokumentation",
+      "variants": "Referenzseite: unklarer Verwaltungsbegriff",
+      "chosen": "Patientendokumentation, also Unterlagen zur Behandlung"
+    },
+    {
+      "term": "KESB",
+      "variants": "Eingebundener FINANCIAL_SAFETY-Text ohne ausgeschriebenen Namen",
+      "chosen": "KESB steht für Kindes- und Erwachsenenschutzbehörde; lokal in DL-06 ergänzt"
+    }
+  ],
+  "space_needs": [
+    {
+      "file": "src/unterstuetzung.jsx",
+      "location": "DL-01 Definition und Absatz zu Verständnis/Belastung",
+      "note": "Zusätzliche Begriffserklärung und konkrete Handlungen machen die Absätze länger; Textfluss im schmalen Dialog und in der Druckansicht kontrollieren."
+    },
+    {
+      "file": "src/unterstuetzung.jsx",
+      "location": "DL-08 Vorbereitung: Frage zur Einwilligung",
+      "note": "Einwilligung erklärt statt bloss in Klammern genannt; Listeneintrag braucht deutlich mehr Zeilen."
+    },
+    {
+      "file": "src/unterstuetzung.jsx",
+      "location": "Hilfe/Pro Mente Sana und erste FAQ",
+      "note": "Ausgeschriebenes FU sowie Erklärung der Psychoedukation verlängern Zeile bzw. Antwort; mobile Darstellung kontrollieren."
+    },
+    {
+      "file": "src/schweigepflicht.jsx",
+      "location": "Box «Vertrauliche Angaben und Behandlungsunterlagen»",
+      "note": "Die Beschriftung ist deutlich länger; Umbruch und Boxhöhe prüfen."
+    },
+    {
+      "file": "src/unterstuetzung.jsx",
+      "location": "DL-06 Absatz nach dem Finanz-Callout",
+      "note": "Ein kurzer Satz erklärt KESB zusätzlich; der Absatz braucht etwas mehr Platz."
+    }
+  ],
+  "performed_checks": [
+    "Vollständige Lektüre der zugewiesenen Inhalte und relevanten W1/W2-Ergebnisse",
+    "Erneute Original/Diff-Lektüre der vollständig bearbeiteten Dateien",
+    "Gesprächssätze auf natürliches Sprechen, begrenzte Zusagen und Freiwilligkeit geprüft",
+    "W1/W2-Kernaussagen, Bedingungen, Unsicherheit, fachliche Zuständigkeiten und konkrete Warnhinweise gegengelesen",
+    "Bytevergleich ausgeschlossener DL-02/DL-04/DL-05-Blöcke und des unveränderten Krisen-Footers",
+    "Quelltextvergleich: URL-/Kontaktziele und Material-Auswahl/Routinglogik unverändert"
+  ],
+  "not_performed": [
+    "Keine Testausführung, kein Browser-/Layouttest durch diesen Teilagent",
+    "Keine neuen amtlichen, klinischen oder Angebotsoriginale abgerufen",
+    "Keine vollständige Druck-/PDF-Abnahme"
+  ],
+  "inaccessible": [],
+  "continuation": "Zugewiesener anwendbarer Sprachumfang vollständig bearbeitet; keine nächste Text-Runde aus Umfangsgründen nötig. Hauptagent führt die zusammenhängende Website-Abschlussprüfung und technische Kontrollen aus."
+}

@@ -1,0 +1,313 @@
+{
+  "scope": {
+    "pages": [
+      "/module/6",
+      "/module/7"
+    ],
+    "files": [
+      "src/modul6.jsx",
+      "src/modul7.jsx"
+    ],
+    "complete": true,
+    "base": "main 26da414 / fix/s-language-review",
+    "read": [
+      "vollständiger S-Auftrag",
+      "W1-Kurzbericht",
+      "W2-Kurzbericht",
+      "W2-M6/M7-Befunde und umgesetzter Inhalt",
+      "beide vollständigen JSX-Dateien inklusive Diagrammtext, Textalternative, Beispielen, Teasern, Gliederung und Fusszeile"
+    ],
+    "excluded": [
+      "Notfallseite und reine Krisenmaterialien",
+      "gemeinsame ModuleQuickStart- und EvidenceSources-Komponenten werden von anderen S-Teilaufträgen betreut",
+      "FINANCIAL_SAFETY-Quellwert in crisis-content.js ist auch im ausgeschlossenen Notfallmaterial verwendet und bleibt unverändert"
+    ]
+  },
+  "assumptions": {
+    "material": "Bipolar & Angehörige, Website",
+    "audience": "Partner:innen, Eltern, Geschwister, erwachsene Kinder sowie Freund:innen und weitere nahestehende Personen",
+    "address": "Sie im Erläuterungstext; du in beziehungsbezogenen Gesprächsbeispielen",
+    "language": "Schweizer Hochdeutsch mit ss und «»",
+    "purpose": "Psychoedukation selbständig oder begleitend zur Angehörigenberatung; keine Krisenintervention"
+  },
+  "patterns": [
+    "Stakkato und Satzfragmente in Erläuterungen und Handlungsabschnitten",
+    "Abstrakte Bilder und unnötig fachliche Ausdrücke",
+    "Häufung von darf/muss und Selbsterlaubnisformeln",
+    "Steife Gesprächsbeispiele und allgemeine Verantwortungsformeln",
+    "Redaktionelle Absicherungen mitten im Lesefluss; entscheidungsrelevante Bedingungen bleiben lokal erhalten"
+  ],
+  "findings": [
+    {
+      "id": "S-M6-01",
+      "priority": "wichtig",
+      "file": "src/modul6.jsx",
+      "line": 33,
+      "location": "GespraechsSkript · Erläuterung der Beobachtung",
+      "before": "Konkret. Mit Zeitfenster. Keine Interpretation.",
+      "after": "Sie beschreiben konkrete Beobachtungen und den Zeitraum, ohne sie zu deuten.",
+      "reason": "Stichworte zu einer zusammenhängenden Erklärung verbunden; Inhalt und Zeitangabe bleiben erhalten.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-M6-02",
+      "priority": "wichtig",
+      "file": "src/modul6.jsx",
+      "line": 34,
+      "location": "GespraechsSkript · eigene Belastung",
+      "before": "Das macht mir Sorgen — und ich merke, dass ich selbst nicht mehr richtig schlafe, weil ich darauf höre.",
+      "after": "Ich mache mir Sorgen. Nachts liege ich oft wach und höre, ob du aufstehst.",
+      "reason": "Schlafbelastung konkret und im Gespräch natürlich ausgedrückt.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-M6-03",
+      "priority": "wichtig",
+      "file": "src/modul6.jsx",
+      "line": 404,
+      "location": "s8 · Grenze und Unterstützung",
+      "before": "Ich mache mir Sorgen und kann die Verantwortung zu Hause nicht allein tragen. Lass uns mit dem Behandlungsteam klären, welche Unterstützung und Absprachen jetzt passen.",
+      "after": "Ich mache mir Sorgen. Ich kann den Haushalt nicht allein organisieren. Ich möchte mit dem Behandlungsteam besprechen, welche Unterstützung möglich ist.",
+      "reason": "Allgemeine Verantwortungsformel durch eigenen Beitrag ersetzt; das Gespräch mit dem Team wird als eigener Wunsch formuliert, ohne ein verbindliches Hilfsangebot an die andere Person.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-M6-04",
+      "priority": "wichtig",
+      "file": "src/modul6.jsx",
+      "line": 437,
+      "location": "s6 · Behandlung ausserhalb akuter Phasen",
+      "before": "Daneben gibt es weniger akute Situationen, in denen Behandlung ambivalent, brüchig oder konflikthaft wird.",
+      "after": "Auch ausserhalb akuter Phasen kann die Person eine Behandlung zwiespältig erleben, unterbrechen oder darüber in Konflikt geraten.",
+      "reason": "Abstrakte Eigenschaften einer Behandlung in nachvollziehbare Erfahrungen und Handlungen übersetzt.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-M6-05",
+      "priority": "wichtig",
+      "file": "src/modul6.jsx",
+      "line": 488,
+      "location": "s9 · Aufenthalt und Auskunft",
+      "before": "Was Sie tun können:</strong> An Angehörigengesprächen teilnehmen. Praktisches organisieren (Post, Rechnungen, Arbeitgeber). Eigene Entlastung sichern. Sich über den Behandlungsplan informieren, soweit Einverständnis besteht. Den Krisenplan aktualisieren.",
+      "after": "Was Sie tun können:</strong> An Angehörigengesprächen teilnehmen, Praktisches wie Post, Rechnungen oder den Kontakt zum Arbeitgeber organisieren und eigene Entlastung klären. Mit entsprechendem Einverständnis können Sie sich über den Behandlungsplan informieren. Auch den Krisenplan können Sie aktualisieren.",
+      "reason": "Stakkato verbunden; alle Handlungsmöglichkeiten und Einverständnisbedingung erhalten.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-M6-06",
+      "priority": "optional",
+      "file": "src/modul6.jsx",
+      "line": 120,
+      "location": "AntiPatterns · doppelte Anführungszeichen",
+      "before": "«Du wirst doch sehen, dass…»",
+      "after": "Du wirst doch sehen, dass…",
+      "reason": "Anführungszeichen aus dem Textwert entfernt, da die bestehende Darstellung sie bereits ergänzt. Dadurch wird das Beispiel einmal mit «» angezeigt.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-M7-01",
+      "priority": "wichtig",
+      "file": "src/modul7.jsx",
+      "line": 241,
+      "location": "s1 · Bedeutung des Modultitels",
+      "before": "Tragfähigkeit heisst hier nicht Harmonie oder Krisenfreiheit. Gemeint ist eher: Der Alltag wird über Zeit etwas haltbarer und leichter zu tragen. Etwas weniger allein, etwas weniger unvorbereitet, etwas mehr Routine, Entlastung und eigene Person.",
+      "after": "Mit «Tragfähigkeit» ist gemeint, dass der Alltag auf Dauer leichter zu bewältigen ist: mit mehr Unterstützung, Vorbereitung, vertrauten Abläufen und Zeit für sich selbst. Das bedeutet nicht, dass die Beziehung immer harmonisch ist oder keine Krisen mehr auftreten.",
+      "reason": "Abstraktes Leitwort mit bestehenden Beispielen erklärt und Satzfragmente verbunden; keine Zusage von Krisenfreiheit.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-M7-02",
+      "priority": "wichtig",
+      "file": "src/modul7.jsx",
+      "line": 155,
+      "location": "SchlussSaetze · Begleittext",
+      "before": "Diese Sätze sind keine Mantras. Sie sind Erlaubnisse, die sich Angehörige meistens selbst geben müssen — niemand sonst kann sie aussprechen.",
+      "after": "Ob Ihnen einer dieser Sätze hilft, entscheiden Sie selbst. Sie können ihn auch in eigene Worte fassen.",
+      "reason": "Belehrende Pflicht zur Selbsterlaubnis und künstliche Wärme entfernt. Die freiwillige Reflexion bleibt.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-M7-03",
+      "priority": "wichtig",
+      "file": "src/modul7.jsx",
+      "line": 265,
+      "location": "s2 · Gesprächseinstieg",
+      "before": "Ich trage noch einige Dinge mit mir. Ich fände es gut, wenn wir dafür irgendwann einen Moment finden.",
+      "after": "Einige Dinge beschäftigen mich noch. Ich würde gern mit dir darüber sprechen, wenn es für uns beide passt.",
+      "reason": "Metaphorische Therapiesprache in einen natürlichen Wunsch übersetzt; beidseitige Passung bleibt Voraussetzung.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-M7-04",
+      "priority": "wichtig",
+      "file": "src/modul7.jsx",
+      "line": 316,
+      "location": "s4 · Gesprächsbeispiel der betroffenen Person",
+      "before": "Ich brauche keine perfekte Fürsorge. Ich brauche eine echte Person neben mir.",
+      "after": "Du musst nicht alles für mich tun. Sag mir, wenn es dir zu viel wird.",
+      "reason": "Künstliche Formulierung durch konkrete Bedürfnisse ersetzt. Als erfundenes und anpassbares Beispiel gekennzeichnet; keine Aussage über alle Betroffenen.",
+      "status": "implemented"
+    },
+    {
+      "id": "S-M7-05",
+      "priority": "optional",
+      "file": "src/modul7.jsx",
+      "line": 406,
+      "location": "s8 · Rückblick",
+      "before": "Eine Nachkrise-Bilanz machen.",
+      "after": "Nach einer schwierigen Phase zurückblicken.",
+      "reason": "Fachlich klingende Bezeichnung durch verständliche Tätigkeit ersetzt.",
+      "status": "implemented"
+    }
+  ],
+  "fachliche_korrekturen": [],
+  "pruefbedarf": [
+    {
+      "id": "S-M6-P1",
+      "file": "src/modul6.jsx",
+      "line": 360,
+      "quote": "Lange Gespräche eskalieren schnell.",
+      "issue": "Bestehende pauschale Aussage zur Gesprächslänge und Eskalation; inhaltlich unverändert erhalten. Aussageabdeckung über die bereits verwendeten Quellen bzw. fachliche Freigabe klären, keine zusätzliche Quelle erfunden."
+    },
+    {
+      "id": "S-M6-P2",
+      "file": "src/modul6.jsx",
+      "line": 361,
+      "quote": "Lautstärke und Tempo sind ansteckend.",
+      "issue": "Bestehende allgemeine Wirkbehauptung; keine sprachliche Umdeutung zu einer neuen klinischen Zusage. Fachliche Einordnung und Quellenabdeckung bleiben zu prüfen."
+    },
+    {
+      "id": "S-M6-P3",
+      "file": "src/modul6.jsx",
+      "line": 371,
+      "quote": "Dieser Satz entlastet Sie beide.",
+      "issue": "Bestehende pauschale Entlastungszusage beim Gesprächsbeispiel. Der Wirkanspruch wurde nicht stillschweigend geändert; fachlich prüfen, ob er so bestehen kann."
+    },
+    {
+      "id": "S-M6-P4",
+      "file": "src/modul6.jsx",
+      "line": 463,
+      "quote": "Tägliche Kontrollfragen … sie erzeugen Scham und Widerstand",
+      "issue": "Bestehende unbedingte Wirkbehauptung im Medikamentenabschnitt bleibt unverändert. Keine neue klinische Bewertung im Sprachreview."
+    },
+    {
+      "id": "S-M7-P1",
+      "file": "src/modul7.jsx",
+      "line": 103,
+      "quote": "Klein heisst nicht weniger wirksam.",
+      "issue": "Bestehende Aussage über die Wirksamkeit kurzer Pausen sprachlich erhalten; fachliche Aussageabdeckung bzw. notwendige Einschränkung vor Freigabe klären."
+    },
+    {
+      "id": "S-M6-P5",
+      "file": "src/modul6.jsx",
+      "line": 489,
+      "quote": "Auch Schuldgefühle wegen der Einweisung … helfen nicht weiter",
+      "issue": "Der bestehende Inhalt bewertet Schuldgefühle als nicht hilfreich; im Sprachreview nicht stillschweigend fachlich ersetzt. Fachliche Redaktion sollte prüfen, wie diese Einordnung mit dem anerkennenden Ton zusammenpasst."
+    }
+  ],
+  "terms": [
+    {
+      "term": "Krisenplan",
+      "variants": "M7 s6 ursprünglich Notfallplan; Planvorbereitung und M6 verwenden Krisenplan",
+      "chosen": "Krisenplan",
+      "reason": "Einheitliche Bezeichnung für die vorhandene gemeinsame Planvorlage; keine Änderung von Zweck oder Ablauf."
+    },
+    {
+      "term": "Tragfähigkeit",
+      "variants": "haltbarer, leichter zu tragen, eigene Person",
+      "chosen": "etablierter Modultitel bleibt; im Text als auf Dauer leichter zu bewältigender Alltag erklärt",
+      "reason": "Bestehende Beispiele konkretisieren das Leitwort, ohne Erfolg zu garantieren."
+    },
+    {
+      "term": "Trialog",
+      "variants": "Fachwort im Titel und drei getrennte Perspektiven",
+      "chosen": "Trialog bleibt und wird als Gespräch zwischen Betroffenen, Angehörigen und Fachpersonen erklärt",
+      "reason": "Vorhandene drei Perspektiven in der Einleitung zusammengeführt."
+    },
+    {
+      "term": "KESB",
+      "variants": "Abkürzung im unveränderten FINANCIAL_SAFETY-Text",
+      "chosen": "KESB steht für Kindes- und Erwachsenenschutzbehörde.",
+      "reason": "Sprachliche Abkürzungserklärung im bestehenden nachfolgenden M6-Absatz; keine neue Rechtsregel."
+    },
+    {
+      "term": "Deeskalieren",
+      "variants": "HandlungsfelderGrid Titel",
+      "chosen": "Anspannung verringern",
+      "reason": "Alltagsverständliche Bezeichnung für denselben vorbereitenden Kommunikationsbereich."
+    }
+  ],
+  "layout_more_space": [
+    {
+      "file": "src/modul6.jsx",
+      "location": "GespraechsSkript kicker",
+      "before": "Werkzeug · Beispiel-Skript",
+      "after": "Gesprächsbeispiel · So könnte es klingen",
+      "note": "Die Beschriftung ist deutlich länger; Umbruch auf schmalen Bildschirmen in W3 prüfen."
+    },
+    {
+      "file": "src/modul6.jsx",
+      "location": "GespraechsSkript Erläuterungen",
+      "before": "Konkret. Mit Zeitfenster. Keine Interpretation.",
+      "after": "Sie beschreiben konkrete Beobachtungen und den Zeitraum, ohne sie zu deuten.",
+      "note": "Zusammenhängende Erläuterungen benötigen in mehreren Skriptzeilen mehr Platz."
+    },
+    {
+      "file": "src/modul6.jsx",
+      "location": "s8 freiwillige Fortsetzung",
+      "before": "Optional — zeigt: Die Grenze schützt die Beziehung, beendet sie nicht.",
+      "after": "Wenn Sie das möchten und die Situation ausreichend sicher ist, können Sie eine Rückkehr anbieten. Damit zeigen Sie, dass Sie die Beziehung schützen und nicht beenden möchten. Eine solche Zusage ist freiwillig.",
+      "note": "Längerer Absatz macht die bereits geltende Freiwilligkeits- und Sicherheitsbedingung ausdrücklich lesbar; Fliesstext benötigt zusätzliche Höhe."
+    },
+    {
+      "file": "src/modul7.jsx",
+      "location": "SaeulenFigurWrap figcaption",
+      "note": "Ressourcen ist konkret erklärt; Bildlegende wird länger. Grafik- und Beschriftungsüberläufe in W3 prüfen."
+    },
+    {
+      "file": "src/modul7.jsx",
+      "location": "TOC s8",
+      "before": "Wachstum & Rückfall",
+      "after": "Veränderungen & erneute Episoden",
+      "note": "Längere Bezeichnung kann im schmalen Inhaltsverzeichnis umbrechen; ID und Ziel bleiben unverändert."
+    }
+  ],
+  "checks": {
+    "manual": "Original vollständig gelesen, fertige Fassung und Diff auf Bedeutung, Rollen, Freiwilligkeit, Voraussetzungen, Zahlen und Quellen verglichen",
+    "static": {
+      "src/modul6.jsx": {
+        "ids_unchanged": true,
+        "nav_targets_handlers_unchanged": true,
+        "source_components_unchanged": true,
+        "ch_ss": true
+      },
+      "src/modul7.jsx": {
+        "ids_unchanged": true,
+        "nav_targets_handlers_unchanged": true,
+        "source_components_unchanged": true,
+        "ch_ss": true
+      }
+    },
+    "preserved": [
+      "W1/W2-Planworkflow und direkter vollständiger Plan",
+      "getrennte Plan- und DL-08-Wege",
+      "Behandlungsteam / keine Behandlung und eigene Angehörigenberatung",
+      "keine abgeleitete Verantwortung für Erkrankung oder Verlauf",
+      "Freiwilligkeit und ausreichende Sicherheit bei Gesprächsfortsetzung",
+      "Einverständnis für Behandlungsinformationen",
+      "eigene Grenzen und bestehende Betreuungshinweise",
+      "CHF 500, Zeitangaben und persönliche Beobachtungsbeispiele",
+      "keine Krisennummern oder Notfallblöcke ergänzt"
+    ],
+    "not_run": [
+      "Tests, Build und Browserprüfung werden zentral durch Root durchgeführt",
+      "externe Quellen- und Angebotsverifikation weiterhin gesondert aus W1 offen"
+    ]
+  },
+  "unreachable_or_unchecked": [
+    "Keine statischen Seiteninhalte der zwei Dateien unzugänglich",
+    "Browserdarstellung und Platzprüfung im Teilauftrag nicht durchgeführt",
+    "Externe Quellen-/Rechts-/Angebotsprüfungen aus W1 nicht neu verifiziert"
+  ],
+  "continuation": "Beide zugeteilten Module vollständig sprachlich geprüft und überarbeitet; keine Fortsetzung innerhalb dieses Scopes erforderlich."
+}

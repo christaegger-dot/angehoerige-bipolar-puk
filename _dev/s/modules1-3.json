@@ -1,0 +1,1190 @@
+{
+  "review": "S",
+  "scope": "Vollständige Sprachprüfung Module1–3 einschliesslich Überschriften, TOC-Beschriftungen, Fliesstext, Listen, Infoboxen, fiktiver Fallstimmen, Gesprächsanregungen, lokalen Figuren-/HTML-Bildtexten und Teasern.",
+  "basis": {
+    "branch": "fix/s-language-review",
+    "original_main": "26da414",
+    "instruction": "/workspace/attachments/7a767819-fbef-40ab-b19a-148900dfb0ca/Eingefügter Text.txt",
+    "predecessors": [
+      "W1-Kurzbericht und zugehörige W1-Fachreview-Befunde/Quellenzuordnungen für M1–3",
+      "W2-Gesamtkohärenz-Bericht und umgesetzte W2-Fassung"
+    ]
+  },
+  "assumptions": {
+    "audience": "Erwachsene Angehörige und Nahestehende; Module2/3 ergänzen partnerschaftliche Beispiele um andere Rollen.",
+    "address": "Sie für Lesende; du in passenden Gesprächsbeispielen.",
+    "role": "Angehörigenberatung und Psychoedukation der Fachstelle Angehörigenarbeit PUK Zürich.",
+    "usage": "Selbstständige Lektüre und Einsatz in Beratung.",
+    "language": "Schweizer Hochdeutsch mit ss und «Guillemets»."
+  },
+  "summary": {
+    "critical_patterns": 3,
+    "important_patterns": 6,
+    "optional_patterns": 2,
+    "changed_source_lines": 118,
+    "complete_modules": [
+      1,
+      2,
+      3
+    ]
+  },
+  "patterns": [
+    "Abstrakte und belehrende Formulierungen",
+    "Stakkato und pathetische Bilder",
+    "Fiktive Fallstimme klingt wie ein Fachtext",
+    "Erlaubnisformeln statt eigener Wahl",
+    "Vorausgesetzte Beteiligung an Beobachtung und weiterer Begleitung",
+    "Redaktionelle Einschränkungen ohne Verbindung zum Gedanken"
+  ],
+  "findings": [
+    {
+      "id": "S-M123-01",
+      "priority": "kritisch",
+      "locations": [
+        "M1 s9 · Vertrauen/Offenlegung"
+      ],
+      "problem": "Die Forderung «Nicht die halbe Version» setzt Angehörige zur vollständigen Offenlegung unter Druck. Die neue Fassung überlässt Umfang und Adressat der Mitteilung der Person und berücksichtigt die Privatsphäre.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul1.jsx",
+        "line": 302,
+        "before": "<p>Wenn Sie bisher vieles allein eingeordnet haben, entlastet oft schon eine Person, die die Lage kennt. Nicht die halbe Version, sondern die wirkliche: was Sie beobachten, was Sie befürchten und was Sie im Alltag tragen.</p>",
+        "after": "<p>Wenn Sie bisher vieles mit sich allein ausgemacht haben, kann ein Gespräch mit einer Vertrauensperson entlasten. Sie entscheiden, wie viel Sie erzählen möchten, etwa über Beobachtungen, Sorgen oder das, was Sie im Alltag belastet. Beachten Sie dabei auch die Privatsphäre der anderen Person.</p>"
+      }
+    },
+    {
+      "id": "S-M123-02",
+      "priority": "kritisch",
+      "locations": [
+        "M2 s4 · Unterstützungsliste und Entlastender Grundsatz"
+      ],
+      "problem": "«Sie sind ein Teil [des Frühwarnsystems]» und «dürfen und sollen» setzen die Beobachtungsrolle voraus. Die neue Fassung knüpft den eigenen Beitrag an freiwillige, gemeinsam vereinbarte Aufgaben; fachliche Einschätzung bleibt beim Team.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul2.jsx",
+        "line": 423,
+        "before": "<p>Sie sind nicht das Frühwarnsystem — Sie sind ein Teil davon. Das Behandlungsteam, der Krisenplan und die erkrankte Person selbst tragen Mitverantwortung. Klären Sie in einer ruhigen Phase gemeinsam: «Welche Veränderungen soll ich ansprechen? Wie soll ich es tun?» Was vereinbart ist, dürfen Sie ansprechen — ohne Schuldgefühle.</p>",
+        "after": "<p>Wenn Sie Beobachtungen beitragen möchten, vereinbaren Sie in einer ruhigen Phase, welche Veränderungen Sie ansprechen und wie Sie dabei vorgehen. Sie könnten fragen: «Was möchtest du, dass ich anspreche, wenn mir etwas auffällt?» Halten Sie auch fest, welche Aufgaben die erkrankte Person und das Behandlungsteam übernehmen. Sie brauchen weder alle Veränderungen zu überwachen noch die fachliche Einschätzung zu übernehmen.</p>"
+      }
+    },
+    {
+      "id": "S-M123-03",
+      "priority": "kritisch",
+      "locations": [
+        "M2 s8 · Hilfe für Angehörige"
+      ],
+      "problem": "Eigene Hilfe wird als Voraussetzung weiterer Begleitung dargestellt. Die neue Fassung nennt sie unabhängig davon, was Angehörige weiter übernehmen wollen oder können.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul2.jsx",
+        "line": 493,
+        "before": "<li><strong>Sie dürfen Hilfe für sich selbst holen</strong> — das ist keine Illoyalität, sondern Voraussetzung dafür, dass Sie langfristig begleiten können.</li>",
+        "after": "<li><strong>Hilfe für Sie selbst ist berechtigt.</strong> Sie können Unterstützung suchen, unabhängig davon, wie viel Begleitung Sie weiter übernehmen möchten oder können.</li>"
+      }
+    },
+    {
+      "id": "S-M123-04",
+      "priority": "wichtig",
+      "locations": [
+        "M1 s1/s2/s6/s7/s8",
+        "M2 SchritteBlock/s1/s5",
+        "M3 s1/s4/s6"
+      ],
+      "problem": "Abstrakte und distanzierte Formeln wie «sprachfähiger», «Loslassen-Thematik adressiert», «Funktionsträgerin der Krise» und «Doppelwahrheit» erschweren das Verständnis. Konkrete Handlungen und alltägliche Wörter ersetzen sie.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul1.jsx",
+        "line": 138,
+        "before": "<p>Für Angehörige ist das besonders schwierig, weil Sie nicht nur Symptome beobachten, sondern mit ihnen leben. Sie erleben Gereiztheit, Rückzug, Euphorie, Impulsivität oder Hoffnungslosigkeit nicht aus der Distanz, sondern im gemeinsamen Alltag. Verstehen hilft deshalb vor allem beim Einordnen: Was ist Symptom, was ist Beziehung, was ist gerade nicht absichtlich gegen mich gerichtet? Es nimmt die Belastung nicht weg — aber es macht sie sprachfähiger.</p>",
+        "after": "<p>Gereiztheit, Rückzug, ungewöhnliche Hochstimmung, impulsives Handeln oder Hoffnungslosigkeit können Ihre Beziehung unmittelbar betreffen. Wissen über die Erkrankung kann helfen, zu unterscheiden: Was hängt mit Symptomen zusammen, was betrifft unsere Beziehung, und was ist möglicherweise nicht gegen mich gerichtet? Die Belastung verschwindet dadurch nicht, aber sie lässt sich besser beschreiben.</p>"
+      }
+    },
+    {
+      "id": "S-M123-05",
+      "priority": "wichtig",
+      "locations": [
+        "M1 s1/s4/s8/s10",
+        "M2 Einleitung/Infoboxen",
+        "M3 s4/s5/s7"
+      ],
+      "problem": "Stakkato, pathetische Bilder und abgetrennte Einschränkungen unterbrechen den Gedanken. Zusammengehörige Aussagen sind verbunden; notwendige Unterschiede und Grenzen der Aussagekraft bleiben vor Ort.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul1.jsx",
+        "line": 100,
+        "before": "<p className=\"dropcap\">Sie haben vielleicht gerade erfahren, dass jemand, den Sie lieben, eine bipolare Störung hat. Das kann sich anfühlen wie ein Sturz in unbekanntes Terrain — Schock, Ungewissheit, vielleicht auch Erleichterung, weil endlich ein Name da ist für das, was Sie beobachtet haben. Alle diese Reaktionen sind normal. Sie müssen jetzt nicht alles verstehen oder alle Fragen auf einmal lösen. Grosse Entscheidungen, die warten können, dürfen Sie aufschieben. Für den nächsten nötigen Schritt können Sie Unterstützung nutzen.</p>",
+        "after": "<p className=\"dropcap\">Wenn eine nahestehende Person die Diagnose einer bipolaren Störung erhält, kann das vieles auslösen: Schock, Unsicherheit oder auch Erleichterung, weil es eine Erklärung für bisherige Beobachtungen gibt. Das sind verständliche Reaktionen. Sie brauchen nicht sofort auf alle Fragen eine Antwort. Grosse Entscheidungen, die warten können, lassen sich aufschieben; für den nächsten notwendigen Schritt können Sie sich Unterstützung holen.</p>"
+      }
+    },
+    {
+      "id": "S-M123-06",
+      "priority": "wichtig",
+      "locations": [
+        "M1 Behandlungsfragen und Fallstimme s2",
+        "M2 W2-Erwachsenen-Kind-Beispiel und SchritteBlock",
+        "M3 Gespräch zu Nähe und Fallstimmen"
+      ],
+      "problem": "Einige Gesprächsbeispiele und Fallstimmen klingen nach Fachanweisung oder liefern ungesicherte Beziehungsdeutungen. Sie wurden laut gedanklich geprüft, alltagstauglich formuliert und als mögliche Anregung belassen.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul3.jsx",
+        "line": 302,
+        "before": "<li>Offen benennen, was zwischen Ihnen steht: «Ich merke, dass ich mich zurückziehe. Das hat nichts mit dir zu tun — ich brauche Zeit, um aus der Kontrollrolle herauszukommen.»</li>",
+        "after": "<li>Eigene Bedürfnisse benennen. So könnte es klingen: «Ich merke, dass ich gerade Abstand brauche. Ich habe in den letzten Wochen viel organisiert und bin erschöpft.»</li>"
+      }
+    },
+    {
+      "id": "S-M123-07",
+      "priority": "wichtig",
+      "locations": [
+        "M1 s1/s2/s4/s8",
+        "M2 s1/s2/s3 und Pause",
+        "M3 Einleitung und Druckpunkte"
+      ],
+      "problem": "Einzelne Passagen setzen Gefühle, Erschöpfung oder Zusammenleben voraus. Die Fassung benennt mögliche Erfahrungen ohne fortlaufende «Vielleicht»-Formel und erhält unterschiedliche Lebenslagen.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul2.jsx",
+        "line": 389,
+        "before": "<p><strong>1 — Beobachten.</strong> Vielleicht achten Sie immer wieder auf die Stimmung oder auf Verhaltensänderungen. Wie viel Aufmerksamkeit bindet das bei Ihnen?</p>",
+        "after": "<p><strong>1 — Beobachten.</strong> Vielleicht achten Sie immer wieder auf die Stimmung oder auf Verhaltensänderungen. Wie viel Aufmerksamkeit bindet das bei Ihnen?</p>"
+      }
+    },
+    {
+      "id": "S-M123-08",
+      "priority": "wichtig",
+      "locations": [
+        "M1 Psychoedukation/Behandlung",
+        "M2 Bildtexte/Reflexionsmodell/Belastungsreaktionen",
+        "M3 Linienbild/Nähe/Sexualität"
+      ],
+      "problem": "Redaktionelle Abgrenzungen stehen teilweise unvermittelt zwischen Aussagen. Sie wurden sprachlich verbunden, ohne Modellstatus, fachliche Zuständigkeit, Quellenunsicherheit oder individuelle Variation zu streichen.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul1.jsx",
+        "line": 268,
+        "before": "<p>Strukturierte Psychoedukation und familienbezogene Behandlungen können ergänzend zur medizinischen Behandlung helfen. Sie verbinden Wissen mit Übungen, Austausch und konkreten Strategien. Studien untersuchen solche Programme, nicht bloss das Lesen von Informationen. Diese Website bietet Orientierung; daraus lässt sich keine nachgewiesene Wirkung dieser Website auf Rückfälle oder Belastung ableiten.</p>",
+        "after": "<p>In der strukturierten Psychoedukation wird Wissen über die Erkrankung mit Übungen, Austausch und konkreten Strategien verbunden. Solche Programme und familienbezogene Behandlungen können die medizinische Behandlung ergänzen. Die Studien beziehen sich auf diese Programme; eine Wirkung des Lesens dieser Website auf Rückfälle oder Belastung ist damit nicht nachgewiesen.</p>"
+      }
+    },
+    {
+      "id": "S-M123-09",
+      "priority": "wichtig",
+      "locations": [
+        "M3 s6 · Gemeinsame Zeit ohne Krankheitsthema"
+      ],
+      "problem": "Die starre Vorgabe einer festen wöchentlichen «krankheitsfreien Insel» klingt nach Pflicht. Eine gemeinsame freie Entscheidung und ein Beispiel für den Rhythmus erhalten den praktischen Vorschlag.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul3.jsx",
+        "line": 344,
+        "before": "<p>Vereinbaren Sie eine feste Zeit, in der die Erkrankung kein Thema ist — kein Symptom-Monitoring, keine Medikamentendiskussion. Nur Sie beide als Paar.</p>",
+        "after": "<p>Wenn Sie beide das möchten, können Sie regelmässig Zeit miteinander verbringen, in der die Erkrankung kein Thema ist, zum Beispiel einmal pro Woche. Dabei geht es um gemeinsame Interessen und Erlebnisse, ohne Symptome oder Medikamente zu besprechen.</p>"
+      }
+    },
+    {
+      "id": "S-M123-10",
+      "priority": "optional",
+      "locations": [
+        "M2 Werkzeugteaser",
+        "M3 M6-/Kommunikations-Teaser"
+      ],
+      "problem": "Kurze Teaser waren fragmentiert oder enthielten einen unnötigen Gegensatz zwischen Lesen und Handeln. Die neuen Formulierungen benennen die erreichbare Anwendung entsprechend W2.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul3.jsx",
+        "line": 369,
+        "before": "<p>Vier Schritte für schwierige Gespräche nach einer Episode — mit Beispielsätzen und klarer Struktur.</p>",
+        "after": "<p>Ein Gespräch vorbereiten: das eigene Anliegen, eine Bitte und bei Bedarf eine selbst umsetzbare Grenze formulieren.</p>"
+      }
+    },
+    {
+      "id": "S-M123-11",
+      "priority": "optional",
+      "locations": [
+        "M3 SVG und zugehörige HTML-Textfassung"
+      ],
+      "problem": "«Reparatur» wirkt bei Beziehungen technisch. «Annäherung» beschreibt die vorhandene Bildbewegung verständlicher; die fiktive, nicht prognostische Bedeutung bleibt ausdrücklich erhalten.",
+      "status": "implemented",
+      "example": {
+        "file": "src/modul3.jsx",
+        "line": 31,
+        "before": "<text x=\"460\" y=\"28\" textAnchor=\"middle\">REPARATUR</text>",
+        "after": "<text x=\"460\" y=\"28\" textAnchor=\"middle\">ANNÄHERUNG</text>"
+      }
+    }
+  ],
+  "changes": [
+    {
+      "file": "src/modul1.jsx",
+      "line": 29,
+      "before": "{ id: 's2', label: 'Was Sie verstehen müssen' },",
+      "after": "{ id: 's2', label: 'Was beim Verstehen hilft' },"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 63,
+      "before": "<p className=\"lede\">Die bipolare Störung verändert Verhalten, Schlaf und Beziehungen — oft unberechenbar. Verstehen hilft beim Einordnen, schafft aber keine Kontrolle. Stabile Phasen sind der beste Moment für wichtige Gespräche.</p>",
+      "after": "<p className=\"lede\">Die bipolare Störung verändert Verhalten, Schlaf und Beziehungen oft auf schwer vorhersehbare Weise. Wissen darüber hilft beim Einordnen, gibt Ihnen aber keine Kontrolle über die Erkrankung. Für wichtige Gespräche sind stabile Phasen am besten geeignet.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 100,
+      "before": "<p className=\"dropcap\">Sie haben vielleicht gerade erfahren, dass jemand, den Sie lieben, eine bipolare Störung hat. Das kann sich anfühlen wie ein Sturz in unbekanntes Terrain — Schock, Ungewissheit, vielleicht auch Erleichterung, weil endlich ein Name da ist für das, was Sie beobachtet haben. Alle diese Reaktionen sind normal. Sie müssen jetzt nicht alles verstehen oder alle Fragen auf einmal lösen. Grosse Entscheidungen, die warten können, dürfen Sie aufschieben. Für den nächsten nötigen Schritt können Sie Unterstützung nutzen.</p>",
+      "after": "<p className=\"dropcap\">Wenn eine nahestehende Person die Diagnose einer bipolaren Störung erhält, kann das vieles auslösen: Schock, Unsicherheit oder auch Erleichterung, weil es eine Erklärung für bisherige Beobachtungen gibt. Das sind verständliche Reaktionen. Sie brauchen nicht sofort auf alle Fragen eine Antwort. Grosse Entscheidungen, die warten können, lassen sich aufschieben; für den nächsten notwendigen Schritt können Sie sich Unterstützung holen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 104,
+      "before": "<h3>Was in den ersten Tagen oft schadet</h3>",
+      "after": "<h3>Was in den ersten Tagen zusätzlich belasten kann</h3>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 115,
+      "before": "<li>Eine einzige Vertrauensperson ins Vertrauen ziehen</li>",
+      "after": "<li>Mit einer Vertrauensperson sprechen</li>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 117,
+      "before": "<li>Den nächsten Schritt klein halten: nur einen</li>",
+      "after": "<li>Einen kleinen nächsten Schritt wählen</li>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 122,
+      "before": "<h3>Drei Fragen, die Sie dem Behandlungsteam stellen dürfen</h3>",
+      "after": "<h3>Drei mögliche Fragen an das Behandlungsteam</h3>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 125,
+      "before": "<li>«Was kann ich als Angehörige und Nahestehende tun — und was sollte ich besser lassen?»</li>",
+      "after": "<li>«Wie kann ich unterstützen, und welche Aufgaben gehören zum Behandlungsteam?»</li>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 130,
+      "before": "<span className=\"callout-label\">Wenn Sie nicht wissen, wo anfangen</span>",
+      "after": "<span className=\"callout-label\">Kontakt zur Angehörigenberatung</span>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 131,
+      "before": "<p>Fachstelle Angehörigenarbeit PUK Zürich — <strong>058 384 38 00</strong>. Kostenlos, vertraulich, auch wenn Sie noch gar nicht wissen, was Sie fragen sollen.</p>",
+      "after": "<p>Die Fachstelle Angehörigenarbeit PUK Zürich bietet kostenlose, vertrauliche Beratung unter <strong>058 384 38 00</strong>. Sie können auch anrufen, wenn Sie Ihre Fragen erst im Gespräch sortieren möchten.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 136,
+      "before": "<h2>Was Sie als Angehörige verstehen müssen</h2>",
+      "after": "<h2>Was Ihnen beim Verstehen helfen kann</h2>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 137,
+      "before": "<p>Viele Angehörige merken zuerst, <em>dass</em> etwas nicht stimmt — lange bevor sie einordnen können, <em>was</em> gerade passiert. Die bipolare Störung ist nicht einfach «mal hoch, mal tief». Sie ist eine wiederkehrende, oft schwer kalkulierbare Erkrankung, die Verhalten, Selbstwahrnehmung, Schlaf, Antrieb, Urteilsvermögen und Beziehungen verändert.</p>",
+      "after": "<p>Viele Angehörige bemerken Veränderungen, bevor sie diese einordnen können. Bei einer bipolaren Störung geht es um mehr als «mal hoch, mal tief»: Die wiederkehrende Erkrankung ist oft schwer vorherzusehen und verändert unter anderem Verhalten, Selbstwahrnehmung, Schlaf, Antrieb, Urteilsvermögen und Beziehungen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 138,
+      "before": "<p>Für Angehörige ist das besonders schwierig, weil Sie nicht nur Symptome beobachten, sondern mit ihnen leben. Sie erleben Gereiztheit, Rückzug, Euphorie, Impulsivität oder Hoffnungslosigkeit nicht aus der Distanz, sondern im gemeinsamen Alltag. Verstehen hilft deshalb vor allem beim Einordnen: Was ist Symptom, was ist Beziehung, was ist gerade nicht absichtlich gegen mich gerichtet? Es nimmt die Belastung nicht weg — aber es macht sie sprachfähiger.</p>",
+      "after": "<p>Gereiztheit, Rückzug, ungewöhnliche Hochstimmung, impulsives Handeln oder Hoffnungslosigkeit können Ihre Beziehung unmittelbar betreffen. Wissen über die Erkrankung kann helfen, zu unterscheiden: Was hängt mit Symptomen zusammen, was betrifft unsere Beziehung, und was ist möglicherweise nicht gegen mich gerichtet? Die Belastung verschwindet dadurch nicht, aber sie lässt sich besser beschreiben.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 139,
+      "before": "<p>Wichtig ist auch: Verstehen schafft keine Kontrolle. Es kann Ihnen helfen, Muster früher zu erkennen und weniger persönlich zu nehmen. Es verhindert aber nicht, dass Episoden Angst machen, dass Unsicherheit bleibt oder dass Sie an Grenzen kommen.</p>",
+      "after": "<p>Verstehen kann helfen, Muster früher zu erkennen und manches weniger persönlich zu nehmen. Es gibt Ihnen jedoch keine Kontrolle über die Erkrankung: Episoden können weiterhin Angst machen, Unsicherheit auslösen oder Sie an Ihre Grenzen bringen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 147,
+      "before": "<p>«Ich wollte am Anfang vor allem wissen, ob das jetzt er ist, die Krankheit ist oder ob ich überreagiere. Erst später habe ich verstanden: Für Angehörige ist genau diese Unklarheit oft die eigentliche Belastung.»</p>",
+      "after": "<p>«Am Anfang habe ich mich oft gefragt: Hat das mit der Krankheit zu tun, geht es um uns, oder überreagiere ich? Diese Unklarheit hat mich sehr belastet.»</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 154,
+      "before": "<p>Das gängige Bild ist zu simpel: oben Manie, unten Depression, dazwischen Normalität. In der Realität sind Verläufe oft unruhiger. Es gibt klare Episoden, schleichende Übergänge, gemischte Zustände, scheinbar gute Phasen mit Kipprisiko und stabile Zeiten, die sich für Angehörige trotzdem nicht wirklich sicher anfühlen.</p>",
+      "after": "<p>Das Bild eines einfachen Wechsels zwischen Manie, Depression und stabilen Zeiten greift zu kurz. Neben klar erkennbaren Episoden gibt es schleichende Übergänge und gemischte Zustände. Auch in scheinbar guten Phasen kann sich der Zustand wieder verändern.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 159,
+      "before": "<p>Diese Beschreibungen geben einen Überblick in Alltagssprache. Sie sind keine Anleitung, um selbst eine Diagnose zu stellen. Eine Diagnose stellt immer eine Fachperson. Angehörige können Beobachtungen zu Veränderungen und Verläufen beitragen.</p>",
+      "after": "<p>Die Beschreibungen geben einen Überblick in Alltagssprache. Die Diagnose stellt eine Fachperson; Ihre Beobachtungen zu Veränderungen und zum Verlauf können dabei helfen. Sie brauchen daraus keine eigene Diagnose abzuleiten.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 165,
+      "before": "<p>Die Phasenlehre ist nur dann hilfreich, wenn sie in den Alltag übersetzt wird. Entscheidend ist nicht nur, wie eine Episode diagnostisch heisst, sondern wie sie sich für Sie zu Hause anfühlt: unberechenbar, laut, leer, beschämend, angsteinflössend oder seltsam schwer greifbar.</p>",
+      "after": "<p>Medizinische Begriffe erklären nur einen Teil dessen, was Sie im Alltag erleben. Eine Episode kann sich zum Beispiel unberechenbar, laut, leer, beschämend, beängstigend oder schwer greifbar anfühlen. Die folgenden Beschreibungen verbinden die Begriffe mit solchen Alltagserfahrungen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 166,
+      "before": "<p>Die kursiven Ich-Sätze in diesem Abschnitt sind fiktive Alltagsbeispiele, keine dokumentierten Angehörigenzitate.</p>",
+      "after": "<p>Die kursiven Ich-Sätze sind frei formulierte Beispiele zur Veranschaulichung, keine dokumentierten Angehörigenzitate.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 169,
+      "before": "<p>In beiden Hochphasen verändern sich Stimmung und Aktivität deutlich gegenüber dem gewohnten Zustand. Weniger Schlafbedürfnis, viele Ideen, Rededrang und Gereiztheit können vorkommen. Nicht jede Gereiztheit ist ein Symptom. Krankheitseinsicht kann beeinträchtigt sein; Widerspruch oder ein anderer Behandlungswunsch beweisen das jedoch nicht.</p>",
+      "after": "<p>In beiden Hochphasen verändern sich Stimmung und Aktivität deutlich gegenüber dem gewohnten Zustand. Möglich sind ein geringeres Schlafbedürfnis, viele Ideen, Rededrang oder Gereiztheit. Gereiztheit ist jedoch nicht immer ein Symptom. Die Fähigkeit, die eigene Erkrankung zu erkennen und einzuschätzen, kann beeinträchtigt sein. Widerspruch oder ein anderer Behandlungswunsch reichen aber nicht aus, um fehlende Krankheitseinsicht anzunehmen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 180,
+      "before": "<p>Zeitfenster für Erholung, Gespräche und gemeinsame Vorbereitung.</p>",
+      "after": "<p>Stabile Phasen bieten Zeit für Erholung, Gespräche und gemeinsame Vorbereitung.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 186,
+      "before": "<p>Nicht nur Traurigkeit, sondern Leere, Verlangsamung und oft lange Hilflosigkeit auf beiden Seiten. Ob eine Depression im Rahmen einer bipolaren Störung auftritt, wird anhand des gesamten bisherigen Verlaufs fachlich beurteilt. Angehörige können konkrete Veränderungen beschreiben; sie müssen die Diagnose nicht selbst einordnen.</p>",
+      "after": "<p>Eine Depression kann sich neben Traurigkeit auch in Leere und Verlangsamung zeigen und bei beiden Personen lange Hilflosigkeit auslösen. Ob sie im Rahmen einer bipolaren Störung auftritt, beurteilt eine Fachperson anhand des gesamten bisherigen Verlaufs. Als Angehörige können Sie konkrete Veränderungen beschreiben, ohne die Diagnose selbst einordnen zu müssen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 190,
+      "before": "<p><strong>Unerreichbarkeit.</strong> Physisch anwesend, emotional hinter einer Glaswand. <em>«Es ist, als würde man zusehen, wie der geliebte Mensch verschwindet.»</em></p>",
+      "after": "<p><strong>Emotionale Distanz.</strong> Die Person ist anwesend, wirkt aber emotional kaum erreichbar. <em>«Wir sind im selben Raum, aber ich habe das Gefühl, nicht zu ihm durchzudringen.»</em></p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 197,
+      "before": "<p>Die Unterscheidung ist für Angehörige nicht nur medizinisch relevant. Sie verändert oft, welche Belastung im Vordergrund steht: sichtbare Eskalation, lange Depression, fehlende Ernstnahme durch das Umfeld oder wiederkehrende Unsicherheit in scheinbar guten Phasen.</p>",
+      "after": "<p>Die Unterscheidung kann auch helfen, Belastungen im Alltag einzuordnen. Im Vordergrund stehen je nach Verlauf etwa deutlich sichtbare Zuspitzungen, lange Depressionen, fehlendes Verständnis im Umfeld oder Unsicherheit in scheinbar guten Phasen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 201,
+      "before": "<p>Die Manie kann so schwer werden, dass eine Hospitalisation nötig wird. Für Angehörige steht hier oft die sichtbare Eskalation im Vordergrund: Kontrollverlust, Angst, Gefahr, Beschämung und das Gefühl, den vertrauten Menschen zeitweise nicht wiederzuerkennen.</p>",
+      "after": "<p>Für Angehörige steht bei einer Manie oft die deutlich sichtbare Zuspitzung im Vordergrund: Kontrollverlust, Angst, Gefahr oder Beschämung. Manche erleben auch, dass sie den vertrauten Menschen zeitweise kaum wiedererkennen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 223,
+      "before": "<p>Gerade Angehörige zweifeln oft an ihrer Wahrnehmung, wenn das Erleben nicht zur klaren Phasenlehre passt. Das ist häufig kein Missverständnis, sondern Teil der Erkrankung: Bipolare Verläufe können widersprüchlich, gereizt, schnell wechselnd oder über Wochen schwer lesbar sein.</p>",
+      "after": "<p>Wenn Veränderungen nicht zu den Beschreibungen klarer Phasen passen, zweifeln Angehörige oft an ihrer Wahrnehmung. Bipolare Verläufe können jedoch widersprüchlich oder schnell wechselnd erscheinen, von Gereiztheit geprägt sein oder über Wochen schwer einzuordnen bleiben.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 235,
+      "before": "<p>Viele Belastungen beginnen nicht eindeutig. Ist das eine echte gute Phase, eine Hypomanie, Erholung oder schon das Kippen? Gerade diese Unschärfe macht Angehörige oft hyperaufmerksam und erschöpft.</p>",
+      "after": "<p>Veränderungen lassen sich nicht immer eindeutig einordnen: Geht es der Person gerade gut, erholt sie sich, oder beginnt eine Hypomanie oder eine andere Verschlechterung? Diese Unsicherheit kann dazu führen, dass Angehörige besonders aufmerksam bleiben und sich erschöpft fühlen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 245,
+      "before": "<p>Wenn Verläufe unklar, wiederkehrend oder widersprüchlich sind, entsteht bei Angehörigen oft ein Zustand permanenter Einordnung: Sie beobachten Schlaf, Sprache, Tempo, Geld, Rückzug, Gereiztheit — und fragen sich gleichzeitig, ob Sie überreagieren. Genau diese Unsicherheit ist eine eigene Belastung.</p>",
+      "after": "<p>Unklare oder wiederkehrende Veränderungen können viel Aufmerksamkeit binden. Vielleicht achten Sie auf Schlaf, Sprache, Aktivität, Geldausgaben, Rückzug oder Gereiztheit und fragen sich zugleich, ob Sie überreagieren. Auch diese Unsicherheit kann Sie belasten.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 246,
+      "before": "<p>Die Unterscheidung zwischen Person und Symptom kann helfen. Sie verhindert, dass Sie jedes Verhalten nur noch als bösen Willen lesen. Aber sie löst nicht alles. Auch krankheitsbedingtes Verhalten kann verletzen, Angst machen oder Vertrauen erschüttern. Verstehen entlastet also oft die Einordnung — nicht automatisch die Beziehung oder Ihre Erschöpfung.</p>",
+      "after": "<p>Die Unterscheidung zwischen der Person und ihren Symptomen kann helfen, Verhalten nicht allein als bösen Willen zu verstehen. Dennoch kann auch krankheitsbedingtes Verhalten verletzen, Angst machen oder Vertrauen erschüttern. Es besser einordnen zu können bedeutet daher nicht automatisch, dass sich Ihre Beziehung oder Ihre Erschöpfung verändert.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 251,
+      "before": "<h2>Behandlung — Was hilft, was schwierig bleibt</h2>",
+      "after": "<h2>Behandlung: Möglichkeiten und Schwierigkeiten</h2>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 255,
+      "before": "<p>Die Auswahl richtet sich nach der aktuellen Phase, dem bisherigen Verlauf, Wirkungen und Nebenwirkungen. Eingesetzt werden unter anderem Lithium, bestimmte Antipsychotika und je nach Situation weitere Medikamente. Lamotrigin und Valproat haben unterschiedliche Einsatzgebiete. Notwendige Kontrollen und mögliche Alternativen werden mit dem Behandlungsteam besprochen. Medikamente nicht eigenständig verändern.</p>",
+      "after": "<p>Welche Medikamente eingesetzt werden, hängt von der aktuellen Phase, dem bisherigen Verlauf sowie von Wirkungen und Nebenwirkungen ab. Dazu gehören unter anderem Lithium, bestimmte Antipsychotika und je nach Situation weitere Medikamente. Lamotrigin und Valproat haben unterschiedliche Einsatzgebiete. Besprechen Sie notwendige Kontrollen und mögliche Alternativen mit dem Behandlungsteam. Verändern Sie Medikamente nicht eigenständig.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 268,
+      "before": "<p>Strukturierte Psychoedukation und familienbezogene Behandlungen können ergänzend zur medizinischen Behandlung helfen. Sie verbinden Wissen mit Übungen, Austausch und konkreten Strategien. Studien untersuchen solche Programme, nicht bloss das Lesen von Informationen. Diese Website bietet Orientierung; daraus lässt sich keine nachgewiesene Wirkung dieser Website auf Rückfälle oder Belastung ableiten.</p>",
+      "after": "<p>In der strukturierten Psychoedukation wird Wissen über die Erkrankung mit Übungen, Austausch und konkreten Strategien verbunden. Solche Programme und familienbezogene Behandlungen können die medizinische Behandlung ergänzen. Die Studien beziehen sich auf diese Programme; eine Wirkung des Lesens dieser Website auf Rückfälle oder Belastung ist damit nicht nachgewiesen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 271,
+      "before": "<p>Auch unter guter Behandlung können Episoden auftreten. Fortschritt heisst oft: weniger, mildere oder früher erkannte Krisen — nicht null Krisen. Gerade für Angehörige ist diese realistische Erwartung zentral.</p>",
+      "after": "<p>Auch unter guter Behandlung können Episoden auftreten. Fortschritt kann bedeuten, dass Krisen seltener oder milder werden oder früher erkannt werden. Vollständige Krisenfreiheit ist deshalb nicht der einzige Massstab für den Behandlungserfolg.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 275,
+      "before": "<p>Ambivalenz ist häufig: wegen Nebenwirkungen, Scham, fehlender Krankheitseinsicht oder weil Hypomanien als produktiv erlebt werden. Für Angehörige ist wichtig: Widerstand gegen Behandlung ist nicht automatisch Böswilligkeit. Aber er kann die Lage massiv erschweren. Genau dann brauchen auch Sie eigene Beratung und Orientierung.</p>",
+      "after": "<p>Menschen können einer Behandlung zwiespältig gegenüberstehen, etwa wegen Nebenwirkungen, Scham oder eingeschränkter Krankheitseinsicht. Manche erleben Hypomanien als produktiv. Wenn eine Behandlung abgelehnt wird, bedeutet das nicht automatisch Böswilligkeit, kann die Situation aber erheblich erschweren. Eigene Beratung kann Ihnen helfen, Ihre Fragen und Handlungsmöglichkeiten zu klären.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 278,
+      "before": "<p>Behandlung ist ausserdem mehr als Medikamente: Schlafrhythmus, Reizreduktion, Tagesstruktur, Vorbeugung gegen neue Krisen und klare Absprachen in stabilen Phasen tragen oft viel zur Stabilität bei. Für Angehörige entlastend ist vor allem nicht das Versprechen «Es passiert nie wieder», sondern das Gefühl: Wir erkennen früher, was kippt, und wir sind weniger unvorbereitet.</p>",
+      "after": "<p>Zur Behandlung gehören neben Medikamenten auch ein regelmässiger Schlafrhythmus, weniger belastende Reize, eine Tagesstruktur, Krisenvorbeugung und klare Absprachen in stabilen Phasen. Diese können zur Stabilität beitragen. Für Angehörige kann es entlastend sein, sich besser vorbereitet zu fühlen, statt zu erwarten, dass nie wieder eine Krise auftritt.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 279,
+      "before": "<p>Manche Verläufe werden zusätzlich kompliziert, wenn Alkohol, Cannabis oder andere Substanzen dazukommen — oder wenn starke Angst, Trauma oder weitere psychische Belastungen mitlaufen. Dann ist nicht alles klar «nur bipolar». Für Angehörige macht das die Lage oft schwerer lesbar und konflikthafter.</p>",
+      "after": "<p>Alkohol, Cannabis oder andere Substanzen können den Verlauf zusätzlich erschweren. Auch starke Angst, traumatische Erfahrungen oder weitere psychische Belastungen können eine Rolle spielen. Veränderungen lassen sich dann nicht immer eindeutig der bipolaren Störung zuordnen, was für Angehörige die Einordnung und das Zusammenleben erschweren kann.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 280,
+      "before": "<p>Es gibt Wochen, in denen alles fast normal ist. In denen Sie zusammen lachen, einkaufen gehen, einen Film schauen. Diese Momente sind nicht Selbstbetrug — sie sind echt. Und sie gehören genauso zu dieser Geschichte.</p>",
+      "after": "<p>Ebenso kann es Wochen geben, in denen der gemeinsame Alltag weitgehend unbelastet ist: Sie lachen miteinander, gehen einkaufen oder schauen einen Film. Auch solche Erfahrungen gehören zum Leben mit der Erkrankung.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 285,
+      "before": "<p>Dieses Modul soll Ihnen nicht das Gefühl geben, jetzt alles im Griff haben zu müssen. Sinnvoll ist eher der nächste kleine Schritt: etwas klarer einordnen, etwas früher benennen, etwas weniger allein tragen.</p>",
+      "after": "<p>Sie brauchen nach diesem Modul nicht alles im Griff zu haben. Wählen Sie einen kleinen nächsten Schritt, der zu Ihrer Situation passt: eine Frage klären, eine Beobachtung ansprechen oder sich Unterstützung holen.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 302,
+      "before": "<p>Wenn Sie bisher vieles allein eingeordnet haben, entlastet oft schon eine Person, die die Lage kennt. Nicht die halbe Version, sondern die wirkliche: was Sie beobachten, was Sie befürchten und was Sie im Alltag tragen.</p>",
+      "after": "<p>Wenn Sie bisher vieles mit sich allein ausgemacht haben, kann ein Gespräch mit einer Vertrauensperson entlasten. Sie entscheiden, wie viel Sie erzählen möchten, etwa über Beobachtungen, Sorgen oder das, was Sie im Alltag belastet. Beachten Sie dabei auch die Privatsphäre der anderen Person.</p>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 325,
+      "before": "<li><strong>Das einfache Bild reicht oft nicht</strong> — bipolare Verläufe können unklar, gemischt, gereizt oder schleichend sein. Gerade das macht sie für Angehörige so schwer lesbar.</li>",
+      "after": "<li><strong>Verläufe sind unterschiedlich.</strong> Übergänge und gemischte Symptome können die Einordnung erschweren.</li>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 326,
+      "before": "<li><strong>Verstehen ordnet mehr, als es löst</strong> — Wissen kann Angst, Wut und Verwirrung anders rahmen, verhindert aber nicht automatisch Belastung oder Krisen.</li>",
+      "after": "<li><strong>Wissen hilft beim Einordnen.</strong> Es kann Angst, Wut und Verwirrung verständlicher machen, verhindert aber nicht automatisch Belastung oder Krisen.</li>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 327,
+      "before": "<li><strong>Auch ruhige Phasen bleiben oft ambivalent</strong> — viele Angehörige bleiben innerlich wachsam, obwohl nach aussen gerade Stabilität sichtbar ist.</li>",
+      "after": "<li><strong>Eigene Erholung braucht Raum.</strong> Auch wenn die erkrankte Person stabil wirkt, können Angehörige weiterhin wachsam oder angespannt sein.</li>"
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 328,
+      "before": "<li><strong>Behandlung hilft oft deutlich, aber selten glatt</strong> — realistische Erwartungen schützen davor, Fortschritt nur an Krisenfreiheit zu messen.</li>",
+      "after": "<li><strong>Behandlung kann helfen und schwierig bleiben.</strong> Auch weniger oder mildere Krisen können Fortschritte sein.</li>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 225,
+      "before": "<p>Die Darstellung ist kein festgelegter Ablauf und keine Anweisung, alle diese Signale überwachen zu müssen.</p>",
+      "after": "<p>Das Bild zeigt keinen festen Ablauf. Es bedeutet auch nicht, dass Sie all diese Signale überwachen sollen.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 233,
+      "before": "{ num: 'I', label: 'Sich selbst als Betroffene anerkennen', body: 'Sie sind nicht «nur» Angehörige — Sie sind mitbetroffen. Das anzuerkennen ist kein Selbstmitleid, sondern die Grundlage dafür, dass Sie sich Unterstützung holen.' },",
+      "after": "{ num: 'I', label: 'Eigene Bedürfnisse ernst nehmen', body: 'Auch Sie können durch die Erkrankung eines nahestehenden Menschen belastet sein. Ihre eigenen Bedürfnisse sind ein Grund, sich Unterstützung zu holen.' },"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 234,
+      "before": "{ num: 'II', label: 'Eigene Belastung wahrnehmen', body: 'Wenn Sie möchten, notieren Sie eine Woche lang: Was belastet mich heute? Was entlastet mich? Die Notizen dienen Ihrer persönlichen Reflexion, nicht einer Diagnose oder Einstufung. Sie entscheiden, ob Sie sie für sich behalten oder mit einer Vertrauensperson oder in einer Beratung teilen.' },",
+      "after": "{ num: 'II', label: 'Eigene Belastung wahrnehmen', body: 'Wenn Sie möchten, notieren Sie eine Woche lang, was Sie belastet und was Sie entlastet. Die Notizen helfen Ihnen, über Ihre Situation nachzudenken; sie ergeben keine Diagnose oder Einstufung. Sie entscheiden, ob Sie sie für sich behalten, mit einer Vertrauensperson besprechen oder in eine Beratung mitnehmen.' },"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 235,
+      "before": "{ num: 'III', label: 'Einer Person davon erzählen', body: 'Brechen Sie die Isolation — erzählen Sie einer Vertrauensperson von Ihrer Situation. «Es ist gerade schwierig zu Hause» reicht als Anfang.' },",
+      "after": "{ num: 'III', label: 'Einer Person davon erzählen', body: 'Wenn Sie Ihre Situation mit jemandem teilen möchten, wählen Sie eine Vertrauensperson. Ein Gespräch könnte so beginnen: «Bei uns ist es gerade schwierig. Hast du Zeit, mir zuzuhören?»' },"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 240,
+      "before": "<h3>Auch wenn Sie erschöpft sind.</h3>",
+      "after": "<h3>Wählen Sie, was zu Ihnen passt.</h3>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 306,
+      "before": "<p className=\"lede\">Belastung als Angehörige kann für andere unsichtbar bleiben. Erhöhte Wachsamkeit ist eine mögliche Reaktion nach belastenden Erfahrungen. Information kann Orientierung geben; Entlastung braucht möglicherweise auch konkrete Hilfe im Alltag.</p>",
+      "after": "<p className=\"lede\">Als Angehörige können Sie belastet sein, ohne dass andere es bemerken. Nach schwierigen Erfahrungen bleiben Sie möglicherweise besonders wachsam. Wissen kann helfen, dies einzuordnen; für Entlastung braucht es manchmal auch konkrete Hilfe im Alltag.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 339,
+      "before": "<p>Ihre Belastung und Ihre eigenen Bedürfnisse zählen. Unsicherheit, erhöhte Wachsamkeit oder Sorgen um die erkrankte Person können Sie beschäftigen. Welche Entlastung passt, hängt von Ihrer Situation ab. Sie dürfen Beratung, Austausch und praktische Unterstützung für sich nutzen.</p>",
+      "after": "<p>Ihre Belastung und Ihre eigenen Bedürfnisse zählen. Wenn Unsicherheit, erhöhte Wachsamkeit oder Sorgen um die erkrankte Person Sie beschäftigen, können Sie Beratung, Austausch oder praktische Unterstützung nutzen. Welche Entlastung passt, hängt von Ihrer Situation ab.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 344,
+      "before": "<p>Angehörige können erheblich belastet sein. Wie stark, hängt unter anderem von den Symptomen, dem gemeinsamen Alltag und verfügbaren Hilfen ab. Ein Teil bleibt für das Umfeld unsichtbar. Ebenso gibt es Angehörige, die sich gut unterstützt fühlen und lange stabile Zeiten erleben.</p>",
+      "after": "<p>Wie stark Angehörige belastet sind, hängt unter anderem von den Symptomen, dem gemeinsamen Alltag und verfügbaren Hilfen ab. Die Belastung kann erheblich sein und für andere dennoch unsichtbar bleiben. Andere Angehörige fühlen sich gut unterstützt und erleben lange stabile Zeiten.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 345,
+      "before": "<p>Unsicherheit und fehlende Information können belasten. Ebenso können Schlafmangel, finanzielle Sorgen, zu viel Verantwortung oder fehlende praktische Unterstützung eine Rolle spielen. Wissen kann beim Einordnen helfen; für Entlastung brauchen Sie möglicherweise auch konkrete Hilfe im Alltag.</p>",
+      "after": "<p>Neben Unsicherheit und fehlenden Informationen können Schlafmangel, finanzielle Sorgen, zu viele Aufgaben oder fehlende praktische Unterstützung belasten. Wissen hilft möglicherweise beim Einordnen; manchmal braucht es zusätzlich konkrete Hilfe im Alltag.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 356,
+      "before": "<p>Wissen kann Fragen klären. Ob daraus Entlastung entsteht, hängt auch von erreichbaren Hilfen, Entlastung im Alltag und Ihrer eigenen Situation ab. Sie müssen Ihre Belastung nicht mit einer Prozentzahl rechtfertigen.</p>",
+      "after": "<p>Welche Hilfe erreichbar ist und was Sie im Alltag entlastet, hängt von Ihrer Situation ab. Ihre Belastung braucht dabei keine bestimmte Zahl oder Einstufung, um ernst genommen zu werden.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 358,
+      "before": "<p>Das tägliche Gleichgewichthalten — zwischen Fürsorge und eigenen Grenzen, zwischen Präsenz und Abstand — ist eine eigene Leistung, die selten gesehen wird. Dieses Modul hilft Ihnen, diese Leistung zu benennen und zu verstehen, was sie kostet.</p>",
+      "after": "<p>Die Balance zwischen Unterstützung und eigenen Grenzen kann im Alltag viel Kraft kosten, auch wenn andere wenig davon mitbekommen. Dieses Modul hilft Ihnen, Ihre Erfahrungen zu beschreiben und auf Ihre eigene Belastung zu achten.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 368,
+      "before": "<p>Wenn Sie im Alltag funktionieren und zugleich belastet sind, dürfen Sie beides ernst nehmen. Sie müssen nicht erst zusammenbrechen, um Unterstützung für sich zu nutzen.</p>",
+      "after": "<p>Auch wenn Sie im Alltag zurechtkommen, können Sie zugleich belastet sein. Sie können Unterstützung suchen, bevor Sie nicht mehr weiterkönnen.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 377,
+      "before": "<p>Die Gefühle unter der Oberfläche bedeuten <strong>nicht</strong>, dass Sie zu wenig lieben oder zu wenig leisten. Sie bedeuten, dass Sie <strong>genug</strong> tragen, um etwas darunter zu spüren. Das ist ein Signal, kein Urteil.</p>",
+      "after": "<p>Auch schwer aussprechbare Gefühle sind kein Urteil darüber, wie viel Sie lieben oder leisten. Sie können Anlass sein, auf Ihre eigene Belastung und Ihre Bedürfnisse zu achten.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 383,
+      "before": "<p>Hypervigilanz bedeutet hier erhöhte Wachsamkeit. Nach belastenden Krisen können Sie sich immer wieder mit Schlaf, Stimmung oder Rückzug der erkrankten Person beschäftigen. Wenn diese Alarmbereitschaft anhält, kann sie Erholung erschweren. Die folgende Grafik ist ein Bild für gleichzeitig gebundene Aufmerksamkeit, kein für alle geltender Ablauf.</p>",
+      "after": "<p>Mit Hypervigilanz ist hier erhöhte Wachsamkeit gemeint. Nach belastenden Krisen beschäftigen Sie sich möglicherweise immer wieder mit Schlaf, Stimmung oder Rückzug der erkrankten Person. Anhaltende Alarmbereitschaft kann Ihre Erholung erschweren. Das folgende Bild zeigt, wie viele Dinge gleichzeitig Aufmerksamkeit binden können; einen für alle geltenden Ablauf beschreibt es nicht.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 388,
+      "before": "<p>Die folgenden Beschreibungen sind eine Reflexionshilfe, kein geprüftes Modell und keine festgelegte Reihenfolge. Welche davon passen zu Ihrer Situation?</p>",
+      "after": "<p>Die vier Beschreibungen sollen Ihnen helfen, über Ihre Situation nachzudenken. Sie sind kein geprüftes Modell und geben keine Reihenfolge vor. In welchen Beschreibungen erkennen Sie sich wieder?</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 390,
+      "before": "<p><strong>2 — Anspannung.</strong> Sie fühlen sich innerlich oder körperlich angespannt; Abschalten und Schlafen können schwerfallen.</p>",
+      "after": "<p><strong>2 — Anspannung.</strong> Innere oder körperliche Anspannung kann es erschweren, abzuschalten und zu schlafen.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 393,
+      "before": "<p>Diese Erfahrungen können sich gegenseitig verstärken, müssen es aber nicht. Gemeinsam vereinbarte Zuständigkeiten, verlässliche Hilfe und eigene Erholung können Raum schaffen. Neue oder anhaltende Beschwerden sollten auch medizinisch abgeklärt werden.</p>",
+      "after": "<p>Solche Erfahrungen können sich gegenseitig verstärken, treten aber nicht bei allen gleich auf. Gemeinsam vereinbarte Zuständigkeiten und verlässliche Hilfe können Ihnen mehr Raum für Erholung geben. Neue oder anhaltende Beschwerden sollten auch medizinisch abgeklärt werden.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 398,
+      "before": "<p>Es gibt einen Unterschied zwischen aufmerksam sein und kontrollieren. Gemeinsam vereinbarte Zuständigkeiten und eigene Grenzen können beim Einordnen helfen. Ob Sie sich entlastet fühlen, hängt auch von Ihrer Situation und erreichbarer Unterstützung ab.</p>",
+      "after": "<p>Aufmerksam zu sein bedeutet nicht, die andere Person zu kontrollieren. Besprechen Sie, welche Unterstützung gewünscht ist und welche Aufgaben Sie übernehmen möchten und können. Klare Absprachen und eigene Grenzen können beim Einordnen helfen; ob sie Sie entlasten, hängt auch von Ihrer Situation und erreichbarer Unterstützung ab.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 402,
+      "before": "<h3>Was Sie dürfen und sollen</h3>",
+      "after": "<h3>Mögliche Unterstützung im vereinbarten Umfang</h3>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 404,
+      "before": "<li>Veränderungen benennen, die Sie wahrnehmen — als Ich-Botschaft</li>",
+      "after": "<li>Beobachtete Veränderungen aus Ihrer Sicht beschreiben: «Mir ist aufgefallen, dass …»</li>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 406,
+      "before": "<li>Das Behandlungsteam informieren — Sie teilen Beobachtungen, nicht Diagnosen</li>",
+      "after": "<li>Dem Behandlungsteam konkrete Beobachtungen mitteilen, ohne daraus eine Diagnose abzuleiten</li>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 423,
+      "before": "<p>Sie sind nicht das Frühwarnsystem — Sie sind ein Teil davon. Das Behandlungsteam, der Krisenplan und die erkrankte Person selbst tragen Mitverantwortung. Klären Sie in einer ruhigen Phase gemeinsam: «Welche Veränderungen soll ich ansprechen? Wie soll ich es tun?» Was vereinbart ist, dürfen Sie ansprechen — ohne Schuldgefühle.</p>",
+      "after": "<p>Wenn Sie Beobachtungen beitragen möchten, vereinbaren Sie in einer ruhigen Phase, welche Veränderungen Sie ansprechen und wie Sie dabei vorgehen. Sie könnten fragen: «Was möchtest du, dass ich anspreche, wenn mir etwas auffällt?» Halten Sie auch fest, welche Aufgaben die erkrankte Person und das Behandlungsteam übernehmen. Sie brauchen weder alle Veränderungen zu überwachen noch die fachliche Einschätzung zu übernehmen.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 427,
+      "before": "<p><strong>Fiktives Kurzbeispiel.</strong> Eine erwachsene Tochter wohnt nicht bei ihrem Vater. Er bittet sie, ihn zu einem Behandlungsgespräch zu begleiten. Sie möchte dabei sein, kann aber nicht alle Termine für ihn organisieren. Ihr nächster Schritt ist eine konkrete Absprache: «Ich begleite dich am Dienstag. Bitte vereinbare die weiteren Termine selbst; wir können vorher zusammen überlegen, welche Fragen du stellen möchtest.» Eigene Belastungen kann sie unabhängig davon in einer Angehörigenberatung besprechen.</p>",
+      "after": "<p><strong>Fiktives Kurzbeispiel.</strong> Eine erwachsene Tochter wohnt nicht bei ihrem Vater. Er bittet sie, ihn zu einem Behandlungsgespräch zu begleiten. Sie möchte dabei sein, kann aber nicht alle Termine für ihn organisieren. Sie könnte sagen: «Ich begleite dich am Dienstag. Die weiteren Termine kann ich aber nicht organisieren. Wollen wir vorher kurz besprechen, welche Fragen du stellen möchtest?» Eigene Belastungen kann sie unabhängig davon in einer Angehörigenberatung besprechen.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 432,
+      "before": "<p>Vielleicht erkennen Sie sich als Elternteil in den Beschreibungen wieder. Ihr erwachsenes Kind entscheidet grundsätzlich selbst. Eltern haben nicht automatisch ein Auskunfts- oder Entscheidungsrecht; mit Einwilligung oder je nach rechtlicher Rolle können sie einbezogen werden. Beobachtungen dürfen Sie dem Behandlungsteam mitteilen. Was dies für Vertraulichkeit und Rückmeldung bedeutet, erklärt die <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflichtseite</a>. Eigene Beratung dürfen Sie unabhängig davon nutzen.</p>",
+      "after": "<p>Als Elternteil eines erwachsenen Kindes können Sie unterstützen; Ihr Kind entscheidet grundsätzlich selbst. Ein Auskunfts- oder Entscheidungsrecht haben Eltern nicht automatisch. Mit Einwilligung oder je nach rechtlicher Rolle können sie einbezogen werden. Ihre Beobachtungen können Sie dem Behandlungsteam mitteilen. Was dabei für Vertraulichkeit und Rückmeldung gilt, erklärt die <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflichtseite</a>. Eigene Beratung können Sie unabhängig davon nutzen.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 433,
+      "before": "<p>Als Elternteil können Sie sich zwischen dem Wunsch zu helfen und dem Bedürfnis nach Abstand wiederfinden. Vielleicht beschäftigen Sie auch Fragen wie: Habe ich etwas übersehen? Bin ich verantwortlich? Eine Diagnose ist keine Feststellung einer Schuld der Eltern. Sie dürfen solche Fragen und Ihre eigene Belastung in einer Angehörigenberatung besprechen.</p>",
+      "after": "<p>Der Wunsch zu helfen und das Bedürfnis nach Abstand können nebeneinander bestehen. Auch Fragen wie «Habe ich etwas übersehen?» oder «Bin ich verantwortlich?» können Sie beschäftigen. Eine Diagnose stellt keine Schuld der Eltern fest. In einer Angehörigenberatung können Sie diese Fragen und Ihre eigene Belastung besprechen.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 437,
+      "before": "<p>Was Eltern erwachsener Kinder besonders hilft: Angehörigenberatung, die auch die Loslassen-Thematik adressiert, und Austausch mit anderen Eltern in derselben Situation. Die Fachstelle Angehörigenarbeit PUK Zürich ist auch für Eltern da: <strong>058 384 38 00</strong>.</p>",
+      "after": "<p>In einer Angehörigenberatung können Sie auch besprechen, wie viel Unterstützung oder Abstand für Sie und Ihr erwachsenes Kind passt. Ebenso kann ein Austausch mit anderen Eltern in ähnlichen Situationen hilfreich sein. Die Fachstelle Angehörigenarbeit PUK Zürich ist auch für Eltern da: <strong>058 384 38 00</strong>.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 443,
+      "before": "<p>Manche Angehörige haben Angst, dass sich die erkrankte Person etwas antun könnte. Vielleicht beschäftigen Sie solche Sorgen oder Erfahrungen auch dann noch, wenn eine belastende Phase vorbei ist. Dieser Abschnitt handelt davon, wie Sie Ihre eigene Belastung wahrnehmen und Unterstützung für sich nutzen können.</p>",
+      "after": "<p>Die Angst, dass sich die erkrankte Person etwas antun könnte, kann auch nach einer belastenden Phase bestehen bleiben. Wenn solche Sorgen oder Erfahrungen Sie beschäftigen, können Sie Unterstützung für sich nutzen. Darum geht es in diesem Abschnitt.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 446,
+      "before": "<p>«Nach seinem zweiten Suizidversuch habe ich drei Monate lang jede Nacht wach gelegen. Nicht weil ich Angst hatte, dass er es wieder tut — das auch — sondern weil ich nicht wusste, ob ich das noch aushalte.»</p>",
+      "after": "<p>«Nach seinem zweiten Suizidversuch habe ich drei Monate lang jede Nacht wach gelegen. Ich hatte Angst, dass es wieder passiert. Und ich wusste nicht, wie lange ich das selbst noch aushalte.»</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 450,
+      "before": "<p><strong>Erhöhte Wachsamkeit.</strong> Vielleicht achten Sie nach einer belastenden Erfahrung wiederholt auf mögliche Warnzeichen und merken, dass Ruhe schwerfällt. Welche Unterstützung könnte Ihnen helfen, Verantwortung zu teilen und selbst Erholung zu finden?</p>",
+      "after": "<p><strong>Erhöhte Wachsamkeit.</strong> Nach einer belastenden Erfahrung achten Sie möglicherweise immer wieder auf Warnzeichen und kommen schwer zur Ruhe. Welche Hilfe könnte Sie bei den vereinbarten Aufgaben entlasten und Ihnen selbst Erholung ermöglichen?</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 452,
+      "before": "<p><strong>Eigenes Wohlbefinden.</strong> Hohe anhaltende Belastung steht in Studien mit eigenen psychischen Beschwerden in Zusammenhang. Frühere Belastungen, körperliche Gesundheit, Schlaf und Unterstützung spielen ebenfalls eine Rolle. Das ist ein Grund, die eigene Gesundheit ernst zu nehmen; es ist keine Vorhersage für Sie persönlich.</p>",
+      "after": "<p><strong>Eigenes Wohlbefinden.</strong> Hohe anhaltende Belastung steht in Studien mit eigenen psychischen Beschwerden in Zusammenhang. Frühere Belastungen, körperliche Gesundheit, Schlaf und Unterstützung spielen ebenfalls eine Rolle. Diese Zusammenhänge sind ein Grund, auf Ihre eigene Gesundheit zu achten, sagen aber nicht voraus, wie es Ihnen persönlich ergehen wird.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 458,
+      "before": "<span className=\"callout-label\">Atmen Sie durch</span>",
+      "after": "<span className=\"callout-label\">Bei Bedarf eine Pause machen</span>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 459,
+      "before": "<p>Was Sie gerade gelesen haben, ist schwer. Wenn Sie eine Pause brauchen, machen Sie eine. Dieses Modul wartet auf Sie.</p>",
+      "after": "<p>Wenn Sie der Abschnitt belastet oder Sie eine Pause brauchen, können Sie die Lektüre unterbrechen und später weiterlesen.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 481,
+      "before": "<p>Fünf Fragen zur persönlichen Reflexion, ohne Gesamtpunktzahl oder Einstufung. Im Browser.</p>",
+      "after": "<p>Fünf Fragen zum Nachdenken über Ihre Situation, direkt im Browser und ohne Gesamtpunktzahl oder Einstufung.</p>"
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 493,
+      "before": "<li><strong>Sie dürfen Hilfe für sich selbst holen</strong> — das ist keine Illoyalität, sondern Voraussetzung dafür, dass Sie langfristig begleiten können.</li>",
+      "after": "<li><strong>Hilfe für Sie selbst ist berechtigt.</strong> Sie können Unterstützung suchen, unabhängig davon, wie viel Begleitung Sie weiter übernehmen möchten oder können.</li>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 31,
+      "before": "<text x=\"460\" y=\"28\" textAnchor=\"middle\">REPARATUR</text>",
+      "after": "<text x=\"460\" y=\"28\" textAnchor=\"middle\">ANNÄHERUNG</text>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 77,
+      "before": "Beide Linien werden in jeder Phase bewegt — nicht nur die erkrankte.",
+      "after": "Das Beispiel zeigt Veränderungen bei beiden Personen."
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 92,
+      "before": "<p>Die durchgezogene Linie steht für die erkrankte Person, die gestrichelte für die angehörige Person. Von links nach rechts sind Ruhe, Episode, Druck und Reparatur benannt. Beide Linien verändern sich; in der letzten Bildphase nähern sie sich wieder an und bleiben leicht versetzt.</p>",
+      "after": "<p>Die durchgezogene Linie steht für die erkrankte Person, die gestrichelte für die angehörige Person. Von links nach rechts sind Ruhe, Episode, Druck und Annäherung benannt. Beide Linien verändern sich; in der letzten Bildphase nähern sie sich wieder an und bleiben leicht versetzt.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 104,
+      "before": "sub: 'wenn Wahrnehmung zur Streitfrage wird',",
+      "after": "sub: 'wenn Absprachen nicht mehr verlässlich wirken',"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 105,
+      "before": "body: 'Impulsives Verhalten in einer Manie kann Vertrauen belasten, etwa durch verletzende Handlungen, Geldausgaben oder nicht eingehaltene Versprechen. Vielleicht fragen Sie sich danach, wie Sie Aussagen und Absprachen einordnen können. Was würde Ihnen helfen, wieder Vertrauen zu entwickeln? Es gibt dafür keinen festgelegten Verlauf.'",
+      "after": "body: 'Impulsives Verhalten in einer Manie kann Vertrauen belasten, etwa durch verletzende Handlungen, Geldausgaben oder nicht eingehaltene Versprechen. Danach fragen Sie sich möglicherweise, wie verlässlich Aussagen und Absprachen sind. Wenn Sie wieder Vertrauen entwickeln möchten, was würde Ihnen dabei helfen? Wie sich Vertrauen verändert, ist bei jedem Paar anders.'"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 111,
+      "before": "body: 'Sexualität, Zärtlichkeit und das einfache Nebeneinander können sich in belastenden Phasen verändern. Wie Sie beide Nähe erleben und wünschen, ist unterschiedlich. Wenn Sie Fragen zu möglichen Einflüssen der Behandlung haben, können Sie diese mit der behandelnden Fachperson klären. Auch nach einer Episode kann es hilfreich sein, über unterschiedliche Wünsche nach Nähe und Abstand zu sprechen.'",
+      "after": "body: 'Sexualität, Zärtlichkeit und das Zusammensein im Alltag können sich in belastenden Phasen verändern. Sie beide erleben oder wünschen sich Nähe möglicherweise unterschiedlich. Über Wünsche nach Nähe und Abstand zu sprechen kann auch nach einer Episode hilfreich sein. Fragen zu möglichen Einflüssen der Behandlung können Sie mit der behandelnden Fachperson klären.'"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 117,
+      "before": "body: 'Spontanität kann schwerer fallen, wenn Stimmungsschwankungen ständig beobachtet werden. Eine dauernde Kontrollrolle kann es erschweren, sich als Liebespaar zu begegnen. Vielleicht wünschen Sie sich wieder mehr Raum für einen Witz, einen Ausflug oder ein gemeinsames Schweigen. Solche Momente dürfen auch nach belastenden Phasen Platz haben.'",
+      "after": "body: 'Wenn Sie ständig auf Stimmungsschwankungen achten, können spontane gemeinsame Momente schwerfallen. Eine dauernde Kontrollrolle kann es erschweren, sich als Liebespaar zu begegnen. Vielleicht wünschen Sie sich mehr Raum für einen Witz, einen Ausflug oder ein gemeinsames Schweigen. Auch nach belastenden Phasen können solche Momente Platz haben.'"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 123,
+      "before": "body: 'Wenn eine Person viele Aufgaben übernimmt, kann sie sich mehr Gegenseitigkeit wünschen. Welche Aufgaben sind gemeinsam vereinbart, welche könnten neu verteilt werden? Auch die Bedürfnisse der angehörigen Person dürfen dabei zur Sprache kommen.'",
+      "after": "body: 'Wenn viele Aufgaben bei einer Person liegen, kann der Wunsch nach mehr Gegenseitigkeit entstehen. Welche Aufgaben sind gemeinsam vereinbart, welche könnten Sie neu verteilen? Auch Ihre eigenen Bedürfnisse gehören in dieses Gespräch.'"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 129,
+      "before": "<h3>Was Aufmerksamkeit und Unterstützung brauchen kann.</h3>",
+      "after": "<h3>Vertrauen, Nähe, Leichtigkeit und Gegenseitigkeit</h3>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 165,
+      "before": "{ id: 's1', label: 'Wenn Beziehung zur Funktion wird' },",
+      "after": "{ id: 's1', label: 'Wenn Aufgaben die Beziehung bestimmen' },"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 195,
+      "before": "<p className=\"lede\">Wiederholte Krisen können Rollen, Vertrauen und Nähe belasten. Wie stark und wie lange, ist unterschiedlich. Neue Absprachen und Entlastung können Raum für Beziehung schaffen. Tabuthemen wie Gewalt, Geldverlust oder sexuelle Enthemmung dürfen benannt werden.</p>",
+      "after": "<p className=\"lede\">Wiederholte Krisen können Aufgabenverteilung, Vertrauen und Nähe unterschiedlich stark und lange belasten. Neue Absprachen und Entlastung können Ihnen mehr Raum füreinander geben. Auch schwer ansprechbare Erfahrungen wie Gewalt, Geldverlust oder sexuelle Enthemmung haben hier Platz.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 227,
+      "before": "<h2>Wenn Beziehung zur Funktion wird</h2>",
+      "after": "<h2>Wenn Aufgaben die Beziehung bestimmen</h2>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 228,
+      "before": "<p className=\"dropcap\">Die Erkrankung kann die Aufgabenverteilung in einer Beziehung verändern: Wer organisiert, erinnert oder übernimmt zusätzliche Verantwortung? Manche Paare erleben, dass solche Aufgaben viel Raum einnehmen. Andere finden tragbare Absprachen oder können gemeinsame Zeit und Gegenseitigkeit erhalten. Es gibt keinen notwendigen Verlauf.</p>",
+      "after": "<p className=\"dropcap\">Die Erkrankung kann die Aufgabenverteilung in einer Beziehung verändern: Wer organisiert, erinnert oder übernimmt zusätzliche Verantwortung? Bei manchen Paaren nehmen diese Aufgaben viel Raum ein. Andere finden tragbare Absprachen und erhalten sich gemeinsame Zeit und Gegenseitigkeit. Wie sich Ihre Beziehung verändert, ist nicht vorgegeben.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 229,
+      "before": "<p>Solche Veränderungen können beeinflussen, wie Sie Nähe, Streit oder Vertrauen erleben. Dieses Modul schaut deshalb nicht zuerst auf Ihre Erschöpfung oder auf die Frage «Gehen oder Bleiben», sondern darauf, was Sie in Ihrer Beziehung wahrnehmen und wünschen.</p>",
+      "after": "<p>Das kann beeinflussen, wie Sie Nähe, Streit und Vertrauen erleben. Dieses Modul hilft Ihnen, Ihre Erfahrungen und Wünsche in der Beziehung zu beschreiben. Ihre eigene Erschöpfung und die Frage nach Bleiben oder Abstand stehen in den folgenden Modulen im Mittelpunkt.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 232,
+      "before": "<span className=\"callout-label\">Hinweis zur Sprache</span>",
+      "after": "<span className=\"callout-label\">Unterschiedliche Beziehungen</span>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 239,
+      "before": "<p>Eine Rollenverschiebung kann sich nach und nach entwickeln, etwa wenn Sie zusätzliche Aufgaben aus Fürsorge übernehmen. Wenn Sie sich hier wiedererkennen, ist das kein Versagen. Sie dürfen prüfen, was gewünscht und für Sie tragbar ist.</p>",
+      "after": "<p>Wenn Sie zusätzliche Aufgaben aus Fürsorge übernehmen, kann sich Ihre Rolle in der Beziehung nach und nach verändern. Das bedeutet nicht, dass Sie versagt haben. Prüfen Sie gemeinsam, welche Unterstützung gewünscht und für Sie tragbar ist.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 244,
+      "before": "<p><strong>Nach der Diagnose.</strong> Vielleicht wünschen Sie sich Informationen oder möchten bei Terminen unterstützen. Welche Beteiligung gewünscht ist, können Sie gemeinsam besprechen.</p>",
+      "after": "<p><strong>Nach der Diagnose.</strong> Informationen können wichtig werden, oder Sie möchten bei Terminen unterstützen. Besprechen Sie gemeinsam, welche Beteiligung gewünscht ist.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 245,
+      "before": "<p><strong>Zusätzliche Aufgaben.</strong> Manchmal übernehmen Angehörige Termine, Erinnerungen oder Organisation. Was ist gewünscht und für Sie tragbar?</p>",
+      "after": "<p><strong>Zusätzliche Aufgaben.</strong> Angehörige übernehmen manchmal die Terminplanung, erinnern an Absprachen oder organisieren den Alltag. Welche dieser Aufgaben sind gewünscht und für Sie tragbar?</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 247,
+      "before": "<p><strong>Neue Verteilung.</strong> In stabileren Zeiten können Aufgaben wieder zurückgegeben werden. Eigene Interessen und gemeinsame Zeit dürfen Platz haben. Diese Möglichkeiten bilden keine feste Jahresfolge.</p>",
+      "after": "<p><strong>Neue Verteilung.</strong> In stabileren Zeiten können Sie Aufgaben neu verteilen, sodass auch eigene Interessen und gemeinsame Zeit mehr Platz bekommen. Die Beispiele beschreiben Möglichkeiten, keine feste Abfolge über die Jahre.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 261,
+      "before": "<p>Vielleicht wünschen Sie sich mehr Gegenseitigkeit, wenn viele Aufgaben bei Ihnen liegen. Sie dürfen ansprechen, welche Unterstützung Sie brauchen und was Ihnen als Paar wichtig ist.</p>",
+      "after": "<p>Wenn viele Aufgaben bei Ihnen liegen, können Sie ansprechen, welche Unterstützung Sie brauchen und was Ihnen als Paar wichtig ist.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 269,
+      "before": "<p>«Die Manie hat uns fast zerstört — nicht wegen der Symptome, sondern wegen des Vertrauensbruchs danach. Er hat Dinge getan, die ich rational einordnen kann, aber emotional nicht vergessen. Jetzt ist er stabil, und ich frage mich: Darf ich ihm noch böse sein, wenn es eine Krankheit war? Meine Therapeutin hat gesagt: Ja, beides darf nebeneinander existieren.»</p>",
+      "after": "<p>«Nach der Manie war mein Vertrauen schwer erschüttert. Ich verstehe, dass vieles mit der Krankheit zu tun hatte, aber ich bin noch verletzt. Jetzt geht es ihm besser, und ich frage mich, ob ich noch wütend sein darf. Meine Therapeutin sagte, dass das Verständnis für die Krankheit und meine Wut sich nicht ausschliessen.»</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 276,
+      "before": "<p>Die Folgen einer Episode für eine Beziehung können weiterbestehen, auch wenn die akuten Symptome abgeklungen sind. Das ist etwas anderes als die Frage, ob die Episode klinisch beendet ist. Vielleicht bleiben Scham, Misstrauen, Leere, Vorsicht, innere Distanz oder die Frage, wie Sie wieder an gemeinsame Erfahrungen anknüpfen können.</p>",
+      "after": "<p>Auch wenn die akuten Symptome abgeklungen sind, können die Folgen für Ihre Beziehung weiterbestehen. Scham, Misstrauen, Leere, Vorsicht oder innere Distanz können Sie weiterhin beschäftigen. Ob die Episode medizinisch beendet ist und wie Sie die Beziehung erleben, sind daher unterschiedliche Fragen.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 288,
+      "before": "<span className=\"callout-label\">Doppelwahrheit</span>",
+      "after": "<span className=\"callout-label\">Erkrankung und Verletzung</span>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 289,
+      "before": "<p><strong>Krankheitsbedingt</strong> und <strong>verletzend</strong> dürfen gleichzeitig wahr sein. Damit umzugehen kann schwierig sein. Sie dürfen in einer geeigneten ruhigen Phase über Nachwirkungen sprechen — ohne vorschnelle Entlastung und ohne moralische Abrechnung.</p>",
+      "after": "<p>Ein Verhalten kann <strong>krankheitsbedingt</strong> sein und Sie zugleich <strong>verletzen</strong>. Wenn Sie in einem ruhigen Moment über die Folgen sprechen möchten, müssen weder Ihre Verletzung noch die Erkrankung übergangen werden.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 293,
+      "before": "<p>Nähe und Sexualität können sich während und nach belastenden Phasen verändern. Wie Sie und Ihr Gegenüber dies erleben, ist unterschiedlich. Wenn Sie Fragen zu möglichen Einflüssen der Erkrankung oder Behandlung haben, können Sie diese mit einer geeigneten Fachperson besprechen. Aus diesem Text lässt sich nicht ableiten, ob oder wie sich die Medikation in Ihrem Fall auswirkt.</p>",
+      "after": "<p>Nähe und Sexualität können sich während und nach belastenden Phasen verändern. Sie und Ihr Gegenüber erleben das möglicherweise unterschiedlich. Ob die Erkrankung oder die Behandlung dabei eine Rolle spielt, lässt sich für Ihren Fall nicht aus diesem Text ableiten. Mit solchen Fragen können Sie sich an eine geeignete Fachperson wenden.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 302,
+      "before": "<li>Offen benennen, was zwischen Ihnen steht: «Ich merke, dass ich mich zurückziehe. Das hat nichts mit dir zu tun — ich brauche Zeit, um aus der Kontrollrolle herauszukommen.»</li>",
+      "after": "<li>Eigene Bedürfnisse benennen. So könnte es klingen: «Ich merke, dass ich gerade Abstand brauche. Ich habe in den letzten Wochen viel organisiert und bin erschöpft.»</li>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 303,
+      "before": "<li>Bei Bedarf mit einer geeigneten Fachperson klären, welcher Rahmen für ein Gespräch über Intimität zu Ihnen passt.</li>",
+      "after": "<li>Bei Bedarf mit einer geeigneten Fachperson klären, wie und mit wem Sie über Intimität sprechen möchten.</li>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 319,
+      "before": "<p>Manche Erfahrungen in Episoden werden kaum benannt, obwohl sie Beziehungen tief prägen. Sie sind real — und sie verletzen, auch wenn sie krankheitsbedingt sind. <em>«Krankheitsbedingt»</em> bedeutet nicht, dass Sie es aushalten oder verschweigen müssen.</p>",
+      "after": "<p>Über manche Erfahrungen während einer Episode wird wenig gesprochen, obwohl sie eine Beziehung stark belasten können. Auch <em>krankheitsbedingtes</em> Verhalten kann verletzen. Sie brauchen Verletzungen nicht auszuhalten oder zu verschweigen.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 325,
+      "before": "<p>Grenzüberschreitungen, die die Beziehung tief verletzen. Das ist ein Thema für professionelle Begleitung — nicht für Alleinbewältigung. Anlaufstellen nach Situation finden Sie unter <a className=\"link-underline\" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>",
+      "after": "<p>Sexuelle Grenzüberschreitungen können eine Beziehung tief verletzen. Dabei können Sie professionelle Begleitung nutzen und brauchen die Folgen nicht allein zu bewältigen. Anlaufstellen nach Situation finden Sie unter <a className=\"link-underline\" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 328,
+      "before": "<p>Aggression, die verletzt — auch wenn sie krankheitsbedingt ist. Wenn Sie Gewalt erfahren: Sie haben das Recht, sich in Sicherheit zu bringen. Immer.</p>",
+      "after": "<p>Verbale oder körperliche Gewalt verletzt, auch wenn sie mit der Erkrankung zusammenhängt. Wenn Sie Gewalt erfahren, haben Sie das Recht, sich in Sicherheit zu bringen.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 331,
+      "before": "<p>«Am schwersten war nicht nur, was passiert ist. Am schwersten war, dass ich lange dachte, ich dürfte es nicht einmal aussprechen. Als wäre schon das Benennen ein Verrat. Erst als ich es gesagt habe, wurde es überhaupt bearbeitbar.»</p>",
+      "after": "<p>«Ich dachte lange, dass ich niemandem erzählen darf, was passiert ist. Das fühlte sich wie Verrat an. Als ich endlich darüber gesprochen habe, konnte ich mir Hilfe holen.»</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 338,
+      "before": "<p>Vier Schritte, die helfen können, die Beziehung wieder bewusster als Beziehung zu sehen — nicht nur als Funktionsträgerin der Krise.</p>",
+      "after": "<p>Die folgenden Anregungen können helfen, neben den Aufgaben rund um die Erkrankung auch Ihre Wünsche an die Beziehung im Blick zu behalten. Wählen Sie, was für Sie passt.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 340,
+      "before": "<h3>1. Rollenverschiebung bewusst wahrnehmen</h3>",
+      "after": "<h3>1. Auf die Aufgabenverteilung schauen</h3>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 343,
+      "before": "<h3>2. Eine «krankheitsfreie Insel» pro Woche</h3>",
+      "after": "<h3>2. Gemeinsame Zeit ohne Krankheitsthema</h3>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 344,
+      "before": "<p>Vereinbaren Sie eine feste Zeit, in der die Erkrankung kein Thema ist — kein Symptom-Monitoring, keine Medikamentendiskussion. Nur Sie beide als Paar.</p>",
+      "after": "<p>Wenn Sie beide das möchten, können Sie regelmässig Zeit miteinander verbringen, in der die Erkrankung kein Thema ist, zum Beispiel einmal pro Woche. Dabei geht es um gemeinsame Interessen und Erlebnisse, ohne Symptome oder Medikamente zu besprechen.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 346,
+      "before": "<h3>3. Vertrauensbrüche benennen — nicht schlucken</h3>",
+      "after": "<h3>3. Über Verletzungen sprechen</h3>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 354,
+      "before": "<p>Wann waren Sie zuletzt einfach ein Paar? Vielleicht erinnern Sie sich an gemeinsame Zeit, in der die Erkrankung kein Thema war. Was war Ihnen dabei wichtig? Wenn Ihnen nichts einfällt, müssen Sie daraus kein Urteil über Ihre Beziehung ableiten.</p>",
+      "after": "<p>Erinnern Sie sich an gemeinsame Zeit, in der die Erkrankung kein Thema war? Was war Ihnen dabei wichtig? Auch wenn Ihnen gerade nichts einfällt, sagt das allein nichts über Ihre Beziehung aus.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 362,
+      "before": "<p>Werkzeuge für Gespräche, Krisenpläne und konkrete Schritte — wenn Sie nicht mehr nur lesen, sondern handeln möchten.</p>",
+      "after": "<p>Anregungen für Gespräche, gemeinsam vorbereitete Krisenpläne und eigene nächste Schritte.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 369,
+      "before": "<p>Vier Schritte für schwierige Gespräche nach einer Episode — mit Beispielsätzen und klarer Struktur.</p>",
+      "after": "<p>Ein Gespräch vorbereiten: das eigene Anliegen, eine Bitte und bei Bedarf eine selbst umsetzbare Grenze formulieren.</p>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 379,
+      "before": "<li><strong>Es gibt keine feste Beziehungsprognose.</strong> Vertrauen, Nähe und Leichtigkeit können belastet werden, erhalten bleiben oder wieder Raum finden. Welche Unterstützung passt, ist unterschiedlich.</li>",
+      "after": "<li><strong>Jede Beziehung entwickelt sich anders.</strong> Vertrauen, Nähe und Leichtigkeit können belastet werden, erhalten bleiben oder wieder mehr Raum bekommen. Welche Unterstützung passt, hängt von Ihrer Situation ab.</li>"
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 381,
+      "before": "<li><strong>Ruhigere Phasen bieten Raum.</strong> Für Erholung, gemeinsame Freude und — wenn es für Sie passt — Gespräche oder neue Absprachen.</li>",
+      "after": "<li><strong>Ruhigere Phasen bieten Raum</strong> für Erholung, gemeinsame Freude und, wenn es für Sie passt, Gespräche oder neue Absprachen.</li>"
+    }
+  ],
+  "preserved": [
+    "Diagnoseunterscheidung BipolarI/II und Grenzen einzelner Beobachtungen",
+    "W1-Unterscheidung von Gereiztheit und Aggression",
+    "Medikamentenwarnung und Kinderwunsch-/Valproat-Hinweise",
+    "Uneinheitliche Lithium-/Suizidpräventions-Evidenz und seltene Ereignisse",
+    "PTBS-Abgrenzung und medizinische Abklärung anhaltender Beschwerden",
+    "Einwilligung, rechtliche Rollen und Eltern ohne automatisches Auskunftsrecht",
+    "Fiktionskennzeichnung aller Fallstimmen und Modelle",
+    "W2-Direktziele, M1→M2#s3 und Erwachsenen-Kind-Beispiel",
+    "Vier Druckpunkte Vertrauen/Nähe/Leichtigkeit/Gegenseitigkeit und unterschiedliche Beziehungserfahrungen"
+  ],
+  "clinical_corrections": [],
+  "review_needs": [
+    {
+      "id": "P-M123-01",
+      "status": "W1 bleibt offen",
+      "locations": [
+        "M1 s4/s5/s6/s8",
+        "M2 s5/s6",
+        "M3 s4"
+      ],
+      "need": "Die Diagnose-, Arzneimittel-, Rechts- und Angebotsquellen bleiben ungeprüft; dieser Sprachdurchgang bestätigt keine fachliche Originaldeckung. W1-Register weiterverwenden."
+    },
+    {
+      "id": "P-M123-02",
+      "status": "unverändert; fachlicher Prüfbedarf",
+      "locations": [
+        "M1 Lede und s4 · Zeitpunkt wichtiger Gespräche"
+      ],
+      "original": "Stabile Phasen sind der beste Moment für wichtige Gespräche.",
+      "need": "Die pauschale Rangformulierung zu Gesprächszeitpunkten wurde nur sprachlich umgestellt. Prüfen, ob fachlich eine situationsabhängige Empfehlung gemeint ist; in S nicht neu entschieden."
+    },
+    {
+      "id": "P-M123-03",
+      "status": "unverändert; fachlicher Prüfbedarf",
+      "locations": [
+        "M2 s4 · Medikamenteneinnahme überwachen statt begleiten"
+      ],
+      "original": "Medikamenteneinnahme überwachen statt begleiten",
+      "need": "Die pauschale Abgrenzung kann verabredete oder tatsächlich bestehende Betreuungsaufgaben betreffen. Zuständigkeiten im konkreten Kontext fachlich klären; keine Betreuungs- oder Behandlungspflichten aus S neu ableiten."
+    }
+  ],
+  "terminology": [
+    {
+      "term": "Letzte Phase des fiktiven M3-Linienbilds",
+      "variants": "REPARATUR im SVG; Reparatur in der HTML-Fassung",
+      "chosen": "ANNÄHERUNG im SVG; Annäherung in der HTML-Fassung",
+      "reason": "Beschreibt die vorhandene Bewegung der Linien; kein neues Phasenmodell und keine Prognose."
+    }
+  ],
+  "space_requirements": [
+    {
+      "file": "src/modul1.jsx",
+      "line": 131,
+      "before_characters": 140,
+      "after_characters": 187,
+      "note": "Längerer Absatz oder Listeneintrag; Umbruchkontrolle durch Gesamtprüfung/W3 nötig."
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 235,
+      "before_characters": 197,
+      "after_characters": 278,
+      "note": "Längerer Absatz oder Listeneintrag; Umbruchkontrolle durch Gesamtprüfung/W3 nötig."
+    },
+    {
+      "file": "src/modul1.jsx",
+      "line": 302,
+      "before_characters": 218,
+      "after_characters": 291,
+      "note": "Längerer Absatz oder Listeneintrag; Umbruchkontrolle durch Gesamtprüfung/W3 nötig."
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 398,
+      "before_characters": 252,
+      "after_characters": 330,
+      "note": "Längerer Absatz oder Listeneintrag; Umbruchkontrolle durch Gesamtprüfung/W3 nötig."
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 404,
+      "before_characters": 62,
+      "after_characters": 84,
+      "note": "Längerer Absatz oder Listeneintrag; Umbruchkontrolle durch Gesamtprüfung/W3 nötig."
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 245,
+      "before_characters": 132,
+      "after_characters": 183,
+      "note": "Längerer Absatz oder Listeneintrag; Umbruchkontrolle durch Gesamtprüfung/W3 nötig."
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 344,
+      "before_characters": 150,
+      "after_characters": 249,
+      "note": "Längerer Absatz oder Listeneintrag; Umbruchkontrolle durch Gesamtprüfung/W3 nötig."
+    },
+    {
+      "file": "src/modul2.jsx",
+      "line": 402,
+      "note": "Listenüberschrift «Mögliche Unterstützung im vereinbarten Umfang» ist deutlich länger als «Was Sie dürfen und sollen»."
+    },
+    {
+      "file": "src/modul3.jsx",
+      "line": 31,
+      "note": "SVG-Beschriftung «ANNÄHERUNG» ist länger als «REPARATUR»; zugehörige HTML-Fassung wurde synchronisiert, Geometrie unverändert."
+    }
+  ],
+  "verification": {
+    "method": "Gesamte Dateien zuerst gelesen; wiederkehrende Muster vorab erkannt; vollständige korrigierte Fassungen nochmals gelesen; Originalvergleich und unten angegebene Vergleiche der geschützten Elemente. JSX mit vorhandenem Babel-Parser syntaktisch eingelesen. Keine Browser-, Druck- oder Fachfreigabe in diesem Teilauftrag.",
+    "checks": [
+      {
+        "file": "src/modul1.jsx",
+        "check": "IDs",
+        "passed": true
+      },
+      {
+        "file": "src/modul1.jsx",
+        "check": "Visual-IDs",
+        "passed": true
+      },
+      {
+        "file": "src/modul1.jsx",
+        "check": "Linkziele",
+        "passed": true
+      },
+      {
+        "file": "src/modul1.jsx",
+        "check": "Navigationshandler",
+        "passed": true
+      },
+      {
+        "file": "src/modul1.jsx",
+        "check": "Quellenkomponenten",
+        "passed": true
+      },
+      {
+        "file": "src/modul1.jsx",
+        "check": "Kurzwege",
+        "passed": true
+      },
+      {
+        "file": "src/modul1.jsx",
+        "check": "Schweizer ss",
+        "passed": true
+      },
+      {
+        "file": "src/modul2.jsx",
+        "check": "IDs",
+        "passed": true
+      },
+      {
+        "file": "src/modul2.jsx",
+        "check": "Visual-IDs",
+        "passed": true
+      },
+      {
+        "file": "src/modul2.jsx",
+        "check": "Linkziele",
+        "passed": true
+      },
+      {
+        "file": "src/modul2.jsx",
+        "check": "Navigationshandler",
+        "passed": true
+      },
+      {
+        "file": "src/modul2.jsx",
+        "check": "Quellenkomponenten",
+        "passed": true
+      },
+      {
+        "file": "src/modul2.jsx",
+        "check": "Kurzwege",
+        "passed": true
+      },
+      {
+        "file": "src/modul2.jsx",
+        "check": "Schweizer ss",
+        "passed": true
+      },
+      {
+        "file": "src/modul3.jsx",
+        "check": "IDs",
+        "passed": true
+      },
+      {
+        "file": "src/modul3.jsx",
+        "check": "Visual-IDs",
+        "passed": true
+      },
+      {
+        "file": "src/modul3.jsx",
+        "check": "Linkziele",
+        "passed": true
+      },
+      {
+        "file": "src/modul3.jsx",
+        "check": "Navigationshandler",
+        "passed": true
+      },
+      {
+        "file": "src/modul3.jsx",
+        "check": "Quellenkomponenten",
+        "passed": true
+      },
+      {
+        "file": "src/modul3.jsx",
+        "check": "Kurzwege",
+        "passed": true
+      },
+      {
+        "file": "src/modul3.jsx",
+        "check": "Schweizer ss",
+        "passed": true
+      }
+    ],
+    "jsx_parse": [
+      {
+        "file": "src/modul1.jsx",
+        "passed": true
+      },
+      {
+        "file": "src/modul2.jsx",
+        "passed": true
+      },
+      {
+        "file": "src/modul3.jsx",
+        "passed": true
+      }
+    ],
+    "all_checks_passed": true,
+    "logic_ast_checks": [
+      {
+        "file": "modul1.jsx",
+        "jsxParsed": true,
+        "javascriptLogicAndJsxExpressionsUnchanged": true,
+        "note": "HTML-Text, Hervorhebungen und String-Werte der redaktionellen Listen werden ausgeblendet; IDs/Navigation separat wortgleich verglichen."
+      },
+      {
+        "file": "modul2.jsx",
+        "jsxParsed": true,
+        "javascriptLogicAndJsxExpressionsUnchanged": true,
+        "note": "HTML-Text, Hervorhebungen und String-Werte der redaktionellen Listen werden ausgeblendet; IDs/Navigation separat wortgleich verglichen."
+      },
+      {
+        "file": "modul3.jsx",
+        "jsxParsed": true,
+        "javascriptLogicAndJsxExpressionsUnchanged": true,
+        "note": "HTML-Text, Hervorhebungen und String-Werte der redaktionellen Listen werden ausgeblendet; IDs/Navigation separat wortgleich verglichen."
+      }
+    ]
+  },
+  "unreachable_or_not_verified": [
+    "Interaktive Werkzeuge und gemeinsame Quellen-/Kurzwegkomponenten werden von anderen Teilaufträgen bearbeitet; keine Abdeckung dafür aus diesem Teilreport ableiten.",
+    "Originalpublikationen/amtliche Quellen wurden in S nicht neu abgerufen.",
+    "Umbruch, echte Textvergrösserung und visuelle Positionen der längeren Beschriftungen stehen für die Gesamtprüfung/W3 aus."
+  ],
+  "continuation": "Kein offener Textrest innerhalb Module1–3. Andere Seiten gehören zu parallelen Teilaufträgen; Fachverifikationen bleiben gesondert offen.",
+  "source_freeze": true
+}

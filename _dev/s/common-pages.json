@@ -1,0 +1,157 @@
+{
+  "review": "S – Sprach-Review, gemeinsame und ergänzende Seiten",
+  "base_commit": "26da414624cfb3c1cffb1c3df91f741c2190f22a",
+  "branch": "fix/s-language-review",
+  "reviewed_scope": [
+    "Startseite einschliesslich fiktiver Geschichte und Kontakt",
+    "Modulübersicht und alle Orientierungsfragen/Ergebniswege",
+    "Gemeinsame Kurzüberblicke, Angehörigenrollen, Quellenhinweise und Textfassungsstatus",
+    "Navigation, Fusszeile und Ladehinweise",
+    "Impressum, Datenschutz und Barrierefreiheit",
+    "Modul-/Werkzeugkarten, Seitenmetadaten und index.html",
+    "Beschriftungen und zugängliche Textfassungen der Illustrationen"
+  ],
+  "findings": [
+    {
+      "id": "S-G-01",
+      "priority": "wichtig",
+      "file": "src/home.jsx",
+      "section": "Hero",
+      "before": "Wenn jemand, den Sie lieben, eine bipolare Störung hat — und Sie selbst dabei oft vergessen werden.",
+      "after": "Wenn jemand in Ihrem Umfeld eine bipolare Störung hat.",
+      "reason": "Liebe, Beziehungsqualität und Übersehenwerden werden nicht vorausgesetzt; der folgende Absatz benennt die Angehörigenperspektive."
+    },
+    {
+      "id": "S-G-02",
+      "priority": "wichtig",
+      "file": "src/module.jsx",
+      "section": "Einleitung",
+      "before": "Hier finden Sie den Lernpfad: welches Modul welche Frage beantwortet und wie die Strecke aufgebaut ist. Sie können linear lesen oder direkt das Modul wählen, das Ihrer Lage entspricht.",
+      "after": "Die sieben Module behandeln die Erkrankung, das Leben als Angehörige und mögliche Hilfen im Alltag. Sie können sie der Reihe nach lesen oder ein Thema auswählen, das Sie gerade beschäftigt.",
+      "reason": "Inhalt und Wahlmöglichkeiten werden konkret benannt; abstrakte Strecke/linear/Lage entfallen."
+    },
+    {
+      "id": "S-G-03",
+      "priority": "wichtig",
+      "file": "src/module-guidance.jsx",
+      "section": "Modul5-Kurzüberblick",
+      "before": "Schuldgefühle beweisen keine Schuld. Zuwendung und Selbstschutz können nebeneinander bestehen.",
+      "after": "Wenn Sie sich schuldig fühlen, heisst das nicht automatisch, dass Sie Schuld haben. Sie können jemandem zugewandt bleiben und sich zugleich schützen.",
+      "reason": "Zusammenhängende Erklärung; kein pauschaler Ausschluss tatsächlicher Verantwortung."
+    },
+    {
+      "id": "S-G-04",
+      "priority": "wichtig",
+      "file": "src/site-content.js",
+      "section": "Modul7-Teaser",
+      "before": "Selbstfürsorge stärken, Stabilität im Alltag sichern und die lange Strecke etwas tragfähiger machen.",
+      "after": "Was Ihnen auf Dauer Halt geben kann und wie eigene Bedürfnisse, Beziehungen und Interessen im Alltag Platz finden.",
+      "reason": "Der Teaser beschreibt den Reflexionszweck des Moduls; er suggeriert keine gesicherte Stabilität durch die Lektüre."
+    },
+    {
+      "id": "S-G-05",
+      "priority": "wichtig",
+      "file": "src/datenschutz.jsx",
+      "section": "Einleitung/Verbindungsdaten",
+      "before": "Es gibt keine Tracking-Tools, keine Werbe-Cookies und keine Analytics. Was wir trotzdem erheben — und warum — finden Sie unten.",
+      "after": "Es gibt keine Tracking-Tools, keine Werbe-Cookies und keine Reichweitenmessung (Analytics). Hier erfahren Sie, welche Daten dennoch verarbeitet werden und wofür sie gebraucht werden.",
+      "reason": "Notwendiger Technikbegriff vor Ort erklärt und Verarbeitung durch den Hostingdienst sprachlich berücksichtigt."
+    },
+    {
+      "id": "S-G-06",
+      "priority": "wichtig",
+      "file": "src/barrierefreiheit.jsx",
+      "section": "Einleitung/Prüfstatus",
+      "before": "mit Tastatur statt Maus, mit Screenreader oder bei langsamer Verbindung",
+      "after": "die Tastatur statt der Maus oder ein Vorleseprogramm (Screenreader) nutzen oder eine langsame Internetverbindung haben",
+      "reason": "Verständliche Erklärung statt stichwortartiger Technikliste; tatsächlicher interner Prüfstatus und fehlende externe Freigabe bleiben."
+    },
+    {
+      "id": "S-G-07",
+      "priority": "optional",
+      "file": "src/home.jsx",
+      "section": "Beratungseinladung",
+      "before": "Sie dürfen anrufen / Sie müssen nicht wissen, was Sie sagen wollen.",
+      "after": "Beratung für Angehörige / Auch ohne vorbereitete Fragen.",
+      "reason": "Der Zugang wird klar beschrieben, ohne eine Erlaubnis zu erteilen oder ein Gefühl vorauszusetzen."
+    },
+    {
+      "id": "S-G-08",
+      "priority": "optional",
+      "file": "src/module-guidance.jsx",
+      "section": "Fiktionshinweis",
+      "before": "Die Fallbeispiele und beispielhaften Ich-Sätze sind redaktionell formuliert und fiktiv.",
+      "after": "Die Fallbeispiele und Ich-Sätze sind fiktive, redaktionell formulierte Anregungen.",
+      "reason": "Fiktionsstatus bleibt sichtbar; zusätzlicher Anpassungshinweis verbindet ihn mit der Nutzung von Gesprächsbeispielen."
+    }
+  ],
+  "clinical_or_legal_corrections": [],
+  "remaining_review_needs": [
+    {
+      "topic": "Bestehende W1-Verifikationen",
+      "status": "offen",
+      "note": "Die 35 Quellen-, Rechts- und Angebotsverifikationen bleiben unverändert im W1-Register. Keine Originalquelle neu bestätigt."
+    },
+    {
+      "topic": "Datenschutz, Impressum und Barrierefreiheit",
+      "status": "bestehend offen",
+      "note": "Rechtseinheit, Datenschutzaufsicht, E-Mail-Verfahren, Hosting/Übermittlung, Anbieterangaben und formelle Freigaben sind durch das Sprachlektorat nicht bestätigt. Kein neuer Rechtsanspruch zugesagt."
+    }
+  ],
+  "clarifications": [
+    "FU und KESB ausgeschrieben, bestehende Rechtsbedingungen unverändert",
+    "Hosting-, Server-Log-, Analytics-, CDN- und Screenreader-Begriffe alltagssprachlich erklärt",
+    "Ressourcen-Teaser beschreibt Modulzweck; keine neue klinische Aussage"
+  ],
+  "terms": [
+    {
+      "term": "Website",
+      "variants": "Lese-Begleitung in Startseite, Impressum, Datenschutz, Barrierefreiheit und Metadaten",
+      "chosen": "Website für das Webmedium"
+    },
+    {
+      "term": "Kurzüberblick",
+      "variants": "Kurzweg in allen gemeinsamen Modul-Kurzfassungen",
+      "chosen": "Kurzüberblick"
+    },
+    {
+      "term": "Hypervigilanz",
+      "variants": "erhöhte Wachsamkeit, unerklärte Hypervigilanz im Modul2-Teaser",
+      "chosen": "erhöhte Wachsamkeit (Hypervigilanz); Fachwort erhalten"
+    },
+    {
+      "term": "Zusätzliche Verantwortung",
+      "variants": "W1/W2-Beziehungsaspekt",
+      "chosen": "Zusätzliche Verantwortung; bestehende W1/W2-Fassung erhalten"
+    },
+    {
+      "term": "Fiktive Beispiele",
+      "variants": "Fallbeispiele, Ich-Sätze, Gesprächsbeispiele",
+      "chosen": "Sichtbare Fiktionskennzeichnung plus situationsbezogene anpassbare Anregungen; keine dokumentierten Originalzitate"
+    }
+  ],
+  "space_needs": [
+    {
+      "file": "src/home.jsx",
+      "section": "Hero-Unterzeile",
+      "note": "Zwei erklärende Sätze statt einer knappen Zielgruppenliste; mehr vertikaler Platz."
+    },
+    {
+      "file": "src/module-guidance.jsx",
+      "section": "Gemeinsame Kurzüberblicke und Rollen",
+      "note": "Anpassungshinweis und konkrete Rollenformulierungen verlängern einzelne Absätze."
+    },
+    {
+      "file": "src/barrierefreiheit.jsx",
+      "section": "Einleitung und Liste der umgesetzten Funktionen",
+      "note": "Erklärte Technikbegriffe brauchen mehr Zeilen."
+    },
+    {
+      "file": "src/triage-flow.jsx",
+      "section": "Frage2",
+      "note": "Ausformulierte Erschöpfungs-/Grenzfrage ist länger; Auswahlkriterium bleibt erhalten."
+    }
+  ],
+  "inaccessible": [],
+  "continuation": "Keine weitere Sprachrunde erforderlich; vollständiger Bereich bearbeitet."
+}

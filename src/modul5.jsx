@@ -19,14 +19,14 @@ function KnotenFigur() {
         </marker>
       </defs>
 
-      <text x="40" y="28" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0" fontWeight="500">DIE DOPPELTE BEWEGUNG</text>
+      <text x="40" y="28" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0" fontWeight="500">NÄHE UND EIGENE BEDÜRFNISSE</text>
 
       <text x="60" y="78" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="14" fill="var(--ink)">Verpflichtung</text>
       <text x="60" y="96" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0">zur anderen Person</text>
       <path d="M 90,110 C 180,150 240,210 280,240" fill="none" stroke="var(--ink)" strokeWidth="1.5" markerStart="url(#dotA)" />
 
       <text x="500" y="78" textAnchor="end" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="14" fill="var(--accent)">Selbstschutz</text>
-      <text x="500" y="96" textAnchor="end" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0">zu sich selbst</text>
+      <text x="500" y="96" textAnchor="end" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0">für sich selbst</text>
       <path d="M 470,110 C 380,150 320,210 280,240" fill="none" stroke="var(--accent)" strokeWidth="1.5" markerStart="url(#dotB)" />
 
       <g transform="translate(280, 240)">
@@ -36,7 +36,7 @@ function KnotenFigur() {
       </g>
 
       <text x="280" y="290" textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="13" fill="var(--ink-soft)">der Konflikt</text>
-      <text x="280" y="306" textAnchor="middle" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0">beides ist legitim · beides zieht</text>
+      <text x="280" y="306" textAnchor="middle" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0">beide Bedürfnisse sind berechtigt</text>
     </svg>
   );
 }
@@ -49,11 +49,11 @@ function KnotenFigurWrap() {
       </div>
       <figcaption>
         <strong id="m5-loyalitaetsknoten-title">Der Loyalitätsknoten.</strong>{' '}
-        Das Bild zeigt einen möglichen Konflikt zwischen Nähe zur erkrankten Person und eigenen Bedürfnissen. Beides darf Platz haben. Es bewertet weder Ihre Gefühle noch Ihre Entscheidung.
+        Das Bild zeigt einen möglichen Konflikt zwischen Nähe zur erkrankten Person und eigenen Bedürfnissen. Für beides soll Platz sein. Das Bild bewertet weder Ihre Gefühle noch Ihre Entscheidung.
       </figcaption>
       <FigureText visualId="m5-loyalitaetsknoten">
-        <p>Von links führt eine Linie mit der Bezeichnung «Verpflichtung zur anderen Person» zu einem Knoten. Von rechts kommt die Linie «Selbstschutz zu sich selbst». Im Knoten treffen beide zusammen: Beides ist legitim, beides zieht gleichzeitig.</p>
-        <p>Das Bild zeigt einen möglichen inneren Konflikt. Es ist kein Ablauf und schreibt keine Entscheidung zum Bleiben oder Gehen vor.</p>
+        <p>Von links führt eine Linie mit der Bezeichnung «Verpflichtung zur anderen Person» zu einem Knoten. Von rechts kommt die Linie «Selbstschutz für sich selbst». Im Knoten treffen beide zusammen. Beide Bedürfnisse sind berechtigt und können in unterschiedliche Richtungen ziehen.</p>
+        <p>Das Bild zeigt einen möglichen inneren Konflikt, keinen festgelegten Ablauf. Es schreibt nicht vor, ob Sie bleiben oder gehen sollen.</p>
       </FigureText>
     </figure>
   );
@@ -83,17 +83,17 @@ function KipppunkteListe() {
     {
       titel: 'Wenig Raum für sich',
       sub: 'wenn eigene Bedürfnisse in den Hintergrund geraten',
-      text: 'Vielleicht fällt es Ihnen schwer zu sagen, was Ihnen selbst guttun würde. Sie dürfen sich Zeit dafür nehmen und Unterstützung suchen, wenn Sie möchten.',
+      text: 'Wenn es Ihnen schwerfällt zu sagen, was Ihnen selbst guttun würde, können Sie sich Zeit zum Nachdenken nehmen. Unterstützung können Sie suchen, wenn Sie das möchten.',
     },
     {
-      titel: 'Groll',
+      titel: 'Ärger',
       sub: 'wenn Ärger dazukommt',
-      text: 'Vielleicht übernehmen Sie weiter Aufgaben und bemerken dabei Ärger oder weniger Geduld. Schauen Sie darauf, was Sie belastet und welche Absprachen Sie verändern möchten. Daraus allein lässt sich keine Ursache ableiten.',
+      text: 'Vielleicht übernehmen Sie weiter Aufgaben und bemerken dabei Ärger oder weniger Geduld. Überlegen Sie, was Sie belastet und welche Absprachen Sie verändern möchten. Was hinter dem Ärger steckt, lässt sich aus dieser Beobachtung allein nicht erklären.',
     },
     {
       titel: 'Körper',
       sub: 'wenn körperliche Beschwerden dazukommen',
-      text: 'Wenn Sie neue, starke oder anhaltende körperliche Beschwerden bemerken, lassen Sie diese medizinisch abklären. Diese Seite erklärt deren Ursache nicht. Auch ein fehlender körperlicher Befund beweist keinen Loyalitätskonflikt.',
+      text: 'Wenn Sie neue, starke oder anhaltende körperliche Beschwerden bemerken, lassen Sie diese medizinisch abklären. Diese Seite erklärt deren Ursache nicht. Wird bei einer Untersuchung keine körperliche Ursache gefunden, ist das noch kein Beweis dafür, dass ein Loyalitätskonflikt dahintersteht.',
     },
   ];
   return (
@@ -115,15 +115,15 @@ function MythenBuster() {
   const mythen = [
     {
       mythos: 'Abstand ist Verrat.',
-      richtig: 'Abstand kann eine Möglichkeit sein, für sich zu sorgen. Welche Form von Kontakt für Sie passt, dürfen Sie klären.',
+      richtig: 'Abstand kann eine Möglichkeit sein, für sich zu sorgen. Sie können überlegen, welche Form von Kontakt zu Ihrer Situation passt.',
     },
     {
       mythos: 'Wenn ich Grenzen setze, entziehe ich Liebe.',
-      richtig: 'Grenzen markieren, was Sie geben können — und was nicht. Das ist klarer als ein erschöpftes «Ja», das innerlich «Nein» war.',
+      richtig: 'Mit einer Grenze sagen Sie, was Sie geben können und was nicht. Das ist klarer, als Ja zu sagen, obwohl Ihre Kraft dafür nicht reicht.',
     },
     {
-      mythos: 'Loyalität ist endgültig — oder gar nicht.',
-      richtig: 'Kontakt und Unterstützung können sich verändern: etwa seltener sprechen, Aufgaben abgeben oder getrennt wohnen. Sie dürfen auch erwägen, einen Kontakt zu beenden.',
+      mythos: 'Entweder bin ich immer da, oder ich bin nicht loyal.',
+      richtig: 'Kontakt und Unterstützung können sich verändern: Sie können seltener sprechen, Aufgaben abgeben oder getrennt wohnen. Auch einen Kontakt zu beenden, kann für Sie eine Möglichkeit sein.',
     },
   ];
   return (
@@ -160,14 +160,14 @@ function Modul5Page({ onNavigate }) {
 
   const sections = [
     { id: 's1', label: 'Innere Zerrissenheit' },
-    { id: 's2', label: 'Verpflichtung & Selbstschutz' },
+    { id: 's2', label: 'Verpflichtung und Selbstschutz' },
     { id: 's3', label: 'Vier Aspekte der Belastung' },
     { id: 's4', label: 'Wiederholte Bestätigung' },
     { id: 's5', label: 'Warum Grenzen schwer fallen' },
     { id: 's6', label: 'Wenn Vorurteile belasten' },
     { id: 's7', label: 'Eltern, Geschwister und Freundschaften' },
     { id: 's8', label: 'Formen von Abstand' },
-    { id: 's9', label: 'Was zuerst klar werden muss' },
+    { id: 's9', label: 'Eine Entscheidung vorbereiten' },
     { id: 's10', label: 'Worauf es ankommt' },
   ];
 
@@ -192,7 +192,7 @@ function Modul5Page({ onNavigate }) {
               <span className="module-detail-meta-time">⏱ 14–16 Minuten · 10 Abschnitte</span>
             </div>
             <h1>Zwischen <em>Treue</em> und <em>Selbstschutz</em></h1>
-            <p className="lede">Loyalitätskonflikte sind selten laut. Sie zeigen sich als stille Doppelbewegung: jemandem nahe bleiben wollen — und gleichzeitig sich selbst nicht verlieren wollen. Dieses Modul schaut weniger auf Erschöpfungsfolgen oder Akuthilfe als auf die innere Zerrissenheit, die Selbstschutz, Grenzen und Neuordnung so schwer macht.</p>
+            <p className="lede">Loyalitätskonflikte sind selten laut. Vielleicht möchten Sie einem Menschen nahe bleiben und spüren zugleich, dass Sie mehr Raum für sich brauchen. Diese widersprüchlichen Bedürfnisse können es schwer machen, Grenzen zu setzen oder über die Beziehung zu entscheiden. Das Modul bietet Fragen, mit denen Sie Ihre Lage und Ihre eigenen Wünsche besser verstehen können.</p>
           </div>
         </header>
 
@@ -219,16 +219,16 @@ function Modul5Page({ onNavigate }) {
             <ModuleQuickStart number={5} onNavigate={onNavigate} />
 
             <section id="s1">
-              <h2>Das Dilemma ist real</h2>
-              <p className="dropcap">Vielleicht kennen Sie beide Gedanken: «Ich will diesen Menschen nicht im Stich lassen» und «Ich kann so nicht mehr weitermachen.» Sie können nebeneinander bestehen. Liebe, Verantwortung und eigene Grenzen müssen sich nicht jederzeit eindeutig anfühlen.</p>
-              <p>Dieses Modul bietet Fragen zum Sortieren Ihrer Lage: Welche Aufgaben übernehmen Sie? Welche Grenze ist Ihnen wichtig? Welche Unterstützung wünschen Sie? Ob Sie bleiben, Abstand nehmen oder gehen möchten, entscheidet die Seite nicht für Sie.</p>
+              <h2>Wenn Sie hin- und hergerissen sind</h2>
+              <p className="dropcap">Vielleicht kennen Sie beide Gedanken: «Ich will diesen Menschen nicht im Stich lassen» und «Ich kann so nicht mehr weitermachen.» Sie können nebeneinander bestehen, auch wenn das widersprüchlich erscheint. Wie viel Nähe Sie möchten und was Sie selbst brauchen, ist nicht immer sofort klar.</p>
+              <p>Welche Aufgaben übernehmen Sie? Welche Grenze ist Ihnen wichtig? Welche Unterstützung wünschen Sie? Solche Fragen können Ihnen helfen, Ihre Lage zu klären. Die Entscheidung, ob Sie bleiben, Abstand nehmen oder gehen möchten, bleibt bei Ihnen.</p>
 
               <StimmenBlock />
             </section>
 
             <section id="s2">
               <h2>Zwischen Verpflichtung und Selbstschutz</h2>
-              <p>Beide Seiten sind gleichzeitig berechtigt. Das ist kein Zeichen von Unentschlossenheit — sondern der Kern des Problems.</p>
+              <p>Der Wunsch, die andere Person zu unterstützen, und das Bedürfnis, sich selbst zu schützen, können gleichzeitig bestehen. Beide sind berechtigt. Wenn Sie dazwischen hin- und hergerissen sind, bedeutet das nicht, dass Sie sich einfach nicht entscheiden können.</p>
 
               <KnotenFigurWrap />
 
@@ -236,8 +236,8 @@ function Modul5Page({ onNavigate }) {
                 <div className="do-col">
                   <h3>Verpflichtung</h3>
                   <ul>
-                    <li>«Ich darf ihn/sie nicht im Stich lassen.»</li>
-                    <li>«Er/sie kann nichts für die Erkrankung.»</li>
+                    <li>«Ich darf diesen Menschen nicht im Stich lassen.»</li>
+                    <li>«Niemand sucht sich diese Erkrankung aus.»</li>
                     <li>«Ich habe versprochen, da zu sein.»</li>
                     <li>«Wenn ich gehe, bricht alles zusammen.»</li>
                   </ul>
@@ -248,37 +248,37 @@ function Modul5Page({ onNavigate }) {
                     <li>«Ich kann nicht mehr.»</li>
                     <li>«Meine eigene Gesundheit leidet.»</li>
                     <li>«Ich brauche Abstand.»</li>
-                    <li>«Meine Kinder brauchen einen gesunden Elternteil.»</li>
+                    <li>«Meine Kinder brauchen mich. Auch dafür brauche ich Kraft.»</li>
                   </ul>
                 </div>
               </div>
 
               <aside className="callout">
-                <span className="callout-label">Wichtige Erkenntnis</span>
-                <p>Vielleicht erleben Sie das Abwägen zwischen Nähe und Selbstschutz als belastend. Sie dürfen dafür Unterstützung suchen und die Situation mit einer vertrauten Person oder Beratungsstelle sortieren. Daraus lässt sich nicht ableiten, dass Sie für den Krankheitsverlauf der anderen Person verantwortlich sind.</p>
+                <span className="callout-label">Unterstützung beim Abwägen</span>
+                <p>Das Abwägen zwischen Nähe und Selbstschutz kann belastend sein. Wenn Sie möchten, besprechen Sie die Situation mit einer vertrauten Person oder Beratungsstelle. Dass Ihnen eine Entscheidung schwerfällt, bedeutet nicht, dass Sie für den Krankheitsverlauf der anderen Person verantwortlich sind.</p>
               </aside>
             </section>
 
             <section id="s3">
               <h2>Vier mögliche Aspekte der Belastung</h2>
-              <p>Die folgenden vier Aspekte sind ein redaktionelles Reflexionsmodell: Sorgen und Schuldgefühle, zusätzliche Verantwortung, Erschöpfung und Kritik. Vielleicht kennen Sie einzelne davon. Sie sind keine geprüften Phasen, müssen nicht in dieser Reihenfolge auftreten und beschreiben nicht jede Familie.</p>
+              <p>Die folgenden vier Aspekte bilden ein Reflexionsmodell, das für diese Website zusammengestellt wurde: Sorgen und Schuldgefühle, zusätzliche Verantwortung, Erschöpfung und Kritik. Vielleicht kennen Sie einzelne davon. Sie sind keine wissenschaftlich geprüften Phasen, treten nicht zwingend in dieser Reihenfolge auf und beschreiben nicht jede Familie.</p>
 
               <h3>Fragen zum Nachdenken, keine Einstufung</h3>
-              <p><strong>1 — Schuldgefühle.</strong> «Hätte ich die Warnzeichen früher erkannt?» Vielleicht kennen Sie diesen Gedanken. Prüfen Sie, welche Verantwortung tatsächlich bei Ihnen liegt und was Sie entlasten könnte; Sie müssen die andere Person nicht ständig kontrollieren.</p>
-              <p><strong>2 — Zusätzliche Verantwortung.</strong> Vielleicht übernehmen Sie viele Aufgaben. Prüfen Sie gemeinsam, welche Unterstützung gewünscht ist, was die andere Person selbst übernehmen kann und wo Sie Entlastung brauchen.</p>
-              <p><strong>3 — Erschöpfung.</strong> Unter Belastung kann die Geduld nachlassen. Gereiztheit ist kein zwangsläufiger nächster Schritt; frühzeitige Hilfe und Abstand können entlasten.</p>
-              <p><strong>4 — Kritik.</strong> Vielleicht bereuen Sie einen Satz oder wünschen sich ein ruhigeres Gespräch. Sie können überlegen, was Sie anders ausdrücken möchten und ob Abstand oder Unterstützung gerade hilfreich wäre. Daraus entsteht keine vorgeschriebene nächste Phase.</p>
+              <p><strong>1 — Schuldgefühle.</strong> «Hätte ich die Warnzeichen früher erkannt?» Wenn Sie dieser Gedanke beschäftigt, überlegen Sie, welche Aufgaben tatsächlich bei Ihnen liegen und was Sie entlasten könnte. Sie müssen die andere Person nicht ständig kontrollieren.</p>
+              <p><strong>2 — Zusätzliche Verantwortung.</strong> Wenn Sie viele Aufgaben übernehmen, besprechen Sie gemeinsam, welche Unterstützung gewünscht ist und was die andere Person selbst übernehmen kann. Auch die Entlastung, die Sie brauchen, gehört in diese Absprachen.</p>
+              <p><strong>3 — Erschöpfung.</strong> Unter Belastung kann die Geduld nachlassen. Daraus folgt aber nicht zwangsläufig, dass Sie gereizt werden. Frühzeitige Hilfe und Abstand können entlasten.</p>
+              <p><strong>4 — Kritik.</strong> Vielleicht bereuen Sie einen Satz oder wünschen sich ein ruhigeres Gespräch. Überlegen Sie, was Sie anders ausdrücken möchten und ob Abstand oder Unterstützung gerade hilfreich wäre. Kritik führt nicht zwangsläufig zu einer weiteren Phase.</p>
 
               <aside className="callout callout-soft">
-                <span className="callout-label">Vom Forschungsbegriff EE unterscheiden</span>
-                <p>Der in der Fachliteratur verwendete Begriff «Expressed Emotion (EE)» bezeichnet nicht das redaktionelle Reflexionsmodell oben. Seine fachliche Definition und die angeführte Literatur sind hier noch nicht abschliessend geprüft. Dieses Modul beurteilt weder Ihr Familienklima noch ein individuelles Rückfallrisiko und weist Angehörigen keine Rückfallschuld zu. Eigene Grenzen und Unterstützung für sich selbst dürfen Platz haben.</p>
+                <span className="callout-label">Das Reflexionsmodell ist kein EE-Test</span>
+                <p>In der Fachliteratur gibt es den Begriff «Expressed Emotion (EE)». Er bezeichnet etwas anderes als das Reflexionsmodell oben. Seine fachliche Definition und die hier angeführte Literatur sind noch nicht abschliessend geprüft. Mit diesem Modul lässt sich weder das Klima in Ihrer Familie noch ein individuelles Rückfallrisiko beurteilen. Es schreibt Angehörigen keine Schuld an Rückfällen zu. Eigene Grenzen und Unterstützung für sich selbst bleiben wichtig.</p>
               </aside>
             </section>
 
             <section id="s4">
               <h2>Wenn wiederholt nach Bestätigung gefragt wird</h2>
-              <p>Vielleicht kennen Sie Gespräche, in denen die andere Person wiederholt fragt, ob Sie sie noch mögen oder für sie da sind. Diese Seite erklärt nicht, warum das geschieht, und ordnet es keiner Diagnose zu. Sie können besprechen, welche Nähe gewünscht ist und was Sie selbst gerade anbieten können.</p>
-              <p>Sie dürfen ehrlich Zuwendung zeigen und zugleich Ihre Verfügbarkeit begrenzen: «Du bist mir wichtig. Ich kann jetzt zehn Minuten bei dir sein. Danach brauche ich eine Pause.» Wenn Fragen und Antworten für beide belastend werden, besprechen Sie das Muster mit dem Behandlungsteam. Es gibt keinen Satz, der zuverlässig alle Zweifel beendet.</p>
+              <p>Vielleicht fragt die andere Person immer wieder, ob Sie sie noch mögen oder für sie da sind. Warum das geschieht, lässt sich hier nicht erklären oder einer Diagnose zuordnen. Sie können besprechen, welche Nähe gewünscht ist und was Sie gerade anbieten können.</p>
+              <p>Zuwendung und eine Grenze können zusammenpassen. So könnte es klingen: «Du bist mir wichtig. Ich kann jetzt zehn Minuten bei dir bleiben. Danach brauche ich eine Pause.» Wenn diese Gespräche für beide belastend werden, besprechen Sie sie mit dem Behandlungsteam. Es gibt keinen Satz, der zuverlässig alle Zweifel beendet.</p>
             </section>
 
             <section id="s5">
@@ -286,115 +286,115 @@ function Modul5Page({ onNavigate }) {
               <p>Vielleicht fällt es Ihnen schwer, eine Grenze auszusprechen oder eine Aufgabe abzugeben. Die folgenden Beispiele können helfen, genauer zu benennen, was Sie beschäftigt. Sie sind keine Erklärung für jede Situation.</p>
 
               <h3>Vier mögliche Hürden</h3>
-              <p><strong>A — Angst.</strong> «Wenn ich Nein sage und etwas passiert — lebe ich mit der Schuld.» Diese Angst ist real. Aber es geht um «welche Grenze, wann, wie» — nicht um Alles oder Nichts.</p>
+              <p><strong>A — Angst.</strong> «Was, wenn ich Nein sage und dann etwas passiert?» Wenn Sie diese Sorge kennen, können Sie genauer überlegen: Welche Grenze brauche ich? Wann und wie kann ich sie aussprechen? Sie müssen nicht zwischen allem und gar nichts entscheiden.</p>
               <p><strong>B — Schuld.</strong> Vielleicht tauchen Schuldgefühle auf, wenn Sie eine Grenze setzen möchten. Sie können diese Gefühle wahrnehmen und trotzdem prüfen, was Sie leisten können und wollen.</p>
-              <p><strong>C — Moralischer Druck.</strong> «Man lässt einen kranken Menschen nicht im Stich.» Vielleicht hören Sie diesen Satz oder denken ihn selbst. Auch Ihre Bedürfnisse und Grenzen dürfen in die Absprachen eingehen.</p>
-              <p><strong>D — Gewohnheit.</strong> Vielleicht übernehmen Sie Aufgaben, die die andere Person wieder selbst übernehmen möchte. Besprechen Sie gemeinsam, welche Hilfe gewünscht ist, welche Aufgaben zurückgegeben werden können und wo weitere Unterstützung nötig ist.</p>
+              <p><strong>C — Moralischer Druck.</strong> «Man lässt einen kranken Menschen nicht im Stich.» Vielleicht hören Sie diesen Satz oder denken ihn selbst. Dennoch gehören Ihre Bedürfnisse und Grenzen in die Absprachen.</p>
+              <p><strong>D — Gewohnheit.</strong> Vielleicht übernehmen Sie Aufgaben, die die andere Person wieder selbst erledigen möchte. Besprechen Sie gemeinsam, welche Hilfe gewünscht ist, welche Aufgaben Sie abgeben können und wo weitere Unterstützung nötig ist.</p>
 
               <h3>Was Sie bei sich bemerken könnten</h3>
-              <p>Schauen Sie auch darauf, wie es Ihnen selbst mit den bisherigen Aufgaben und Absprachen geht. Die drei Beispiele sind Anregungen für ein Gespräch, keine Schwellen für eine Entscheidung.</p>
+              <p>Wie geht es Ihnen mit den bisherigen Aufgaben und Absprachen? Die drei Beispiele können ein Gespräch darüber anregen. Sie geben nicht vor, ab wann Sie eine bestimmte Entscheidung treffen sollten.</p>
 
               <KipppunkteListe />
 
               <div className="schuld-block">
-                <p className="schuld-leitsatz">«Schuldgefühl ist kein Beweis von Schuld.»</p>
+                <p className="schuld-leitsatz">«Sich schuldig zu fühlen, heisst nicht automatisch, schuldig zu sein.»</p>
                 <ul className="schuld-list">
-                  <li>Schuld kann das Echo eines alten Versprechens sein, nicht eine aktuelle Bewertung.</li>
-                  <li>Schuld kann der Preis dafür sein, dass Sie etwas anders machen als bisher — und nicht der Beweis, dass das Neue falsch ist.</li>
+                  <li>Ein früheres Versprechen kann Schuldgefühle auslösen, auch wenn Sie Ihre heutige Situation anders einschätzen.</li>
+                  <li>Wenn Sie etwas anders machen als bisher, können Schuldgefühle auftreten. Das beweist nicht, dass Ihre Entscheidung falsch ist.</li>
                   <li>Schuldgefühle können auch auftreten, wenn Sie eine notwendige Grenze setzen.</li>
                 </ul>
               </div>
             </section>
 
             <section id="s6">
-              <h2>Wenn Vorurteile auf Sie abfärben</h2>
-              <p>Vielleicht begegnen Ihnen Vorurteile über psychische Erkrankungen, die auch Sie als Angehörige treffen. Sie dürfen ansprechen, was diese Erfahrungen mit Ihnen machen. Die folgenden Beispiele beschreiben mögliche Erfahrungen, keinen zwangsläufigen Verlauf.</p>
+              <h2>Wenn Vorurteile auch Sie treffen</h2>
+              <p>Vorurteile über psychische Erkrankungen können auch Sie als Angehörige treffen. Wenn Sie das erleben, können Sie darüber sprechen, was es mit Ihnen macht. Die folgenden Beispiele beschreiben mögliche Erfahrungen. Sie zeigen keinen zwangsläufigen Verlauf.</p>
 
               <h3>Was Sie dabei erleben könnten</h3>
-              <p><strong>Gedanken.</strong> «Ich müsste die andere Person doch gesund machen können.» Wenn Sie sich so unter Druck setzen, können Sie mit jemandem darüber sprechen. Behandlung ist nicht Ihre Aufgabe.</p>
+              <p><strong>Gedanken.</strong> «Ich müsste doch etwas tun können, damit es ihr wieder gut geht.» Wenn Sie sich so unter Druck setzen, können Sie mit jemandem darüber sprechen. Die Behandlung ist nicht Ihre Aufgabe.</p>
               <p><strong>Gefühle.</strong> Vielleicht schämen Sie sich oder fürchten eine abwertende Reaktion. Sie entscheiden, wem Sie etwas erzählen möchten.</p>
               <p><strong>Kontakte.</strong> Vielleicht meiden Sie ein Gespräch, weil Erklärungen gerade Kraft kosten. Überlegen Sie, mit wem Sie sich auch ohne viele Details verbunden fühlen können.</p>
 
               <h3>Mögliche Reaktionen des Umfelds</h3>
-              <p><strong>Verharmlosung.</strong> «Jeder hat mal schlechte Tage.» Vergleicht eine schwere Erkrankung mit Alltagstraurigkeit. Fühlt sich an wie: Ihre Erfahrung zählt nicht.</p>
-              <p><strong>Nicht gesehen werden.</strong> «Er/sie sieht doch ganz normal aus!» Vielleicht fühlen Sie sich dadurch mit Ihrer Erfahrung nicht ernst genommen.</p>
+              <p><strong>Verharmlosung.</strong> «Jeder hat mal schlechte Tage.» Dieser Satz setzt eine schwere Erkrankung mit alltäglicher Traurigkeit gleich. Vielleicht fühlen Sie sich dadurch mit Ihrer Erfahrung nicht ernst genommen.</p>
+              <p><strong>Nicht gesehen werden.</strong> «Man merkt ihm doch gar nichts an!» Vielleicht fühlen Sie sich dadurch mit Ihrer Erfahrung nicht ernst genommen.</p>
               <p><strong>Vereinfachung.</strong> «Warum trennst du dich nicht?» Vielleicht wünschen Sie sich, dass jemand zunächst zuhört, statt eine Entscheidung vorzuschlagen.</p>
-              <p><strong>Stille.</strong> Freunde fragen nicht mehr. Das kann sich wie Desinteresse anfühlen; was dahintersteht, lässt sich nicht allein aus dem Schweigen erkennen.</p>
+              <p><strong>Stille.</strong> Wenn Freunde nicht mehr nachfragen, kann sich das wie Desinteresse anfühlen. Was dahintersteht, lässt sich aber nicht allein aus dem Schweigen erkennen.</p>
             </section>
 
             <section id="s7">
               <h2>Loyalitätskonflikte in unterschiedlichen Beziehungen</h2>
               <p>Einige Beispiele in diesem Modul beziehen sich auf Partnerschaften. Auch als Elternteil oder Geschwister können Sie Nähe, Verantwortung und eigene Bedürfnisse abwägen.</p>
-              <p><strong>Eltern</strong> denken vielleicht: «Ich kann mein eigenes Kind doch nicht im Stich lassen», auch wenn es längst erwachsen ist. Sie dürfen seine Eigenständigkeit respektieren und zugleich klären, welche Unterstützung Sie selbst anbieten möchten.</p>
-              <p><strong>Geschwister</strong> können Pflichtgefühle gegenüber dem Bruder oder der Schwester erleben und gleichzeitig wünschen, dass eigene Bedürfnisse Platz haben. Auch Sie dürfen Aufgaben und Grenzen besprechen.</p>
-              <p>Für beide gilt: Die Fragen aus diesem Modul — Wie viel Nähe ist tragbar? Wo endet meine Zuständigkeit? Was wünsche ich mir für mein eigenes Leben? — sind ebenso berechtigt wie für Partnerinnen und Partner. Die passenden Absprachen hängen von Ihrer Beziehung und Situation ab.</p>
+              <p><strong>Eltern</strong> denken vielleicht: «Ich kann mein eigenes Kind doch nicht im Stich lassen», auch wenn es längst erwachsen ist. Sie können seine Eigenständigkeit respektieren und zugleich überlegen, welche Unterstützung Sie selbst anbieten möchten.</p>
+              <p><strong>Geschwister</strong> können sich dem Bruder oder der Schwester verpflichtet fühlen und gleichzeitig mehr Raum für eigene Bedürfnisse wünschen. Auch dann lassen sich Aufgaben und Grenzen besprechen.</p>
+              <p>Wie viel Nähe passt für Sie? Welche Aufgaben können und möchten Sie übernehmen? Was wünschen Sie sich für Ihr eigenes Leben? Diese Fragen sind für Eltern und Geschwister ebenso berechtigt wie für Partnerinnen und Partner. Welche Absprachen passen, hängt von Ihrer Beziehung und Situation ab.</p>
 
               <h3>Freundschaft ohne gemeinsamen Haushalt</h3>
-              <p><strong>Fiktives Kurzbeispiel.</strong> Zwei Freunde wohnen getrennt. Einer wünscht sich in einer belastenden Zeit häufige Telefonate. Der andere möchte den Kontakt halten und braucht zugleich ungestörte Zeit für Arbeit und Erholung. Sein nächster Schritt ist eine Absprache über die gewünschte Hilfe und seine Verfügbarkeit: «Ich kann morgen Abend eine halbe Stunde telefonieren. Während der Arbeit und nachts beantworte ich keine Nachrichten. Passt dieser Zeitpunkt für dich?» Gemeinsam können sie klären, welche weitere Unterstützung der Freund nutzen möchte; ständige Erreichbarkeit ist keine Voraussetzung für die Freundschaft.</p>
+              <p><strong>Fiktives Kurzbeispiel.</strong> Zwei Freunde wohnen getrennt. Einer wünscht sich in einer belastenden Zeit häufige Telefonate. Der andere möchte den Kontakt halten und braucht zugleich ungestörte Zeit für Arbeit und Erholung. Sie sprechen darüber, welche Hilfe gewünscht ist und wann ein Telefonat für beide passt: «Ich kann morgen Abend eine halbe Stunde telefonieren. Während der Arbeit und nachts beantworte ich keine Nachrichten. Passt dir morgen Abend?» Gemeinsam können sie klären, welche weitere Unterstützung der Freund nutzen möchte. Für eine Freundschaft muss niemand ständig erreichbar sein.</p>
             </section>
 
             <section id="s8">
-              <h2>Gehen, Bleiben, Abstand, Neuordnung</h2>
-              <p>Vielleicht wünschen Sie sich Abstand oder fragen sich, ob Sie die Beziehung fortsetzen möchten. Sie dürfen diese Gedanken ernst nehmen und sich Zeit oder Beratung zum Sortieren nehmen. Die Seite leitet daraus keine Entscheidung ab.</p>
-              <p>Vielleicht möchten Sie zunächst Abstand, andere Zuständigkeiten oder eine befristete Entlastung besprechen. Vielleicht steht für Sie bereits eine Trennung im Raum. Sie müssen diese unterschiedlichen Fragen nicht alle gleichzeitig beantworten.</p>
+              <h2>Bleiben, Abstand nehmen oder gehen</h2>
+              <p>Wenn Sie sich Abstand wünschen oder über eine Trennung nachdenken, nehmen Sie diese Gedanken ernst. Sie können sich Zeit nehmen und Beratung suchen, um herauszufinden, was Sie möchten. Die Seite nimmt Ihnen diese Entscheidung nicht ab.</p>
+              <p>Möglicherweise möchten Sie über Abstand, eine andere Aufgabenverteilung oder eine Entlastung für eine bestimmte Zeit sprechen. Vielleicht steht für Sie bereits eine Trennung im Raum. Sie müssen diese unterschiedlichen Fragen nicht alle gleichzeitig beantworten.</p>
 
               <aside className="callout">
                 <span className="callout-label">Zur Einordnung</span>
                 <p>Für Ihre Entscheidung zählen Ihre konkrete Beziehung, Ihre Bedürfnisse und Ihre Möglichkeiten. Diese Seite macht keine Prognose darüber, wie sich Ihre Beziehung entwickeln wird.</p>
               </aside>
 
-              <h3>Drei Bewegungen, je nach Lage</h3>
-              <p><strong>Bewusst bleiben.</strong> «Ich bleibe, aber ich brauche…»: Wenn Sie bleiben möchten, können Sie klare Zuständigkeiten, eigene Auszeiten und Unterstützung besprechen. Ob gemeinsame Gespräche oder Paartherapie für Sie beide passen, lässt sich mit einer Fachperson klären. Schuldgefühle können dabei weiter bestehen.</p>
-              <p><strong>Bewusst gehen.</strong> Sie dürfen eine Trennung erwägen. Schuldgefühle allein entscheiden nicht, ob sie für Sie passt. Ob und in welcher Form Sie danach Kontakt wünschen, dürfen Sie ebenfalls klären. Bei Fragen zu Kindern oder Finanzen suchen Sie passende Fachberatung und erfragen deren Zuständigkeit und Kosten.</p>
-              <p><strong>Bewusst Abstand.</strong> Manchmal ist nicht sofort Trennung oder vollständiges Bleiben dran, sondern eine Neuordnung: vorübergehend weniger tragen, getrennt schlafen, Hilfe von aussen aktivieren, Zuständigkeiten klären.</p>
+              <h3>Drei Möglichkeiten, je nach Situation</h3>
+              <p><strong>Bleiben.</strong> Wenn Sie bleiben möchten, können Sie besprechen, wer welche Aufgaben übernimmt, wann Sie Zeit für sich haben und welche Unterstützung passt. So könnte ein Einstieg klingen: «Ich möchte mit dir zusammenbleiben. Aber ich brauche mehr Zeit für mich.» Ob gemeinsame Gespräche oder Paartherapie für Sie beide passen, lässt sich mit einer Fachperson klären. Schuldgefühle können dabei weiter bestehen.</p>
+              <p><strong>Gehen.</strong> Eine Trennung kann für Sie eine Möglichkeit sein. Schuldgefühle allein entscheiden nicht, ob sie zu Ihrer Situation passt. Überlegen Sie auch, ob und in welcher Form Sie danach Kontakt wünschen. Bei Fragen zu Kindern oder Finanzen suchen Sie passende Fachberatung und fragen Sie nach deren Zuständigkeit und Kosten.</p>
+              <p><strong>Abstand nehmen.</strong> Manchmal möchten Sie die Beziehung verändern, ohne sich sofort für Bleiben oder Trennung zu entscheiden. Das kann bedeuten, vorübergehend weniger Aufgaben zu übernehmen, getrennt zu schlafen, Unterstützung von aussen zu suchen oder neu zu vereinbaren, wer wofür zuständig ist.</p>
 
-              <h3>Was Abstand <em>nicht</em> ist</h3>
-              <p>Vielleicht begegnen Ihnen die folgenden Sätze, wenn Sie Grenzen oder Abstand erwägen. Die Alternativen bieten einen anderen Blick, schreiben aber keine Entscheidung vor.</p>
+              <h3>Andere Sichtweisen auf <em>Abstand</em></h3>
+              <p>Vielleicht begegnen Ihnen die folgenden Sätze, wenn Sie über Grenzen oder Abstand nachdenken. Die Antworten daneben bieten einen anderen Blick. Sie schreiben keine Entscheidung vor.</p>
 
               <MythenBuster />
 
               <aside className="callout callout-soft">
-                <span className="callout-label">Prüffrage</span>
-                <p>Wovon genau brauchen Sie Schutz? Von Gewalt? Von Erschöpfung? Von Dauerverantwortung? Von emotionaler Entwertung? Die Antwort zeigt oft, welche Form von Neuordnung wirklich nötig ist.</p>
+                <span className="callout-label">Eine Frage zum Nachdenken</span>
+                <p>Wovor brauchen Sie Schutz: vor Gewalt, Erschöpfung, zu vielen Aufgaben oder verletzenden Worten und Verhaltensweisen? Wenn Sie das genauer benennen können, wird oft klarer, welche Veränderung Sie brauchen.</p>
               </aside>
             </section>
 
             <section id="s9">
-              <h2>Was vor einer grossen Entscheidung zuerst klar werden muss</h2>
-              <p>Bevor Sie weitertragen, begrenzen, Abstand nehmen oder gehen, hilft oft nicht die schnelle Antwort, sondern die erste Klärung. Diese vier Schritte ordnen, worum es gerade wirklich geht.</p>
+              <h2>Eine grosse Entscheidung vorbereiten</h2>
+              <p>Ob Sie Aufgaben weiter übernehmen, eine Grenze setzen, Abstand nehmen oder gehen möchten: Eine Antwort muss nicht sofort feststehen. Die folgenden vier Fragen können helfen, Ihre Lage genauer zu verstehen.</p>
 
-              <h3>1. Das eigene Muster erkennen</h3>
-              <p>Welche der vier Erfahrungen kennen Sie gerade: Schuldgefühle, zusätzliche Verantwortung, Erschöpfung oder Kritik? Vielleicht hilft es, eine davon aufzuschreiben. Das Reflexionsmodell ist keine Einstufung und kein EE-Test.</p>
+              <h3>1. Was beschäftigt Sie gerade?</h3>
+              <p>Welche der vier Erfahrungen kennen Sie gerade: Schuldgefühle, zusätzliche Verantwortung, Erschöpfung oder Kritik? Vielleicht hilft es, eine davon aufzuschreiben. Das Reflexionsmodell bewertet Sie nicht und ist kein EE-Test.</p>
 
-              <h3>2. Die eigentliche Schutzfrage benennen</h3>
-              <p>Geht es gerade vor allem um Ihre Erschöpfung, um die Kinder, um emotionale Grenzverletzungen, um Geld oder um Sicherheit? Solange alles vermischt bleibt, bleibt auch die Entscheidung unscharf.</p>
+              <h3>2. Was braucht Schutz oder Entlastung?</h3>
+              <p>Geht es vor allem um Ihre Erschöpfung, um die Kinder, um emotionale Grenzverletzungen, um Geld oder um Sicherheit? Wenn Sie die einzelnen Fragen auseinanderhalten, können Sie klarer überlegen, was Sie entscheiden möchten.</p>
 
-              <h3>3. Ein Gespräch nach Ihren Bedürfnissen führen</h3>
+              <h3>3. Mit wem möchten Sie sprechen?</h3>
               <p>Sprechen Sie mit einer vertrauten Person oder Beratungsstelle über das, was Sie belastet. Sie entscheiden, was Sie teilen möchten und in welchem Tempo. Sie müssen nicht alles offenlegen; beachten Sie dabei auch die Privatsphäre der anderen Person.</p>
 
-              <h3>4. Eine kleine Grenze für das eigene Handeln formulieren</h3>
-              <p>Wenn es zu Ihrer Situation passt, wählen Sie eine Grenze, die Sie selbst umsetzen können. Eine Bitte sagt, was Sie sich von der anderen Person wünschen; Ihre Grenze sagt, was Sie selbst tun werden. Zum Beispiel: «Ich wünsche mir, dass wir ausreden lassen. Wenn wir uns anschreien, beende ich das Gespräch und nehme eine Pause.»</p>
-              <p>Sie müssen damit keine grosse Beziehungsentscheidung treffen. Wenn Ihnen noch Klarheit fehlt, können Sie den Schritt mit einer vertrauten Person oder Beratungsstelle besprechen. Weitere Beispiele finden Sie in <a className="puk-link--inline" href={navHref('modul6', 's8')} onClick={navHandler('modul6', onNavigate, 's8')}>Modul 6: Grenzen formulieren</a>. Der allgemeine Einstieg in Modul 6 unten führt auch zu Vorbereitung und Gesprächen.</p>
+              <h3>4. Welche Grenze können Sie selbst umsetzen?</h3>
+              <p>Wenn es zu Ihrer Situation passt, wählen Sie eine Grenze, die Sie selbst umsetzen können. Mit einer Bitte sagen Sie, was Sie sich von der anderen Person wünschen. Mit einer Grenze sagen Sie, was Sie selbst tun werden. So könnte es klingen: «Ich möchte, dass wir einander ausreden lassen. Wenn wir uns anschreien, beende ich das Gespräch und mache eine Pause.»</p>
+              <p>Damit müssen Sie noch nicht entscheiden, ob Sie die Beziehung fortsetzen möchten. Wenn Sie unsicher sind, können Sie den Schritt mit einer vertrauten Person oder Beratungsstelle besprechen. Weitere Beispiele finden Sie in <a className="puk-link--inline" href={navHref('modul6', 's8')} onClick={navHandler('modul6', onNavigate, 's8')}>Modul 6: Grenzen formulieren</a>. Über den Link zu Modul 6 unten erreichen Sie auch die Abschnitte zu Vorbereitung und Gesprächen.</p>
 
-              <h3>Wenn die Entscheidung fällt — praktische Hinweise</h3>
+              <h3>Praktische Fragen rund um eine Entscheidung</h3>
               <p>Vielleicht beschäftigen Sie praktische Fragen zusätzlich. Notieren Sie, was Sie klären möchten, und holen Sie Unterstützung für die konkrete Situation.</p>
-              <p><strong>Elterliche Sorge, Betreuung und Kontakte.</strong> Bei einer Trennung mit Kindern stellen sich unterschiedliche rechtliche und alltägliche Fragen. Lassen Sie Ihre konkrete Situation rechtlich beraten; die Diagnose oder die Bezeichnung einer Krankheitsphase beantwortet diese Fragen hier nicht. Klären Sie vorab, welche Themen eine Beratungsstelle abdeckt und welche Kosten entstehen.</p>
+              <p><strong>Elterliche Sorge, Betreuung und Kontakte.</strong> Bei einer Trennung mit Kindern stellen sich unterschiedliche rechtliche und alltägliche Fragen. Holen Sie rechtliche Beratung zu Ihrer konkreten Situation ein. Aus einer Diagnose oder der Bezeichnung einer Krankheitsphase lässt sich hier keine Antwort ableiten. Fragen Sie vorab, welche Themen eine Beratungsstelle abdeckt und welche Kosten entstehen.</p>
               <p><strong>Mit Kindern über die Trennung sprechen.</strong> Erklären Sie die konkrete Situation verständlich und ohne Schuldzuweisung an das Kind oder die andere Person. Lassen Sie Fragen und eigene Gefühle zu. Wenn Sie unsicher sind, können Sie Unterstützung für das Gespräch suchen.</p>
-              <p><strong>Verträge und gemeinsame Finanzen.</strong> Wenn Sie sich um Verträge, gemeinsame Finanzen oder die Unterstützung der anderen Person sorgen, holen Sie Beratung zur konkreten Situation ein. Klären Sie vor Änderungen an gemeinsamen Konten, Zahlungen oder Verträgen, welche Schritte Sie selbst vornehmen dürfen. Sie können Ihre konkreten Beobachtungen und Fragen für die Beratung notieren; eine eigene medizinische oder rechtliche Beurteilung wird nicht von Ihnen verlangt.</p>
+              <p><strong>Verträge und gemeinsame Finanzen.</strong> Wenn Sie sich um Verträge, gemeinsame Finanzen oder die Unterstützung der anderen Person sorgen, holen Sie Beratung zur konkreten Situation ein. Klären Sie vor Änderungen an gemeinsamen Konten, Zahlungen oder Verträgen, welche Schritte Sie selbst vornehmen dürfen. Für die Beratung können Sie aufschreiben, was Sie beobachtet haben und welche Fragen Sie beschäftigen. Sie müssen die Situation nicht selbst medizinisch oder rechtlich beurteilen.</p>
 
               <div className="next-modules">
                 <a className="next-module" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
                   <span className="next-module-num">04</span>
                   <div>
                     <h3>Wenn die Kraft nachlässt</h3>
-                    <p>Wenn Sie den eigenen Pegel und die Erschöpfungsdynamik noch klarer einordnen möchten.</p>
+                    <p>Wenn Sie Ihre eigene Belastung und mögliche nächste Schritte genauer anschauen möchten.</p>
                   </div>
                 </a>
                 <a className="next-module" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
                   <span className="next-module-num">06</span>
                   <div>
                     <h3>Was Sie konkret tun können</h3>
-                    <p>Wenn klarer wird, welche Gespräche, Grenzen oder Schutzschritte jetzt praktisch nötig sind.</p>
+                    <p>Wenn Sie Gespräche vorbereiten oder eigene Grenzen und nächste Schritte überlegen möchten.</p>
                   </div>
                 </a>
               </div>
@@ -403,11 +403,11 @@ function Modul5Page({ onNavigate }) {
             <section id="s10">
               <h2>Worauf es ankommt</h2>
               <ul className="key-points">
-                <li><strong>Widersprüchliche Gefühle machen die Lage nicht falsch</strong> — Verpflichtung, Liebe, Wut und Selbstschutz können gleichzeitig berechtigt sein.</li>
-                <li><strong>Vier Aspekte können beim Sortieren helfen</strong> — Schuldgefühle, zusätzliche Verantwortung, Erschöpfung und Kritik sind Beispiele im eigenen Reflexionsmodell, keine feste Folge und kein EE-Test.</li>
-                <li><strong>Grenzen dürfen Sie konkret besprechen</strong> — vielleicht beschäftigen Sie dabei Angst, Schuld, Gewohnheit oder moralischer Druck.</li>
-                <li><strong>Vorurteile dürfen Sie ansprechen</strong> — Sie entscheiden, mit wem Sie Ihre Erfahrungen teilen möchten.</li>
-                <li><strong>Klarheit ist nicht immer sofort eine Ja-Nein-Entscheidung</strong> — manchmal ist zuerst Abstand, Schutz oder Neuordnung die eigentlich stimmige nächste Bewegung.</li>
+                <li><strong>Widersprüchliche Gefühle können nebeneinander bestehen</strong> — Verpflichtung, Liebe, Wut und Selbstschutz können gleichzeitig berechtigt sein.</li>
+                <li><strong>Vier Aspekte können helfen, Ihre Lage zu verstehen</strong> — Schuldgefühle, zusätzliche Verantwortung, Erschöpfung und Kritik sind Beispiele im eigenen Reflexionsmodell, keine feste Folge und kein EE-Test.</li>
+                <li><strong>Grenzen lassen sich konkret besprechen</strong> — vielleicht beschäftigen Sie dabei Angst, Schuld, Gewohnheit oder moralischer Druck.</li>
+                <li><strong>Ihre Erfahrungen mit Vorurteilen verdienen Aufmerksamkeit</strong> — Sie entscheiden, mit wem Sie darüber sprechen möchten.</li>
+                <li><strong>Sie müssen nicht sofort mit Ja oder Nein antworten</strong> — manchmal geht es erst darum, Abstand, Schutz oder eine andere Aufgabenverteilung zu besprechen.</li>
               </ul>
             </section>
 

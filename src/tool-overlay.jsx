@@ -62,9 +62,9 @@ function ToolOverlay({ onClose, ariaLabel, cardClass = '', overlayClass = '', no
   const cardCls = cardClass ? `tool-overlay-card ${cardClass}` : 'tool-overlay-card';
   return (
     <div className={overlayCls} role="dialog" aria-modal="true" aria-label={ariaLabel}>
-      <button className={`tool-overlay-bg${printClass}`} onClick={onClose} aria-label="Hintergrund — schliessen" tabIndex={-1}></button>
+      <button className={`tool-overlay-bg${printClass}`} onClick={onClose} aria-label="Dialog schliessen" tabIndex={-1}></button>
       <div className={cardCls}>
-        <button className={`tool-close${printClass}`} onClick={onClose} aria-label="schliessen">×</button>
+        <button className={`tool-close${printClass}`} onClick={onClose} aria-label="Dialog schliessen">×</button>
         {children}
       </div>
     </div>
