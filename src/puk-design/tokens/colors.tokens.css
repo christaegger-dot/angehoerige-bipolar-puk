@@ -94,7 +94,7 @@
   --surface-diagram:var(--surface-structure);
   --surface-accent:var(--ui-field);
   --surface-inverse:var(--puk-black-100);
-  --surface-brand:var(--puk-blue-100);
+  --surface-brand:var(--puk-blue-125);
 
   --border-hairline:var(--ui-hairline);
   --border-default:var(--puk-black-25);
@@ -104,7 +104,7 @@
   --action-primary-bg:var(--puk-black-100);
   --action-primary-bg-hover:var(--puk-blue-100);
   --action-primary-fg:var(--puk-white);
-  --action-accent-bg:var(--puk-blue-100);
+  --action-accent-bg:var(--puk-blue-125);
   --action-accent-bg-hover:var(--puk-blue-125);
   --action-disabled-bg:var(--puk-black-25);
   --action-disabled-fg:var(--puk-black-50);
