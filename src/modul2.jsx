@@ -397,7 +397,7 @@ function Modul2Page({ onNavigate }) {
               <p><strong>Eigenes Wohlbefinden.</strong> Hohe anhaltende Belastung steht in Studien mit eigenen psychischen Beschwerden in Zusammenhang. Frühere Belastungen, körperliche Gesundheit, Schlaf und Unterstützung spielen ebenfalls eine Rolle. Diese Zusammenhänge sind ein Grund, auf Ihre eigene Gesundheit zu achten, sagen aber nicht voraus, wie es Ihnen persönlich ergehen wird.</p>
 
               <p>Behandlung kann die Erkrankung stabilisieren. Lithium ist eine etablierte Option und kann zur langfristigen Schutzplanung gehören. Beobachtungsstudien zeigen einen Zusammenhang mit weniger Suiziden; sie belegen aber nicht allein, dass Lithium die Ursache dafür ist. In Studien mit zufälliger Behandlungszuweisung waren Suizidereignisse selten; die Ergebnisse liefern bislang keine eindeutige Antwort. Ein individueller Schutz ist damit nicht zugesichert. Fragen zur Behandlung können Sie mit dem Behandlungsteam besprechen.</p>
-              <p>Anregungen zur gemeinsamen Krisenvorbereitung finden Sie in <a className="puk-link--inline" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a>.</p>
+              <p>Anregungen zur gemeinsamen Krisenvorbereitung finden Sie in <a className="puk-link--inline" href={navHref('modul6', 's2')} onClick={navHandler('modul6', onNavigate, 's2')}>Modul 6: Absprachen vorbereiten</a>.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Bei Bedarf eine Pause machen</span>

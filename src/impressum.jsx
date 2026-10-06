@@ -18,8 +18,10 @@ function ImpressumPage() {
             <h2>Trägerschaft</h2>
             <p>
               Diese Website ist ein Angebot der <strong>Fachstelle Angehörigenarbeit</strong> der
-              Psychiatrischen Universitätsklinik Zürich (PUK). Sie wird ausschliesslich an Angehörige weitergegeben,
-              die sich an die Fachstelle gewandt haben. Das Angebot wird nicht öffentlich beworben.
+              Psychiatrischen Universitätsklinik Zürich (PUK). Die Fachstelle stellt sie Angehörigen im
+              Beratungskontext zur Verfügung. Die private Weitergabe an andere Angehörige ist ausdrücklich
+              erwünscht. Die Website ist über direkte Links ohne Anmeldung erreichbar; sie wird nicht
+              öffentlich beworben und soll nicht in Suchmaschinen erscheinen.
             </p>
 
             <h2>Inhaltliche Verantwortung</h2>

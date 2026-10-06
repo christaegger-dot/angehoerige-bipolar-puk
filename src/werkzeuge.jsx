@@ -1,6 +1,6 @@
 import React from 'react';
 import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
-import { TOOLS } from './site-content.js';
+import { TOOLS, TOOL_GROUPS } from './site-content.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 import { loadWerkzeugTool, preloadWerkzeugTool } from './werkzeug-loader.js';
 import { clearStoredDraft } from './storage.js';
@@ -79,6 +79,16 @@ function WerkzeugePage({ onNavigate, anchor }) {
           <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Interaktiv</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '20ch' }}>Werkzeuge im Überblick.</h1>
           <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Mit diesen Werkzeugen können Sie eigene Erfahrungen anschauen, Gespräche vorbereiten und nächste Schritte festhalten.</p>
+          <nav className="tools-purpose-nav" aria-label="Werkzeuge nach Zweck">
+            <p>Womit möchten Sie beginnen?</p>
+            <ul>
+              {TOOL_GROUPS.map(group => (
+                <li key={group.id}>
+                  <a className="link-underline" href={navHref('werkzeuge', `tools-${group.id}`)} onClick={navHandler('werkzeuge', onNavigate, `tools-${group.id}`)}>{group.title}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </header>
 
@@ -97,33 +107,41 @@ function WerkzeugePage({ onNavigate, anchor }) {
             {legacyDeletionHint && <p role="status" aria-live="polite">{legacyDeletionHint}</p>}
           </div>
 
-          <ul className="tools-grid" role="list" aria-label="Alle Werkzeuge">
-            {TOOLS.map((t) => {
-              const handleClick = () => {
-                if (routed) onNavigate('werkzeuge', t.tool);
-                else setLocalOpenTool(t.tool);
-              };
-              return (
-                <li key={t.tool}>
-                  <button
-                    id={t.tool}
-                    type="button"
-                    className="tool-card-lg"
-                    onClick={handleClick}
-                    aria-haspopup="dialog"
-                    {...werkzeugPreloadProps(t.tool)}
-                  >
-                    <span className="tool-tag">{t.tag}</span>
-                    <h2>{t.title}</h2>
-                    <p>{t.desc}</p>
-                    <div className="tool-card-foot">
-                      <span className="btn-arrow">{t.cta} →</span>
-                    </div>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+          {TOOL_GROUPS.map(group => (
+            <section key={group.id} id={`tools-${group.id}`} className="tools-purpose-group" aria-labelledby={`tools-${group.id}-title`}>
+              <header className="tools-purpose-heading">
+                <h2 id={`tools-${group.id}-title`}>{group.title}</h2>
+                <p>{group.desc}</p>
+              </header>
+              <ul className="tools-grid" role="list" aria-label={group.title}>
+                {TOOLS.filter(tool => tool.group === group.id).map((t) => {
+                  const handleClick = () => {
+                    if (routed) onNavigate('werkzeuge', t.tool);
+                    else setLocalOpenTool(t.tool);
+                  };
+                  return (
+                    <li key={t.tool}>
+                      <button
+                        id={t.tool}
+                        type="button"
+                        className="tool-card-lg"
+                        onClick={handleClick}
+                        aria-haspopup="dialog"
+                        {...werkzeugPreloadProps(t.tool)}
+                      >
+                        <span className="tool-tag">{t.tag}</span>
+                        <h3>{t.title}</h3>
+                        <p>{t.desc}</p>
+                        <div className="tool-card-foot">
+                          <span className="btn-arrow">{t.cta} →</span>
+                        </div>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          ))}
         </div>
       </section>
 

@@ -54,7 +54,7 @@ function Nav({ page, onNavigate }) {
             <span className="nav-label-full">Unterstützung und Ressourcen</span>
             <span className="nav-label-compact" aria-hidden="true">Unterstützung</span>
           </a>
-          <a href={navHref('notfall')} className="nav-sos puk-web-nav__link" aria-current={page === 'notfall' ? 'page' : undefined} onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>SOS Krise</a>
+          {page === 'notfall' && <a href={navHref('notfall')} className="nav-sos puk-web-nav__link" aria-current="page" onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>SOS Krise</a>}
         </div>
       </div>
     </nav>
@@ -80,7 +80,7 @@ function MobileModuleNav({ onNavigate }) {
   return (
     <nav ref={navRef} className="module-mobile-nav" aria-label="Kurze Modulnavigation">
       <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Alle Module</a>
-      <a className="module-mobile-sos" href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>SOS-Hilfe</a>
+      <a href={navHref('unterstuetzung', 'hilfe')} onClick={navHandler('unterstuetzung', onNavigate, 'hilfe')}>Eigene Beratung</a>
     </nav>
   );
 }

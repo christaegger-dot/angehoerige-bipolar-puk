@@ -33,7 +33,7 @@ function PageLoadError({ navigation, onNavigate, onReady }) {
       <p>Laden Sie die Seite erneut oder wechseln Sie zur Startseite.</p>
       <p><button type="button" className="btn btn-primary" onClick={() => window.location.reload()}>Seite neu laden</button></p>
       <p><a className="link-underline" href={navHref('start')} onClick={navHandler('start', onNavigate)}>Zur Startseite</a></p>
-      <p>Bei Lebensgefahr: <a className="link-underline" href="tel:144">144 · Sanität</a>. Bei Gewalt oder Bedrohung: <a className="link-underline" href="tel:117">117 · Polizei</a>.</p>
+      {navigation.page === 'notfall' && <p>Bei Lebensgefahr: <a className="link-underline" href="tel:144">144 · Sanität</a>. Bei Gewalt oder Bedrohung: <a className="link-underline" href="tel:117">117 · Polizei</a>.</p>}
     </div>
   );
 }

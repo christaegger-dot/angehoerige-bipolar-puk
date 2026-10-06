@@ -161,7 +161,6 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
     font-size: 1rem; font-weight: var(--fw-regular);
   }
   .module-mobile-nav a { display: flex; align-items: center; justify-content: center; min-height: var(--web-touch-target); padding: 8px; color: var(--puk-black-100); text-align: center; overflow-wrap: anywhere; }
-  .module-mobile-nav .module-mobile-sos { color: var(--puk-red-text); }
   .module-mobile-nav a:hover { text-decoration: underline; text-underline-offset: .22em; }
   .module-body section, .module-body :is(h2, h3, a[href], button, input, select, textarea) { scroll-margin-top: calc(var(--mobile-module-nav-height, 48px) + 16px); }
 }

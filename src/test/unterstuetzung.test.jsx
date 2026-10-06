@@ -46,6 +46,16 @@ describe('UnterstuetzungPage counselling and material boundaries', () => {
     expect(container.textContent).not.toMatch(/AKUTE LAGE|24\/7|Dargebotene Hand/);
   });
 
+  it('makes the programme-effectiveness statement traceable to the shared sources and their different review scopes', () => {
+    const { container } = render(<UnterstuetzungPage onNavigate={() => {}} />);
+    const offerGuide = container.querySelector('.support-offer-guide');
+    expect(within(offerGuide).getByRole('link', { name: /Baruch et al\. \(2018\)/ })).toHaveAttribute('href', 'https://pubmed.ncbi.nlm.nih.gov/29747136/');
+    expect(within(offerGuide).getByRole('link', { name: /Umer et al\. \(2026\)/ })).toHaveAttribute('href', 'https://pubmed.ncbi.nlm.nih.gov/42312868/');
+    expect(offerGuide.textContent).toContain('Originalabstract geprüft; Volltext nicht geprüft');
+    expect(offerGuide.textContent).toContain('Originalvolltext geprüft');
+    expect(offerGuide.textContent).toContain('Daraus lässt sich keine Wirkung für jedes Angebot oder für diese Website ableiten.');
+  });
+
   it.each([
     'Erste Orientierung als Angehörige',
     'Umgang mit Manie',

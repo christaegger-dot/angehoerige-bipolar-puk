@@ -180,7 +180,7 @@ describe('committed page navigation', () => {
     expect(window.location.hash).toBe('');
   });
 
-  it('keeps navigation and emergency calls available after an import fails and can return home', async () => {
+  it('keeps navigation and the fixed responsibility referral after a psychoeducative import fails', async () => {
     const user = userEvent.setup();
     const lazy = delayedPage();
     fixture.renderers.module = () => <lazy.Page />;
@@ -192,13 +192,30 @@ describe('committed page navigation', () => {
     expect(await screen.findByRole('heading', { name: 'Die Seite konnte nicht geöffnet werden.' })).toBeInTheDocument();
     expect(screen.getByRole('navigation', { name: 'Hauptnavigation' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Seite neu laden' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: '144 · Sanität' })).toHaveAttribute('href', 'tel:144');
-    expect(screen.getByRole('link', { name: '117 · Polizei' })).toHaveAttribute('href', 'tel:117');
+    expect(screen.queryByRole('link', { name: '144 · Sanität' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: '117 · Polizei' })).not.toBeInTheDocument();
+    expect(within(screen.getByRole('contentinfo')).getByRole('link', { name: 'Notfall & Krisenhilfe' })).toHaveAttribute('href', '/notfall');
     expect(screen.getByRole('main')).toHaveFocus();
 
     await user.click(screen.getByRole('link', { name: 'Zur Startseite' }));
     expect(await screen.findByRole('heading', { name: 'Start' })).toBeInTheDocument();
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
     expect(window.location.pathname).toBe('/');
+  });
+
+  it('keeps direct crisis contacts available when the dedicated crisis page fails to load', async () => {
+    const lazy = delayedPage();
+    fixture.renderers.notfall = () => <lazy.Page />;
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+    window.history.replaceState({}, '', '/notfall');
+    render(<App />);
+    await act(async () => lazy.reject(new Error('Crisis chunk could not be loaded')));
+
+    await screen.findByRole('heading', { name: 'Die Seite konnte nicht geöffnet werden.' });
+    const main = within(screen.getByRole('main'));
+    expect(main.getByRole('link', { name: '144 · Sanität' })).toHaveAttribute('href', 'tel:144');
+    expect(main.getByRole('link', { name: '117 · Polizei' })).toHaveAttribute('href', 'tel:117');
+    expect(within(screen.getByRole('navigation', { name: 'Krisenkontakte' })).getByRole('link', { name: '143 · Gespräch' })).toHaveAttribute('href', 'tel:143');
+    expect(main.getByRole('button', { name: 'Seite neu laden' })).toBeInTheDocument();
   });
 });

@@ -33,7 +33,7 @@ Jede Route direkt öffnen **und** über die Website-Navigation erreichen. Seiten
 | --- | --- |
 | `/` | Einstiege zu Modulen, Werkzeugen und Hilfe; verständliche nächste Schritte. |
 | `/module` | Sieben Module als Liste; jedes Modul erreichbar. |
-| `/werkzeuge` | Neun Werkzeugauslöser mit verständlichem Dialogzweck; Speicherhinweis und globale Löschaktion. |
+| `/werkzeuge` | Vier Zweckgruppen mit Sprunglinks und neun Werkzeugauslösern; verständliche Überschriften/Dialogzwecke, Speicherhinweis und globale Löschaktion. |
 | `/notfall` | Akute Hilfe ohne Öffnen eines Filters oder Dialogs; eindeutig benannte Telefonlinks. Keine realen Notrufe auslösen. |
 | `/unterstuetzung` | Beratungsangebote, FAQ, sieben Handouts mit Quellen und Druckaktionen. |
 | `/module/1` | Inhaltsnavigation, Figuren/Textalternativen, Quellen-Details und Modulfolge. |
@@ -80,7 +80,7 @@ Die IDs entsprechen `scenarioChecks` der Vorlage. Für jeden Schritt mindestens 
 | `handout-dialog-sources-print` | Alle sieben Handouts öffnen, Quellen lesen, Linkzwecke prüfen und echten Druckdialog öffnen/abbrechen. Keine fehlenden Pflichtinformationen; danach wieder vollständig bedienbar. |
 | `handout-return-module-focus` | Handout DL06 öffnen und Fortsetzung zum Modul/Abschnitt aktivieren, danach Browser-Zurück. Zielinhalt und Fokus sind nachvollziehbar; wieder geöffneter Dialog hat brauchbaren Fokus. |
 | `faq-disclosures` | Unter `/unterstuetzung` FAQ mit Space/Enter öffnen/schliessen. Frage, Zustand und Antwort hörbar; keine versteckte Antwort als weiterhin offen ausgegeben. |
-| `page-loading-and-recovery` | Mit frischer Sitzung und gedrosseltem Netzwerk eine noch nicht geladene Modulseite öffnen; dann gezielt ihren JavaScript-Chunk scheitern lassen. Ladehinweis bzw. Fehler, Reload/Startseite und Krisenkontakt verständlich; nach Recovery Inhalt/Fokus nutzbar. |
+| `page-loading-and-recovery` | Mit frischer Sitzung und gedrosseltem Netzwerk eine noch nicht geladene Modulseite öffnen; dann gezielt ihren JavaScript-Chunk scheitern lassen. Ladehinweis bzw. Fehler und Reload/Startseite verständlich; der feste Zuständigkeitsverweis in der Fusszeile bleibt erreichbar. Auf der gesonderten Krisenseite direkte Kontakte auch bei Ladefehler prüfen. Nach Recovery Inhalt/Fokus nutzbar. |
 | `tool-loading-and-recovery` | In frischer Sitzung Werkzeug-Chunk verzögern/blockieren, bevor dessen Auslöser fokussiert wird. Lade-/Fehlerdialog sinnvoll benannt/fokussiert, schliessbar; Rückkehr zur Übersicht und erneuter Versuch möglich. |
 | `narrow-reflow-and-text-resize` | Breiten 320 und 360 px sowie 200 % **Textvergrösserung** verwenden (nicht nur Seitenzoom). Routen, offene Quellen und lange Dialoge erkunden; alle Inhalte/Controls erreichbar, kein abgeschnittener Text und kein notwendiges horizontales Seitenscrollen. Zusätzlich 400 % Seitenzoom als Reflowprobe bei geeignetem Desktopfenster; sichtbarer Fokus bleibt zugänglich. |
 

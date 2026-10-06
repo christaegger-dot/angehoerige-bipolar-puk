@@ -1,9 +1,45 @@
 import { describe, expect, it, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { WerkzeugePage } from '../werkzeuge.jsx';
 
 const LEGACY_KEYS = ['puk-krisenplan-v1', 'puk-kommunikation-v1'];
+
+describe('WerkzeugePage purpose orientation', () => {
+  it('offers four purposes with all nine tools, without hiding cards behind filters', async () => {
+    const user = userEvent.setup();
+    const navigate = vi.fn();
+    const { container } = render(<WerkzeugePage anchor={null} onNavigate={navigate} />);
+    const purposeNav = screen.getByRole('navigation', { name: 'Werkzeuge nach Zweck' });
+    expect(within(purposeNav).getAllByRole('link')).toHaveLength(4);
+    expect(screen.getAllByRole('heading', { level: 2 })).toHaveLength(4);
+    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(9);
+    expect([...container.querySelectorAll('.tool-card-lg')].map(card => card.id).sort()).toEqual([
+      'atem', 'belastungsverlauf', 'ee', 'eisberg', 'kommunikation', 'krisenplan', 'phasenverlauf', 'saeulen', 'selbsttest',
+    ]);
+    expect(within(screen.getByRole('region', { name: 'Eigene Situation anschauen' })).getByRole('button', { name: /Meine Belastung wahrnehmen/i })).toBeInTheDocument();
+    const preparation = within(purposeNav).getByRole('link', { name: 'Gespräche und Absprachen vorbereiten' });
+    expect(preparation).toHaveAttribute('href', '/werkzeuge#tools-vorbereiten');
+    await user.click(preparation);
+    expect(navigate).toHaveBeenCalledWith('werkzeuge', 'tools-vorbereiten');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it.each([
+    ['selbsttest', 'Meine Belastung wahrnehmen'],
+    ['phasenverlauf', 'Bipolarer Phasenverlauf'],
+    ['eisberg', 'Eisberg-Modell'],
+    ['krisenplan', 'Krisenplan'],
+    ['kommunikation', 'Kommunikations-Trainer'],
+    ['saeulen', 'Säulen-Check'],
+    ['ee', 'Wenn Belastung Gespräche verändert'],
+    ['belastungsverlauf', 'Belastungsverlauf'],
+    ['atem', 'Atemübung Durchatmen'],
+  ])('keeps the direct tool entry #%s available after grouping', async (anchor, title) => {
+    render(<WerkzeugePage anchor={anchor} onNavigate={vi.fn()} />);
+    expect(await screen.findByRole('dialog', { name: title })).toBeInTheDocument();
+  });
+});
 
 function seedLegacyDrafts() {
   for (const storage of [window.localStorage, window.sessionStorage]) {
