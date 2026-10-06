@@ -27,7 +27,7 @@ Das Register trennt 13 Volltextprüfungen, sechs Prüfungen relevanter Volltexta
 
 - Renes 2025 ist bibliografisch identifiziert; inhaltliche Ergebnisse sind nicht als geprüft ausgewiesen.
 - WHO-CDDR 2024 wurde auf der amtlichen Publikationsseite bestätigt; der diagnostische Volltext wurde nicht ausgewertet.
-- Fünf bestehende Rechts-/Verwaltungsnachweise sind individuell als noch offen gekennzeichnet. Der medizinische Review bestätigt keine aktuellen lokalen Aufnahmebedingungen, Kostenübernahme oder rechtlichen Einzelfallansprüche.
+- Die älteren SAMHSA-Diagnosetabellen und vier Rechts-/Verwaltungsnachweise sind individuell als noch offen gekennzeichnet. Der medizinische Review bestätigt keine aktuellen lokalen Aufnahmebedingungen, Kostenübernahme oder rechtlichen Einzelfallansprüche.
 - Die neuen allgemeinen Arzneimittelhinweise stützen sich auf NICE CG185 und amtliche Swissmedic-Sicherheitsinformationen. Ein produktspezifischer Schweizer Fachinformationsabgleich und eine lokale klinische Freigabe bleiben offen. Abrufversuche bei `swissmedicinfo.ch` und `compendium.ch` scheiterten an HTTP 403 des Netzwerktunnels. Diese Quelle wurde deshalb nicht als gelesen ausgegeben.
 - Individuelle Behandlung, Dosierungen und Notfallentscheidungen werden nicht durch diese Website festgelegt. Aus Wirkungen mehrteiliger Studienprogramme wird keine Wirksamkeit der Website oder ihrer Werkzeuge abgeleitet.
 
