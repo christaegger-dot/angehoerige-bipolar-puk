@@ -11,8 +11,9 @@ describe('App navigation', () => {
     await screen.findByRole('heading', { name: /wenn jemand in ihrem umfeld/i });
     expect(screen.queryByRole('link', { name: '144 · Sanität' })).not.toBeInTheDocument();
     expect(within(screen.getByRole('main')).queryByText(/akute Gefahr/i)).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'SOS Krise' })).not.toBeInTheDocument();
 
-    await user.click(screen.getByRole('link', { name: 'SOS Krise' }));
+    await user.click(screen.getByRole('link', { name: 'Notfall & Krisenhilfe' }));
     expect(await screen.findByRole('link', { name: '144 · Sanität' })).toHaveAttribute('href', 'tel:144');
     expect(screen.getByRole('link', { name: '117 · Polizei' })).toHaveAttribute('href', 'tel:117');
     expect(screen.getByRole('link', { name: '143 · Gespräch' })).toHaveAttribute('href', 'tel:143');
@@ -25,6 +26,7 @@ describe('App navigation', () => {
     expect(screen.queryByRole('link', { name: '144 · Sanität' })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: '117 · Polizei' })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: '143 · Gespräch' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'SOS Krise' })).not.toBeInTheDocument();
     expect(within(screen.getByRole('main')).queryByText(/akute Gefahr/i)).not.toBeInTheDocument();
   });
 
@@ -53,6 +55,9 @@ describe('App navigation', () => {
     render(<App />);
 
     expect(await screen.findByRole('heading', { level: 1, name: /Was Sie konkret tun können/i })).toBeInTheDocument();
+    expect(within(screen.getByRole('main')).queryByRole('link', { name: '144' })).not.toBeInTheDocument();
+    expect(within(screen.getByRole('navigation', { name: 'Kurze Modulnavigation' })).getByRole('link', { name: 'Eigene Beratung' })).toHaveAttribute('href', '/unterstuetzung#hilfe');
+    expect(screen.queryByRole('link', { name: 'SOS-Hilfe' })).not.toBeInTheDocument();
 
     await user.click(screen.getByRole('link', { name: 'Werkzeuge' }));
     expect(await screen.findByRole('heading', { name: /Werkzeuge im Überblick/i })).toBeInTheDocument();

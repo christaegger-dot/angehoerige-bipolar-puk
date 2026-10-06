@@ -147,7 +147,7 @@ try {
             top: el.getBoundingClientRect().top,
             targets: [...el.querySelectorAll('a')].map(a => ({ href: a.getAttribute('href'), width: a.getBoundingClientRect().width, height: a.getBoundingClientRect().height })),
           }));
-          record('navigation/mobile-module-exit', { width, textZoom, route, ...compact }, Math.abs(compact.top) <= 1 && compact.targets.length === 2 && compact.targets.every(a => a.width >= 44 && a.height >= 44) && compact.targets[0].href === '/module' && compact.targets[1].href === '/notfall');
+          record('navigation/mobile-module-exit', { width, textZoom, route, ...compact }, Math.abs(compact.top) <= 1 && compact.targets.length === 2 && compact.targets.every(a => a.width >= 44 && a.height >= 44) && compact.targets[0].href === '/module' && compact.targets[1].href === '/unterstuetzung#hilfe');
         }
         if (textZoom === 100 && [320, 1440].includes(width)) {
           const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();

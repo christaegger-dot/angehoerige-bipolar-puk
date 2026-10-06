@@ -196,7 +196,7 @@ try {
         if (tool === 'krisenplan' || tool === 'kommunikation') {
           await page.evaluate(key => { localStorage.setItem(key, JSON.stringify({ name: 'Legacy fixture', anlass: 'anderes', beobachtung: 'Legacy fixture' })); sessionStorage.setItem(key, JSON.stringify({ name: 'Legacy session', beobachtung: 'Legacy session' })); }, tool === 'krisenplan' ? 'puk-krisenplan-v1' : 'puk-kommunikation-v1');
         }
-        const trigger = page.locator('.tool-card-lg').nth(index);
+        const trigger = page.locator(`.tool-card-lg#${tool}`);
         await trigger.click();
         const dialog = page.getByRole('dialog', { name: names[index], exact: true });
         await dialog.waitFor();

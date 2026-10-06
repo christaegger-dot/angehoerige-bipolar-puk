@@ -316,7 +316,7 @@ function Modul3Page({ onNavigate }) {
               <p>Über manche Erfahrungen während einer Episode wird wenig gesprochen, obwohl sie eine Beziehung stark belasten können. Auch <em>krankheitsbedingtes</em> Verhalten kann verletzen. Sie brauchen Verletzungen nicht auszuhalten oder zu verschweigen.</p>
 
               <h3>Finanzielle Folgen</h3>
-              <p>Geldausgaben während einer Episode können finanzielle Folgen für Angehörige haben. Anregungen zum gemeinsamen Besprechen finanzieller Vorkehrungen finden Sie in <a className="puk-link--inline" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a>.</p>
+              <p>Geldausgaben während einer Episode können finanzielle Folgen für Angehörige haben. Anregungen zum gemeinsamen Besprechen finanzieller Vorkehrungen finden Sie in <a className="puk-link--inline" href={navHref('modul6', 'finanzen')} onClick={navHandler('modul6', onNavigate, 'finanzen')}>Modul 6: Finanzen absichern</a>.</p>
 
               <h3>Sexuelle Enthemmung</h3>
               <p>Sexuelle Grenzüberschreitungen können eine Beziehung tief verletzen. Dabei können Sie professionelle Begleitung nutzen und brauchen die Folgen nicht allein zu bewältigen. Anlaufstellen nach Situation finden Sie unter <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>

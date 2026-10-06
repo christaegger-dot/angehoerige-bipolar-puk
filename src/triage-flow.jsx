@@ -64,6 +64,13 @@ const TRIAGE_TOOLS = {
 
 function recommendationFor(action, format) {
   const recommendation = TRIAGE_RESULTS[action];
+  if (action === 'q1b-yes') {
+    return {
+      label: 'Passende Einstiege',
+      links: [recommendation, TRIAGE_RESULTS['q2-yes']],
+      note: 'Wählen Sie, was Sie gerade brauchen: Informationen zur Diagnose oder Beratung und Entlastung für Ihre eigene Situation.',
+    };
+  }
   const tool = TRIAGE_TOOLS[action];
   if (!tool) return { ...recommendation, links: [recommendation] };
 

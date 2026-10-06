@@ -54,10 +54,10 @@ function SaeulenFigurWrap() {
       <FigureText visualId="m7-stuetzen">
         <p>Das Dach steht für Ihr Leben, mit der Erkrankung als einem Teil davon. Darunter stehen von links nach rechts vier mögliche Stützen:</p>
         <ol>
-          <li><strong>Körper:</strong> Schlaf, Bewegung und Pausen.</li>
-          <li><strong>Beziehungen:</strong> Verbindungen ausserhalb der Erkrankung.</li>
-          <li><strong>Eigene Welt:</strong> Tätigkeit, Räume und Interessen.</li>
-          <li><strong>Fachlicher Halt:</strong> Beratung, Therapie und Selbsthilfe.</li>
+          <li><strong>Körper:</strong> Schlaf, Bewegung, Mahlzeiten und Pausen.</li>
+          <li><strong>Beziehungen:</strong> Freundschaften, gemeinsame Rituale und Momente ohne Erkrankungsthema.</li>
+          <li><strong>Eigene Welt:</strong> Tätigkeit, Räume, Hobbys und Interessen.</li>
+          <li><strong>Fachlicher Halt:</strong> Eigene Arztbesuche, Beratung, Therapie und Selbsthilfe. Je nach Beziehung können auch Paarberatung, Paartherapie oder Angehörigen- und Familiengespräche passen.</li>
         </ol>
         <p>Die vier Stützen sind ein anschauliches Bild. Es gibt keine geprüfte Mindestzahl, die Belastbarkeit oder Sicherheit garantiert.</p>
       </FigureText>
@@ -277,10 +277,6 @@ function Modul7Page({ onNavigate }) {
                 <p>Wenn Beschwerden anhalten oder Ihren Alltag beeinträchtigen, können Sie eine eigene ärztliche oder psychologische Beratung suchen. Ihre Bedürfnisse sind dafür Grund genug, unabhängig von der Erkrankung der anderen Person.</p>
               </aside>
 
-              <h3>Was Ihnen auf Dauer wichtig ist</h3>
-              <p><strong>Körper.</strong> Eigenen Schlafrhythmus beibehalten · regelmässige Bewegung, auch kurz · regelmässige Mahlzeiten · eigene Arztbesuche nicht vergessen.</p>
-              <p><strong>Seele.</strong> Hobbys ohne Erkrankungsbezug · Freundschaften bewusst pflegen · eigene Gefühle reflektieren · psychologische Unterstützung.</p>
-              <p><strong>Beziehung.</strong> Gemeinsame Rituale und Momente ohne Erkrankungsthema · Absprachen in stabilen Phasen · bei Bedarf Paarberatung oder Paartherapie zur Klärung gemeinsamer Fragen. Für Eltern, Geschwister und andere Nahestehende können Angehörigen- oder Familiengespräche passend sein.</p>
             </section>
 
             <section id="s4">
@@ -322,8 +318,8 @@ function Modul7Page({ onNavigate }) {
               <p>Eigene Interessen und Kontakte können Ihnen guttun und neue Möglichkeiten eröffnen. Auch wenn die Betreuung und Begleitung viel Zeit brauchen, bleiben Ihre Beziehung und Ihre eigenen Bedürfnisse wichtig.</p>
               </aside>
 
-              <h3>Soziale Kontakte nach Co-Isolation wiederaufbauen</h3>
-              <p>Wenn Sie über längere Zeit weniger Kontakt zu anderen Menschen hatten, können Sie überlegen, wen Sie wiedersehen oder kennenlernen möchten. Diesen Rückzug nennen wir hier «Co-Isolation». Welche Kontakte heute zu Ihnen passen, kann sich verändert haben.</p>
+              <h3>Eigene soziale Kontakte wiederaufbauen</h3>
+              <p>Wenn Sie über längere Zeit weniger Kontakt zu anderen Menschen hatten, können Sie überlegen, wen Sie wiedersehen oder kennenlernen möchten. Welche Kontakte heute zu Ihnen passen, kann sich verändert haben.</p>
               <p>Wie viel Sie über Ihre Situation erzählen, entscheiden Sie selbst. Vielleicht passt auch eine Angehörigengruppe. <strong>Welche alten oder neuen Kontakte Sie pflegen möchten, bestimmen Sie selbst.</strong></p>
             </section>
 
@@ -339,7 +335,7 @@ function Modul7Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Konkret</span>
-                <p>Sie können das Behandlungsteam nach Angehörigengesprächen fragen, ohne damit in die Behandlung einzugreifen. Beobachtungen können Sie dem Team jederzeit mitteilen, auch ohne Schweigepflichtentbindung. Wie das von der Auskunft über eine Behandlung zu unterscheiden ist, erklärt Modul 6.</p>
+                <p>Sie können das Behandlungsteam nach Angehörigengesprächen fragen, ohne damit in die Behandlung einzugreifen. Beobachtungen können Sie dem Team jederzeit mitteilen, auch ohne Schweigepflichtentbindung. Wie das von der Auskunft über eine Behandlung zu unterscheiden ist, erklärt die Seite <a className="puk-link--inline" href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)}>Schweigepflicht bei Angehörigengesprächen</a>.</p>
               </aside>
 
               <h3>Für das Angehörigengespräch: Was Sie vorbereiten können</h3>

@@ -265,7 +265,7 @@ function Modul6Page({ onNavigate }) {
                 </a>.
               </p>
 
-              <h3>Finanzen absichern</h3>
+              <h3 id="finanzen">Finanzen absichern</h3>
               <p>Manische Episoden können in kurzer Zeit erhebliche finanzielle Schäden auslösen. Absprachen über Geld können als Kontrolle erlebt werden. In stabilen Phasen gemeinsam vereinbart, dienen sie oft dem Schutz beider Seiten, der Kinder und der finanziellen Grundlage nach einer Episode.</p>
               <ol>
                 <li><strong>Ausgabenlimit vereinbaren:</strong> Vereinbaren Sie, grössere Ausgaben (z. B. über CHF 500) gemeinsam zu besprechen.</li>
@@ -374,8 +374,7 @@ function Modul6Page({ onNavigate }) {
               Zuwendung lässt sich ehrlich ausdrücken, auch wenn Sie keine Genesung versprechen können: «Ich weiss nicht, wie es weitergeht. Du bist mir wichtig.» Eine weitere Frage wäre: «Was würde dir gerade guttun?» Zugleich können Sie eine Grenze nennen: «Ich kann jetzt zehn Minuten bei dir sein. Danach brauche ich eine Pause.» <em>Vermeiden:</em> Mehr versprechen, als Sie wissen oder leisten können. Eine Bitte um Zuwendung ist etwas anderes als die Frage nach dem sicheren weiteren Verlauf.</p>
 
               <aside className="callout">
-                <span className="callout-label">Aktuelle Sorgen und Vorausplanung</span>
-                <p><strong>Wenn Sie sich jetzt um die Sicherheit sorgen:</strong> Warten Sie nicht auf einen ruhigen Gesprächsmoment. Nutzen Sie den <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>SOS-Notfallweg</a> für die nächsten Schritte und erreichbare Hilfe. Bei unmittelbarer Lebensgefahr rufen Sie <a href="tel:144">144</a>.</p>
+                <span className="callout-label">Sorgen im Voraus besprechen</span>
                 <p>In einer ruhigen Phase können Sie mit der betroffenen Person und dem Behandlungsteam vereinbaren, wie Sie Sorgen wegen suizidbezogener Äusserungen ansprechen und wer die Situation fachlich einschätzt. Diese Verantwortung liegt nicht bei Ihnen allein.</p>
               </aside>
 

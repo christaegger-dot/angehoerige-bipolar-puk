@@ -6,7 +6,7 @@ import { ToolOverlay } from './tool-overlay.jsx';
 import { loadWerkzeugTool } from './werkzeug-loader.js';
 import { LoadErrorBoundary } from './load-error-boundary.jsx';
 import { navHandler, navHref } from './nav-handler.js';
-import { HandoutSources } from './module-guidance.jsx';
+import { EvidenceSourceList, HandoutSources } from './module-guidance.jsx';
 import { getPageMetadata } from './page-metadata.js';
 
 const HANDOUTS = {
@@ -781,6 +781,10 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
               <li><strong>Selbsthilfe und Austausch:</strong> Sie können Erfahrungen mit anderen Angehörigen teilen und gegenseitige Unterstützung finden.</li>
             </ul>
             <p>Fragen Sie nach Ziel, Teilnehmenden, Umfang und Kosten. Studien zu mehrteiligen Familien- und Angehörigenprogrammen zeigen mögliche Vorteile, aber unterschiedliche Ergebnisse. Daraus lässt sich keine Wirkung für jedes Angebot oder für diese Website ableiten.</p>
+            <details className="module-credits">
+              <summary>Quellen zur Einordnung der Angebote</summary>
+              <EvidenceSourceList keys={['caregivers', 'familyInterventions']} />
+            </details>
           </aside>
 
           <div className="resource-list">

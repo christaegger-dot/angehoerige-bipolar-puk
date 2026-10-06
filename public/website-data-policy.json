@@ -262,15 +262,16 @@
     "releaseFingerprint": {
       "version": 1,
       "algorithm": "sha256",
-      "sourceSha256": "73ef5dbf739ce927edeefb89e39e7f46dfccf53f73a8bbd4c579590092dec02b",
-      "buildSha256": "da68c152fbae8a64f69249da90342192b6e7721b007542b70d6086f0cf04bf38",
-      "sha256": "3f1c61a306a622966ecd2fb8b2bdf630aae53aac0726c0cfe4ffad6149ff7afb"
+      "sourceSha256": "bb230ef0cf19fcd6f77985517a1ecfa44c48810a43e732f0d0336a703d30c75e",
+      "buildSha256": "f645e50ac1c37abed5db7d8271b5d5224ca65826d8aca59e39068335619a71a8",
+      "sha256": "9007a732d98c118e7a17937915e54dc88021287b29ddf1dc56c504b69bb182d9"
     },
     "evidence": [
       "_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md",
       "scripts/audit-tools.mjs",
       "src/test/storage.test.js",
-      "src/test/werkzeuge-page.test.jsx"
+      "src/test/werkzeuge-page.test.jsx",
+      "_dev/W2-NACHREVIEW-UMSETZUNG-2026-10-06.md"
     ],
     "excluded": [
       "institutionelle PUK-Freigabe",
