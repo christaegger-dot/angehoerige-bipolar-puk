@@ -40,7 +40,7 @@ function Nav({ page, onNavigate }) {
           <span className="nav-brand-mark">Bipolar &amp; Angehörige</span>
         </a>
         <div className="nav-links">
-          <a href={navHref('module')} className={`puk-web-nav__link ${moduleActive ? 'active' : ''}`} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')} aria-current={moduleActive ? 'page' : undefined}>Module</a>
+          <a href={navHref('module')} className={`puk-web-nav__link ${moduleActive ? 'active' : ''}`} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')} aria-current={page === 'module' ? 'page' : undefined}>Module</a>
           <a href={navHref('werkzeuge')} className={`puk-web-nav__link ${page === 'werkzeuge' ? 'active' : ''}`} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')} aria-current={page === 'werkzeuge' ? 'page' : undefined}>Werkzeuge</a>
           <a
             href={navHref('unterstuetzung')}

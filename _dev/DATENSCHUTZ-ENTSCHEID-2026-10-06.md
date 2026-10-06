@@ -61,6 +61,12 @@ Die P3-Fassung ergänzt mobile Navigation und die Korrektur eigener Antworten im
 
 Die technische Acceptance wird an diesen neuen App-/Build-Fingerprint gebunden. Die vorbereiteten menschlichen Screenreader-Läufe erhalten denselben Prüfstand und bleiben ausdrücklich nicht ausgeführt. Der separate amtliche Quellen-/Formularabgleich ist keine institutionelle Datenschutz- oder Rechtsfreigabe.
 
+### Abgleich nach den ergänzenden Navigations- und Darstellungsfixes
+
+Die ergänzende Fassung vom 6. Oktober stellt nach interner Zurück-/Vorwärtsnavigation die Leseposition wieder her. Dafür enthält `history.state.__pukNavigation` eine lokale Verlaufseintragskennung und zwei numerische Pixelpositionen. Werkzeug-Eingaben, Antworten im Startassistenten, Namen oder Kontaktdaten werden dort nicht abgelegt. Weitere bestehende History-State-Felder werden erhalten. Die Zuordnung der Positionen im laufenden Dokument liegt in einer flüchtigen Map; der Browser kann den eigenen Tab-Verlauf bei Sitzungswiederherstellung erhalten. Datenschutzerklärung und maschinenlesbare Datenpolicy benennen diesen Umfang getrennt von den weiterhin ungespeicherten Werkzeug-Entwürfen.
+
+Die Korrekturen an Inhaltsverzeichnissen, aktiver Seitensemantik, Diagrammbeschriftungen und Dialog-Feldsichtbarkeit ergänzen weder Übermittlung noch Werkzeug-Persistenz. Die technische Entscheidung bezieht sich nach Quellabgleich und den ergänzenden Browserprüfungen auf diesen neuen Datenumfang. Die Acceptance und die vorbereiteten menschlichen Screenreader-Läufe werden an den neuen App-/Build-Fingerprint gebunden; die menschlichen Läufe bleiben nicht ausgeführt.
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

@@ -245,6 +245,61 @@ try {
   await historyPage.waitForTimeout(1000);
   record('keyboard/forward-main-focus', {}, await historyPage.locator('#main-content').evaluate(el => document.activeElement === el));
   await historyPage.close();
+  for (const width of [360, 1440]) {
+    const navigationPage = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'reduce' });
+    await open(navigationPage, '/');
+    const entry = navigationPage.getByRole('link', { name: /Wo soll ich anfangen\?/ });
+    await entry.click();
+    await navigationPage.waitForURL('**/#triage');
+    await navigationPage.waitForFunction(() => document.activeElement === document.querySelector('#triage h2'));
+    const historyLength = await navigationPage.evaluate(() => history.length);
+    await navigationPage.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    await entry.click();
+    await navigationPage.waitForFunction(() => document.activeElement === document.querySelector('#triage h2') && window.scrollY > 0);
+    record('navigation/repeated-start-anchor', { width }, await navigationPage.evaluate(() => history.length) === historyLength);
+
+    await open(navigationPage, '/module/4');
+    await navigationPage.evaluate(() => window.scrollTo({ top: 4300, behavior: 'instant' }));
+    await navigationPage.waitForFunction(() => window.scrollY === 4300);
+    await navigationPage.waitForFunction(() => window.history.state?.__pukNavigation?.position?.y === 4300);
+    await navigationPage.reload({ waitUntil: 'networkidle' });
+    await navigationPage.locator('#s6 h2').waitFor();
+    await navigationPage.waitForFunction(() => Math.abs(window.scrollY - 4300) <= 1);
+    record('navigation/fresh-scroll-reload-position', { width, scrollY: await navigationPage.evaluate(() => window.scrollY) }, true);
+    const exit = width < 760
+      ? navigationPage.getByRole('navigation', { name: 'Kurze Modulnavigation' }).getByRole('link', { name: 'Alle Module', exact: true })
+      : navigationPage.getByRole('navigation', { name: 'Hauptnavigation' }).getByRole('link', { name: 'Werkzeuge', exact: true });
+    await exit.click();
+    await navigationPage.locator('h1').waitFor();
+    await navigationPage.goBack();
+    await navigationPage.locator('#s6 h2').waitFor();
+    await navigationPage.waitForFunction(() => Math.abs(window.scrollY - 4300) <= 1);
+    record('navigation/back-reading-position', { width, scrollY: await navigationPage.evaluate(() => window.scrollY) }, true);
+    await navigationPage.reload({ waitUntil: 'networkidle' });
+    await navigationPage.locator('#s6 h2').waitFor();
+    await navigationPage.waitForFunction(() => Math.abs(window.scrollY - 4300) <= 1);
+    record('navigation/reload-reading-position', { width, scrollY: await navigationPage.evaluate(() => window.scrollY) }, true);
+    await navigationPage.goForward();
+    await navigationPage.locator('h1').waitFor();
+    await navigationPage.waitForFunction(() => window.scrollY === 0);
+    record('navigation/forward-position', { width, url: navigationPage.url() }, new URL(navigationPage.url()).pathname === (width < 760 ? '/module' : '/werkzeuge'));
+    await navigationPage.close();
+  }
+  const contentsPage = await browser.newPage({ viewport: { width: 360, height: 900 }, reducedMotion: 'reduce' });
+  for (let moduleNumber = 1; moduleNumber <= 7; moduleNumber++) {
+    await open(contentsPage, `/module/${moduleNumber}#s2`);
+    const link = contentsPage.locator('.module-toc a').first();
+    const target = new URL(await link.getAttribute('href'), contentsPage.url());
+    await link.focus();
+    await contentsPage.keyboard.press('Enter');
+    await contentsPage.waitForURL(target.href);
+    const id = target.hash.slice(1);
+    await contentsPage.waitForFunction(id => document.activeElement === document.getElementById(id)?.querySelector('h1,h2,h3'), id);
+    await contentsPage.reload({ waitUntil: 'networkidle' });
+    await contentsPage.waitForFunction(id => window.scrollY > 0 && document.getElementById(id)?.getBoundingClientRect().top >= 0, id);
+    record('navigation/contents-url-and-reload', { moduleNumber, href: target.href }, new URL(contentsPage.url()).hash === target.hash);
+  }
+  await contentsPage.close();
 } catch (error) {
   record('runner', { error: error.stack || String(error), serverOutput }, false);
 } finally {

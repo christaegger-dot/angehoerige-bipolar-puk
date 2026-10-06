@@ -18,14 +18,15 @@ function PageLoadingFallback() {
   );
 }
 
-function PageContent({ page, anchor, onNavigate, onReady }) {
-  React.useEffect(() => onReady(page, anchor), [page, anchor, onReady]);
+function PageContent({ navigation, onNavigate, onReady }) {
+  React.useEffect(() => onReady(navigation), [navigation, onReady]);
+  const { page, anchor } = navigation;
   const renderPage = PAGE_RENDERERS[page] || PAGE_RENDERERS.start;
   return renderPage({ onNavigate, anchor });
 }
 
-function PageLoadError({ page, onNavigate, onReady }) {
-  React.useEffect(() => onReady(page, null), [page, onReady]);
+function PageLoadError({ navigation, onNavigate, onReady }) {
+  React.useEffect(() => onReady({ ...navigation, anchor: null }), [navigation, onReady]);
   return (
     <div className="page-loading" role="alert">
       <h1>Die Seite konnte nicht geöffnet werden.</h1>
@@ -44,18 +45,22 @@ function App() {
   const committedLocation = React.useRef(null);
   // Run after the Suspense content has committed, even on a slow connection.
   // Dialogs own their focus and scroll; closing them restores their trigger.
-  const onPageReady = React.useCallback((readyPage, anchor) => {
+  const onPageReady = React.useCallback(({ page: readyPage, anchor, transition, scrollPosition }) => {
     const previous = committedLocation.current;
     const dialogOpen = Boolean(document.querySelector('[role="dialog"]'));
     committedLocation.current = { page: readyPage, anchor, dialogOpen };
     if (dialogOpen || (previous?.dialogOpen && previous.page === readyPage && !anchor)) return undefined;
-    if (previous && (previous.page !== readyPage || (anchor && previous.anchor !== anchor))) {
+    if (anchor || transition !== 'initial') {
       const section = anchor ? document.getElementById(anchor) : null;
       const destination = section?.querySelector('h1, h2, h3') || section || document.getElementById('main-content');
       if (destination) {
         if (!destination.hasAttribute('tabindex')) destination.setAttribute('tabindex', '-1');
         destination.focus({ preventScroll: true });
       }
+    }
+    if ((transition === 'history' || transition === 'initial') && !anchor && scrollPosition) {
+      const frame = requestAnimationFrame(() => window.scrollTo({ left: scrollPosition.x, top: scrollPosition.y, behavior: 'instant' }));
+      return () => cancelAnimationFrame(frame);
     }
     return scrollToAnchorWhenReady(anchor);
   }, []);
@@ -75,9 +80,9 @@ function App() {
       <Nav page={page} onNavigate={onNavigate} />
       <main id="main-content" tabIndex={-1}>
         {/^modul[1-7]$/.test(page) && <MobileModuleNav onNavigate={onNavigate} />}
-        <LoadErrorBoundary resetKey={page} fallback={<PageLoadError page={page} onNavigate={onNavigate} onReady={onPageReady} />}>
+        <LoadErrorBoundary resetKey={page} fallback={<PageLoadError navigation={nav} onNavigate={onNavigate} onReady={onPageReady} />}>
           <React.Suspense fallback={<PageLoadingFallback />}>
-            <PageContent page={page} anchor={nav.anchor} onNavigate={onNavigate} onReady={onPageReady} />
+            <PageContent navigation={nav} onNavigate={onNavigate} onReady={onPageReady} />
           </React.Suspense>
         </LoadErrorBoundary>
       </main>

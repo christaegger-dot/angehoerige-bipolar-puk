@@ -1,4 +1,3 @@
-import { scrollToSection } from './anchor-scroll.js';
 // Modul 7 — Langfristige Tragfähigkeit · Volles Lese-Layout
 // Zentrales Bild: Vier Säulen als Tragwerk.
 
@@ -175,8 +174,6 @@ function Modul7Page({ onNavigate }) {
     { id: 's9', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = scrollToSection;
-
   return (
     <>
       <div className="reading-progress" style={{width: `${progress}%`}}></div>
@@ -207,7 +204,7 @@ function Modul7Page({ onNavigate }) {
               <ol>
                 {sections.map((s, i) => (
                   <li key={s.id}>
-                    <a href={`#${s.id}`} onClick={(e) => { e.preventDefault(); scrollTo(s.id); }}>
+                    <a href={navHref('modul7', s.id)} onClick={navHandler('modul7', onNavigate, s.id)}>
                       <span className="toc-num">{(i + 1).toString().padStart(2, '0')}</span>
                       {s.label}
                     </a>

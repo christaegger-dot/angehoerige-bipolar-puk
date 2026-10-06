@@ -1,4 +1,3 @@
-import { scrollToSection } from './anchor-scroll.js';
 // Modul 1 — Die bipolare Störung verstehen · Volles Lese-Layout
 
 import React from 'react';
@@ -37,8 +36,6 @@ function Modul1Page({ onNavigate }) {
     { id: 's10', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = scrollToSection;
-
   return (
     <>
       {/* Reading progress bar */}
@@ -75,7 +72,7 @@ function Modul1Page({ onNavigate }) {
               <ol>
                 {sections.map((s, i) => (
                   <li key={s.id}>
-                    <a href={`#${s.id}`} onClick={(e) => { e.preventDefault(); scrollTo(s.id); }}>
+                    <a href={navHref('modul1', s.id)} onClick={navHandler('modul1', onNavigate, s.id)}>
                       <span className="toc-num">{(i + 1).toString().padStart(2, '0')}</span>
                       {s.label}
                     </a>

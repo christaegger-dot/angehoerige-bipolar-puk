@@ -1,5 +1,6 @@
 import { describe, it, expect, afterEach, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { useState } from 'react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ToolOverlay } from '../tool-overlay.jsx';
 
@@ -64,5 +65,39 @@ describe('ToolOverlay', () => {
     lastButton.focus();
     fireEvent.keyDown(window, { key: 'Tab' });
     expect(closeButton).toHaveFocus();
+  });
+
+  it('keeps a form field in the focus loop and returns focus to its opener on Escape', async () => {
+    enableFocusableLayout();
+    const user = userEvent.setup();
+    function FormDialog() {
+      const [open, setOpen] = useState(false);
+      return (
+        <>
+          <button onClick={() => setOpen(true)}>Plan öffnen</button>
+          {open && (
+            <ToolOverlay onClose={() => setOpen(false)} ariaLabel="Testplan">
+              <label htmlFor="test-plan-notes">Notizen</label>
+              <textarea id="test-plan-notes" />
+            </ToolOverlay>
+          )}
+        </>
+      );
+    }
+
+    render(<FormDialog />);
+    const opener = screen.getByRole('button', { name: 'Plan öffnen' });
+    await user.click(opener);
+    const close = screen.getAllByRole('button', { name: 'Dialog schliessen' })
+      .find(button => button.classList.contains('tool-close'));
+    await waitFor(() => expect(close).toHaveFocus());
+    await user.tab();
+    expect(screen.getByRole('textbox', { name: 'Notizen' })).toHaveFocus();
+    await user.tab();
+    expect(close).toHaveFocus();
+    await user.keyboard('{Escape}');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(opener).toHaveFocus();
+    expect(document.body.style.overflow).toBe('');
   });
 });
