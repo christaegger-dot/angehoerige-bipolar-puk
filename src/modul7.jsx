@@ -239,6 +239,11 @@ function Modul7Page({ onNavigate }) {
               <h2>Wie die lange Strecke tragfähiger werden kann</h2>
               <p className="dropcap">Neben Vorbereitung, Gesprächen und Grenzen geht es um eine weitere Frage: <strong>Was hilft Ihnen, Ihr eigenes Leben über längere Zeit zu gestalten?</strong> Das können Kontakte, Interessen, Zusammenarbeit oder praktische Entlastung sein. Sie entscheiden, was für Ihre Situation wichtig ist.</p>
               <p>Mit «Tragfähigkeit» ist gemeint, dass der Alltag auf Dauer leichter zu bewältigen ist: mit mehr Unterstützung, Vorbereitung, vertrauten Abläufen und Zeit für sich selbst. Das bedeutet nicht, dass die Beziehung immer harmonisch ist oder keine Krisen mehr auftreten.</p>
+
+              <aside className="callout callout-soft">
+                <span className="callout-label">Persönliche Recovery</span>
+                <p>«Persönliche Recovery» meint ein selbstbestimmtes, für die erkrankte Person stimmiges Leben. Das kann auch mit Beschwerden möglich sein und ist nicht dasselbe wie Symptomfreiheit. Welche Ziele und Beziehungen dazugehören, bestimmt die betroffene Person; Wachstum ist keine Pflicht. Ihr eigenes Leben und Ihre Bedürfnisse als angehörige Person bleiben eigenständige Anliegen.</p>
+              </aside>
             </section>
 
             <section id="s2">
@@ -291,7 +296,7 @@ function Modul7Page({ onNavigate }) {
 
             <section id="s4">
               <h2>Was langfristig trägt</h2>
-              <p>Dass der Alltag auf Dauer leichter zu bewältigen ist, entsteht selten durch einen grossen Durchbruch. Meist helfen verlässliche Absprachen, Entlastung, gemeinsame gute Momente ohne Krankheitsthema und geteiltes Wissen. Dazu gehört auch, bei Belastung Unterstützung zu suchen.</p>
+              <p>Für einen tragbaren Alltag können verlässliche Absprachen, Entlastung, gemeinsame gute Momente ohne Krankheitsthema und geteiltes Wissen wichtig sein. Welche Unterstützung Ihnen hilft, hängt von Ihrer Situation ab.</p>
 
               <SaeulenFigurWrap />
 
@@ -335,7 +340,8 @@ function Modul7Page({ onNavigate }) {
 
             <section id="s6">
               <h2>Trialog und Zusammenarbeit</h2>
-              <p>Im Trialog sprechen Betroffene, Angehörige und Fachpersonen miteinander. So funktioniert die Versorgung auf Dauer oft besser. Angehörige bringen ihre Erfahrungen aus dem Alltag, Beobachtungen von Warnzeichen und Wissen über Belastungen ein. Ihre eigenen Bedürfnisse gehören ebenfalls dazu. Die Zusammenarbeit wird dadurch nicht automatisch leicht, berücksichtigt aber oft besser die tatsächliche Situation.</p>
+              <p>Im Trialog sprechen Betroffene, Angehörige und Fachpersonen miteinander. Ziel ist, unterschiedliche Erfahrungen, Beobachtungen und Bedürfnisse in die Zusammenarbeit einzubeziehen. Angehörige können Alltagswissen und eigene Anliegen einbringen. Gemeinsam lassen sich etwa erreichbare Kontakte, Aufgaben und Unterstützung besprechen. Welche Absprachen entstehen, hängt von der Situation und den Wünschen der Beteiligten ab.</p>
+              <p>Für ein gemeinsames Behandlungsgespräch klären Sie vorab, welche Beteiligung die erkrankte Person wünscht, womit sie einverstanden ist und welche Informationen besprochen werden dürfen. Ihre eigenen Grenzen gehören ebenso dazu.</p>
 
               <h3>Drei Perspektiven im Behandlungssystem</h3>
               <p><strong>Fachpersonen.</strong> Fachwissen, Diagnostik, Behandlung.</p>
@@ -350,7 +356,7 @@ function Modul7Page({ onNavigate }) {
               <h3>Für das Angehörigengespräch: Was Sie vorbereiten können</h3>
               <ul>
                 <li><strong>Beobachtungen:</strong> Was haben Sie in den letzten Wochen bei Schlaf, Stimmung oder Verhalten wahrgenommen? Nennen Sie konkrete Beispiele und den Zeitraum.</li>
-                <li><strong>Ihre eigene Belastung:</strong> Wie geht es Ihnen? Was erschöpft Sie am meisten? Behandlungsteams schätzen diese Information.</li>
+                <li><strong>Ihre eigene Belastung:</strong> Wie geht es Ihnen? Was erschöpft Sie am meisten? Sprechen Sie auch an, welche Entlastung Sie selbst brauchen.</li>
                 <li><strong>Ihre Frage:</strong> Was beschäftigt Sie am meisten? Zum Beispiel: «Was tue ich, wenn er die Medikamente wieder absetzt?»</li>
                 <li><strong>Krisenplan:</strong> Liegt einer vor? Wissen Fachpersonen, wer im Notfall erreichbar ist und was funktioniert hat?</li>
               </ul>

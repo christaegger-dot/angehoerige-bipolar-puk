@@ -322,7 +322,7 @@ function Modul4Page({ onNavigate }) {
 
             <section id="s6">
               <h2>Wenn Kinder mitbetroffen sind</h2>
-              <p>Dieser Abschnitt richtet sich an Familien mit Kindern im Haushalt. Wenn das auf Ihre Situation nicht zutrifft, können Sie bei «Eigene Lage und nächste Schritte» weiterlesen.</p>
+              <p>Dieser Abschnitt richtet sich an Familien, in denen Kinder oder Jugendliche mitbetroffen sind — auch wenn sie in einem anderen oder in mehreren Haushalten leben. Auch junge Erwachsene, die einen erkrankten Elternteil unterstützen, können Entlastung und eigene Beratung brauchen. Wenn das auf Ihre Situation nicht zutrifft, können Sie bei «Eigene Lage und nächste Schritte» weiterlesen.</p>
               <p>Vielleicht bemerken Kinder Veränderungen zu Hause oder haben Fragen zur Erkrankung eines Elternteils. Geben Sie Raum für ihre Sicht und organisieren Sie Unterstützung, die zu ihrer Situation passt.</p>
 
               <div className="do-dont">
@@ -355,8 +355,18 @@ function Modul4Page({ onNavigate }) {
 
               <p><strong>Zum Beispiel ab 13 Jahren: Offen und respektvoll.</strong> «Wenn du Fragen hast, beantworte ich sie so ehrlich, wie ich kann.» Fragen Sie, was der junge Mensch wissen möchte. Unterstützung für Ihre eigenen Sorgen holen Sie bei Erwachsenen oder einer Beratungsstelle. Kinder und Jugendliche müssen diese Verantwortung nicht übernehmen.</p>
 
+              <p>Sie müssen nicht alles in einem Gespräch erklären. Wählen Sie möglichst einen ruhigen Zeitpunkt, hören Sie zu und lassen Sie spätere Fragen zu. Fragen Sie auch: «Was hast du selbst bemerkt?» und «Was würde dir jetzt helfen?» Was das Kind wissen möchte, kann sich mit seiner Entwicklung und der Situation verändern.</p>
+
+              <h3>Den Alltag bei einer Episode oder einem Klinikaufenthalt planen</h3>
+              <p>Klären Sie möglichst in einer ruhigen Phase, welche Erwachsenen einspringen können. Beziehen Sie die Wünsche des Kindes ein, ohne ihm die Organisation oder die Verantwortung für die Krise zu übertragen.</p>
+              <ul>
+                <li><strong>Erreichbare Personen benennen</strong> — wen kann das Kind anrufen oder aufsuchen, wenn es Fragen hat oder sich unsicher fühlt? Vereinbaren Sie mit diesen Personen, wie sie erreichbar sind.</li>
+                <li><strong>Alltag konkret absprechen</strong> — wer übernimmt Schulweg, Mahlzeiten und Betreuung, auch wenn das Kind zwischen Haushalten wechselt?</li>
+                <li><strong>Über Veränderungen informieren</strong> — wer erklärt dem Kind, was als Nächstes geschieht, und beantwortet Fragen zu Behandlung oder Klinikaufenthalt?</li>
+              </ul>
+
               <h3>Wenn Kinder zu viel Verantwortung übernehmen</h3>
-              <p>Vielleicht bemerken Sie, dass Ihr Kind häufig Erwachsene beruhigt, beobachtet oder sich für die Stimmung zu Hause verantwortlich fühlt. Klären Sie mit Unterstützung, welche Aufgaben altersangemessen sind und welche Erwachsene übernehmen sollten. Sie können sagen: «Das ist nicht deine Aufgabe. Wir Erwachsenen kümmern uns darum.»</p>
+              <p>Vielleicht bemerken Sie, dass Ihr Kind häufig Erwachsene beruhigt, beobachtet oder sich für die Stimmung zu Hause verantwortlich fühlt. Auch viel praktische Betreuung kann belasten. Fragen Sie danach, wie sich die Aufgaben auf Schlaf, Schule, Freundschaften und Freizeit auswirken. Nicht jede Mithilfe ist zu viel: Entscheidend sind auch Umfang, Dauer und die verfügbare Unterstützung. Klären Sie gemeinsam, welche Aufgaben altersangemessen sind und welche Erwachsene übernehmen sollten. Sie können sagen: «Für die Behandlung und für Krisen sind wir Erwachsenen verantwortlich. Wir organisieren Hilfe.»</p>
 
               <blockquote className="module-quote" id="quote-m4-04">
                 <p>«Ich habe erst mit 25 verstanden, dass nicht jede Familie so lebt. Dass andere Kinder nicht gelernt haben, morgens zuerst die Stimmung im Haus zu lesen. Ich bin nicht wütend auf ihn — er ist krank, und er kämpft. Aber ich trauere um die Kindheit, die anders hätte sein können.»</p>
@@ -365,11 +375,15 @@ function Modul4Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Erwachsene übernehmen die Verantwortung</span>
-                <p>Wenn Sie merken, dass Ihr Kind zu viele Aufgaben übernimmt, können Sie Unterstützung organisieren. Sie können zum Beispiel sagen: «Du musst dich nicht um uns Erwachsene kümmern. Das übernehmen wir.» Vereinbaren Sie dann konkret, welche Erwachsenen diese Aufgaben übernehmen. Je nach Situation kann ein Gespräch mit der Schule passen. Unter <strong>kinderseele.ch</strong> können Sie nach aktuellen Angeboten suchen und klären, für wen sie gedacht sind und welche Bedingungen gelten.</p>
+                <p>Wenn Ihr Kind zu viele Aufgaben übernimmt, vereinbaren Sie konkret, welche Erwachsenen entlasten und wann sie diese Aufgaben übernehmen. Schaffen Sie Raum für die eigenen Wünsche, Freundschaften und Freizeit des Kindes. Je nach Situation kann ein gemeinsam vorbereitetes Gespräch mit der Schule passen. Auch junge Erwachsene dürfen ihre Unterstützung begrenzen und eigene Pläne für Ausbildung, Arbeit und Freizeit verfolgen.</p>
               </aside>
 
               <h3>Sorgen um die Gesundheit des Kindes</h3>
-              <p>Vielleicht machen Sie sich Sorgen, ob Ihr Kind ebenfalls erkranken könnte. Diese Seite kann das Risiko für ein einzelnes Kind nicht einschätzen. Wenn Sie Veränderungen bei Ihrem Kind bemerken oder Fragen haben, können Sie sich beraten lassen. Sie müssen weder eine Diagnose stellen noch die Entwicklung ständig kontrollieren. Erklären Sie die Situation verständlich, ermöglichen Sie Fragen und organisieren Sie Unterstützung für das Kind und für sich selbst.</p>
+              <p>Vielleicht machen Sie sich Sorgen, ob Ihr Kind ebenfalls erkranken könnte. Diese Seite kann das Risiko für ein einzelnes Kind nicht einschätzen. Wenn Sie Veränderungen bei Ihrem Kind bemerken oder Fragen haben, können Sie sich beraten lassen. Sie müssen weder eine Diagnose stellen noch die Entwicklung ständig kontrollieren.</p>
+
+              <h3>Beratung und Familienangebote nutzen</h3>
+              <p>Sie und Ihr Kind können auch ohne eine Diagnose des Kindes Beratung zum Familienalltag suchen. Fragen Sie beim Behandlungsteam oder einer Beratungsstelle nach Unterstützung für Kinder, Eltern und junge Angehörige. Unter <strong>kinderseele.ch</strong> können Sie nach aktuellen Angeboten suchen und klären, für wen sie gedacht sind und welche Bedingungen gelten. Besprechen Sie, welche Anliegen das Kind selbst hat und welcher erste Kontakt für Ihre Familie erreichbar ist.</p>
+              <p>Begleitete Familienprogramme können Information, Gespräche und praktische Unterstützung verbinden. Studien zeigen je nach Programm und untersuchtem Ergebnis unterschiedliche Befunde: Für manche wurden kurzfristige Verbesserungen festgestellt; andere zeigten keinen klaren zusätzlichen Nutzen gegenüber der üblichen Versorgung. Eine spätere Erkrankung lässt sich dadurch nicht sicher verhindern. Klären Sie mit der Fachperson, welche Unterstützung zu Ihrer Situation passt und wie Sie gemeinsam prüfen, ob sie hilft.</p>
             </section>
 
             <section id="s7">
@@ -429,7 +443,7 @@ function Modul4Page({ onNavigate }) {
             <footer className="module-article-footer">
               <EvidenceSources number={4} />
 
-              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Fachliche und rechtliche Quellenprüfung: offen. Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
+              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
                 <a className="puk-link--action module-nav-btn" href={navHref('modul3')} onClick={navHandler('modul3', onNavigate)}>

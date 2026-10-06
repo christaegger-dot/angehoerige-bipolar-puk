@@ -673,14 +673,14 @@ const EISBERG_LABELS = {
       label: 'Wut',
       kind: 'secondary',
       x: 26, y: 52,
-      desc: 'Wut kann sich auf die Erkrankung, auf die andere Person oder auf sich selbst richten. Oft ist sie ein Signal, dass eine Grenze erreicht ist, und kein Charakterproblem.',
+      desc: 'Wut kann sich auf die Erkrankung, auf die andere Person oder auf sich selbst richten. Sie kann ein Anlass sein, auf eigene Bedürfnisse und Grenzen zu schauen.',
     },
     {
       key: 'scham',
       label: 'Scham',
       kind: 'tertiary',
       x: 74, y: 50,
-      desc: 'Scham kann sich auf eigene Bedürfnisse, Müdigkeit oder Wut beziehen. Sie bringt Menschen gerade dann zum Schweigen, wenn ein Gespräch helfen würde.',
+      desc: 'Scham kann sich auf eigene Bedürfnisse, Müdigkeit oder Wut beziehen. Sie kann es erschweren, über eigene Bedürfnisse oder Belastungen zu sprechen. Sie entscheiden, wem Sie etwas erzählen möchten.',
     },
     {
       key: 'einsamkeit',
@@ -694,7 +694,7 @@ const EISBERG_LABELS = {
       label: 'Schuldgefühle',
       kind: 'tertiary',
       x: 70, y: 76,
-      desc: 'Vielleicht fühlen Sie sich wegen eigener Pausen, Freude oder Abstand schuldig. Diese Gefühle sind häufig und meist kein Hinweis darauf, dass Sie etwas falsch machen.',
+      desc: 'Vielleicht fühlen Sie sich wegen eigener Pausen, Freude oder Abstand schuldig. Schuldgefühle allein zeigen nicht, ob Sie etwas falsch gemacht haben.',
     },
     {
       key: 'trauer',

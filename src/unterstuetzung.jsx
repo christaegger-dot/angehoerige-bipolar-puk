@@ -5,6 +5,7 @@ import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 import { KrisenplanTool } from './werkzeuge-tools.jsx';
 import { navHandler, navHref } from './nav-handler.js';
+import { HandoutSources } from './module-guidance.jsx';
 
 const HANDOUTS = {
   'DL-01': {
@@ -117,12 +118,12 @@ const HANDOUTS = {
   'DL-04': {
     title: 'Umgang mit Suizidgedanken',
     sub: 'Direkt fragen — und Schritte bei akuter Gefährdung',
-    lede: 'Suizidgedanken sind bei bipolarer Störung nicht selten. Wer fragt, löst keine aus — sondern schafft Erleichterung.',
+    lede: 'Suizidgedanken können bei einer bipolaren Störung auftreten. Sprechen Sie sie behutsam und direkt an. Das kann ein Gespräch ermöglichen; wie die Person reagiert, ist unterschiedlich.',
     sections: [
       {
         kind: 'callout',
-        label: 'Direkt fragen löst keine Suizidgedanken aus',
-        text: 'Studien zeigen: die direkte Frage «Denkst du daran, dir etwas anzutun?» löst keine Suizidgedanken aus. Sie schafft oft Erleichterung — die Person merkt, dass das Thema benannt werden darf. (Dazzi et al., 2014)',
+        label: 'Suizidgedanken ansprechen',
+        text: 'Studien zu solchen Befragungen zeigen keine Hinweise, dass das Fragen Suizidgedanken verstärkt. Die Ergebnisse stammen aus unterschiedlichen Untersuchungen und sind keine Garantie für jede Situation. Fragen Sie ruhig und klar: «Denkst du daran, dir das Leben zu nehmen?»',
       },
       {
         kind: 'h',
@@ -131,7 +132,7 @@ const HANDOUTS = {
       {
         kind: 'numlist',
         items: [
-          '«Denkst du daran, dir etwas anzutun?»',
+          '«Denkst du daran, dir das Leben zu nehmen?»',
           '«Hast du konkrete Pläne?»',
           '«Hast du Mittel oder einen Termin im Kopf?»',
         ],
@@ -390,9 +391,12 @@ const HANDOUTS = {
         kind: 'numlist',
         items: [
           'Was bewirken die einzelnen Medikamente — und ab wann sollten wir die Wirkung spüren?',
-          'Welche Nebenwirkungen sind häufig? Was davon ist harmlos, was sollte gemeldet werden?',
-          'Was passiert beim Absetzen — und warum ist es wichtig, die Dosis nicht eigenmächtig zu ändern?',
+          'Welche Nebenwirkungen und Warnzeichen sollten zeitnah abgeklärt werden? Wen erreichen wir dafür?',
+          'Welche Kontrollen sind nötig, etwa Blutwerte oder Kontrollen von Nieren und Schilddrüse?',
+          'Was ist zu tun, wenn Medikamente bereits abgesetzt oder mehrere Einnahmen ausgelassen wurden?',
           'Gibt es Wechselwirkungen mit anderen Medikamenten, Alkohol oder pflanzlichen Mitteln?',
+          'Falls ein Antidepressivum vorgesehen ist: Passt es zur Diagnose und aktuellen Phase? Was tun bei neuer Unruhe oder deutlich weniger Schlaf?',
+          'Was sollten wir bei Kinderwunsch, Verhütung, Schwangerschaft und nach der Geburt frühzeitig planen?',
         ],
       },
       {
@@ -470,7 +474,7 @@ function HandoutSection({ section }) {
       );
     case 'callout':
       return (
-        <aside className="handout-callout">
+        <aside className="handout-callout" aria-label={section.label}>
           <span className="handout-callout-label">{section.label}</span>
           <p>{section.text}</p>
         </aside>
@@ -517,6 +521,16 @@ const HANDOUT_CONTINUATIONS = {
   'DL-08': { target: 'schweigepflicht', label: 'Schweigepflicht beim Behandlungsgespräch klären' },
 };
 
+const HANDOUT_TOPICS = {
+  'DL-01': 'orientation',
+  'DL-02': 'crisis',
+  'DL-04': 'suicide',
+  'DL-05': ['crisis', 'communication'],
+  'DL-06': 'mania',
+  'DL-07': 'depressionSupport',
+  'DL-08': 'medicationQuestions',
+};
+
 function HandoutOverlay({ id, onClose, onNavigate }) {
   const handout = HANDOUTS[id];
   if (!handout) return null;
@@ -535,6 +549,8 @@ function HandoutOverlay({ id, onClose, onNavigate }) {
         <div className="handout-body">
           {handout.sections.map((sec, i) => <HandoutSection key={i} section={sec} />)}
         </div>
+
+        <HandoutSources topic={HANDOUT_TOPICS[id]} />
 
         {continuation && (
           <nav className="handout-callout no-print" aria-label="Passende Vertiefung">
@@ -655,6 +671,18 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
             </div>
           </div>
 
+          <aside className="callout callout-soft support-offer-guide">
+            <span className="callout-label">Welches Angebot passt zu Ihnen?</span>
+            <p>Angebote haben unterschiedliche Ziele und richten sich an unterschiedliche Personen:</p>
+            <ul>
+              <li><strong>Familienbehandlung:</strong> Die erkrankte Person und Angehörige arbeiten mit Fachpersonen etwa an Kommunikation, Alltagsproblemen und Krisenvorbereitung.</li>
+              <li><strong>Psychoedukation für Angehörige:</strong> Ein strukturiertes Programm vermittelt Wissen und übt den Umgang mit Belastungen; manche Programme sind nur für Angehörige.</li>
+              <li><strong>Eigene Beratung:</strong> Ihre Fragen, Bedürfnisse und Grenzen stehen im Mittelpunkt, auch wenn die erkrankte Person nicht teilnimmt.</li>
+              <li><strong>Selbsthilfe und Austausch:</strong> Sie können Erfahrungen mit anderen Angehörigen teilen und gegenseitige Unterstützung finden.</li>
+            </ul>
+            <p>Fragen Sie nach Ziel, Teilnehmenden, Umfang und Kosten. Studien zu mehrteiligen Familien- und Angehörigenprogrammen zeigen mögliche Vorteile, aber unterschiedliche Ergebnisse. Daraus lässt sich keine Wirkung für jedes Angebot oder für diese Website ableiten.</p>
+          </aside>
+
           <div className="resource-list">
             {[
               { num: '01', title: 'Fachstelle Angehörigenarbeit PUK Zürich', desc: 'Beratung speziell für Angehörige psychisch erkrankter Menschen. Telefonisch, per Mail oder im persönlichen Gespräch.', tag: '058 384 38 00', href: 'tel:+41583843800', kind: 'tel' },
@@ -714,7 +742,7 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
                   aria-haspopup="dialog"
                 >
                   <div className="download-meta">
-                    <span className="mono">{d.id} · review_v02 · 2026-10-05</span>
+                    <span className="mono">{d.id} · review_v03 · 2026-10-05</span>
                     <span className="download-pdf-label">{d.metaLabel || meta.label}</span>
                   </div>
                   <h3>{d.title}</h3>
