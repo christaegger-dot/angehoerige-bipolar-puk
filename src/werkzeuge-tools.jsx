@@ -947,7 +947,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
   const start = () => setStep('anlass');
   const reset = () => {
-    if (window.confirm('Entwurf löschen? Ihre aktuellen Eingaben und früher gespeicherte Kopien in diesem Browser werden entfernt. Inhalte in der Zwischenablage und geteilte Kopien bleiben erhalten.')) {
+    if (window.confirm('Entwurf löschen? Ihre aktuellen Eingaben und früher gespeicherte Kopien in diesem Browser werden entfernt. Inhalte in der Zwischenablage, Drucke, PDF-Dateien und geteilte Kopien bleiben erhalten.')) {
       setData({ ...KOMMUNIKATION_DEFAULT });
       const cleared = clearStoredDraft(KOMMUNIKATION_STORAGE_KEY);
       setStorageHint(cleared ? 'Ihre aktuellen Eingaben und frühere Kopien in diesem Browser sind gelöscht.' : 'Ihre aktuellen Eingaben sind gelöscht. Frühere Kopien in diesem Browser konnten nicht vollständig gelöscht werden. Löschen Sie die Website-Daten in Ihren Browser-Einstellungen.');
@@ -976,7 +976,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
   };
 
   return (
-    <ToolOverlay onClose={onClose} ariaLabel="Kommunikations-Trainer" cardClass="kommunikation-card" noPrint={true}>
+    <ToolOverlay onClose={onClose} ariaLabel="Kommunikations-Trainer" overlayClass="kommunikation-overlay" cardClass="kommunikation-card" noPrint={true}>
       <span className="kicker">Werkzeug · Kommunikations-Trainer</span>
 
         {step === 'intro' && (
@@ -1030,7 +1030,8 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               onChange={(e) => updateField('beobachtung', e.target.value)}
               placeholder="Zum Beispiel: Mir ist in den letzten drei Wochen aufgefallen, dass du nachts oft wach bist und tagsüber wenig isst."
             />
-            <div className="kommunikation-nav">
+            <p className="kommunikation-print-value">{data.beobachtung || '— noch nicht ausgefüllt —'}</p>
+            <div className="kommunikation-nav no-print">
               <button className="tool-quiet-btn" onClick={() => setStep('anlass')}>← Zurück</button>
               <button className="btn btn-primary" onClick={() => setStep('wirkung')}>Weiter →</button>
             </div>
@@ -1050,7 +1051,8 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               onChange={(e) => updateField('wirkung', e.target.value)}
               placeholder="Zum Beispiel: Das macht mir Sorgen. Ich schlafe selbst nicht mehr richtig, weil ich nachts auf jedes Geräusch höre."
             />
-            <div className="kommunikation-nav">
+            <p className="kommunikation-print-value">{data.wirkung || '— noch nicht ausgefüllt —'}</p>
+            <div className="kommunikation-nav no-print">
               <button className="tool-quiet-btn" onClick={() => setStep('beobachtung')}>← Zurück</button>
               <button className="btn btn-primary" onClick={() => setStep('bitte')}>Weiter →</button>
             </div>
@@ -1070,6 +1072,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               onChange={(e) => updateField('bitte', e.target.value)}
               placeholder="Zum Beispiel: Können wir gemeinsam überlegen, ob ein Termin bei deiner Ärztin sinnvoll wäre?"
             />
+            <p className="kommunikation-print-value">{data.bitte || '— noch nicht ausgefüllt —'}</p>
             {isBoundary && (
               <>
                 <h3 className="kommunikation-q"><label htmlFor="kommunikation-grenze">Welche eigene Grenze können Sie umsetzen?</label></h3>
@@ -1082,9 +1085,10 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
                   onChange={(e) => updateField('grenze', e.target.value)}
                   placeholder="Zum Beispiel: Wenn das Gespräch verletzend wird, beende ich es für heute."
                 />
+                <p className="kommunikation-print-value">{data.grenze || '— noch nicht ausgefüllt —'}</p>
               </>
             )}
-            <div className="kommunikation-nav">
+            <div className="kommunikation-nav no-print">
               <button className="tool-quiet-btn" onClick={() => setStep('wirkung')}>← Zurück</button>
               <button className="btn btn-primary" onClick={() => setStep('result')} disabled={isBoundary && !data.grenze.trim()}>Skript ansehen →</button>
             </div>
@@ -1139,15 +1143,16 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               </ul>
             </aside>
 
-            <div className="selbsttest-actions">
+            <div className="selbsttest-actions no-print">
               <button className="btn btn-primary" onClick={copyToClipboard} data-data-export="clipboard" data-storage-key={KOMMUNIKATION_STORAGE_KEY}>Skript kopieren</button>
+              <button className="btn btn-primary" onClick={() => window.print()} data-data-export="print-pdf" data-storage-key={KOMMUNIKATION_STORAGE_KEY}>Drucken / als PDF speichern</button>
               <button className="selbsttest-secondary" onClick={() => { onClose(); onNavigate('modul6', 's4'); }}>
                 Modul 6 — Was Sie konkret tun können →
               </button>
             </div>
             {copyHint.text && (
               <p
-                className={`kommunikation-copy-hint kommunikation-copy-hint-${copyHint.tone}`}
+                className={`kommunikation-copy-hint kommunikation-copy-hint-${copyHint.tone} no-print`}
                 role="status"
                 aria-live="polite"
               >
@@ -1155,16 +1160,17 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               </p>
             )}
 
-            <div className="selbsttest-foot">
+            <div className="selbsttest-foot no-print">
               <button className="tool-quiet-btn" onClick={() => setStep('anlass')}>Skript bearbeiten</button>
               <button className="tool-quiet-btn" onClick={onClose}>Schliessen</button>
             </div>
           </div>
         )}
         <div className="tool-intro-notes no-print" data-storage-key={KOMMUNIKATION_STORAGE_KEY}>
-          <p data-storage-notice="memory-only">Ihr Entwurf kann persönliche Gesundheits- und Beziehungsdaten enthalten. Er wird nicht automatisch gespeichert oder versendet. Beim Schliessen des Werkzeugs oder Neuladen der Seite geht er verloren. Kopieren Sie wichtige Inhalte bei Bedarf vor dem Schliessen.</p>
+          <p data-storage-notice="memory-only">Ihr Entwurf kann persönliche Gesundheits- und Beziehungsdaten enthalten. Er wird nicht automatisch gespeichert oder versendet. Beim Schliessen des Werkzeugs oder Neuladen der Seite geht er verloren. Sichern Sie wichtige Inhalte bei Bedarf durch Kopieren oder Drucken / als PDF speichern vor dem Schliessen.</p>
           <p data-storage-notice="legacy-deletion">Entwürfe aus früheren Versionen werden nicht wieder geöffnet. Mit «Entwurf löschen» können Sie aktuelle Eingaben und frühere Kopien dieses Werkzeugs aus dem Browser entfernen.</p>
           <p data-export-notice="clipboard">Beim Kopieren liegt Ihr Skript zusätzlich in der Zwischenablage. Ihr Gerät kann solche Inhalte in einem Verlauf aufbewahren oder auf andere Geräte übertragen. «Entwurf löschen» entfernt diese Kopien nicht. Löschen Sie Inhalte in der Zwischenablage und geteilte Kopien separat. Schliessen Sie auf gemeinsam genutzten Geräten auch andere offene Tabs mit persönlichen Eingaben.</p>
+          <p data-export-notice="print-pdf">Drucke und PDF-Dateien sind zusätzliche Kopien. Auch Druckwarteschlangen und Geräteprotokolle können Angaben zum Druck enthalten. «Entwurf löschen» entfernt diese Kopien und Einträge nicht; löschen Sie gespeicherte Dateien und Druckaufträge separat und prüfen Sie bei gemeinsam genutzten Geräten die Druckereinstellungen.</p>
           <button className="tool-quiet-btn" onClick={reset} data-storage-delete={KOMMUNIKATION_STORAGE_KEY} data-storage-scope="session local">Entwurf löschen</button>
           <p role="status" aria-live="polite">{storageHint}</p>
         </div>

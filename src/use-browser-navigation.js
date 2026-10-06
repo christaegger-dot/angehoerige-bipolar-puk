@@ -13,9 +13,18 @@ function buildCurrentRelativeUrl() {
 
 function useBrowserNavigation() {
   const [nav, setNav] = React.useState(readNavFromLocation);
+  const pendingLocationSync = React.useRef(null);
+
+  const cancelLocationSync = React.useCallback(() => {
+    if (pendingLocationSync.current !== null) {
+      window.clearTimeout(pendingLocationSync.current);
+      pendingLocationSync.current = null;
+    }
+  }, []);
 
   const navigate = React.useCallback((page, anchor, options = {}) => {
     if (typeof window === 'undefined') return;
+    cancelLocationSync();
 
     const next = { page, anchor: anchor || null };
     const nextHref = buildRouteHref(next.page, next.anchor);
@@ -28,7 +37,7 @@ function useBrowserNavigation() {
     }
 
     setNav(next);
-  }, []);
+  }, [cancelLocationSync]);
 
   React.useEffect(() => {
     if (typeof window === 'undefined') return undefined;
@@ -45,15 +54,27 @@ function useBrowserNavigation() {
       setNav(next);
     };
 
+    const syncAfterHistoryRestoration = () => {
+      cancelLocationSync();
+      // Native traversal can restore focus after popstate listeners have run.
+      // Commit the destination on the next task, so its ready effect focuses
+      // the new section after that restoration, including lazy-loaded pages.
+      pendingLocationSync.current = window.setTimeout(() => {
+        pendingLocationSync.current = null;
+        syncFromLocation();
+      }, 0);
+    };
+
     syncFromLocation({ replace: true });
-    window.addEventListener('popstate', syncFromLocation);
-    window.addEventListener('hashchange', syncFromLocation);
+    window.addEventListener('popstate', syncAfterHistoryRestoration);
+    window.addEventListener('hashchange', syncAfterHistoryRestoration);
 
     return () => {
-      window.removeEventListener('popstate', syncFromLocation);
-      window.removeEventListener('hashchange', syncFromLocation);
+      cancelLocationSync();
+      window.removeEventListener('popstate', syncAfterHistoryRestoration);
+      window.removeEventListener('hashchange', syncAfterHistoryRestoration);
     };
-  }, []);
+  }, [cancelLocationSync]);
 
   return [nav, navigate];
 }

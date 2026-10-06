@@ -9,17 +9,21 @@ describe('App navigation', () => {
     render(<App />);
 
     await screen.findByRole('heading', { name: /wenn jemand in ihrem umfeld/i });
-    expect(screen.queryByRole('link', { name: /SOS Krise — 144/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: '144 · Sanität' })).not.toBeInTheDocument();
     expect(within(screen.getByRole('main')).queryByText(/akute Gefahr/i)).not.toBeInTheDocument();
 
     await user.click(screen.getByRole('link', { name: 'SOS Krise' }));
-    expect(await screen.findByRole('link', { name: /SOS Krise — 144/ })).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: '144 · Sanität' })).toHaveAttribute('href', 'tel:144');
+    expect(screen.getByRole('link', { name: '117 · Polizei' })).toHaveAttribute('href', 'tel:117');
+    expect(screen.getByRole('link', { name: '143 · Gespräch' })).toHaveAttribute('href', 'tel:143');
     await screen.findByRole('heading', { level: 1, name: /SOS Krise — wenn jetzt/i });
     expect(within(screen.getByRole('main')).getAllByText(/144/).length).toBeGreaterThan(0);
 
     await user.click(screen.getByRole('link', { name: 'Module' }));
     await screen.findByRole('heading', { level: 1, name: /Alle sieben Module im Überblick/i });
-    expect(screen.queryByRole('link', { name: /SOS Krise — 144/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: '144 · Sanität' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: '117 · Polizei' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: '143 · Gespräch' })).not.toBeInTheDocument();
     expect(within(screen.getByRole('main')).queryByText(/akute Gefahr/i)).not.toBeInTheDocument();
   });
 

@@ -43,6 +43,14 @@ Die Anwendung darf ohne neue Prüfung keine Persistenz, Analytics, Formularüber
 
 Die Prüfprotokolle werden lokal unter /workspace/cloud-setup/p1-2026-10-06 und in CI unter qa/output aufbewahrt. Sie enthalten ausschliesslich synthetische Testwerte. Dieser Bericht enthält keine privaten Werkzeugeingaben.
 
+### Erneuter Abgleich nach den P2-Korrekturen
+
+Die P2-Fassung vom 6. Oktober ergänzt die browserseitige Druckausgabe von Seiten und Kommunikationsentwürfen sowie eine kompakte, unausgefüllte Notfallkarte. Das sind nutzergesteuerte lokale Exporte, keine Übermittlung und keine neue Browser-Persistenz. Kommunikations-Eingaben bleiben React-Text; auch längere Werte werden ohne HTML-Interpretation gedruckt. Die sichtbaren Hinweise und die Datenpolicy benennen PDF-Dateien, Ausdrucke, Druckwarteschlangen und Geräteprotokolle als zusätzliche Kopien, die „Entwurf löschen“ nicht entfernt.
+
+Der erneute Quellabgleich und die Browserprüfung des neu gebauten Stands bestätigen den bisherigen begrenzten Datenumgang. Speicher- und Netzwerkproben verwenden ausschliesslich synthetische Werte; der Druckaudit prüft vollständige Textausgabe und die Trennung vom Hintergrund der Website. Die technische Acceptance wird deshalb erneut an den aktuellen App-/Build-Fingerprint gebunden. Die noch nicht ausgeführten menschlichen Screenreader-Läufe erhalten denselben neuen Prüfstand, bleiben aber ausdrücklich offen.
+
+P2-Prüfprotokolle: /workspace/cloud-setup/p2-2026-10-06 sowie der reproduzierbare projektinterne `npm run audit:print`. Keine Aussage über physische Drucker, Druckserver, Zwischenablage-Synchronisierung oder reale Hilfsmittel wird daraus abgeleitet.
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

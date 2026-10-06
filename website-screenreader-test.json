@@ -7,9 +7,9 @@
   "releaseFingerprint": {
     "version": 1,
     "algorithm": "sha256",
-    "sourceSha256": "7006ea2da2c83818a2e3a4c88d3619ad691a32ff5f3e2410675626ae9e7d0c98",
-    "buildSha256": "d384d82312836a44d1816e53e962488f1aebc140d3cf389b8f7a5c2d2657861a",
-    "sha256": "d01baa10c5b375ce40026f0390bc347ae311c3c34d6315cd0389ced78df2afa8"
+    "sourceSha256": "5f52ae8640d58d35707dfa598791a52209324e3a3e2da389bcb8a7a25d2442f5",
+    "buildSha256": "231b36d30663eecf369308c715fac5b2be91be89c621842b8c85ce016143df23",
+    "sha256": "69c23a63ee1ff96e6b7f1aedd28c217e84ffa29a028f3053fdbe13c209289a08"
   },
   "testedWith": [],
   "manualApproval": null,
@@ -41,7 +41,7 @@
       "testerRole": null,
       "testerInitials": null,
       "result": "pending",
-      "releaseFingerprintSha256": "d01baa10c5b375ce40026f0390bc347ae311c3c34d6315cd0389ced78df2afa8",
+      "releaseFingerprintSha256": "69c23a63ee1ff96e6b7f1aedd28c217e84ffa29a028f3053fdbe13c209289a08",
       "evidence": [],
       "routeChecks": [
         {
@@ -395,7 +395,7 @@
       "testerRole": null,
       "testerInitials": null,
       "result": "pending",
-      "releaseFingerprintSha256": "d01baa10c5b375ce40026f0390bc347ae311c3c34d6315cd0389ced78df2afa8",
+      "releaseFingerprintSha256": "69c23a63ee1ff96e6b7f1aedd28c217e84ffa29a028f3053fdbe13c209289a08",
       "evidence": [],
       "routeChecks": [
         {

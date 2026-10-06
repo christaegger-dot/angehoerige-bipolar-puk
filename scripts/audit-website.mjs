@@ -173,9 +173,49 @@ try {
   await page.getByRole('button', { name: /Krisenplan öffnen/ }).click();
   record('storage/no-reopen-restore', {}, await page.getByRole('textbox', { name: /Plan für/ }).inputValue() === '');
   await page.keyboard.press('Escape');
-  await page.emulateMedia({ reducedMotion: 'reduce' });
-  record('brand/reduced-motion', {}, await page.locator('[data-motion="logo-statisch"]').isVisible() && !await page.locator('[data-motion="logo-animiert"]').isVisible());
   await page.close();
+  for (const reducedMotion of ['no-preference', 'reduce']) {
+    const context = await browser.newContext({ viewport: { width: 360, height: 900 }, reducedMotion });
+    const brandPage = await context.newPage();
+    const gifRequests = [];
+    brandPage.on('request', request => { if (/\.gif(?:\?|$)/i.test(request.url())) gifRequests.push(request.url()); });
+    await open(brandPage, '/');
+    const initialHeight = await brandPage.locator('.nav').evaluate(el => el.getBoundingClientRect().height);
+    await brandPage.waitForTimeout(4200);
+    const settledHeight = await brandPage.locator('.nav').evaluate(el => el.getBoundingClientRect().height);
+    record('brand/single-static-logo', { reducedMotion, gifRequests, initialHeight, settledHeight },
+      await brandPage.locator('.nav-logo img').count() === 1 && await brandPage.locator('[data-motion="logo-statisch"]').isVisible()
+      && gifRequests.length === 0 && Math.abs(initialHeight - settledHeight) <= 1);
+    await open(brandPage, '/notfall');
+    for (const number of ['144', '117', '143']) {
+      const contact = brandPage.locator(`a[href="tel:${number}"]`).first();
+      const position = await contact.boundingBox();
+      record('sos/immediate-call', { reducedMotion, number, position }, await contact.isVisible()
+        && position.y >= 0 && position.y + position.height <= 900);
+    }
+    await context.close();
+  }
+  const historyPage = await browser.newPage({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
+  await open(historyPage, '/module/4#s6');
+  await historyPage.locator('#s6 h2').waitFor();
+  await historyPage.locator('nav[aria-label="Hauptnavigation"]').getByRole('link', { name: 'Werkzeuge', exact: true }).focus();
+  await historyPage.keyboard.press('Enter');
+  await historyPage.waitForURL('**/werkzeuge');
+  await historyPage.locator('h1').waitFor();
+  await historyPage.goBack();
+  await historyPage.locator('#s6 h2').waitFor();
+  // Native history focus restoration follows popstate; catch the lasting state.
+  await historyPage.waitForTimeout(1000);
+  const returnedToHeading = await historyPage.locator('#s6 h2').evaluate(el => document.activeElement === el);
+  await historyPage.keyboard.press('Tab');
+  // The children section has no tab stops; its next link is in section s7.
+  const nextTabFollowsSection = await historyPage.locator('#s7').evaluate(el => el.contains(document.activeElement));
+  record('keyboard/back-anchor-focus-and-next-tab', { returnedToHeading, nextTabFollowsSection }, returnedToHeading && nextTabFollowsSection);
+  await historyPage.goForward();
+  await historyPage.locator('h1').waitFor();
+  await historyPage.waitForTimeout(1000);
+  record('keyboard/forward-main-focus', {}, await historyPage.locator('#main-content').evaluate(el => document.activeElement === el));
+  await historyPage.close();
 } catch (error) {
   record('runner', { error: error.stack || String(error), serverOutput }, false);
 } finally {
