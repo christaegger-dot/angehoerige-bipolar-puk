@@ -1,0 +1,54 @@
+name: Production release readiness
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  release-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test release evidence validator
+        run: npm run test:release-evidence
+
+      - name: Build the reviewed website
+        run: npm run build
+
+      - name: Verify actual privacy and screenreader evidence
+        shell: bash
+        run: |
+          mkdir -p qa/output
+          set -o pipefail
+          node scripts/verify-release-evidence.mjs | tee qa/output/release-evidence.json
+
+      - name: Install browser for canonical production audit
+        run: npx playwright install --with-deps chromium
+
+      - name: Canonical production audit
+        run: node scripts/puk-audit/run.mjs --production
+
+      - name: Retain release reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-release-readiness
+          path: qa/output/
+          if-no-files-found: ignore

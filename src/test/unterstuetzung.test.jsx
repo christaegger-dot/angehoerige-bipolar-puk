@@ -90,6 +90,23 @@ describe('UnterstuetzungPage counselling and material boundaries', () => {
 });
 
 describe('UnterstuetzungPage targeted entries', () => {
+  it('offers the compact wallet export while retaining the detailed reading version and sources', async () => {
+    const user = userEvent.setup();
+    const print = vi.spyOn(window, 'print').mockImplementation(() => {});
+    render(<UnterstuetzungPage anchor="dl-02" onNavigate={vi.fn()} />);
+
+    const dialog = screen.getByRole('dialog', { name: 'Notfallkarte fürs Portemonnaie' });
+    expect(within(dialog).getByText(/kompakte Karte auf einer A4-Seite/)).toBeInTheDocument();
+    expect(dialog.querySelector('.wallet-reading').textContent).toContain('Bekannte Allergien / Unverträglichkeiten');
+    expect(dialog.querySelector('.wallet-reading').textContent).toContain('Quellen und Grenzen');
+    const compactCard = dialog.querySelector('.wallet-print');
+    expect(compactCard.textContent).toContain('Gefaltet: 85 × 55 mm.');
+    expect(compactCard.textContent).toContain('Tatsächliche Grösse');
+    expect(compactCard.querySelector('a[href$="/unterstuetzung#dl-02"]')).not.toBeNull();
+    await user.click(within(dialog).getByRole('button', { name: 'Drucken / als PDF speichern' }));
+    expect(print).toHaveBeenCalledTimes(1);
+  });
+
   it.each([
     ['dl-01', 'Erste Orientierung als Angehörige'],
     ['dl-06', 'Umgang mit Manie'],

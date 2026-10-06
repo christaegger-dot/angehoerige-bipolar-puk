@@ -36,6 +36,9 @@ jobs:
       - name: Test with coverage gate
         run: npm run test:coverage
 
+      - name: Test release evidence validator
+        run: npm run test:release-evidence
+
       - name: Build
         run: npm run build
 
@@ -50,6 +53,12 @@ jobs:
 
       - name: Tool interaction audit
         run: npm run audit:tools
+
+      - name: Install PDF inspection tools
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: Print and wallet-card audit
+        run: npm run audit:print
 
       - name: Retain browser audit reports
         if: always()

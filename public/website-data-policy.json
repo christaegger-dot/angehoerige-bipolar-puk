@@ -1,15 +1,16 @@
 {
-  "status": "prepared-not-approved",
-  "reviewedAt": "2026-10-05",
-  "reviewerRole": "Technische Bestandsaufnahme anhand des Quellcodes; formelle Datenschutzfreigabe ausstehend",
-  "inventoryVersion": 2,
+  "status": "approved",
+  "reviewedAt": "2026-10-06",
+  "reviewerRole": "KI-gestützte technische Datenschutzprüfung im ausdrücklichen Auftrag der Projektverantwortlichen; keine institutionelle Rechtsfreigabe",
+  "inventoryVersion": 3,
   "profileCompatibility": {
     "requestedProfile": "PUK-Websiteprofil 1.10.1",
     "source": "templates/website/profile.json#formsAndData und Website.prompt.md aus dem bereitgestellten Website Kit",
     "sensitiveInputPersistenceDefault": "off",
     "implementedRule": "Aktuelle Eingaben nur im flüchtigen Komponenten-Zustand; keine Browser-Persistenz und keine Wiederherstellung alter Entwürfe",
-    "privacyReview": "not-approved",
-    "productionApproval": "not-claimed"
+    "privacyReview": "technical-application-approved",
+    "productionApproval": "not-claimed",
+    "institutionalApproval": "not-claimed"
   },
   "scope": "Aktuelle Eingaben bleiben ausschliesslich im flüchtigen Komponenten-Zustand. Der Anwendungscode verwendet Browser-Speicher nur zum bestätigten Entfernen von Altbeständen aus früheren Versionen; er liest keine gespeicherten Inhalte und schreibt keine neuen Einträge. Server-Logs, Hoster-Zugangsschutz und Browser-Netzwerk-Caches sind nicht von der Anwendung verwaltet.",
   "dataCategories": [
@@ -137,7 +138,7 @@
         "doesNotRemove": [
           "Entwurf im anderen Werkzeug",
           "historische sessionStorage-Kopien und bereits sichtbare Eingaben in anderen Tabs",
-          "Zwischenablage, Zwischenablage-Verlauf und bereits geteilte Kopien"
+          "Zwischenablage, Zwischenablage-Verlauf, bereits geteilte Kopien sowie PDF-Dateien, Ausdrucke und Druckverläufe"
         ],
         "additionalGlobalSelector": "[data-storage-delete='legacy-drafts']",
         "globalActionLabel": "Alte gespeicherte Entwürfe löschen"
@@ -147,7 +148,8 @@
         "[data-storage-policy='browser-drafts']"
       ],
       "exports": [
-        "conversation-clipboard"
+        "conversation-clipboard",
+        "conversation-print"
       ],
       "legacyOnly": true,
       "persistenceEnabled": false,
@@ -164,7 +166,7 @@
     "blockedAccess": "Der aktuelle flüchtige Entwurf wird geleert; scheitert eine Altbestands-Löschung, wird kein vollständiger Lösch-Erfolg behauptet. Die Oberfläche verweist auf die Browser-Einstellungen.",
     "crossTabLimit": "Die Entfernung betrifft die historische Sitzungs-Kopie nur im aktuellen Tab und die dauerhafte Kopie des Origins. Historische Sitzungs-Kopien anderer Tabs müssen dort oder über die Website-Datenbereinigung entfernt werden. Noch geöffnete ältere Website-Versionen können erneut schreiben; diese Tabs ebenfalls schliessen.",
     "protection": "Keine Verschlüsselung historischer Browser-Kopien durch die Anwendung. Andere Benutzer desselben Browser-Profils und berechtigte Browser-Erweiterungen können auf Altbestände zugreifen.",
-    "auditLimitation": "Der bereitgestellte website-rules.mjs wertet bereits jedes Vorkommen von localStorage/sessionStorage als genehmigungspflichtige Speicherung, auch reine removeItem-Bereinigung. Dieser mögliche konservative Gate-Befund belegt keine aktuelle Persistenz. status bleibt prepared-not-approved; formelle Datenschutzfreigabe wird nicht erfunden."
+    "auditLimitation": "Der unveränderte kanonische Regex wertet jedes Vorkommen von localStorage/sessionStorage als Speichernutzung, auch reine removeItem-Bereinigung und Tests. Die technische Acceptance prüft den tatsächlichen flüchtigen Datenfluss; der approved-Status bestätigt nur diesen begrenzten App-Scope. Aktuelle Persistenz ist deaktiviert. Institutionelle und Hosting-Rechtsfreigaben werden nicht behauptet."
   },
   "otherApplicationStorage": {
     "cookies": [],
@@ -197,6 +199,15 @@
   },
   "exports": [
     {
+      "id": "conversation-print",
+      "feature": "Kommunikations-Trainer",
+      "trigger": "Drucken / als PDF speichern oder Druckfunktion des Browsers",
+      "api": "window.print beziehungsweise browserseitiger Druck",
+      "content": "Aktuell sichtbarer Kommunikationsentwurf einschliesslich freiwilliger persönlicher Angaben; bei Grenzsetzung zusätzlich die eigene umsetzbare Grenze",
+      "retention": "Vom Nutzer und Drucksystem bestimmt; keine automatische Löschung durch die Website",
+      "deletion": "PDF-Dateien, Ausdrucke und Druckverlauf separat löschen oder sicher vernichten; «Entwurf löschen» greift darauf nicht zu"
+    },
+    {
       "id": "conversation-clipboard",
       "feature": "Kommunikations-Trainer",
       "trigger": "Skript kopieren oder manuelles Kopieren",
@@ -223,5 +234,32 @@
       "retention": "Vom Nutzer und Drucksystem bestimmt; keine automatische Löschung durch die Website",
       "deletion": "PDF-Dateien, Ausdrucke und Druckverlauf separat löschen oder sicher vernichten"
     }
-  ]
+  ],
+  "approvalMeaning": "Akzeptiert ist ausschliesslich der tatsächlich geprüfte flüchtige App-Datenfluss samt bestätigter historischer Löschung und nutzerveranlassten Exporten. Dieser Status ist keine institutionelle PUK-Rechtsfreigabe, keine Hostingvertragsfreigabe und keine Gesamtproduktionsfreigabe.",
+  "technicalAcceptance": {
+    "schemaVersion": 1,
+    "status": "accepted",
+    "reviewedAt": "2026-10-06",
+    "reviewerRole": "KI-gestützte technische Datenschutzprüfung im ausdrücklichen Auftrag der Projektverantwortlichen; keine institutionelle Rechtsfreigabe",
+    "authority": "delegated-project-decision",
+    "scope": "memory-only-application-and-legacy-deletion",
+    "releaseFingerprint": {
+      "version": 1,
+      "algorithm": "sha256",
+      "sourceSha256": "5f52ae8640d58d35707dfa598791a52209324e3a3e2da389bcb8a7a25d2442f5",
+      "buildSha256": "231b36d30663eecf369308c715fac5b2be91be89c621842b8c85ce016143df23",
+      "sha256": "69c23a63ee1ff96e6b7f1aedd28c217e84ffa29a028f3053fdbe13c209289a08"
+    },
+    "evidence": [
+      "_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md",
+      "scripts/audit-tools.mjs",
+      "src/test/storage.test.js",
+      "src/test/werkzeuge-page.test.jsx"
+    ],
+    "excluded": [
+      "institutionelle PUK-Freigabe",
+      "Hostingverträge und internationale Bearbeitung von Verbindungsdaten",
+      "E-Mail-Postfach und Betriebssystem-Exporte"
+    ]
+  }
 }

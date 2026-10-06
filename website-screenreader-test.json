@@ -1,7 +1,16 @@
 {
   "status": "prepared-not-executed",
+  "releaseEvidenceVersion": 1,
   "profileTarget": "PUK Websiteprofil 1.10.1",
-  "lastTechnicalPreparation": "2026-10-05",
+  "lastTechnicalPreparation": "2026-10-06",
+  "scope": "Alle 16 Routen, 9 Werkzeuge, 7 Handouts sowie Fokus-, Formular-, Lade- und Fehlerzustände; reale menschliche AT-Prüfung",
+  "releaseFingerprint": {
+    "version": 1,
+    "algorithm": "sha256",
+    "sourceSha256": "5f52ae8640d58d35707dfa598791a52209324e3a3e2da389bcb8a7a25d2442f5",
+    "buildSha256": "231b36d30663eecf369308c715fac5b2be91be89c621842b8c85ce016143df23",
+    "sha256": "69c23a63ee1ff96e6b7f1aedd28c217e84ffa29a028f3053fdbe13c209289a08"
+  },
   "testedWith": [],
   "manualApproval": null,
   "requiredSystems": [
@@ -18,28 +27,718 @@
     "320 and 360 px layouts and 200 percent text enlargement"
   ],
   "evidence": [],
-  "note": "Automated browser and axe checks do not establish a real VoiceOver/NVDA pass. Current tool inputs remain in memory only; historical browser drafts are removed without loading their contents. Record tester, date, system, outcomes and evidence after actual assistive-technology execution.",
-  "scope": "Konkrete React-SPA mit sämtlichen Routen, Formular- und Fehlerzuständen",
   "runs": [
     {
+      "id": "voiceover-real-run",
       "assistiveTechnology": "VoiceOver",
       "browser": "Safari",
-      "platform": "macOS oder iOS",
+      "platform": "macOS",
+      "assistiveTechnologyVersion": "",
+      "browserVersion": "",
+      "platformVersion": "",
       "testedAt": null,
+      "performedBy": "human",
       "testerRole": null,
+      "testerInitials": null,
       "result": "pending",
-      "evidence": []
+      "releaseFingerprintSha256": "69c23a63ee1ff96e6b7f1aedd28c217e84ffa29a028f3053fdbe13c209289a08",
+      "evidence": [],
+      "routeChecks": [
+        {
+          "route": "/",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/werkzeuge",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/notfall",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/unterstuetzung",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/1",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/2",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/3",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/4",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/5",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/6",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/7",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/impressum",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/datenschutz",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/barrierefreiheit",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/schweigepflicht",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        }
+      ],
+      "toolChecks": [
+        {
+          "tool": "selbsttest",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "phasenverlauf",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "eisberg",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "krisenplan",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "kommunikation",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "saeulen",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "ee",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "belastungsverlauf",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "atem",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        }
+      ],
+      "handoutChecks": [
+        {
+          "handout": "dl-01",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-02",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-04",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-05",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-06",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-07",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-08",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        }
+      ],
+      "scenarioChecks": [
+        {
+          "scenario": "skip-link-and-landmarks",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "route-and-anchor-focus",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "back-forward-navigation",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "module-sequence-and-source-disclosures",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "fictional-example-and-graph-alternatives",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "crisis-contact-links",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "dialog-focus-trap-escape-return",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "crisisplan-labels-and-print",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "communication-form-validation",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "communication-result-edit-copy",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "communication-copy-failure",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "storage-notices-and-memory-only",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "legacy-deletion-confirm-cancel",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "legacy-deletion-failure",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "reflection-results-and-announcements",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "tabs-keyboard-and-selected-state",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "breathing-live-announcements-and-stop",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "handout-dialog-sources-print",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "handout-return-module-focus",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "faq-disclosures",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "page-loading-and-recovery",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "tool-loading-and-recovery",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "narrow-reflow-and-text-resize",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        }
+      ]
     },
     {
+      "id": "nvda-real-run",
       "assistiveTechnology": "NVDA",
-      "browser": "Firefox oder Chrome",
+      "browser": "Firefox",
       "platform": "Windows",
+      "assistiveTechnologyVersion": "",
+      "browserVersion": "",
+      "platformVersion": "",
       "testedAt": null,
+      "performedBy": "human",
       "testerRole": null,
+      "testerInitials": null,
       "result": "pending",
-      "evidence": []
+      "releaseFingerprintSha256": "69c23a63ee1ff96e6b7f1aedd28c217e84ffa29a028f3053fdbe13c209289a08",
+      "evidence": [],
+      "routeChecks": [
+        {
+          "route": "/",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/werkzeuge",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/notfall",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/unterstuetzung",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/1",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/2",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/3",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/4",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/5",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/6",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/module/7",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/impressum",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/datenschutz",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/barrierefreiheit",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "route": "/schweigepflicht",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        }
+      ],
+      "toolChecks": [
+        {
+          "tool": "selbsttest",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "phasenverlauf",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "eisberg",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "krisenplan",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "kommunikation",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "saeulen",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "ee",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "belastungsverlauf",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "tool": "atem",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        }
+      ],
+      "handoutChecks": [
+        {
+          "handout": "dl-01",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-02",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-04",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-05",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-06",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-07",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "handout": "dl-08",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        }
+      ],
+      "scenarioChecks": [
+        {
+          "scenario": "skip-link-and-landmarks",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "route-and-anchor-focus",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "back-forward-navigation",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "module-sequence-and-source-disclosures",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "fictional-example-and-graph-alternatives",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "crisis-contact-links",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "dialog-focus-trap-escape-return",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "crisisplan-labels-and-print",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "communication-form-validation",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "communication-result-edit-copy",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "communication-copy-failure",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "storage-notices-and-memory-only",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "legacy-deletion-confirm-cancel",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "legacy-deletion-failure",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "reflection-results-and-announcements",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "tabs-keyboard-and-selected-state",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "breathing-live-announcements-and-stop",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "handout-dialog-sources-print",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "handout-return-module-focus",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "faq-disclosures",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "page-loading-and-recovery",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "tool-loading-and-recovery",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        },
+        {
+          "scenario": "narrow-reflow-and-text-resize",
+          "result": "pending",
+          "observation": "",
+          "evidence": []
+        }
+      ]
     }
   ],
   "issues": [],
-  "schemaReference": "scripts/puk-audit/vendor/templates/website/website-screenreader-test.example.json"
+  "schemaReference": "scripts/puk-audit/vendor/templates/website/website-screenreader-test.example.json",
+  "instructionsFile": "_dev/SCREENREADER-RELEASE-TEST.md",
+  "note": "Nur nach tatsächlich ausgeführten menschlichen Tests ausfüllen. Rollen und Initialen, keine Namen oder persönlichen Gesundheitsdaten. Automatische Tests ersetzen keine AT-Läufe."
 }

@@ -31,11 +31,11 @@ function BarrierefreiheitPage() {
             <ul>
               <li><strong>Tastaturbedienung</strong>: Navigation, Werkzeuge, Modulübersicht und Orientierungsfragen sind für die Bedienung ohne Maus ausgelegt. Ein sichtbarer Rahmen zeigt, welches Element gerade ausgewählt ist.</li>
               <li><strong>Unterstützung für Screenreader</strong>: Überschriften, Links und Bedienelemente sind im HTML gekennzeichnet und beschriftet. Ein Sprunglink führt zum Hauptinhalt. In Dialogen wird der Tastaturfokus gezielt geführt.</li>
-              <li><strong>Kontrast</strong>: Zwischen Text und Hintergrund beträgt das Kontrastverhältnis mindestens 4.5:1, bei Bedienelementen mindestens 3:1.</li>
+              <li><strong>Kontrast</strong>: Für normalen Text gilt der WCAG-AA-Zielwert 4.5:1. Die intern geprüften Eingabefelder im Krisenplan haben auch ohne Fokus eine Begrenzung mit mindestens 3:1 zum Hintergrund. Eine vollständige externe Kontrastprüfung steht noch aus.</li>
               <li><strong>Vergrösserung</strong>: Die Darstellung bleibt bei 200 % Zoom nutzbar. Die Schriftgrössen sind so angegeben, dass sie sich vergrössern lassen.</li>
               <li><strong>Bedienflächen</strong>: Bei Schaltflächen und eigenständigen Bedienelementen achten wir auf ausreichend grosse Bedienflächen. Eine vollständige Prüfung mit Hilfsmitteln steht noch aus.</li>
-              <li><strong>Bewegung</strong>: Es gibt keine automatisch startenden Videos oder Audios. Das PUK-Logo wird beim ersten Laden kurz animiert und danach statisch angezeigt; bei reduzierter Bewegung bleibt es statisch.</li>
-              <li><strong>Druckfassungen</strong>: Werkzeuge und Handouts können als PDF gespeichert und gedruckt werden.</li>
+              <li><strong>Bewegung</strong>: Es gibt keine automatisch startenden Videos oder Audios. Das offizielle PUK-Logo wird statisch angezeigt. Bei reduzierter Bewegung werden Übergänge und Einblendeffekte abgeschaltet.</li>
+              <li><strong>Druckfassungen</strong>: Seiten, Handouts, der Krisenplan und der ausgefüllte Kommunikationsentwurf können über die Druckfunktion des Browsers gedruckt oder als PDF gespeichert werden. Für die Notfallkarte gibt es eine kompakte Druckfassung zum Falten.</li>
             </ul>
 
             <h2>Bekannte Einschränkungen</h2>

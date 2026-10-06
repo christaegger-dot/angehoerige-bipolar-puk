@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "dist"
 
+[context.production]
+  command = "npm run build && npm run audit:release:evidence && npx playwright install --with-deps chromium && node scripts/puk-audit/run.mjs --production"
+
 [[headers]]
   for = "/*"
   [headers.values]

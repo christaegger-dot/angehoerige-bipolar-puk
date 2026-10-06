@@ -55,9 +55,6 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
 .nav-brand-mark::before { content: none; }
 .nav-logo { flex: 0 0 auto; }
 .nav-logo img { display: block; width: var(--web-logo-width); height: auto; }
-[data-motion="logo-statisch"] { display: none; }
-.nav-logo[data-logo-animation="stopped"] [data-motion="logo-animiert"] { display: none; }
-.nav-logo[data-logo-animation="stopped"] [data-motion="logo-statisch"] { display: block; }
 .nav-links { font-size: 1.0625rem; gap: 4px 12px; }
 .nav-links a { color: var(--puk-black-100); font-size: inherit; font-weight: var(--fw-regular); overflow-wrap: anywhere; }
 .nav-links a:hover { color: var(--puk-blue-100); text-decoration: underline; text-underline-offset: .22em; }
@@ -65,7 +62,7 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
 .nav-links a.active::after { content: none; }
 .nav-sos { color: var(--puk-red-text) !important; }
 .nav-sos:hover { color: var(--puk-black-100) !important; }
-.crisis-bar { background: var(--puk-black-100); color: var(--puk-white); font-size: .9375rem; padding: 4px 20px; }
+.crisis-bar { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0 20px; background: var(--puk-black-100); color: var(--puk-white); font-size: .9375rem; padding: 4px 20px; }
 .crisis-bar a { display: inline-flex; align-items: center; min-height: var(--web-touch-target); color: var(--puk-white); }
 .hero {
   background: var(--surface-brand);
@@ -155,10 +152,6 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
   .hero-actions { align-items: stretch; }
   .hero-actions > a { width: 100%; }
   .module-body section { scroll-margin-top: 16px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  [data-motion="logo-animiert"] { display: none !important; }
-  [data-motion="logo-statisch"] { display: block !important; }
 }
 @media print {
   .hero { background: var(--puk-white); color: var(--puk-black-100); --ink: var(--puk-black-100); --ink-soft: var(--puk-black-100); --ink-mute: var(--puk-black-100); --accent: var(--puk-blue-100); }

@@ -2,12 +2,12 @@
 
 import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
 import { navHandler, navHref } from './nav-handler.js';
-import { Ill } from './illustrations.jsx';
+import './notfall.css';
 
 function NotfallPage({ onNavigate }) {
   const guides = [
     {
-      cls: 'red', letter: 'A',
+      id: 'suizid', cls: 'red', letter: 'A',
       title: 'Suizidale Krise',
       sub: 'Konkrete Pläne, Abschiedsverhalten, akute Lebensgefahr',
       do: SUICIDE_SAFETY,
@@ -21,7 +21,7 @@ function NotfallPage({ onNavigate }) {
       sos: 'Bei Lebensgefahr: 144. Bei Telefonberatung in der Nacht: 143.',
     },
     {
-      cls: 'red', letter: 'M',
+      id: 'manie', cls: 'red', letter: 'M',
       title: 'Akute Manie',
       sub: 'Schlaflosigkeit, Grössenideen, riskantes Verhalten',
       do: 'Reize reduzieren — Licht dimmen, Lautstärke runter, weniger Menschen im Raum. Bei starker Anspannung kurze Sätze verwenden und lange Auseinandersetzungen vermeiden.',
@@ -35,9 +35,9 @@ function NotfallPage({ onNavigate }) {
       sos: 'Klinik anrufen: PUK Notfall 058 384 20 00. Bei Gewalt oder Gefahr: 144 oder 117.',
     },
     {
-      cls: 'red', letter: 'P',
+      id: 'psychose', cls: 'red', letter: 'P',
       title: 'Psychotische Episode',
-      sub: 'Realitätsverlust, Wahnvorstellungen, akute Verwirrung',
+      sub: 'Zum Beispiel Wahnvorstellungen oder Stimmenhören',
       do: 'Sprechen Sie ruhig, in einfachen Sätzen. Bestätigen Sie weder Wahn noch widersprechen Sie heftig — bleiben Sie bei der eigenen Wahrnehmung.',
       bullets: [
         'Beispielsatz: «Ich sehe das anders, aber ich verstehe, dass es für dich gerade real ist.»',
@@ -49,7 +49,7 @@ function NotfallPage({ onNavigate }) {
       sos: 'PUK Notfall 058 384 20 00. Bei Gewalt: 117 / 144.',
     },
     {
-      cls: 'blue', letter: 'D',
+      id: 'depression', cls: 'blue', letter: 'D',
       title: 'Tiefe depressive Krise',
       sub: 'Bewegungslosigkeit, anhaltende Suizidgedanken, völliger Rückzug',
       do: 'Behandelnde Stelle oder Notfalldienst kontaktieren. Wenn die Person nicht reagiert, kaum trinkt oder bewegungslos bleibt, braucht sie dringend medizinische Einschätzung; bei unmittelbarer Gefahr 144. Kleine Alltagshilfen nur anbieten, wenn sie ansprechbar ist und dies möglich ist.',
@@ -63,7 +63,7 @@ function NotfallPage({ onNavigate }) {
       sos: 'Bei Lebensgefahr 144 · Bei nächtlicher Belastung 143 · PUK Notfall 058 384 20 00.',
     },
     {
-      cls: 'amber', letter: 'G',
+      id: 'gewalt', cls: 'amber', letter: 'G',
       title: 'Drohende Gewalt',
       sub: 'Aggressives Verhalten, Bedrohung, Eskalation',
       do: 'Eigene Sicherheit zuerst. Räumen Sie das Feld, wenn nötig. Holen Sie Hilfe von aussen.',
@@ -79,16 +79,13 @@ function NotfallPage({ onNavigate }) {
   ];
 
   return (
-    <>
-      <header className="notfall-hero">
+    <div className="notfall-page">
+      <header className="notfall-hero notfall-compact-hero">
         <div className="col">
           <div className="breadcrumb"><a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a><span className="sep">/</span><span>SOS Krise</span></div>
-          <div className="notfall-illu"><Ill.Crisis size={180} /></div>
-          <span className="kicker">Notfallweg</span>
           <h1>SOS Krise — wenn jetzt nichts anderes Vorrang hat.</h1>
-          <p className="lede" style={{color: 'var(--ink-soft)', fontStyle: 'normal'}}>In akuten Lagen hat dieser Weg Vorrang. Sie müssen hier nichts lesen, was nicht jetzt hilft.</p>
-
-          <div className="numbers-row">
+          <p className="notfall-scope">Rufnummern in der Schweiz · direkt anrufen</p>
+          <div className="numbers-row notfall-immediate-calls">
             <a className="number-tile" href="tel:144">
               <span className="number-num">144</span>
               <span className="number-label">Sanität</span>
@@ -102,21 +99,41 @@ function NotfallPage({ onNavigate }) {
             <a className="number-tile" href="tel:143">
               <span className="number-num">143</span>
               <span className="number-label">Dargebotene Hand</span>
-              <span className="number-sub">Anonym · 24 Stunden</span>
+              <span className="number-sub">Anonyme Beratung · 24 Stunden</span>
             </a>
           </div>
+          <p className="notfall-local-contact">
+            <a href="tel:+41583842000">058 384 20 00 · PUK Notfall Erwachsene</a>
+            <span>24 Stunden · ab 18 Jahren</span>
+          </p>
+          <nav className="notfall-jump-nav" aria-label="Passende Krisensituation">
+            <p>Direkt zum passenden Abschnitt</p>
+            <ul>
+              {guides.map(g => (
+                <li key={g.id}><a href={navHref('notfall', g.id)} onClick={navHandler('notfall', onNavigate, g.id)}>{g.title}</a></li>
+              ))}
+              <li><a href={navHref('notfall', 'verwirrung')} onClick={navHandler('notfall', onNavigate, 'verwirrung')}>Neue starke Verwirrung</a></li>
+              <li><a href={navHref('notfall', 'unsicher')} onClick={navHandler('notfall', onNavigate, 'unsicher')}>Unsicher, ob Notfall?</a></li>
+              <li><a href={navHref('notfall', 'weitere-kontakte')} onClick={navHandler('notfall', onNavigate, 'weitere-kontakte')}>Weitere Kontakte</a></li>
+            </ul>
+          </nav>
         </div>
       </header>
 
-      <section style={{paddingTop: 56}}>
+      <section className="notfall-guidance">
         <div className="col">
+          <section className="notfall-confusion" id="verwirrung" aria-labelledby="verwirrung-title">
+            <h2 id="verwirrung-title">Neue starke Verwirrung</h2>
+            <p>Neue starke Verwirrung kann auch körperliche oder medikamentöse Ursachen haben — auch bei einer bekannten bipolaren Störung. Lassen Sie sie umgehend medizinisch abklären. Kontaktieren Sie die behandelnde Stelle oder einen medizinischen Notfalldienst. Sie müssen die Ursache nicht selbst bestimmen.</p>
+            <p><strong>Wenn die Person nicht reagiert oder unmittelbare Gefahr besteht:</strong> <a href="tel:144">144 anrufen</a>.</p>
+          </section>
           <span className="kicker">Was tun, wenn …</span>
           <h2 style={{marginBottom: 12}}>Fünf typische Krisensituationen — mit konkreten Schritten.</h2>
           <p style={{color: 'var(--ink-soft)', marginBottom: 24}}>Lesen Sie den Abschnitt, der gerade zutrifft. Alle ersten Schritte und Sicherheitshinweise sind direkt sichtbar.</p>
 
           <div className="guides">
             {guides.map((g, i) => (
-                <section key={g.letter} className={`guide ${g.cls} open`} aria-labelledby={`guide-title-${i}`}>
+                <section key={g.id} id={g.id} className={`guide ${g.cls} open`} aria-labelledby={`guide-title-${i}`}>
                   <div className="guide-head">
                     <span className="guide-letter" aria-hidden="true">{g.letter}</span>
                     <div>
@@ -125,6 +142,7 @@ function NotfallPage({ onNavigate }) {
                     </div>
                   </div>
                   <div className="guide-body">
+                    {g.id === 'psychose' && <p>Bei neuer starker Verwirrung gilt der <a href={navHref('notfall', 'verwirrung')} onClick={navHandler('notfall', onNavigate, 'verwirrung')}>Hinweis zur umgehenden medizinischen Abklärung</a>.</p>}
                     <div className="guide-do"><strong>Erster Schritt: </strong>{g.do}</div>
                     <ul>
                       {g.bullets.map((b, j) => <li key={j}>{b}</li>)}
@@ -136,9 +154,9 @@ function NotfallPage({ onNavigate }) {
             ))}
           </div>
 
-          <div className="grauzone">
+          <section className="grauzone" id="unsicher" aria-labelledby="unsicher-title">
             <span className="kicker">Grauzone</span>
-            <h2>Wenn unklar ist, ob es schon ein Notfall ist.</h2>
+            <h2 id="unsicher-title">Wenn unklar ist, ob es schon ein Notfall ist.</h2>
             <div className="grauzone-grid">
               <div className="grauzone-card">
                 <div className="grauzone-card-quote">«Sie schläft seit drei Nächten kaum.»</div>
@@ -157,17 +175,19 @@ function NotfallPage({ onNavigate }) {
               </div>
             </div>
             <p className="grauzone-rule">Im Zweifel zählt: Lieber einmal zu früh anrufen als einmal zu spät.</p>
-          </div>
+          </section>
 
-          <h2>Weitere Nummern</h2>
-          <div className="numbers-row" style={{marginTop: 24}}>
-            <a className="number-tile" href="tel:147"><span className="number-num">147</span><span className="number-label">Pro Juventute</span><span className="number-sub">Kinder &amp; Jugendliche</span></a>
-            <a className="number-tile" href="tel:+41583842000"><span className="number-num">058 384 20 00</span><span className="number-label">PUK Notfall Erwachsene</span><span className="number-sub">24 h · ab 18 Jahren</span></a>
-            <a className="number-tile" href="tel:+41583843800"><span className="number-num">058 384 38 00</span><span className="number-label">Fachstelle Angehörige</span><span className="number-sub">Werktags · PUK</span></a>
-          </div>
+          <section id="weitere-kontakte" aria-labelledby="weitere-kontakte-title">
+            <h2 id="weitere-kontakte-title">Weitere Nummern</h2>
+            <div className="numbers-row" style={{marginTop: 24}}>
+              <a className="number-tile" href="tel:147"><span className="number-num">147</span><span className="number-label">Pro Juventute</span><span className="number-sub">Kinder &amp; Jugendliche</span></a>
+              <a className="number-tile" href="tel:+41583842000"><span className="number-num">058 384 20 00</span><span className="number-label">PUK Notfall Erwachsene</span><span className="number-sub">24 h · ab 18 Jahren</span></a>
+              <a className="number-tile" href="tel:+41583843800"><span className="number-num">058 384 38 00</span><span className="number-label">Fachstelle Angehörige</span><span className="number-sub">Werktags · PUK</span></a>
+            </div>
+          </section>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
