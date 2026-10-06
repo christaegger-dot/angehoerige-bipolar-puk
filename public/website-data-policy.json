@@ -2,7 +2,7 @@
   "status": "approved",
   "reviewedAt": "2026-10-06",
   "reviewerRole": "KI-gestützte technische Datenschutzprüfung im ausdrücklichen Auftrag der Projektverantwortlichen; keine institutionelle Rechtsfreigabe",
-  "inventoryVersion": 3,
+  "inventoryVersion": 4,
   "profileCompatibility": {
     "requestedProfile": "PUK-Websiteprofil 1.10.1",
     "source": "templates/website/profile.json#formsAndData und Website.prompt.md aus dem bereitgestellten Website Kit",
@@ -12,12 +12,12 @@
     "productionApproval": "not-claimed",
     "institutionalApproval": "not-claimed"
   },
-  "scope": "Aktuelle Eingaben bleiben ausschliesslich im flüchtigen Komponenten-Zustand. Der Anwendungscode verwendet Browser-Speicher nur zum bestätigten Entfernen von Altbeständen aus früheren Versionen; er liest keine gespeicherten Inhalte und schreibt keine neuen Einträge. Server-Logs, Hoster-Zugangsschutz und Browser-Netzwerk-Caches sind nicht von der Anwendung verwaltet.",
+  "scope": "Aktuelle Werkzeug-Eingaben bleiben ausschliesslich im flüchtigen Komponenten-Zustand. Web-Storage (localStorage/sessionStorage) wird nur zum bestätigten Entfernen von Altbeständen aus früheren Versionen verwendet; deren Inhalte werden nicht gelesen und es werden keine neuen Einträge geschrieben. Der Browser-Verlauf enthält getrennt davon eine lokale Eintragskennung und numerische Scrollpositionen für Zurück/Vorwärts, keine Werkzeug-Eingaben. Server-Logs, Hoster-Zugangsschutz und Browser-Netzwerk-Caches sind nicht von der Anwendung verwaltet.",
   "dataCategories": [
     "Aktuelle freiwillige Krisenplan- und Kommunikations-Eingaben können Namen, Kontaktdaten, Gesundheits-, Beziehungs- und Betreuungsangaben enthalten; sie werden nicht im Browser-Speicher persistiert",
     "Historische Browser-Kopien können noch die früher gespeicherten Krisenplan-Einträge und Kommunikations-Entwürfe mit besonders schützenswerten Gesundheitsdaten sowie Angaben zu Angehörigen und Dritten enthalten"
   ],
-  "retention": "Aktuelle Eingaben: nur während der geöffneten Übung im flüchtigen Zustand; keine Wiederherstellung nach Schliessen oder Neuladen. Historische sessionStorage-Kopien: Ende der jeweiligen Tab-Sitzung, wobei Browser-Wiederherstellung diese verlängern kann. Historische localStorage-Kopien: keine frühere automatische Löschfrist; bis bestätigter Löschaktion oder manueller Entfernung der Website-Daten. Es werden keine neuen Browser-Kopien angelegt.",
+  "retention": "Aktuelle Eingaben: nur während der geöffneten Übung im flüchtigen Zustand; keine Wiederherstellung nach Schliessen oder Neuladen. Historische sessionStorage-Kopien: Ende der jeweiligen Tab-Sitzung, wobei Browser-Wiederherstellung diese verlängern kann. Historische localStorage-Kopien: keine frühere automatische Löschfrist; bis bestätigter Löschaktion oder manueller Entfernung der Website-Daten. Es werden keine neuen Werkzeug-Entwürfe im Browser angelegt. Navigationspositionen gehören zum Verlauf des jeweiligen Tabs; der Browser kann ihn bei Sitzungswiederherstellung erhalten.",
   "deleteMechanism": "Unter /werkzeuge «Alte gespeicherte Entwürfe löschen» bestätigen, um beide historischen Werkzeug-Schlüssel aus sessionStorage des aktuellen Tabs und localStorage dieses Origins zu entfernen. Alternativ im geöffneten Werkzeug «Entwurf löschen» bestätigen; dies entfernt nur dessen historische Kopien und leert den aktuellen flüchtigen Entwurf. Bei blockierter Löschung wird kein vollständiger Erfolg behauptet. Kopien in anderen Tabs und Exporte werden gesondert bereinigt. Alternative: Website-Daten dieser Domain in den Browser-Einstellungen löschen.",
   "transmission": "verified-none",
   "transmissionEvidence": {
@@ -195,6 +195,22 @@
         "bitte",
         "grenze"
       ]
+    },
+    "navigationHistory": {
+      "api": "window.history.state",
+      "stateKey": "__pukNavigation",
+      "purpose": "Numerische Leseposition für Zurück/Vorwärts nach dem Laden einer Seite wiederherstellen",
+      "fields": [
+        "key (lokale Eintragskennung)",
+        "position.x (Pixel)",
+        "position.y (Pixel)"
+      ],
+      "sensitiveUserContent": false,
+      "toolInputIncluded": false,
+      "transmission": "none",
+      "retention": "Verlauf des jeweiligen Tabs; Browser können ihn bei Sitzungswiederherstellung erhalten",
+      "deletion": "Tab-Verlauf beziehungsweise Browser-Verlauf über die Browser-Funktionen bereinigen; keine Werkzeug-Entwürfe enthalten",
+      "sourceFile": "src/use-browser-navigation.js"
     }
   },
   "exports": [
@@ -235,7 +251,7 @@
       "deletion": "PDF-Dateien, Ausdrucke und Druckverlauf separat löschen oder sicher vernichten"
     }
   ],
-  "approvalMeaning": "Akzeptiert ist ausschliesslich der tatsächlich geprüfte flüchtige App-Datenfluss samt bestätigter historischer Löschung und nutzerveranlassten Exporten. Dieser Status ist keine institutionelle PUK-Rechtsfreigabe, keine Hostingvertragsfreigabe und keine Gesamtproduktionsfreigabe.",
+  "approvalMeaning": "Akzeptiert ist ausschliesslich der tatsächlich geprüfte flüchtige Werkzeug-Datenfluss samt bestätigter historischer Löschung, nutzerveranlassten Exporten und lokalen numerischen Navigationspositionen ohne Werkzeug-Inhalte. Dieser Status ist keine institutionelle PUK-Rechtsfreigabe, keine Hostingvertragsfreigabe und keine Gesamtproduktionsfreigabe.",
   "technicalAcceptance": {
     "schemaVersion": 1,
     "status": "accepted",
@@ -246,9 +262,9 @@
     "releaseFingerprint": {
       "version": 1,
       "algorithm": "sha256",
-      "sourceSha256": "bc0ce4b1ab1e0d09f3a81d55531f8fe417caec8f251da118c0d724b39692b171",
-      "buildSha256": "6f61c10c303c8acdc7f39eca006f1dbe43c0c568fe97476c403948683314607f",
-      "sha256": "ab3a907b70b3277362cecd2f8c438117857be185c8d4eb9e04e1652f3fedfbf2"
+      "sourceSha256": "73ef5dbf739ce927edeefb89e39e7f46dfccf53f73a8bbd4c579590092dec02b",
+      "buildSha256": "da68c152fbae8a64f69249da90342192b6e7721b007542b70d6086f0cf04bf38",
+      "sha256": "3f1c61a306a622966ecd2fb8b2bdf630aae53aac0726c0cfe4ffad6149ff7afb"
     },
     "evidence": [
       "_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md",

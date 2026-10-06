@@ -21,6 +21,7 @@ describe('App navigation', () => {
 
     await user.click(screen.getByRole('link', { name: 'Module' }));
     await screen.findByRole('heading', { level: 1, name: /Alle sieben Module im Überblick/i });
+    expect(screen.getByRole('link', { name: 'Module', exact: true })).toHaveAttribute('aria-current', 'page');
     expect(screen.queryByRole('link', { name: '144 · Sanität' })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: '117 · Polizei' })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: '143 · Gespräch' })).not.toBeInTheDocument();
@@ -67,7 +68,8 @@ describe('App navigation', () => {
     render(<App />);
 
     expect(await screen.findByRole('heading', { level: 1, name: /schweigepflicht bei angehörigen.*gesprächen/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Module' })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: 'Module' })).not.toHaveAttribute('aria-current');
+    expect(screen.getByRole('link', { name: 'Module' })).toHaveClass('active');
     expect(document.title).toMatch(/schweigepflicht bei angehörigengesprächen/i);
     expect(document.querySelector('meta[name="description"]')).toHaveAttribute(
       'content',

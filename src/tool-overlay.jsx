@@ -3,6 +3,27 @@ import React from 'react';
 const FOCUSABLE_SELECTOR =
   'button:not([disabled]):not([tabindex="-1"]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
+function revealFocusedField(event) {
+  const field = event.target;
+  if (!field.matches('input, select, textarea')) return;
+
+  const card = event.currentTarget;
+  const fieldRect = field.getBoundingClientRect();
+  const visibleHeight = card.clientHeight;
+  if (!visibleHeight || fieldRect.height > visibleHeight) return;
+
+  // Native focus can leave a partly visible textarea clipped in a short dialog.
+  // Reveal only fitting fields, without scrolling the page or adding motion.
+  const top = card.getBoundingClientRect().top + card.clientTop;
+  const margin = Math.min(12, (visibleHeight - fieldRect.height) / 2);
+  const bottom = top + visibleHeight;
+  if (fieldRect.top < top + margin) {
+    card.scrollTop += fieldRect.top - top - margin;
+  } else if (fieldRect.bottom > bottom - margin) {
+    card.scrollTop += fieldRect.bottom - bottom + margin;
+  }
+}
+
 function useToolOverlay(onClose) {
   React.useEffect(() => {
     const previousFocus = document.activeElement;
@@ -66,7 +87,7 @@ function ToolOverlay({ onClose, ariaLabel, cardClass = '', overlayClass = '', no
   return (
     <div className={overlayCls} role="dialog" aria-modal="true" aria-label={ariaLabel}>
       <button className={`tool-overlay-bg${printClass}`} onClick={onClose} aria-label="Dialog schliessen" tabIndex={-1}></button>
-      <div className={cardCls}>
+      <div className={cardCls} onFocus={revealFocusedField}>
         <button className={`tool-close${printClass}`} onClick={onClose} aria-label="Dialog schliessen">×</button>
         {children}
       </div>

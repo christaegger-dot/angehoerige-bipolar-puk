@@ -1,4 +1,3 @@
-import { scrollToSection } from './anchor-scroll.js';
 // Modul 2 — Die eigene Belastung verstehen · Volles Lese-Layout
 // Zentrales Bild: Eisberg-Figur (sichtbar / verborgen) in der Bildmarke der Seite.
 
@@ -110,13 +109,13 @@ function Hypervigilanz() {
         <rect x="0" y="0" width="22" height="32" />
         <circle cx="17" cy="16" r="1.2" fill="var(--ink)" />
       </g>
-      <text x="60" y="108" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0">Tür</text>
+      <text x="71" y="128" fontFamily="var(--sans)" fontSize="28" fill="var(--ink)" textAnchor="middle">Tür</text>
 
       {/* Telefon oben rechts */}
       <g transform="translate(440 50)" stroke="var(--ink)" strokeWidth="1" fill="none" strokeLinejoin="round">
         <path d="M 4 4 Q 4 0 8 2 L 14 8 Q 16 10 14 14 L 12 18 Q 16 24 22 28 L 26 26 Q 30 24 32 26 L 38 32 Q 40 36 36 36 Q 18 36 4 22 Q 0 8 4 4 Z" />
       </g>
-      <text x="450" y="100" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" textAnchor="middle">Anruf</text>
+      <text x="450" y="118" fontFamily="var(--sans)" fontSize="28" fill="var(--ink)" textAnchor="middle">Anruf</text>
 
       {/* Uhr Mitte rechts */}
       <g transform="translate(440 180)" stroke="var(--ink)" strokeWidth="1" fill="none">
@@ -124,26 +123,26 @@ function Hypervigilanz() {
         <line x1="12" y1="12" x2="12" y2="4" strokeWidth="1" />
         <line x1="12" y1="12" x2="18" y2="14" strokeWidth="1" />
       </g>
-      <text x="452" y="218" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" textAnchor="middle">Zeit</text>
+      <text x="452" y="239" fontFamily="var(--sans)" fontSize="28" fill="var(--ink)" textAnchor="middle">Zeit</text>
 
       {/* Tablette unten rechts */}
       <g transform="translate(400 295)" stroke="var(--ink)" strokeWidth="1" fill="none">
         <ellipse cx="12" cy="6" rx="14" ry="6" />
         <path d="M 12 0 L 12 12" />
       </g>
-      <text x="412" y="322" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" textAnchor="middle">Medikation</text>
+      <text x="412" y="342" fontFamily="var(--sans)" fontSize="28" fill="var(--ink)" textAnchor="middle">Medikation</text>
 
       {/* Schlaf-Indikator unten links — Mond */}
       <g transform="translate(70 270)" stroke="var(--ink)" strokeWidth="1" fill="none">
         <path d="M 18 4 Q 6 6 6 16 Q 6 26 20 26 Q 12 22 12 16 Q 12 8 18 4 Z" />
       </g>
-      <text x="78" y="310" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0" textAnchor="middle">Schlaf</text>
+      <text x="78" y="330" fontFamily="var(--sans)" fontSize="28" fill="var(--ink)" textAnchor="middle">Schlaf</text>
 
       {/* Stimme links Mitte — Sprechblasen-Welle */}
       <g transform="translate(50 175)" stroke="var(--ink)" strokeWidth="1" fill="none">
         <path d="M 0 8 Q 0 0 8 0 L 18 0 Q 26 0 26 8 L 26 14 Q 26 22 18 22 L 10 22 L 4 28 L 6 22 Q 0 22 0 14 Z" />
       </g>
-      <text x="38" y="218" fontFamily="var(--sans)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0">Tonfall</text>
+      <text x="63" y="239" fontFamily="var(--sans)" fontSize="28" fill="var(--ink)" textAnchor="middle">Tonfall</text>
 
       {/* Zentrale Figur — sehr reduziert, derselbe Stil wie Werkzeug-Illus */}
       <g transform="translate(260 180)">
@@ -228,8 +227,6 @@ function Modul2Page({ onNavigate }) {
     { id: 's8', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = scrollToSection;
-
   return (
     <>
       <div className="reading-progress" style={{width: `${progress}%`}}></div>
@@ -260,7 +257,7 @@ function Modul2Page({ onNavigate }) {
               <ol>
                 {sections.map((s, i) => (
                   <li key={s.id}>
-                    <a href={`#${s.id}`} onClick={(e) => { e.preventDefault(); scrollTo(s.id); }}>
+                    <a href={navHref('modul2', s.id)} onClick={navHandler('modul2', onNavigate, s.id)}>
                       <span className="toc-num">{(i + 1).toString().padStart(2, '0')}</span>
                       {s.label}
                     </a>

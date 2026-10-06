@@ -1369,17 +1369,16 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
         <div id={panelId} role="tabpanel" aria-labelledby={`${panelId}-${active}`} tabIndex={0}>
         {active === 'misch' ? (
           <figure className="phasen-figure">
+            <p className="phasen-legend"><strong>Durchgezogene Linie:</strong> Erhöhte Aktivierung / Getriebenheit. <strong>Gestrichelte Linie:</strong> Depressive Stimmung / Hoffnungslosigkeit. Beide zeigen denselben Zeitraum von links nach rechts.</p>
             <svg viewBox="0 0 420 200" className="phasen-svg" role="img" aria-label="Fiktives Beispiel: Erhöhte Aktivierung und depressive Stimmung bestehen gleichzeitig und werden als zwei getrennte Linien dargestellt.">
-              <text x="10" y="20" fontFamily="var(--sans)" fontSize="11" fill="var(--accent)">Erhöhte Aktivierung / Getriebenheit</text>
               <path d="M 10,65 Q 100,40 190,60 T 400,50" fill="none" stroke="var(--accent)" strokeWidth="2.5" />
-              <text x="10" y="120" fontFamily="var(--sans)" fontSize="11" fill="var(--ink)">Depressive Stimmung / Hoffnungslosigkeit</text>
               <path d="M 10,160 Q 100,140 190,160 T 400,150" fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeDasharray="6 3" />
-              <text x="400" y="192" textAnchor="end" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)">Gleicher Zeitraum →</text>
             </svg>
             <figcaption>Die beiden Linien zeigen gleichzeitige Symptome, keinen raschen Wechsel zwischen Hoch und Tief. Die Darstellung ist fiktiv und erlaubt weder eine Messung noch eine Diagnose.</figcaption>
           </figure>
         ) : (
         <figure className="phasen-figure">
+          <p className="phasen-legend"><strong>Oben:</strong> Hochphase. <strong>Unten:</strong> Depression. Die Zeit verläuft von links nach rechts, ohne Zeitmassstab.</p>
           <svg viewBox="0 0 420 200" className="phasen-svg" aria-hidden="true">
             <defs>
               <linearGradient id="phasen-fill" x1="0" y1="0" x2="0" y2="1">
@@ -1387,11 +1386,6 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
                 <stop offset="1" stopColor="var(--accent)" stopOpacity="0.04" />
               </linearGradient>
             </defs>
-            {/* Achsen-Beschriftung */}
-            <text x="6" y="14" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" fontWeight="500">HOCHPHASE</text>
-            <text x="6" y="178" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" fontWeight="500">DEPRESSION</text>
-            <text x="395" y="100" fontFamily="var(--sans)" fontSize="9" letterSpacing="0" fill="var(--ink-mute)" textAnchor="end">Zeit →</text>
-
             {/* Neutral-Linie */}
             <line x1="10" y1="90" x2="400" y2="90" stroke="var(--ink-mute)" strokeWidth="0.5" strokeDasharray="2 4" opacity="0.35" />
 

@@ -1,4 +1,3 @@
-import { scrollToSection } from './anchor-scroll.js';
 // Modul 4 — Wenn die Kraft nachlässt · Volles Lese-Layout
 // Zentrales Bild: Kraft-Reservoir als ausdrücklich nicht messende Metapher.
 
@@ -149,8 +148,6 @@ function Modul4Page({ onNavigate }) {
     { id: 's8', label: 'Worauf es ankommt' },
   ];
 
-  const scrollTo = scrollToSection;
-
   return (
     <>
       <div className="reading-progress" style={{width: `${progress}%`}}></div>
@@ -181,7 +178,7 @@ function Modul4Page({ onNavigate }) {
               <ol>
                 {sections.map((s, i) => (
                   <li key={s.id}>
-                    <a href={`#${s.id}`} onClick={(e) => { e.preventDefault(); scrollTo(s.id); }}>
+                    <a href={navHref('modul4', s.id)} onClick={navHandler('modul4', onNavigate, s.id)}>
                       <span className="toc-num">{(i + 1).toString().padStart(2, '0')}</span>
                       {s.label}
                     </a>

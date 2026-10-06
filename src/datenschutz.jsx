@@ -86,6 +86,14 @@ function DatenschutzPage() {
               </p>
             </div>
 
+            <h3>Leseposition beim Zurückgehen</h3>
+            <p>
+              Damit Sie mit «Zurück» und «Vorwärts» im Browser an Ihrer bisherigen Leseposition
+              weiterlesen können, merkt sich die Website die Scrollposition im Verlauf des jeweiligen Tabs.
+              Dabei werden keine Werkzeug-Eingaben gespeichert oder übermittelt. Der Browser kann diesen
+              Verlauf beim Wiederherstellen eines Tabs erhalten.
+            </p>
+
             <h3>Auffindbarkeit über Suchmaschinen</h3>
             <p>
               Die Website ist derzeit bewusst <strong>nicht</strong> für Suchmaschinen indexiert. Sie ist
