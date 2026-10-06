@@ -8,6 +8,7 @@ export const EVIDENCE_SOURCES = {
     "doi": "10.1111/inm.13137",
     "pmid": "36882964",
     "status": "abstract",
+    "checkedAt": "6. Oktober 2026",
     "note": "Interviews mit 18 Eltern bzw. Sorgeberechtigten von Jugendlichen nach Suizidkrisen; umfasst Versuche und/oder erhebliche Suizidgedanken. Beschreibt unter anderem anhaltende Angst und eigenen Unterstützungsbedarf. Keine PTBS-Diagnose, Häufigkeitsangabe oder ausschliesslich bipolare Population. Originalabstract am 6. Oktober 2026 nachgeprüft."
   },
   bipolar2: {"title": "Berk et al. (2025): Bipolar II disorder: a state-of-the-art review", "url": "https://pubmed.ncbi.nlm.nih.gov/40371769/", "note": "Übersicht zu Bipolar II und diagnostischer Abgrenzung; keine individuelle Prognose.", "status": "abstract", "doi": "10.1002/wps.21300", "pmid": "40371769"},

@@ -74,9 +74,11 @@ function SchweigepflichtPage({ onNavigate }) {
 
             <h2>Was eine Entbindung ermöglicht</h2>
             <p>
-              Eine Schweigepflichtentbindung erlaubt den dafür genannten Fachpersonen, bestimmte Informationen
-              mit der genannten Person auszutauschen. Welche Informationen das sind, wird in der Entbindung
-              festgelegt. Sie ist keine Vollmacht für
+              Eine Schweigepflichtentbindung erlaubt den dafür genannten Fachpersonen, Informationen
+              mit der genannten Person im vereinbarten Umfang auszutauschen. Das verlinkte PUK-Formular
+              erlaubt Auskünfte in beide Richtungen und enthält keine Auswahl einzelner Themen. Besprechen
+              Sie gewünschte Grenzen mit der behandelnden Stelle und klären Sie, wie diese festgehalten werden.
+              Eine Entbindung ist keine Vollmacht für
               medizinische Entscheidungen und kein allgemeines Recht auf das gesamte Patientendossier.
             </p>
             <p>Besprechen Sie vor dem Unterzeichnen möglichst genau:</p>
@@ -110,13 +112,14 @@ function SchweigepflichtPage({ onNavigate }) {
               <div className="label">OFFIZIELLES FORMULAR</div>
               <div className="value">Entbindung von der ärztlichen Schweigepflicht und vom Amtsgeheimnis</div>
               <div className="sub">
-                Auf der PUK-Seite finden Sie Informationen zum offiziellen Formular. Besprechen Sie mit der
-                behandelnden Stelle, wer mit wem welche Informationen austauschen darf und wie die Wünsche
-                der betroffenen Person festgehalten werden. Eine Entbindung ist keine medizinische Vollmacht.
+                Das verlinkte PDF trägt die Version 2026. Nach dem Unterzeichnen wird es in der
+                Patientendokumentation abgelegt und gilt bis zum Widerruf. Besprechen Sie mit der
+                behandelnden Stelle den gewünschten Umfang sowie das Vorgehen bei Einschränkung und Widerruf.
+                Eine Entbindung ist keine medizinische Vollmacht.
               </div>
               <p className="reference-action">
                 <a className="btn btn-primary" href={PUK_FORMULAR_URL}>
-                  PUK-Seite zum Formular öffnen
+                  Offizielles PUK-Formular öffnen (PDF)
                 </a>
               </p>
             </div>
@@ -167,14 +170,14 @@ function SchweigepflichtPage({ onNavigate }) {
             <ul className="reference-sources">
               <li><a href={BAG_GEHEIMNIS_URL}>Bundesamt für Gesundheit: Berufs- oder Arztgeheimnis</a></li>
               <li><a href={ZH_GEHEIMNIS_URL}>Kanton Zürich: Berufliche Schweigepflicht und Entbindung</a></li>
-              <li><a href={PUK_FORMULAR_URL}>Psychiatrische Universitätsklinik Zürich: offizielles Formular</a></li>
-              <li><a href={PUK_PATIENTENRECHTE_URL}>Kanton Zürich und PUK: Rechte und Pflichten im Spital (PDF)</a></li>
+              <li><a href={PUK_FORMULAR_URL}>Psychiatrische Universitätsklinik Zürich: offizielles Formular (PDF, Version 2026)</a></li>
+              <li><a href={PUK_PATIENTENRECHTE_URL}>Kanton Zürich: Rechte und Pflichten im Spital (PDF, Ausgabe 2018)</a></li>
             </ul>
 
             <p className="reference-status">
-              Diese Seite gibt allgemeine Orientierung und bietet keine Rechtsberatung. Redaktioneller Stand:
-              Oktober 2026. Die Angaben müssen vor einer Veröffentlichung noch mit den aktuellen amtlichen
-              Originalen abgeglichen und fachlich sowie rechtlich freigegeben werden.
+              Diese Seite gibt allgemeine Orientierung und bietet keine Rechtsberatung. Massgeblich sind
+              die geltenden Rechtsgrundlagen und die Einwilligung im konkreten Fall. Redaktioneller Stand:
+              Oktober 2026.
             </p>
           </article>
         </div>

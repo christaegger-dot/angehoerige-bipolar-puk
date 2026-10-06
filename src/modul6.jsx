@@ -18,7 +18,7 @@ function HandlungsfelderGrid() {
       {felder.map((f, i) => (
         <div className="handlungsfeld" key={i}>
           <span className="handlungsfeld-num">{f.num}</span>
-          <h4>{f.titel}</h4>
+          <h3>{f.titel}</h3>
           <span className="handlungsfeld-sub">{f.sub}</span>
           <p>{f.text}</p>
         </div>
@@ -39,7 +39,7 @@ function GespraechsSkript() {
     <div className="skript">
       <div className="skript-titel">
         <span className="kicker">Gesprächsbeispiel · So könnte es klingen</span>
-        <h4>Ein Gespräch über frühe Anzeichen</h4>
+        <h3>Ein Gespräch über frühe Anzeichen</h3>
       </div>
       <div className="skript-zeilen">
         {zeilen.map((z, i) => (
@@ -377,8 +377,9 @@ function Modul6Page({ onNavigate }) {
               Zuwendung lässt sich ehrlich ausdrücken, auch wenn Sie keine Genesung versprechen können: «Ich weiss nicht, wie es weitergeht. Du bist mir wichtig.» Eine weitere Frage wäre: «Was würde dir gerade guttun?» Zugleich können Sie eine Grenze nennen: «Ich kann jetzt zehn Minuten bei dir sein. Danach brauche ich eine Pause.» <em>Vermeiden:</em> Mehr versprechen, als Sie wissen oder leisten können. Eine Bitte um Zuwendung ist etwas anderes als die Frage nach dem sicheren weiteren Verlauf.</p>
 
               <aside className="callout">
-                <span className="callout-label">Sorgen im Voraus besprechen</span>
-                <p>Wenn Sie sich wegen suizidbezogener Äusserungen Sorgen machen, können Sie diese mit dem Behandlungsteam besprechen. Vereinbaren Sie in einer ruhigen Phase, wie Sie solche Sorgen ansprechen und wer die Situation fachlich einschätzt. Diese Verantwortung liegt nicht bei Ihnen allein.</p>
+                <span className="callout-label">Aktuelle Sorgen und Vorausplanung</span>
+                <p><strong>Wenn Sie sich jetzt um die Sicherheit sorgen:</strong> Warten Sie nicht auf einen ruhigen Gesprächsmoment. Nutzen Sie den <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>SOS-Notfallweg</a> für die nächsten Schritte und erreichbare Hilfe. Bei unmittelbarer Lebensgefahr rufen Sie <a href="tel:144">144</a>.</p>
+                <p>In einer ruhigen Phase können Sie mit der betroffenen Person und dem Behandlungsteam vereinbaren, wie Sie Sorgen wegen suizidbezogener Äusserungen ansprechen und wer die Situation fachlich einschätzt. Diese Verantwortung liegt nicht bei Ihnen allein.</p>
               </aside>
 
               <blockquote className="module-quote" id="quote-m6-02">
@@ -492,7 +493,7 @@ function Modul6Page({ onNavigate }) {
               <p><strong>Fragen und eigene Entlastung:</strong> Bei Fragen zu Behandlungsentscheidungen können Sie das Team ansprechen. Vereinbaren Sie mit der Station, wann und bei wem Rückfragen möglich sind. Wenn Sie wegen der Einweisung Schuldgefühle haben, können Sie diese in einer Angehörigenberatung besprechen. Auch Ihre Erschöpfung verdient Aufmerksamkeit, unabhängig davon, wie es der anderen Person geht.</p>
 
               <h3>Entlassung — der Übergang nach Hause</h3>
-              <p>Die Klinik bietet in der Regel ein Austrittsgespräch an. <strong>Bitten Sie darum, an diesem Gespräch teilzunehmen.</strong> Nehmen Sie den Medikationsplan mit und klären Sie, wie die ambulante Behandlung weitergeht. Besprechen Sie Frühwarnzeichen, den Krisenplan und Ihre eigenen Grenzen. «Stabil genug für zu Hause» bedeutet nicht «geheilt»; auch das ist wichtig für Ihre Erwartungen.</p>
+              <p>Die Klinik bietet in der Regel ein Austrittsgespräch an. <strong>Bitten Sie mit Einverständnis der betroffenen Person darum, am Gespräch teilzunehmen und den Medikationsplan zu erhalten.</strong> Klären Sie, wie die ambulante Behandlung weitergeht. Besprechen Sie Frühwarnzeichen, den Krisenplan und Ihre eigenen Grenzen. «Stabil genug für zu Hause» bedeutet nicht «geheilt»; auch das ist wichtig für Ihre Erwartungen.</p>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Zur Einordnung</span>

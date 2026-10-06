@@ -54,7 +54,7 @@ function EvidenceSourceList({ keys, showUrls = false }) {
           <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a>
           {(source.doi || source.pmid) && <><br />{source.doi && `DOI: ${source.doi}`}{source.doi && source.pmid && ' · '}{source.pmid && `PMID: ${source.pmid}`}</>}
           <br />{source.note}
-          <br /><small>Prüfumfang: {SOURCE_STATUS_LABELS[source.status]} · Stand {EVIDENCE_REVIEW_DATE}.</small>
+          <br /><small>Prüfumfang: {SOURCE_STATUS_LABELS[source.status]} · {source.checkedAt ? `Einzelprüfung: ${source.checkedAt}` : `Recherchebasis: ${EVIDENCE_REVIEW_DATE}`}.</small>
           {showUrls && <><br /><small>{source.url.split(/(?<=[/._-])/).map((part, index) => <span key={index}>{part}<wbr /></span>)}</small></>}
         </li>
       );
@@ -67,7 +67,7 @@ function EvidenceSources({ number }) {
     <details className="module-credits">
       <summary>Quellen und Grenzen der Aussagen</summary>
       <p>Forschungsergebnisse über Gruppen lassen nicht vorhersagen, wie sich die Erkrankung oder eine einzelne Beziehung entwickelt. Die Grafiken veranschaulichen Zusammenhänge; sie beruhen nicht auf Messungen. Die Fallbeispiele sind fiktiv und keine Originalzitate aus den verlinkten Quellen.</p>
-      <p>Quellenstand {EVIDENCE_REVIEW_DATE}. Bei jedem Eintrag steht, ob der Volltext, einzelne Abschnitte, der Originalabstract oder nur die bibliografischen Angaben geprüft wurden. Eine geprüfte Quelle belegt nicht automatisch die Wirkung dieser Website. Offene rechtliche und weitere Quellenprüfungen sind einzeln gekennzeichnet.</p>
+      <p>Recherchebasis: {EVIDENCE_REVIEW_DATE}. Spätere Einzelprüfungen sind bei der jeweiligen Quelle datiert. Bei jedem Eintrag steht, ob der Volltext, einzelne Abschnitte, der Originalabstract oder nur die bibliografischen Angaben geprüft wurden. Eine geprüfte Quelle belegt nicht automatisch die Wirkung dieser Website. Offene rechtliche und weitere Quellenprüfungen sind einzeln gekennzeichnet.</p>
       <EvidenceSourceList keys={MODULE_SOURCE_KEYS[number]} />
     </details>
   );
@@ -79,7 +79,7 @@ function HandoutSources({ topic = 'caregivers' }) {
   return (
     <section className="module-credits handout-sources" aria-label="Quellen und Grenzen des Handouts">
       <h3>Quellen und Grenzen</h3>
-      <p>Quellenstand {EVIDENCE_REVIEW_DATE}. Gesprächsbeispiele und Übungen sind redaktionelle Anregungen, kein geprüftes Behandlungsprogramm. Gruppenbefunde erlauben keine individuelle Vorhersage.</p>
+      <p>Recherchebasis: {EVIDENCE_REVIEW_DATE}. Spätere Einzelprüfungen sind bei der jeweiligen Quelle datiert. Gesprächsbeispiele und Übungen sind redaktionelle Anregungen, kein geprüftes Behandlungsprogramm. Gruppenbefunde erlauben keine individuelle Vorhersage.</p>
       <EvidenceSourceList keys={keys} showUrls />
     </section>
   );

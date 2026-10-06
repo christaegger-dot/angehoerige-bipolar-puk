@@ -3,7 +3,8 @@
 import React from 'react';
 import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
 import { ToolOverlay } from './tool-overlay.jsx';
-import { KrisenplanTool } from './werkzeuge-tools.jsx';
+import { loadWerkzeugTool } from './werkzeug-loader.js';
+import { LoadErrorBoundary } from './load-error-boundary.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { HandoutSources } from './module-guidance.jsx';
 import { getPageMetadata } from './page-metadata.js';
@@ -677,10 +678,31 @@ const KIND_META = {
   tool:    { label: 'WERKZEUG', cta: '↪ Werkzeug öffnen' },
 };
 
-// tool-key → React-Komponente. Aktuell nur Krisenplan; weitere Werkzeuge folgen einfach hier.
+// The tool is requested only once a material card or its deep link is opened.
 const MATERIAL_TOOL_COMPONENTS = {
-  krisenplan: KrisenplanTool,
+  krisenplan: React.lazy(() => loadWerkzeugTool('krisenplan').then(Tool => ({ default: Tool }))),
 };
+
+function MaterialToolLoading({ onClose }) {
+  return (
+    <ToolOverlay onClose={onClose} ariaLabel="Werkzeug wird geöffnet">
+      <span className="kicker">Werkzeug</span>
+      <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Werkzeug wird geöffnet …</h2>
+      <p>Der interaktive Krisenplan wird geladen.</p>
+    </ToolOverlay>
+  );
+}
+
+function MaterialToolLoadError({ onClose }) {
+  return (
+    <ToolOverlay onClose={onClose} ariaLabel="Werkzeug konnte nicht geladen werden">
+      <span className="kicker">Werkzeug</span>
+      <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Das Werkzeug konnte nicht geöffnet werden.</h2>
+      <p>Laden Sie die Seite erneut, um den Krisenplan noch einmal zu öffnen. Sie können dieses Fenster auch schliessen und die übrigen Inhalte nutzen.</p>
+      <button type="button" className="btn btn-primary" onClick={() => window.location.reload()}>Seite neu laden</button>
+    </ToolOverlay>
+  );
+}
 
 const FAQS = [
   { q: 'Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?', a: 'Ja. Die Fachstelle Angehörigenarbeit berät Sie zu Ihren eigenen Fragen. Sie bietet auch Informationen und Gespräche zum Umgang mit der Erkrankung, die sogenannte Psychoedukation. Sie können Unterstützung für sich suchen, ohne die erkrankte Person erst davon zu überzeugen.' },
@@ -820,7 +842,7 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
                   aria-haspopup="dialog"
                 >
                   <div className="download-meta">
-                    <span className="mono">{d.id} · review_v03 · 2026-10-05</span>
+                    <span className="mono">{d.id} · Materialstand: Oktober 2026</span>
                     <span className="download-pdf-label">{d.metaLabel || meta.label}</span>
                   </div>
                   <h3>{d.title}</h3>
@@ -920,7 +942,13 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
       </section>
 
       {openHandout && <HandoutOverlay id={openHandout} onClose={closeMaterial} onNavigate={onNavigate} />}
-      {ActiveTool && <ActiveTool onClose={closeMaterial} onNavigate={onNavigate} />}
+      {ActiveTool && (
+        <LoadErrorBoundary resetKey={selectedMaterialId} fallback={<MaterialToolLoadError onClose={closeMaterial} />}>
+          <React.Suspense fallback={<MaterialToolLoading onClose={closeMaterial} />}>
+            <ActiveTool onClose={closeMaterial} onNavigate={onNavigate} />
+          </React.Suspense>
+        </LoadErrorBoundary>
+      )}
     </>
   );
 }

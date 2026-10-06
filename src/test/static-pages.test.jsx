@@ -36,7 +36,7 @@ describe('content pages', () => {
     expect(
       screen.getByRole('heading', { level: 1, name: /schweigepflicht bei angehörigen.*gesprächen/i }),
     ).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /puk-seite zum formular öffnen/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /offizielles puk-formular öffnen \(pdf\)/i })).toHaveAttribute(
       'href',
       expect.stringContaining('pukzh.ch'),
     );

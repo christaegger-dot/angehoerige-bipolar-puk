@@ -1,5 +1,5 @@
 import React from 'react';
-import { Eisberg } from './modul2.jsx';
+import { Eisberg } from './eisberg.jsx';
 import { clearStoredDraft } from './storage.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 

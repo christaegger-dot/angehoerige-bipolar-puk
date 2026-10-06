@@ -7,12 +7,12 @@ import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
 
 function CrisisBar() {
   return (
-    <div className="crisis-bar" data-safety-variant="direct">
+    <nav className="crisis-bar" aria-label="Krisenkontakte" data-safety-variant="direct">
       <span>Jetzt Hilfe anrufen:</span>
       <a href="tel:144">144 · Sanität</a>
       <a href="tel:117">117 · Polizei</a>
       <a href="tel:143">143 · Gespräch</a>
-    </div>
+    </nav>
   );
 }
 
@@ -61,6 +61,30 @@ function Nav({ page, onNavigate }) {
   );
 }
 
+function MobileModuleNav({ onNavigate }) {
+  const navRef = React.useRef(null);
+  React.useEffect(() => {
+    const updateHeight = () => document.documentElement.style.setProperty(
+      '--mobile-module-nav-height', `${navRef.current?.getBoundingClientRect().height || 0}px`,
+    );
+    updateHeight();
+    const observer = typeof window.ResizeObserver === 'function' ? new window.ResizeObserver(updateHeight) : null;
+    if (navRef.current) observer?.observe(navRef.current);
+    window.addEventListener('resize', updateHeight);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('resize', updateHeight);
+      document.documentElement.style.removeProperty('--mobile-module-nav-height');
+    };
+  }, []);
+  return (
+    <nav ref={navRef} className="module-mobile-nav" aria-label="Kurze Modulnavigation">
+      <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Alle Module</a>
+      <a className="module-mobile-sos" href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>SOS-Hilfe</a>
+    </nav>
+  );
+}
+
 function Footer({ page, onNavigate }) {
   return (
     <footer className="site-footer">
@@ -86,4 +110,4 @@ function Footer({ page, onNavigate }) {
   );
 }
 
-export { CrisisBar, Nav, Footer };
+export { CrisisBar, Nav, MobileModuleNav, Footer };

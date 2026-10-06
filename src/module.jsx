@@ -24,7 +24,7 @@ function ModulePage({ onNavigate }) {
                   <div className="module-num">{String(m.num).padStart(2, '0')}</div>
                   <div className="module-content">
                     <div className="module-row-numlabel">Modul</div>
-                    <h3>{m.title}</h3>
+                    <h2>{m.title}</h2>
                     <p>{m.desc}</p>
                     <div className="module-meta">
                       <span>⏱ {m.time}</span>
@@ -40,7 +40,7 @@ function ModulePage({ onNavigate }) {
                 <div className="module-num module-num-resource">→</div>
                 <div className="module-content">
                   <div className="module-row-numlabel">Hilfe finden</div>
-                  <h3>{ANLAUFSTELLEN_ENTRY.title}</h3>
+                  <h2>{ANLAUFSTELLEN_ENTRY.title}</h2>
                   <p>{ANLAUFSTELLEN_ENTRY.desc}</p>
                   <div className="module-meta">
                     <span>⏱ {ANLAUFSTELLEN_ENTRY.time}</span>

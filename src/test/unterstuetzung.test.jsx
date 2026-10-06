@@ -113,10 +113,10 @@ describe('UnterstuetzungPage targeted entries', () => {
     ['dl-07', 'Umgang mit Depression'],
     ['dl-08', 'Fragen für das Arztgespräch'],
     ['dl-09', 'Krisenplan'],
-  ])('opens %s directly from the route', (anchor, title) => {
+  ])('opens %s directly from the route', async (anchor, title) => {
     render(<UnterstuetzungPage anchor={anchor} onNavigate={vi.fn()} />);
 
-    expect(screen.getByRole('dialog', { name: title })).toBeInTheDocument();
+    expect(await screen.findByRole('dialog', { name: title })).toBeInTheDocument();
   });
 
   it.each([null, 'hilfe', 'material', 'kontakt', 'fragen', 'dl-03', 'unbekannt'])('does not open a dialog for %s', (anchor) => {

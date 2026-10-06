@@ -475,7 +475,7 @@ section + section { padding-top: 0; }
   font-style: normal;
   letter-spacing: 0;
 }
-.module-content h3 {
+.module-content h2 {
   margin-bottom: 8px;
   font-size: 1.3rem;
 }
@@ -2303,7 +2303,7 @@ section + section { padding-top: 0; }
   font-family: var(--font-core); font-style: normal;
   font-size: 1.4rem; color: var(--accent); display: block; margin-bottom: 8px;
 }
-.handlungsfeld h4 {
+.handlungsfeld h3 {
   font-family: var(--font-core) !important; font-style: normal;
   font-size: 1.15rem !important; font-weight: 400;
   text-transform: none !important; letter-spacing: 0 !important;
@@ -2327,7 +2327,7 @@ section + section { padding-top: 0; }
   border-left: 2px solid var(--accent);
 }
 .skript-titel { margin-bottom: 22px; }
-.skript-titel h4 {
+.skript-titel h3 {
   font-family: var(--font-core) !important; font-style: normal;
   font-size: 1.4rem !important; font-weight: 400;
   text-transform: none !important; letter-spacing: 0 !important;
@@ -2667,7 +2667,7 @@ section + section { padding-top: 0; }
   color: var(--ink-mute); display: block;
   margin-top: 10px; margin-bottom: 8px;
 }
-.zeit-phase h4 {
+.zeit-phase h3 {
   font-family: var(--font-core) !important; font-style: normal;
   font-size: 1.05rem !important; font-weight: 400;
   text-transform: none !important; letter-spacing: 0 !important;
@@ -3055,7 +3055,7 @@ section + section { padding-top: 0; }
   color: var(--accent);
   margin-bottom: 12px;
 }
-.tool-card-lg h3 {
+.tool-card-lg h2 {
   font-size: 1.2rem;
   margin: 0;
 }

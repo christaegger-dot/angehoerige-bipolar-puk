@@ -51,6 +51,16 @@ Der erneute Quellabgleich und die Browserprüfung des neu gebauten Stands bestä
 
 P2-Prüfprotokolle: /workspace/cloud-setup/p2-2026-10-06 sowie der reproduzierbare projektinterne `npm run audit:print`. Keine Aussage über physische Drucker, Druckserver, Zwischenablage-Synchronisierung oder reale Hilfsmittel wird daraus abgeleitet.
 
+### Abgleich nach der Schweigepflicht-Projektentscheidung
+
+Die anschliessende Änderung vom 6. Oktober betrifft im Anwendungscode ausschliesslich den Orientierungshinweis auf der Schweigepflichtseite. Der Quellvergleich mit dem gemergten P2-Stand bestätigt, dass Datenfluss, Speicherung, Löschung und Exporte unverändert sind. Die bestehende begrenzte technische Entscheidung wird deshalb an den neu erzeugten App-/Build-Fingerprint gebunden; damit wird keine neue Browserprüfung behauptet. Auch die vorbereiteten Screenreader-Läufe erhalten den neuen Prüfstand und bleiben nicht ausgeführt. Die aufgehobene externe Schweigepflichtfreigabe ist keine Änderung des technischen Datenschutzumfangs und keine institutionelle Zustimmung.
+
+### Erneuter Abgleich nach den P3-Korrekturen
+
+Die P3-Fassung ergänzt mobile Navigation und die Korrektur eigener Antworten im Startassistenten. Diese Auswahlen bleiben ausschliesslich im Komponenten-Zustand. Unterstützung lädt den bestehenden Krisenplan erst bei Auswahl; die ausgegliederte Eisberg-Grafik und der neue Build-Pfad verändern keine Eingabeverarbeitung. An Speicher-, Lösch- oder Übermittlungslogik wurde nichts ergänzt. Der Quellvergleich, die 225 Werkzeugchecks und die erneuten Browserprüfungen bestätigen weiterhin den begrenzten technischen Datenumgang; die 72 PDF-Prüfungen bestätigen die Ausgabe, keine Kontrolle externer Kopien.
+
+Die technische Acceptance wird an diesen neuen App-/Build-Fingerprint gebunden. Die vorbereiteten menschlichen Screenreader-Läufe erhalten denselben Prüfstand und bleiben ausdrücklich nicht ausgeführt. Der separate amtliche Quellen-/Formularabgleich ist keine institutionelle Datenschutz- oder Rechtsfreigabe.
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

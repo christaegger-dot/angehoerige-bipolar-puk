@@ -1,0 +1,40 @@
+# Amtlicher Quellen- und Formularabgleich · Schweigepflicht
+
+6. Oktober 2026 · KI-gestützte Quellenprüfung des aktuellen Websitewortlauts. Keine institutionelle, juristische oder individuelle Fallfreigabe. Keine Anwendungscodeänderungen durch diesen Prüfer.
+
+## Tatsächlich abgerufene Quellen
+
+| Quelle | Abruf | Tatsächliches Dokument |
+|---|---|---|
+| [Verlinkter offizieller PUK-Formular-Endpunkt](https://www.pukzh.ch/patienten-angehoerige/anfrage-patientendokumentation/anspruch-drittpersonen/entbindung-berufs-und-amtsgeheimnis/) | HTTP 200; `application/pdf;charset=UTF-8`; 6.10.2026, 12:17:45 UTC | Einseitiges Formular „Entbindung von der ärztlichen Schweigepflicht und vom Amtsgeheimnis“, ausdrücklich **Version 2026**. Der Endpunkt liefert unmittelbar das PDF, keine HTML-Informationsseite. PDF-Metadaten Erstellung/Änderung 29.1.2026; HTTP Last-Modified 27.4.2026. Diese Daten sind keine juristische Freigabe. |
+| [Bei PUK verlinkte kantonale Patientenrechtsbroschüre](https://www.pukzh.ch/sites/default/assets/File/rechte_pflichten_spitalaufenthalt(1).pdf) | HTTP 200; `application/pdf`; 6.10.2026, 12:17:45 UTC | 24 Seiten. „Meine Rechte und Pflichten – Informationen zum Spitalaufenthalt“. **Überarbeitete Ausgabe November 2018** (S.3). Herausgeber: Gesundheitsdirektion Kanton Zürich, Datenschutzbeauftragter des Kantons Zürich und Verband Zürcher Krankenhäuser. Von PUK gehostet, nicht als PUK-Mitpublikation bezeichnet. |
+| [BAG: Berufs- oder Arztgeheimnis](https://www.bag.admin.ch/de/berufs-oder-arztgeheimnis) | Ein Abrufversuch: Proxy-Tunnel `403 Forbidden`; kein erfolgreicher HTTP-Abruf des Originalservers | Nicht gelesen/verifiziert. |
+| [Kanton Zürich: Gesundheitsberufe](https://www.zh.ch/de/gesundheit/gesundheitsberufe.html) | Ein Abrufversuch: Proxy-Tunnel `403 Forbidden`; kein erfolgreicher HTTP-Abruf des Originalservers | Nicht gelesen/verifiziert. Keine Umgehung der Netzwerkpolicy. |
+
+Beide erhaltenen PDFs, die vollständigen extrahierten Texte und `fetch-records.json` liegen als lokale Prüfartefakte unter `/workspace/cloud-setup/p3-2026-10-06/sources`. Dieser Bericht hält URLs, Abrufstand, Dokumentausgaben und die unten genannten SHA256 fest; die Original-PDFs werden nicht zusätzlich mit der Website ausgeliefert. Erfolgreiches Abrufen ist kein Nachweis einer zwischenzeitlich unveränderten Gesetzeslage oder einer institutionellen Zustimmung.
+
+## Abgleich der fünf Prüffragen
+
+1. **Angehörigenangaben, Dokumentation und Einsicht:** Die aktuelle Seite ist angemessen vorsichtig. Broschüre S.14 nennt ausdrücklich „zusätzliche Informationen von Drittpersonen (z. B. Angaben von Angehörigen)“ in der Patientendokumentation. S.15 bestätigt das grundsätzlich umfassende Einsichtsrecht, nennt öffentliche oder schutzwürdige Drittinteressen als mögliche Einschränkungsgründe und erwähnt Angehörigenangaben als Beispiel. Der Websitehinweis bietet keine pauschale Vertraulichkeitsgarantie gegenüber der behandelten Person. **Keine notwendige Korrektur aus diesen Quellen.** Organisatorische Verfahren der eigenen Angehörigenberatung werden durch diese Broschüre nicht verifiziert.
+
+2. **Minderjährige / Urteilsfähigkeit / Sorgeberechtigte:** Broschüre S.7 bindet Selbstbestimmung an Urteilsfähigkeit bezüglich der konkreten Behandlungssituation. S.10: „Bei urteilsfähigen, aber minderjährigen ... Patientinnen und Patienten erfolgt die Aufklärung auch gegenüber der gesetzlichen Vertretung, soweit die Patientinnen und Patienten dem zustimmen.“ Die aktuelle Seite lässt die konkrete Einwilligung/Beteiligung mit dem Behandlungsteam klären und behauptet keine automatische Auskunftsbefugnis der Eltern. **Kein belegter Widerspruch.** Aktuelle Sonderfälle wie Schutzsituationen, eingeschränkte elterliche Sorge und die genaue Informationsweitergabe urteilsunfähiger Minderjähriger wurden mangels zugänglicher aktueller Primärrechtsquelle nicht abschliessend verifiziert.
+
+3. **Vertretung bei fehlender Urteilsfähigkeit:** Broschüre S.9 erläutert für medizinische Massnahmen eine gesetzliche Vertretungsordnung; S.7/S.8 grenzen psychische Störungen in einer psychiatrischen Klinik ausdrücklich ab. Die aktuelle Seite nennt keine ungeprüfte Rangordnung, lässt Vertretungsgrundlage und Dokumente konkret klären und trennt Auskunft von medizinischer Entscheidung. **Keine notwendige Korrektur aus dem gelesenen Material.** Keine neue Bestätigung aktueller gesetzlicher Rangfolgen.
+
+4. **Psychiatrische Behandlung / FU / Behandlung ohne Zustimmung:** Broschüre S.7: „Dieses Vertretungsrecht gilt nicht bei der Behandlung einer psychischen Störung in einer psychiatrischen Klinik“. S.8 unterscheidet die Berücksichtigung einer Patientenverfügung; S.18 beschreibt Bedingungen und Anordnung einer Behandlung ohne Einwilligung. Website vermeidet eine pauschale Übertragung medizinischer Vertretungsrechte und verweist auf die konkrete Situation. **Kein belegter Widerspruch.** Falls redaktionell vertieft wird, die Ausnahme exakt auf „Behandlung einer psychischen Störung in einer psychiatrischen Klinik“ beziehen; nicht auf jede psychiatrische Beratung oder jede somatische Behandlung generalisieren. Keine neue gesetzliche Detaildarstellung allein aus der älteren Broschüre ableiten.
+
+5. **Reichweite / Einschränkung / Widerruf des tatsächlichen PUK-Formulars:** Das erhaltene Formular Version 2026 entbindet „die in die Behandlung involvierten Ärztinnen und Ärzte der Psychiatrischen Universitätsklinik Zürich inkl. deren Hilfspersonen gegenüber folgender Person ... und ermächtigt ... Auskünfte zu erteilen und einzuholen“. Es sagt ausdrücklich, die berechtigte Person sei nicht befugt, medizinische Entscheide oder andere Rechtshandlungen vorzunehmen. Es wird nach Unterschrift in der Patientendokumentation abgelegt und **„gilt bis zum Widerruf“**. Es enthält keine Themen-Auswahlfelder und kein Feld für ein befristetes Gültigkeitsdatum. Die Seite trennt Informationsaustausch und medizinische Vollmacht korrekt. **Redaktionelle Korrekturen sinnvoll:** tatsächlichen PDF-Link und Version 2026 benennen; standardmässige Geltung bis Widerruf nennen; Grenzen der breiten Standardvollmacht mit der behandelnden Stelle vereinbaren statt vorgegebene Themen-Auswahlfelder zu suggerieren. Die konkrete Form/der Ablauf eines Widerrufs wird im Formular nicht erläutert, daher nicht erfinden.
+
+## Konkrete Empfehlungen für die Website
+
+- Formular-CTA „Offizielles PUK-Formular öffnen (PDF)“; auch Quellenlink kenntlich als PDF. Die bisherige „PUK-Seite zum Formular öffnen“-Benennung und die Aussage, eine Seite mit Informationen zu öffnen, passen nicht zum tatsächlich ausgelieferten Dokument.
+- Kurze Einordnung: „Das verlinkte Formular trägt die Version 2026. Es gilt bis zum Widerruf und wird in der Patientendokumentation abgelegt.“ Kein Download-/Abrufdatum als rechtliches Freigabedatum darstellen.
+- Die allgemeine Aussage „Welche Informationen das sind, wird in der Entbindung festgelegt“ differenzieren: konkret vereinbarter Umfang und relativ breite Standardformulierung des vorliegenden PUK-Formulars sind nicht dasselbe. Themen/Geltungsdauer/Einschränkungen sollen ausdrücklich besprochen werden.
+- Kantonale Broschüre korrekt zuordnen und ihre Ausgabe November 2018 transparent benennen. Ein neuer Abruf ist keine neue Ausgabe.
+- Den Quellenabgleich als **Teilabgleich** dokumentieren: aktueller servierter PUK-Formularstand und gelesene ältere Broschüre verifiziert, BAG/Kanton-Zürich-Webseiten sowie heutige vollständige Gesetzeslage nicht neu verifiziert. Organisatorische Abläufe, individuelle Vertretungsfragen und rechtliche Fallbeurteilung bleiben ausserhalb dieser Quellenprüfung.
+
+## Dateibelege
+
+- `puk-form-page.pdf`: SHA256 `0aca8b50c6e0d0ecead117ab4e74738ec9eeb7366897b0ce5835b9646473bed4`, 17647 Byte.
+- `puk-rights-leaflet.pdf`: SHA256 `082a7a14e2a6867a8a6e32073d04576b6df75cc756e0631a647a32c406d9d4dc`, 1600430 Byte.
+- Geprüfte Websitequelle `src/schweigepflicht.jsx` (vor Quellenkorrekturen): SHA256 `16904bcda8a68c60a9aed0292403630aa5b9087a0dc9ba56d128e5630ef95c15`.

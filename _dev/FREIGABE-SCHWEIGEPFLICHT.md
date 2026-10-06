@@ -1,10 +1,24 @@
-# Prüf- und Freigabedossier: Schweigepflicht bei Angehörigengesprächen
+# Schweigepflicht: Projektentscheidung und archiviertes Prüfdossier
+
+## Aktuelle Projektentscheidung · 6. Oktober 2026
+
+**Status: externe fachlich-rechtliche Freigabe nicht vorgesehen.** Die Projektverantwortliche hat ausdrücklich mitgeteilt, dass eine solche Freigabe durch die zuständige Stelle nicht erfolgen wird. Sie wird deshalb nicht als ausstehende Projektaufgabe oder Releasevoraussetzung weitergeführt. Dies ist eine Entscheidung über den Projektumfang, kein Nachweis einer juristischen oder institutionellen Prüfung.
+
+Die [Schweigepflichtseite](../src/schweigepflicht.jsx) bietet weiterhin allgemeine Orientierung, verweist auf amtliche Informationen und die behandelnde Stelle und ersetzt keine Beurteilung des konkreten Falls. Der Hinweis auf eine künftig einzuholende Freigabe wurde durch einen dauerhaften Orientierungshinweis ersetzt. Die noch fehlenden realen Screenreader-Prüfungen bleiben eine separate Releasebedingung.
+
+Der amtliche Quellen-/Formularabgleich ist von der aufgehobenen externen Freigabe getrennt. Im anschliessenden P3-Durchgang wurden das tatsächlich ausgelieferte PUK-Formular Version 2026 und die bei PUK gehostete kantonale Patientenrechtsbroschüre Ausgabe November 2018 gelesen und abgeglichen. Der [Quellenbericht](SCHWEIGEPFLICHT-QUELLENABGLEICH-2026-10-06.md) dokumentiert Originalbelege, Korrekturen und Grenzen: BAG und Zürcher Webseite wurden durch die Netzwerkpolicy blockiert; die aktuelle vollständige Gesetzeslage ist damit nicht neu verifiziert.
+
+## Archiv: Vorbereitung vor dieser Projektentscheidung
+
+Der folgende Stand dokumentiert die frühere Vorbereitung aus P2-09. Die Anfrage wurde nicht versandt und wird nicht weiterverfolgt. Die nachfolgenden Freigabeanforderungen und Angaben «ausstehend» beschreiben den früheren Auftrag, nicht die aktuellen Releasevoraussetzungen. Wortlaut, Zeilenbezüge und Hash beziehen sich auf die damalige Seitenfassung vor der oben dokumentierten Hinweisänderung. Das ursprüngliche schriftliche Abnahmekriterium aus Issue #49 wird nicht als erfüllt ausgewiesen.
+
+### Prüf- und Freigabedossier: Schweigepflicht bei Angehörigengesprächen
 
 Stand: 6. Oktober 2026. Bezug: [Issue #49](https://github.com/christaegger-dot/angehoerige-bipolar-puk/issues/49). Wortlaut und Prüfgegenstand nach P2-09 des Pre-Release-Audits aktualisiert; keine fachlich-rechtliche Prüfung damit abgeschlossen.
 
 **Status: schriftliche fachlich-rechtliche Prüfung durch die zuständige PUK-Rechts- oder Datenschutzstelle ausstehend.** Dieses Dossier bereitet die Anfrage vor. Es enthält keine rechtliche Freigabe und wurde nicht an eine externe Stelle versandt.
 
-## Gegenstand und eindeutig bestimmter Prüfstand
+### Gegenstand und eindeutig bestimmter Prüfstand
 
 Geprüft werden soll der vollständige Wortlaut der Seite `/schweigepflicht` einschliesslich des Hinweises zum offiziellen PUK-Formular. Abschnitt 3 enthält den derzeitigen Seiteninhalt, Abschnitt 2 die fünf in Issue #49 besonders genannten Prüfpunkte.
 
@@ -24,7 +38,7 @@ Bei Erstellung wurden die vorhandenen Repository-Dateien und `_dev`-Audits auf e
 
 Der sichtbare Hinweis in `src/schweigepflicht.jsx:174–177`, `noindex, nofollow` in `index.html` und `Disallow: /` in `public/robots.txt` bleiben bestehen. Suchmaschinenregeln sind keine Zugangskontrolle und kein Freigabenachweis. Die in Abschnitt 3 wiedergegebene Fassung ersetzt den früheren Prüfgegenstand mit dem Hash `bf6bde7fdebc6117daf7ba2ad126236325447c5bb1f6b00ed7cd5b796834e4db`; eine Bestätigung dieses alten Wortlauts würde die aktuelle Fassung nicht abdecken.
 
-## 1. Vorbereiteter Anfragetext
+### 1. Vorbereiteter Anfragetext
 
 **Betreff:** Schriftliche Wortlautprüfung `/schweigepflicht` – Angehörigeninformationen bei bipolarer Störung, Issue #49
 
@@ -34,7 +48,7 @@ Bitte halten Sie für jeden Punkt schriftlich fest, ob der Wortlaut bestätigt w
 
 Bitte bestätigen Sie den genauen geprüften Wortlaut und Ihren Zuständigkeitsbereich mit Name, Funktion, Stelle und Datum. Eine Entscheidung zur öffentlichen Veröffentlichung wird gesondert getroffen; bis dahin bleibt der Hinweis auf die ausstehende Freigabe sichtbar.
 
-## 2. Fünf konkrete Prüfpunkte aus Issue #49
+### 2. Fünf konkrete Prüfpunkte aus Issue #49
 
 Die Zeilenangaben beziehen sich auf die oben bezeichnete unveränderte Seitenquelle. **Alle Entscheidungen sind ausstehend.** Die folgenden Fragen sind Prüfaufträge, keine bereits bestätigten Rechtsaussagen.
 
@@ -58,7 +72,7 @@ Entscheidungen bitte ausgeschrieben einsetzen: **Wortlaut bestätigt**, **Korrek
 | 4 | **Ausstehend** | **Ausstehend** | **Ausstehend** | **Ausstehend** |
 | 5 | **Ausstehend** | **Ausstehend** | **Ausstehend** | **Ausstehend** |
 
-## 3. Vollständiger aktueller Seitenwortlaut
+### 3. Vollständiger aktueller Seitenwortlaut
 
 Wiedergabe der Seitentexte in Leserichtung. JSX-Einrückungen sind normalisiert. Die Überschrift enthält im Quelltext eine unsichtbare optionale Trennstelle (`&shy;`) in „Angehörigengesprächen“; sie wird hier ohne Trennstelle wiedergegeben. Die Darstellung ändert den Wortlaut nicht. Die Quellverweise bestimmen die Fassung unabhängig von der Markdown-Formatierung.
 
@@ -155,7 +169,7 @@ Im Gespräch mit dem Behandlungsteam geht es um die Behandlung der erkrankten Pe
 
 Diese Seite gibt allgemeine Orientierung und bietet keine Rechtsberatung. Redaktioneller Stand: Oktober 2026. Die Angaben müssen vor einer Veröffentlichung noch mit den aktuellen amtlichen Originalen abgeglichen und fachlich sowie rechtlich freigegeben werden.
 
-## 4. Gesamtentscheidung und schriftlicher Nachweis
+### 4. Gesamtentscheidung und schriftlicher Nachweis
 
 | Nachweisfeld | Eintrag |
 | --- | --- |
@@ -173,7 +187,7 @@ Diese Seite gibt allgemeine Orientierung und bietet keine Rechtsberatung. Redakt
 
 Schriftliche Rückmeldungen können über eine dokumentierte Kennung oder einen zugriffsgeschützten Ablageort referenziert werden. Vertrauliche Korrespondenz und personenbezogene Angaben gehören nicht ungeprüft in dieses öffentliche Repository.
 
-## 5. Abnahme für Issue #49
+### 5. Abnahme für Issue #49
 
 - [ ] Zuständige PUK-Rechts- oder Datenschutzstelle und deren Zuständigkeitsbereich sind benannt.
 - [ ] Für alle fünf Punkte sowie den Gesamtwortlaut liegt eine zuordenbare schriftliche Bestätigung oder eine dokumentierte Korrekturrückmeldung vor.

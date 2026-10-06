@@ -14,7 +14,7 @@ Die neun P2-Befunde des Audits sind umgesetzt. Die Korrekturen wurden am gebaute
 | P2-06 · Feldkontrast | Vorhandener PUK-Token `puk-black-75` für Eingabegrenzen. Unfokussiert 5,38:1 gegen die Feldfüllung und 5,92:1 gegen Weiss. Text-/Fokuskontrast bleibt erhalten; die Barrierefreiheitserklärung benennt den konkret geprüften Umfang. |
 | P2-07 · History-Fokus | History-/Hash-Synchronisierung folgt auf die native Wiederherstellung und ist bei neuer Navigation/Unmount abbrechbar. Reale Reproduktion von `/module/4#s6` über Werkzeuge und Zurück: H2 bleibt auch nach einer Sekunde fokussiert. Vorwärts setzt den Hauptinhaltsfokus. Der nächste Tabstop nach `#s6` liegt regulär in `#s7`, weil `#s6` keine fokussierbaren Elemente enthält; das wurde nicht durch künstliche Tabstopps verändert. |
 | P2-08 · Diagnose-Rahmen | Modul 1 bezeichnet den Kurzüberblick und die Typdefinitionen ausdrücklich als DSM-5. Unterschiede anderer Systeme werden ohne unbestätigte ICD-11-Kriterien oder Behauptung einer Schweizer Implementierung eingeordnet. |
-| P2-09 · Freigabedossier | Vollständiger aktueller Schweigepflichttext, aktuelle Prüffragen, Commit-/Zeilenbezüge und SHA256 abgeglichen. Schriftliche fachlich-rechtliche Prüfung bleibt offen; keine institutionelle Freigabe erfunden. |
+| P2-09 · Freigabedossier | Vollständiger Schweigepflichttext, Prüffragen, Commit-/Zeilenbezüge und SHA256 im P2-Stand abgeglichen. Folgeentscheidung vom 6. Oktober 2026: externe fachlich-rechtliche Freigabe wird nicht eingeholt; die Vorbereitung ist im Dossier archiviert. Keine institutionelle Freigabe behauptet. |
 
 ## Prüfung
 
@@ -29,6 +29,6 @@ Lokale Messprotokolle und synthetische PDF-Prüfwerte: `/workspace/cloud-setup/p
 
 ## Offene Releasebedingungen und Grenzen
 
-Die menschlichen VoiceOver/Safari- und NVDA/Windows-Läufe wurden nicht durchgeführt; alle 110 Coverage-Einträge bleiben offen. Der Produktionsgate wurde erhalten. Die im [Schweigepflicht-Dossier](FREIGABE-SCHWEIGEPFLICHT.md) vorbereitete fachlich-rechtliche Prüfung bleibt ebenfalls ausstehend.
+Die menschlichen VoiceOver/Safari- und NVDA/Windows-Läufe wurden nicht durchgeführt; alle 110 Coverage-Einträge bleiben offen. Der Produktionsgate wurde erhalten. Die im [Schweigepflicht-Dossier](FREIGABE-SCHWEIGEPFLICHT.md) vorbereitete externe fachlich-rechtliche Freigabe wird gemäss nachfolgender ausdrücklicher Projektentscheidung vom 6. Oktober 2026 nicht eingeholt und nicht mehr als ausstehende Releasevoraussetzung geführt. Das bestätigt weder eine juristische Prüfung noch einen neuen amtlichen Quellenabgleich.
 
 Keine physische Druckprüfung, keine echten Notrufe und keine vollständige neue Prüfung aller externen Quellen. Der Live-Netlify-Zugriff war aus der Cloud-Umgebung weiterhin nicht verifiziert. P3-Befunde sind gesonderte Folgearbeit. Die Umsetzung der P2-Korrekturen ist deshalb keine umfassende Produktions- oder institutionelle Freigabe.
