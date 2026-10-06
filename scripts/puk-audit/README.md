@@ -50,8 +50,19 @@ Der kanonische Regex betrachtet bereits das Vorkommen der Wörter
 `localStorage`, `sessionStorage` oder `indexedDB` als Speichernutzung, auch
 in Tests und historischem Löschcode. Das daraus entstehende konservative
 Datenschutz-Gate wird im Bericht ausgewiesen; es wird weder weggefiltert
-noch durch eine erfundene Freigabe umgangen. Eine reale Datenschutzfreigabe
-und zwei bestandene reale Screenreader-Läufe sind bisher nicht dokumentiert.
+noch durch eine erfundene institutionelle Freigabe umgangen. Für den konkret
+geprüften flüchtigen App-Datenfluss und die bestätigte Altbestandslöschung
+liegt eine ausdrücklich delegierte technische Produktentscheidung vor;
+Scope, Belege und nicht erteilte institutionelle/Hostingfreigaben stehen in
+`_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md` und der Datenpolicy. Zwei bestandene
+reale Screenreader-Läufe sind weiterhin nicht dokumentiert.
 `website-screenreader-test.json` führt die vorgesehenen Läufe deshalb mit
 `result: "pending"` und leeren Nachweisfeldern. Fachliche, rechtliche und
 Kommunikationsfreigaben werden vom technischen Projektauditor nicht ersetzt.
+
+Der zusätzliche Projektprüfer `npm run audit:release:evidence` bindet die
+technische Acceptance und vollständige menschliche AT-Läufe an App-Quellen
+und Buildinhalt. Die Originalregeln unter `vendor/` bleiben unverändert.
+Der Workflow `Production release readiness` und der Netlify-Produktionsbuild
+blockieren bei fehlenden oder veralteten Nachweisen. Das Protokoll für reale
+AT-Durchläufe steht in `_dev/SCREENREADER-RELEASE-TEST.md`.

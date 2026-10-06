@@ -72,11 +72,15 @@ Der kanonische Projektauditor und das verbindliche Websiteprofil 1.10.1 liegen a
 npm run audit:puk:logic
 npm run audit:puk
 npm run audit:puk:production
+npm run test:release-evidence
+npm run audit:release
 ```
 
 Die Projektaudits bauen automatisch neu und erfassen alle Routen aus `src/routes.js` als gerenderte SPA-Snapshots. Das kanonische Gate prüft diese bei 320/360/768/1440 Pixel und erhält zusätzlich den originalen Quellbestand. Ergebnisse liegen unter `qa/output/puk`; `PUK_AUDIT_OUTPUT_DIR` überschreibt das Ziel. Herkunft, Adapter und Prüfgrenzen stehen in `scripts/puk-audit/README.md` und `vendor/ORIGIN.json`.
 
-Ein fehlgeschlagener Datenschutz- oder Screenreader-Gate bleibt offen. Der Regex wertet auch historischen Browser-Löschcode und Tests als Speichernutzung; diese konservative Grenze wird nicht ausgeblendet. Der Produktionslauf verlangt zusätzlich mindestens zwei bestandene reale Screenreader-Läufe. `website-screenreader-test.json` enthält passende, noch auszuführende `runs`. Automatisierte Browserchecks ersetzen weder VoiceOver/NVDA noch fachliche und rechtliche Freigaben. Der Website-Marker bezeichnet das Zielprofil und ist keine Konformitätsbescheinigung.
+Der Regex wertet auch historischen Browser-Löschcode und Tests als Speichernutzung. Die aktuelle Memory-only-Anwendung und ihre bestätigte Altbestandslöschung sind nach technischer Prüfung im ausdrücklichen Nutzerauftrag akzeptiert; Scope und Grenzen stehen in `_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md` und `public/website-data-policy.json`. Das ist keine institutionelle PUK-Rechts- oder Hostingfreigabe. Die kanonischen Originalregeln bleiben unverändert.
+
+Der Produktionslauf verlangt mindestens zwei bestandene reale Screenreader-Läufe. `website-screenreader-test.json` enthält passende, noch auszuführende `runs`; `_dev/SCREENREADER-RELEASE-TEST.md` beschreibt die Durchführung. `npm run audit:release:evidence` prüft die technische Datenschutzentscheidung und die realen AT-Nachweise gegen den aktuellen App-/Build-Fingerprint. `npm run audit:release` baut zuerst neu und verbindet diesen Nachweischeck mit dem kanonischen Produktionsaudit. Fehlende, veraltete oder unvollständige Nachweise blockieren. Automatisierte Browserchecks ersetzen weder VoiceOver/NVDA noch fachliche und rechtliche Freigaben. Der Website-Marker bezeichnet das Zielprofil und ist keine Konformitätsbescheinigung.
 
 ## Wichtige Projektstruktur
 
@@ -100,13 +104,13 @@ Ein fehlgeschlagener Datenschutz- oder Screenreader-Gate bleibt offen. Der Regex
 
 ## Deployment
 
-Netlify baut die Produktion mit:
+Netlify baut Vorschauen mit `npm run build`. Für Produktion gilt:
 
 ```bash
-npm run build
+npm run build && npm run audit:release:evidence && npx playwright install --with-deps chromium && node scripts/puk-audit/run.mjs --production
 ```
 
-Das veröffentlichte Verzeichnis ist `dist/`. SPA-Routen werden in `netlify.toml` auf `index.html` zurückgeführt.
+Das veröffentlichte Verzeichnis ist `dist/`. SPA-Routen werden in `netlify.toml` auf `index.html` zurückgeführt. Produktion verlangt sowohl gültige Release-Nachweise als auch den bestandenen kanonischen Produktionsaudit. Erst nach dem Nachweischeck werden dessen Browser und Systemabhängigkeiten installiert. Ein fehlender Browser oder fehlgeschlagener Audit bricht die Veröffentlichung ab; die bisherigen Produktionsinhalte werden dadurch nicht automatisch ersetzt. Vorschauen benötigen diese Produktionsinstallation nicht.
 
 ## CI
 
@@ -114,9 +118,12 @@ GitHub Actions führt auf Push und Pull Request automatisch folgende Checks aus:
 
 - `npm run lint`
 - `npm run test:coverage`
+- `npm run test:release-evidence`
 - `npm run build`
 - `npm audit --audit-level=high`
 - `npm run audit:website` und `npm run audit:tools` mit installiertem Chromium
 
-Die Browserberichte werden als CI-Artefakt aufbewahrt. Das kanonische
-Produktionsgate und die echten Screenreader-Läufe bleiben separate Freigabenachweise.
+Die Browserberichte werden als CI-Artefakt aufbewahrt. Der separate Workflow
+`Production release readiness` prüft auf `main` und bei manueller Auslösung
+die aktuellen Freigabenachweise und danach den kanonischen Produktionsgate.
+Ein grüner Entwicklungs-CI-Lauf allein bestätigt keine Produktionsfreigabe.

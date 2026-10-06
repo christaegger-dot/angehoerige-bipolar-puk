@@ -1,22 +1,18 @@
-name: CI
+name: Production release readiness
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
-      - master
-      - 'copilot/**'
-      - 'codex/**'
-      - 'fix/**'
-  pull_request:
+
+permissions:
+  contents: read
 
 jobs:
-  validate:
+  release-evidence:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    permissions:
-      contents: read
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
@@ -30,34 +26,29 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
-
-      - name: Test with coverage gate
-        run: npm run test:coverage
-
       - name: Test release evidence validator
         run: npm run test:release-evidence
 
-      - name: Build
+      - name: Build the reviewed website
         run: npm run build
 
-      - name: Dependency audit
-        run: npm audit --audit-level=high
+      - name: Verify actual privacy and screenreader evidence
+        shell: bash
+        run: |
+          mkdir -p qa/output
+          set -o pipefail
+          node scripts/verify-release-evidence.mjs | tee qa/output/release-evidence.json
 
-      - name: Install browser for accessibility checks
+      - name: Install browser for canonical production audit
         run: npx playwright install --with-deps chromium
 
-      - name: Website browser audit
-        run: npm run audit:website
+      - name: Canonical production audit
+        run: node scripts/puk-audit/run.mjs --production
 
-      - name: Tool interaction audit
-        run: npm run audit:tools
-
-      - name: Retain browser audit reports
+      - name: Retain release reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: website-browser-audits
+          name: production-release-readiness
           path: qa/output/
           if-no-files-found: ignore

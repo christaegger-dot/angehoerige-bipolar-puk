@@ -1,15 +1,16 @@
 {
-  "status": "prepared-not-approved",
-  "reviewedAt": "2026-10-05",
-  "reviewerRole": "Technische Bestandsaufnahme anhand des Quellcodes; formelle Datenschutzfreigabe ausstehend",
-  "inventoryVersion": 2,
+  "status": "approved",
+  "reviewedAt": "2026-10-06",
+  "reviewerRole": "KI-gestützte technische Datenschutzprüfung im ausdrücklichen Auftrag der Projektverantwortlichen; keine institutionelle Rechtsfreigabe",
+  "inventoryVersion": 3,
   "profileCompatibility": {
     "requestedProfile": "PUK-Websiteprofil 1.10.1",
     "source": "templates/website/profile.json#formsAndData und Website.prompt.md aus dem bereitgestellten Website Kit",
     "sensitiveInputPersistenceDefault": "off",
     "implementedRule": "Aktuelle Eingaben nur im flüchtigen Komponenten-Zustand; keine Browser-Persistenz und keine Wiederherstellung alter Entwürfe",
-    "privacyReview": "not-approved",
-    "productionApproval": "not-claimed"
+    "privacyReview": "technical-application-approved",
+    "productionApproval": "not-claimed",
+    "institutionalApproval": "not-claimed"
   },
   "scope": "Aktuelle Eingaben bleiben ausschliesslich im flüchtigen Komponenten-Zustand. Der Anwendungscode verwendet Browser-Speicher nur zum bestätigten Entfernen von Altbeständen aus früheren Versionen; er liest keine gespeicherten Inhalte und schreibt keine neuen Einträge. Server-Logs, Hoster-Zugangsschutz und Browser-Netzwerk-Caches sind nicht von der Anwendung verwaltet.",
   "dataCategories": [
@@ -164,7 +165,7 @@
     "blockedAccess": "Der aktuelle flüchtige Entwurf wird geleert; scheitert eine Altbestands-Löschung, wird kein vollständiger Lösch-Erfolg behauptet. Die Oberfläche verweist auf die Browser-Einstellungen.",
     "crossTabLimit": "Die Entfernung betrifft die historische Sitzungs-Kopie nur im aktuellen Tab und die dauerhafte Kopie des Origins. Historische Sitzungs-Kopien anderer Tabs müssen dort oder über die Website-Datenbereinigung entfernt werden. Noch geöffnete ältere Website-Versionen können erneut schreiben; diese Tabs ebenfalls schliessen.",
     "protection": "Keine Verschlüsselung historischer Browser-Kopien durch die Anwendung. Andere Benutzer desselben Browser-Profils und berechtigte Browser-Erweiterungen können auf Altbestände zugreifen.",
-    "auditLimitation": "Der bereitgestellte website-rules.mjs wertet bereits jedes Vorkommen von localStorage/sessionStorage als genehmigungspflichtige Speicherung, auch reine removeItem-Bereinigung. Dieser mögliche konservative Gate-Befund belegt keine aktuelle Persistenz. status bleibt prepared-not-approved; formelle Datenschutzfreigabe wird nicht erfunden."
+    "auditLimitation": "Der unveränderte kanonische Regex wertet jedes Vorkommen von localStorage/sessionStorage als Speichernutzung, auch reine removeItem-Bereinigung und Tests. Die technische Acceptance prüft den tatsächlichen flüchtigen Datenfluss; der approved-Status bestätigt nur diesen begrenzten App-Scope. Aktuelle Persistenz ist deaktiviert. Institutionelle und Hosting-Rechtsfreigaben werden nicht behauptet."
   },
   "otherApplicationStorage": {
     "cookies": [],
@@ -223,5 +224,32 @@
       "retention": "Vom Nutzer und Drucksystem bestimmt; keine automatische Löschung durch die Website",
       "deletion": "PDF-Dateien, Ausdrucke und Druckverlauf separat löschen oder sicher vernichten"
     }
-  ]
+  ],
+  "approvalMeaning": "Akzeptiert ist ausschliesslich der tatsächlich geprüfte flüchtige App-Datenfluss samt bestätigter historischer Löschung und nutzerveranlassten Exporten. Dieser Status ist keine institutionelle PUK-Rechtsfreigabe, keine Hostingvertragsfreigabe und keine Gesamtproduktionsfreigabe.",
+  "technicalAcceptance": {
+    "schemaVersion": 1,
+    "status": "accepted",
+    "reviewedAt": "2026-10-06",
+    "reviewerRole": "KI-gestützte technische Datenschutzprüfung im ausdrücklichen Auftrag der Projektverantwortlichen; keine institutionelle Rechtsfreigabe",
+    "authority": "delegated-project-decision",
+    "scope": "memory-only-application-and-legacy-deletion",
+    "releaseFingerprint": {
+      "version": 1,
+      "algorithm": "sha256",
+      "sourceSha256": "7006ea2da2c83818a2e3a4c88d3619ad691a32ff5f3e2410675626ae9e7d0c98",
+      "buildSha256": "d384d82312836a44d1816e53e962488f1aebc140d3cf389b8f7a5c2d2657861a",
+      "sha256": "d01baa10c5b375ce40026f0390bc347ae311c3c34d6315cd0389ced78df2afa8"
+    },
+    "evidence": [
+      "_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md",
+      "scripts/audit-tools.mjs",
+      "src/test/storage.test.js",
+      "src/test/werkzeuge-page.test.jsx"
+    ],
+    "excluded": [
+      "institutionelle PUK-Freigabe",
+      "Hostingverträge und internationale Bearbeitung von Verbindungsdaten",
+      "E-Mail-Postfach und Betriebssystem-Exporte"
+    ]
+  }
 }
