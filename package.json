@@ -13,6 +13,7 @@
     "test:coverage": "vitest run --coverage",
     "audit:website": "node scripts/audit-website.mjs",
     "audit:tools": "node scripts/audit-tools.mjs",
+    "audit:print": "node scripts/audit-print.mjs",
     "test:release-evidence": "node --test scripts/test/release-evidence.test.mjs",
     "audit:release:evidence": "node scripts/verify-release-evidence.mjs",
     "preaudit:release": "npm run build",

@@ -144,6 +144,30 @@ describe('KrisenplanTool privacy', () => {
 });
 
 describe('Kommunikations-Trainer privacy', () => {
+  it('prints the current script only from the result and explains which exported copies survive deletion', async () => {
+    const user = userEvent.setup();
+    const print = vi.spyOn(window, 'print').mockImplementation(() => {});
+    render(<TOOL_COMPONENTS.kommunikation onClose={() => {}} onNavigate={() => {}} />);
+    expect(screen.queryByRole('button', { name: 'Drucken / als PDF speichern' })).not.toBeInTheDocument();
+    expect(screen.getByText(/Druckwarteschlangen und Geräteprotokolle/)).toHaveTextContent('«Entwurf löschen» entfernt diese Kopien und Einträge nicht');
+    await user.click(screen.getByRole('button', { name: /Beginnen/ }));
+    await user.click(screen.getByRole('button', { name: /Ein anderes Anliegen/ }));
+    await user.click(screen.getByRole('button', { name: /Weiter/ }));
+    const observation = 'Erste Beobachtung\nWeitere Beobachtung <mit Sonderzeichen>.';
+    fireEvent.change(screen.getByRole('textbox', { name: 'Was haben Sie konkret beobachtet?' }), { target: { value: observation } });
+    await user.click(screen.getByRole('button', { name: /Weiter/ }));
+    fireEvent.change(screen.getByRole('textbox', { name: 'Wie geht es Ihnen damit?' }), { target: { value: 'Meine eigene Erfahrung.' } });
+    await user.click(screen.getByRole('button', { name: /Weiter/ }));
+    fireEvent.change(screen.getByRole('textbox', { name: 'Was wäre Ihr Anliegen oder Ihre Bitte?' }), { target: { value: 'Meine konkrete Bitte.' } });
+    await user.click(screen.getByRole('button', { name: 'Skript ansehen →' }));
+    await user.click(screen.getByRole('button', { name: 'Drucken / als PDF speichern' }));
+
+    expect(print).toHaveBeenCalledTimes(1);
+    expect(document.querySelector('.kommunikation-skript').textContent).toContain(observation);
+    expect(window.localStorage.length).toBe(0);
+    expect(window.sessionStorage.length).toBe(0);
+  });
+
   it('completes a new script in memory without restoring or overwriting old browser copies', async () => {
     const user = userEvent.setup();
     window.localStorage.setItem('puk-kommunikation-v1', JSON.stringify({ anlass: 'anderes', beobachtung: 'Private old draft' }));

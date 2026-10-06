@@ -53,6 +53,7 @@ Der Browseraudit prüft die **gebaute und servierte SPA**, nicht die leere Vite-
 npm run build
 npm run audit:website
 npm run audit:tools
+npm run audit:print
 ```
 
 Das Skript startet und beendet seinen eigenen Preview-Prozess. Es prüft 320, 360, 768 und 1440 Pixel, jeweils mit 100 % und 200 % Textgrösse, Textbereiche, Navigation, Tastatur, flüchtige Eingaben und Altbestands-Löschung sowie automatisierte axe-AA-Befunde. Es verwendet vorhandenes `/usr/bin/chromium`; alternativ `BROWSER_EXECUTABLE_PATH` setzen oder einmal `npx playwright install chromium` ausführen. `AUDIT_PORT` und `AUDIT_OUTPUT` sind optionale Laufzeitparameter. Der Ergebnisbericht liegt standardmässig unter `qa/output/website-audit.json`; jeder Lauf schreibt Zeitstempel und eigene Ergebnisse, der Exitstatus meldet fehlgeschlagene Prüfungen.
@@ -65,6 +66,8 @@ tatsächlich berechneten HTML-Schriftgrössen, auch bei fluiden Überschriften.
 Eine ausgelöste Druckfunktion bestätigt keinen physischen Ausdruck.
 `AUDIT_TOOLS_OUTPUT` überschreibt `qa/output/tools.json`;
 `AUDIT_TOOLS_PORT` überschreibt den Standardport 4525.
+
+Der Druckaudit erzeugt echte Chromium-PDFs und prüft sie mit den Poppler-Werkzeugen `pdfinfo` und `pdftotext` (Debian/Ubuntu: `apt-get install poppler-utils`). Er prüft Modul 4, Kommunikationsschritte und ausgefülltes Resultat, alle sieben Handouts sowie einen langen Krisenplan. Die Notfallkarte muss auf genau einer A4-Seite bleiben; die Faltflächen werden auf 85 × 55 mm und Überlauf geprüft. Dies bestätigt die PDF-Ausgabe, keinen physischen Druck und keine Barrierefreiheit des PDFs mit echten Hilfsmitteln.
 
 Der kanonische Projektauditor und das verbindliche Websiteprofil 1.10.1 liegen als unveränderte, über SHA256 nachgewiesene Auszüge des bereitgestellten PUK-Vollsystems vor:
 

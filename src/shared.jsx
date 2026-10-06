@@ -5,25 +5,19 @@
 import React from 'react';
 import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
 
-function CrisisBar({ onNavigate }) {
+function CrisisBar() {
   return (
     <div className="crisis-bar" data-safety-variant="direct">
-      <span>In akuten Lagen hat der Notfallweg Vorrang.</span>
-      <span className="sep">·</span>
-      <a href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>SOS Krise — 144 / 117 / 143 →</a>
+      <span>Jetzt Hilfe anrufen:</span>
+      <a href="tel:144">144 · Sanität</a>
+      <a href="tel:117">117 · Polizei</a>
+      <a href="tel:143">143 · Gespräch</a>
     </div>
   );
 }
 
 function Nav({ page, onNavigate }) {
   const navRef = React.useRef(null);
-  const [animateLogo, setAnimateLogo] = React.useState(true);
-  React.useEffect(() => {
-    // The supplied GIF loops indefinitely. Show the original briefly, then
-    // its original static equivalent; never run non-essential motion >5s.
-    const timer = window.setTimeout(() => setAnimateLogo(false), 4000);
-    return () => window.clearTimeout(timer);
-  }, []);
   React.useEffect(() => {
     const updateHeight = () => {
       document.documentElement.style.setProperty('--nav-height', `${navRef.current?.getBoundingClientRect().height || 68}px`);
@@ -40,9 +34,8 @@ function Nav({ page, onNavigate }) {
     <nav ref={navRef} className="nav" aria-label="Hauptnavigation">
       <div className="col-wide nav-inner">
         <a className="nav-brand puk-web-nav__link" aria-current={page === 'start' ? 'page' : undefined} href={navHref('start')} onClick={navHandler('start', onNavigate)} {...navPreloadProps('start')} aria-label="Startseite — Bipolar &amp; Angehörige · PUK Zürich">
-          <span className="nav-logo" data-logo-animation={animateLogo ? 'brief' : 'stopped'}>
-            <img src="/assets/puk/PUK_Logo_dynamisch_positiv_de_540p_transparent.gif" alt="Psychiatrische Universitätsklinik Zürich" data-motion="logo-animiert" />
-            <img src="/assets/puk/PUK_Logo_statisch_positiv_de.svg" alt="Psychiatrische Universitätsklinik Zürich" data-motion="logo-statisch" />
+          <span className="nav-logo">
+            <img src="/assets/puk/PUK_Logo_statisch_positiv_de.svg" width="214" height="85" alt="Psychiatrische Universitätsklinik Zürich" data-motion="logo-statisch" />
           </span>
           <span className="nav-brand-mark">Bipolar &amp; Angehörige</span>
         </a>

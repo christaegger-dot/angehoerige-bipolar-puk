@@ -6,6 +6,7 @@ import { ToolOverlay } from './tool-overlay.jsx';
 import { KrisenplanTool } from './werkzeuge-tools.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { HandoutSources } from './module-guidance.jsx';
+import { getPageMetadata } from './page-metadata.js';
 
 const HANDOUTS = {
   'DL-01': {
@@ -69,7 +70,7 @@ const HANDOUTS = {
 
   'DL-02': {
     title: 'Notfallkarte fürs Portemonnaie',
-    sub: 'Druckseite zum Falten — wichtige Nummern und persönliche Angaben für den Ernstfall',
+    sub: 'Kompakte Karte zum Ausschneiden und Falten — wichtige Nummern und persönliche Angaben',
     lede: 'Eine Karte, die Sie ausdrucken, ausfüllen und einstecken können. Im Krisenfall haben Sie die wichtigsten Informationen auf einen Griff parat.',
     sections: [
       {
@@ -83,7 +84,7 @@ const HANDOUTS = {
           { num: '117', label: 'Polizei · bei Gewalt oder Bedrohung' },
           { num: '143', label: 'Dargebotene Hand · anonyme Beratung · 24 h' },
           { num: '0800 33 66 55', label: 'Ärztefon Notfalldienst ZH · 24 h' },
-          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h' },
+          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h · ab 18 Jahren' },
           { num: '058 384 38 00', label: 'Fachstelle Angehörigenarbeit · werktags' },
         ],
       },
@@ -531,19 +532,95 @@ const HANDOUT_TOPICS = {
   'DL-08': 'medicationQuestions',
 };
 
+function WalletField({ label, lines = 1 }) {
+  return (
+    <div className="wallet-field">
+      <dt>{label}</dt>
+      <dd aria-hidden="true">{Array.from({ length: lines }, (_, i) => <span key={i} />)}</dd>
+    </div>
+  );
+}
+
+function WalletEmergencyCard() {
+  const contacts = HANDOUTS['DL-02'].sections.find(section => section.kind === 'phonelist').items;
+  const readingUrl = `${getPageMetadata('unterstuetzung').canonical}#dl-02`;
+
+  return (
+    <section className="wallet-print" aria-label="Kompakte Notfallkarte zum Drucken">
+      <h2>Notfallkarte fürs Portemonnaie</h2>
+      <p className="wallet-instructions">Auf A4 bei 100 % / «Tatsächliche Grösse» drucken. Erst ausfüllen, dann den äusseren durchgezogenen Rahmen ausschneiden. An den beiden waagrechten gestrichelten Linien nach innen falten, dann an der senkrechten Linie halbieren. Gefaltet: 85 × 55 mm.</p>
+      <div className="wallet-card-panels">
+        {[['Notfallkarte · Soforthilfe', contacts.slice(0, 3)], ['Weitere Unterstützung', contacts.slice(3)]].map(([title, numbers]) => (
+          <section className="wallet-panel" key={title}>
+            <h3>{title}</h3>
+            <ul className="wallet-contacts">
+              {numbers.map(contact => (
+                <li key={contact.num}>
+                  <a href={toTelUri(contact.num)}>{contact.num}</a>
+                  <span>{contact.label}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="wallet-reminder">{title.includes('Soforthilfe') ? 'Eigene Sicherheit zuerst. In akuten Lagen hat der Notfallweg Vorrang.' : 'Angaben bei Änderungen aktualisieren. Eine Kopie für die erkrankte Person, eine für Sie.'}</p>
+          </section>
+        ))}
+        <section className="wallet-panel">
+          <h3>Meine Kontakte</h3>
+          <dl>
+            <WalletField label="Vertrauensperson · Name / Telefon" />
+            <WalletField label="Hausärztin / Hausarzt · Name / Telefon" />
+            <WalletField label="Psychiaterin / Klinik · Name / Telefon" />
+          </dl>
+        </section>
+        <section className="wallet-panel">
+          <h3>Medizinische Angaben</h3>
+          <dl>
+            <WalletField label="Medikation · Wirkstoff / Dosis" lines={2} />
+            <WalletField label="Allergien / Unverträglichkeiten" />
+            <WalletField label="Klinikwunsch im Ernstfall" />
+          </dl>
+        </section>
+        <section className="wallet-panel">
+          <h3>Absprachen für den Ernstfall</h3>
+          <dl>
+            <WalletField label="Ausweichkontakt, wenn niemand erreichbar ist" lines={2} />
+            <WalletField label="Vorsorgeauftrag / Patientenverfügung hinterlegt bei" lines={2} />
+          </dl>
+        </section>
+        <section className="wallet-panel">
+          <h3>Betreuung und Entlastung</h3>
+          <dl>
+            <WalletField label="Betreuung für Kinder / abhängige Personen" lines={2} />
+            <WalletField label="Wer entlastet mich, wenn ich nicht begleiten kann?" />
+            <WalletField label="Zuletzt geprüft am" />
+          </dl>
+        </section>
+      </div>
+      <div className="wallet-print-notes">
+        <p>Die Karte ersetzt keine fachliche Beratung. In akuten Lagen hat der Notfallweg Vorrang. Bei umfangreicher Medikation zusätzlich den aktuellen Medikationsplan mitnehmen.</p>
+        <p>Fachstelle Angehörigenarbeit PUK Zürich · Inhaltliche Verantwortung: Ch. Egger · Stand Oktober 2026. Ausführliche Hinweise und Quellen in der Lesefassung:<br /><a href={readingUrl}>{readingUrl}</a></p>
+      </div>
+    </section>
+  );
+}
+
 function HandoutOverlay({ id, onClose, onNavigate }) {
   const handout = HANDOUTS[id];
   if (!handout) return null;
   const crisisOrientation = ['DL-02', 'DL-04', 'DL-05'].includes(id);
   const continuation = HANDOUT_CONTINUATIONS[id];
+  const walletCard = id === 'DL-02';
 
   return (
-    <ToolOverlay onClose={onClose} ariaLabel={handout.title} overlayClass="handout-overlay" cardClass="handout-card" noPrint={true}>
+    <ToolOverlay onClose={onClose} ariaLabel={handout.title} overlayClass={`handout-overlay${walletCard ? ' wallet-overlay' : ''}`} cardClass="handout-card" noPrint={true}>
+      {walletCard && <WalletEmergencyCard />}
+      <div className={walletCard ? 'wallet-reading no-print' : 'handout-reading'}>
         <header className="handout-head">
           <span className="kicker">Handout · {id}</span>
           <h2>{handout.title}</h2>
           {handout.sub && <p className="handout-sub">{handout.sub}</p>}
           {handout.lede && <p className="handout-lede">{handout.lede}</p>}
+          {walletCard && <p className="wallet-screen-note">Beim Drucken erhalten Sie eine kompakte Karte auf einer A4-Seite mit Anleitung zum Ausschneiden und Falten. Die ausführliche Lesefassung und ihre Quellen finden Sie hier darunter.</p>}
         </header>
 
         <div className="handout-body">
@@ -572,6 +649,7 @@ function HandoutOverlay({ id, onClose, onNavigate }) {
             Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) · Inhaltliche Verantwortung: Ch. Egger · Redaktioneller Abgleich: Oktober 2026 · Diese Inhalte ersetzen keine fachliche Beratung.{crisisOrientation && ' In akuten Lagen hat der Notfallweg Vorrang.'}
           </p>
         </footer>
+      </div>
 
         <div className="handout-actions no-print">
           <button className="btn btn-primary" onClick={() => window.print()}>Drucken / als PDF speichern</button>

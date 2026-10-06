@@ -4695,6 +4695,13 @@ section + section { padding-top: 0; }
   border-top: 1px solid var(--paper-edge);
 }
 
+.wallet-print,
+.kommunikation-print-value { display: none; }
+.wallet-screen-note {
+  margin-top: 16px !important;
+  text-align: left !important;
+}
+
 @media (max-width: 700px) {
   .handout-do-dont { grid-template-columns: 1fr; gap: 18px; }
   .handout-phonelist li { grid-template-columns: 1fr; gap: 4px; }
@@ -4772,7 +4779,7 @@ section + section { padding-top: 0; }
   font-size: 0.9375rem;
   color: var(--ink);
   background: var(--bg-alt);
-  border: 1px solid var(--paper-edge);
+  border: 1px solid var(--puk-black-75);
   padding: 12px 14px;
   width: 100%;
   outline: none;
@@ -4883,33 +4890,28 @@ section + section { padding-top: 0; }
   .krisenplan-actions-left { flex-direction: column; align-items: stretch; }
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   PRINT — gemeinsam für Handout-Overlay und Krisenplan-Overlay.
-   Strategie: alles unsichtbar machen, das aktive Overlay + Inhalt
-   wieder einblenden, Modal-Chrome strippen, absolut positionieren.
-   Tool-spezifische Farb-/Layout-Tweaks weiter unten.
-   ═══════════════════════════════════════════════════════════════ */
+/* Ordinary pages keep their content. With a tool open, print only its
+   normal-flow content and remove the page underneath the dialog. */
 @media print {
   @page { size: A4; margin: 18mm 14mm; }
-  html, body { background: white !important; }
+  html, body { background: var(--puk-white) !important; overflow: visible !important; }
+  body { font-size: 11pt !important; line-height: 1.45 !important; }
+  #main-content { padding: 0 !important; }
+  h1 { font-size: 24pt !important; }
+  h2 { font-size: 18pt !important; }
+  h3 { font-size: 13pt !important; }
+  h1, h2, h3, h4 { break-after: avoid-page; }
+  .animate-in { animation: none !important; }
+  .module-article { padding: 0 !important; }
+  .module-detail-header { padding: 0 0 8mm !important; }
+  .module-layout { display: block !important; padding: 0 !important; }
+  .module-body { max-width: none !important; }
+  .module-toc, .module-nav-footer, .skip-link { display: none !important; }
 
-  /* Alles unsichtbar — visibility statt display, damit Layout stabil bleibt */
-  body * { visibility: hidden !important; }
-
-  /* Druckbare Overlays + ihr Inhalt einblenden */
-  .handout-overlay, .handout-overlay *,
-  .krisenplan-overlay, .krisenplan-overlay * { visibility: visible !important; }
-
-  /* Hidden background content still occupies printable pages. Remove only
-     siblings outside the active overlay path, including page wrappers. */
-  #main-content:has(.handout-overlay, .krisenplan-overlay) > :not(.handout-overlay):not(.krisenplan-overlay):not(:has(.handout-overlay, .krisenplan-overlay)),
-  #main-content :has(.handout-overlay, .krisenplan-overlay) > :not(.handout-overlay):not(.krisenplan-overlay):not(:has(.handout-overlay, .krisenplan-overlay)) {
+  #main-content:has(.tool-overlay) > :not(.tool-overlay):not(:has(.tool-overlay)),
+  #main-content :has(.tool-overlay) > :not(.tool-overlay):not(:has(.tool-overlay)) {
     display: none !important;
   }
-
-  /* Die eigenständige Referenzseite muss auch ohne Werkzeug-Overlay druckbar bleiben. */
-  .reference-hero, .reference-hero *,
-  .reference-section, .reference-section * { visibility: visible !important; }
 
   .reference-hero,
   .reference-section {
@@ -4944,23 +4946,20 @@ section + section { padding-top: 0; }
   .no-print, .no-print * { display: none !important; visibility: hidden !important; }
   .crisis-bar, .nav, .site-footer { display: none !important; visibility: hidden !important; }
 
-  /* Overlay vom Modal zum normalen Seiteninhalt umfunktionieren */
-  .handout-overlay,
-  .krisenplan-overlay {
-    position: absolute !important;
-    inset: 0 !important;
+  .tool-overlay {
+    position: static !important;
+    inset: auto !important;
     padding: 0 !important;
     background: white !important;
     animation: none !important;
     display: block !important;
     z-index: auto !important;
   }
-  .handout-overlay .tool-overlay-bg,
-  .krisenplan-overlay .tool-overlay-bg { display: none !important; }
+  .tool-overlay-bg,
+  .tool-close { display: none !important; }
 
   /* Card-Chrome strippen */
-  .handout-overlay .tool-overlay-card,
-  .krisenplan-overlay .tool-overlay-card {
+  .tool-overlay .tool-overlay-card {
     animation: none !important;
     transform: none !important;
     box-shadow: none !important;
@@ -4990,6 +4989,72 @@ section + section { padding-top: 0; }
   }
   .handout-phonelist,
   .handout-do-dont { page-break-inside: avoid; }
+  .handout-field-row { break-inside: avoid; }
+
+  .wallet-print { display: block !important; padding: 0 !important; color: var(--puk-black-100); }
+  .wallet-print > h2 { margin: 0 0 4mm; font-size: 17pt !important; text-align: left; }
+  .wallet-print .wallet-instructions,
+  .wallet-print-notes p {
+    margin: 0 0 5mm;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    max-width: none !important;
+  }
+  .wallet-card-panels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    width: 170mm;
+    height: 165mm;
+    margin: 0 auto 5mm;
+    border: 0.3mm solid var(--puk-black-100);
+    break-inside: avoid;
+  }
+  .wallet-panel {
+    min-width: 0;
+    padding: 3mm;
+    break-inside: avoid;
+    font-size: 9pt;
+    line-height: 1.15;
+  }
+  .wallet-panel:nth-child(odd) { border-right: 0.2mm dashed var(--puk-black-75); }
+  .wallet-panel:nth-child(-n + 4) { border-bottom: 0.2mm dashed var(--puk-black-75); }
+  .wallet-panel h3 {
+    margin: 0 0 2mm !important;
+    font-size: 11pt !important;
+    line-height: 1.15;
+    color: var(--puk-black-100);
+  }
+  .wallet-panel dl,
+  .wallet-contacts { padding: 0; margin: 0; list-style: none; }
+  .wallet-contacts li {
+    display: grid;
+    grid-template-columns: 29mm minmax(0, 1fr);
+    gap: 1mm;
+    margin-bottom: 2mm;
+    font-size: 9pt;
+    line-height: 1.15;
+  }
+  .wallet-contacts a {
+    font-size: 10pt;
+    color: var(--puk-black-100);
+    white-space: nowrap;
+  }
+  .wallet-field { margin-bottom: 1mm; break-inside: avoid; }
+  .wallet-field dt { font-size: 9pt; line-height: 1.15; }
+  .wallet-field dd { margin: 0; }
+  .wallet-field dd span { display: block; height: 5mm; border-bottom: 0.2mm solid var(--puk-black-75); }
+  .wallet-panel .wallet-reminder { margin: 2mm 0 0; font-size: 9pt !important; line-height: 1.2 !important; text-align: left; }
+  .wallet-print-notes a { color: var(--puk-black-100); overflow-wrap: anywhere; }
+
+  .kommunikation-overlay .krisenplan-textarea { display: none !important; }
+  .kommunikation-print-value { display: block !important; }
+  .kommunikation-skript { padding: 0 !important; }
+  .kommunikation-zeile { display: block !important; break-inside: auto; }
+  .kommunikation-rolle { display: block; break-after: avoid-page; }
+  .kommunikation-skript p,
+  .kommunikation-print-value { white-space: pre-wrap; overflow-wrap: anywhere; text-align: left !important; }
 
   /* KRISENPLAN — Farben, Eingabefelder als Druck-Boxen, Notruf-Block */
   .krisenplan-head h2,
@@ -4999,15 +5064,15 @@ section + section { padding-top: 0; }
   .kicker { color: var(--print-muted) !important; }
   .krisenplan-intro { color: var(--print-ink) !important; }
   .krisenplan-label-sub { color: var(--print-caption) !important; }
-  .krisenplan-input,
-  .krisenplan-textarea {
+  .krisenplan-overlay .krisenplan-input,
+  .krisenplan-overlay .krisenplan-textarea {
     display: none !important;
   }
   /* Native form controls print only their visible scroll area. Normal text
      preserves the complete in-memory value and can flow onto another page. */
   .krisenplan-print-value {
     display: block !important;
-    border: 1px solid var(--print-rule) !important;
+    border: 1px solid var(--puk-black-75) !important;
     background: white !important;
     color: black !important;
     font-family: var(--font-core) !important;
@@ -5019,8 +5084,9 @@ section + section { padding-top: 0; }
     min-height: 2.25em;
   }
   .krisenplan-print-value-multiline { min-height: 4em; }
-  .krisenplan-feld { page-break-inside: auto; margin-bottom: 14px !important; }
-  .krisenplan-label { break-after: avoid-page; }
+  .krisenplan-feld { display: block; page-break-inside: auto; margin-bottom: 14px !important; }
+  .krisenplan-label { display: block; break-after: avoid-page; }
+  .krisenplan-print-value { break-before: avoid-page; }
   .krisenplan-notruf {
     background: var(--print-paper) !important;
     border-left: 2px solid var(--print-rule) !important;

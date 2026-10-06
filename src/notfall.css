@@ -1,0 +1,143 @@
+/* Compact crisis entry: phone actions precede the reading guidance. */
+.notfall-page .notfall-compact-hero {
+  padding-block: var(--space-4) var(--space-6);
+}
+
+.notfall-compact-hero .breadcrumb {
+  margin-bottom: var(--space-3);
+}
+
+.notfall-compact-hero h1 {
+  margin-bottom: var(--space-3);
+  max-width: 36ch;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: var(--fw-regular);
+  line-height: 1.15;
+}
+
+.notfall-scope,
+.notfall-jump-nav > p {
+  margin-block: 0 var(--space-2);
+  font-size: 1rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.4;
+}
+
+.notfall-page .notfall-immediate-calls {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.notfall-immediate-calls .number-tile {
+  min-width: 0;
+  padding: var(--space-3) var(--space-2);
+  overflow-wrap: anywhere;
+}
+
+.notfall-immediate-calls .number-num {
+  font-size: 2rem;
+  font-weight: var(--fw-medium);
+}
+
+.notfall-immediate-calls .number-label {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.notfall-immediate-calls .number-sub {
+  font-size: .875rem;
+  line-height: 1.3;
+  color: var(--puk-black-100);
+}
+
+.notfall-local-contact {
+  margin-block: var(--space-2) var(--space-4);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.notfall-local-contact a {
+  display: flex;
+  align-items: center;
+  min-height: var(--web-touch-target);
+  font-weight: var(--fw-medium);
+  color: var(--puk-blue-125);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.notfall-local-contact a:hover { color: var(--puk-black-100); }
+
+.notfall-local-contact span {
+  display: block;
+}
+
+.notfall-jump-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notfall-jump-nav li {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.notfall-jump-nav a {
+  display: flex;
+  align-items: center;
+  min-height: var(--web-touch-target);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--puk-blue-100);
+  background: var(--puk-white);
+  color: var(--puk-blue-100);
+  font-size: 1rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.35;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+  overflow-wrap: anywhere;
+}
+
+.notfall-page .notfall-guidance {
+  padding-top: var(--space-6);
+}
+
+.notfall-page section[id] {
+  scroll-margin-top: calc(var(--nav-height, 68px) + var(--space-4));
+}
+
+.notfall-confusion {
+  padding: var(--space-4);
+  margin-bottom: var(--space-6);
+  border-left: 3px solid var(--puk-blue-100);
+  background: var(--puk-white);
+}
+
+.notfall-confusion h2 {
+  margin-bottom: var(--space-3);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.notfall-confusion p {
+  margin-bottom: var(--space-3);
+}
+
+.notfall-confusion p:last-child {
+  margin-bottom: 0;
+}
+
+.notfall-page .guide-body > p {
+  max-width: 60ch;
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 760px) {
+  .notfall-page section[id] {
+    scroll-margin-top: var(--space-4);
+  }
+}

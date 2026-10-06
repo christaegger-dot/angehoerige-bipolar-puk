@@ -1,6 +1,6 @@
 # Prüf- und Freigabedossier: Schweigepflicht bei Angehörigengesprächen
 
-Stand: 5. Oktober 2026. Bezug: [Issue #49](https://github.com/christaegger-dot/angehoerige-bipolar-puk/issues/49).
+Stand: 6. Oktober 2026. Bezug: [Issue #49](https://github.com/christaegger-dot/angehoerige-bipolar-puk/issues/49). Wortlaut und Prüfgegenstand nach P2-09 des Pre-Release-Audits aktualisiert; keine fachlich-rechtliche Prüfung damit abgeschlossen.
 
 **Status: schriftliche fachlich-rechtliche Prüfung durch die zuständige PUK-Rechts- oder Datenschutzstelle ausstehend.** Dieses Dossier bereitet die Anfrage vor. Es enthält keine rechtliche Freigabe und wurde nicht an eine externe Stelle versandt.
 
@@ -11,17 +11,18 @@ Geprüft werden soll der vollständige Wortlaut der Seite `/schweigepflicht` ein
 | Merkmal | Prüfstand |
 | --- | --- |
 | Repository | `christaegger-dot/angehoerige-bipolar-puk` |
-| Ausgangscommit dieses Dossiers | `eab5386a548617894f0799d5f20e32668894ae7b` |
+| Ausgangscommit dieser Aktualisierung | `b8deb68744870013e81aab83c53791394eb2b074` |
 | Seitenquelle | [`src/schweigepflicht.jsx`](../src/schweigepflicht.jsx) |
-| Letzter Änderungscommit der Seitenquelle | `d4a3496f5c8a43c7f4f714472a17ec0dc8058ef7` — „Ground and integrate confidentiality guidance (#48)“, 3. Oktober 2026 |
-| SHA-256 der Seitenquelle | `bf6bde7fdebc6117daf7ba2ad126236325447c5bb1f6b00ed7cd5b796834e4db` |
-| Auf der Seite angegebener Quellenprüftag | 3. Oktober 2026; in diesem Dossier keine erneute Prüfung der externen Quellen behauptet |
+| Letzter Änderungscommit der Seitenquelle | `3765dfe744608a9ed7e7271d5c4c9b5db5c5fa3b` — „Überarbeite Sprache der psychoedukativen Website nach S-Review“, 5. Oktober 2026 |
+| SHA-256 der aktuellen Seitenquelle | `16b1164d86b52265097992c2ab6fca4d2491872f89d38b45c01325ae402a1339` |
+| Auf der Seite angegebener redaktioneller Stand | Oktober 2026; kein abgeschlossener aktueller Quellenprüftag genannt |
+| Quellenabgleich / aktuelle PUK-Formularversion | **Ausstehend**; diese Aktualisierung gleicht den Wortlaut mit der Seitenquelle ab, nicht mit den externen Originalen |
 | Zuständige prüfende Stelle / verantwortliche Person | **Ausstehend; noch nicht benannt** |
 | Termin / Eingang der schriftlichen Rückmeldung | **Ausstehend** |
 
 Bei Erstellung wurden die vorhandenen Repository-Dateien und `_dev`-Audits auf einen schriftlichen Freigabenachweis geprüft. Ein solcher Nachweis wurde im Checkout nicht gefunden. Das [Fachreview-Audit](AUDIT-FACHREVIEW-2026-10-05.md) stellt ausdrücklich klar, dass seine Änderungen keine klinische oder juristische Freigabe sind. Frühere visuelle und UX-Freigabeempfehlungen betreffen andere Prüfgegenstände. Diese Feststellung schliesst ausserhalb des Repositorys vorhandene Nachweise nicht aus.
 
-Der sichtbare Hinweis in `src/schweigepflicht.jsx:150–153`, `noindex, nofollow` in `index.html` und `Disallow: /` in `public/robots.txt` bleiben bestehen. Suchmaschinenregeln sind keine Zugangskontrolle und kein Freigabenachweis.
+Der sichtbare Hinweis in `src/schweigepflicht.jsx:174–177`, `noindex, nofollow` in `index.html` und `Disallow: /` in `public/robots.txt` bleiben bestehen. Suchmaschinenregeln sind keine Zugangskontrolle und kein Freigabenachweis. Die in Abschnitt 3 wiedergegebene Fassung ersetzt den früheren Prüfgegenstand mit dem Hash `bf6bde7fdebc6117daf7ba2ad126236325447c5bb1f6b00ed7cd5b796834e4db`; eine Bestätigung dieses alten Wortlauts würde die aktuelle Fassung nicht abdecken.
 
 ## 1. Vorbereiteter Anfragetext
 
@@ -39,11 +40,11 @@ Die Zeilenangaben beziehen sich auf die oben bezeichnete unveränderte Seitenque
 
 | Nr. / Gegenstand | Zu prüfende aktuelle Passage | Konkrete Rückmeldung erbeten |
 | --- | --- | --- |
-| 1. Angehörigenangaben, Dokumentation und Einsicht | „Ihre Angaben können in der Patientendokumentation festgehalten werden. Die behandelte Person hat grundsätzlich ein Einsichtsrecht. […] ob schutzwürdige Interessen im Einzelfall eine eingeschränkte Einsicht rechtfertigen.“ Abschnitt „Vertrauliche Angaben“, `src/schweigepflicht.jsx:127–132`. Ergänzend die Gesprächsmöglichkeiten ohne Entbindung, Zeilen 120–124. | Sind Möglichkeit der Dokumentation, grundsätzliches Einsichtsrecht und Grenzen einer Einschränkung korrekt und hinreichend verständlich beschrieben? Bleibt klar, dass Vertraulichkeit gegenüber der behandelten Person nicht zugesichert wird? Ist die Empfehlung, besonders vertrauliche Angaben vorab mit dem Team zu besprechen, mit dem PUK-Dokumentations- und Auskunftsverfahren vereinbar? Bitte erforderliche Ergänzungen und Rechtsgrundlagen angeben. |
-| 2. Urteilsunfähige Minderjährige / elterliche Sorge | „Bei urteilsunfähigen Minderjährigen entscheiden die Inhaberinnen oder Inhaber der elterlichen Sorge über medizinische Massnahmen.“ Abschnitt „Wer kann einwilligen?“, Zeile 64; Zusammenhang mit urteilsfähigen Minderjährigen in Zeile 63 und der Begrenzung pauschaler Berechtigungen in Zeilen 68–69. | Ist diese Kurzfassung einschliesslich ihrer Grenzen ausreichend? Muss die Trennung zwischen medizinischer Entscheidung und Einwilligung in die Informationsweitergabe deutlicher werden? Müssen eingeschränkte elterliche Sorge, besondere Schutzsituationen oder andere Ausnahmen ausdrücklich genannt werden? Bitte für diese Angehörigenseite nötigen Ersatzwortlaut benennen. |
-| 3. Vertretung urteilsunfähiger Erwachsener | „Bei urteilsunfähigen Erwachsenen richtet sich die Vertretung bei medizinischen Massnahmen grundsätzlich nach Patientenverfügung, Vorsorgeauftrag und der gesetzlichen Reihenfolge.“ Zeile 65; keine pauschale Auskunfts- oder Entscheidungsberechtigung aus Verwandtschaft oder Betreuung, Zeilen 68–69. | Bildet die Aussage die zulässigen Vertretungsgrundlagen und deren Verhältnis zutreffend ab? Ist die Abgrenzung von Vertretung bei medizinischen Massnahmen, Informationsrechten und Schweigepflichtentbindung ausreichend? Bitte erforderliche Präzisierungen zur Zuständigkeit, zum Umfang oder zur gesetzlichen Reihenfolge schriftlich festhalten. |
-| 4. Psychiatrische Klinik / Behandlung psychischer Störungen / FU | „Für die Behandlung einer psychischen Störung in einer psychiatrischen Klinik gelten besondere Regeln.“ Zeile 65. Ergänzend Vorbehalt gesetzlicher Melde-/Auskunftsrechte und behördlicher Entbindung, Zeilen 35–38, sowie Einzelfallhinweis bei akuter Gefahr, Zeilen 136–139. | Reicht der allgemeine Hinweis auf besondere Regeln aus, oder müssen fürsorgerische Unterbringung (FU), Behandlung einer psychischen Störung und Behandlung ohne Zustimmung ausdrücklich unterschieden werden? Die Seite erläutert FU derzeit nicht gesondert. Bitte sicherstellen, dass weder automatische Angehörigenrechte noch eine pauschale Übertragbarkeit der allgemeinen medizinischen Vertretungsregeln suggeriert werden; nötige Ergänzungen und Rechtsgrundlagen angeben. |
-| 5. Reichweite, Einschränkung und Widerruf des PUK-Formulars | Festgelegter Informationsaustausch, keine medizinische Vollmacht und kein allgemeines Dossierrecht, Zeilen 74–88; formlose Einwilligung / Dokumentation, Zeilen 100–102; offizieller Formularblock, Zeilen 106–115. | Entspricht die Beschreibung der tatsächlich geprüften aktuellen PUK-Formularversion: bezeichnete Ärztinnen/Ärzte und Hilfspersonen, bezeichnete empfangende Person, Auskünfte erteilen **und** einholen, Geltung bis zum Widerruf? Ist die Darstellung möglicher Einschränkungen sowie ihrer Dokumentation zutreffend? Muss der Widerrufsweg, die Reichweite oder die Form-/Dokumentationsaussage präzisiert werden? Bitte Formularversion/Datum, allfälligen direkten PDF-Bezug und nötige Korrekturen festhalten. |
+| 1. Angehörigenangaben, Dokumentation und Einsicht | „Ihre Angaben können in der Patientendokumentation, also den Unterlagen zur Behandlung, festgehalten werden. Die behandelte Person hat grundsätzlich ein Einsichtsrecht. […] ob schutzwürdige Interessen im Einzelfall eine eingeschränkte Einsicht rechtfertigen.“ Abschnitt „Vertrauliche Angaben und Behandlungsunterlagen“, `src/schweigepflicht.jsx:130–137`. Ergänzend Gesprächsmöglichkeiten ohne Entbindung, Zeilen 124–128, und die Unterscheidung zur eigenen Angehörigenberatung, Zeilen 145–151. | Sind Möglichkeit der Dokumentation, grundsätzliches Einsichtsrecht und Grenzen einer Einschränkung korrekt und hinreichend verständlich beschrieben? Bleibt klar, dass Vertraulichkeit gegenüber der behandelten Person nicht zugesichert wird? Ist die Empfehlung, besonders vertrauliche Angaben vorab mit dem Team zu besprechen, mit dem PUK-Dokumentations- und Auskunftsverfahren vereinbar? Bitte auch die Vertraulichkeitsaussage zur eigenen Angehörigenberatung und erforderliche Ergänzungen und Rechtsgrundlagen prüfen. |
+| 2. Minderjährige / Urteilsfähigkeit / elterliche Sorge | „Bei Minderjährigen klären Sie mit dem Behandlungsteam, wie Einwilligung, Vertraulichkeit und die Beteiligung der Sorgeberechtigten im konkreten Fall geregelt sind.“ Abschnitt „Wer kann einwilligen?“, Zeile 65; Definition der Urteilsfähigkeit, Zeilen 56–61, und Begrenzung pauschaler Berechtigungen, Zeilen 69–72. | Reicht die aktuelle Orientierung aus, oder muss sie urteilsfähige und urteilsunfähige Minderjährige ausdrücklich unterscheiden? Muss die Trennung zwischen medizinischer Entscheidung und Einwilligung in die Informationsweitergabe deutlicher werden? Müssen eingeschränkte elterliche Sorge, besondere Schutzsituationen oder andere Ausnahmen genannt werden? Bitte für diese Angehörigenseite nötigen Ersatzwortlaut benennen. |
+| 3. Vertretung bei fehlender Urteilsfähigkeit | „Wenn die Person über eine konkrete Frage nicht selbst entscheiden kann, fragen Sie, wer sie dabei vertreten darf und auf welcher gesetzlichen Grundlage. Klären Sie auch, ob Dokumente wie eine Patientenverfügung oder ein Vorsorgeauftrag vorliegen und was sie für diese Frage bedeuten.“ Zeile 66; keine pauschale Auskunfts- oder Entscheidungsberechtigung aus Verwandtschaft oder Betreuung, Zeilen 69–72. | Sind der Bezug auf die konkrete Frage und die Empfehlung zur Klärung der Vertretungsgrundlage ausreichend? Ist die Abgrenzung von Vertretung bei medizinischen Massnahmen, Informationsrechten und Schweigepflichtentbindung klar? Bitte nötige Präzisierungen zu Zuständigkeit, Umfang und gesetzlichen Vertretungsregeln schriftlich festhalten; die aktuelle Seite nennt keine eigene gesetzliche Reihenfolge. |
+| 4. Psychiatrische Klinik / Behandlung psychischer Störungen / FU | „Bei psychiatrischer Behandlung lassen Sie sich erläutern, welche besonderen Regeln für die konkrete Situation gelten. Dass Sie Auskunft erhalten dürfen, bedeutet nicht automatisch, dass Sie auch über die medizinische Behandlung entscheiden dürfen.“ Zeile 67. Ergänzend gesetzliche Melde-/Auskunftsrechte und behördliche Entbindung, Zeilen 35–39, sowie Einzelfallhinweis, Zeilen 139–142. | Reicht der allgemeine Hinweis auf besondere Regeln aus, oder müssen fürsorgerische Unterbringung (FU), Behandlung einer psychischen Störung und Behandlung ohne Zustimmung ausdrücklich unterschieden werden? Die Seite erläutert FU nicht gesondert. Bitte sicherstellen, dass weder automatische Angehörigenrechte noch eine pauschale Übertragbarkeit allgemeiner medizinischer Vertretungsregeln suggeriert werden; nötige Ergänzungen und Rechtsgrundlagen angeben. |
+| 5. Reichweite, Einschränkung und Widerruf des PUK-Formulars | Informationsaustausch, keine medizinische Vollmacht und kein allgemeines Dossierrecht, Zeilen 75–92; Klärung der Dokumentation und des aktuellen Formulars, Zeilen 103–106; offizieller Formularblock, Zeilen 109–120. | Bitte die aktuelle offizielle PUK-Formularversion tatsächlich prüfen: Wer wird gegenüber wem entbunden, welche Auskünfte dürfen erteilt oder eingeholt werden, wie lange gilt die Entbindung und wie kann sie eingeschränkt oder widerrufen werden? Entsprechen die Fragen und Hinweise auf der Seite dem PUK-Ablauf? Die aktuelle Seite behauptet weder eine bestimmte Geltungsdauer noch eine verbindliche Formvorgabe. Bitte Version/Datum, allfälligen direkten PDF-Bezug und nötige Korrekturen festhalten. |
 
 ### Rückmeldungsfelder je Prüfpunkt
 
@@ -61,91 +62,98 @@ Entscheidungen bitte ausgeschrieben einsetzen: **Wortlaut bestätigt**, **Korrek
 
 Wiedergabe der Seitentexte in Leserichtung. JSX-Einrückungen sind normalisiert. Die Überschrift enthält im Quelltext eine unsichtbare optionale Trennstelle (`&shy;`) in „Angehörigengesprächen“; sie wird hier ohne Trennstelle wiedergegeben. Die Darstellung ändert den Wortlaut nicht. Die Quellverweise bestimmen die Fassung unabhängig von der Markdown-Formatierung.
 
-### Einstieg — `src/schweigepflicht.jsx:14–25`
+### Einstieg — `src/schweigepflicht.jsx:13–26`
 
 Start / Modul 6 / Schweigepflicht
 
-Praktische Referenz
+Informationen fürs Gespräch
 
 **Schweigepflicht bei Angehörigengesprächen.**
 
-Das Behandlungsteam darf Angehörigen grundsätzlich nur mit Einwilligung der betroffenen Person Auskunft geben. Hier erfahren Sie, was eine Schweigepflichtentbindung ermöglicht, wo ihre Grenzen liegen und wie Sie das Gespräch darüber vorbereiten können.
+Das Behandlungsteam darf Angehörigen grundsätzlich nur mit Einwilligung der betroffenen Person Auskunft geben. Mit einer Schweigepflichtentbindung erlaubt die betroffene Person einen Informationsaustausch. Hier lesen Sie, was diese Einwilligung ermöglicht, wo ihre Grenzen liegen und wie Sie das Gespräch darüber vorbereiten können.
 
-### Der Grundsatz — `src/schweigepflicht.jsx:33–51`
+### Der Grundsatz — `src/schweigepflicht.jsx:34–52`
 
 Gesundheitsfachpersonen müssen Informationen über Patientinnen und Patienten vertraulich behandeln. Ohne Einwilligung dürfen sie Angehörigen grundsätzlich keine patientenbezogenen Informationen weitergeben. Gesetzliche Melde- und Auskunftsrechte sowie eine Entbindung durch die zuständige Behörde bleiben vorbehalten.
 
-Sie können dem Behandlungsteam Beobachtungen und Sorgen anbieten. Ob und wie das Team darauf eingehen oder Ihnen etwas zurückmelden darf, hängt von der Einwilligung und der konkreten Rechtslage ab.
+Sie können dem Behandlungsteam anbieten, Ihre Beobachtungen und Sorgen zu schildern. Ob und wie das Team darauf eingehen oder Ihnen Auskunft geben darf, hängt von der Einwilligung und der konkreten Rechtslage ab.
 
 **Wichtig**
 
-Schweigepflicht bedeutet nicht, dass Angehörige unwichtig sind. Sie schützt die Selbstbestimmung und das Vertrauensverhältnis der behandelten Person. Eine klar besprochene Entbindung kann Zusammenarbeit ermöglichen, ohne Entscheidungsrechte zu übertragen.
+Die Schweigepflicht schützt die Selbstbestimmung der behandelten Person und ihr Vertrauen in die Fachpersonen. Eine klar besprochene Entbindung kann die Zusammenarbeit mit Angehörigen ermöglichen. Sie überträgt ihnen jedoch keine Entscheidungsrechte.
 
-### Wer kann einwilligen? — `src/schweigepflicht.jsx:55–69`
+### Wer kann einwilligen? — `src/schweigepflicht.jsx:56–72`
 
-Entscheidend ist, ob die betroffene Person die Bedeutung und die Folgen der konkreten Einwilligung verstehen und entsprechend entscheiden kann. Diese Urteilsfähigkeit wird nicht allein aus einer Diagnose oder einer aktuellen Phase abgeleitet.
+Entscheidend ist, ob die betroffene Person die Bedeutung und die Folgen der konkreten Einwilligung verstehen und entsprechend entscheiden kann. Das wird als Urteilsfähigkeit bezeichnet. Eine Diagnose oder eine aktuelle Phase allein sagt nicht aus, ob diese Urteilsfähigkeit vorliegt.
 
 - **Urteilsfähige Erwachsene** entscheiden selbst, welche Informationen an wen weitergegeben werden dürfen.
-- **Urteilsfähige Minderjährige** haben ebenfalls Anspruch auf Vertraulichkeit. Ob sie urteilsfähig sind, hängt von der konkreten Situation und Fragestellung ab.
-- **Bei urteilsunfähigen Minderjährigen** entscheiden die Inhaberinnen oder Inhaber der elterlichen Sorge über medizinische Massnahmen.
-- **Bei urteilsunfähigen Erwachsenen** richtet sich die Vertretung bei medizinischen Massnahmen grundsätzlich nach Patientenverfügung, Vorsorgeauftrag und der gesetzlichen Reihenfolge. Für die Behandlung einer psychischen Störung in einer psychiatrischen Klinik gelten besondere Regeln.
+- **Bei Minderjährigen** klären Sie mit dem Behandlungsteam, wie Einwilligung, Vertraulichkeit und die Beteiligung der Sorgeberechtigten im konkreten Fall geregelt sind.
+- **Wenn die Person über eine konkrete Frage nicht selbst entscheiden kann,** fragen Sie, wer sie dabei vertreten darf und auf welcher gesetzlichen Grundlage. Klären Sie auch, ob Dokumente wie eine Patientenverfügung oder ein Vorsorgeauftrag vorliegen und was sie für diese Frage bedeuten.
+- **Bei psychiatrischer Behandlung** lassen Sie sich erläutern, welche besonderen Regeln für die konkrete Situation gelten. Dass Sie Auskunft erhalten dürfen, bedeutet nicht automatisch, dass Sie auch über die medizinische Behandlung entscheiden dürfen.
 
-Klären Sie den konkreten Fall mit dem Behandlungsteam; leiten Sie aus Verwandtschaft oder Betreuung nicht selbst eine pauschale Auskunfts- oder Entscheidungsberechtigung ab.
+Besprechen Sie mit dem Behandlungsteam, welche Rechte im konkreten Fall bestehen. Gehen Sie nicht allein aufgrund von Verwandtschaft oder Betreuung davon aus, dass Sie generell Auskunft erhalten oder Entscheidungen treffen dürfen.
 
-### Was eine Entbindung ermöglicht — `src/schweigepflicht.jsx:72–88`
+### Was eine Entbindung ermöglicht — `src/schweigepflicht.jsx:75–92`
 
-Eine Schweigepflichtentbindung erlaubt den bezeichneten Fachpersonen, im festgelegten Umfang mit einer bezeichneten Person Informationen auszutauschen. Sie ist keine Vollmacht für medizinische Entscheidungen und kein allgemeines Recht auf das gesamte Patientendossier.
+Eine Schweigepflichtentbindung erlaubt den dafür genannten Fachpersonen, bestimmte Informationen mit der genannten Person auszutauschen. Welche Informationen das sind, wird in der Entbindung festgelegt. Sie ist keine Vollmacht für medizinische Entscheidungen und kein allgemeines Recht auf das gesamte Patientendossier.
 
-Vor der Unterzeichnung sollten möglichst klar sein:
+Besprechen Sie vor dem Unterzeichnen möglichst genau:
 
 - welche behandelnde Stelle entbunden wird,
 - mit welcher angehörigen oder vertretungsberechtigten Person gesprochen werden darf,
-- welche Informationen und Gesprächsanlässe umfasst sind,
+- welche Informationen weitergegeben und welche Themen besprochen werden dürfen,
 - ob Informationen in beide Richtungen ausgetauscht werden dürfen,
-- wie lange die Einwilligung gelten soll und wie sie widerrufen werden kann.
+- wie lange die Einwilligung gelten soll und wie sie zurückgenommen, also widerrufen werden kann.
 
-Das aktuelle PUK-Formular ist breit gefasst und gilt bis zum Widerruf. Wenn Sie den Austausch einschränken möchten, klären Sie mit der PUK, wie diese Grenzen dokumentiert werden können.
+Lassen Sie sich das verwendete PUK-Formular vor dem Unterzeichnen erläutern: Welche Informationen umfasst es, wie lange gilt die Einwilligung und wie lässt sie sich einschränken oder widerrufen?
 
-### Wie Sie das Gespräch vorbereiten können — `src/schweigepflicht.jsx:91–102`
+### Wie Sie das Gespräch vorbereiten können — `src/schweigepflicht.jsx:95–106`
 
 1. Wählen Sie möglichst einen ruhigen Zeitpunkt, an dem die betroffene Person das Anliegen verstehen und abwägen kann.
-2. Erklären Sie konkret, wofür der Austausch hilfreich wäre, etwa für Frühwarnzeichen, Krisenplanung oder Nachsorge.
+2. Erklären Sie konkret, wofür der Austausch hilfreich wäre, etwa um über Frühwarnzeichen, Krisenplanung oder Nachsorge zu sprechen.
 3. Besprechen Sie Grenzen: Was soll das Team mitteilen dürfen, und was soll privat bleiben?
 4. Fragen Sie die behandelnde Stelle nach ihrem Formular und dem vorgesehenen Ablauf.
 5. Prüfen Sie die Regelung erneut, wenn sich Behandlung, behandelnde Stelle oder Wünsche verändern.
 
-Im Kanton Zürich ist die Einwilligung an keine bestimmte Form gebunden. Aus Beweisgründen wird eine schriftliche Zustimmung oder zumindest eine klare Dokumentation empfohlen. Verwenden Sie für die PUK vorzugsweise das offizielle PUK-Formular.
+Klären Sie mit der behandelnden Stelle, wie die Einwilligung festgehalten werden soll. Fragen Sie bei der PUK nach dem aktuellen offiziellen Formular und lassen Sie sich dessen Umfang, Gültigkeit und Widerruf erläutern.
 
-### Formularblock — `src/schweigepflicht.jsx:106–115`
+### Formularblock — `src/schweigepflicht.jsx:109–120`
 
 **OFFIZIELLES FORMULAR**
 
 **Entbindung von der ärztlichen Schweigepflicht und vom Amtsgeheimnis**
 
-Das PUK-Formular ermächtigt die in die Behandlung involvierten Ärztinnen und Ärzte sowie ihre Hilfspersonen, gegenüber der bezeichneten Person Auskünfte zu erteilen und einzuholen. Es überträgt keine medizinischen Entscheidungsrechte und gilt laut Formular bis zum Widerruf.
+Auf der PUK-Seite finden Sie Informationen zum offiziellen Formular. Besprechen Sie mit der behandelnden Stelle, wer mit wem welche Informationen austauschen darf und wie die Wünsche der betroffenen Person festgehalten werden. Eine Entbindung ist keine medizinische Vollmacht.
 
-[PUK-Formular als PDF öffnen](https://www.pukzh.ch/patienten-angehoerige/anfrage-patientendokumentation/anspruch-drittpersonen/entbindung-berufs-und-amtsgeheimnis/)
+[PUK-Seite zum Formular öffnen](https://www.pukzh.ch/patienten-angehoerige/anfrage-patientendokumentation/anspruch-drittpersonen/entbindung-berufs-und-amtsgeheimnis/)
 
-### Wenn keine Entbindung vorliegt — `src/schweigepflicht.jsx:120–139`
+### Wenn keine Entbindung vorliegt — `src/schweigepflicht.jsx:124–142`
 
 Fragen Sie das Team, welche Formen der Zusammenarbeit trotzdem möglich sind. Sie können Ihre Beobachtungen schildern und um allgemeine Orientierung bitten. Das Team muss dabei darauf achten, durch seine Antwort keine geschützten Informationen preiszugeben.
 
-**Vertrauliche Angaben**
+**Vertrauliche Angaben und Behandlungsunterlagen**
 
-Ihre Angaben können in der Patientendokumentation festgehalten werden. Die behandelte Person hat grundsätzlich ein Einsichtsrecht. Wenn es um besonders vertrauliche Angaben geht, sprechen Sie vorab mit dem Team darüber, wie diese dokumentiert werden und ob schutzwürdige Interessen im Einzelfall eine eingeschränkte Einsicht rechtfertigen.
+Ihre Angaben können in der Patientendokumentation, also den Unterlagen zur Behandlung, festgehalten werden. Die behandelte Person hat grundsätzlich ein Einsichtsrecht. Wenn es um besonders vertrauliche Angaben geht, sprechen Sie vorab mit dem Team darüber, wie diese dokumentiert werden und ob schutzwürdige Interessen im Einzelfall eine eingeschränkte Einsicht rechtfertigen.
 
-Bei akuter Gefahr wenden Sie sich an den Notruf oder das Behandlungsteam. Welche Informationen weitergegeben werden dürfen, richtet sich nach der Situation und der Rechtsgrundlage. Diese Seite ersetzt keine Beurteilung des Einzelfalls durch die behandelnde Stelle oder eine rechtliche Fachperson.
+Welche Informationen weitergegeben werden dürfen, hängt von der Situation und der Rechtsgrundlage ab. Für die Beurteilung Ihres konkreten Falls wenden Sie sich an die behandelnde Stelle oder eine rechtliche Fachperson. Diese Seite kann eine solche Beurteilung nicht ersetzen.
 
-### Amtliche Quellen — `src/schweigepflicht.jsx:142–147`
+### Eigene Beratung und nächste Schritte — `src/schweigepflicht.jsx:145–162`
+
+Im Gespräch mit dem Behandlungsteam geht es um die Behandlung der erkrankten Person. In Ihrer eigenen Angehörigenberatung können Sie Ihre Belastung, Ihre Fragen und Ihre Grenzen besprechen, auch wenn die erkrankte Person nicht in Behandlung ist oder nicht mitwirken möchte. Die Angehörigenberatung ist vertraulich. Wenn Sie einem Behandlungsteam Beobachtungen mitteilen, klären Sie hingegen dort vorab, wie mit diesen Angaben umgegangen wird.
+
+- [Fragen für das Arztgespräch öffnen](/unterstuetzung#dl-08) — wählen Sie zwei oder drei Anliegen für das nächste Gespräch.
+- [Kontakt zur eigenen Angehörigenberatung](/unterstuetzung#kontakt) — für Fragen zu Ihrer Situation und zu möglichen nächsten Schritten.
+
+### Amtliche Informationen und Formular — `src/schweigepflicht.jsx:166–171`
 
 - [Bundesamt für Gesundheit: Berufs- oder Arztgeheimnis](https://www.bag.admin.ch/de/berufs-oder-arztgeheimnis)
 - [Kanton Zürich: Berufliche Schweigepflicht und Entbindung](https://www.zh.ch/de/gesundheit/gesundheitsberufe.html)
 - [Psychiatrische Universitätsklinik Zürich: offizielles Formular](https://www.pukzh.ch/patienten-angehoerige/anfrage-patientendokumentation/anspruch-drittpersonen/entbindung-berufs-und-amtsgeheimnis/)
 - [Kanton Zürich und PUK: Rechte und Pflichten im Spital (PDF)](https://www.pukzh.ch/sites/default/assets/File/rechte_pflichten_spitalaufenthalt(1).pdf)
 
-### Sichtbarer Prüfstatus — `src/schweigepflicht.jsx:150–152`
+### Sichtbarer Prüfstatus — `src/schweigepflicht.jsx:174–177`
 
-Fachliche Orientierung, keine Rechtsberatung. Quellen geprüft am 3. Oktober 2026. Fachlich-rechtliche Freigabe vor einer öffentlichen Veröffentlichung ausstehend.
+Diese Seite gibt allgemeine Orientierung und bietet keine Rechtsberatung. Redaktioneller Stand: Oktober 2026. Die Angaben müssen vor einer Veröffentlichung noch mit den aktuellen amtlichen Originalen abgeglichen und fachlich sowie rechtlich freigegeben werden.
 
 ## 4. Gesamtentscheidung und schriftlicher Nachweis
 

@@ -255,7 +255,7 @@
     "tokens/fonts.tokens.css is a project adapter: public asset URLs, static Rubik 300/400/500, and original variable italic declared as Rubik 300–500. Font binaries are unchanged.",
     "src/design-tokens.css maps legacy application token names to the supplied PUK tokens. The former four palettes are removed.",
     "Vendored CSS basenames use *.tokens.css for recognition by the unchanged canonical website source-color gate. Token file contents remain byte-identical; styles.css only adapts import paths.",
-    "Das unveränderte Original-GIF wird im Header höchstens vier Sekunden angezeigt und danach durch das originale statische SVG ersetzt; Reduced Motion verwendet sofort das statische Logo. Die Datei selbst bleibt unverändert."
+    "Der Header verwendet das originale statische SVG entsprechend den statischen Beispielen im Website-Profil. Das Original-GIF bleibt als unveränderter Herkunftsbestand erhalten, wird aber nicht eingebunden oder beim Seitenaufruf geladen."
   ],
   "scope": "Website assets and tokens only. No platform/vendor, runtime bundles, uploads, cases or reference pages are included.",
   "approvalClaim": "Technical provenance only; no communications, clinical, privacy or accessibility approval is asserted.",

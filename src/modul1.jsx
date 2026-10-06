@@ -195,13 +195,14 @@ function Modul1Page({ onNavigate }) {
             <section id="s5">
               <h2>Bipolar I und Bipolar II</h2>
               <p>Die Unterscheidung kann auch helfen, Belastungen im Alltag einzuordnen. Im Vordergrund stehen je nach Verlauf etwa deutlich sichtbare Zuspitzungen, lange Depressionen, fehlendes Verständnis im Umfeld oder Unsicherheit in scheinbar guten Phasen.</p>
+              <p>Dieser Kurzüberblick verwendet die Begriffe des Diagnosesystems DSM-5. Andere Diagnosesysteme ordnen insbesondere gemischte Episoden teilweise anders ein. Fragen Sie das Behandlungsteam, welche Einordnung für die betroffene Person verwendet wird.</p>
 
               <h3>Bipolar I — mindestens eine manische Episode</h3>
-              <p>Für die Diagnose Bipolar I ist mindestens eine manische Episode erforderlich. Depressive Episoden können hinzukommen, sind für diese Diagnose aber nicht zwingend. Eine Manie kann den Alltag stark beeinträchtigen; manchmal ist eine stationäre Behandlung nötig.</p>
+              <p>Nach DSM-5 ist für die Diagnose Bipolar I mindestens eine manische Episode erforderlich. Depressive Episoden können hinzukommen, sind für diese Diagnose aber nicht zwingend. Eine Manie kann den Alltag stark beeinträchtigen; manchmal ist eine stationäre Behandlung nötig.</p>
               <p>Für Angehörige steht bei einer Manie oft die deutlich sichtbare Zuspitzung im Vordergrund: Kontrollverlust, Angst, Gefahr oder Beschämung. Manche erleben auch, dass sie den vertrauten Menschen zeitweise kaum wiedererkennen.</p>
 
               <h3>Bipolar II — Hypomanie und depressive Episoden</h3>
-              <p>Bei Bipolar II treten mindestens eine hypomanische und eine depressive Episode auf, ohne frühere Manie. Bipolar II ist keine grundsätzlich leichte Form. Eine Hypomanie kann als produktive oder angenehme Phase erlebt und deshalb übersehen werden.</p>
+              <p>Nach DSM-5 treten bei Bipolar II mindestens eine hypomanische und eine depressive Episode auf, ohne frühere Manie. Bipolar II ist keine grundsätzlich leichte Form. Eine Hypomanie kann als produktive oder angenehme Phase erlebt und deshalb übersehen werden.</p>
               <p>Bei Bipolar II kann die depressive Krankheitslast gross sein. Dauer, Schwere und Häufigkeit der Episoden sind individuell; aus der Diagnose allein lässt sich nicht ableiten, wie belastet eine Person oder ihre Angehörigen sein werden.</p>
 
               <aside className="callout callout-soft">
