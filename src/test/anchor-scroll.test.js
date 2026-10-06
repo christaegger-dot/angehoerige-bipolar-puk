@@ -69,6 +69,27 @@ it('does not leave a navigation-sized gap when the mobile navigation scrolls awa
   nav.remove();
 });
 
+it('keeps a module anchor below the compact mobile navigation after text enlargement', () => {
+  const nav = document.createElement('nav');
+  nav.className = 'nav';
+  nav.style.position = 'relative';
+  nav.getBoundingClientRect = () => ({ height: 300 });
+  const compact = document.createElement('nav');
+  compact.className = 'module-mobile-nav';
+  compact.style.position = 'sticky';
+  compact.getBoundingClientRect = () => ({ height: 96 });
+  document.body.append(nav, compact);
+  const scrollTo = vi.fn();
+  scrollToAnchorWhenReady('target', {
+    getElementById: () => ({ getBoundingClientRect: () => ({ top: 420 }) }),
+    scrollTo,
+    requestFrame: callback => { callback(); return 1; },
+  });
+  expect(scrollTo).toHaveBeenCalledWith({ top: 308, behavior: 'instant' });
+  nav.remove();
+  compact.remove();
+});
+
 it('moves keyboard focus from the contents link to its heading and respects reduced motion', () => {
   const section = document.createElement('section');
   section.id = 'contents-target';

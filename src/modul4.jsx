@@ -9,11 +9,11 @@ import { navHandler, navHref } from './nav-handler.js';
 function Reservoir() {
   const w = 560, h = 380;
   const stages = [
-    { from: 95, to: 100, key: 'voll', label: 'Voll', sub: 'getragen, mit Spielraum' },
-    { from: 70, to: 95, key: 'getragen', label: 'Getragen', sub: 'es geht — auch wenn es manchmal anstrengend ist' },
-    { from: 35, to: 70, key: 'schmal', label: 'Schmal', sub: 'es funktioniert — aber nichts Zusätzliches geht mehr' },
-    { from: 12, to: 35, key: 'reserve', label: 'Reserve', sub: 'aus Routine und Pflichtgefühl, nicht mehr aus Kraft' },
-    { from: 0, to: 12, key: 'notlage', label: 'Kaum Kraft', sub: 'Wunsch nach Ruhe und Unterstützung' },
+    { from: 95, to: 100, key: 'voll', label: 'Voll', labelY: 50 },
+    { from: 70, to: 95, key: 'getragen', label: 'Getragen', labelY: 115 },
+    { from: 35, to: 70, key: 'schmal', label: 'Schmal', labelY: 180 },
+    { from: 12, to: 35, key: 'reserve', label: 'Reserve', labelY: 255 },
+    { from: 0, to: 12, key: 'notlage', label: 'Kaum Kraft', labelY: 330 },
   ];
   const top = 50, bot = 320;
   const yFor = (val) => bot - ((val / 100) * (bot - top));
@@ -28,13 +28,10 @@ function Reservoir() {
         </linearGradient>
       </defs>
 
-      <text x="40" y="28" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0" fontWeight="500">KRAFT-RESERVOIR</text>
-
       <g>
         <rect x="100" y={top} width="80" height={bot - top} fill="none" stroke="var(--ink)" strokeWidth="1" strokeOpacity="0.5" />
         <rect x="100" y={yFor(45)} width="80" height={bot - yFor(45)} fill="url(#reservoir-fill)" />
         <line x1="100" y1={yFor(45)} x2="180" y2={yFor(45)} stroke="var(--accent)" strokeWidth="1.5" />
-        <text x="92" y={yFor(45) + 4} fontFamily="var(--serif-display)" fontStyle="normal" fontSize="11" fill="var(--accent)" textAnchor="end">fiktives Beispiel</text>
       </g>
 
       <g>
@@ -47,21 +44,13 @@ function Reservoir() {
               {i > 0 && (
                 <line x1="100" y1={yHi} x2="180" y2={yHi} stroke="var(--paper-edge)" strokeWidth="1" strokeDasharray="2 3" />
               )}
-              <line x1="180" y1={yMid} x2="220" y2={yMid} stroke="var(--ink-mute)" strokeWidth="0.5" strokeOpacity="0.5" />
-              <text x="228" y={yMid - 1} fontFamily="var(--serif-display)" fontStyle="normal" fontSize={isCurrent ? '15' : '13'} fontWeight={isCurrent ? '500' : '400'} fill={isCurrent ? 'var(--accent)' : 'var(--ink)'}>
+              <path d={`M 180 ${yMid} L 205 ${yMid} L 225 ${s.labelY - 12}`} fill="none" stroke="var(--ink-mute)" strokeWidth="1" />
+              <text x="240" y={s.labelY} fontFamily="var(--sans)" fontSize="36" fontWeight={isCurrent ? '500' : '400'} fill={isCurrent ? 'var(--accent)' : 'var(--ink)'}>
                 {s.label}
-              </text>
-              <text x="228" y={yMid + 13} fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" fontStyle="normal">
-                {s.sub}
               </text>
             </g>
           );
         })}
-      </g>
-
-      <g fontFamily="var(--mono)" fontSize="9" fill="var(--ink-mute)" letterSpacing="0">
-
-
       </g>
     </svg>
   );
@@ -382,7 +371,7 @@ function Modul4Page({ onNavigate }) {
               <p>Vielleicht machen Sie sich Sorgen, ob Ihr Kind ebenfalls erkranken könnte. Diese Seite kann das Risiko für ein einzelnes Kind nicht einschätzen. Wenn Sie Veränderungen bei Ihrem Kind bemerken oder Fragen haben, können Sie sich beraten lassen. Sie müssen weder eine Diagnose stellen noch die Entwicklung ständig kontrollieren.</p>
 
               <h3>Beratung und Familienangebote nutzen</h3>
-              <p>Sie und Ihr Kind können auch ohne eine Diagnose des Kindes Beratung zum Familienalltag suchen. Fragen Sie beim Behandlungsteam oder einer Beratungsstelle nach Unterstützung für Kinder, Eltern und junge Angehörige. Unter <strong>kinderseele.ch</strong> können Sie nach aktuellen Angeboten suchen und klären, für wen sie gedacht sind und welche Bedingungen gelten. Besprechen Sie, welche Anliegen das Kind selbst hat und welcher erste Kontakt für Ihre Familie erreichbar ist.</p>
+              <p>Sie und Ihr Kind können auch ohne eine Diagnose des Kindes Beratung zum Familienalltag suchen. Fragen Sie beim Behandlungsteam oder einer Beratungsstelle nach Unterstützung für Kinder, Eltern und junge Angehörige. Unter <a className="link-underline" href="https://www.kinderseele.ch/">kinderseele.ch</a> können Sie nach aktuellen Angeboten suchen und klären, für wen sie gedacht sind und welche Bedingungen gelten. Besprechen Sie, welche Anliegen das Kind selbst hat und welcher erste Kontakt für Ihre Familie erreichbar ist.</p>
               <p>Begleitete Familienprogramme können Information, Gespräche und praktische Unterstützung verbinden. Studien zeigen je nach Programm und untersuchtem Ergebnis unterschiedliche Befunde: Für manche wurden kurzfristige Verbesserungen festgestellt; andere zeigten keinen klaren zusätzlichen Nutzen gegenüber der üblichen Versorgung. Eine spätere Erkrankung lässt sich dadurch nicht sicher verhindern. Klären Sie mit der Fachperson, welche Unterstützung zu Ihrer Situation passt und wie Sie gemeinsam prüfen, ob sie hilft.</p>
             </section>
 

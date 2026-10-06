@@ -54,6 +54,8 @@ const TRIAGE_NEXT_STEPS = {
   'q3-both': 'q4',
 };
 
+const TRIAGE_STEP_ORDER = ['q1b', 'q2', 'q3', 'q4'];
+
 const TRIAGE_TOOLS = {
   'q4-beziehung': { text: 'Kommunikations-Trainer — ein Gespräch vorbereiten', target: 'werkzeuge', anchor: 'kommunikation' },
   'q4-handeln': { text: 'Kommunikations-Trainer — Anliegen und Grenzen vorbereiten', target: 'werkzeuge', anchor: 'kommunikation' },
@@ -80,28 +82,44 @@ function recommendationFor(action, format) {
 function TriageFlow({ onNavigate }) {
   const [step, setStep] = React.useState('q1b');
   const [result, setResult] = React.useState(null);
-  const [format, setFormat] = React.useState(null);
+  const [answers, setAnswers] = React.useState({});
   const stepRef = React.useRef(null);
   const resultRef = React.useRef(null);
   const isFirstRender = React.useRef(true);
 
   const handleAction = React.useCallback((action) => {
+    const nextAnswers = { ...answers, [step]: action };
+    if (answers[step] !== action) {
+      for (const laterStep of TRIAGE_STEP_ORDER.slice(TRIAGE_STEP_ORDER.indexOf(step) + 1)) {
+        delete nextAnswers[laterStep];
+      }
+    }
+    setAnswers(nextAnswers);
+
     if (TRIAGE_RESULTS[action]) {
+      const format = nextAnswers.q3 === 'q3-both' ? 'both' : 'tools';
       setResult(recommendationFor(action, format));
       return;
     }
 
-    if (action === 'q3-no') setFormat('tools');
-    if (action === 'q3-both') setFormat('both');
     const nextStep = TRIAGE_NEXT_STEPS[action];
     if (nextStep) {
       setStep(nextStep);
     }
-  }, [format]);
+  }, [answers, step]);
+
+  const goBack = React.useCallback(() => {
+    if (result) {
+      setResult(null);
+      return;
+    }
+    const previousStep = TRIAGE_STEP_ORDER[TRIAGE_STEP_ORDER.indexOf(step) - 1];
+    if (previousStep) setStep(previousStep);
+  }, [result, step]);
 
   const restart = React.useCallback(() => {
     setResult(null);
-    setFormat(null);
+    setAnswers({});
     setStep('q1b');
   }, []);
 
@@ -113,10 +131,11 @@ function TriageFlow({ onNavigate }) {
     if (result && resultRef.current) {
       resultRef.current.focus();
     } else if (!result && stepRef.current) {
-      const firstButton = stepRef.current.querySelector('button');
-      firstButton?.focus();
+      const answerButton = stepRef.current.querySelector('[aria-pressed="true"]')
+        || stepRef.current.querySelector('.triage-options button');
+      answerButton?.focus();
     }
-  }, [step, result]);
+  }, [step, result, answers]);
 
   const currentStep = TRIAGE_STEPS[step];
 
@@ -138,11 +157,16 @@ function TriageFlow({ onNavigate }) {
                 key={option.action}
                 type="button"
                 className={['triage-opt', option.variant === 'yes' && 'triage-opt-yes'].filter(Boolean).join(' ')}
+                aria-pressed={answers[step] === option.action}
                 onClick={() => handleAction(option.action)}
               >
                 {option.label}
               </button>
             ))}
+          </div>
+          <div className="triage-controls">
+            {step !== 'q1b' && <button type="button" className="triage-restart" onClick={goBack}>Vorherige Frage</button>}
+            <button type="button" className="triage-restart" onClick={restart}>Neu beginnen</button>
           </div>
         </div>
       )}
@@ -168,7 +192,10 @@ function TriageFlow({ onNavigate }) {
             </a>
           ))}
           {result.secondary && <p>Sie können sich direkt beraten lassen. Wenn Sie auch etwas zu Ihrer Situation lesen möchten: <a href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>Wenn die Kraft nachlässt</a>.</p>}
-          <button type="button" className="triage-restart" onClick={restart}>Nochmal beantworten</button>
+          <div className="triage-controls">
+            <button type="button" className="triage-restart" onClick={goBack}>Antwort ändern</button>
+            <button type="button" className="triage-restart" onClick={restart}>Nochmal beantworten</button>
+          </div>
         </div>
       )}
     </div>

@@ -4,6 +4,9 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // Generated filenames contain a content hash. Fixed public assets stay outside
+  // this namespace, so deployment headers can safely cache only these forever.
+  build: { assetsDir: 'assets/build' },
   test: {
     include: ['src/**/*.{test,spec}.{js,jsx}'],
     environment: 'jsdom',

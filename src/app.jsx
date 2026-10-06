@@ -1,7 +1,7 @@
 // Main app — routing in the PUK website profile.
 
 import React from 'react';
-import { CrisisBar, Nav, Footer } from './shared.jsx';
+import { CrisisBar, Nav, MobileModuleNav, Footer } from './shared.jsx';
 import { scrollToAnchorWhenReady } from './anchor-scroll.js';
 import { PAGE_RENDERERS } from './page-registry.js';
 import { useBrowserNavigation } from './use-browser-navigation.js';
@@ -74,6 +74,7 @@ function App() {
       {page === 'notfall' && <CrisisBar onNavigate={onNavigate} />}
       <Nav page={page} onNavigate={onNavigate} />
       <main id="main-content" tabIndex={-1}>
+        {/^modul[1-7]$/.test(page) && <MobileModuleNav onNavigate={onNavigate} />}
         <LoadErrorBoundary resetKey={page} fallback={<PageLoadError page={page} onNavigate={onNavigate} onReady={onPageReady} />}>
           <React.Suspense fallback={<PageLoadingFallback />}>
             <PageContent page={page} anchor={nav.anchor} onNavigate={onNavigate} onReady={onPageReady} />

@@ -132,6 +132,23 @@ try {
         record('route/text-bounds', { width, textZoom, route, outside: textBounds }, textBounds.length === 0);
         const targets = await page.locator('.nav a').evaluateAll(elements => elements.map(el => ({ label: el.textContent.trim(), width: el.getBoundingClientRect().width, height: el.getBoundingClientRect().height })));
         record('navigation/44px', { width, textZoom, route, targets }, targets.every(el => el.width >= 44 && el.height >= 44));
+        if (textZoom === 100 && width === 320 && ['/module', '/werkzeuge', '/module/6', '/module/7'].includes(route)) {
+          const jumps = await page.locator('main :is(h1,h2,h3,h4,h5,h6)').evaluateAll(headings => headings.flatMap((heading, index) => {
+            const previous = index ? Number(headings[index - 1].tagName.slice(1)) : 0;
+            const level = Number(heading.tagName.slice(1));
+            return previous && level > previous + 1 ? [{ text: heading.textContent.trim(), previous, level }] : [];
+          }));
+          record('navigation/heading-levels', { route, jumps }, jumps.length === 0);
+        }
+        if (width <= 360 && /^\/module\/[1-7]$/.test(route)) {
+          await page.evaluate(() => window.scrollTo(0, 3000));
+          await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+          const compact = await page.locator('.module-mobile-nav').evaluate(el => ({
+            top: el.getBoundingClientRect().top,
+            targets: [...el.querySelectorAll('a')].map(a => ({ href: a.getAttribute('href'), width: a.getBoundingClientRect().width, height: a.getBoundingClientRect().height })),
+          }));
+          record('navigation/mobile-module-exit', { width, textZoom, route, ...compact }, Math.abs(compact.top) <= 1 && compact.targets.length === 2 && compact.targets.every(a => a.width >= 44 && a.height >= 44) && compact.targets[0].href === '/module' && compact.targets[1].href === '/notfall');
+        }
         if (textZoom === 100 && [320, 1440].includes(width)) {
           const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
           record('axe/WCAG-AA', { width, route, violations: results.violations.map(v => ({ id: v.id, impact: v.impact, help: v.help, nodes: v.nodes.map(n => ({ target: n.target, summary: n.failureSummary })) })), incompleteCount: results.incomplete.length }, results.violations.length === 0);
@@ -143,6 +160,18 @@ try {
       console.log(`Completed ${width}px / ${textZoom}% text`);
     }
   }
+  const coldContext = await browser.newContext({ viewport: { width: 360, height: 900 } });
+  const supportPage = await coldContext.newPage();
+  const supportScripts = [];
+  supportPage.on('request', request => { if (request.resourceType() === 'script') supportScripts.push(new URL(request.url()).pathname); });
+  await open(supportPage, '/unterstuetzung');
+  record('loading/support-before-tool-selection', { scripts: [...supportScripts] }, !supportScripts.some(url => /werkzeuge-tools-|\/modul2-/.test(url)));
+  await supportPage.getByRole('button', { name: /Krisenplan.*öffnen/ }).click();
+  await supportPage.getByRole('dialog', { name: 'Krisenplan' }).waitFor();
+  record('loading/support-after-tool-selection', { scripts: [...supportScripts] }, supportScripts.some(url => /werkzeuge-tools-/.test(url)) && !supportScripts.some(url => /\/modul2-/.test(url)));
+  await supportPage.keyboard.press('Escape');
+  record('loading/support-return-focus', {}, await supportPage.getByRole('button', { name: /Krisenplan.*öffnen/ }).evaluate(el => document.activeElement === el));
+  await coldContext.close();
   const page = await browser.newPage({ viewport: { width: 360, height: 900 } });
   await open(page, '/');
   await page.keyboard.press('Tab');
@@ -208,9 +237,9 @@ try {
   await historyPage.waitForTimeout(1000);
   const returnedToHeading = await historyPage.locator('#s6 h2').evaluate(el => document.activeElement === el);
   await historyPage.keyboard.press('Tab');
-  // The children section has no tab stops; its next link is in section s7.
-  const nextTabFollowsSection = await historyPage.locator('#s7').evaluate(el => el.contains(document.activeElement));
-  record('keyboard/back-anchor-focus-and-next-tab', { returnedToHeading, nextTabFollowsSection }, returnedToHeading && nextTabFollowsSection);
+  // The children section now includes the recommended, actionable support link.
+  const nextTabReachesChildSupport = await historyPage.getByRole('link', { name: 'kinderseele.ch', exact: true }).evaluate(el => document.activeElement === el);
+  record('keyboard/back-anchor-focus-and-next-tab', { returnedToHeading, nextTabReachesChildSupport }, returnedToHeading && nextTabReachesChildSupport);
   await historyPage.goForward();
   await historyPage.locator('h1').waitFor();
   await historyPage.waitForTimeout(1000);

@@ -1,7 +1,13 @@
 function navigationOffset() {
   const nav = document.querySelector('.nav');
-  if (nav && !['sticky', 'fixed'].includes(window.getComputedStyle(nav).position)) return 16;
-  const height = nav?.getBoundingClientRect().height || 0;
+  const mobileNav = document.querySelector('.module-mobile-nav');
+  const stickyNav = [nav, mobileNav].find(element => {
+    if (!element) return false;
+    const style = window.getComputedStyle(element);
+    return style.display !== 'none' && ['sticky', 'fixed'].includes(style.position);
+  });
+  if (nav && !stickyNav) return 16;
+  const height = stickyNav?.getBoundingClientRect().height || 0;
   return height ? height + 16 : 80;
 }
 

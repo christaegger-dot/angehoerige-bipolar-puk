@@ -102,7 +102,8 @@ Der Produktionslauf verlangt mindestens zwei bestandene reale Screenreader-Läuf
 - Eingaben in den Werkzeugen bleiben nur im flüchtigen Arbeitsspeicher. Beim Schliessen oder Neuladen gehen sie verloren. Browser-Persistenz und Wiederherstellung älterer Entwürfe sind deaktiviert.
 - Historische Browser-Schlüssel, bestätigte Löschung, frühere Fristen und Exporte stehen in `public/website-data-policy.json`. Sichtbare Hinweise erklären den aktuellen flüchtigen Zustand und die Bereinigung alter Browser-Kopien.
 - Die 25 redaktionellen Fallbeispiele sind sichtbar als fiktiv gekennzeichnet und im `_dev/ZITATREGISTER-2026-10-05.md` einzeln erfasst. Sie sind keine belegten Angehörigenzitate.
-- Die formale Freigabe der Schweigepflichtseite bleibt offen. `_dev/FREIGABE-SCHWEIGEPFLICHT.md` enthält den Wortlaut und die konkreten Prüffragen; es bestätigt keine Freigabe.
+- Eine externe fachlich-rechtliche Freigabe der Schweigepflichtseite wird gemäss ausdrücklicher Projektentscheidung vom 6. Oktober 2026 nicht eingeholt und nicht als ausstehende Releasevoraussetzung geführt. `_dev/FREIGABE-SCHWEIGEPFLICHT.md` dokumentiert diese Entscheidung und archiviert die vorbereitete Anfrage. Eine institutionelle oder juristische Prüfung wird damit nicht bestätigt; der amtliche Quellen-/Formularabgleich ist davon getrennt.
+- Der anschliessende Quellenabgleich bestätigt das verlinkte PUK-Formular als PDF, Version 2026, und kennzeichnet die kantonale Patientenrechtsbroschüre als Ausgabe 2018. BAG und Zürcher Webseite waren nicht abrufbar; Umfang und Belege stehen in `_dev/SCHWEIGEPFLICHT-QUELLENABGLEICH-2026-10-06.md`. Die P3-Umsetzung und ihre technischen Prüfungen sind in `_dev/P3-RELEASE-POLISH-2026-10-06.md` dokumentiert.
 - Der frühere Editor für alternative Farbpaletten ist mit der Übernahme des festen PUK-Profils entfernt.
 
 ## Deployment

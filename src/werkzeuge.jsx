@@ -114,7 +114,7 @@ function WerkzeugePage({ onNavigate, anchor }) {
                     {...werkzeugPreloadProps(t.tool)}
                   >
                     <span className="tool-tag">{t.tag}</span>
-                    <h3>{t.title}</h3>
+                    <h2>{t.title}</h2>
                     <p>{t.desc}</p>
                     <div className="tool-card-foot">
                       <span className="btn-arrow">{t.cta} →</span>

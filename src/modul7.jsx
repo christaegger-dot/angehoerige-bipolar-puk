@@ -11,10 +11,10 @@ function SaeulenFigur() {
   const baseY = 300;
   const topBarY = 130;
   const cols = [
-    { x: 110, label: 'Körper',                sub: 'Schlaf · Bewegung · Pausen' },
-    { x: 240, label: 'Beziehungen',           sub: 'ausserhalb der Erkrankung' },
-    { x: 370, label: 'Eigene Welt',           sub: 'Tätigkeit · Räume · Interessen' },
-    { x: 500, label: 'Fachlicher Halt',       sub: 'Beratung · Therapie · Selbsthilfe' },
+    { x: 110 },
+    { x: 240 },
+    { x: 370 },
+    { x: 500 },
   ];
 
   return (
@@ -25,11 +25,6 @@ function SaeulenFigur() {
         </pattern>
       </defs>
 
-      <text x="40" y="32" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0" fontWeight="500">VIER MÖGLICHE STÜTZEN</text>
-
-      <text x="300" y="82" textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="13" fill="var(--ink-soft)">Ihr Leben — mit der Erkrankung als einem Teil davon</text>
-      <line x1="180" y1="94" x2="420" y2="94" stroke="var(--ink)" strokeWidth="0.4" strokeOpacity="0.4" />
-
       <rect x="60" y={topBarY} width="480" height="14" fill="url(#bar-hatch)" stroke="var(--ink)" strokeWidth="1" />
 
       {cols.map((c, i) => (
@@ -38,10 +33,7 @@ function SaeulenFigur() {
           <rect x={c.x - 22} y={topBarY + 14} width="44" height="6" fill="var(--ink)" />
           <rect x={c.x - 22} y={baseY - 6} width="44" height="6" fill="var(--ink)" />
           <line x1={c.x} y1={topBarY + 24} x2={c.x} y2={baseY - 10} stroke="var(--accent)" strokeWidth="0.6" strokeOpacity="0.5" />
-          <text x={c.x} y={baseY + 28} textAnchor="middle" fontFamily="var(--serif-display)" fontStyle="normal" fontSize="14" fill="var(--accent)" fontWeight="500">{c.label}</text>
-          <text x={c.x} y={baseY + 48} textAnchor="middle" fontFamily="var(--sans)" fontSize="10" fill="var(--ink-mute)" letterSpacing="0">
-            {c.sub}
-          </text>
+          <text x={c.x} y={baseY + 54} textAnchor="middle" fontFamily="var(--sans)" fontSize="40" fill="var(--accent)" fontWeight="500">{i + 1}</text>
         </g>
       ))}
 
@@ -61,13 +53,13 @@ function SaeulenFigurWrap() {
         Die Stützen stehen für mögliche Ressourcen, also das, was Ihnen im Alltag hilft. Das Bild misst weder Belastbarkeit noch Sicherheit. Welche Unterstützung erreichbar ist, hängt auch von Zeit, Geld, Betreuung und den verfügbaren Hilfsangeboten ab.
       </figcaption>
       <FigureText visualId="m7-stuetzen">
-        <p>Das Dach steht für Ihr Leben, zu dem auch die Erkrankung gehört. Darunter stehen vier mögliche Stützen:</p>
-        <ul>
+        <p>Das Dach steht für Ihr Leben, mit der Erkrankung als einem Teil davon. Darunter stehen von links nach rechts vier mögliche Stützen:</p>
+        <ol>
           <li><strong>Körper:</strong> Schlaf, Bewegung und Pausen.</li>
           <li><strong>Beziehungen:</strong> Verbindungen ausserhalb der Erkrankung.</li>
           <li><strong>Eigene Welt:</strong> Tätigkeit, Räume und Interessen.</li>
           <li><strong>Fachlicher Halt:</strong> Beratung, Therapie und Selbsthilfe.</li>
-        </ul>
+        </ol>
         <p>Die vier Stützen sind ein anschauliches Bild. Es gibt keine geprüfte Mindestzahl, die Belastbarkeit oder Sicherheit garantiert.</p>
       </FigureText>
     </figure>
@@ -135,7 +127,7 @@ function ZeitTimeline() {
       {phasen.map((p, i) => (
         <div className="zeit-phase" key={i}>
           <span className="zeit-jahre">{p.jahre}</span>
-          <h4>{p.titel}</h4>
+          <h3>{p.titel}</h3>
           <p>{p.text}</p>
         </div>
       ))}
