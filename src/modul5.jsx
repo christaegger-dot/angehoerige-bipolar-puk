@@ -271,7 +271,9 @@ function Modul5Page({ onNavigate }) {
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Das Reflexionsmodell ist kein EE-Test</span>
-                <p>In der Fachliteratur gibt es den Begriff «Expressed Emotion (EE)». Er bezeichnet etwas anderes als das Reflexionsmodell oben. Seine fachliche Definition und die hier angeführte Literatur sind noch nicht abschliessend geprüft. Mit diesem Modul lässt sich weder das Klima in Ihrer Familie noch ein individuelles Rückfallrisiko beurteilen. Es schreibt Angehörigen keine Schuld an Rückfällen zu. Eigene Grenzen und Unterstützung für sich selbst bleiben wichtig.</p>
+                <p>«Expressed Emotion (EE)» ist ein Forschungsbegriff für bestimmte Einstellungen und Ausdrucksweisen von Angehörigen gegenüber einer erkrankten Person. Erfasst werden unter anderem kritische Bemerkungen, Feindseligkeit und emotionale Überinvolviertheit, aber auch Wärme und positive Bemerkungen. Der Begriff bezeichnet keine aufeinanderfolgenden Belastungsphasen.</p>
+                <p>Die Übersicht von Tong und Mitarbeitenden (2026) beschreibt Zusammenhänge zwischen fachlich erfassten EE-Merkmalen und Rückfällen in den untersuchten Gruppen. Daraus lässt sich keine sichere Ursache ableiten. Es bedeutet weder, dass Angehörige Rückfälle verursachen, noch dass sie daran schuld sind.</p>
+                <p>Das Reflexionsmodell oben wurde für diese Website zusammengestellt. Es ist kein wissenschaftlich geprüftes EE-Instrument und bestimmt kein individuelles Rückfallrisiko. Eigene Grenzen und Unterstützung für sich selbst bleiben wichtig.</p>
               </aside>
             </section>
 
@@ -414,7 +416,7 @@ function Modul5Page({ onNavigate }) {
             <footer className="module-article-footer">
               <EvidenceSources number={5} />
 
-              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Fachliche und rechtliche Quellenprüfung: offen. Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
+              <p className="module-credits">Redaktioneller Inhaltsabgleich: Oktober 2026 · Autor:in der Inhalte: Ch. Egger · Diese Inhalte ersetzen keine fachliche Beratung. Beispielzitate sind fiktiv und dienen der Veranschaulichung.</p>
 
               <div className="module-nav-footer">
                 <a className="puk-link--action module-nav-btn" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>

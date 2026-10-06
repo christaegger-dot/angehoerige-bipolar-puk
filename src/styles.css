@@ -1432,6 +1432,18 @@ section + section { padding-top: 0; }
   margin-bottom: 0 !important;
   color: var(--ink) !important;
 }
+.support-offer-guide ul {
+  padding-left: 1em;
+  margin: 16px 0;
+}
+.support-offer-guide li {
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.support-offer-guide li + li {
+  margin-top: 8px;
+}
 
 .prose :is(p, li, dd) a {
   text-decoration: underline;
@@ -1552,6 +1564,19 @@ section + section { padding-top: 0; }
   color: var(--ink-mute) !important;
   max-width: 64ch;
   margin-bottom: 12px !important;
+}
+.module-credits li {
+  overflow-wrap: anywhere;
+}
+.handout-sources {
+  padding: 24px 0 0;
+  border-top: 1px solid var(--paper-edge);
+}
+.handout-sources h3 {
+  font-size: 1rem;
+}
+.handout-sources li {
+  margin-bottom: 12px;
 }
 .module-nav-footer {
   display: flex;

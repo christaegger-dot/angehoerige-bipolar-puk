@@ -1,4 +1,5 @@
 import { navHandler, navHref } from './nav-handler.js';
+import { EVIDENCE_REVIEW_DATE, EVIDENCE_SOURCES, HANDOUT_SOURCE_KEYS, MODULE_SOURCE_KEYS } from './evidence-data.js';
 
 const SHORT_GUIDES = {
   1: ['Was bedeutet die Diagnose?', 'Fachpersonen beurteilen Manie, Hypomanie und Depression anhand des gesamten Verlaufs. Als Angehörige brauchen Sie selbst keine Diagnose zu stellen.', 'Notieren Sie eine Beobachtung und eine Frage für das Behandlungsteam.'],
@@ -34,47 +35,53 @@ function ModuleQuickStart({ number, onNavigate }) {
   );
 }
 
-const REFS = {
-  diagnosis: ['SAMHSA (2016): DSM-5-Vergleichstabellen', 'https://www.ncbi.nlm.nih.gov/books/NBK519704/?report=reader', 'Ältere DSM-5-Tabellen zur Einordnung von Episoden; keine bestätigte Fundstelle für aktuelle DSM-5-TR- oder ICD-11-Kriterien.'],
-  bipolar2: ['Berk et al. (2025): Bipolar II disorder — a state-of-the-art review', 'https://onlinelibrary.wiley.com/doi/10.1002/wps.21300', 'Diagnostische Einordnung und depressive Krankheitslast; keine individuelle Prognose.'],
-  caregivers: ['Baruch et al. (2018): Psychological interventions for caregivers of people with bipolar disorder', 'https://doi.org/10.1016/j.jad.2018.04.077', 'Forschung zu strukturierten Angehörigeninterventionen; kein Nachweis der Wirkung dieser Website.'],
-  psychotherapy: ['Miklowitz et al. (2020): Adjunctive Psychotherapy for Bipolar Disorder', 'https://consensus.app/papers/adjunctive-psychotherapy-for-bipolar-disorder-a-miklowitz-efthimiou/98302e8c190d595490b9e62676306307/', 'Ergänzende psychosoziale Behandlungsangebote; konkrete Programme und Ergebnisse im Original prüfen.'],
-  qualitative: ['Roxburgh et al. (2025): Experiences of informal caregivers supporting individuals diagnosed with bipolar disorder', 'https://consensus.app/papers/experiences-of-informal-caregivers-supporting-roxburgh-taylor/41cc43ad0e705143a39d613996b0b52c/', 'Erfahrungen mit Belastung und Unterstützungsbedarf; keine individuelle Prognose oder feste Entwicklungsfolge.'],
-  variation: ['Renes et al. (2025): Caregivers’ burden and psychological distress in everyday clinical practice', 'https://consensus.app/papers/caregivers%E2%80%99-burden-and-psychological-distress-in-bipolar-renes-kupka/24c5e6b43ead517a89ef45daafe48925/', 'Belastung in Angehörigenbeziehungen; Stichprobe und Ergebnisreichweite im Original prüfen.'],
-  comparison: ['Karambelas et al. (2022): Comparing caregiver burden and psychological functioning', 'https://consensus.app/papers/a-systematic-review-comparing-caregiver-burden-and-karambelas-filia/d14b662c329053018136584593ee9954/', 'Vergleich von Angehörigenbelastungen; keine allgemeine Rangliste aller Angehörigengruppen.'],
-  depression: ['Perlick et al. (2016): Caregiver burden as a predictor of depression', 'https://consensus.app/papers/caregiver-burden-as-a-predictor-of-depression-among-family-perlick-berk/52af327deb26517c84eaec4f86bae7a5/', 'Belastung und depressive Symptome; Zusammenhang und Ursache sind zu unterscheiden.'],
-  ee: ['Tong et al. (2026): Association Between Expressed Emotion and Relapse', 'https://doi.org/10.31083/AP47961', 'Forschungsbegriff Expressed Emotion und Rückfallzusammenhänge; kein Beleg des eigenen Vier-Aspekte-Modells.'],
-  lithium: ['Nabi et al. (2022): Effects of lithium on suicide and suicidal behaviour', 'https://consensus.app/papers/effects-of-lithium-on-suicide-and-suicidal-behaviour-a-nabi-stansfeld/e4c3f54ccfea5bf5839364ab73aed057/', 'Forschung zu Lithium und suizidbezogenen Ereignissen; keine Empfehlung für eine einzelne Person.'],
-  lithiumUpdate: ['Wang et al. (2025): Updated review of lithium and suicidal behaviour', 'https://consensus.app/papers/the-efficacy-of-lithium-in-the-treatment-of-suicidal-wang-le/4a5a22d72d0a5b3e84d5929d9b32c956/', 'Weiterer Literaturhinweis zu Lithium; Publikationsdaten und Ergebnisse im Original prüfen.'],
-  treatment: ['CANMAT/ISBD (2023): Guidelines summary and evidence update', 'https://pubmed.ncbi.nlm.nih.gov/38695002/', 'Phasenbezogene Behandlung; konkrete Verordnungen richten sich nach Fachinformation und individueller Planung.'],
-  valproate: ['Swissmedic: Sicherheitsinformationen zu Valproat', 'https://www.swissmedic.ch/swissmedic/de/home/humanarzneimittel/marktueberwachung/health-professional-communication--hpc-/archiv/dhpc-valproat_depakine-depakine_chrono_valproate_chrono_sanofi.html', 'Schwangerschaft und Fortpflanzungsplanung erfordern besondere Schutzvorgaben und fachärztliche Beratung.'],
-  substance: ['Gold et al. (2018): Substance use comorbidity in bipolar disorder', 'https://consensus.app/papers/substance-use-comorbidity-in-bipolar-disorder-a-gold-otto/9b078a01d9b95b1db1ade45f3aaed89d/', 'Bipolare Störung und Substanzprobleme; fachliche Abstimmung von Behandlung besprechen.'],
-  suicide: ['NICE NG225: Self-harm — assessment, management and preventing recurrence', 'https://www.nice.org.uk/guidance/ng225/chapter/recommendations', 'Fachliche Einschätzung und Vorbereitung von Unterstützung; britische Versorgungswege sind nicht unmittelbar auf Zürich übertragbar.'],
-  confidentiality: ['Bundesamt für Gesundheit: Berufs- oder Arztgeheimnis', 'https://www.bag.admin.ch/de/berufs-oder-arztgeheimnis', 'Einwilligung, Vertraulichkeit und gesetzliche Ausnahmen.'],
-  rights: ['Gesundheitsdirektion Zürich (2012): Kindes- und Erwachsenenschutzrecht für Spitäler', 'https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/familie/kindesschutz/zusammenarbeit-kesb/erwachsenenschutz/leitfaden_gd_egkesr_spit%C3%A4ler.pdf', 'Erläuterung zur Vertrauensperson und Behandlungsplanung bei Fürsorgerischer Unterbringung (FU); rechtliche Rolle und geltendes Recht im Einzelfall klären.'],
-  mandate: ['Stadt Zürich: Merkblatt Vorsorgeauftrag', 'https://www.stadt-zuerich.ch/content/dam/web/de/lebenslagen/kindes-und-erwachsenenschutz/dokumente/vorsorge-auftrag-merkblatt.pdf', 'Voraussetzungen und Wirksamkeitsprüfung durch die Kindes- und Erwachsenenschutzbehörde (KESB).'],
-  work: ['SECO: Freizeit und Feiertage', 'https://www.seco.admin.ch/de/faq-freizeit-und-feiertage', 'Betreuungsurlaub: drei Tage pro Ereignis und grundsätzlich zehn Tage pro Jahr; Geltungsrahmen und weitere Ansprüche beachten.'],
+const SOURCE_STATUS_LABELS = {
+  abstract: 'Originalabstract geprüft; Volltext nicht geprüft',
+  fulltext: 'Originalvolltext geprüft',
+  sections: 'Relevante Originalvolltextabschnitte geprüft',
+  metadata: 'Nur bibliografische Angaben geprüft; Inhalt offen',
+  official: 'Amtlicher Webinhalt geprüft',
+  landing: 'Nur amtliche Publikationsseite geprüft; diagnostischer Volltext offen',
+  open: 'Inhalt und aktueller Geltungsrahmen noch offen',
 };
-const MODULE_REFS = {
-  1: ['diagnosis', 'bipolar2', 'treatment', 'valproate', 'caregivers', 'psychotherapy'],
-  2: ['qualitative', 'comparison', 'depression', 'caregivers', 'lithium', 'lithiumUpdate', 'confidentiality'],
-  3: ['qualitative', 'variation', 'confidentiality'],
-  4: ['qualitative', 'depression', 'work'],
-  5: ['ee', 'qualitative'],
-  6: ['treatment', 'substance', 'suicide', 'confidentiality', 'rights', 'mandate'],
-  7: ['qualitative', 'variation', 'depression', 'caregivers'],
-};
+
+function EvidenceSourceList({ keys, showUrls = false }) {
+  return (
+    <ul>{[...new Set(keys)].map(key => {
+      const source = EVIDENCE_SOURCES[key];
+      return (
+        <li key={key} data-source-status={source.status}>
+          <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a>
+          {(source.doi || source.pmid) && <><br />{source.doi && `DOI: ${source.doi}`}{source.doi && source.pmid && ' · '}{source.pmid && `PMID: ${source.pmid}`}</>}
+          <br />{source.note}
+          <br /><small>Prüfumfang: {SOURCE_STATUS_LABELS[source.status]} · Stand {EVIDENCE_REVIEW_DATE}.</small>
+          {showUrls && <><br /><small>{source.url.split(/(?<=[/._-])/).map((part, index) => <span key={index}>{part}<wbr /></span>)}</small></>}
+        </li>
+      );
+    })}</ul>
+  );
+}
+
 function EvidenceSources({ number }) {
   return (
     <details className="module-credits">
       <summary>Quellen und Grenzen der Aussagen</summary>
       <p>Forschungsergebnisse über Gruppen lassen nicht vorhersagen, wie sich die Erkrankung oder eine einzelne Beziehung entwickelt. Die Grafiken veranschaulichen Zusammenhänge; sie beruhen nicht auf Messungen. Die Fallbeispiele sind fiktiv und keine Originalzitate aus den verlinkten Quellen.</p>
-      <p data-source-status="verification-pending">Die folgenden Literaturhinweise dienen der Vertiefung. Sie sind noch nicht anhand der Originale geprüft, und die Angaben zu den Publikationen sind noch unvollständig. Beim Abrufversuch am 5. Oktober 2026 waren die verlinkten Inhalte nicht zugänglich. Daher ist noch nicht bestätigt, ob sie aktuell sind und die Aussagen dieser Website belegen.</p>
-      <ul>{MODULE_REFS[number].map(key => {
-        const [title, url, note] = REFS[key];
-        return <li key={key}><a href={url} target="_blank" rel="noopener noreferrer">{title}</a><br />{note}</li>;
-      })}</ul>
+      <p>Quellenstand {EVIDENCE_REVIEW_DATE}. Bei jedem Eintrag steht, ob der Volltext, einzelne Abschnitte, der Originalabstract oder nur die bibliografischen Angaben geprüft wurden. Eine geprüfte Quelle belegt nicht automatisch die Wirkung dieser Website. Offene rechtliche und weitere Quellenprüfungen sind einzeln gekennzeichnet.</p>
+      <EvidenceSourceList keys={MODULE_SOURCE_KEYS[number]} />
     </details>
+  );
+}
+
+function HandoutSources({ topic = 'caregivers' }) {
+  const topics = Array.isArray(topic) ? topic : [topic];
+  const keys = topics.flatMap(key => HANDOUT_SOURCE_KEYS[key]);
+  return (
+    <section className="module-credits handout-sources" aria-label="Quellen und Grenzen des Handouts">
+      <h3>Quellen und Grenzen</h3>
+      <p>Quellenstand {EVIDENCE_REVIEW_DATE}. Gesprächsbeispiele und Übungen sind redaktionelle Anregungen, kein geprüftes Behandlungsprogramm. Gruppenbefunde erlauben keine individuelle Vorhersage.</p>
+      <EvidenceSourceList keys={keys} showUrls />
+    </section>
   );
 }
 
@@ -90,4 +97,4 @@ function FigureText({ visualId, children }) {
   );
 }
 
-export { ModuleQuickStart, EvidenceSources, FigureText };
+export { ModuleQuickStart, EvidenceSources, EvidenceSourceList, HandoutSources, FigureText };

@@ -406,7 +406,7 @@ function Modul6Page({ onNavigate }) {
               <p>✗ «Hast du deine Medikamente genommen? Schon wieder vergessen?»<br/>
               ✓ <strong>«Ich sehe, dass die Packung noch voll ist, und mache mir Sorgen. Was würde dir helfen, die Medikamente wie besprochen zu nehmen?»</strong></p>
 
-              <h3>Was nicht funktioniert</h3>
+              <h3>Was Gespräche erschweren kann</h3>
               <AntiPatterns />
             </section>
 
@@ -425,10 +425,10 @@ function Modul6Page({ onNavigate }) {
                   </ul>
                 </div>
                 <div className="dont-col">
-                  <h3>Was nicht funktioniert</h3>
+                  <h3>Was Gespräche erschweren kann</h3>
                   <ul>
-                    <li>Überzeugen wollen (in akuter Manie kaum möglich)</li>
-                    <li>Argumente und Beweise anführen</li>
+                    <li>Zustimmung durch wiederholtes Überzeugen erzwingen wollen</li>
+                    <li>Weiter argumentieren, obwohl Anspannung oder Überforderung zunehmen</li>
                     <li>Allein für Einsicht oder Zustimmung verantwortlich sein wollen</li>
                   </ul>
                 </div>
@@ -445,7 +445,8 @@ function Modul6Page({ onNavigate }) {
 
             <section id="s7">
               <h2>«Sie hat die Medikamente abgesetzt» — was Sie tun können</h2>
-              <p>Wenn Medikamente verändert oder abgesetzt werden, kann das Angehörigen Sorgen machen. Ob die Änderung abgesprochen ist und welche Folgen oder Alternativen bedacht werden müssen, klären Fachpersonen. Die Behandlung eigenständig festzulegen ist nicht Ihre Aufgabe.</p>
+              <p>Wenn Medikamente verändert oder abgesetzt werden, kann das Angehörigen Sorgen machen. Ein plötzliches Absetzen kann das Risiko weiterer Episoden erhöhen, insbesondere bei Lithium. Änderungen und eine mögliche schrittweise Beendigung gehören in die fachliche Behandlungsplanung. Die Behandlung eigenständig festzulegen ist nicht Ihre Aufgabe.</p>
+              <p>Wenn Medikamente bereits abgesetzt oder verändert wurden, klären Sie zeitnah mit der behandelnden Fachperson, welche Einschätzung und nächsten Schritte nötig sind. Legen Sie eine Wiederaufnahme oder Dosisänderung nicht selbst fest. Bei rascher Verschlechterung oder akuter Gefährdung braucht es sofort medizinische Hilfe; warten Sie dann nicht auf einen ruhigen Gesprächsmoment. Ist die behandelnde Stelle nicht erreichbar, nutzen Sie medizinische Notfallhilfe.</p>
               <p>Davon zu unterscheiden ist vereinbarte Unterstützung bei der Einnahme. Klären Sie mit der betroffenen Person und dem Behandlungsteam, welche Aufgaben und Befugnisse tatsächlich bei Ihnen liegen. Berücksichtigen Sie dabei bestehende Betreuungs-, Sorge- oder Schutzaufgaben und besprechen Sie, wer notwendige Aufgaben übernimmt, wenn Sie sie nicht weiter übernehmen können.</p>
 
               <h3>Nach Gründen und Absprachen fragen</h3>

@@ -24,7 +24,7 @@ function NotfallPage({ onNavigate }) {
       cls: 'red', letter: 'M',
       title: 'Akute Manie',
       sub: 'Schlaflosigkeit, Grössenideen, riskantes Verhalten',
-      do: 'Reizarme Umgebung herstellen — Licht dimmen, Lautstärke runter, weniger Menschen im Raum. Nicht diskutieren, nicht argumentieren.',
+      do: 'Reize reduzieren — Licht dimmen, Lautstärke runter, weniger Menschen im Raum. Bei starker Anspannung kurze Sätze verwenden und lange Auseinandersetzungen vermeiden.',
       bullets: [
         'Schlaf ist medizinisch wichtig. Wenn die Person seit Tagen nicht schläft: ärztliche Hilfe ist dringend.',
         'Verbindliche Bezugsperson informieren (behandelnder Arzt, Psychiaterin, Klinik).',
@@ -54,7 +54,7 @@ function NotfallPage({ onNavigate }) {
       sub: 'Bewegungslosigkeit, anhaltende Suizidgedanken, völliger Rückzug',
       do: 'Behandelnde Stelle oder Notfalldienst kontaktieren. Wenn die Person nicht reagiert, kaum trinkt oder bewegungslos bleibt, braucht sie dringend medizinische Einschätzung; bei unmittelbarer Gefahr 144. Kleine Alltagshilfen nur anbieten, wenn sie ansprechbar ist und dies möglich ist.',
       bullets: [
-        'Direkt nach Suizidgedanken fragen. Das löst keine aus — es schafft Erleichterung.',
+        'Behutsam und direkt fragen: «Denkst du daran, dir das Leben zu nehmen?» Das kann ein Gespräch ermöglichen; wie die Person reagiert, ist unterschiedlich.',
         'Wenn konkrete Pläne, ein Termin oder Mittel im Raum stehen: medizinische Notfallsituation. 144 oder Notfallaufnahme.',
         'Behandelnde Stelle früh kontaktieren — nicht erst, wenn es kaum noch geht.',
         'Eigene Belastung ernst nehmen. Sie können nicht 24 Stunden begleiten, ohne selbst zu kippen.',

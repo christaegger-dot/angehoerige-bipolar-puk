@@ -72,7 +72,8 @@ describe('UnterstuetzungPage counselling and material boundaries', () => {
     await user.click(screen.getByRole('button', { name: new RegExp(title, 'i') }));
 
     const dialog = await screen.findByRole('dialog', { name: title });
-    expect(within(dialog).getAllByRole('link').map(link => link.textContent)).toEqual(numbers);
+    const contacts = dialog.querySelector('.handout-phonelist');
+    expect(within(contacts).getAllByRole('link').map(link => link.textContent)).toEqual(numbers);
     expect(dialog.textContent).toContain('In akuten Lagen hat der Notfallweg Vorrang.');
   });
 
