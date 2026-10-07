@@ -1,4 +1,4 @@
-import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 import { MODULES, ANLAUFSTELLEN_ENTRY } from './site-content.js';
 import { TriageFlow } from './triage-flow.jsx';
 
@@ -20,7 +20,7 @@ function ModulePage({ onNavigate }) {
           <ul className="module-list" role="list" aria-label="Lernpfad und Unterstützung">
             {MODULES.map((m) => (
               <li key={m.num}>
-                <a className="module-row" href={navHref('modul' + m.num)} onClick={navHandler('modul' + m.num, onNavigate)} {...navPreloadProps('modul' + m.num)}>
+                <a className="module-row" href={navHref('modul' + m.num)} onClick={navHandler('modul' + m.num, onNavigate)}>
                   <div className="module-num">{String(m.num).padStart(2, '0')}</div>
                   <div className="module-content">
                     <div className="module-row-numlabel">Modul</div>
@@ -36,7 +36,7 @@ function ModulePage({ onNavigate }) {
               </li>
             ))}
             <li>
-              <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>
+              <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
                 <div className="module-num module-num-resource">→</div>
                 <div className="module-content">
                   <div className="module-row-numlabel">Hilfe finden</div>

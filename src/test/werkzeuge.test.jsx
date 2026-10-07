@@ -259,6 +259,26 @@ describe('personal boundary preparation', () => {
 });
 
 describe('tool regressions', () => {
+  it.each([
+    ['selbsttest', 5],
+    ['saeulen', 8],
+  ])('keeps the next %s question unanswered after a pointer double-click', (tool, total) => {
+    const Tool = TOOL_COMPONENTS[tool];
+    render(<Tool onClose={() => {}} onNavigate={() => {}} />);
+    fireEvent.click(screen.getByRole('button', { name: /beginnen/i }));
+    fireEvent.click(document.querySelector('.selbsttest-opt'), { detail: 1 });
+    expect(document.querySelector('.selbsttest-progress')).toHaveTextContent(`Frage 2 von ${total}`);
+
+    // Chromium sends the second click to the newly displayed answer button.
+    fireEvent.click(document.querySelector('.selbsttest-opt'), { detail: 2 });
+    expect(document.querySelector('.selbsttest-progress')).toHaveTextContent(`Frage 2 von ${total}`);
+
+    fireEvent.click(document.querySelector('.selbsttest-opt'), { detail: 1 });
+    expect(document.querySelector('.selbsttest-progress')).toHaveTextContent(`Frage 3 von ${total}`);
+    fireEvent.click(document.querySelector('.selbsttest-opt'), { detail: 0 });
+    expect(document.querySelector('.selbsttest-progress')).toHaveTextContent(`Frage 4 von ${total}`);
+  });
+
   it('starts the breathing exercise and can reset to the intro state', async () => {
     const AtemuebungTool = TOOL_COMPONENTS.atem;
 

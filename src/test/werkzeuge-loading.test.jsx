@@ -4,13 +4,12 @@ import userEvent from '@testing-library/user-event';
 
 vi.mock('../werkzeug-loader.js', () => ({
   loadWerkzeugTool: () => Promise.reject(new Error('Failed to fetch tool chunk')),
-  preloadWerkzeugTool: () => Promise.reject(new Error('Failed to preload tool chunk')),
 }));
 
 import { WerkzeugePage } from '../werkzeuge.jsx';
 
 describe('tool loading failure', () => {
-  it('handles a rejected preload and opens a closable error dialog without removing the tools page', async () => {
+  it('opens a closable error dialog after a failed tool choice without removing the tools page', async () => {
     const user = userEvent.setup();
     vi.spyOn(console, 'error').mockImplementation(() => {});
     vi.spyOn(HTMLElement.prototype, 'offsetParent', 'get').mockImplementation(function () { return this.hidden ? null : document.body; });

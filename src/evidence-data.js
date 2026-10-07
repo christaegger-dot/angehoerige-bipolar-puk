@@ -237,6 +237,8 @@ export const MODULE_SOURCE_KEYS = {
     "qualitative",
     "variation",
     "depression",
+    "niceBipolar",
+    "suicide",
     "caregivers",
     "familyInterventions",
     "trialogue",
