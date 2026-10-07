@@ -1,0 +1,282 @@
+{
+  "checkedDate": "2026-10-07",
+  "purpose": "Gezielte Abrufe und Aussagenabgleich für das eingereichte Evidenzaudit; keine vollständige systematische Recherche oder institutionelle Freigabe. Prüfumfang im Umsetzungsbericht und Quellenregister.",
+  "originalResearchCutoff": "2026-10-05",
+  "records": [
+    {
+      "id": "who-cddr2024",
+      "url": "https://www.who.int/publications/i/item/9789240077263",
+      "final_url": "https://www.who.int/publications/i/item/9789240077263",
+      "retrieved_utc": "2026-10-07T10:28:23.729049+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 91949,
+      "sha256": "f3db227460c1bc4f8fbe72a9584431d3570f602472b6d91587896308dacdd021"
+    },
+    {
+      "id": "who-mhgap2023",
+      "url": "https://www.who.int/publications/i/item/9789240084278",
+      "final_url": "https://www.who.int/publications/i/item/9789240084278",
+      "retrieved_utc": "2026-10-07T10:28:24.011997+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 89341,
+      "sha256": "cd0f52f2e2788dfdf200acd111904fab49d81a0bb64a9d51aa21651812176a13"
+    },
+    {
+      "id": "who-bipolar-fact",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/bipolar-disorder",
+      "final_url": "https://www.who.int/news-room/fact-sheets/detail/bipolar-disorder",
+      "retrieved_utc": "2026-10-07T10:28:23.209713+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 112575,
+      "sha256": "812ae39579584335d1009bcef5a04c57c826c8f204ff785ecc6b965479dc442d"
+    },
+    {
+      "id": "who-carers2023",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/psychosocial-interventions-for-carers-of-persons-with-psychosis-or-bipolar-disorder",
+      "final_url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/psychosocial-interventions-for-carers-of-persons-with-psychosis-or-bipolar-disorder",
+      "retrieved_utc": "2026-10-07T10:28:23.163007+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 86008,
+      "sha256": "f44636c40240efef5237987265a6da7b7c5f24bb2b07d2e62448163be251ccce"
+    },
+    {
+      "id": "who-cddr2024-full",
+      "url": "https://iris.who.int/server/api/core/bitstreams/dcf73611-9e0f-4d5c-85f6-85a58b0da6de/content",
+      "retrieved_utc": "2026-10-07T10:28:50.318801+00:00",
+      "status": "failed",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "who-mhgap2023-full",
+      "url": "https://iris.who.int/server/api/core/bitstreams/93e56376-0e64-4a08-bdd0-703313be5354/content",
+      "retrieved_utc": "2026-10-07T10:28:50.316242+00:00",
+      "status": "failed",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "icd-browser",
+      "url": "https://icd.who.int/browse/2026-01/mms/en",
+      "final_url": "https://icd.who.int/browse/2026-01/mms/en",
+      "retrieved_utc": "2026-10-07T10:29:05.406084+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 26140,
+      "sha256": "88237d728365680e9d01262ddd3eac09758a095e84fb1226726dd5ef5f059a20"
+    },
+    {
+      "id": "who-cddr-index",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/clinical-descriptions-and-diagnostic-requirements",
+      "retrieved_utc": "2026-10-07T10:29:05.170332+00:00",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "who-carers-profile",
+      "url": "https://cdn.who.int/media/docs/default-source/mental-health/mhgap/psychosis-and-bipolar-disorders/ove1-evidence-profile-v2_0(05032023).pdf?sfvrsn=e919a2af_2",
+      "retrieved_utc": "2026-10-07T10:29:04.423133+00:00",
+      "status": "failed",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "icd-legacy",
+      "url": "https://icd.who.int/browse11/l-m/en",
+      "final_url": "https://icd.who.int/browse/2025-01/mms/en",
+      "retrieved_utc": "2026-10-07T10:29:32.574224+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 25004,
+      "sha256": "ca4a3b53e3e9af1f24b7e6d6ec473e16bd656b95cc9945dc1e0fb9b78c6a9918"
+    },
+    {
+      "id": "who-psychosis-index",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders",
+      "final_url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders",
+      "retrieved_utc": "2026-10-07T10:29:35.075791+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 87783,
+      "sha256": "c400f40bbb6b0404e6fcffec5a105e16dc178d92c0fc2c9a8533bab7cd81a93d"
+    },
+    {
+      "id": "who-mania2023",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/antipsychotics-and-mood-stabilizers-in-individuals-with-bipolar-mania",
+      "final_url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/antipsychotics-and-mood-stabilizers-in-individuals-with-bipolar-mania",
+      "retrieved_utc": "2026-10-07T10:30:13.621816+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 87862,
+      "sha256": "0cbd8bdf79fa51dc36f8d83ba63f4b983ff755fce0b227599648a4eee3d49e7f"
+    },
+    {
+      "id": "who-maintenance2023",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/antipsychotics-and-mood-stabilizers-(lithium-valproate-or-carbamazepine)-for-maintenance-treatment-of-bipolar-disorder",
+      "final_url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/antipsychotics-and-mood-stabilizers-(lithium-valproate-or-carbamazepine)-for-maintenance-treatment-of-bipolar-disorder",
+      "retrieved_utc": "2026-10-07T10:30:11.369482+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 86547,
+      "sha256": "7ac82ac3bec52e3f1b7e002c68594a55ad9815cf00931da0b35183c877d11c86"
+    },
+    {
+      "id": "who-antidepressants2023",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/antidepressant-medi-in-individuals-with-a-depressive-episode-in-bipolar-disorder",
+      "final_url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/antidepressant-medi-in-individuals-with-a-depressive-episode-in-bipolar-disorder",
+      "retrieved_utc": "2026-10-07T10:30:15.864056+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 87375,
+      "sha256": "34c546943612863bb5b25f43b432145ae60152800c6b812e7c927c0a198fb1d3"
+    },
+    {
+      "id": "who-recovery2023",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/recovery-oriented-psychosocial-strategies-enhancing-independent-living-and-social-skills-(such-as-life-skills-and-social-skills-training)",
+      "final_url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/recovery-oriented-psychosocial-strategies-enhancing-independent-living-and-social-skills-(such-as-life-skills-and-social-skills-training)",
+      "retrieved_utc": "2026-10-07T10:30:11.815149+00:00",
+      "status": "retrieved",
+      "mime": "text/html; charset=utf-8",
+      "bytes": 85994,
+      "sha256": "eedfa200207114fb26066b215b17d432b43d73b2bad788521e485f016b44d584"
+    },
+    {
+      "id": "dgppn-guidelines",
+      "url": "https://www.dgppn.de/leitlinien-publikationen/leitlinien.html",
+      "retrieved_utc": "2026-10-07T10:30:10.837160+00:00",
+      "status": "failed",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "dgbs-guideline",
+      "url": "https://dgbs.de/bipolare-stoerung/s3-leitlinie",
+      "retrieved_utc": "2026-10-07T10:30:10.852120+00:00",
+      "status": "failed",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "apa-guidelines",
+      "url": "https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines",
+      "retrieved_utc": "2026-10-07T10:30:10.844439+00:00",
+      "status": "failed",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "icd-api",
+      "url": "https://id.who.int/icd/release/11/2026-01/mms",
+      "retrieved_utc": "2026-10-07T10:30:53.581524+00:00",
+      "status": "failed",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "nice",
+      "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+      "retrievedDate": "2026-10-07",
+      "status": "retrieved",
+      "bytes": 160575,
+      "sha256": "495748760cd2d3b4ea8d52f3c7b28da32663b6433f920b7d83ff3bc6c4d34d82"
+    },
+    {
+      "id": "valproate-current",
+      "url": "https://www.swissmedic.ch/swissmedic/de/home/humanarzneimittel/marktueberwachung/health-professional-communication--hpc-/dhpc-valproat-2.html",
+      "retrievedDate": "2026-10-07",
+      "status": "retrieved",
+      "bytes": 54250,
+      "sha256": "72fbc6b22bce7985c851a5e784e9e8ae1493e4fb582932fa0bcb09bf6ac6432f"
+    },
+    {
+      "id": "valproate-pregnancy",
+      "url": "https://www.swissmedic.ch/swissmedic/de/home/humanarzneimittel/marktueberwachung/health-professional-communication--hpc-/archiv/dhpc-valproat_depakine-depakine_chrono_valproate_chrono_sanofi.html",
+      "retrievedDate": "2026-10-07",
+      "status": "retrieved",
+      "bytes": 49837,
+      "sha256": "1982d9eca37f708bd8777ed1fd2c494579cd17170b1cc540b0359d000b62649d"
+    },
+    {
+      "id": "valproate-male",
+      "url": "https://www.swissmedic.ch/dam/swissmedic/de/dokumente/marktueberwachung/dhpc_hpc/valproat-patientenbroschuere-maennliche-zeugungsfaehige-patienten.pdf.download.pdf/Valproate_Patient_Male_Brochure_DE_20250930%20final.pdf",
+      "retrievedDate": "2026-10-07",
+      "status": "retrieved",
+      "bytes": 130271,
+      "sha256": "902e28d60e358dcbb6c867de2ba81065b8005758b48ba09fd1e1992aff05c8b1"
+    },
+    {
+      "id": "valproate-female",
+      "url": "https://www.swissmedic.ch/dam/swissmedic/de/dokumente/marktueberwachung/dhpc_hpc/valproat-patientenbroschuere-empfaengnisverhuetung-schwangerschaft.pdf.download.pdf/Valproate_Patient_Female_Brochure_DE_.pdf",
+      "retrievedDate": "2026-10-07",
+      "status": "retrieved",
+      "bytes": 629093,
+      "sha256": "2cf176b8229655634fd4ae70beb5a3f730a3c997c7f344a3de0452b8adc177f5"
+    },
+    {
+      "id": "valproate-hcp",
+      "url": "https://www.swissmedic.ch/dam/swissmedic/de/dokumente/marktueberwachung/dhpc_hpc/valproat-leitfaden.pdf.download.pdf/Valproate_HCP_Guide_DE_.pdf",
+      "retrievedDate": "2026-10-07",
+      "status": "retrieved",
+      "bytes": 342938,
+      "sha256": "bcaba0be33fd98cb3d0cf5e5f99378345670f50a7bd0cde31eb38a98cddb2b37"
+    },
+    {
+      "id": "niceBipolar",
+      "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+      "retrievedDate": "2026-10-07",
+      "status": "retrieved",
+      "httpStatus": 200,
+      "sha256": "495748760cd2d3b4ea8d52f3c7b28da32663b6433f920b7d83ff3bc6c4d34d82",
+      "checkedSections": [
+        "1.2.4",
+        "1.3.5",
+        "1.4.1",
+        "1.5.14",
+        "1.7.1"
+      ],
+      "claimMapping": {
+        "1.3.5": "joint risk assessment includes driving, excessive spending, financial/sexual exploitation, disinhibited/sexualised behaviour and sexually transmitted diseases",
+        "1.4.1": "joint crisis/risk plan with personal warning signs, coping, care coordination and known professional contacts",
+        "1.7.1": "after episodes review longer term treatment, relevant episode history, helpful responses, early warning signs, monitoring and future review"
+      }
+    },
+    {
+      "id": "suicide",
+      "url": "https://www.nice.org.uk/guidance/ng225/chapter/Recommendations",
+      "retrievedDate": "2026-10-07",
+      "status": "retrieved",
+      "httpStatus": 200,
+      "sha256": "93185a0fc3095eba14e2d4e0834a63acec1c0845c0703575b5a694f26c6540df",
+      "checkedSections": [
+        "1.10.1",
+        "1.10.2",
+        "1.11.7"
+      ],
+      "claimMapping": {
+        "1.10.1": "agree purpose, format, frequency and team involvement in aftercare and document contacts",
+        "1.10.2": "ongoing safety concerns require prompt professional initial aftercare; exact48h is a UK service recommendation, deliberately not a Swiss website promise",
+        "1.11.7": "collaborative safety plan owned by the person with individual coping, chosen contacts and professional support"
+      }
+    },
+    {
+      "id": "pukEmergency",
+      "url": "https://www.pukzh.ch/ueber-uns/kontakt/notfall/",
+      "retrievedDate": "2026-10-07",
+      "status": "retrieved",
+      "httpStatus": 200,
+      "sha256": "8acb05038c1e9ca9e3c426948fe1228826a063cc641d154d79a1e1aa4c09da89",
+      "contacts": [
+        {
+          "group": "Kinder und Jugendliche",
+          "number": "+41 58 384 66 66"
+        },
+        {
+          "group": "Erwachsene (ab 18)",
+          "number": "+41 58 384 20 00"
+        },
+        {
+          "group": "Erwachsene (ab 65)",
+          "number": "+41 58 384 46 82"
+        }
+      ],
+      "phoneCallsPerformed": false
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { Eisberg } from './eisberg.jsx';
-import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
+import { ModuleQuickStart, EvidenceSources, EvidenceCitation, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 
@@ -280,6 +280,8 @@ function Modul2Page({ onNavigate }) {
             <aside className="callout">
               <span className="callout-label">Auf einen Blick</span>
               <p>Ihre Belastung und Ihre eigenen Bedürfnisse zählen. Wenn Unsicherheit, erhöhte Wachsamkeit oder Sorgen um die erkrankte Person Sie beschäftigen, können Sie Beratung, Austausch oder praktische Unterstützung nutzen. Welche Entlastung passt, hängt von Ihrer Situation ab.</p>
+              <p>Die WHO empfiehlt, für Angehörige von Menschen mit bipolarer Störung Psychoedukation, Selbsthilfe und gegenseitige Unterstützungsgruppen in Betracht zu ziehen. Das sind unterschiedliche Angebote; Sie können wählen, was zu Ihren Anliegen passt.</p>
+              <EvidenceCitation keys={['whoCarers']} />
             </aside>
 
             <section id="s1">
@@ -394,6 +396,7 @@ function Modul2Page({ onNavigate }) {
 
               <p><strong>Erhöhte Wachsamkeit.</strong> Nach einer belastenden Erfahrung achten Sie möglicherweise immer wieder auf Warnzeichen und kommen schwer zur Ruhe. Welche Hilfe könnte Sie bei den vereinbarten Aufgaben entlasten und Ihnen selbst Erholung ermöglichen?</p>
               <p><strong>Belastung nach einer Suizidkrise.</strong> Eine suizidale Krise einer nahestehenden Person kann auch Sie stark belasten. Eine qualitative Studie mit Eltern von Jugendlichen beschreibt unter anderem anhaltende Angst und eigenen Unterstützungsbedarf. Wie Angehörige reagieren, ist unterschiedlich. Wenn Sie anhaltend belastet sind, können Sie eigene Beratung oder eine fachliche Abklärung nutzen.</p>
+              <EvidenceCitation keys={['parentsAfterSuicideCrisis']} />
               <p><strong>Eigenes Wohlbefinden.</strong> Hohe anhaltende Belastung steht in Studien mit eigenen psychischen Beschwerden in Zusammenhang. Frühere Belastungen, körperliche Gesundheit, Schlaf und Unterstützung spielen ebenfalls eine Rolle. Diese Zusammenhänge sind ein Grund, auf Ihre eigene Gesundheit zu achten, sagen aber nicht voraus, wie es Ihnen persönlich ergehen wird.</p>
 
               <p>Behandlung kann die Erkrankung stabilisieren. Lithium ist eine etablierte Option und kann zur langfristigen Schutzplanung gehören. Beobachtungsstudien zeigen einen Zusammenhang mit weniger Suiziden; sie belegen aber nicht allein, dass Lithium die Ursache dafür ist. In Studien mit zufälliger Behandlungszuweisung waren Suizidereignisse selten; die Ergebnisse liefern bislang keine eindeutige Antwort. Ein individueller Schutz ist damit nicht zugesichert. Fragen zur Behandlung können Sie mit dem Behandlungsteam besprechen.</p>

@@ -2,7 +2,7 @@
 // Zentrales Bild: Kraft-Reservoir als ausdrücklich nicht messende Metapher.
 
 import React from 'react';
-import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
+import { ModuleQuickStart, EvidenceSources, EvidenceCitation, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function Reservoir() {
@@ -212,6 +212,8 @@ function Modul4Page({ onNavigate }) {
               <aside className="callout">
                 <span className="callout-label">Wenn diese Trauer gross wird</span>
                 <p>Eine eigene Beratung oder der Austausch mit anderen Angehörigen kann eine Möglichkeit sein. Ob Einzel- oder Paartherapie für Ihre Situation passt, können Sie mit einer Fachperson klären. Fragen Sie bei VASK Zürich oder Selbsthilfe Zürich nach aktuellen Angeboten. Weitere Anlaufstellen finden Sie unter <a className="link-underline" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung und Ressourcen</a>.</p>
+                <p>Die WHO empfiehlt, psychosoziale Angebote für Angehörige in Betracht zu ziehen, darunter Psychoedukation, Selbsthilfe und gegenseitige Unterstützungsgruppen. Keine dieser Formen muss für jede Familie passen.</p>
+                <EvidenceCitation keys={['whoCarers']} />
               </aside>
 
               <p>Wenn es zwischendurch ruhige Tage, ein gutes Gespräch oder andere wohltuende Momente gibt, können Sie sich darüber freuen, ohne die schwierigen Zeiten kleinzureden.</p>

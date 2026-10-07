@@ -1,7 +1,7 @@
 // Modul 1 — Die bipolare Störung verstehen · Volles Lese-Layout
 
 import React from 'react';
-import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
+import { ModuleQuickStart, EvidenceCitation, EvidenceSources } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 
@@ -173,6 +173,12 @@ function Modul1Page({ onNavigate }) {
               <h3>Was psychotische Symptome bedeuten</h3>
               <p>Wahnvorstellungen oder Wahrnehmungen ohne äussere Entsprechung können während einer schweren Manie oder Depression auftreten. Sie werden von der betroffenen Person häufig als real erlebt. Es handelt sich nicht um eine zweite Persönlichkeit. Neue solche Veränderungen brauchen fachliche Einschätzung.</p>
 
+              <aside className="callout callout-soft">
+                <span className="callout-label">Auch körperliche Ursachen beachten</span>
+                <p>Nicht jede starke Verhaltensänderung bei einer bekannten bipolaren Störung ist eine neue bipolare Episode. Neue starke Verwirrung, ungewöhnliche Schläfrigkeit, körperliche Verschlechterung oder plötzlich andersartige Beschwerden brauchen rasche medizinische Abklärung. Auch Medikamente, Substanzen oder körperliche Erkrankungen können eine Rolle spielen. Sie müssen die Ursache nicht selbst beurteilen.</p>
+                <EvidenceCitation keys={['niceBipolar']} />
+              </aside>
+
               <h3>Stabile Phase (Euthymie)</h3>
               <p>Stabile Phasen bieten Zeit für Erholung, Gespräche und gemeinsame Vorbereitung.</p>
               <p><strong>Raum für Erholung.</strong> Stabile Phasen können lange dauern und echte Entlastung ermöglichen. Ihre eigene Erholung darf ein anderes Tempo haben.</p>
@@ -192,14 +198,20 @@ function Modul1Page({ onNavigate }) {
             <section id="s5">
               <h2>Bipolar I und Bipolar II</h2>
               <p>Die Unterscheidung kann auch helfen, Belastungen im Alltag einzuordnen. Im Vordergrund stehen je nach Verlauf etwa deutlich sichtbare Zuspitzungen, lange Depressionen, fehlendes Verständnis im Umfeld oder Unsicherheit in scheinbar guten Phasen.</p>
-              <p>Dieser Kurzüberblick verwendet die Begriffe des Diagnosesystems DSM-5. Andere Diagnosesysteme ordnen insbesondere gemischte Episoden teilweise anders ein. Fragen Sie das Behandlungsteam, welche Einordnung für die betroffene Person verwendet wird.</p>
+              <p>Dieser Kurzüberblick orientiert sich an der aktuellen WHO-Information zur bipolaren Störung. Er erklärt die Grundunterscheidung in Alltagssprache und enthält keine vollständige Liste diagnostischer Kriterien. Die Einordnung gemischter und anderer Verläufe gehört zur fachlichen Beurteilung. Fragen Sie das Behandlungsteam, welche Einordnung für die betroffene Person verwendet wird.</p>
 
-              <h3>Bipolar I — mindestens eine manische Episode</h3>
-              <p>Nach DSM-5 ist für die Diagnose Bipolar I mindestens eine manische Episode erforderlich. Depressive Episoden können hinzukommen, sind für diese Diagnose aber nicht zwingend. Eine Manie kann den Alltag stark beeinträchtigen; manchmal ist eine stationäre Behandlung nötig.</p>
+              <h3>Wie eine Diagnose gestellt wird</h3>
+              <p>Eine bipolare Störung wird nicht anhand eines einzelnen Verhaltens diagnostiziert. Fachpersonen beurteilen den Verlauf über die Zeit: Art und Dauer von Episoden, Veränderungen von Stimmung und Aktivität, Beeinträchtigungen im Alltag und mögliche psychotische Symptome. Sie berücksichtigen auch Medikamente und Substanzen sowie körperliche oder andere psychische Ursachen. Beobachtungen von Angehörigen können dabei hilfreich sein, ersetzen aber keine fachliche Diagnose.</p>
+              <EvidenceCitation keys={['niceBipolar']} />
+
+              <h3>Bipolar I — manische Episoden</h3>
+              <p>Der WHO-Kurzüberblick beschreibt Bipolar I anhand manischer Episoden, häufig im Wechsel mit Depressionen. Eine Manie kann den Alltag stark beeinträchtigen; manchmal ist eine stationäre Behandlung nötig.</p>
+              <EvidenceCitation keys={['whoBipolar']} />
               <p>Für Angehörige steht bei einer Manie oft die deutlich sichtbare Zuspitzung im Vordergrund: Kontrollverlust, Angst, Gefahr oder Beschämung. Manche erleben auch, dass sie den vertrauten Menschen zeitweise kaum wiedererkennen.</p>
 
               <h3>Bipolar II — Hypomanie und depressive Episoden</h3>
-              <p>Nach DSM-5 treten bei Bipolar II mindestens eine hypomanische und eine depressive Episode auf, ohne frühere Manie. Bipolar II ist keine grundsätzlich leichte Form. Eine Hypomanie kann als produktive oder angenehme Phase erlebt und deshalb übersehen werden.</p>
+              <p>Bei Bipolar II treten mindestens eine hypomanische und eine depressive Episode auf, ohne frühere Manie. Bipolar II ist keine grundsätzlich leichte Form. Eine Hypomanie kann als produktive oder angenehme Phase erlebt und deshalb übersehen werden.</p>
+              <EvidenceCitation keys={['whoBipolar', 'bipolar2']} />
               <p>Bei Bipolar II kann die depressive Krankheitslast gross sein. Dauer, Schwere und Häufigkeit der Episoden sind individuell; aus der Diagnose allein lässt sich nicht ableiten, wie belastet eine Person oder ihre Angehörigen sein werden.</p>
 
               <aside className="callout callout-soft">
@@ -251,22 +263,34 @@ function Modul1Page({ onNavigate }) {
 
               <h3>Stimmungsstabilisierer</h3>
               <p>Welche Medikamente eingesetzt werden, hängt von der aktuellen Phase, dem bisherigen Verlauf sowie von Wirkungen und Nebenwirkungen ab. Dazu gehören unter anderem Lithium, bestimmte Antipsychotika und je nach Situation weitere Medikamente. Lamotrigin und Valproat haben unterschiedliche Einsatzgebiete. Besprechen Sie notwendige Kontrollen und mögliche Alternativen mit dem Behandlungsteam. Verändern Sie Medikamente nicht eigenständig.</p>
+              <EvidenceCitation keys={['niceBipolar', 'whoMhgap']} />
 
               <h3>Antidepressiva: nach der aktuellen Situation fragen</h3>
               <p>Ob ein Antidepressivum infrage kommt, hängt unter anderem von Bipolar I oder II, der aktuellen Phase und bisherigen Reaktionen ab. Fragen Sie: «Welche Rolle hat es in dieser Behandlung? Welche Veränderungen von Schlaf, Antrieb oder Stimmung sollen wir melden?» Neu auftretende starke Unruhe, ungewöhnlich viel Energie oder Mischsymptome sollten rasch mit der behandelnden Fachperson besprochen werden.</p>
+              <EvidenceCitation keys={['niceBipolar', 'antidepressants']} />
+
+              <aside className="callout callout-soft">
+                <span className="callout-label">Warum Kontrollen zur Behandlung gehören</span>
+                <p>Manche Medikamente brauchen regelmässige körperliche und labormedizinische Kontrollen. Bei Lithium gehören dazu der Lithiumspiegel im Blut sowie Nieren- und Schilddrüsenfunktion und Calcium. Antipsychotika können Gewicht und Stoffwechsel beeinflussen; hier werden unter anderem Gewicht, Blutdruck, Blutzucker und Blutfette kontrolliert.</p>
+                <p>Welche Kontrollen in welchen Abständen nötig sind, legt das Behandlungsteam fest. Auch die körperliche Gesundheit insgesamt gehört zur Behandlung. Angehörige müssen diese Kontrollen nicht überwachen. Sie können fragen: «Welche Kontrollen sind geplant, und bei welchen Beschwerden sollen wir uns zeitnah melden?»</p>
+                <EvidenceCitation keys={['niceBipolar', 'whoMhgap']} />
+              </aside>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Nebenwirkungen und Kontrollen klären</span>
-                <p>Fragen Sie, welche Beschwerden rasch abgeklärt werden müssen und wer dafür erreichbar ist. Bei Lithium gehören unter anderem Blutspiegel sowie Nieren- und Schilddrüsenfunktion zu den ärztlichen Kontrollen. Auch neue Medikamente, einschliesslich frei erhältlicher Schmerzmittel, sollten auf Wechselwirkungen geprüft werden.</p>
+                <p>Fragen Sie, welche Beschwerden rasch abgeklärt werden müssen und wer dafür erreichbar ist. Auch neue Medikamente, einschliesslich frei erhältlicher Schmerzmittel, sollten auf Wechselwirkungen geprüft werden.</p>
                 <p><strong>Bei Lithium:</strong> Bei Erbrechen, Durchfall oder einer akuten Erkrankung zeitnah ärztlichen Rat einholen. Neues starkes Zittern, ein unsicherer Gang oder Verwirrung brauchen rasche medizinische Abklärung. Sie müssen die Ursache nicht selbst beurteilen.</p>
                 <p><strong>Bei Lamotrigin:</strong> Einen neu auftretenden Hautausschlag, besonders während einer Dosissteigerung, umgehend ärztlich abklären lassen. Wenn die behandelnde Stelle bei dringenden Beschwerden nicht erreichbar ist, medizinische Notfallhilfe nutzen. Ändern Sie die Einnahme nicht auf eigene Faust.</p>
+                <EvidenceCitation keys={['niceBipolar']} />
               </aside>
 
               <aside className="callout callout-soft">
                 <span className="callout-label">Kinderwunsch, Schwangerschaft und Zeit nach der Geburt</span>
                 <p>Planen Sie früh mit dem psychiatrischen und gynäkologischen Behandlungsteam. Besprechen Sie Behandlung, Unterstützung und erreichbare Kontakte vor, während und nach einer Schwangerschaft. Ändern Sie Medikamente nicht eigenständig.</p>
-                <p><strong>Valproat während der Schwangerschaft:</strong> Bei bipolarer Störung darf es wegen bekannter Risiken für das ungeborene Kind in der Schwangerschaft nicht angewendet werden. Bei Kinderwunsch oder einer eingetretenen Schwangerschaft ist rasche fachärztliche Beratung nötig, um das weitere Vorgehen zu planen.</p>
-                <p><strong>Valproat bei Männern:</strong> Ein mögliches Risiko für Kinder nach Einnahme durch den Vater vor der Zeugung wird weiterhin untersucht. Neuere Beobachtungsstudien kommen zu unterschiedlichen Ergebnissen; ein Risiko lässt sich damit nicht sicher ausschliessen. Die Schweizer Sicherheitsinformation sieht Vorsichtsmassnahmen vor: zuverlässige Verhütung während der Behandlung und bis drei Monate danach, keine Samenspende in diesem Zeitraum sowie mindestens jährliche fachärztliche Überprüfung. Männer mit Kinderwunsch sollten mit dem Facharzt sprechen, bevor die Verhütung beendet wird. Neuere Studien heben diese Vorgaben nicht auf.</p>
+                <p><strong>Valproat während der Schwangerschaft:</strong> Bei bipolarer Störung darf es wegen bekannter Risiken für das ungeborene Kind in der Schwangerschaft nicht angewendet werden. Für Mädchen und Frauen, die schwanger werden können, gelten besondere Vorgaben zur Verhütung und fachärztlichen Beratung. Bei Kinderwunsch oder einer eingetretenen Schwangerschaft ist rasche fachärztliche Beratung nötig, um das weitere Vorgehen zu planen. Setzen Sie Valproat nicht eigenständig ab.</p>
+                <EvidenceCitation keys={['valproateCurrent']} />
+                <p><strong>Valproat bei Männern:</strong> Ein mögliches Risiko für Kinder nach Einnahme durch den Vater vor der Zeugung wird weiterhin untersucht. Neuere Beobachtungsstudien kommen zu unterschiedlichen Ergebnissen; ein Risiko lässt sich damit nicht sicher ausschliessen. Die auf Swissmedic veröffentlichten Informationsmaterialien, bereitgestellt am 20. Mai 2026, bestätigen die Vorsichtsmassnahmen: zuverlässige Verhütung für den Mann und seine Partnerin während der Behandlung und bis drei Monate danach, keine Samenspende in diesem Zeitraum sowie mindestens jährliche fachärztliche Überprüfung. Bei Kinderwunsch vor dem Beenden der Verhütung fachärztlichen Rat einholen; bei einer eingetretenen Schwangerschaft unter väterlicher Behandlung oder bis drei Monate danach sollen sich beide an ihre Ärztinnen oder Ärzte wenden. Neuere Studien heben diese Vorgaben nicht auf.</p>
+                <EvidenceCitation keys={['valproateCurrent', 'paternalValproateResearch']} />
                 <p><strong>Nach der Geburt:</strong> Vereinbaren Sie, wer bei der Versorgung des Kindes hilft, wie ausreichend Schlaf ermöglicht wird und wen Sie bei auffälligen Veränderungen rasch erreichen. Solche Absprachen sollen die Aufgaben verteilen und ersetzen keine fachliche Begleitung. Angehörige müssen keine alleinige Dauerwache übernehmen.</p>
               </aside>
               <h3>Gemeinsam über Behandlung entscheiden</h3>
@@ -274,9 +298,11 @@ function Modul1Page({ onNavigate }) {
 
               <h3>Psychotherapie</h3>
               <p>Bestimmte strukturierte psychotherapeutische und familienbezogene Programme können die medizinische Behandlung ergänzen und dabei unterstützen, Warnzeichen und Alltagsschwierigkeiten zu bearbeiten. Welche Form passt, besprechen die betroffene Person und das Behandlungsteam.</p>
+              <EvidenceCitation keys={['psychotherapy', 'familyInterventions']} />
 
               <h3>Psychoedukation</h3>
               <p>In der strukturierten Psychoedukation wird Wissen über die Erkrankung mit Übungen, Austausch und konkreten Strategien verbunden. Solche Programme und familienbezogene Behandlungen können die medizinische Behandlung ergänzen. Die Studien beziehen sich auf diese Programme; eine Wirkung des Lesens dieser Website auf Rückfälle oder Belastung ist damit nicht nachgewiesen.</p>
+              <EvidenceCitation keys={['caregivers', 'familyInterventions']} />
 
               <h3>Realistische Erwartungen</h3>
               <p>Auch unter guter Behandlung können Episoden auftreten. Fortschritt kann bedeuten, dass Krisen seltener oder milder werden oder früher erkannt werden. Vollständige Krisenfreiheit ist deshalb nicht der einzige Massstab für den Behandlungserfolg.</p>

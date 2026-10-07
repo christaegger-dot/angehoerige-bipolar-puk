@@ -2,14 +2,14 @@
   "status": "prepared-not-executed",
   "releaseEvidenceVersion": 1,
   "profileTarget": "PUK Websiteprofil 1.10.1",
-  "lastTechnicalPreparation": "2026-10-06",
+  "lastTechnicalPreparation": "2026-10-07",
   "scope": "Alle 16 Routen, 9 Werkzeuge, 7 Handouts sowie Fokus-, Formular-, Lade- und Fehlerzustände; reale menschliche AT-Prüfung",
   "releaseFingerprint": {
     "version": 1,
     "algorithm": "sha256",
-    "sourceSha256": "bb230ef0cf19fcd6f77985517a1ecfa44c48810a43e732f0d0336a703d30c75e",
-    "buildSha256": "f645e50ac1c37abed5db7d8271b5d5224ca65826d8aca59e39068335619a71a8",
-    "sha256": "9007a732d98c118e7a17937915e54dc88021287b29ddf1dc56c504b69bb182d9"
+    "sourceSha256": "3083f3336a191efea97fa8d4e6708013e2df0c850c5261c5754c62ae298edbed",
+    "buildSha256": "dd6519691910bbc721de5cee8b0d1b889273a239b856f420093d28061f0bfb5a",
+    "sha256": "054703088c2c0a00b846287623a846aac59d782d05c193a9833493c587145d34"
   },
   "testedWith": [],
   "manualApproval": null,
@@ -41,7 +41,7 @@
       "testerRole": null,
       "testerInitials": null,
       "result": "pending",
-      "releaseFingerprintSha256": "9007a732d98c118e7a17937915e54dc88021287b29ddf1dc56c504b69bb182d9",
+      "releaseFingerprintSha256": "054703088c2c0a00b846287623a846aac59d782d05c193a9833493c587145d34",
       "evidence": [],
       "routeChecks": [
         {
@@ -395,7 +395,7 @@
       "testerRole": null,
       "testerInitials": null,
       "result": "pending",
-      "releaseFingerprintSha256": "9007a732d98c118e7a17937915e54dc88021287b29ddf1dc56c504b69bb182d9",
+      "releaseFingerprintSha256": "054703088c2c0a00b846287623a846aac59d782d05c193a9833493c587145d34",
       "evidence": [],
       "routeChecks": [
         {

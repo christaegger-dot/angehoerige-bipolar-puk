@@ -2,7 +2,7 @@
 // Zentrales Bild: Vier Säulen als Tragwerk.
 
 import React from 'react';
-import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
+import { ModuleQuickStart, EvidenceSources, EvidenceCitation, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 
 function SaeulenFigur() {
@@ -250,6 +250,19 @@ function Modul7Page({ onNavigate }) {
                 <p>Gefühle können nebeneinander bestehen, sich verändern oder ausbleiben. Welche Unterstützung Sie nutzen oder wann Sie ein Gespräch führen möchten, hängt von Ihrer Situation ab.</p>
               </aside>
 
+              <h3>Fachliche Nachsorge gehört zum Plan</h3>
+              <p>Nach einer schweren manischen, psychotischen oder suizidalen Krise oder nach Selbstverletzung bleibt fachliche Nachsorge wichtig. Dass die akute Krise abgeklungen ist, bedeutet nicht, dass kein weiterer Behandlungs- oder Unterstützungsplan nötig ist. Klären Sie mit der betroffenen Person und dem Behandlungsteam, welche Beteiligung gewünscht ist und welche Informationen besprochen werden dürfen.</p>
+              <ul>
+                <li><strong>Frühe Warnzeichen und hilfreiche Reaktionen:</strong> Was ist zuerst aufgefallen? Welche Schritte haben geholfen, und was hat zusätzliche Anspannung ausgelöst?</li>
+                <li><strong>Behandlung und Termine:</strong> Welche Medikamente oder Termine wurden verändert? Wer erklärt den weiteren Plan und übernimmt notwendige Kontrollen? Medikamente werden nach fachlicher Absprache angepasst.</li>
+                <li><strong>Erreichbare Kontakte:</strong> Wer übernimmt die Nachsorge, wann findet der nächste Kontakt statt und an wen kann sich die Person bei weiteren Sorgen wenden?</li>
+                <li><strong>Angehörige und Kinder:</strong> Welche Belastung ist entstanden, welche Entlastung fehlt und wer organisiert sie? Eigene Beratung kann unabhängig von einem gemeinsamen Gespräch sinnvoll sein.</li>
+                <li><strong>Krisenplan überprüfen:</strong> Welche Kontakte, Aufgaben oder Absprachen sollten nach der Erholung angepasst werden?</li>
+              </ul>
+              <p>Wenn nach einer Suizid- oder Selbstverletzungskrise weiterhin Sorgen um die Sicherheit bestehen, braucht es zeitnahe professionelle Einschätzung und Nachsorge. Warten Sie damit nicht auf ein späteres Gespräch zur Aufarbeitung. Zeitpunkt und Zuständigkeit werden mit den behandelnden Fachpersonen geklärt; Angehörige übernehmen keine alleinige Sicherheitsbeurteilung.</p>
+              <EvidenceCitation keys={['niceBipolar', 'suicide']} />
+              <p>Die gemeinsam angepassten Absprachen können Sie im <a href={navHref('werkzeuge', 'krisenplan')} onClick={navHandler('werkzeuge', onNavigate, 'krisenplan')}>Krisenplan</a> festhalten. Der Plan ergänzt die fachliche Nachsorge und ersetzt sie nicht.</p>
+
               <h3>Das Gespräch nach der Krise</h3>
               <p>Wenn Sie das Erlebte ansprechen möchten, fragen Sie, ob ein Gespräch gerade für beide passt. Sie können auch warten, Unterstützung für das Gespräch suchen oder Ihre Erfahrungen für sich in einer Beratung besprechen.</p>
               <p>Manchmal erinnert sich die erkrankte Person an Teile der Manie oder schweren Depression nur lückenhaft. Ein Gespräch kann dennoch sinnvoll sein. Rechnen Sie dabei nicht damit, dass die andere Person alles weiss, was Sie erlebt haben.</p>
@@ -321,6 +334,8 @@ function Modul7Page({ onNavigate }) {
               <h3>Eigene soziale Kontakte wiederaufbauen</h3>
               <p>Wenn Sie über längere Zeit weniger Kontakt zu anderen Menschen hatten, können Sie überlegen, wen Sie wiedersehen oder kennenlernen möchten. Welche Kontakte heute zu Ihnen passen, kann sich verändert haben.</p>
               <p>Wie viel Sie über Ihre Situation erzählen, entscheiden Sie selbst. Vielleicht passt auch eine Angehörigengruppe. <strong>Welche alten oder neuen Kontakte Sie pflegen möchten, bestimmen Sie selbst.</strong></p>
+              <p>Die WHO empfiehlt, psychosoziale Angebote wie Psychoedukation mit Problemlöseansätzen, Selbsthilfe und gegenseitige Unterstützungsgruppen für Angehörige in Betracht zu ziehen. Welche Form für Sie passt, bleibt eine persönliche Entscheidung.</p>
+              <EvidenceCitation keys={['whoCarers']} />
             </section>
 
             <section id="s6">

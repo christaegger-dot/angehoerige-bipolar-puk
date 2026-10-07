@@ -3,6 +3,16 @@
   padding-block: var(--space-4) var(--space-6);
 }
 
+.notfall-compact-hero .notfall-age-contact-link {
+  color: var(--puk-blue-125);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.notfall-compact-hero .notfall-age-contact-link:hover {
+  color: var(--puk-black-100);
+}
+
 .notfall-compact-hero .breadcrumb {
   margin-bottom: var(--space-3);
 }

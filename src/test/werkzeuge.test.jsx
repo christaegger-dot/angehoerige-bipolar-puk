@@ -39,7 +39,7 @@ describe('KrisenplanTool privacy', () => {
   it('exports the full current text for print without examples or stale deleted input', () => {
     const { container } = render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
     const printValues = [...container.querySelectorAll('.krisenplan-print-value')];
-    expect(printValues).toHaveLength(10);
+    expect(printValues).toHaveLength(screen.getAllByRole('textbox').length);
     printValues.forEach(value => expect(value.textContent).toBe(''));
 
     const name = 'Plan für <M. & Christine> '.repeat(20);
@@ -51,6 +51,15 @@ describe('KrisenplanTool privacy', () => {
 
     expect(nameInput.parentElement.querySelector('.krisenplan-print-value').textContent).toBe(name);
     expect(warningInput.parentElement.querySelector('.krisenplan-print-value').textContent).toBe(warningSigns);
+    for (const [label, value] of [
+      [/^Fahren und gefährliche Maschinen/i, 'Gewünschte alternative Fahrt'],
+      [/^Finanzielle Sicherheit/i, 'Gemeinsam vereinbarte Ausgabenart'],
+      [/^Sexuelle Selbstbestimmung und Gesundheit/i, 'Selbst gewählte Vertrauensperson'],
+    ]) {
+      const input = screen.getByRole('textbox', { name: label });
+      fireEvent.change(input, { target: { value } });
+      expect(input.parentElement.querySelector('.krisenplan-print-value').textContent).toBe(value);
+    }
     expect(nameInput.parentElement.querySelector('.krisenplan-print-value').children).toHaveLength(0);
     expect(window.localStorage.length).toBe(0);
     expect(window.sessionStorage.length).toBe(0);

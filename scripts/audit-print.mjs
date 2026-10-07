@@ -295,9 +295,10 @@ try {
       if (id !== 'dl-02') return;
       record('wallet/one-a4-page', result.count === 1 && result.a4, { pages: result.count });
       contains('wallet', result.text, [
-        '144 Sanität · Lebensgefahr · 24 h', '117 Polizei · bei Gewalt oder Bedrohung',
-        '143 Dargebotene Hand · anonyme Beratung · 24 h', '0800 33 66 55 Ärztefon Notfalldienst ZH · 24 h',
-        '058 384 20 00 PUK Notfall Erwachsene · 24 h · ab 18 Jahren', '058 384 38 00 Fachstelle Angehörigenarbeit · werktags',
+        '144 Sanität · Lebensgefahr · 24 h', '117 Polizei · Gewalt / Bedrohung',
+        '143 Anonyme Beratung · 24 h', '0800 33 66 55 Ärztefon ZH · 24 h',
+        '058 384 20 00 PUK ab 18 · 24 h', '058 384 46 82 PUK ab 65',
+        '058 384 66 66 PUK Kinder / Jugendliche', '058 384 38 00 Angehörigenarbeit · werktags',
         'Vertrauensperson · Name / Telefon', 'Hausärztin / Hausarzt · Name / Telefon', 'Psychiaterin / Klinik · Name / Telefon',
         'Medikation · Wirkstoff / Dosis', 'Allergien / Unverträglichkeiten', 'Klinikwunsch im Ernstfall',
         'Ausweichkontakt, wenn niemand erreichbar ist', 'Vorsorgeauftrag / Patientenverfügung hinterlegt bei',
@@ -314,11 +315,17 @@ try {
     const lines = Array.from({ length: 75 }, (_, index) => `CRISIS_WARNING_${String(index + 1).padStart(3, '0')}${index === 74 ? '_END' : ''}: Synthetische Vereinbarung zur Druckpruefung.`);
     await page.locator('#kp-name').fill(name);
     await page.locator('#kp-fruehzeichen').fill(lines.join('\n'));
+    const safetyAgreements = [
+      ['#kp-verkehr', 'CRISIS_DRIVING_CURRENT: Gemeinsam vereinbarte alternative Fahrt'],
+      ['#kp-finanzen', 'CRISIS_FINANCES_CURRENT: Individuell vereinbarte Ausgabenart'],
+      ['#kp-selbstbestimmung', 'CRISIS_CONTACT_CURRENT: Gewünschte unabhängige Vertrauensperson'],
+    ];
+    for (const [field, value] of safetyAgreements) await page.locator(field).fill(value);
     await page.evaluate(() => document.activeElement?.blur());
     await crisisContrast(page, 'crisis-plan/screen-border-contrast', '.krisenplan-card .krisenplan-input, .krisenplan-card .krisenplan-textarea');
     await printButton(page, 'crisis-plan');
     const result = await pdf(page, 'crisis-plan');
-    contains('crisis-plan', result.text, ['Krisenplan', 'Plan für', 'Frühwarnzeichen', name, ...lines]);
+    contains('crisis-plan', result.text, ['Krisenplan', 'Plan für', 'Frühwarnzeichen', name, ...lines, ...safetyAgreements.map(([, value]) => value)]);
     excludes('crisis-plan', result.text, toolsPageText);
     await crisisContrast(page, 'crisis-plan/print-border-contrast', '.krisenplan-card .krisenplan-print-value');
   });

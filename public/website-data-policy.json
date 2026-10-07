@@ -1,8 +1,8 @@
 {
   "status": "approved",
-  "reviewedAt": "2026-10-06",
+  "reviewedAt": "2026-10-07",
   "reviewerRole": "KI-gestützte technische Datenschutzprüfung im ausdrücklichen Auftrag der Projektverantwortlichen; keine institutionelle Rechtsfreigabe",
-  "inventoryVersion": 4,
+  "inventoryVersion": 5,
   "profileCompatibility": {
     "requestedProfile": "PUK-Websiteprofil 1.10.1",
     "source": "templates/website/profile.json#formsAndData und Website.prompt.md aus dem bereitgestellten Website Kit",
@@ -14,7 +14,7 @@
   },
   "scope": "Aktuelle Werkzeug-Eingaben bleiben ausschliesslich im flüchtigen Komponenten-Zustand. Web-Storage (localStorage/sessionStorage) wird nur zum bestätigten Entfernen von Altbeständen aus früheren Versionen verwendet; deren Inhalte werden nicht gelesen und es werden keine neuen Einträge geschrieben. Der Browser-Verlauf enthält getrennt davon eine lokale Eintragskennung und numerische Scrollpositionen für Zurück/Vorwärts, keine Werkzeug-Eingaben. Server-Logs, Hoster-Zugangsschutz und Browser-Netzwerk-Caches sind nicht von der Anwendung verwaltet.",
   "dataCategories": [
-    "Aktuelle freiwillige Krisenplan- und Kommunikations-Eingaben können Namen, Kontaktdaten, Gesundheits-, Beziehungs- und Betreuungsangaben enthalten; sie werden nicht im Browser-Speicher persistiert",
+    "Aktuelle freiwillige Krisenplan- und Kommunikations-Eingaben können Namen, Kontaktdaten, Gesundheits-, Beziehungs- und Betreuungsangaben sowie Absprachen zu Fahren, Finanzen und sexueller Selbstbestimmung enthalten; intime Einzelheiten werden nicht verlangt. Diese Angaben werden nicht im Browser-Speicher persistiert",
     "Historische Browser-Kopien können noch die früher gespeicherten Krisenplan-Einträge und Kommunikations-Entwürfe mit besonders schützenswerten Gesundheitsdaten sowie Angaben zu Angehörigen und Dritten enthalten"
   ],
   "retention": "Aktuelle Eingaben: nur während der geöffneten Übung im flüchtigen Zustand; keine Wiederherstellung nach Schliessen oder Neuladen. Historische sessionStorage-Kopien: Ende der jeweiligen Tab-Sitzung, wobei Browser-Wiederherstellung diese verlängern kann. Historische localStorage-Kopien: keine frühere automatische Löschfrist; bis bestätigter Löschaktion oder manueller Entfernung der Website-Daten. Es werden keine neuen Werkzeug-Entwürfe im Browser angelegt. Navigationspositionen gehören zum Verlauf des jeweiligen Tabs; der Browser kann ihn bei Sitzungswiederherstellung erhalten.",
@@ -181,6 +181,9 @@
         "schritte",
         "kontakte",
         "klinik",
+        "verkehr",
+        "finanzen",
+        "selbstbestimmung",
         "hilft",
         "nichthilft",
         "ausweichkontakt",
@@ -237,7 +240,7 @@
       "feature": "Krisenplan",
       "trigger": "Drucken / als PDF speichern",
       "api": "window.print",
-      "content": "Ausgefüllter Krisenplan einschliesslich persönlicher Kontakte und Betreuungsabsprachen",
+      "content": "Ausgefüllter Krisenplan einschliesslich persönlicher Kontakte, Betreuungsabsprachen und freiwilliger Absprachen zu Fahren, finanzieller Sicherheit und sexueller Selbstbestimmung",
       "retention": "Vom Nutzer und Drucksystem bestimmt; keine automatische Löschung durch die Website",
       "deletion": "PDF-Dateien, Ausdrucke und Druckverlauf separat löschen oder sicher vernichten; «Entwurf löschen» greift darauf nicht zu"
     },
@@ -255,23 +258,24 @@
   "technicalAcceptance": {
     "schemaVersion": 1,
     "status": "accepted",
-    "reviewedAt": "2026-10-06",
+    "reviewedAt": "2026-10-07",
     "reviewerRole": "KI-gestützte technische Datenschutzprüfung im ausdrücklichen Auftrag der Projektverantwortlichen; keine institutionelle Rechtsfreigabe",
     "authority": "delegated-project-decision",
     "scope": "memory-only-application-and-legacy-deletion",
     "releaseFingerprint": {
       "version": 1,
       "algorithm": "sha256",
-      "sourceSha256": "bb230ef0cf19fcd6f77985517a1ecfa44c48810a43e732f0d0336a703d30c75e",
-      "buildSha256": "f645e50ac1c37abed5db7d8271b5d5224ca65826d8aca59e39068335619a71a8",
-      "sha256": "9007a732d98c118e7a17937915e54dc88021287b29ddf1dc56c504b69bb182d9"
+      "sourceSha256": "3083f3336a191efea97fa8d4e6708013e2df0c850c5261c5754c62ae298edbed",
+      "buildSha256": "dd6519691910bbc721de5cee8b0d1b889273a239b856f420093d28061f0bfb5a",
+      "sha256": "054703088c2c0a00b846287623a846aac59d782d05c193a9833493c587145d34"
     },
     "evidence": [
       "_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md",
       "scripts/audit-tools.mjs",
       "src/test/storage.test.js",
       "src/test/werkzeuge-page.test.jsx",
-      "_dev/W2-NACHREVIEW-UMSETZUNG-2026-10-06.md"
+      "_dev/W2-NACHREVIEW-UMSETZUNG-2026-10-06.md",
+      "_dev/EVIDENZAUDIT-UMSETZUNG-2026-10-07.md"
     ],
     "excluded": [
       "institutionelle PUK-Freigabe",
