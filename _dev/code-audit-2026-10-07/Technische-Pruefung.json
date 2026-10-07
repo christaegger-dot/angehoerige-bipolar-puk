@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-07T14:51:33.447112+00:00",
+  "branch": "fix/code-audit-2026-10-07",
+  "baseCommit": "dcbf81b82408c6af1f96928725e9de2839986087",
+  "releaseFingerprint": {
+    "version": 1,
+    "algorithm": "sha256",
+    "sourceSha256": "b00e51c8d6f4fbe5f9605d7cf87a6cbefe91cdcc9e03186ff4238e5eda829459",
+    "buildSha256": "8cf3e2807175f45427eeb2719fbcb9271671a8d42ab62be5f830d91e29d13e8c",
+    "sha256": "ed8af649125c72191cbc2ddf227e1f269f9a7910a8417c9efbd052134440e00a"
+  },
+  "bugsFixed": 5,
+  "newConfirmedP1Bugs": 0,
+  "baseline": {
+    "tests": 183,
+    "testFiles": 27,
+    "lintPassed": true,
+    "proof": {
+      "artifact": "baseline-tests.log",
+      "sha256": "f1f44b26c003d424d609cb773a23f1352d88543ecf25cc39ff74194de66776e0",
+      "location": "local-audit-artifacts-outside-repository"
+    }
+  },
+  "automatedChecks": [
+    {
+      "command": "npm run lint",
+      "passed": true,
+      "proof": {
+        "artifact": "final-lint.log",
+        "sha256": "e09bcecd4190c6f2ec90b4270b9034461ebbb497f192e4638ad519d4606470fb",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run test:coverage",
+      "passed": true,
+      "tests": 191,
+      "testFiles": 29,
+      "coveragePercent": {
+        "lines": 93.47,
+        "branches": 87,
+        "statements": 90.41,
+        "functions": 86.9
+      },
+      "proof": {
+        "artifact": "final-tests.log",
+        "sha256": "ac19e2f495606c89e76743197d2b9747031eb66b96e30c43d54e6149807e46ae",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run build",
+      "passed": true,
+      "proof": {
+        "artifact": "build.log",
+        "sha256": "6816521ebfca0b5bbd507b5d66f20abbec27df86128709ad5f5ca082060e4e92",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run test:release-evidence",
+      "passed": true,
+      "tests": 22,
+      "scope": "Unveränderter Validator; Baselineprüfung im Codeaudit.",
+      "proof": {
+        "artifact": "release-validator-tests.log",
+        "sha256": "14cffea62b946b64fc48809678d8d56d6093afa0c70ad2739012e3f23eed05c3",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run audit:website",
+      "passed": true,
+      "checks": 697,
+      "failures": 0,
+      "startedAt": "2026-10-07T14:46:42.718Z",
+      "completedAt": "2026-10-07T14:49:10.184Z",
+      "proof": {
+        "artifact": "website-audit.json",
+        "sha256": "72b9d728ff23d12c7d6951fe7c808876402276db95d1ff58c571285c2ff00be2",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run audit:tools",
+      "passed": true,
+      "checks": 225,
+      "failures": 0,
+      "startedAt": "2026-10-07T14:46:42.654Z",
+      "completedAt": "2026-10-07T14:47:38.214Z",
+      "proof": {
+        "artifact": "tools-audit.json",
+        "sha256": "fa1a0ac48326b6e6e836d6c7c08c3433c3a75c48b02a630b507720df2de4f064",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run audit:print",
+      "passed": true,
+      "checks": 72,
+      "failures": 0,
+      "startedAt": "2026-10-07T14:46:42.622Z",
+      "completedAt": "2026-10-07T14:47:00.079Z",
+      "proof": {
+        "artifact": "print/report.json",
+        "sha256": "3987c19025b5f2f77136fb5af72d0eda947f8f1c7f2c266499b166cf04a24b73",
+        "location": "local-audit-artifacts-outside-repository"
+      },
+      "pdfExports": 13
+    }
+  ],
+  "targetedBrowserChecks": [
+    {
+      "check": "Actual CSP and nosniff",
+      "passed": true,
+      "states": 25,
+      "routes": 16,
+      "toolDialogs": 9,
+      "proof": {
+        "artifact": "csp-final.json",
+        "sha256": "dbacca02be97f4bbf5b8802e31f81de7b098a17ff6531003a934ed8cc5039e99",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "check": "Offline hover/focus/touch then online chosen content with styles",
+      "passed": true,
+      "cases": 5,
+      "proof": {
+        "artifact": "navigation-choice-browser.json",
+        "sha256": "2cf04cfa5069bf1a01ae03674b0cb3713a6539d4834986f0c3f298307de1a5a6",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "check": "Initial breathing animation, multiline communication, module focus",
+      "passed": true,
+      "proof": {
+        "artifact": "tools-edge-final.json",
+        "sha256": "172d0afe6c661a4ca6aa2d7fd8cdb59e67d8834493799759251c94850ac0fcb0",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "check": "All five timed cycles, repeat, cancel",
+      "passed": true,
+      "proof": {
+        "artifact": "tools-state-final.json",
+        "sha256": "d079b27d5e8e5f102c15639f2daa98080d49d8dbd77c5a2d6448553bf2fd9170",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "check": "Doubleclick vs keyboard vs singleclick in two question tools",
+      "passed": true,
+      "proof": {
+        "artifact": "quiz-double-click-final.json",
+        "sha256": "b58dd164c7942b5922dd686f3b3baeb39097a3cf90365439bfebcc48c05d06f3",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "check": "Reduced motion preserves 0.2s duration",
+      "passed": true,
+      "proof": {
+        "artifact": "reduced-motion-final.json",
+        "sha256": "4c99a3c21a4389048b968808afb6dfb8c94b9544f1780d6cbe6af1874cc0198d",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    }
+  ],
+  "actualReleaseEvidence": {
+    "passed": false,
+    "expectedExitCode": 1,
+    "technicalPrivacyPassed": true,
+    "humanAssistiveTechnologyCompletedRuns": 0,
+    "screenreaderStatus": "prepared-not-executed",
+    "reason": "Required real human screenreader runs pending",
+    "proof": {
+      "artifact": "release-evidence-final.json",
+      "sha256": "045b09a4aae6f9e53465d30441bfdbfa263909b76a1b4866027a4678b893fba4",
+      "location": "local-audit-artifacts-outside-repository"
+    }
+  },
+  "retainedCounterproofs": [
+    {
+      "check": "Baseline early imported module fails after offline hover; full reload recovers",
+      "proof": {
+        "artifact": "navigation-repro.json",
+        "sha256": "dea669cdc2ea2c5e1f4b951601e4b34986d04bc245d733d19fd1f8fd93238c16",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "check": "Cache eviction alone fails for JS and can leave CSS unapplied; not shipped",
+      "proof": {
+        "artifact": "navigation-cache-counterprobe.json",
+        "sha256": "99db706213f5a171ebd9cc5fb3a62bd01e367f07dc908ccfb6d46620a41abbdd",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "check": "Earlier browser fixture incorrectly expected a separate tool CSS chunk",
+      "proof": {
+        "artifact": "navigation-choice-browser-fixture-attempt.log",
+        "sha256": "a3ce987954622075c802a0893c051d69a3423c161b523e29f243cd4c8b52dbe5",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    }
+  ],
+  "limitations": [
+    "No human assistive-technology runs.",
+    "No physical printing; PDFs inspected.",
+    "Imports now start at actual choice; initial unseen content may display existing loading states.",
+    "Actual offline choice retains existing error/reload recovery.",
+    "No assertion of clinical, legal or institutional approval."
+  ],
+  "rawArtifactDirectory": "/workspace/cloud-setup/code-audit-2026-10-07/"
+}

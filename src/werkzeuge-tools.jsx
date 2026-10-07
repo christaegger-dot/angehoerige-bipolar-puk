@@ -92,10 +92,11 @@ function AtemuebungTool({ onClose }) {
           <>
             <div ref={stepRef} tabIndex={-1} role="group" aria-label="Geführte Atemübung" className="atem-stage">
               <div
-                className={`atem-circle atem-${phase}`}
+                className={`atem-circle atem-${phase}${phase === 'einatmen' && zyklus === 0 ? ' atem-first-inhale' : ''}`}
                 style={{
                   transform: `scale(${scale})`,
                   transitionDuration: `${dur}ms`,
+                  animationDuration: `${dur}ms`,
                 }}
               />
               <div className="atem-label" aria-hidden="true">{label}</div>
@@ -175,7 +176,10 @@ function SelbsttestTool({ onClose, onNavigate }) {
   const [answers, setAnswers] = React.useState([]);
   const stepRef = useToolStepFocus(`${phase}-${answers.length}`);
   const start = () => { setAnswers([]); setPhase('running'); };
-  const answer = (optionIndex) => {
+  const answer = (optionIndex, event) => {
+    // The next question can appear under the second click of a double-click.
+    // Keyboard activation has detail 0 and remains available without a delay.
+    if (event.detail > 1) return;
     const next = [...answers, optionIndex];
     setAnswers(next);
     if (next.length === SELBSTTEST_FRAGEN.length) setPhase('result');
@@ -204,7 +208,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
           <h2 ref={stepRef} tabIndex={-1} className="selbsttest-q">{SELBSTTEST_FRAGEN[qIdx].q}</h2>
           <div className="selbsttest-options">
             {SELBSTTEST_FRAGEN[qIdx].opts.map((option, index) => (
-              <button key={option.label} className="selbsttest-opt" onClick={() => answer(index)}>{option.label}</button>
+              <button key={option.label} className="selbsttest-opt" onClick={(event) => answer(index, event)}>{option.label}</button>
             ))}
           </div>
           {answers.length > 0 && <button className="tool-quiet-btn" onClick={() => setAnswers(answers.slice(0, -1))}>← Frage zurück</button>}
@@ -542,7 +546,8 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
 
 
   const start  = () => { setAnswers([]); setPhase('running'); };
-  const answer = (score) => {
+  const answer = (score, event) => {
+    if (event.detail > 1) return;
     const next = [...answers, score];
     setAnswers(next);
     if (next.length === SAEULEN_ALL_QUESTIONS.length) setPhase('result');
@@ -595,7 +600,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
             <h2 ref={stepRef} tabIndex={-1} className="selbsttest-q">{cur.q}</h2>
             <div className="selbsttest-options">
               {cur.opts.map((o, i) => (
-                <button key={i} className="selbsttest-opt" onClick={() => answer(o.score)}>
+                <button key={i} className="selbsttest-opt" onClick={(event) => answer(o.score, event)}>
                   {o.label}
                 </button>
               ))}

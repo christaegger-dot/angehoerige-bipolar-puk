@@ -1,6 +1,6 @@
 // Home — editorial single column, one triage flow, clear entry paths
 
-import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 import { ANLAUFSTELLEN_ENTRY, TOOLS } from './site-content.js';
 import { TriageFlow } from './triage-flow.jsx';
@@ -18,9 +18,9 @@ function HomePage({ onNavigate }) {
           </div>
           <div className="hero-micro-nav animate-in delay-1" aria-label="Schnelle Einstiege">
             <a href={navHref('modul4', 's6')} onClick={navHandler('modul4', onNavigate, 's6')}>Kinder unterstützen</a>
-            <a aria-label="Schnelleinstieg Module" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>Module</a>
-            <a aria-label="Schnelleinstieg Werkzeuge" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')}>Werkzeuge</a>
-            <a aria-label="Schnelleinstieg Unterstützung" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>Unterstützung</a>
+            <a aria-label="Schnelleinstieg Module" href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
+            <a aria-label="Schnelleinstieg Werkzeuge" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>Werkzeuge</a>
+            <a aria-label="Schnelleinstieg Unterstützung" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung</a>
           </div>
           <h1 className="animate-in delay-1">
             Wenn jemand in Ihrem Umfeld eine <em>bipolare Störung</em> hat.
@@ -30,7 +30,7 @@ function HomePage({ onNavigate }) {
             <a className="hero-cta puk-link--action" href={navHref('start', 'triage')} onClick={navHandler('start', onNavigate, 'triage')}>
               Wo soll ich anfangen? →
             </a>
-            <a className="hero-cta-secondary puk-link--action" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)} {...navPreloadProps('modul1')}>Direkt zu Modul 1</a>
+            <a className="hero-cta-secondary puk-link--action" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)}>Direkt zu Modul 1</a>
             <a className="hero-cta-secondary puk-link--action" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Konkrete Hilfen für den Alltag</a>
           </div>
           <div className="hero-illustration animate-in delay-3">
@@ -55,10 +55,10 @@ function HomePage({ onNavigate }) {
         <div className="col-wide">
           <span className="kicker">Drei Wege zum Einstieg</span>
           <h2 style={{ maxWidth: '20ch', marginBottom: 8 }}>Wählen Sie den Zugang, der gerade passt.</h2>
-          <p style={{ color: 'var(--ink-soft)', maxWidth: '52ch', marginBottom: 32 }}>Sie können ein Thema lesen, ein Werkzeug ausprobieren oder Beratung suchen. Alle sieben Module finden Sie unter <a className="link-underline puk-link--inline" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>Module</a>.</p>
+          <p style={{ color: 'var(--ink-soft)', maxWidth: '52ch', marginBottom: 32 }}>Sie können ein Thema lesen, ein Werkzeug ausprobieren oder Beratung suchen. Alle sieben Module finden Sie unter <a className="link-underline puk-link--inline" href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>.</p>
           <ul className="module-list" role="list" aria-label="Drei Wege zum Einstieg">
             <li>
-              <a className="module-row" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>
+              <a className="module-row" href={navHref('module')} onClick={navHandler('module', onNavigate)}>
                 <div className="module-num">M</div>
                 <div className="module-content">
                   <div className="module-row-numlabel">Lernpfad</div>
@@ -73,7 +73,7 @@ function HomePage({ onNavigate }) {
               </a>
             </li>
             <li>
-              <a className="module-row" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')}>
+              <a className="module-row" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>
                 <div className="module-num">W</div>
                 <div className="module-content">
                   <div className="module-row-numlabel">Direkt nutzen</div>
@@ -88,7 +88,7 @@ function HomePage({ onNavigate }) {
               </a>
             </li>
             <li>
-              <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)} {...navPreloadProps('unterstuetzung')}>
+              <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
                 <div className="module-num module-num-resource">→</div>
                 <div className="module-content">
                   <div className="module-row-numlabel">Hilfe finden</div>
@@ -131,12 +131,12 @@ function HomePage({ onNavigate }) {
               <span className="kicker">Werkzeuge</span>
               <h2>Werkzeuge direkt ausprobieren.</h2>
             </div>
-            <a className="tools-teaser-link" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')}>Alle neun Werkzeuge →</a>
+            <a className="tools-teaser-link" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>Alle neun Werkzeuge →</a>
           </div>
           <ul className="tools-row" role="list" aria-label="Ausgewählte Werkzeuge">
             {[TOOLS[0], TOOLS[3], TOOLS[1]].map((t) =>
               <li key={t.tool}>
-                <a className="tools-row-item" href={navHref('werkzeuge', t.tool)} onClick={navHandler('werkzeuge', onNavigate, t.tool)} {...navPreloadProps('werkzeuge')}>
+                <a className="tools-row-item" href={navHref('werkzeuge', t.tool)} onClick={navHandler('werkzeuge', onNavigate, t.tool)}>
                   <span className="tools-row-tag">{t.tag}</span>
                   <h3>{t.title}</h3>
                   <p>{t.desc}</p>

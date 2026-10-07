@@ -3495,6 +3495,16 @@ section + section { padding-top: 0; }
   transition: transform 0s ease-in-out;
   will-change: transform;
 }
+/* The first circle is newly mounted, so a transition has no previous scale.
+   Start that first inhalation at the same size as every later inhalation. */
+.atem-first-inhale {
+  animation-name: atem-first-inhale;
+  animation-timing-function: ease-in-out;
+}
+@keyframes atem-first-inhale {
+  from { transform: scale(0.4); }
+  to { transform: scale(1); }
+}
 .atem-label {
   position: relative;
   z-index: 1;
@@ -3537,6 +3547,7 @@ section + section { padding-top: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .atem-circle { transition-duration: 0.2s !important; }
+  .atem-first-inhale { animation-duration: 0.2s !important; }
   .tool-overlay,
   .tool-overlay-card,
   .animate-in { animation: none !important; }
@@ -4104,6 +4115,7 @@ section + section { padding-top: 0; }
   margin: 0 !important;
   max-width: 60ch !important;
   text-align: left !important;
+  white-space: pre-wrap;
 }
 .kommunikation-zeile p.kommunikation-pause {
   font-style: normal;

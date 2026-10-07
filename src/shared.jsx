@@ -3,7 +3,7 @@
 // Helper: navigationaler Link mit Tastatur-Support (Tab + Enter/Space) durch echtes href.
 
 import React from 'react';
-import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 
 function CrisisBar() {
   return (
@@ -33,20 +33,19 @@ function Nav({ page, onNavigate }) {
   return (
     <nav ref={navRef} className="nav" aria-label="Hauptnavigation">
       <div className="col-wide nav-inner">
-        <a className="nav-brand puk-web-nav__link" aria-current={page === 'start' ? 'page' : undefined} href={navHref('start')} onClick={navHandler('start', onNavigate)} {...navPreloadProps('start')} aria-label="Startseite — Bipolar &amp; Angehörige · PUK Zürich">
+        <a className="nav-brand puk-web-nav__link" aria-current={page === 'start' ? 'page' : undefined} href={navHref('start')} onClick={navHandler('start', onNavigate)} aria-label="Startseite — Bipolar &amp; Angehörige · PUK Zürich">
           <span className="nav-logo">
             <img src="/assets/puk/PUK_Logo_statisch_positiv_de.svg" width="214" height="85" alt="Psychiatrische Universitätsklinik Zürich" data-motion="logo-statisch" />
           </span>
           <span className="nav-brand-mark">Bipolar &amp; Angehörige</span>
         </a>
         <div className="nav-links">
-          <a href={navHref('module')} className={`puk-web-nav__link ${moduleActive ? 'active' : ''}`} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')} aria-current={page === 'module' ? 'page' : undefined}>Module</a>
-          <a href={navHref('werkzeuge')} className={`puk-web-nav__link ${page === 'werkzeuge' ? 'active' : ''}`} onClick={navHandler('werkzeuge', onNavigate)} {...navPreloadProps('werkzeuge')} aria-current={page === 'werkzeuge' ? 'page' : undefined}>Werkzeuge</a>
+          <a href={navHref('module')} className={`puk-web-nav__link ${moduleActive ? 'active' : ''}`} onClick={navHandler('module', onNavigate)} aria-current={page === 'module' ? 'page' : undefined}>Module</a>
+          <a href={navHref('werkzeuge')} className={`puk-web-nav__link ${page === 'werkzeuge' ? 'active' : ''}`} onClick={navHandler('werkzeuge', onNavigate)} aria-current={page === 'werkzeuge' ? 'page' : undefined}>Werkzeuge</a>
           <a
             href={navHref('unterstuetzung')}
             className={`puk-web-nav__link ${page === 'unterstuetzung' ? 'active' : ''}`}
             onClick={navHandler('unterstuetzung', onNavigate)}
-            {...navPreloadProps('unterstuetzung')}
             aria-current={page === 'unterstuetzung' ? 'page' : undefined}
             aria-label="Unterstützung und Ressourcen"
             title="Unterstützung und Ressourcen"
@@ -54,7 +53,7 @@ function Nav({ page, onNavigate }) {
             <span className="nav-label-full">Unterstützung und Ressourcen</span>
             <span className="nav-label-compact" aria-hidden="true">Unterstützung</span>
           </a>
-          {page === 'notfall' && <a href={navHref('notfall')} className="nav-sos puk-web-nav__link" aria-current="page" onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>SOS Krise</a>}
+          {page === 'notfall' && <a href={navHref('notfall')} className="nav-sos puk-web-nav__link" aria-current="page" onClick={navHandler('notfall', onNavigate)}>SOS Krise</a>}
         </div>
       </div>
     </nav>
@@ -96,10 +95,10 @@ function Footer({ page, onNavigate }) {
             <span className="footer-credit-attr">Inhaltliche Verantwortung: Ch. Egger · Redaktioneller Stand: Oktober 2026</span>
           </div>
           <div className="footer-links">
-            <a className="puk-web-nav__link" aria-current={page === 'impressum' ? 'page' : undefined} href={navHref('impressum')} onClick={navHandler('impressum', onNavigate)} {...navPreloadProps('impressum')}>Impressum</a>
-            <a className="puk-web-nav__link" aria-current={page === 'datenschutz' ? 'page' : undefined} href={navHref('datenschutz')} onClick={navHandler('datenschutz', onNavigate)} {...navPreloadProps('datenschutz')}>Datenschutz</a>
-            <a className="puk-web-nav__link" aria-current={page === 'barrierefreiheit' ? 'page' : undefined} href={navHref('barrierefreiheit')} onClick={navHandler('barrierefreiheit', onNavigate)} {...navPreloadProps('barrierefreiheit')}>Barrierefreiheit</a>
-            <a className="footer-link-alert" data-safety-variant="persistent-subdued" href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)} {...navPreloadProps('notfall')}>Notfall &amp; Krisenhilfe</a>
+            <a className="puk-web-nav__link" aria-current={page === 'impressum' ? 'page' : undefined} href={navHref('impressum')} onClick={navHandler('impressum', onNavigate)}>Impressum</a>
+            <a className="puk-web-nav__link" aria-current={page === 'datenschutz' ? 'page' : undefined} href={navHref('datenschutz')} onClick={navHandler('datenschutz', onNavigate)}>Datenschutz</a>
+            <a className="puk-web-nav__link" aria-current={page === 'barrierefreiheit' ? 'page' : undefined} href={navHref('barrierefreiheit')} onClick={navHandler('barrierefreiheit', onNavigate)}>Barrierefreiheit</a>
+            <a className="footer-link-alert" data-safety-variant="persistent-subdued" href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfall &amp; Krisenhilfe</a>
           </div>
         </div>
         <p className="footer-disclaimer">

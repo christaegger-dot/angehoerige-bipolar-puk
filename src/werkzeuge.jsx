@@ -1,8 +1,8 @@
 import React from 'react';
-import { navHandler, navHref, navPreloadProps } from './nav-handler.js';
+import { navHandler, navHref } from './nav-handler.js';
 import { TOOLS, TOOL_GROUPS } from './site-content.js';
 import { ToolOverlay } from './tool-overlay.jsx';
-import { loadWerkzeugTool, preloadWerkzeugTool } from './werkzeug-loader.js';
+import { loadWerkzeugTool } from './werkzeug-loader.js';
 import { clearStoredDraft } from './storage.js';
 import { LoadErrorBoundary } from './load-error-boundary.jsx';
 
@@ -14,18 +14,6 @@ const LAZY_TOOL_COMPONENTS = Object.fromEntries(
     React.lazy(() => loadWerkzeugTool(tool).then((Tool) => ({ default: Tool }))),
   ]),
 );
-
-function werkzeugPreloadProps(tool) {
-  const preload = () => {
-    void preloadWerkzeugTool(tool).catch(() => {});
-  };
-
-  return {
-    onMouseEnter: preload,
-    onFocus: preload,
-    onTouchStart: preload,
-  };
-}
 
 function ToolLoadingOverlay({ onClose }) {
   return (
@@ -97,7 +85,7 @@ function WerkzeugePage({ onNavigate, anchor }) {
           <div className="info-stripe">
             <div>
               <span className="kicker">Wenn Sie lieber lesen als klicken</span>
-              <p>Die <a className="link-underline" href={navHref('module')} onClick={navHandler('module', onNavigate)} {...navPreloadProps('module')}>sieben Module</a> erklären die Themen ausführlicher. Die Werkzeuge ergänzen diese Informationen.</p>
+              <p>Die <a className="link-underline" href={navHref('module')} onClick={navHandler('module', onNavigate)}>sieben Module</a> erklären die Themen ausführlicher. Die Werkzeuge ergänzen diese Informationen.</p>
             </div>
           </div>
 
@@ -127,7 +115,6 @@ function WerkzeugePage({ onNavigate, anchor }) {
                         className="tool-card-lg"
                         onClick={handleClick}
                         aria-haspopup="dialog"
-                        {...werkzeugPreloadProps(t.tool)}
                       >
                         <span className="tool-tag">{t.tag}</span>
                         <h3>{t.title}</h3>
