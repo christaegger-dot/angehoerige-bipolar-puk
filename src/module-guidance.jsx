@@ -1,5 +1,5 @@
 import { navHandler, navHref } from './nav-handler.js';
-import { EVIDENCE_REVIEW_DATE, EVIDENCE_SOURCES, HANDOUT_SOURCE_KEYS, MODULE_SOURCE_KEYS } from './evidence-data.js';
+import { EVIDENCE_REVIEW_DATE, EVIDENCE_SOURCES, HANDOUT_SOURCE_KEYS, MODULE_SOURCE_KEYS, SOURCE_TYPE_LABELS } from './evidence-data.js';
 
 const SHORT_GUIDES = {
   1: ['Was bedeutet die Diagnose?', 'Fachpersonen beurteilen Manie, Hypomanie und Depression anhand des gesamten Verlaufs. Als Angehörige brauchen Sie selbst keine Diagnose zu stellen.', 'Notieren Sie eine Beobachtung und eine Frage für das Behandlungsteam.'],
@@ -50,15 +50,41 @@ function EvidenceSourceList({ keys, showUrls = false }) {
     <ul>{[...new Set(keys)].map(key => {
       const source = EVIDENCE_SOURCES[key];
       return (
-        <li key={key} data-source-status={source.status}>
+        <li key={key} data-source-status={source.status} data-source-type={source.sourceType}>
           <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a>
           {(source.doi || source.pmid) && <><br />{source.doi && `DOI: ${source.doi}`}{source.doi && source.pmid && ' · '}{source.pmid && `PMID: ${source.pmid}`}</>}
           <br />{source.note}
-          <br /><small>Prüfumfang: {SOURCE_STATUS_LABELS[source.status]} · {source.checkedAt ? `Einzelprüfung: ${source.checkedAt}` : `Recherchebasis: ${EVIDENCE_REVIEW_DATE}`}.</small>
+          <br /><small>Quellenart: {SOURCE_TYPE_LABELS[source.sourceType]} · Prüfumfang: {SOURCE_STATUS_LABELS[source.status]} · {source.checkedAt ? `Einzelprüfung: ${source.checkedAt}` : `Recherchebasis: ${EVIDENCE_REVIEW_DATE}`}.</small>
+          {source.checkedSections && (
+            <details>
+              <summary>Geprüfte Originalabschnitte öffnen</summary>
+              <ul>{source.checkedSections.map(section => (
+                <li key={section.url}><a href={section.url} target="_blank" rel="noopener noreferrer">{section.label}</a></li>
+              ))}</ul>
+            </details>
+          )}
           {showUrls && <><br /><small>{source.url.split(/(?<=[/._-])/).map((part, index) => <span key={index}>{part}<wbr /></span>)}</small></>}
         </li>
       );
     })}</ul>
+  );
+}
+
+function EvidenceCitation({ keys }) {
+  const sourceKeys = [...new Set(keys)];
+  return (
+    <p className="module-credits evidence-citation" data-evidence-citation={sourceKeys.join(' ')}>
+      {sourceKeys.length === 1 ? 'Quelle: ' : 'Quellen: '}
+      {sourceKeys.map((key, index) => {
+        const source = EVIDENCE_SOURCES[key];
+        return (
+          <span key={key}>
+            {index > 0 && ' · '}
+            <a href={source.url} target="_blank" rel="noopener noreferrer">{source.shortTitle || source.title}</a>
+          </span>
+        );
+      })}
+    </p>
   );
 }
 
@@ -68,6 +94,7 @@ function EvidenceSources({ number }) {
       <summary>Quellen und Grenzen der Aussagen</summary>
       <p>Forschungsergebnisse über Gruppen lassen nicht vorhersagen, wie sich die Erkrankung oder eine einzelne Beziehung entwickelt. Die Grafiken veranschaulichen Zusammenhänge; sie beruhen nicht auf Messungen. Die Fallbeispiele sind fiktiv und keine Originalzitate aus den verlinkten Quellen.</p>
       <p>Recherchebasis: {EVIDENCE_REVIEW_DATE}. Spätere Einzelprüfungen sind bei der jeweiligen Quelle datiert. Bei jedem Eintrag steht, ob der Volltext, einzelne Abschnitte, der Originalabstract oder nur die bibliografischen Angaben geprüft wurden. Eine geprüfte Quelle belegt nicht automatisch die Wirkung dieser Website. Offene rechtliche und weitere Quellenprüfungen sind einzeln gekennzeichnet.</p>
+      <p>Leitlinien und amtliche Empfehlungen geben fachliche Orientierung; systematische Übersichten fassen Forschung zusammen. Einzelstudien und qualitative Arbeiten beantworten jeweils engere Fragen. Rechts- und Versorgungsinformationen dienen einem anderen Zweck. Die passende Quellenart hängt von der Aussage ab; das Veröffentlichungsjahr allein sagt nichts über ihre Aussagekraft.</p>
       <EvidenceSourceList keys={MODULE_SOURCE_KEYS[number]} />
     </details>
   );
@@ -97,4 +124,4 @@ function FigureText({ visualId, children }) {
   );
 }
 
-export { ModuleQuickStart, EvidenceSources, EvidenceSourceList, HandoutSources, FigureText };
+export { ModuleQuickStart, EvidenceSources, EvidenceSourceList, EvidenceCitation, HandoutSources, FigureText };

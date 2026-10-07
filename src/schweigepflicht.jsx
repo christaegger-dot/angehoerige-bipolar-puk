@@ -1,4 +1,5 @@
 import { navHandler, navHref } from './nav-handler.js';
+import { EvidenceCitation, EvidenceSourceList } from './module-guidance.jsx';
 
 const BAG_GEHEIMNIS_URL = 'https://www.bag.admin.ch/de/berufs-oder-arztgeheimnis';
 const ZH_GEHEIMNIS_URL = 'https://www.zh.ch/de/gesundheit/gesundheitsberufe.html';
@@ -20,10 +21,10 @@ function SchweigepflichtPage({ onNavigate }) {
           <div className="eyebrow animate-in reference-eyebrow"><span className="dot"></span>Informationen fürs Gespräch</div>
           <h1 className="animate-in delay-1 reference-title">Schweigepflicht bei Angehörigen&shy;gesprächen.</h1>
           <p className="lede animate-in delay-2 reference-lede">
-            Das Behandlungsteam darf Angehörigen grundsätzlich nur mit Einwilligung der betroffenen Person
-            Auskunft geben. Mit einer Schweigepflichtentbindung erlaubt die betroffene Person einen
-            Informationsaustausch. Hier lesen Sie, was diese Einwilligung ermöglicht, wo ihre Grenzen
-            liegen und wie Sie das Gespräch darüber vorbereiten können.
+            Das Behandlungsteam darf patientenbezogene Informationen grundsätzlich nur mit Einwilligung
+            oder einer anderen gesetzlichen Grundlage an Angehörige weitergeben. Ihre Beobachtungen und
+            Sorgen können Sie dem Team mitteilen. Hier lesen Sie, was eine Schweigepflichtentbindung
+            ermöglicht, wo ihre Grenzen liegen und wie Sie das Gespräch darüber vorbereiten können.
           </p>
         </div>
       </header>
@@ -39,9 +40,10 @@ function SchweigepflichtPage({ onNavigate }) {
               die zuständige Behörde bleiben vorbehalten.
             </p>
             <p>
-              Sie können dem Behandlungsteam anbieten, Ihre Beobachtungen und Sorgen zu schildern. Ob und
-              wie das Team darauf eingehen oder Ihnen Auskunft geben darf, hängt von der Einwilligung und der konkreten
-              Rechtslage ab.
+              Sie können dem Behandlungsteam Ihre Beobachtungen und Sorgen mitteilen, auch wenn keine
+              Schweigepflichtentbindung vorliegt. Welche patientenbezogenen Informationen das Team
+              seinerseits weitergeben darf, hängt von Einwilligung, Urteilsfähigkeit, Vertretungsregelung
+              und den gesetzlichen Voraussetzungen im konkreten Fall ab.
             </p>
 
             <aside className="callout callout-soft">
@@ -122,6 +124,7 @@ function SchweigepflichtPage({ onNavigate }) {
                   Offizielles PUK-Formular öffnen (PDF)
                 </a>
               </p>
+              <EvidenceCitation keys={['pukConfidentialityForm']} />
             </div>
 
             <h2>Wenn keine Entbindung vorliegt</h2>
@@ -139,6 +142,7 @@ function SchweigepflichtPage({ onNavigate }) {
                 im Einzelfall eine eingeschränkte Einsicht rechtfertigen.
               </p>
             </aside>
+            <EvidenceCitation keys={['zurichRightsLeaflet']} />
             <p>
               Welche Informationen weitergegeben werden dürfen, hängt von der Situation und der Rechtsgrundlage
               ab. Für die Beurteilung Ihres konkreten Falls wenden Sie sich an die behandelnde Stelle oder eine
@@ -167,12 +171,14 @@ function SchweigepflichtPage({ onNavigate }) {
             </ul>
 
             <h2>Amtliche Informationen und Formular</h2>
+            <p>Das verlinkte PUK-Formular wurde als Version 2026 geprüft. Die kantonale Broschüre ist die Ausgabe November 2018; ein neuer Abruf bestätigt keine unveränderte Gesetzeslage. Die BAG- und kantonalen Webseiten konnten beim Quellenabgleich nicht gelesen werden.</p>
             <ul className="reference-sources">
               <li><a href={BAG_GEHEIMNIS_URL}>Bundesamt für Gesundheit: Berufs- oder Arztgeheimnis</a></li>
               <li><a href={ZH_GEHEIMNIS_URL}>Kanton Zürich: Berufliche Schweigepflicht und Entbindung</a></li>
               <li><a href={PUK_FORMULAR_URL}>Psychiatrische Universitätsklinik Zürich: offizielles Formular (PDF, Version 2026)</a></li>
               <li><a href={PUK_PATIENTENRECHTE_URL}>Kanton Zürich: Rechte und Pflichten im Spital (PDF, Ausgabe 2018)</a></li>
             </ul>
+            <EvidenceSourceList keys={['pukConfidentialityForm', 'zurichRightsLeaflet', 'confidentiality']} />
 
             <p className="reference-status">
               Diese Seite gibt allgemeine Orientierung und bietet keine Rechtsberatung. Massgeblich sind

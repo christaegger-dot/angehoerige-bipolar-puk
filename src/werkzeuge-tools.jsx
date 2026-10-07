@@ -2,6 +2,7 @@ import React from 'react';
 import { Eisberg } from './eisberg.jsx';
 import { clearStoredDraft } from './storage.js';
 import { ToolOverlay } from './tool-overlay.jsx';
+import { EvidenceCitation } from './module-guidance.jsx';
 
 // Announce a user-selected step through its focused heading. The dialog itself
 // owns initial focus; timed breathing phases must not repeatedly move it.
@@ -287,6 +288,30 @@ const KRISENPLAN_FELDER = [
     rows: 2,
   },
   {
+    id: 'verkehr',
+    label: 'Fahren und gefährliche Maschinen',
+    sub: 'Wann könnte Fahren oder das Bedienen gefährlicher Maschinen unsicher sein? Welche fachlich besprochenen Schritte passen, und wer organisiert eine Alternative?',
+    placeholder: 'Vereinbarte Schritte / alternative Fahrt oder Tätigkeit / wer unterstützt?',
+    kind: 'textarea',
+    rows: 3,
+  },
+  {
+    id: 'finanzen',
+    label: 'Finanzielle Sicherheit',
+    sub: 'Was vereinbaren wir bei ungewöhnlichen Ausgaben, riskanten Verträgen oder möglicher finanzieller Ausbeutung? Ein Betrag oder bestimmte Ausgabenarten müssen individuell passen; rechtliche Befugnisse sind gesondert zu klären.',
+    placeholder: 'Freiwillige Absprache / gewünschte Beratung / befugte Ansprechperson',
+    kind: 'textarea',
+    rows: 3,
+  },
+  {
+    id: 'selbstbestimmung',
+    label: 'Sexuelle Selbstbestimmung und Gesundheit',
+    sub: 'Wen möchte die Person bei sexuellem Druck, Ausbeutung oder Unsicherheit kontaktieren? Auch eine unabhängige Vertrauensperson oder Fachstelle ist möglich. Notieren Sie nur gewünschte Absprachen und Kontakte, keine intimen Einzelheiten.',
+    placeholder: 'Gewünschter unabhängiger Kontakt / vereinbarte Unterstützung oder gesundheitliche Beratung',
+    kind: 'textarea',
+    rows: 3,
+  },
+  {
     id: 'hilft',
     label: 'Was hilft',
     sub: 'Besprechen Sie in einer stabilen Phase gemeinsam, was in einer akuten Phase helfen kann.',
@@ -304,7 +329,7 @@ const KRISENPLAN_FELDER = [
   },
   { id: 'ausweichkontakt', label: 'Wenn niemand erreichbar ist', sub: 'Welcher vereinbarte Kontakt und welches besprochene Vorgehen gelten, wenn niemand erreichbar ist oder der Plan nicht zur Lage passt?', placeholder: 'Vereinbarter Ausweichkontakt / besprochenes Vorgehen / wer kann übernehmen?', kind: 'textarea', rows: 3 },
   { id: 'betreuung', label: 'Kinder und eigene Entlastung', sub: 'Wer betreut Kinder oder andere abhängige Personen? Wer übernimmt, wenn Sie nicht begleiten können?', placeholder: 'Betreuung: Name / Telefon / sicherer Ort. Meine Unterstützung: Name / Telefon.', kind: 'textarea', rows: 3 },
-  { id: 'geprueft', label: 'Gemeinsam geprüft am', sub: 'Halten Sie das Datum und den nächsten Überprüfungstermin fest. Dieser Krisenplan ersetzt keine rechtliche Berechtigung, die andere Person zu vertreten.', placeholder: 'Datum / wer war dabei / erneut prüfen am', kind: 'input' },
+  { id: 'geprueft', label: 'Gemeinsam geprüft am', sub: 'Halten Sie das Datum und den nächsten Überprüfungstermin fest. Schauen Sie den Plan nach einer Episode erneut an, wenn dies für die Person passt. Er ersetzt keine rechtliche Berechtigung, die andere Person zu vertreten.', placeholder: 'Datum / wer war dabei / erneut prüfen am', kind: 'input' },
 ];
 
 const KRISENPLAN_STORAGE_KEY = 'puk-krisenplan-v1';
@@ -338,6 +363,8 @@ function KrisenplanTool({ onClose, onNavigate }) {
           <h2>Krisenplan</h2>
           <p className="krisenplan-intro">Füllen Sie den Plan in einer ruhigen Phase aus. In einer Krise kann er Ihnen helfen, nächste Schritte und passende Kontakte zu finden. Er ersetzt keine fachliche Einschätzung. Holen Sie bei Unsicherheit professionelle Unterstützung.</p>
           <p>Diese Vorlage füllen Sie gemeinsam aus. Besprechen Sie dabei, welche Aufgaben gewünscht und für Sie tragbar sind, was Sie mit einer Fachperson klären müssen und wann Sie die Absprachen erneut prüfen.</p>
+          <p>Alle Angaben sind freiwillig. Halten Sie nur fest, was Sie gemeinsam vereinbaren möchten. Die Vorlage begründet weder eine Pflicht zur Überwachung noch eine Befugnis, Entscheidungen der anderen Person zu erzwingen.</p>
+          <EvidenceCitation keys={['niceBipolar']} />
           <button className="tool-quiet-btn no-print" onClick={() => { onClose(); onNavigate('modul6', 's2'); }}>Plan gemeinsam vorbereiten · Modul 6 →</button>
           <div className="tool-intro-notes krisenplan-intro-notes" data-storage-key={KRISENPLAN_STORAGE_KEY}>
             <p data-storage-notice="memory-only">Ihre Eingaben können persönliche Gesundheits- und Kontaktdaten enthalten. Sie werden nicht automatisch gespeichert oder versendet. Beim Schliessen des Werkzeugs oder Neuladen der Seite gehen sie verloren. Sichern Sie den ausgefüllten Plan bei Bedarf vor dem Schliessen.</p>

@@ -6,7 +6,7 @@ import { ToolOverlay } from './tool-overlay.jsx';
 import { loadWerkzeugTool } from './werkzeug-loader.js';
 import { LoadErrorBoundary } from './load-error-boundary.jsx';
 import { navHandler, navHref } from './nav-handler.js';
-import { EvidenceSourceList, HandoutSources } from './module-guidance.jsx';
+import { EvidenceCitation, EvidenceSourceList, HandoutSources } from './module-guidance.jsx';
 import { getPageMetadata } from './page-metadata.js';
 
 const HANDOUTS = {
@@ -86,8 +86,11 @@ const HANDOUTS = {
           { num: '143', label: 'Dargebotene Hand · anonyme Beratung · 24 h' },
           { num: '0800 33 66 55', label: 'Ärztefon Notfalldienst ZH · 24 h' },
           { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h · ab 18 Jahren' },
+          { num: '058 384 46 82', label: 'PUK Notfall Alterspsychiatrie · ab 65 Jahren' },
+          { num: '058 384 66 66', label: 'PUK Notfall Kinder und Jugendliche' },
           { num: '058 384 38 00', label: 'Fachstelle Angehörigenarbeit · werktags' },
         ],
+        sourceKeys: ['pukEmergency'],
       },
       {
         kind: 'h',
@@ -126,6 +129,7 @@ const HANDOUTS = {
         kind: 'callout',
         label: 'Suizidgedanken ansprechen',
         text: 'Studien zu solchen Befragungen zeigen keine Hinweise, dass das Fragen Suizidgedanken verstärkt. Die Ergebnisse stammen aus unterschiedlichen Untersuchungen und sind keine Garantie für jede Situation. Fragen Sie ruhig und klar: «Denkst du daran, dir das Leben zu nehmen?»',
+        sourceKeys: ['suicideInquiry'],
       },
       {
         kind: 'h',
@@ -142,6 +146,7 @@ const HANDOUTS = {
       {
         kind: 'p',
         text: SUICIDE_SAFETY,
+        sourceKeys: ['suicide'],
       },
       {
         kind: 'do-dont',
@@ -171,8 +176,11 @@ const HANDOUTS = {
           { num: '144', label: 'Sanität · Lebensgefahr · 24 h' },
           { num: '143', label: 'Dargebotene Hand · anonyme Beratung · 24 h' },
           { num: '0800 33 66 55', label: 'Ärztefon Notfalldienst ZH · 24 h' },
-          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h' },
+          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h · ab 18 Jahren' },
+          { num: '058 384 46 82', label: 'PUK Notfall Alterspsychiatrie · ab 65 Jahren' },
+          { num: '058 384 66 66', label: 'PUK Notfall Kinder und Jugendliche' },
         ],
+        sourceKeys: ['pukEmergency'],
       },
     ],
   },
@@ -180,7 +188,7 @@ const HANDOUTS = {
   'DL-05': {
     title: 'Umgang mit Psychose / Wahn',
     sub: 'Was Sie sagen können, was Sie vermeiden — und wann professionelle Hilfe nötig ist',
-    lede: 'In einer psychotischen Episode kann die erkrankte Person die Realität anders wahrnehmen. Das ist kein Charakter, sondern ein Symptom.',
+    lede: 'In einer psychotischen Episode kann die erkrankte Person die Realität anders wahrnehmen. Solche Veränderungen gehören zu den möglichen Symptomen und sagen nichts über den Charakter der Person aus.',
     sections: [
       {
         kind: 'h',
@@ -188,7 +196,11 @@ const HANDOUTS = {
       },
       {
         kind: 'p',
-        text: 'Die Person hört, sieht oder denkt Dinge, die für andere nicht stimmig sind. Wahnvorstellungen können bedrohlich, religiös, beziehungsbezogen oder grandios sein. Für die erkrankte Person ist die Wahrnehmung in diesem Moment real — Argumente und Beweise dringen kaum durch.',
+        text: 'Die Person hört, sieht oder denkt Dinge, die für andere nicht stimmig sind. Wahnvorstellungen können bedrohlich, religiös, beziehungsbezogen oder grandios sein. Für die erkrankte Person kann die Wahrnehmung in diesem Moment real sein.',
+      },
+      {
+        kind: 'p',
+        text: 'In einer akuten Psychose hilft ein Streit über den Wahrheitsgehalt einer Überzeugung oft wenig und kann zusätzliche Anspannung auslösen. Sie müssen die Überzeugung weder bestätigen noch widerlegen. Bleiben Sie ruhig bei Ihrer eigenen Wahrnehmung und konzentrieren Sie sich auf Sicherheit, Gefühle und den nächsten hilfreichen Schritt.',
       },
       {
         kind: 'do-dont',
@@ -203,7 +215,7 @@ const HANDOUTS = {
         ],
         dont: [
           'Bestätigen Sie den Wahn nicht — auch nicht aus Beruhigungs-Absicht',
-          'Widersprechen Sie nicht heftig — das eskaliert',
+          'Nicht heftig widersprechen — ein Streit kann die Anspannung verstärken',
           'Keine plötzlichen Bewegungen, keine Berührung ohne Ankündigung',
           'Kein Streit über die Inhalte des Wahns',
           'Nicht in einen kleinen Raum mit der Person gehen',
@@ -221,10 +233,13 @@ const HANDOUTS = {
       {
         kind: 'phonelist',
         items: [
-          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h' },
+          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h · ab 18 Jahren' },
+          { num: '058 384 46 82', label: 'PUK Notfall Alterspsychiatrie · ab 65 Jahren' },
+          { num: '058 384 66 66', label: 'PUK Notfall Kinder und Jugendliche' },
           { num: '144', label: 'Sanität · bei akuter Gefahr' },
           { num: '117', label: 'Polizei · bei Gewalt oder Bedrohung' },
         ],
+        sourceKeys: ['pukEmergency'],
       },
     ],
   },
@@ -448,7 +463,7 @@ function HandoutSection({ section }) {
     case 'h':
       return <h3 className="handout-h">{section.text}</h3>;
     case 'p':
-      return <p className="handout-p">{section.text}</p>;
+      return <><p className="handout-p">{section.text}</p>{section.sourceKeys && <EvidenceCitation keys={section.sourceKeys} />}</>;
     case 'list':
       return (
         <ul className="handout-list">
@@ -479,6 +494,7 @@ function HandoutSection({ section }) {
         <aside className="handout-callout" aria-label={section.label}>
           <span className="handout-callout-label">{section.label}</span>
           <p>{section.text}</p>
+          {section.sourceKeys && <EvidenceCitation keys={section.sourceKeys} />}
         </aside>
       );
     case 'phone':
@@ -491,14 +507,17 @@ function HandoutSection({ section }) {
       );
     case 'phonelist':
       return (
-        <ul className="handout-phonelist">
-          {section.items.map((it, i) => (
-            <li key={i}>
-              <a href={toTelUri(it.num)} className="handout-phonelist-num">{it.num}</a>
-              <span className="handout-phonelist-label">{it.label}</span>
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="handout-phonelist">
+            {section.items.map((it, i) => (
+              <li key={i}>
+                <a href={toTelUri(it.num)} className="handout-phonelist-num">{it.num}</a>
+                <span className="handout-phonelist-label">{it.label}</span>
+              </li>
+            ))}
+          </ul>
+          {section.sourceKeys && <><p className="handout-p">PUK-Kontakte nach Altersgruppe, geprüft am 7. Oktober 2026.</p><EvidenceCitation keys={section.sourceKeys} /></>}
+        </>
       );
     case 'fields':
       return (
@@ -544,6 +563,16 @@ function WalletField({ label, lines = 1 }) {
 
 function WalletEmergencyCard() {
   const contacts = HANDOUTS['DL-02'].sections.find(section => section.kind === 'phonelist').items;
+  const compactLabels = {
+    '144': 'Sanität · Lebensgefahr · 24 h',
+    '117': 'Polizei · Gewalt / Bedrohung',
+    '143': 'Anonyme Beratung · 24 h',
+    '0800 33 66 55': 'Ärztefon ZH · 24 h',
+    '058 384 20 00': 'PUK ab 18 · 24 h',
+    '058 384 46 82': 'PUK ab 65',
+    '058 384 66 66': 'PUK Kinder / Jugendliche',
+    '058 384 38 00': 'Angehörigenarbeit · werktags',
+  };
   const readingUrl = `${getPageMetadata('unterstuetzung').canonical}#dl-02`;
 
   return (
@@ -551,14 +580,14 @@ function WalletEmergencyCard() {
       <h2>Notfallkarte fürs Portemonnaie</h2>
       <p className="wallet-instructions">Auf A4 bei 100 % / «Tatsächliche Grösse» drucken. Erst ausfüllen, dann den äusseren durchgezogenen Rahmen ausschneiden. An den beiden waagrechten gestrichelten Linien nach innen falten, dann an der senkrechten Linie halbieren. Gefaltet: 85 × 55 mm.</p>
       <div className="wallet-card-panels">
-        {[['Notfallkarte · Soforthilfe', contacts.slice(0, 3)], ['Weitere Unterstützung', contacts.slice(3)]].map(([title, numbers]) => (
+        {[['Notfallkarte · Soforthilfe', contacts.slice(0, 4)], ['Weitere Unterstützung', contacts.slice(4)]].map(([title, numbers]) => (
           <section className="wallet-panel" key={title}>
             <h3>{title}</h3>
             <ul className="wallet-contacts">
               {numbers.map(contact => (
                 <li key={contact.num}>
                   <a href={toTelUri(contact.num)}>{contact.num}</a>
-                  <span>{contact.label}</span>
+                  <span>{compactLabels[contact.num]}</span>
                 </li>
               ))}
             </ul>
@@ -780,10 +809,12 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
               <li><strong>Eigene Beratung:</strong> Ihre Fragen, Bedürfnisse und Grenzen stehen im Mittelpunkt, auch wenn die erkrankte Person nicht teilnimmt.</li>
               <li><strong>Selbsthilfe und Austausch:</strong> Sie können Erfahrungen mit anderen Angehörigen teilen und gegenseitige Unterstützung finden.</li>
             </ul>
+            <p>Die WHO empfiehlt, psychosoziale Angebote wie Psychoedukation, Selbsthilfe und gegenseitige Unterstützungsgruppen für Angehörige von Menschen mit bipolarer Störung in Betracht zu ziehen. Welche Form zu Ihnen passt, hängt von Ihren Bedürfnissen und den erreichbaren Angeboten ab.</p>
+            <EvidenceCitation keys={['whoCarers']} />
             <p>Fragen Sie nach Ziel, Teilnehmenden, Umfang und Kosten. Studien zu mehrteiligen Familien- und Angehörigenprogrammen zeigen mögliche Vorteile, aber unterschiedliche Ergebnisse. Daraus lässt sich keine Wirkung für jedes Angebot oder für diese Website ableiten.</p>
             <details className="module-credits">
               <summary>Quellen zur Einordnung der Angebote</summary>
-              <EvidenceSourceList keys={['caregivers', 'familyInterventions']} />
+              <EvidenceSourceList keys={['whoCarers', 'caregivers', 'familyInterventions']} />
             </details>
           </aside>
 

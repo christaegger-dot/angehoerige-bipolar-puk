@@ -2,7 +2,7 @@
 // Werkzeug-orientiert: Gespräche, Vereinbarungen, Krisenplan.
 
 import React from 'react';
-import { ModuleQuickStart, EvidenceSources } from './module-guidance.jsx';
+import { ModuleQuickStart, EvidenceSources, EvidenceCitation } from './module-guidance.jsx';
 import { FINANCIAL_SAFETY } from './crisis-content.js';
 import { navHandler, navHref } from './nav-handler.js';
 
@@ -90,7 +90,7 @@ function Krisenplan({ onNavigate }) {
       <div className="krisenplan-head">
         <span className="kicker">Kurzüberblick · Planvorbereitung</span>
         <h4>Vier Fragen für den gemeinsamen Krisenplan</h4>
-        <p className="krisenplan-intro">Die vier Fragen helfen bei der Vorbereitung. In der vollständigen Vorlage können Sie Ihre gemeinsamen Absprachen festhalten. Dort ist auch Platz für hilfreiche Unterstützung, einen Ausweichkontakt, Betreuung, eigene Entlastung und einen Überprüfungstermin. Eine zweite Vereinbarung mit denselben Absprachen ist nicht nötig.</p>
+        <p className="krisenplan-intro">Die vier Fragen helfen beim Einstieg. Die vollständige Vorlage enthält auch Fragen zu Fahren, finanzieller und sexueller Sicherheit sowie Platz für hilfreiche Unterstützung, einen Ausweichkontakt, Betreuung, eigene Entlastung und einen Überprüfungstermin. Eine zweite Vereinbarung mit denselben Absprachen ist nicht nötig.</p>
       </div>
       <div className="krisenplan-grid">
         {felder.map((f, i) => (
@@ -250,6 +250,16 @@ function Modul6Page({ onNavigate }) {
               </ol>
               <p>Eine Unterschrift kann eine private Absprache dokumentieren, schafft aber keine allgemeine Vertretungs- oder Entscheidungsbefugnis.</p>
 
+              <h3>Fahren, Geld und persönliche Sicherheit vorausplanen</h3>
+              <p>Besprechen Sie in einer ruhigen Phase, welche Situationen für diese Person wichtig sind. Das Behandlungsteam kann Risiken fachlich einschätzen und mit der betroffenen Person passende Schritte vereinbaren. Diese Fragen ergänzen die Vorbereitung:</p>
+              <ul>
+                <li><strong>Fahren und gefährliche Maschinen:</strong> Gibt es Situationen, in denen Fahren oder das Bedienen gefährlicher Maschinen nicht sicher sein könnte? Wer kann dann eine Alternative organisieren, etwa eine Fahrt oder Unterstützung bei der Arbeit?</li>
+                <li><strong>Finanzielle Sicherheit:</strong> Welche gemeinsam vereinbarten Schritte passen bei ungewöhnlichen Ausgaben, riskanten Verträgen oder möglicher finanzieller Ausbeutung? Wer kann fachlich beraten, und welche Befugnisse bestehen tatsächlich?</li>
+                <li><strong>Sexuelle Selbstbestimmung und Gesundheit:</strong> Wen möchte die Person kontaktieren, wenn sie sich sexuell unter Druck gesetzt, ausgenutzt oder unsicher fühlt? Sexuelle Kontakte setzen freiwillige Zustimmung voraus. Bei Fragen zum Schutz vor sexuell übertragbaren Infektionen oder zu anderen gesundheitlichen Folgen kann eine Fachperson beraten.</li>
+              </ul>
+              <p>Halten Sie nur die gewünschten Absprachen und Kontakte fest; intime Einzelheiten müssen nicht in den Plan. Die Person kann eine unabhängige Vertrauensperson oder Fachstelle wählen. Vorausplanung ist eine gemeinsame Vereinbarung: Sie verpflichtet Angehörige weder zur Überwachung noch dazu, Entscheidungen zu erzwingen.</p>
+              <EvidenceCitation keys={['niceBipolar']} />
+
               <h3>Schweigepflichtentbindung</h3>
               <p>Ohne Einwilligung darf das Behandlungsteam Angehörigen grundsätzlich keine Informationen über die behandelte Person weitergeben. Das gilt auch, wenn Sie zu Hause wesentlich zur Unterstützung beitragen. Mit einer Schweigepflichtentbindung lässt sich klären, welche Informationen das Team an Sie weitergeben darf.</p>
               <ol>
@@ -268,10 +278,10 @@ function Modul6Page({ onNavigate }) {
               <h3 id="finanzen">Finanzen absichern</h3>
               <p>Manische Episoden können in kurzer Zeit erhebliche finanzielle Schäden auslösen. Absprachen über Geld können als Kontrolle erlebt werden. In stabilen Phasen gemeinsam vereinbart, dienen sie oft dem Schutz beider Seiten, der Kinder und der finanziellen Grundlage nach einer Episode.</p>
               <ol>
-                <li><strong>Ausgabenlimit vereinbaren:</strong> Vereinbaren Sie, grössere Ausgaben (z. B. über CHF 500) gemeinsam zu besprechen.</li>
+                <li><strong>Grössere Ausgaben gemeinsam besprechen:</strong> Vereinbaren Sie – wenn beide das möchten – einen individuell passenden Betrag oder bestimmte Arten grösserer Ausgaben, die vorab gemeinsam besprochen werden. Das ist eine private Absprache, kein medizinischer Grenzwert.</li>
                 <li><strong>Bankvollmacht oder Vorsorgeauftrag in ruhigen Phasen klären:</strong> Wer darf im Ernstfall was tun, und was braucht dafür eine rechtliche Prüfung?</li>
                 <li><strong>Bankabsprachen:</strong> Aktivieren Sie vereinbarte Transaktionslimiten oder Benachrichtigungen bei ungewöhnlichen Aktivitäten.</li>
-                <li><strong>Krisenplan ergänzen:</strong> Halten Sie fest, wer im Ernstfall Zugang zu Konten hat und welche Schritte eingeleitet werden.</li>
+                <li><strong>Krisenplan ergänzen:</strong> Halten Sie fest, wer rechtlich befugt ist, auf welche Konten zuzugreifen, und welche Schritte gemeinsam vereinbart wurden.</li>
               </ol>
 
               <aside className="callout callout-soft">

@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-07T11:03:34.182809+00:00",
+  "branch": "fix/evidence-audit-2026-10-07",
+  "baseCommit": "9c321ac1ccaf563ef7170f615254f6081ca55cd1",
+  "releaseFingerprint": {
+    "version": 1,
+    "algorithm": "sha256",
+    "sourceSha256": "3083f3336a191efea97fa8d4e6708013e2df0c850c5261c5754c62ae298edbed",
+    "buildSha256": "dd6519691910bbc721de5cee8b0d1b889273a239b856f420093d28061f0bfb5a",
+    "sha256": "054703088c2c0a00b846287623a846aac59d782d05c193a9833493c587145d34"
+  },
+  "automatedChecks": [
+    {
+      "command": "npm run lint",
+      "passed": true,
+      "proof": {
+        "artifact": "lint.log",
+        "sha256": "e09bcecd4190c6f2ec90b4270b9034461ebbb497f192e4638ad519d4606470fb",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run test:coverage",
+      "passed": true,
+      "tests": 183,
+      "testFiles": 27,
+      "coveragePercent": {
+        "lines": 93.59,
+        "branches": 86.86,
+        "statements": 90.51,
+        "functions": 87.52
+      },
+      "scope": "Vollständiger Testlauf vor der letzten Quellenartbezeichnung und dem gezielten Notfalllink-Styling.",
+      "proof": {
+        "artifact": "test-coverage.log",
+        "sha256": "a66a17550f846db6d67a9ea9fb75b4977dc352ea0da11d619a0cefb356baf316",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run test:release-evidence",
+      "passed": true,
+      "tests": 22,
+      "proof": {
+        "artifact": "release-tests.log",
+        "sha256": "9168c434b5dfa600641a7cb7e47b5ea28a6ec31b6c09bad9751b48e3358d5014",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run test -- src/test/notfall.test.jsx src/test/evidence-dates.test.jsx",
+      "passed": true,
+      "tests": 5,
+      "testFiles": 2,
+      "scope": "Nach den letzten Quellenart- und Notfalllink-Änderungen.",
+      "proof": {
+        "artifact": "targeted-tests.log",
+        "sha256": "d9c20f2c801ac19924fce26f903718d1f9e8436f45ca5b3aac53a83ab6b7ddbb",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run build",
+      "passed": true,
+      "scope": "Letzter Produktionsbuild.",
+      "proof": {
+        "artifact": "build.log",
+        "sha256": "50eab972e79618d0169c636076b93799bac549937fb38bd9f7fefdbc6edc30a3",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run audit:website",
+      "passed": true,
+      "checks": 697,
+      "failures": 0,
+      "startedAt": "2026-10-07T10:52:47.234Z",
+      "completedAt": "2026-10-07T10:55:59.317Z",
+      "scope": "Letzter Produktionsbuild; vier Breiten, jeweils 100/200 % Textvergrösserung.",
+      "proof": {
+        "artifact": "website-audit.json",
+        "sha256": "14687a9ab3e0eb90a76d9846672dda31aa50084be7c813d00ba2288e21978e36",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run audit:tools",
+      "passed": true,
+      "checks": 225,
+      "failures": 0,
+      "startedAt": "2026-10-07T10:39:51.026Z",
+      "completedAt": "2026-10-07T10:41:21.559Z",
+      "scope": "Neun Werkzeuge am aktualisierten Inhaltsstand; vor der letzten ausschliesslich die Notfallseite betreffenden Farbkorrektur.",
+      "proof": {
+        "artifact": "tools.json",
+        "sha256": "522462f509b4cb9a32642f1b7fafde616f3e3af117027c26db7720933c58dc05",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    },
+    {
+      "command": "npm run audit:print",
+      "passed": true,
+      "checks": 72,
+      "failures": 0,
+      "startedAt": "2026-10-07T10:39:46.594Z",
+      "completedAt": "2026-10-07T10:40:23.936Z",
+      "scope": "13 Chromium-PDF-Exporte des aktualisierten Inhaltsstands; vor der letzten ausschliesslich die Notfallseite betreffenden Farbkorrektur.",
+      "proof": {
+        "artifact": "print/report.json",
+        "sha256": "934eb56a74f9cad559be29b9edbd082cf33abbf2025177a91d4ea82c0c0a57fc",
+        "location": "local-audit-artifacts-outside-repository"
+      },
+      "pdfExports": 13
+    },
+    {
+      "check": "Gezielter Notfalllink: Kontrast, Tastatur und Sprungzielfokus",
+      "passed": true,
+      "widths": [
+        320,
+        1440
+      ],
+      "proof": {
+        "artifact": "contrast-check.json",
+        "sha256": "813fa246f8468b4bd954dbbd2bb8c6a5fedf027f8f0564080218feddb22a108d",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    }
+  ],
+  "regressionFixed": {
+    "finding": "Unzureichender Kontrast des neuen altersbezogenen Kontaktlinks (4.04:1).",
+    "resolution": "Gezielte CSS-Regel nutzt das vorhandene Designsystem-Blau puk-blue-125; gezielte Prüfung und finaler Website-Audit bestehen.",
+    "initialVariableAttemptEffective": false,
+    "earlierFailingReports": [
+      {
+        "artifact": "website-audit-before-contrast-fix.json",
+        "sha256": "e8f0cac9f2c73f668df7ce2a909101dc052c7f0f2f8a66ae0a7833716b66f700",
+        "location": "local-audit-artifacts-outside-repository"
+      },
+      {
+        "artifact": "website-audit-after-variable-attempt.json",
+        "sha256": "515823e9f7a073e9e2da7438936b81ea7ed551434f72caff30c74712be78c3c3",
+        "location": "local-audit-artifacts-outside-repository"
+      }
+    ]
+  },
+  "actualReleaseEvidence": {
+    "command": "node scripts/verify-release-evidence.mjs",
+    "passed": false,
+    "expectedExitCode": 1,
+    "technicalPrivacyPassed": true,
+    "humanAssistiveTechnologyCompletedRuns": 0,
+    "requiredHumanRuns": 2,
+    "screenreaderStatus": "prepared-not-executed",
+    "reason": "Reale menschliche Screenreader-Prüfungen stehen aus.",
+    "otherTopLevelErrors": [],
+    "proof": {
+      "artifact": "release-evidence.json",
+      "sha256": "6c63c8410b61a723bc4f235dbd9545346a9b3c2a6f9fd409d1b27e4c49248e81",
+      "location": "local-audit-artifacts-outside-repository"
+    }
+  },
+  "limitations": [
+    "Keine menschlichen VoiceOver-/NVDA-Läufe durchgeführt.",
+    "Kein physischer Druck durchgeführt; PDF-Exporte wurden geprüft.",
+    "Der Werkzeug-Audit prüft Start und Abbruch der Atemübung, nicht ihren gesamten zeitgesteuerten Verlauf.",
+    "Technische Datenschutzentscheidung ist keine institutionelle oder rechtliche Freigabe.",
+    "Nicht zugängliche medizinische und rechtliche Primärquellen bleiben gemäss Umsetzungsbericht offen."
+  ],
+  "rawArtifactDirectory": "/workspace/cloud-setup/evidence-audit-2026-10-07/"
+}

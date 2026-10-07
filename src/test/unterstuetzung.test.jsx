@@ -33,7 +33,7 @@ describe('UnterstuetzungPage accessibility', () => {
 });
 
 describe('UnterstuetzungPage counselling and material boundaries', () => {
-  const crisisNumbers = /\b(?:144|117|143|147)\b|0800\s*33\s*66\s*55|058\s*384\s*20\s*00/;
+  const crisisNumbers = /\b(?:144|117|143|147)\b|0800\s*33\s*66\s*55|058\s*384\s*(?:20\s*00|46\s*82|66\s*66)/;
 
   it('offers ordinary counselling contacts without an acute-help block or guaranteed round-the-clock availability', () => {
     const { container } = render(<UnterstuetzungPage onNavigate={() => {}} />);
@@ -73,9 +73,9 @@ describe('UnterstuetzungPage counselling and material boundaries', () => {
   });
 
   it.each([
-    ['Notfallkarte fürs Portemonnaie', ['144', '117', '143', '0800 33 66 55', '058 384 20 00', '058 384 38 00']],
-    ['Umgang mit Suizidgedanken', ['144', '143', '0800 33 66 55', '058 384 20 00']],
-    ['Umgang mit Psychose / Wahn', ['058 384 20 00', '144', '117']],
+    ['Notfallkarte fürs Portemonnaie', ['144', '117', '143', '0800 33 66 55', '058 384 20 00', '058 384 46 82', '058 384 66 66', '058 384 38 00']],
+    ['Umgang mit Suizidgedanken', ['144', '143', '0800 33 66 55', '058 384 20 00', '058 384 46 82', '058 384 66 66']],
+    ['Umgang mit Psychose / Wahn', ['058 384 20 00', '058 384 46 82', '058 384 66 66', '144', '117']],
   ])('preserves the crisis-orientation contacts in the excluded material %s', async (title, numbers) => {
     const user = userEvent.setup();
     render(<UnterstuetzungPage onNavigate={() => {}} />);

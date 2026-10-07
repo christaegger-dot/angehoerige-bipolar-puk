@@ -2,6 +2,7 @@
 
 import { SUICIDE_SAFETY, FINANCIAL_SAFETY } from './crisis-content.js';
 import { navHandler, navHref } from './nav-handler.js';
+import { EvidenceCitation } from './module-guidance.jsx';
 import './notfall.css';
 
 function NotfallPage({ onNavigate }) {
@@ -32,7 +33,7 @@ function NotfallPage({ onNavigate }) {
         'Bei akuter Selbst- oder Fremdgefährdung: 144. Bei Gewaltrisiko zusätzlich 117.',
       ],
       dont: 'Fördern Sie keine Pläne mit, auch nicht aus Erleichterung darüber, dass die Person endlich «wieder spricht». Keine grossen Entscheidungen.',
-      sos: 'Klinik anrufen: PUK Notfall 058 384 20 00. Bei Gewalt oder Gefahr: 144 oder 117.',
+      sos: 'Klinik anrufen: PUK Notfall Erwachsene ab 18 Jahren 058 384 20 00. Weitere PUK-Kontakte nach Alter stehen unten. Bei Gewalt oder Gefahr: 144 oder 117.',
     },
     {
       id: 'psychose', cls: 'red', letter: 'P',
@@ -46,7 +47,7 @@ function NotfallPage({ onNavigate }) {
         'Ihre eigene Sicherheit zuerst — Tür frei halten, nicht in einen kleinen Raum gehen.',
       ],
       dont: 'Keine plötzlichen Bewegungen, keine Berührung ohne Ankündigung, kein Streit über Inhalte des Wahns.',
-      sos: 'PUK Notfall 058 384 20 00. Bei Gewalt: 117 / 144.',
+      sos: 'PUK Notfall Erwachsene ab 18 Jahren 058 384 20 00. Weitere PUK-Kontakte nach Alter stehen unten. Bei Gewalt: 117 / 144.',
     },
     {
       id: 'depression', cls: 'blue', letter: 'D',
@@ -60,7 +61,7 @@ function NotfallPage({ onNavigate }) {
         'Eigene Belastung ernst nehmen. Sie können nicht 24 Stunden begleiten, ohne selbst zu kippen.',
       ],
       dont: 'Keine Sätze wie «Reiss dich zusammen» oder «Andere haben es schlimmer».',
-      sos: 'Bei Lebensgefahr 144 · Bei nächtlicher Belastung 143 · PUK Notfall 058 384 20 00.',
+      sos: 'Bei Lebensgefahr 144 · Bei nächtlicher Belastung 143 · PUK Notfall Erwachsene ab 18 Jahren 058 384 20 00. Weitere PUK-Kontakte nach Alter stehen unten.',
     },
     {
       id: 'gewalt', cls: 'amber', letter: 'G',
@@ -103,9 +104,10 @@ function NotfallPage({ onNavigate }) {
             </a>
           </div>
           <p className="notfall-local-contact">
-            <a href="tel:+41583842000">058 384 20 00 · PUK Notfall Erwachsene</a>
+            <a href="tel:+41583842000">058 384 20 00 · PUK Notfall Erwachsene ab 18</a>
             <span>24 Stunden · ab 18 Jahren</span>
           </p>
+          <p>Für Erwachsene ab 65 Jahren sowie für Kinder und Jugendliche finden Sie unten die <a className="notfall-age-contact-link" href={navHref('notfall', 'weitere-kontakte')} onClick={navHandler('notfall', onNavigate, 'weitere-kontakte')}>PUK-Kontakte nach Altersgruppe</a>.</p>
           <nav className="notfall-jump-nav" aria-label="Passende Krisensituation">
             <p>Direkt zum passenden Abschnitt</p>
             <ul>
@@ -145,7 +147,7 @@ function NotfallPage({ onNavigate }) {
                     {g.id === 'psychose' && <p>Bei neuer starker Verwirrung gilt der <a href={navHref('notfall', 'verwirrung')} onClick={navHandler('notfall', onNavigate, 'verwirrung')}>Hinweis zur umgehenden medizinischen Abklärung</a>.</p>}
                     <div className="guide-do"><strong>Erster Schritt: </strong>{g.do}</div>
                     <ul>
-                      {g.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                      {g.bullets.map((b, j) => <li key={j}>{b}{g.id === 'depression' && j === 0 && <> <EvidenceCitation keys={['suicideInquiry']} /></>}</li>)}
                     </ul>
                     <div className="guide-dont"><strong>Vermeiden: </strong>{g.dont}</div>
                     <div className="guide-sos"><strong>Wenn akut: </strong>{g.sos}</div>
@@ -179,9 +181,13 @@ function NotfallPage({ onNavigate }) {
 
           <section id="weitere-kontakte" aria-labelledby="weitere-kontakte-title">
             <h2 id="weitere-kontakte-title">Weitere Nummern</h2>
+            <p>Die PUK nennt unterschiedliche Notfallkontakte für Kinder und Jugendliche, Erwachsene ab 18 Jahren und Erwachsene ab 65 Jahren. Angaben geprüft am 7. Oktober 2026.</p>
+            <EvidenceCitation keys={['pukEmergency']} />
             <div className="numbers-row" style={{marginTop: 24}}>
               <a className="number-tile" href="tel:147"><span className="number-num">147</span><span className="number-label">Pro Juventute</span><span className="number-sub">Kinder &amp; Jugendliche</span></a>
               <a className="number-tile" href="tel:+41583842000"><span className="number-num">058 384 20 00</span><span className="number-label">PUK Notfall Erwachsene</span><span className="number-sub">24 h · ab 18 Jahren</span></a>
+              <a className="number-tile" href="tel:+41583844682"><span className="number-num">058 384 46 82</span><span className="number-label">PUK Notfall Alterspsychiatrie</span><span className="number-sub">Erwachsene ab 65 Jahren</span></a>
+              <a className="number-tile" href="tel:+41583846666"><span className="number-num">058 384 66 66</span><span className="number-label">PUK Notfall Kinder und Jugendliche</span><span className="number-sub">Kinder &amp; Jugendliche</span></a>
               <a className="number-tile" href="tel:+41583843800"><span className="number-num">058 384 38 00</span><span className="number-label">Fachstelle Angehörige</span><span className="number-sub">Werktags · PUK</span></a>
             </div>
           </section>

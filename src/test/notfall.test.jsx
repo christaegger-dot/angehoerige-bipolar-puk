@@ -13,6 +13,11 @@ describe('crisis orientation', () => {
     expect(within(entry).getByText(/rufnummern in der schweiz/i)).toBeInTheDocument();
     expect(within(entry).getByRole('link', { name: /058 384 20 00.*puk notfall erwachsene/i })).toHaveAttribute('href', 'tel:+41583842000');
     expect(within(entry).getByText(/24 stunden.*ab 18 jahren/i)).toBeInTheDocument();
+    const ageContacts = container.querySelector('#weitere-kontakte');
+    expect(within(ageContacts).getByRole('link', { name: /058 384 46 82.*alterspsychiatrie.*ab 65/i }))
+      .toHaveAttribute('href', 'tel:+41583844682');
+    expect(within(ageContacts).getByRole('link', { name: /058 384 66 66.*kinder.*jugendliche/i }))
+      .toHaveAttribute('href', 'tel:+41583846666');
   });
 
   it('takes each visible situation link to an existing open section, including uncertainty', async () => {
