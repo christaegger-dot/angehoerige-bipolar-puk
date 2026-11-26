@@ -534,7 +534,7 @@ function MaterialToolLoading({ onClose }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Werkzeug wird geöffnet">
       <span className="kicker">Werkzeug</span>
-      <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Werkzeug wird geöffnet …</h2>
+      <h2 style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Werkzeug wird geöffnet …</h2>
       <p>Der interaktive Krisenplan wird geladen.</p>
     </ToolOverlay>
   );
@@ -544,7 +544,7 @@ function MaterialToolLoadError({ onClose }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Werkzeug konnte nicht geladen werden">
       <span className="kicker">Werkzeug</span>
-      <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Das Werkzeug konnte nicht geöffnet werden.</h2>
+      <h2 style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Das Werkzeug konnte nicht geöffnet werden.</h2>
       <p>Laden Sie die Seite erneut, um den Krisenplan noch einmal zu öffnen. Sie können dieses Fenster auch schliessen und die übrigen Inhalte nutzen.</p>
       <button type="button" className="btn btn-primary" onClick={() => window.location.reload()}>Seite neu laden</button>
     </ToolOverlay>
@@ -584,9 +584,9 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
     <>
       <header className="about-hero">
         <div className="container">
-          <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Unterstützung · Orientierung</div>
+          <div className="eyebrow animate-in" style={{ marginBottom: 'var(--space-6)' }}><span className="dot"></span>Unterstützung · Orientierung</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '22ch' }}>Unterstützung und Ressourcen.</h1>
-          <div className="about-hero-copy animate-in delay-2" style={{ marginTop: 28 }}>
+          <div className="about-hero-copy animate-in delay-2" style={{ marginTop: 'var(--space-8)' }}>
             <p className="lede" style={{ maxWidth: '34ch' }}>Hier finden Sie Hilfe, Material, Kontakt und häufige Fragen an einem Ort.</p>
             <p className="about-hero-note">Unter «Hilfe» finden Sie Beratungsangebote. Unter «Kontakt» erreichen Sie die Fachstelle direkt, auch wenn Sie sich gerade überfordert fühlen.</p>
             <ul className="about-hero-functions" aria-label="Vier Bereiche">

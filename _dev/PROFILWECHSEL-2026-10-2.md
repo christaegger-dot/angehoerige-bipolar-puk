@@ -1,4 +1,4 @@
-# Wechsel auf das Fachstellen-Profil 2026.10.2 · Etappen 1 bis 3
+# Wechsel auf das Fachstellen-Profil 2026.10.2 · Etappen 1 bis 4
 
 Stand: 26. November 2026. Massgebend ist das Design-System «PUK Zürich Website-Profil»
 (Fachstellen-Profil 2026.10.2, Stand 15.10.2026) auf Basis des PUK Zürich Design Systems
@@ -167,7 +167,7 @@ Diese Etappe deckt «Absenderin», «Zuständigkeit statt Krisenzugang», «ein 
 | Nur semantische Tokens | Alt-Aliasse und Primitiven im App-CSS |
 | Schriftgrade aus der Skala | umgesetzt in Etappe 2 (siehe unten); offen bleiben die Beschriftungen in den SVG-Figuren |
 | Lesetext in Seitenschrift (21 px, schmal 19 px) | umgesetzt für Fliesstext der Module und die Fusszeile; Karten, Listen, Fragen und Handouts stehen weiter in UI-Grösse |
-| Abstände aus der Skala | 211 Abstände ausserhalb des 4-px-Rasters |
+| Abstände aus der Skala | umgesetzt in Etappe 4 (siehe unten); offen bleiben Positionen von Markierungen und die Werte des Kits |
 | Keine `style`-Attribute | Inline-Styles im JSX |
 | Visualisierungsplan je Abschnitt, drei Ebenen je Figur | nur der ältere `_dev/PUK-VISUALISIERUNGSPLAN.md` |
 | Erzwungene Farben, Theme «Hoher Kontrast» | nicht geprüft |
@@ -252,6 +252,121 @@ der gelieferten Datei und mit `tokens/colors.css` des Profils; `provenance.json`
   dorthin zurück; das ist das erwartete Verhalten des Browsers.
 - Neue Tests: `src/test/focus-system.test.js` (Fokusbild nur an einer Stelle) und weitere
   Fälle in `src/test/fachstellen-profil.test.jsx` (Icons, Skip-Link, Logo-Link).
+
+## Etappe 4: Abstände im 4-px-Raster (26. November 2026)
+
+Punkt 3 des Design-System-Audits. Auf die Frage nach der nächsten Etappe hat die Fachstelle am
+26. November 2026 zugestimmt («ok, leg los») und die neue Fingerprint-Bindung bestätigt.
+
+### Regel
+
+Das Profil rechnet Abstände in einem 4-px-Raster: `space-1` (4 px) bis `space-24` (96 px), mit
+den Stufen 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80 und 96 px, «keine freien Pixelwerte».
+Abstände bleiben in px (Profilentscheid 11.10.2026). Dazu kommen der Seitenrand
+`web-gutter-inline` und der Abschnittsabstand `web-section-space` des Kits.
+
+### Umfang
+
+Aussen- und Innenabstände, Lücken in Flex- und Rasterlayouts und Sprungabstände
+(`margin*`, `padding*`, `gap`, `row-gap`, `column-gap`, `scroll-margin-top`) im App-CSS für den
+Bildschirm und in den Inline-Angaben des JSX. Nicht umgestellt: der Druck (mm und pt), die
+Positionen von Markierungen (`top`, `left` von Haken und Linien, sie richten sich nach der
+Zeilenhöhe) und die gelieferten Dateien des Kits.
+
+### Zuordnung
+
+Jeder Wert kommt auf die nächste Stufe; liegt er genau in der Mitte, gilt die grössere Stufe
+(wie bei den Schriftgraden in Etappe 2). Werte über 96 px kommen auf `space-24`. Negative Werte
+stehen als `calc(-1 * var(--space-…))`. Werte in rem sind umgerechnet (1 rem = 16 px).
+
+| Stufe | Bisherige Werte (Anzahl) | Angaben |
+| --- | --- | --- |
+| `space-1` 4 px | 4 (32) | 32 |
+| `space-2` 8 px | 6 (33), 8 (106) | 139 |
+| `space-3` 12 px | 10 (42), 11 (1), 12 (56) | 99 |
+| `space-4` 16 px | 14 (44), 16 (80) | 124 |
+| `space-5` 20 px | 18 (46), 20 (52) | 98 |
+| `space-6` 24 px | 22 (33), 24 (121), 26 (4) | 158 |
+| `space-8` 32 px | 28 (65), 32 (48) | 113 |
+| `space-10` 40 px | 36 (16), 40 (17) | 33 |
+| `space-12` 48 px | 46 (1), 48 (9) | 10 |
+| `space-16` 64 px | 56 (17), 60 (1), 64 (12) | 30 |
+| `space-20` 80 px | 72 (1), 80 (2) | 3 |
+| `space-24` 96 px | 88 (6), 96 (1), 100 (2), 104 (1), 110 (3), 120 (2), 130 (1) | 16 |
+
+Gezählt sind Einzelwerte, nicht Deklarationen; eine Angabe wie `10px 18px` zählt zweimal.
+
+Dazu von Hand:
+
+- **Fluide Abstände:** Formeln wie `clamp(56px, 9vh, 100px)` behalten den mittleren Wert und
+  laufen jetzt zwischen zwei Stufen (`clamp(var(--space-16), 9vh, var(--space-24))`). Auf hohen
+  Bildschirmen werden Einstieg und Abschnitte dadurch etwas niedriger, weil 96 px die oberste
+  Stufe ist (vorher bis 130 px).
+- **Abstände in em** (Absätze und Listen): umgerechnet bei der Grösse, in der der Text auf
+  breiten Bildschirmen steht (Lesetext 21 px). Absätze der Module (1,3 em = 27,3 px), Absätze
+  im Fliesstext (1,1 und 1,2 em) und die Einrückung der Liste «Was die Beratung bieten kann»
+  (1 em = 21 px) kommen auf `space-6` bzw. `space-5`, Listen im Fliesstext (1,4 em = 29,4 px)
+  auf `space-8`.
+- **Quellenangaben in 13 px:** Dieselben em-Regeln galten auch für die kleinen Quellenlisten.
+  Sie erhalten eigene Abstände nach ihrer Grösse: Absätze `space-4` (vorher 16,9 bzw. 14,3 px),
+  Listen in den Modulen `space-5` (vorher 18,2 px), Einrückung der Quellenliste auf der Seite
+  «Unterstützung» `space-3` (vorher 13 px).
+- **Inline-Angaben im JSX:** 40 Abstände in `style`-Attributen verwenden die Stufen
+  (`'var(--space-6)'` statt `24`). Die Attribute selbst bleiben bis zur Etappe «Struktur».
+- **Altaliasse entfernt:** `--space-7` (zeigte auf 48 px) und `--space-9` (96 px) in
+  `src/design-tokens.css` wurden nirgends verwendet.
+- **Initialen-Regel entfernt:** Die Regel für die erste Zeile der Module (`.dropcap`) wurde
+  vollständig von einer späteren Regel überdeckt; beide Regeln und die Klasse in sieben
+  Modulen sind entfernt. Die Ausnahme `4.6em` im Test der Schriftgrade entfällt.
+
+### Ausnahmen
+
+15 Angaben bleiben ausserhalb der Stufen; `src/test/spacing-scale.test.js` führt sie einzeln:
+
+- **Werte unter 4 px gehören zur Linie:** Abstand zur Unterstreichung (7 Links mit 1 oder
+  2 px), Überlappung von Linien (−1 px an Inhaltsverzeichnis, Reitern und versteckter
+  Ansage), Fugen und Innenrand von Umschaltern (2 und 3 px), die Zeilenfuge der
+  Telefon-Navigation (2 px, wie im Kit) und der optische Ausgleich der Nummern im
+  Inhaltsverzeichnis (2 px). Das Kit setzt dieselben Werte.
+- **Abstand zwischen Icon und Text** in em (`.35em`): Das Icon steht in Textgrösse.
+
+Drei Werte von 2 px trennen Textzeilen und kommen auf `space-1`: Funktionszeile im Einstieg
+der Seite «Unterstützung» (unter 420 px), Beschriftung und Hinweis im Krisenplan, Umbruch der
+Meta-Zeile in den Modullisten (Startseite und «Module»).
+
+### Messung vorher und nachher
+
+62 Ansichten (16 Seiten, 9 Werkzeug-Dialoge, 6 Handouts, je bei 1366 × 900 und 375 × 812 px),
+jeweils die berechneten Abstände jedes sichtbaren Elements (ohne Zentrierung durch `auto`):
+
+| Kennzahl | Vorher | Nachher |
+| --- | --- | --- |
+| Abstands-Angaben im App-CSS (Bildschirm) | 870 | 869 |
+| davon über eine Stufe des Rasters | 12 | 652, dazu 183 nur `0` oder `auto` und 19 über Seitenrand oder Abschnittsabstand des Kits |
+| gemessene Werte ausserhalb des Rasters | 4 532 von 12 626 | 890 von 12 624 |
+| verschiedene gemessene Werte | 66 | 45 |
+| Ansichten mit seitlichem Scrollen | 0 | 0 |
+
+Die 890 verbleibenden Werte: 362 Linienwerte unter 4 px, 256 aus dem Kit (6 px in
+Navigation und Fusszeile, `.puk-web-nav__link`), 114 fluide Werte zwischen zwei Stufen, 82
+Icon-Abstände in em, 64 Vorgaben des Browsers (1 em über und unter Listen) und 12 Ränder
+zentrierter Blöcke.
+
+Von 12 614 verglichenen Werten haben 37,2 % einen anderen Wert als vorher: 3 253 um höchstens
+2 px, 1 277 um 2 bis 4 px, 132 um 4 bis 8 px und 34 um mehr als 8 px. Die grossen Sprünge sind
+der Abstand unter dem Inhalt (`main`, 120 auf 96 px, auf allen 16 Seiten) und die Ränder eines
+zentrierten Hinweises im Krisenplan. Von 62 Ansichten werden 50 länger und 12 kürzer, um −1,8
+bis +2,6 %. Die Hauptaktion der Startseite endet bei 375 × 812 px bei 781 statt 775 px und
+bleibt ohne Scrollen sichtbar.
+
+### Offen nach Etappe 4
+
+- **Werte des Kits:** `.puk-web-nav__link` setzt `padding: 6px 4px`, der Kopf des Kits
+  `gap: 20px 32px`. Die Dateien sind byte-identisch mit der Lieferung und bleiben unverändert.
+- **Positionen von Markierungen** (`top: 10px`, `22px`, `18px`, `-7px` an Haken, Linien und
+  Zeitachsen) stehen weiter in px.
+- **Browser-Vorgaben:** Listen ohne eigene Regel haben 1 em Abstand oben und unten.
+- **Inline-Styles** im JSX (Profilregel «keine `style`-Attribute») gehören zur Etappe «Struktur».
 
 ## Vorschlag zu den Webadressen (nicht eingebaut)
 

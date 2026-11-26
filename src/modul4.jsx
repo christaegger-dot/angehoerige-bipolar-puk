@@ -201,7 +201,7 @@ function Modul4Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Da und doch nicht da — Trauer ohne klaren Abschied</h2>
-              <p className="dropcap">Vielleicht fühlen Sie sich der anderen Person nah und vermissen gleichzeitig Vertrautes: gemeinsame Pläne, Nähe oder einen Alltag, auf den Sie sich verlassen konnten. Auch solche Veränderungen können Anlass für Trauer sein.</p>
+              <p>Vielleicht fühlen Sie sich der anderen Person nah und vermissen gleichzeitig Vertrautes: gemeinsame Pläne, Nähe oder einen Alltag, auf den Sie sich verlassen konnten. Auch solche Veränderungen können Anlass für Trauer sein.</p>
               <p>Verbundenheit und Einsamkeit können nebeneinander bestehen, ebenso Zuversicht und Vorsicht. Nicht immer findet diese Trauer im Umfeld Verständnis. Sie müssen Ihr Erleben weder rechtfertigen noch zu einem bestimmten Zeitpunkt abschliessen.</p>
 
               <h3>Worüber manche Angehörige trauern</h3>

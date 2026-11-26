@@ -96,7 +96,7 @@ function Modul1Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Wenn die Diagnose gerade neu ist</h2>
-              <p className="dropcap">Wenn eine nahestehende Person die Diagnose einer bipolaren Störung erhält, kann das vieles auslösen: Schock, Unsicherheit oder auch Erleichterung, weil es eine Erklärung für bisherige Beobachtungen gibt. Das sind verständliche Reaktionen. Sie brauchen nicht sofort auf alle Fragen eine Antwort. Grosse Entscheidungen, die warten können, lassen sich aufschieben; für den nächsten notwendigen Schritt können Sie sich Unterstützung holen.</p>
+              <p>Wenn eine nahestehende Person die Diagnose einer bipolaren Störung erhält, kann das vieles auslösen: Schock, Unsicherheit oder auch Erleichterung, weil es eine Erklärung für bisherige Beobachtungen gibt. Das sind verständliche Reaktionen. Sie brauchen nicht sofort auf alle Fragen eine Antwort. Grosse Entscheidungen, die warten können, lassen sich aufschieben; für den nächsten notwendigen Schritt können Sie sich Unterstützung holen.</p>
 
               <div className="do-dont">
                 <div className="dont-col">

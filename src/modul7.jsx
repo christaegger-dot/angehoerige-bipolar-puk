@@ -228,7 +228,7 @@ function Modul7Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Wie die lange Strecke tragfähiger werden kann</h2>
-              <p className="dropcap">Neben Vorbereitung, Gesprächen und Grenzen geht es um eine weitere Frage: <strong>Was hilft Ihnen, Ihr eigenes Leben über längere Zeit zu gestalten?</strong> Das können Kontakte, Interessen, Zusammenarbeit oder praktische Entlastung sein. Sie entscheiden, was für Ihre Situation wichtig ist.</p>
+              <p>Neben Vorbereitung, Gesprächen und Grenzen geht es um eine weitere Frage: <strong>Was hilft Ihnen, Ihr eigenes Leben über längere Zeit zu gestalten?</strong> Das können Kontakte, Interessen, Zusammenarbeit oder praktische Entlastung sein. Sie entscheiden, was für Ihre Situation wichtig ist.</p>
               <p>Mit «Tragfähigkeit» ist gemeint, dass der Alltag auf Dauer leichter zu bewältigen ist: mit mehr Unterstützung, Vorbereitung, vertrauten Abläufen und Zeit für sich selbst. Das bedeutet nicht, dass die Beziehung immer harmonisch ist oder keine Krisen mehr auftreten.</p>
 
               <aside className="callout callout-soft">

@@ -227,7 +227,7 @@ function Modul6Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Was in belastenden Situationen zuerst hilft</h2>
-              <p className="dropcap">Dieses Modul hilft Ihnen, Gespräche, eigene Grenzen und Unterstützung vorzubereiten. <strong>Eine Frage zum Einstieg:</strong> Welche Aufgabe möchten und können Sie übernehmen, und welche Unterstützung brauchen Sie dafür?</p>
+              <p>Dieses Modul hilft Ihnen, Gespräche, eigene Grenzen und Unterstützung vorzubereiten. <strong>Eine Frage zum Einstieg:</strong> Welche Aufgabe möchten und können Sie übernehmen, und welche Unterstützung brauchen Sie dafür?</p>
 
               <HandlungsfelderGrid />
 

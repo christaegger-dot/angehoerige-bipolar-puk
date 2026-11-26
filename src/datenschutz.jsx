@@ -4,9 +4,9 @@ function DatenschutzPage() {
     <>
       <header className="about-hero">
         <div className="container">
-          <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Datenschutz</div>
+          <div className="eyebrow animate-in" style={{ marginBottom: 'var(--space-6)' }}><span className="dot"></span>Datenschutz</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '22ch' }}>Was passiert mit Ihren Daten?</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '54ch' }}>
+          <p className="lede animate-in delay-2" style={{ marginTop: 'var(--space-8)', maxWidth: '54ch' }}>
             Diese Website verarbeitet möglichst wenige Daten. Es gibt keine Tracking-Tools, keine
             Werbe-Cookies und keine Reichweitenmessung (Analytics). Hier erfahren Sie, welche Daten
             dennoch verarbeitet werden und wofür sie gebraucht werden.
@@ -108,7 +108,7 @@ function DatenschutzPage() {
             </p>
 
             <h3>Was wir nicht tun</h3>
-            <ul style={{ marginTop: 8 }}>
+            <ul style={{ marginTop: 'var(--space-2)' }}>
               <li>Keine Tracking-Cookies, keine Werbe-Cookies und keine Analytics.</li>
               <li>Keine Übermittlung Ihrer Werkzeug-Eingaben an Server der PUK oder an Dritte.</li>
               <li>Keine Werbung und keine Social-Media-Plugins.</li>
@@ -145,7 +145,7 @@ function DatenschutzPage() {
               inhaltlich ändert. Massgeblich ist jeweils die aktuelle, hier abrufbare Fassung.
             </p>
 
-            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: 'var(--size-body-sm)' }}>
+            <p style={{ marginTop: 'var(--space-16)', color: 'var(--ink-3)', fontSize: 'var(--size-body-sm)' }}>
               Stand: Oktober 2026
             </p>
           </article>
