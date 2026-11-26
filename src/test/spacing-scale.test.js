@@ -7,7 +7,8 @@ const SRC = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 // Abstände stammen aus dem 4-px-Raster des Fachstellen-Profils 2026.10.2 (space-1 bis space-24,
 // «keine freien Pixelwerte») und stehen in px. Geprüft werden Aussen- und Innenabstände, Lücken
-// und Sprungabstände im App-CSS für den Bildschirm; der Druck ist ausgenommen.
+// und Sprungabstände im App-CSS für den Bildschirm; der Druck ist ausgenommen. style-Attribute gibt es
+// keine mehr (src/test/inline-styles.test.js).
 const APP_STYLESHEETS = ['styles.css', 'puk-website.css', 'reflow.css', 'tool-reflow.css'];
 const SPACING_PROPERTY = /^(?:margin|padding)(?:-(?:top|right|bottom|left|block|inline)(?:-(?:start|end))?)?$|^(?:gap|row-gap|column-gap|scroll-margin(?:-top)?|scroll-padding(?:-top)?)$/;
 const STEP = String.raw`var\(--space-(?:0|1|2|3|4|5|6|8|10|12|16|20|24)\)`;
@@ -110,20 +111,5 @@ describe('spacing scale', () => {
     const used = new Set(all.map(({ selector, property, value }) => `${selector}|${property}|${value}`));
     const unused = Object.entries(EXCEPTIONS).filter(([key, value]) => !used.has(`${key}|${value}`)).map(([key]) => key);
     expect(unused).toEqual([]);
-  });
-
-  it('uses the grid for spacing in inline styles', () => {
-    const offenders = [];
-    for (const file of fs.readdirSync(SRC).filter(name => name.endsWith('.jsx'))) {
-      const source = fs.readFileSync(path.join(SRC, file), 'utf8');
-      for (const block of source.matchAll(/style=\{\{([\s\S]*?)\}\}/g)) {
-        for (const match of block[1].matchAll(/\b(margin|padding|gap)\w*\s*:\s*('[^']*'|\d+)/g)) {
-          const value = match[2].replace(/'/g, '');
-          if (value === '0') continue;
-          if (!parts(value).every(part => ALLOWED.some(pattern => pattern.test(part)))) offenders.push(`${file}: ${match[0]}`);
-        }
-      }
-    }
-    expect(offenders).toEqual([]);
   });
 });

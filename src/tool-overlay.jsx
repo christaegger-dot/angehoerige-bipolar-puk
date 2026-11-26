@@ -60,7 +60,7 @@ function useToolOverlay(onClose) {
     };
 
     window.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('tool-overlay-open');
 
     const focusFrame = requestAnimationFrame(() => {
       // A fast interaction may already have focused a step inside the dialog.
@@ -72,7 +72,7 @@ function useToolOverlay(onClose) {
     return () => {
       cancelAnimationFrame(focusFrame);
       window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
+      document.body.classList.remove('tool-overlay-open');
       if (previousFocus && typeof previousFocus.focus === 'function' && document.contains(previousFocus)) {
         previousFocus.focus();
       }

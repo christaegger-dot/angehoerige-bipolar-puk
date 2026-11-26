@@ -1,11 +1,10 @@
 // Modul 6 — Was Sie konkret tun können · Volles Lese-Layout
 // Werkzeug-orientiert: Gespräche, Vereinbarungen, Krisenplan.
 
-import React from 'react';
 import { ModuleQuickStart, EvidenceSources, EvidenceCitation } from './module-guidance.jsx';
 import { FINANCIAL_SAFETY } from './crisis-content.js';
 import { navHandler, navHref } from './nav-handler.js';
-import { ResponsibilityInline } from './shared.jsx';
+import { ResponsibilityInline, ReadingProgress } from './shared.jsx';
 import { Icon } from './icon.jsx';
 
 function HandlungsfelderGrid() {
@@ -149,19 +148,6 @@ function AntiPatterns() {
 }
 
 function Modul6Page({ onNavigate }) {
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    const onScroll = () => {
-      const h = document.documentElement;
-      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
-      setProgress(Math.min(100, Math.max(0, scrolled * 100)));
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const sections = [
     { id: 's1', label: 'Was zuerst hilft' },
     { id: 's2', label: 'Vorbereitung & Absprachen' },
@@ -177,7 +163,7 @@ function Modul6Page({ onNavigate }) {
 
   return (
     <>
-      <div className="reading-progress" style={{width: `${progress}%`}}></div>
+      <ReadingProgress />
 
       <article className="module-article">
         <header className="module-detail-header">

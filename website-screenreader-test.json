@@ -3,13 +3,13 @@
   "releaseEvidenceVersion": 1,
   "profileTarget": "PUK Websiteprofil 1.10.1, Fachstellen-Profil 2026.10.2",
   "lastTechnicalPreparation": "2026-11-26",
-  "scope": "Alle 15 Routen, 9 Werkzeuge, 6 Handouts sowie Fokus-, Formular-, Lade- und Fehlerzustände; reale menschliche AT-Prüfung",
+  "scope": "Alle 14 Routen, 9 Werkzeuge, 6 Handouts sowie Fokus-, Formular-, Lade- und Fehlerzustände; reale menschliche AT-Prüfung",
   "releaseFingerprint": {
     "version": 1,
     "algorithm": "sha256",
-    "sourceSha256": "6fc40e1f96fead9bddaa02991c3461a3cbc6e1e034a87353cb94a0947593e558",
-    "buildSha256": "44a494f56289648539dce047520895525d78d7f402907832f4a3888c98f5ca66",
-    "sha256": "2d02bb0de43bcf50bdeffb24cbc4a3ec4435b8657d3025adeda08f1f31fcab2c"
+    "sourceSha256": "88e64cfc7f0c9fb119e3cb03d209e0c8d704ab3f274aa101ea432655aa9c3ab2",
+    "buildSha256": "5adc470f6ad7f8b8e053a70b05bb0cb627f1cb52342f9051b6946edebe7d7ecd",
+    "sha256": "5a4dde959550d92127791b1bc1486cb34b13e8c2937f2358218907419b70c27e"
   },
   "testedWith": [],
   "manualApproval": null,
@@ -41,7 +41,7 @@
       "testerRole": null,
       "testerInitials": null,
       "result": "pending",
-      "releaseFingerprintSha256": "2d02bb0de43bcf50bdeffb24cbc4a3ec4435b8657d3025adeda08f1f31fcab2c",
+      "releaseFingerprintSha256": "5a4dde959550d92127791b1bc1486cb34b13e8c2937f2358218907419b70c27e",
       "evidence": [],
       "routeChecks": [
         {
@@ -111,13 +111,7 @@
           "evidence": []
         },
         {
-          "route": "/impressum",
-          "result": "pending",
-          "observation": "",
-          "evidence": []
-        },
-        {
-          "route": "/datenschutz",
+          "route": "/impressum-datenschutz",
           "result": "pending",
           "observation": "",
           "evidence": []
@@ -383,7 +377,7 @@
       "testerRole": null,
       "testerInitials": null,
       "result": "pending",
-      "releaseFingerprintSha256": "2d02bb0de43bcf50bdeffb24cbc4a3ec4435b8657d3025adeda08f1f31fcab2c",
+      "releaseFingerprintSha256": "5a4dde959550d92127791b1bc1486cb34b13e8c2937f2358218907419b70c27e",
       "evidence": [],
       "routeChecks": [
         {
@@ -453,13 +447,7 @@
           "evidence": []
         },
         {
-          "route": "/impressum",
-          "result": "pending",
-          "observation": "",
-          "evidence": []
-        },
-        {
-          "route": "/datenschutz",
+          "route": "/impressum-datenschutz",
           "result": "pending",
           "observation": "",
           "evidence": []

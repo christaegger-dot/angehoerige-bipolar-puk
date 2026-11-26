@@ -8,7 +8,7 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import {
   computeReleaseFingerprint, createPendingScreenreaderTemplate,
-  validatePrivacyAcceptance, validateScreenreaderEvidence, verifyReleaseEvidence,
+  validateEditorialStatus, validatePrivacyAcceptance, validateScreenreaderEvidence, verifyReleaseEvidence,
 } from '../verify-release-evidence.mjs';
 
 const NOW = new Date('2026-10-06T12:00:00Z');
@@ -24,6 +24,7 @@ async function fixture(t) {
     await fs.writeFile(path.join(root, filename), content);
   };
   await write('src/main.jsx', 'export const message = "fixture application";\n');
+  await write('src/site-config.js', "export const SITE = { editorial: { approvedOn: '06.10.2026' } };\n");
   await write('src/puk-design/profile.json', JSON.stringify(PROFILE));
   await write('public/logo.svg', '<svg xmlns="http://www.w3.org/2000/svg"></svg>');
   await write('index.html', '<div id="root"></div>');
@@ -106,8 +107,10 @@ test('pending template always contains the complete current scope and does not a
   const f = await fixture(t);
   const pending = createPendingScreenreaderTemplate(f.fingerprint);
   assert.equal(pending.status, 'prepared-not-executed');
-  assert.equal(pending.runs[0].routeChecks.length, 15);
+  assert.equal(pending.runs[0].routeChecks.length, 14);
   assert.equal(pending.runs[0].routeChecks.some(({ route }) => route === '/notfall'), false);
+  assert.equal(pending.runs[0].routeChecks.some(({ route }) => route === '/impressum-datenschutz'), true);
+  assert.equal(pending.runs[0].routeChecks.some(({ route }) => route === '/impressum' || route === '/datenschutz'), false);
   assert.equal(pending.runs[0].toolChecks.length, 9);
   assert.equal(pending.runs[0].handoutChecks.length, 6);
   assert.equal(pending.runs[0].handoutChecks.some(({ handout }) => handout === 'dl-02'), false);
@@ -328,4 +331,16 @@ test('CLI returns nonzero for pending evidence and zero only for complete suppor
   const fingerprint = spawnSync(process.execPath, [SCRIPT, '--root', f.root, '--fingerprint'], { encoding: 'utf8' });
   assert.equal(fingerprint.status, 0);
   assert.deepEqual(JSON.parse(fingerprint.stdout), f.fingerprint);
+});
+
+test('production needs the editorial approval date of the Fachstelle', async (t) => {
+  const f = await fixture(t);
+  assert.equal((await validateEditorialStatus({ root: f.root, now: NOW })).passed, true);
+  for (const [value, expected] of [['null', /Freigabe fehlt/], ["'Oktober 2026'", /Freigabe fehlt/], ["'31.02.2026'", /kein gültiges Datum/], ["'07.10.2026'", /in der Zukunft/]]) {
+    await f.write('src/site-config.js', `export const SITE = { editorial: { approvedOn: ${value} } };\n`);
+    const result = await validateEditorialStatus({ root: f.root, now: NOW });
+    assert.equal(result.passed, false, value);
+    assert.match(result.errors.join(' '), expected);
+    assert.equal((await verifyReleaseEvidence({ root: f.root, now: NOW })).passed, false);
+  }
 });

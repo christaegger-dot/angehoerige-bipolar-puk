@@ -20,8 +20,8 @@ function ToolLoadingOverlay({ onClose }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Werkzeug wird geöffnet">
       <span className="kicker">Werkzeug</span>
-      <h2 style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Werkzeug wird geöffnet …</h2>
-      <p className="lede" style={{ maxWidth: '40ch' }}>
+      <h2 className="tool-step-title">Werkzeug wird geöffnet …</h2>
+      <p className="lede measure-40">
         Das interaktive Werkzeug wird geladen.
       </p>
     </ToolOverlay>
@@ -32,7 +32,7 @@ function ToolLoadError({ onClose }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Werkzeug konnte nicht geladen werden">
       <span className="kicker">Werkzeug</span>
-      <h2 style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Das Werkzeug konnte nicht geöffnet werden.</h2>
+      <h2 className="tool-step-title">Das Werkzeug konnte nicht geöffnet werden.</h2>
       <p>Laden Sie die Seite erneut, um das Werkzeug noch einmal zu öffnen. Sie können dieses Fenster auch schliessen und die übrigen Inhalte nutzen.</p>
       <button type="button" className="btn btn-primary" onClick={() => window.location.reload()}>Seite neu laden</button>
     </ToolOverlay>
@@ -65,9 +65,9 @@ function WerkzeugePage({ onNavigate, anchor }) {
     <>
       <header className="about-hero">
         <div className="container">
-          <div className="eyebrow animate-in" style={{ marginBottom: 'var(--space-6)' }}><span className="dot"></span>Interaktiv</div>
-          <h1 className="animate-in delay-1" style={{ maxWidth: '20ch' }}>Werkzeuge im Überblick.</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 'var(--space-8)', maxWidth: '60ch' }}>Mit diesen Werkzeugen können Sie eigene Erfahrungen anschauen, Gespräche vorbereiten und nächste Schritte festhalten.</p>
+          <div className="eyebrow animate-in hero-eyebrow"><span className="dot"></span>Interaktiv</div>
+          <h1 className="animate-in delay-1 measure-20">Werkzeuge im Überblick.</h1>
+          <p className="lede animate-in delay-2 hero-after-title measure-60">Mit diesen Werkzeugen können Sie eigene Erfahrungen anschauen, Gespräche vorbereiten und nächste Schritte festhalten.</p>
           <nav className="tools-purpose-nav" aria-label="Werkzeuge nach Zweck">
             <p>Womit möchten Sie beginnen?</p>
             <ul>
@@ -81,7 +81,7 @@ function WerkzeugePage({ onNavigate, anchor }) {
         </div>
       </header>
 
-      <section style={{ paddingTop: 0 }}>
+      <section className="section-flush">
         <div className="container">
           <div className="info-stripe">
             <div>

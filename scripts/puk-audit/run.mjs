@@ -44,7 +44,10 @@ try {
 await fs.rm(project, { recursive: true, force: true });
 await fs.mkdir(project, { recursive: true });
 await fs.writeFile(path.join(project, '.puk-audit-stage.json'), JSON.stringify({ kind: 'puk-react-spa-adapter-stage' }) + '\n');
-await fs.cp(delivery, path.join(project, 'dist'), { recursive: true });
+// 404.html is a byte-identical copy of index.html for Netlify's not-found status (vite.config.js).
+// The canonical auditor checks rendered routes, not that unrendered shell; the not-found page is
+// checked by scripts/audit-website.mjs (profile/404-*) and src/test/netlify-redirects.test.js.
+await fs.cp(delivery, path.join(project, 'dist'), { recursive: true, filter: source => path.relative(delivery, source) !== '404.html' });
 for (const input of config.authoredInputs) {
   // A literal root index.html would prevent the canonical CLI from selecting dist.
   // Keep its unmodified source available to the authored-file checks under a new name.

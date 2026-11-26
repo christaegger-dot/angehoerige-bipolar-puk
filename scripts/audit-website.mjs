@@ -11,7 +11,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const port = Number(process.env.AUDIT_PORT || 4520);
 const baseURL = `http://127.0.0.1:${port}`;
 const output = path.resolve(root, process.env.AUDIT_OUTPUT || 'qa/output/website-audit.json');
-const routes = ['/', '/module', ...Array.from({ length: 7 }, (_, i) => `/module/${i + 1}`), '/werkzeuge', '/unterstuetzung', '/schweigepflicht', '/datenschutz', '/impressum', '/barrierefreiheit'];
+const routes = ['/', '/module', ...Array.from({ length: 7 }, (_, i) => `/module/${i + 1}`), '/werkzeuge', '/unterstuetzung', '/schweigepflicht', '/impressum-datenschutz', '/barrierefreiheit'];
 const report = {
   startedAt: new Date().toISOString(),
   profileTarget: '1.10.1',
@@ -79,6 +79,9 @@ try {
   const policyResponse = await fetch(baseURL + '/website-data-policy.json');
   record('data-policy/served', {}, policyResponse.ok && (await policyResponse.json()).browserStorage?.length === 2);
   record('data-policy/keys', {}, ['puk-krisenplan-v1', 'puk-kommunikation-v1'].every(key => policy.browserStorage.some(entry => entry.key === key)));
+  // Netlify liefert unbekannte Adressen als 404.html mit Status 404 aus (netlify.toml); die Datei ist die App.
+  const notFoundFile = await fetch(baseURL + '/404.html');
+  record('profile/404-file', {}, notFoundFile.ok && (await notFoundFile.text()) === await fs.readFile(path.join(root, 'dist/index.html'), 'utf8'));
   browser = await chromium.launch({ headless: true, executablePath: process.env.BROWSER_EXECUTABLE_PATH || defaultSystemBrowser });
   for (const width of [320, 360, 768, 1440]) {
     for (const textZoom of [100, 200]) {
@@ -383,6 +386,50 @@ try {
     record('navigation/contents-url-and-reload', { moduleNumber, href: target.href }, new URL(contentsPage.url()).hash === target.hash);
   }
   await contentsPage.close();
+
+  // Content-Security-Policy aus netlify.toml, wie Netlify sie ausliefert: Seiten, Werkzeuge und Handouts
+  // lösen keinen Verstoss aus und tragen keine style-Attribute (Fachstellen-Profil 2026.10.2).
+  // Ausgenommen ist das Wurzelelement: Die Modulnavigation auf dem Telefon misst dort ihre Höhe.
+  const netlifyConfig = await fs.readFile(path.join(root, 'netlify.toml'), 'utf8');
+  const csp = netlifyConfig.match(/Content-Security-Policy = "([^"]+)"/)?.[1] || '';
+  record('security/csp-without-inline-styles', { csp }, /style-src 'self';/.test(csp) && !csp.includes("'unsafe-inline'"));
+  const cspContext = await browser.newContext({ viewport: { width: 360, height: 900 }, reducedMotion: 'reduce' });
+  await cspContext.route(url => url.href.startsWith(baseURL), async route => {
+    const response = await route.fetch();
+    await route.fulfill({ response, headers: { ...response.headers(), 'content-security-policy': csp } });
+  });
+  const cspPage = await cspContext.newPage();
+  const cspViolations = [];
+  await cspPage.exposeFunction('__auditCspViolation', text => cspViolations.push(text));
+  await cspPage.addInitScript(() => document.addEventListener('securitypolicyviolation', event => window.__auditCspViolation(`${event.violatedDirective} ${event.blockedURI}`)));
+  const cspViews = [
+    ...routes, '/gibt-es-nicht',
+    ...['selbsttest', 'phasenverlauf', 'eisberg', 'krisenplan', 'kommunikation', 'saeulen', 'ee', 'belastungsverlauf', 'atem'].map(tool => `/werkzeuge#${tool}`),
+    ...['dl-01', 'dl-04', 'dl-05', 'dl-06', 'dl-07', 'dl-08'].map(handout => `/unterstuetzung#${handout}`),
+  ];
+  for (const view of cspViews) {
+    cspViolations.length = 0;
+    // Jede Ansicht frisch laden: Beim direkten Wechsel zwischen zwei Werkzeugen blendet React den
+    // alten Dialog während des Nachladens kurz per CSSOM aus (display: none); das ist kein Markup.
+    await cspPage.goto('about:blank');
+    await open(cspPage, view);
+    if (view.includes('#')) {
+      const dialog = cspPage.getByRole('dialog').first();
+      await dialog.waitFor();
+      const begin = dialog.getByRole('button', { name: /Beginnen|Eisberg ansehen/ });
+      if (await begin.count()) await begin.first().click();
+    }
+    if (view.startsWith('/module/')) await cspPage.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight / 2));
+    await cspPage.waitForTimeout(100);
+    const styled = await cspPage.evaluate(() => [...document.body.querySelectorAll('[style]')].map(element => `${element.tagName.toLowerCase()}.${element.getAttribute('class') || ''}`));
+    record('security/csp-no-violation', { view, violations: [...cspViolations] }, cspViolations.length === 0);
+    record('profile/no-style-attributes', { view, styled }, styled.length === 0);
+  }
+  await cspContext.close();
+  const notFoundPage = await browser.newPage({ viewport: { width: 360, height: 900 } });
+  await open(notFoundPage, '/404.html');
+  record('profile/404-page', { url: notFoundPage.url() }, await notFoundPage.locator('h1').first().textContent() === 'Diese Seite gibt es nicht' && new URL(notFoundPage.url()).pathname === '/404.html');
+  await notFoundPage.close();
 } catch (error) {
   record('runner', { error: error.stack || String(error), serverOutput }, false);
 } finally {

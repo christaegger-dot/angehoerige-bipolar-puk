@@ -1,10 +1,9 @@
 // Modul 7 — Langfristige Tragfähigkeit · Volles Lese-Layout
 // Zentrales Bild: Vier Säulen als Tragwerk.
 
-import React from 'react';
 import { ModuleQuickStart, EvidenceSources, EvidenceCitation, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
-import { ResponsibilityInline } from './shared.jsx';
+import { ResponsibilityInline, ReadingProgress } from './shared.jsx';
 import { Icon } from './icon.jsx';
 
 function SaeulenFigur() {
@@ -151,19 +150,6 @@ function SchlussSaetze() {
 }
 
 function Modul7Page({ onNavigate }) {
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    const onScroll = () => {
-      const h = document.documentElement;
-      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
-      setProgress(Math.min(100, Math.max(0, scrolled * 100)));
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const sections = [
     { id: 's1', label: 'Die lange Strecke' },
     { id: 's2', label: 'Nach der Krise' },
@@ -178,7 +164,7 @@ function Modul7Page({ onNavigate }) {
 
   return (
     <>
-      <div className="reading-progress" style={{width: `${progress}%`}}></div>
+      <ReadingProgress />
 
       <article className="module-article">
         <header className="module-detail-header">

@@ -147,6 +147,17 @@ Die neunte Anpassung vom selben Tag setzt die vierte Etappe des Profilwechsels u
 
 Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; die Hinweise zu Speicherung und Löschung stehen unverändert vor den Werkzeugen und in den Dialogen. Am neu gebauten Stand bestanden die 225 Werkzeugchecks, die 764 Website-Browserchecks einschliesslich der Prüfung auf externe Laufzeitanfragen, die 71 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird wie in den vorangehenden Durchgängen an den neuen Fingerprint gebunden (`sourceSha256` `6fc40e1f96fead9bddaa02991c3461a3cbc6e1e034a87353cb94a0947593e558`, `buildSha256` `44a494f56289648539dce047520895525d78d7f402907832f4a3888c98f5ca66`, `sha256` `2d02bb0de43bcf50bdeffb24cbc4a3ec4435b8657d3025adeda08f1f31fcab2c`).
 
+### Abgleich nach den Strukturregeln (26. November 2026, zehnter Durchgang)
+
+Die zehnte Anpassung vom selben Tag setzt die fünfte Etappe des Profilwechsels um (Einzelheiten in `_dev/PROFILWECHSEL-2026-10-2.md`, Abschnitt «Etappe 5»). Die Fachstelle hat der neuen Bindung am 26. November 2026 zugestimmt. Datenschutzrelevant geprüft wurden:
+
+- **Datenschutzerklärung:** Sie steht jetzt als Abschnitt «Datenschutz» auf der Seite «Impressum und Datenschutz» (`src/impressum-datenschutz.jsx`, Adresse `/impressum-datenschutz#datenschutz`); `src/datenschutz.jsx` entfällt. Der bisherige Wortlaut ist unverändert übernommen, ergänzt um den Punkt der Profilvorlage «Links auf andere Websites: Wenn Sie einem Link auf eine andere Website folgen, gelten dort deren Regeln zum Datenschutz.» Damit ist der offene Punkt aus dem siebten Durchgang erledigt. Die frühere Adresse `/datenschutz` führt per 301 bzw. in der App zum Abschnitt.
+- **Content-Security-Policy:** `style-src 'self'` ohne `'unsafe-inline'`; die Website setzt keine `style`-Attribute mehr. Ein Lauf mit dieser CSP über alle Seiten, Werkzeuge und Handouts ergab keinen Verstoss.
+- **404-Seite:** `404.html` ist eine Kopie der App; sie lädt dieselben Dateien vom selben Server.
+- **Redaktionsstatus:** nur ein Wert in `src/site-config.js` und eine Anzeige in der Fusszeile.
+
+Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; die Hinweise zu Speicherung und Löschung stehen unverändert vor den Werkzeugen und in den Dialogen. Am neu gebauten Stand bestanden die 225 Werkzeugchecks, die nun 782 Website-Browserchecks einschliesslich der Prüfung auf externe Laufzeitanfragen und der CSP-Prüfung, die 71 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird wie in den vorangehenden Durchgängen an den neuen Fingerprint gebunden (`sourceSha256` `88e64cfc7f0c9fb119e3cb03d209e0c8d704ab3f274aa101ea432655aa9c3ab2`, `buildSha256` `5adc470f6ad7f8b8e053a70b05bb0cb627f1cb52342f9051b6946edebe7d7ecd`, `sha256` `5a4dde959550d92127791b1bc1486cb34b13e8c2937f2358218907419b70c27e`).
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

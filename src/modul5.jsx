@@ -1,10 +1,10 @@
 // Modul 5 — Loyalitätskonflikte · Volles Lese-Layout
 // Zentrales Bild: Zwei sich ziehende Linien (Knoten) als Metapher.
 
-import React from 'react';
 import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { Icon } from './icon.jsx';
+import { ReadingProgress } from './shared.jsx';
 
 function KnotenFigur() {
   const w = 560, h = 360;
@@ -145,19 +145,6 @@ function MythenBuster() {
 }
 
 function Modul5Page({ onNavigate }) {
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    const onScroll = () => {
-      const h = document.documentElement;
-      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
-      setProgress(Math.min(100, Math.max(0, scrolled * 100)));
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const sections = [
     { id: 's1', label: 'Innere Zerrissenheit' },
     { id: 's2', label: 'Verpflichtung und Selbstschutz' },
@@ -173,7 +160,7 @@ function Modul5Page({ onNavigate }) {
 
   return (
     <>
-      <div className="reading-progress" style={{width: `${progress}%`}}></div>
+      <ReadingProgress />
 
       <article className="module-article">
         <header className="module-detail-header">

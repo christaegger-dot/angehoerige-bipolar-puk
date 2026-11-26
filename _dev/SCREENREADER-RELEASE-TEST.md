@@ -42,8 +42,7 @@ Jede Route direkt öffnen **und** über die Website-Navigation erreichen. Seiten
 | `/module/5` | Reflexion/Entlastung, Figuren/Textalternativen und Quellen-Details. |
 | `/module/6` | Gesprächs- und Handoutwege, Rückkehr zum passenden Abschnitt, Quellen-Details. |
 | `/module/7` | Phasen/Stützen, Beispielkennzeichnung und Quellen-Details. |
-| `/impressum` | Zuständigkeit und Kontaktlink verständlich. |
-| `/datenschutz` | Memory-only, historische Löschung, Exportgrenzen und Datenschutzhinweise lesbar. |
+| `/impressum-datenschutz` | Abschnitte «Impressum» und «Datenschutz» mit eigener H2; Zuständigkeit und Kontaktlink verständlich; Memory-only, historische Löschung, Exportgrenzen und Datenschutzhinweise lesbar. Die früheren Adressen `/impressum` und `/datenschutz` öffnen den passenden Abschnitt. |
 | `/barrierefreiheit` | Zugangs- und Kontaktwege verständlich; Aussagen zu Druck und Prüfung lesbar. |
 | `/schweigepflicht` | Gesamter Text und Verweise erreichbar; keine versteckten Pflichtinformationen. |
 

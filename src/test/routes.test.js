@@ -33,6 +33,15 @@ describe('route helpers', () => {
     expect(parseRouteLocation({ pathname: '/gibt-es-nicht', hash: '#notfall' })).toEqual({ page: NOT_FOUND_PAGE, anchor: null });
   });
 
+  it('leads the former imprint and privacy addresses to their part of the joint page', () => {
+    expect(ROUTES.some(route => route.path === '/impressum' || route.path === '/datenschutz')).toBe(false);
+    expect(buildRouteHref('impressum-datenschutz', 'datenschutz')).toBe('/impressum-datenschutz#datenschutz');
+    expect(parseRouteLocation({ pathname: '/impressum', hash: '' })).toEqual({ page: 'impressum-datenschutz', anchor: 'impressum' });
+    expect(parseRouteLocation({ pathname: '/datenschutz/', hash: '' })).toEqual({ page: 'impressum-datenschutz', anchor: 'datenschutz' });
+    expect(parseRouteLocation({ pathname: '/', hash: '#datenschutz' })).toEqual({ page: 'impressum-datenschutz', anchor: 'datenschutz' });
+    expect(parseRouteLocation({ pathname: '/impressum-datenschutz', hash: '#impressum' })).toEqual({ page: 'impressum-datenschutz', anchor: 'impressum' });
+  });
+
   it('recognizes when client-side navigation should be handled', () => {
     expect(shouldHandleClientNavigation({ defaultPrevented: false, button: 0 })).toBe(true);
     expect(shouldHandleClientNavigation({ defaultPrevented: false, button: 1 })).toBe(false);

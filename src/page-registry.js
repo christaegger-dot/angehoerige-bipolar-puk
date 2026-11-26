@@ -14,8 +14,7 @@ const Modul4Page = React.lazy(() => preloadPage('modul4').then(m => ({ default: 
 const Modul5Page = React.lazy(() => preloadPage('modul5').then(m => ({ default: m.Modul5Page })));
 const Modul6Page = React.lazy(() => preloadPage('modul6').then(m => ({ default: m.Modul6Page })));
 const Modul7Page = React.lazy(() => preloadPage('modul7').then(m => ({ default: m.Modul7Page })));
-const ImpressumPage = React.lazy(() => preloadPage('impressum').then(m => ({ default: m.ImpressumPage })));
-const DatenschutzPage = React.lazy(() => preloadPage('datenschutz').then(m => ({ default: m.DatenschutzPage })));
+const ImpressumDatenschutzPage = React.lazy(() => preloadPage('impressum-datenschutz').then(m => ({ default: m.ImpressumDatenschutzPage })));
 const BarrierefreiheitPage = React.lazy(() => preloadPage('barrierefreiheit').then(m => ({ default: m.BarrierefreiheitPage })));
 const SchweigepflichtPage = React.lazy(() => preloadPage('schweigepflicht').then(m => ({ default: m.SchweigepflichtPage })));
 
@@ -31,8 +30,7 @@ const PAGE_RENDERERS = {
   modul5: (props) => React.createElement(Modul5Page, { onNavigate: props.onNavigate }),
   modul6: (props) => React.createElement(Modul6Page, { onNavigate: props.onNavigate }),
   modul7: (props) => React.createElement(Modul7Page, { onNavigate: props.onNavigate }),
-  impressum: () => React.createElement(ImpressumPage),
-  datenschutz: () => React.createElement(DatenschutzPage),
+  'impressum-datenschutz': () => React.createElement(ImpressumDatenschutzPage),
   barrierefreiheit: () => React.createElement(BarrierefreiheitPage),
   schweigepflicht: (props) => React.createElement(SchweigepflichtPage, { onNavigate: props.onNavigate }),
   [NOT_FOUND_PAGE]: (props) => React.createElement(NotFoundPage, { onNavigate: props.onNavigate }),

@@ -10,8 +10,7 @@ const ROUTES = [
   { page: 'modul5', path: '/module/5', legacyHash: 'modul5' },
   { page: 'modul6', path: '/module/6', legacyHash: 'modul6' },
   { page: 'modul7', path: '/module/7', legacyHash: 'modul7' },
-  { page: 'impressum', path: '/impressum', legacyHash: 'impressum' },
-  { page: 'datenschutz', path: '/datenschutz', legacyHash: 'datenschutz' },
+  { page: 'impressum-datenschutz', path: '/impressum-datenschutz' },
   { page: 'barrierefreiheit', path: '/barrierefreiheit', legacyHash: 'barrierefreiheit' },
   { page: 'schweigepflicht', path: '/schweigepflicht', legacyHash: 'schweigepflicht' },
 ];
@@ -24,8 +23,17 @@ const ROUTE_BY_PATH = Object.fromEntries(ROUTES.map((route) => [route.path, rout
 const ROUTE_BY_HASH = Object.fromEntries(
   ROUTES
     .filter((route) => route.legacyHash)
-    .map((route) => [route.legacyHash, route]),
+    .map((route) => [route.legacyHash, { page: route.page, anchor: null }]),
 );
+
+// Impressum und Datenschutz sind seit dem 26. November 2026 eine Seite. Die früheren Adressen
+// (und die noch älteren Hash-Adressen) führen in den passenden Abschnitt.
+const MOVED = {
+  impressum: { page: 'impressum-datenschutz', anchor: 'impressum' },
+  datenschutz: { page: 'impressum-datenschutz', anchor: 'datenschutz' },
+};
+const MOVED_BY_PATH = Object.fromEntries(Object.entries(MOVED).map(([name, target]) => [`/${name}`, target]));
+Object.assign(ROUTE_BY_HASH, MOVED);
 
 function normalizePathname(pathname = '/') {
   if (!pathname || pathname === '/index.html') return '/';
@@ -47,7 +55,12 @@ function parseRouteLocation(locationLike) {
 
   const legacyRoute = ROUTE_BY_HASH[hash];
   if (legacyRoute) {
-    return { page: legacyRoute.page, anchor: null };
+    return { ...legacyRoute };
+  }
+
+  const movedRoute = MOVED_BY_PATH[pathname];
+  if (movedRoute) {
+    return { page: movedRoute.page, anchor: hash || movedRoute.anchor };
   }
 
   const directRoute = ROUTE_BY_PATH[pathname];

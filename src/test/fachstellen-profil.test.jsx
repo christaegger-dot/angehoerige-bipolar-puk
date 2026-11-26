@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { render, waitFor } from '@testing-library/react';
 import App from '../app.jsx';
 import { ROUTES } from '../routes.js';
-import { SITE } from '../site-config.js';
+import { SITE, EDITORIAL_DRAFT_LABEL, editorialStatusLabel } from '../site-config.js';
 
 // Regeln des PUK Website-Profils 2026.10.2 («Absenderin», «Zuständigkeit statt Krisenzugang»),
 // mit denselben Mustern wie im Gate des Profils (tools/contract.js).
@@ -72,6 +72,12 @@ describe('Fachstellen-Profil 2026.10.2', () => {
     }
   });
 
+  it.each(ROUTES.map(({ page, path }) => [path, page]))('renders no style attribute on %s', async (path) => {
+    await renderRoute(path);
+
+    expect([...document.body.querySelectorAll('[style]')].map(element => element.outerHTML.slice(0, 80))).toEqual([]);
+  });
+
   it('names the skip link and the logo link as the profile does', async () => {
     await renderRoute('/module');
 
@@ -82,6 +88,17 @@ describe('Fachstellen-Profil 2026.10.2', () => {
     expect(name.startsWith(SITE.sender.institution)).toBe(true);
     expect(name).toContain(logo.querySelector('.nav-brand-mark').textContent);
     expect(name.endsWith('zur Startseite dieser Website')).toBe(true);
+  });
+
+  it('shows the editorial status in the format of the profile', async () => {
+    await renderRoute('/');
+
+    const status = document.querySelector('footer [data-editorial-status]');
+    expect(status).toHaveAttribute('data-editorial-status', SITE.editorial.approvedOn ? 'approved' : 'draft');
+    expect(status.textContent).toBe(editorialStatusLabel());
+    // Bis die Fachstelle ein Datum einträgt, steht der Entwurf da; die Release-Prüfung blockiert.
+    expect(editorialStatusLabel({ editorial: { approvedOn: null } })).toBe(EDITORIAL_DRAFT_LABEL);
+    expect(editorialStatusLabel({ editorial: { approvedOn: '15.12.2026' } })).toBe('Fachlich freigegeben am 15.12.2026');
   });
 
   it('takes both referral wordings from the profile without change', () => {

@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { navHandler, navHref } from './nav-handler.js';
-import { SITE, SENDER_MAILTO } from './site-config.js';
+import { SITE, SENDER_MAILTO, editorialStatusLabel } from './site-config.js';
 
 // Absenderin im Kopf jeder Seite (Profil 2026.10.2). Die Adresse ist der Kontaktweg
 // der Fachstelle, kein Krisen- oder Notfallweg.
@@ -94,13 +94,12 @@ function Footer({ page, onNavigate }) {
       <div className="footer-inner">
         <div className="footer-row">
           <div className="footer-credit">
-            <strong style={{color: 'var(--ink)', fontWeight: 500}}>Fachstelle Angehörigenarbeit</strong><br/>
+            <strong className="footer-credit-name">Fachstelle Angehörigenarbeit</strong><br/>
             Psychiatrische Universitätsklinik Zürich (PUK)
-            <span className="footer-credit-attr">Inhaltliche Verantwortung: Ch. Egger · Redaktioneller Stand: Oktober 2026</span>
+            <span className="footer-credit-attr">Inhaltliche Verantwortung: Ch. Egger · <span data-editorial-status={SITE.editorial.approvedOn ? 'approved' : 'draft'}>{editorialStatusLabel()}</span></span>
           </div>
           <div className="footer-links">
-            <a className="puk-web-nav__link" aria-current={page === 'impressum' ? 'page' : undefined} href={navHref('impressum')} onClick={navHandler('impressum', onNavigate)}>Impressum</a>
-            <a className="puk-web-nav__link" aria-current={page === 'datenschutz' ? 'page' : undefined} href={navHref('datenschutz')} onClick={navHandler('datenschutz', onNavigate)}>Datenschutz</a>
+            <a className="puk-web-nav__link" aria-current={page === 'impressum-datenschutz' ? 'page' : undefined} href={navHref('impressum-datenschutz')} onClick={navHandler('impressum-datenschutz', onNavigate)}>Impressum und Datenschutz</a>
             <a className="puk-web-nav__link" aria-current={page === 'barrierefreiheit' ? 'page' : undefined} href={navHref('barrierefreiheit')} onClick={navHandler('barrierefreiheit', onNavigate)}>Barrierefreiheit</a>
           </div>
         </div>
@@ -119,4 +118,27 @@ function Footer({ page, onNavigate }) {
   );
 }
 
-export { SenderLine, ResponsibilityInline, Nav, MobileModuleNav, Footer };
+// Lesefortschritt der Module: Anteil des Artikels, der schon oben aus dem Fenster gelaufen ist.
+// Ein natives <progress> statt eines Balkens mit style-Attribut (Profilregel «keine style-Attribute»);
+// für Hilfsmittel ausgeblendet, weil es nur den Scrollbalken wiederholt.
+function ReadingProgress() {
+  const [progress, setProgress] = React.useState(0);
+
+  React.useEffect(() => {
+    const onScroll = () => {
+      const el = document.querySelector('.module-article');
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const total = rect.height - window.innerHeight;
+      const scrolled = -rect.top;
+      setProgress(total > 0 ? Math.max(0, Math.min(100, (scrolled / total) * 100)) : 0);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return <progress className="reading-progress" max="100" value={Math.round(progress)} aria-hidden="true" />;
+}
+
+export { SenderLine, ResponsibilityInline, Nav, MobileModuleNav, Footer, ReadingProgress };

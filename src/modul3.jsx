@@ -1,10 +1,9 @@
 // Modul 3 — Wie Beziehungen unter Druck geraten · Volles Lese-Layout
 // Zentrales Bild: Zwei Linien, die unter Druck Form verändern.
 
-import React from 'react';
 import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
-import { ResponsibilityInline } from './shared.jsx';
+import { ResponsibilityInline, ReadingProgress } from './shared.jsx';
 import { Icon } from './icon.jsx';
 
 function ZweiLinien() {
@@ -145,23 +144,6 @@ function Druckpunkte() {
 }
 
 function Modul3Page({ onNavigate }) {
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    const onScroll = () => {
-      const el = document.querySelector('.module-article');
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const total = rect.height - window.innerHeight;
-      const scrolled = -rect.top;
-      const pct = Math.max(0, Math.min(100, (scrolled / total) * 100));
-      setProgress(pct);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const sections = [
     { id: 's1', label: 'Wenn Aufgaben die Beziehung bestimmen' },
     { id: 's2', label: 'Wenn Verantwortung die Beziehung verändert' },
@@ -174,7 +156,7 @@ function Modul3Page({ onNavigate }) {
 
   return (
     <>
-      <div className="reading-progress" style={{width: `${progress}%`}}></div>
+      <ReadingProgress />
 
       <article className="module-article">
         <header className="module-detail-header">
