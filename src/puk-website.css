@@ -45,6 +45,8 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
 .module-body .dropcap::first-letter { float: none; font: inherit; color: inherit; margin: 0; padding: 0; }
 .kicker, .eyebrow, .hero-meta { font-size: .875rem; font-weight: var(--fw-regular); letter-spacing: .08em; }
 .breadcrumb { font-size: .9375rem; letter-spacing: 0; }
+/* Auf Unterseiten ohne eigenen Hauptnavigationspunkt bezeichnet der letzte Brotkrumen die aktuelle Seite. */
+.breadcrumb [aria-current="page"] { color: var(--puk-black-100); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; }
 .container, .col-wide, .hero-inner, .footer-inner { max-width: var(--web-container-max); padding-inline: var(--web-gutter-inline); }
 .col, .prose, .triage-inner, .story-inner, .invitation-inner { padding-inline: var(--web-gutter-inline); }
 .hero, .about-hero, .page-header, .module-detail-header { padding-block: var(--web-section-space); }
