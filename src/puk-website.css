@@ -170,3 +170,115 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
   .module-mobile-nav { display: none !important; }
   .hero { background: var(--puk-white); color: var(--puk-black-100); --ink: var(--puk-black-100); --ink-soft: var(--puk-black-100); --ink-mute: var(--puk-black-100); --accent: var(--puk-blue-100); }
 }
+
+/* ── Nachkorrekturen aus der Durchsicht der gerenderten Website (26.11.2026) ──
+   Alle Werte bleiben innerhalb des Websiteprofils 1.10.1: H1 fluid und höchstens
+   114 px, Satzbreite 68ch, Bedienziele mindestens 44 px. */
+
+/* Seitenüberschriften berücksichtigen zusätzlich die Fensterhöhe, damit auf
+   Laptops die erste Aktion bzw. der erste Listeneintrag ohne Scrollen erscheint. */
+h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
+  font-size: clamp(2.75rem, min(8vw, 11vh), 7.125rem);
+}
+@media (min-width: 901px) {
+  .hero, .about-hero, .page-header, .module-detail-header { padding-block-start: clamp(40px, 7vh, 96px); }
+}
+
+/* Startseite */
+.hero { padding-block-end: clamp(56px, 6vw, 80px); }
+.hero-illustration { margin-top: 32px; }
+.hero-cta-secondary {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid currentColor;
+  border-radius: var(--web-radius-btn);
+  font-size: .9375rem;
+}
+.hero-cta-secondary:hover { border-style: solid; }
+/* styles.css nimmt aufeinanderfolgenden Abschnitten den oberen Abstand; nach dem
+   farbig hinterlegten Startassistenten braucht der nächste Abschnitt ihn wieder. */
+.triage + section { padding-top: clamp(56px, 9vh, 100px); }
+.story { padding-top: clamp(32px, 5vh, 56px); }
+@media (max-width: 900px) {
+  /* Das Raster hat hier zwei Spalten; der dekorative Pfeil fiele in eine eigene Zeile. */
+  .module-row-arrow { display: none; }
+}
+@media (max-width: 760px) {
+  .lede, .hero-lede, .module-detail-header .lede { font-size: 1.3125rem; }
+  .hero { padding-block-start: 32px; }
+  .hero h1 { margin-bottom: 20px; }
+  .hero .hero-lede { margin-bottom: 24px; }
+  .hero-micro-nav { margin: 20px 0 0; }
+}
+
+/* Laden und Fehlerseite */
+/* Der Ladezustand füllt die Fensterhöhe: Die Fusszeile steht nicht mehr direkt
+   unter dem Kopf und springt nicht weg, sobald der Seiteninhalt erscheint. */
+.page-loading { min-height: 100vh; min-height: 100svh; }
+.not-found { min-height: 60vh; }
+.not-found .eyebrow { margin-bottom: 24px; }
+.not-found .lede { margin-top: 28px; max-width: 54ch; }
+.not-found-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 0; padding: 0; list-style: none; }
+.not-found-links li { margin: 0; }
+
+/* Lesbarkeit */
+/* Kästen tragen Kernaussagen und Kontakte und stehen deshalb in Lesegrösse. */
+.callout :is(p, li) { font-size: inherit !important; line-height: 1.45 !important; }
+/* Kleintext am Bildschirm: mindestens 13 px und in Regular statt Light. Viele der
+   älteren Regeln in styles.css setzen ihre Grösse mit !important; deshalb hier ebenso. */
+@media screen {
+  :is(
+    .callout-label, .module-credits small, .module-meta, .module-meta span, .module-row-numlabel, .toc-num,
+    .story-attribution-note, .triage-progress, .tools-row-tag, .tool-tag, .hero-micro-nav, .hero-micro-nav a,
+    .do-col h4, .dont-col h4, .druckpunkt-num, .druckpunkt-sub, .stimme cite, .module-quote cite, .zeit-jahre,
+    .label, .download-pdf-label, .mono, .tag, .num, .mythos-strich, .skript-num, .skript-warum, .skript-rolle-label,
+    .krisen-feld-num, .krisen-feld-sub, .krisen-feld-beispiel, .kipppunkt-sub, .handlungsfeld-sub, .warnzeichen-sub,
+    .schluss-leitsatz, .eisberg-zone-kicker, .about-hero-function, .about-hero-function a, .footer-disclaimer,
+    .grauzone-card-action, .number-sub, .number-label, .page-loading-kicker
+  ) { font-size: max(.8125rem, 13px) !important; }
+  :is(
+    .module-credits, .module-credits :is(li, a, p, small, summary), .module-meta, .module-meta span,
+    .module-row-numlabel, .toc-num, .module-toc-inner a, .toc-back, .module-detail-meta-time,
+    .story-attribution, .story-attribution-note, .triage-progress, .tools-row-tag, .tools-row-item-arrow,
+    .tools-teaser-link, .btn-arrow, .invitation-email, .guide-sub, .number-sub, .sub, .mono, .tag, .num,
+    .druckpunkt-num, .druckpunkt-sub, .zeit-jahre, .zeit-phase p, .mythos-strich, .skript-num, .skript-warum,
+    .krisen-feld-num, .krisen-feld-sub, .krisen-feld-beispiel, .kipppunkt-sub, .handlungsfeld-sub,
+    .warnzeichen-sub, .stuetze-num, .next-module p, .module-quote cite, .footer-credit, .footer-credit-attr,
+    .footer-disclaimer, figure figcaption, .reference-status
+  ) { font-weight: var(--fw-regular) !important; }
+  /* Die Kacheln der Notfallseite setzen eigene, grössere Werte; diese bleiben. */
+  .notfall-immediate-calls .number-label { font-size: 1rem !important; }
+  .notfall-immediate-calls .number-sub { font-size: .875rem !important; }
+}
+
+/* Werkzeuge und Module */
+/* Die Karten liegen in Listeneinträgen; die frühere Regel für jede zweite Karte
+   griff deshalb nicht, und der Text der rechten Spalte stand an der Trennlinie. */
+@media (min-width: 901px) {
+  .tools-grid > li:nth-child(2n) .tool-card-lg { padding-left: 28px; padding-right: 0; border-right: 0; }
+}
+/* Längere Einleitungen in den Werkzeug-Dialogen linksbündig; die Blöcke selbst bleiben, wo sie sind. */
+.tool-overlay-card > p, .tool-overlay-card .ee-intro, .krisenplan-head > p, .phasen-legend { text-align: left; }
+@media screen {
+  :is(.phasen-tab span, .phasen-figure figcaption, .ee-detail-num, .krisenplan-label-sub, .krisenplan-disclaimer) {
+    font-size: max(.8125rem, 13px) !important;
+    font-weight: var(--fw-regular) !important;
+  }
+}
+/* Inhaltsverzeichnis im Modul: Der Abschnitt, der gerade gelesen wird, ist markiert.
+   Browser mit CSS-Scrollmarken erkennen ihn selbst; sonst setzt toc-current.js die Klasse. */
+.module-toc ol { scroll-target-group: auto; }
+.module-toc a:is(:target-current, .target-current) {
+  border-left-color: var(--puk-blue-100);
+  color: var(--puk-black-100);
+  font-weight: var(--fw-medium) !important;
+}
+/* Die Meta-Zeile der Listeneinträge bricht als Ganzes um, statt zwei schmale Spalten zu bilden. */
+.module-meta { flex-wrap: wrap; row-gap: 2px; }
+/* Vor/Zurück am Modulende: Die ältere Regel setzte den seitlichen Innenabstand der Aktionslinks auf 0. */
+.module-nav-btn { padding-inline: var(--space-4); }
+.not-found-links a { font-size: 1.0625rem; }
+/* Bei 200 % Textgrösse und 320 px Breite dürfen der Werkzeug-Link und die Untertitel der
+   Krisensituationen umbrechen; lange Wörter werden nach Silben getrennt. */
+.tools-teaser-link { white-space: normal; }
+.guide-head > div { min-width: 0; }
+.guide-title, .guide-sub { overflow-wrap: anywhere; -webkit-hyphens: auto; hyphens: auto; }

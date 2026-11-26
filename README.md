@@ -99,6 +99,9 @@ Der Produktionslauf verlangt mindestens zwei bestandene reale Screenreader-Läuf
 - `src/werkzeuge.jsx` — interaktive Werkzeuge und Overlay-Infrastruktur
 - `src/unterstuetzung.jsx` — Ressourcen, Materialien, FAQ und Handouts
 - `src/shared.jsx` — globale Navigation, Footer und Krisenleiste
+- `src/not-found.jsx` — Seite für unbekannte Adressen (statt stiller Weiterleitung auf die Startseite)
+- `src/toc-current.js` — markiert im Inhaltsverzeichnis eines Moduls den Abschnitt, der gerade gelesen wird
+- `public/social-preview.png` — Vorschaubild für geteilte Links; ein Abbild des Kopfs der Startseite, bei Änderungen dort mit `scripts/make-social-preview.mjs` neu erzeugen
 - `src/test/` — Vitest- und Testing-Library-Tests
 - `netlify.toml` — Build, Redirects und Security-Header für das Deployment
 

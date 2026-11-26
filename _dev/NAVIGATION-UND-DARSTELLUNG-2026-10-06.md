@@ -73,4 +73,35 @@ Eine Durchsicht der gerenderten Website bei 375, 768 und 1440 px ergab zwei Befu
 
 Prüfbedarf für die Fachstelle: Der Beschreibungstext zu EQUILIBRIUM («Verein der Schweizer Selbsthilfegruppen für Menschen mit Erkrankungen der Stimmung …») weicht von der Selbstbezeichnung auf der Website des Vereins ab; er wurde nicht geändert.
 
-Die übrigen Befunde der Durchsicht (unter anderem Hauptaktion unter dem Falz, Layout-Sprung beim Laden, fehlende Fehlerseite, kleine Schrift, lange Zeilen) sind offen.
+### Übrige Befunde der Seitenprüfung (26. November 2026)
+
+Umgesetzt innerhalb des Websiteprofils 1.10.1; Messwerte am gebauten Stand, vorher → nachher.
+
+| Befund | Umsetzung | Messung |
+|---|---|---|
+| Hauptaktion der Startseite unter dem Falz | H1 aller Seiten berücksichtigt zusätzlich die Fensterhöhe (`clamp(2.75rem, min(8vw, 11vh), 7.125rem)`, höchstens 114 px wie im Profil); oberer Abstand der Seitenköpfe ab 901 px Breite höhenabhängig. Auf dem Handy stehen die Schnelleinstiege unter den Schaltflächen, die Einleitung in 21 statt 26 px. | Unterkante der Schaltfläche: 1366×768 850 → 734 px, 1280×720 830 → 714 px, 375×812 1063 → 764 px, 360×740 1063 → 764 px (dort weiterhin knapp unter dem Falz) |
+| Layout-Sprung beim Laden | Der Ladezustand füllt die Fensterhöhe; Rubik Light und Regular werden vorgeladen. | Layout-Verschiebung auf `/module/1` 0,49 → 0 (1440 px), 0,25 → 0 (375 px) |
+| Keine Fehlerseite | `src/not-found.jsx`; unbekannte Adressen bleiben in der Adresszeile. Netlify liefert weiterhin den Status 200. | `/gibt-es-nicht` zeigt «Diese Seite gibt es nicht.» mit vier Weiterleitungen |
+| Sehr kleine, dünne Schrift | Kleintext am Bildschirm mindestens 13 px und in Regular; betrifft Quellenangaben, Kastenüberschriften, Meta-Zeilen, Fusszeile und Werkzeug-Dialoge. Druck unverändert. | kleinste Schrift je Seite 10,9–12 → 13 px; Ausnahme: Wortgrafik im Eisberg-Modell |
+| Kästen kleiner als Fliesstext, Telefonnummern nicht antippbar | Kästen in Lesegrösse; drei Nennungen von 058 384 38 00 in Modul 1 und 2 als `tel:`-Link. | Kasten in Modul 1 16 → 21 px |
+| Abschnitt «Drei Wege zum Einstieg» | Oberer Abstand wiederhergestellt; dekorative Pfeile unter 901 px ausgeblendet; dritte Zeile mit «U» und durchgezogener Linie wie die beiden anderen. Die Modulübersicht behält die abgesetzte Unterstützungszeile. | — |
+| Zweite Schaltflächen der Startseite | Durchgehender Rahmen, 15 px. | — |
+| Werkzeugseite | Innenabstand der rechten Kartenspalte. | Text der rechten Spalte 28 px von der Trennlinie |
+| Werkzeug-Dialoge | Längere Einleitungen linksbündig. | zentrierte Absätze im Krisenplan 3 → 0 |
+| Modulübersicht | Folgt aus H1- und Einleitungsgrösse. | erstes Modul bei 1366×768: 790 → 698 px; 375×812: 995 → 859 px |
+| Wortlaut im Startassistenten | «Frage 1 von höchstens 4». | — |
+| Inhaltsverzeichnis im Modul | Der gelesene Abschnitt ist markiert (`aria-current="true"`, fett, blaue Linie): CSS-Scrollmarken, sonst `src/toc-current.js` mit IntersectionObserver. | beide Wege in Chromium geprüft |
+| Leerflächen der Startseite | Unterer Abstand des Kopfs wie im Profil (höchstens 80 px), kleinerer Abstand vor dem Fallbeispiel. | Kopf bei 1440×900: 1157 → 1047 px |
+| Teilen-Metadaten, Schrift-Vorladen | Open-Graph-Angaben mit bestehendem Titel und bestehender Beschreibung, `public/social-preview.png`. | — |
+
+Zusätzlich korrigiert: Die Schaltflächen «Alle Module» und «nächstes Modul» am Modulende hatten keinen seitlichen Innenabstand.
+
+Bewusst nicht umgesetzt:
+
+- **Satzbreite (lange Zeilen):** `--web-content-measure: 68ch` ist ein Sollwert des Websiteprofils, den der kanonische Auditor prüft. Eine schmalere Spalte wäre eine Änderung am Profil, nicht an dieser Website.
+- **Seitenkopf auf dem Handy:** Logo, Bezeichnung und zweispaltiges Navigationsraster entsprechen dem Profil (`navigation.narrowMode: wrapping-grid`).
+- **Hinweis zu alten Entwürfen auf der Werkzeugseite:** Er bleibt vor den Werkzeugen, weil das Profil einen Speicherhinweis vor der Eingabe verlangt.
+- **Dialog-Einleitungen kürzen oder einklappen, Beschreibung der Startseite kürzen:** Wortlaut und Hinweise sind Inhalt der Fachstelle; die Hinweise im Krisenplan sind sicherheits- und datenschutzrelevant.
+- **Animiertes Logo und TTF-Schriften entfernen:** Beide gehören zum übernommenen Designpaket (`src/puk-design/provenance.json`).
+
+Neue Prüfungen: `home/primary-action-in-view` in `scripts/audit-website.mjs`; Tests für unbekannte Adressen (`routes.test.js`, `app.test.jsx`) und die Abschnittsmarkierung (`toc-current.test.js`).

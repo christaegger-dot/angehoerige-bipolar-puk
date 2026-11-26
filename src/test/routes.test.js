@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildRouteHref, parseRouteLocation, shouldHandleClientNavigation } from '../routes.js';
+import { NOT_FOUND_PAGE, ROUTES, buildRouteHref, parseRouteLocation, shouldHandleClientNavigation } from '../routes.js';
 
 describe('route helpers', () => {
   it('builds canonical urls with optional anchors', () => {
@@ -12,6 +12,19 @@ describe('route helpers', () => {
     expect(parseRouteLocation({ pathname: '/', hash: '#werkzeuge' })).toEqual({ page: 'werkzeuge', anchor: null });
     expect(parseRouteLocation({ pathname: '/', hash: '#triage' })).toEqual({ page: 'start', anchor: 'triage' });
     expect(parseRouteLocation({ pathname: '/schweigepflicht', hash: '' })).toEqual({ page: 'schweigepflicht', anchor: null });
+  });
+
+  it('sends unknown addresses to the not-found page instead of the start page', () => {
+    expect(parseRouteLocation({ pathname: '/gibt-es-nicht', hash: '' })).toEqual({ page: NOT_FOUND_PAGE, anchor: null });
+    expect(parseRouteLocation({ pathname: '/module/8', hash: '#s2' })).toEqual({ page: NOT_FOUND_PAGE, anchor: null });
+    expect(ROUTES.some(route => route.page === NOT_FOUND_PAGE)).toBe(false);
+  });
+
+  it('keeps the start page for the root address in all its spellings and keeps legacy hash routes', () => {
+    expect(parseRouteLocation({ pathname: '/index.html', hash: '' })).toEqual({ page: 'start', anchor: null });
+    expect(parseRouteLocation({ pathname: '', hash: '' })).toEqual({ page: 'start', anchor: null });
+    expect(parseRouteLocation({ pathname: '/module/', hash: '' })).toEqual({ page: 'module', anchor: null });
+    expect(parseRouteLocation({ pathname: '/gibt-es-nicht', hash: '#notfall' })).toEqual({ page: 'notfall', anchor: null });
   });
 
   it('recognizes when client-side navigation should be handled', () => {

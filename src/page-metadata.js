@@ -1,4 +1,4 @@
-import { buildRouteHref } from './routes.js';
+import { NOT_FOUND_PAGE, buildRouteHref } from './routes.js';
 import { MODULES, ANLAUFSTELLEN_ENTRY } from './site-content.js';
 
 const SITE_ORIGIN = 'https://angehoerige-bipolar-puk.netlify.app';
@@ -45,6 +45,10 @@ const PAGE_METADATA = {
   schweigepflicht: {
     title: 'Schweigepflicht bei Angehörigengesprächen | PUK Zürich',
     description: 'Orientierung für Angehörige zu Schweigepflicht, Einwilligung und dem offiziellen PUK-Formular.',
+  },
+  [NOT_FOUND_PAGE]: {
+    title: 'Seite nicht gefunden | PUK Zürich',
+    description: 'Diese Adresse gibt es auf der Website für Angehörige von Menschen mit bipolarer Störung nicht.',
   },
 };
 

@@ -236,6 +236,14 @@ try {
     }
     await context.close();
   }
+  // The main action of the start page must be reachable without scrolling on a common phone and laptop.
+  for (const viewport of [{ width: 375, height: 812 }, { width: 1366, height: 768 }]) {
+    const foldPage = await browser.newPage({ viewport, reducedMotion: 'reduce' });
+    await open(foldPage, '/');
+    const action = await foldPage.locator('.hero-cta').boundingBox();
+    record('home/primary-action-in-view', { ...viewport, action }, action.y >= 0 && action.y + action.height <= viewport.height);
+    await foldPage.close();
+  }
   const historyPage = await browser.newPage({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
   await open(historyPage, '/module/4#s6');
   await historyPage.locator('#s6 h2').waitFor();

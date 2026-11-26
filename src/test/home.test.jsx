@@ -16,7 +16,7 @@ describe('HomePage triage flow', () => {
     expect(onNavigate).toHaveBeenCalledWith('modul1');
 
     await user.click(screen.getByRole('button', { name: 'Nochmal beantworten' }));
-    expect(screen.getByText('Frage 1 von bis zu 4')).toBeInTheDocument();
+    expect(screen.getByText('Frage 1 von höchstens 4')).toBeInTheDocument();
   });
 
   it('preserves the chosen tool format and offers the module as further reading', async () => {

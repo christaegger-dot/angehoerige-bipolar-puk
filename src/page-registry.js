@@ -1,6 +1,8 @@
 import React from 'react';
 import { HomePage } from './home.jsx';
 import { preloadPage } from './page-loader.js';
+import { NotFoundPage } from './not-found.jsx';
+import { NOT_FOUND_PAGE } from './routes.js';
 
 const ModulePage = React.lazy(() => preloadPage('module').then(m => ({ default: m.ModulePage })));
 const WerkzeugePage = React.lazy(() => preloadPage('werkzeuge').then(m => ({ default: m.WerkzeugePage })));
@@ -35,6 +37,7 @@ const PAGE_RENDERERS = {
   datenschutz: () => React.createElement(DatenschutzPage),
   barrierefreiheit: () => React.createElement(BarrierefreiheitPage),
   schweigepflicht: (props) => React.createElement(SchweigepflichtPage, { onNavigate: props.onNavigate }),
+  [NOT_FOUND_PAGE]: (props) => React.createElement(NotFoundPage, { onNavigate: props.onNavigate }),
 };
 
 export { PAGE_RENDERERS };

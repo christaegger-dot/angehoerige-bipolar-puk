@@ -91,6 +91,18 @@ Die vierte Anpassung vom selben Tag setzt auf der Notfallseite die Kästen «Ers
 
 Am neu gebauten Stand bestanden erneut die 225 Werkzeugchecks, die nun 698 Website-Browserchecks (einschliesslich der Prüfung auf externe Laufzeitanfragen), die 72 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird im ausdrücklichen Auftrag der Projektverantwortlichen an den neuen App-/Build-Fingerprint gebunden; die vorbereiteten Screenreader-Läufe erhalten denselben Prüfstand und bleiben nicht ausgeführt.
 
+### Abgleich nach den übrigen Korrekturen der Seitenprüfung (26. November 2026, fünfter Durchgang)
+
+Die fünfte Anpassung vom selben Tag setzt die übrigen Befunde der Seitenprüfung um (Übersicht in `_dev/NAVIGATION-UND-DARSTELLUNG-2026-10-06.md`). Datenschutzrelevant geprüft wurden:
+
+- **Seite für unbekannte Adressen** (`src/not-found.jsx`): zeigt nur vier interne Links. Die unbekannte Adresse bleibt in der Adresszeile und wird nicht gespeichert oder übermittelt.
+- **Abschnittsmarkierung im Inhaltsverzeichnis** (`src/toc-current.js`): liest die Scrollposition im geöffneten Dokument und setzt `aria-current` und eine CSS-Klasse. Kein Speicher, keine Übermittlung.
+- **Telefonnummern in Modul 1 und 2** sind `tel:`-Links auf die bereits genannte Nummer der Fachstelle; ein Anruf entsteht erst durch Antippen.
+- **Kopf der HTML-Datei:** Zwei lokale Schriftdateien werden vorgeladen. Die Open-Graph-Angaben enthalten Adressen der eigenen Website als Text; der Browser ruft sie beim Seitenaufruf nicht ab. `public/social-preview.png` ist ein statisches Abbild des Kopfs der Startseite ohne personenbezogene Inhalte.
+- **Übrige Änderungen** sind CSS-Regeln, eine umgestellte Linkgruppe auf der Startseite und der Wortlaut «Frage 1 von höchstens 4».
+
+Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; die Hinweise zu Speicherung und Löschung stehen unverändert vor den Werkzeugen und in den Dialogen. Am neu gebauten Stand bestanden die 225 Werkzeugchecks, die nun 700 Website-Browserchecks einschliesslich der Prüfung auf externe Laufzeitanfragen, die 72 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird wie in den vorangehenden Durchgängen an den neuen App-/Build-Fingerprint gebunden; die vorbereiteten Screenreader-Läufe erhalten denselben Prüfstand und bleiben nicht ausgeführt.
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.
