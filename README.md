@@ -26,6 +26,12 @@ sichtbaren Textfassungen. Das Profil ersetzt keine menschlichen Freigaben.
 - Node.js 22 ab 22.13 oder Node.js 24 und neuer
 - npm 10 oder neuer
 
+Installieren und Bauen (`npm ci`, `npm run build`) funktionieren mit npm 10. Abhängigkeiten
+**aktualisieren** verlangt derzeit npm 11: `npm update`, `npm install <paket>` und
+`npm audit fix` brechen mit npm 10.9 beim Auflösen der Vitest-Peer-Abhängigkeiten mit
+`Cannot read properties of null (reading 'edgesOut')` ab. Dafür `npx npm@11 audit fix`
+bzw. `npx npm@11 install …` verwenden und danach mit `npm ci` gegenprüfen.
+
 ## Lokale Entwicklung
 
 ```bash

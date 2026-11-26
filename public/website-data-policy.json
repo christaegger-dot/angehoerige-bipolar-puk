@@ -1,6 +1,6 @@
 {
   "status": "approved",
-  "reviewedAt": "2026-11-26",
+  "reviewedAt": "2026-10-07",
   "reviewerRole": "KI-gestützte technische Datenschutzprüfung im ausdrücklichen Auftrag der Projektverantwortlichen; keine institutionelle Rechtsfreigabe",
   "inventoryVersion": 5,
   "profileCompatibility": {
@@ -265,9 +265,9 @@
     "releaseFingerprint": {
       "version": 1,
       "algorithm": "sha256",
-      "sourceSha256": "181d41369df83405d06724f285420dc4927ccf389c901dd02b3b1c1e90b8cc61",
-      "buildSha256": "1aa700e00e0c618fd81fe2d8b64cb26ec21d22b9cf9066e1434a6b70abea7d45",
-      "sha256": "09fe9d734765251945590d42088bea8ba77cf3d3881a18062a4f372dba055f5b"
+      "sourceSha256": "73c5d9f60b5ee167d0a369f44d72e338b2a05aa77bb50769fdf7a4c4fd1565f8",
+      "buildSha256": "ebae9f2068faf0704c84461ad7c98ca3b4a45259365e042136c74b20d24aeda6",
+      "sha256": "95cb109f2023ca1fab292feb5f7188e699c61ebcd8fa4f8da66090d575bc27f1"
     },
     "evidence": [
       "_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md",

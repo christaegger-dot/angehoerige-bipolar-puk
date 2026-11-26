@@ -73,6 +73,12 @@ Die Fassung vom 26. November aktualisiert Entwicklungs- und Build-Abhängigkeite
 
 Am neu gebauten Stand bestanden die 225 Werkzeugchecks einschliesslich der Speicher- und Netzwerkproben mit synthetischen Werten, die 697 Website-Browserchecks, die 72 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird deshalb im ausdrücklichen Auftrag der Projektverantwortlichen an den neuen App-/Build-Fingerprint gebunden. Die vorbereiteten menschlichen Screenreader-Läufe erhalten denselben Prüfstand und bleiben ausdrücklich nicht ausgeführt.
 
+### Abgleich nach der Brotkrumen-Navigation (26. November 2026, zweiter Durchgang)
+
+Die Nachkorrektur vom selben Tag macht den Brotkrumen der sieben Moduldetailseiten und der Schweigepflichtseite zu einer benannten Navigation (`<nav aria-label="Brotkrumen">`); der letzte Eintrag ist ein Link auf die aktuelle Seite mit `aria-current="page"`. Der Quellvergleich mit dem gemergten Stand `7f64e5d` zeigt im Anwendungscode ausschliesslich diese Auszeichnung und einen CSS-Kommentar. Der neue Link ruft die bestehende interne Navigation auf dieselbe Seite auf; nach `_dev/NAVIGATION-UND-DARSTELLUNG-2026-10-06.md` entsteht dabei kein neuer Verlaufseintrag. Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert.
+
+Am neu gebauten Stand bestanden erneut die 225 Werkzeugchecks, die 697 Website-Browserchecks, die 72 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird deshalb im Auftrag der Projektverantwortlichen an den neuen App-/Build-Fingerprint gebunden; die vorbereiteten Screenreader-Läufe erhalten denselben Prüfstand und bleiben nicht ausgeführt. Das Prüfdatum der Acceptance (`technicalAcceptance.reviewedAt`) ist der 26. November 2026. Das Datum der Datenpolicy selbst (`reviewedAt` auf oberster Ebene) bleibt der 7. Oktober 2026, weil Inventar und Datenschutzerklärung («Stand: Oktober 2026») seither nicht geändert wurden.
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

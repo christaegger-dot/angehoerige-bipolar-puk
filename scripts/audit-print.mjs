@@ -139,23 +139,33 @@ async function pdf(page, name) {
   const a4 = pageSizes.length === count && pageSizes.every(size => Math.abs(size.widthPt - 595.28) < 1 && Math.abs(size.heightPt - 841.89) < 1);
   record(`${name}/a4`, a4, { pageSizes });
   report.artifacts.push({ name, url: page.url(), pdf: pdfPath, text: textPath, readingOrderText: rawTextPath, pages: count, pageSizes });
-  return { text: normalize(readingOrder), count, a4 };
+  return { text: { readingOrder: normalize(readingOrder), layout: normalize(extracted) }, count, a4 };
 }
 
 // pdftotext decides from glyph gaps where a word space belongs, and that
-// heuristic differs between Poppler releases (26.x drops single spaces in
-// large headings in -raw mode). Presence checks therefore ignore whitespace.
-const compact = text => normalize(text).replace(/ /g, '');
+// heuristic differs between Poppler releases and extraction modes (26.x drops
+// single spaces in large headings in -raw mode but keeps them in -layout).
+// Expected text must therefore appear with its exact word spacing in at least
+// one of the two extractions, so a word space missing from the PDF itself is
+// still reported.
+const compact = text => text.replace(/ /g, '');
 
 function contains(name, text, expected) {
-  const haystack = compact(text);
-  const missing = expected.filter(value => !haystack.includes(compact(value)));
+  const missing = expected.filter((value) => {
+    const wanted = normalize(value);
+    return !text.readingOrder.includes(wanted) && !text.layout.includes(wanted);
+  });
   record(`${name}/expected-text`, missing.length === 0, { missing });
 }
 
+// Absence is checked without whitespace in both extractions: a looser match
+// can only report more leftovers of the underlying page, never hide one.
 function excludes(name, text, forbidden) {
-  const haystack = compact(text);
-  const found = forbidden.filter(value => haystack.includes(compact(value)));
+  const haystacks = [compact(text.readingOrder), compact(text.layout)];
+  const found = forbidden.filter((value) => {
+    const unwanted = compact(normalize(value));
+    return haystacks.some(haystack => haystack.includes(unwanted));
+  });
   record(`${name}/underlying-page-removed`, found.length === 0, { found });
 }
 

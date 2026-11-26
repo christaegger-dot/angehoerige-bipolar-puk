@@ -45,3 +45,10 @@ Korrektur: Der letzte Brotkrumen dieser acht Seiten («Modul N» bzw. «Schweige
 Verifikation am neuen Build: `audit:puk` bestanden (16 Routen), `audit:website` 697/697, `audit:tools` 225/225, `audit:print` 72/72, Lint, App-Tests mit Coverage-Gate und `npm audit` ohne Befund.
 
 Release-Nachweise: Der Release-Fingerprint hat sich durch diese Änderung und die gleichzeitige Abhängigkeitsaktualisierung geändert. Die begrenzte technische Datenschutz-Acceptance und die vorbereiteten AT-Läufe sind im Auftrag der Projektverantwortlichen an den neuen Fingerprint gebunden (`_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md`). Die menschlichen Screenreader-Läufe bleiben nicht ausgeführt.
+
+### Nachkorrektur nach Code-Review (26. November 2026)
+
+- Der Brotkrumen der acht Seiten ist jetzt eine benannte Navigation (`<nav aria-label="Brotkrumen">`); der aktuelle Eintrag ist ein Link auf die eigene Seite mit `aria-current="page"` statt eines unterstrichenen, nicht anklickbaren Texts. Ob VoiceOver und NVDA «aktuelle Seite» ansagen, ist in den ausstehenden Screenreader-Läufen zu prüfen.
+- `src/test/current-page-marker.test.jsx` prüft für alle 16 Routen aus `src/routes.js`, dass genau ein Link als aktuelle Seite ausgezeichnet ist.
+- `scripts/audit-print.mjs` verlangt erwarteten Text wieder mit exakten Wortabständen, und zwar in mindestens einem der beiden Poppler-Auszüge (`-raw` oder `-layout`); nur die Abwesenheitsprüfung vergleicht ohne Leerzeichen.
+- Die Release-Nachweise sind an den dadurch erneut geänderten Fingerprint gebunden; `lastTechnicalPreparation` der Screenreader-Vorlage ist nachgeführt.

@@ -180,13 +180,13 @@ function Modul6Page({ onNavigate }) {
       <article className="module-article">
         <header className="module-detail-header">
           <div className="col">
-            <div className="breadcrumb">
+            <nav className="breadcrumb" aria-label="Brotkrumen">
               <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
               <span className="sep">/</span>
               <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
               <span className="sep">/</span>
-              <span aria-current="page">Modul 6</span>
-            </div>
+              <a href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)} aria-current="page">Modul 6</a>
+            </nav>
             <div className="module-detail-meta">
               <span className="module-detail-num">06</span>
               <span className="module-detail-meta-time">⏱ Kerntext 12 Min · mit Vertiefungen 22 Min</span>
