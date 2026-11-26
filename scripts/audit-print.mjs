@@ -142,13 +142,20 @@ async function pdf(page, name) {
   return { text: normalize(readingOrder), count, a4 };
 }
 
+// pdftotext decides from glyph gaps where a word space belongs, and that
+// heuristic differs between Poppler releases (26.x drops single spaces in
+// large headings in -raw mode). Presence checks therefore ignore whitespace.
+const compact = text => normalize(text).replace(/ /g, '');
+
 function contains(name, text, expected) {
-  const missing = expected.filter(value => !text.includes(normalize(value)));
+  const haystack = compact(text);
+  const missing = expected.filter(value => !haystack.includes(compact(value)));
   record(`${name}/expected-text`, missing.length === 0, { missing });
 }
 
 function excludes(name, text, forbidden) {
-  const found = forbidden.filter(value => text.includes(normalize(value)));
+  const haystack = compact(text);
+  const found = forbidden.filter(value => haystack.includes(compact(value)));
   record(`${name}/underlying-page-removed`, found.length === 0, { found });
 }
 
