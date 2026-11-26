@@ -1,8 +1,9 @@
 import { navHandler, navHref } from './nav-handler.js';
 import { MODULES, ANLAUFSTELLEN_ENTRY } from './site-content.js';
 import { TriageFlow } from './triage-flow.jsx';
+import { Icon } from './icon.jsx';
 
-const DEFAULT_OVERVIEW_META = 'Lesen →';
+const DEFAULT_OVERVIEW_META = 'Lesen';
 
 function ModulePage({ onNavigate }) {
   return (
@@ -27,27 +28,27 @@ function ModulePage({ onNavigate }) {
                     <h2>{m.title}</h2>
                     <p>{m.desc}</p>
                     <div className="module-meta">
-                      <span>⏱ {m.time}</span>
-                      <span>· {m.overviewMeta || DEFAULT_OVERVIEW_META}</span>
+                      <span>{m.time}</span>
+                      <span>· {m.overviewMeta || <>{DEFAULT_OVERVIEW_META} <Icon name="arrow-right" /></>}</span>
                     </div>
                   </div>
-                  <div className="module-row-arrow" aria-hidden="true">→</div>
+                  <div className="module-row-arrow" aria-hidden="true"><Icon name="arrow-right" /></div>
                 </a>
               </li>
             ))}
             <li>
               <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
-                <div className="module-num module-num-resource">→</div>
+                <div className="module-num module-num-resource"><Icon name="arrow-right" /></div>
                 <div className="module-content">
                   <div className="module-row-numlabel">Hilfe finden</div>
                   <h2>{ANLAUFSTELLEN_ENTRY.title}</h2>
                   <p>{ANLAUFSTELLEN_ENTRY.desc}</p>
                   <div className="module-meta">
-                    <span>⏱ {ANLAUFSTELLEN_ENTRY.time}</span>
-                    <span>· Hilfe, Material und Kontakt →</span>
+                    <span>{ANLAUFSTELLEN_ENTRY.time}</span>
+                    <span>· Hilfe, Material und Kontakt <Icon name="arrow-right" /></span>
                   </div>
                 </div>
-                <div className="module-row-arrow" aria-hidden="true">→</div>
+                <div className="module-row-arrow" aria-hidden="true"><Icon name="arrow-right" /></div>
               </a>
             </li>
           </ul>

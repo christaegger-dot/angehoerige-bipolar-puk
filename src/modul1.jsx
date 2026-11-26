@@ -5,6 +5,7 @@ import { ModuleQuickStart, EvidenceCitation, EvidenceSources } from './module-gu
 import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 import { SITE, SENDER_MAILTO } from './site-config.js';
+import { Icon } from './icon.jsx';
 
 function Modul1Page({ onNavigate }) {
   const [progress, setProgress] = React.useState(0);
@@ -55,7 +56,7 @@ function Modul1Page({ onNavigate }) {
             </nav>
             <div className="module-detail-meta">
               <span className="module-detail-num">01</span>
-              <span className="module-detail-meta-time">⏱ 12–15 Minuten · 10 Abschnitte</span>
+              <span className="module-detail-meta-time">12–15 Minuten · 10 Abschnitte</span>
             </div>
             <h1>Die bipolare Störung <em>verstehen</em></h1>
             <p className="lede">Die bipolare Störung verändert Verhalten, Schlaf und Beziehungen oft auf schwer vorhersehbare Weise. Wissen darüber hilft beim Einordnen, gibt Ihnen aber keine Kontrolle über die Erkrankung. Für wichtige Gespräche können Sie gemeinsam einen Zeitpunkt suchen, an dem ausreichend Ruhe, Zeit und Kraft vorhanden sind.</p>
@@ -81,7 +82,7 @@ function Modul1Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}><Icon name="arrow-left" /> Alle Module</a>
             </div>
           </aside>
 
@@ -374,10 +375,10 @@ function Modul1Page({ onNavigate }) {
 
               <div className="module-nav-footer">
                 <a className="puk-link--action module-nav-btn" href={navHref('module')} onClick={navHandler('module', onNavigate)}>
-                  ← Alle Module
+                  <Icon name="arrow-left" /> Alle Module
                 </a>
                 <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>
-                  Modul 02 — Die eigene Belastung verstehen →
+                  Modul 02 — Die eigene Belastung verstehen <Icon name="arrow-right" />
                 </a>
               </div>
             </footer>

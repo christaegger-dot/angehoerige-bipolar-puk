@@ -6,6 +6,7 @@ import { ModuleQuickStart, EvidenceSources, EvidenceCitation } from './module-gu
 import { FINANCIAL_SAFETY } from './crisis-content.js';
 import { navHandler, navHref } from './nav-handler.js';
 import { ResponsibilityInline } from './shared.jsx';
+import { Icon } from './icon.jsx';
 
 function HandlungsfelderGrid() {
   const felder = [
@@ -135,7 +136,7 @@ function AntiPatterns() {
     <div className="antipatterns">
       {muster.map((m, i) => (
         <div className="antipattern" key={i}>
-          <span className="antipattern-x">×</span>
+          <span className="antipattern-x"><Icon name="x" /></span>
           <div>
             <h4>{m.titel}</h4>
             <p className="antipattern-kurz">«{m.kurz}»</p>
@@ -190,7 +191,7 @@ function Modul6Page({ onNavigate }) {
             </nav>
             <div className="module-detail-meta">
               <span className="module-detail-num">06</span>
-              <span className="module-detail-meta-time">⏱ Kerntext 12 Min · mit Vertiefungen 22 Min</span>
+              <span className="module-detail-meta-time">Kerntext 12 Min · mit Vertiefungen 22 Min</span>
             </div>
             <h1>Was Sie <em>konkret</em> tun können</h1>
             <p className="lede">In ruhigen Phasen lassen sich Gespräche, eigene Grenzen und ein persönlicher Krisenplan vorbereiten. Dabei können Sie mit dem Behandlungsteam besprechen, was Sie beobachten und welche Unterstützung passt. Die Aufgaben lassen sich gemeinsam verteilen.</p>
@@ -212,7 +213,7 @@ function Modul6Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}><Icon name="arrow-left" /> Alle Module</a>
             </div>
           </aside>
 
@@ -405,14 +406,14 @@ function Modul6Page({ onNavigate }) {
               <p><strong>Freiwillige Fortsetzung.</strong> «Wenn wir ruhig reden können, komme ich zurück.» Wenn Sie das möchten und die Situation ausreichend sicher ist, können Sie eine Rückkehr anbieten. Damit zeigen Sie, dass Sie die Beziehung schützen und nicht beenden möchten. Eine solche Zusage ist freiwillig.</p>
 
               <h3>Drei Beispiele zum Anpassen</h3>
-              <p>✗ «Du bist unmöglich, wenn du so schreist!»<br/>
-              ✓ <strong>«Ich lasse mich nicht anschreien. Ich gehe ins Nebenzimmer — wenn wir ruhig reden können, komme ich zurück.»</strong></p>
+              <p><Icon name="x" label="Weniger hilfreich" /> «Du bist unmöglich, wenn du so schreist!»<br/>
+              <Icon name="check" label="Vorschlag" /> <strong>«Ich lasse mich nicht anschreien. Ich gehe ins Nebenzimmer — wenn wir ruhig reden können, komme ich zurück.»</strong></p>
 
-              <p>✗ «Wenn du so weitermachst, gehe ich!»<br/>
-              ✓ <strong>«Ich mache mir Sorgen. Ich kann den Haushalt nicht allein organisieren. Ich möchte mit dem Behandlungsteam besprechen, welche Unterstützung möglich ist.»</strong></p>
+              <p><Icon name="x" label="Weniger hilfreich" /> «Wenn du so weitermachst, gehe ich!»<br/>
+              <Icon name="check" label="Vorschlag" /> <strong>«Ich mache mir Sorgen. Ich kann den Haushalt nicht allein organisieren. Ich möchte mit dem Behandlungsteam besprechen, welche Unterstützung möglich ist.»</strong></p>
 
-              <p>✗ «Hast du deine Medikamente genommen? Schon wieder vergessen?»<br/>
-              ✓ <strong>«Ich sehe, dass die Packung noch voll ist, und mache mir Sorgen. Was würde dir helfen, die Medikamente wie besprochen zu nehmen?»</strong></p>
+              <p><Icon name="x" label="Weniger hilfreich" /> «Hast du deine Medikamente genommen? Schon wieder vergessen?»<br/>
+              <Icon name="check" label="Vorschlag" /> <strong>«Ich sehe, dass die Packung noch voll ist, und mache mir Sorgen. Was würde dir helfen, die Medikamente wie besprochen zu nehmen?»</strong></p>
 
               <h3>Was Gespräche erschweren kann</h3>
               <AntiPatterns />
@@ -471,7 +472,7 @@ function Modul6Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Was Sie vermeiden sollten</span>
-                <p>✗ Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · ✗ Vorwurfsvolle Kontrollen der Medikamenteneinnahme oder Kontrollen ohne geklärte Aufgabe und Befugnis · ✗ Ultimaten stellen, die Sie nicht einhalten können · ✗ Behandlung und Unterstützung allein koordinieren wollen — nutzen Sie ein bestehendes Behandlungsteam oder eigene Angehörigenberatung.</p>
+                <p><Icon name="x" /> Heimlich Medikamente ins Essen mischen — das zerstört Vertrauen und ist rechtlich problematisch · <Icon name="x" /> Vorwurfsvolle Kontrollen der Medikamenteneinnahme oder Kontrollen ohne geklärte Aufgabe und Befugnis · <Icon name="x" /> Ultimaten stellen, die Sie nicht einhalten können · <Icon name="x" /> Behandlung und Unterstützung allein koordinieren wollen — nutzen Sie ein bestehendes Behandlungsteam oder eigene Angehörigenberatung.</p>
                 <p>Gemeinsam vereinbarte Erinnerungen und notwendige Hilfe bei der Einnahme sind davon zu unterscheiden. Klären Sie, welche Unterstützung gewünscht oder im Rahmen bestehender Sorgeaufgaben nötig ist und wer sie übernimmt.</p>
               </aside>
             </section>
@@ -517,7 +518,7 @@ function Modul6Page({ onNavigate }) {
                   </div>
                 </a>
                 <a className="next-module" href={navHref('unterstuetzung', 'dl-08')} onClick={navHandler('unterstuetzung', onNavigate, 'dl-08')}>
-                  <span className="next-module-num next-module-num-resource">→</span>
+                  <span className="next-module-num next-module-num-resource"><Icon name="arrow-right" /></span>
                   <div>
                     <h3>Fragen fürs Arztgespräch</h3>
                     <p>Mit der Checkliste DL-08 ein Angehörigengespräch vorbereiten.</p>
@@ -553,10 +554,10 @@ function Modul6Page({ onNavigate }) {
 
               <div className="module-nav-footer">
                 <a className="puk-link--action module-nav-btn" href={navHref('modul5')} onClick={navHandler('modul5', onNavigate)}>
-                  ← Modul 05 — Loyalitätskonflikte
+                  <Icon name="arrow-left" /> Modul 05 — Loyalitätskonflikte
                 </a>
                 <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul7')} onClick={navHandler('modul7', onNavigate)}>
-                  Modul 07 — Langfristige Tragfähigkeit →
+                  Modul 07 — Langfristige Tragfähigkeit <Icon name="arrow-right" />
                 </a>
               </div>
             </footer>

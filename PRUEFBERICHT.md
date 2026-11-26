@@ -22,7 +22,7 @@ hier nicht. Die Regeln der umgesetzten Abschnitte prüfen `npm test`,
 
 ## Status
 
-Stand der Website: Etappen 1 und 2 des Wechsels auf das Fachstellen-Profil 2026.10.2
+Stand der Website: Etappen 1 bis 3 des Wechsels auf das Fachstellen-Profil 2026.10.2
 (26. November 2026). Entscheide und geänderte Wortlaute: `_dev/PROFILWECHSEL-2026-10-2.md`.
 
 | Stufe | Status | Datum | Geprüft durch | Ergebnis |
@@ -104,6 +104,32 @@ Arbeitsstand vom 26. November 2026, keine Prüfstufe. Geprüft ist nur, was Etap
 | `npm run audit:puk` (kanonischer Auditor 1.10.1, Entwurf) | bestanden, 15 gerenderte Routen |
 | `npm run test:release-evidence` | 22 von 22 |
 
+### Etappe 3: Kopf, Skip-Link, Logo-Link, Fokus, Blauwerte, Icons
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | Kopf nicht fixiert | erfüllt | `profile/header-not-fixed`: 15 von 15 Routen; Vorher-/Nachher-Aufnahme der Startseite nach 1400 px Scrollen |
+| 2 | Skip-Link «Zum Hauptinhalt»; Logo-Link nennt Logotext und Ziel | erfüllt, Logo-Link mit Ergänzung | `profile/skip-and-logo-names` und Test «names the skip link and the logo link as the profile does»; der Name enthält zusätzlich «Bipolar & Angehörige», weil der Text im Link sichtbar ist |
+| 3 | Ein Fokussystem | erfüllt | Test `src/test/focus-system.test.js`: keine Fokus-Umrandung oder -Schatten ausserhalb von `src/puk-website.css`; `profile/focus-ring` (Schatten weiss und blau, Umrandung 2 px blau), `profile/jump-target-focus` (Überschrift von `#s6` in Modul 4), `profile/main-without-ring`, `keyboard/input-focus` (Rahmen blau, Innenring) |
+| 4 | Fokus mit erzwungenen Farben | nicht geprüft | Regel vorhanden (`CanvasText`), aber nicht im Kontrastmodus angesehen |
+| 5 | Blauwerte wie im Profil | erfüllt | `colors.tokens.css` byte-identisch mit `tokens/colors.css` des Profils (SHA-256 `6db6f130…`); Kontrastprüfung axe ohne Befund auf 16 Seiten bei 375 und 1366 px |
+| 6 | Keine Unicode-Symbole als Icons | erfüllt bis auf eine Figur | `profile/icons`: 15 von 15 Routen; Test «uses the profile icons instead of Unicode symbols»; offen: «Zeit →» in der Figur «Belastungsverlauf» |
+| 7 | Icons mit Bedeutung haben einen Namen, übrige sind ausgeblendet | erfüllt | 11 Icons mit Namen («Vorschlag», «Weniger hilfreich»), alle anderen `aria-hidden`; Prüfung in `profile/icons` und im Test |
+| 8 | Abstand zwischen Text und Icon | erfüllt | Messung auf 6 Seiten: kein Icon näher als 3 px am Text; vorher klebten Pfeile in den Aktionslinks am Text (erster Nachher-Stand) |
+| 9 | Neue Wörter fachlich und sprachlich geprüft | nicht erfüllt | «Vorschlag», «Weniger hilfreich», Name des Logo-Links: Wortlaut der bauenden Sitzung |
+
+### Kennzahlen der Etappe 3 (zum Nachrechnen)
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm test` | 291 Tests in 33 Dateien bestanden |
+| `npm run lint` | ohne Befund |
+| `npm run audit:website` | 764 Prüfungen, 0 Fehler |
+| `npm run audit:tools` | 225 Prüfungen, 0 Befunde |
+| `npm run audit:print` | 71 von 71 Prüfungen |
+| `npm run audit:puk` (kanonischer Auditor 1.10.1, Entwurf) | bestanden, 15 gerenderte Routen |
+| `npm run test:release-evidence` | 22 von 22 |
+
 ## Visualisierungs-Check
 
 In Etappe 1 wurde keine Figur gebaut oder geändert. Der Check der ganzen Website nach dem
@@ -151,6 +177,7 @@ Einzelheiten stehen in `_dev/PROFILWECHSEL-2026-10-2.md`.
 
 ### S Sprach-Review
 
+- Etappe 3: Namen für Hilfsmittel «Vorschlag» und «Weniger hilfreich» (Module 6 und 7), Name des Logo-Links.
 - Seite «Nicht gefunden» im Standardwortlaut des Profils, mit «Startseite» statt «Übersicht».
 - «Sich bei der Fachstelle melden», «bevor ich mich melde», Zusatz «werktags» neben der
   E-Mail-Adresse.

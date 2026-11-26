@@ -9,6 +9,7 @@ import { navHandler, navHref } from './nav-handler.js';
 import { EvidenceCitation, EvidenceSourceList, HandoutSources } from './module-guidance.jsx';
 import { ResponsibilityInline } from './shared.jsx';
 import { SITE, SENDER_MAILTO } from './site-config.js';
+import { Icon } from './icon.jsx';
 
 const HANDOUTS = {
   'DL-01': {
@@ -516,12 +517,12 @@ const MATERIAL_CARDS = [
   { id: 'DL-06', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Manie', desc: 'Veränderungen wahrnehmen, Gespräche führen und Schutzschritte gemeinsam vorbereiten.' },
   { id: 'DL-07', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Depression', desc: 'Begleitung anbieten und die eigenen Grenzen beachten.' },
   { id: 'DL-08', kind: 'handout', metaLabel: 'CHECKLISTE', title: 'Fragen für das Arztgespräch', desc: 'Fragen für das Gespräch in der Praxis oder Klinik, nach Themen geordnet.' },
-  { id: 'DL-09', kind: 'tool', tool: 'krisenplan', metaLabel: 'VORLAGE', cta: '↪ Krisenplan öffnen', title: 'Krisenplan', desc: 'Gemeinsam Frühwarnzeichen, Kontakte und Klinikwünsche festhalten.' },
+  { id: 'DL-09', kind: 'tool', tool: 'krisenplan', metaLabel: 'VORLAGE', cta: 'Krisenplan öffnen', title: 'Krisenplan', desc: 'Gemeinsam Frühwarnzeichen, Kontakte und Klinikwünsche festhalten.' },
 ];
 
 const KIND_META = {
-  handout: { label: 'HANDOUT', cta: '▸ Lesen + drucken' },
-  tool:    { label: 'WERKZEUG', cta: '↪ Werkzeug öffnen' },
+  handout: { label: 'HANDOUT', cta: 'Lesen + drucken' },
+  tool:    { label: 'WERKZEUG', cta: 'Werkzeug öffnen' },
 };
 
 // The tool is requested only once a material card or its deep link is opened.
@@ -660,7 +661,7 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
                   <div className="title">{r.title}</div>
                   <div className="desc">{r.desc}</div>
                   <div className="tag">{r.tag}</div>
-                  <div className="arrow" aria-hidden="true">{external ? '↗' : '→'}</div>
+                  <div className="arrow" aria-hidden="true"><Icon name={external ? 'arrow-up-right' : 'arrow-right'} /></div>
                 </a>
               );
             })}
@@ -700,7 +701,7 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
                   <h3>{d.title}</h3>
                   <p>{d.desc}</p>
                   <div className="download-actions">
-                    <span className="btn-arrow">{d.cta || meta.cta}</span>
+                    <span className="btn-arrow">{d.cta || meta.cta} <Icon name="arrow-right" /></span>
                   </div>
                 </button>
               );

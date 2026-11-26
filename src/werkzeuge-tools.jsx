@@ -4,6 +4,7 @@ import { clearStoredDraft } from './storage.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 import { EvidenceCitation } from './module-guidance.jsx';
 import { SITE, SENDER_MAILTO } from './site-config.js';
+import { Icon } from './icon.jsx';
 
 // Announce a user-selected step through its focused heading. The dialog itself
 // owns initial focus; timed breathing phases must not repeatedly move it.
@@ -84,7 +85,7 @@ function AtemuebungTool({ onClose }) {
             <p className="lede" style={{ maxWidth: '40ch' }}>Wenn Ihnen gerade alles zu viel ist, können Sie mit fünf geführten Atemzügen eine Pause machen. Atmen Sie so, wie es sich für Sie angenehm anfühlt.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '40ch' }}>Der Rhythmus ist: 4 Sekunden einatmen, 2 Sekunden halten, 6 Sekunden ausatmen und 2 Sekunden Pause. Er wiederholt sich fünfmal und dauert etwa 70 Sekunden. Das Atemhalten können Sie auslassen. Stoppen Sie bei Unwohlsein und atmen Sie normal weiter. Als Alternative können Sie den Kontakt zum Boden spüren und drei Dinge im Raum anschauen.</p>
             <div style={{ marginTop: 24 }}>
-              <button className="btn btn-primary" onClick={start}>Beginnen →</button>
+              <button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button>
             </div>
           </>
         )}
@@ -197,7 +198,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
           <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Meine Belastung wahrnehmen</h2>
           <p className="lede" style={{ maxWidth: '44ch' }}>Mit fünf Fragen können Sie Ihren Schlaf, Alltag, Ihre Kontakte und Ihr Befinden anschauen. Danach sehen Sie Ihre eigenen Antworten und können überlegen, welche Unterstützung Sie brauchen.</p>
           <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Die Fragen dienen der persönlichen Reflexion und sind kein Test mit wissenschaftlich bestätigter Aussagekraft. Sie erhalten weder eine Gesamtpunktzahl noch eine Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert.</p>
-          <div style={{ marginTop: 24 }}><button className="btn btn-primary" onClick={start}>Beginnen →</button></div>
+          <div style={{ marginTop: 24 }}><button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button></div>
         </>
       )}
       {phase === 'running' && (
@@ -212,7 +213,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
               <button key={option.label} className="selbsttest-opt" onClick={(event) => answer(index, event)}>{option.label}</button>
             ))}
           </div>
-          {answers.length > 0 && <button className="tool-quiet-btn" onClick={() => setAnswers(answers.slice(0, -1))}>← Frage zurück</button>}
+          {answers.length > 0 && <button className="tool-quiet-btn" onClick={() => setAnswers(answers.slice(0, -1))}><Icon name="arrow-left" /> Frage zurück</button>}
         </div>
       )}
       {phase === 'result' && (
@@ -239,8 +240,8 @@ function SelbsttestTool({ onClose, onNavigate }) {
             <span className="selbsttest-phone-label">Fachstelle Angehörigenarbeit PUK · werktags · kostenlos</span>
           </div>
           <div className="selbsttest-actions">
-            <button className="btn btn-primary" onClick={() => goto('unterstuetzung')}>Unterstützung und Ressourcen →</button>
-            <button className="selbsttest-secondary" onClick={() => goto('modul4', 's7')}>Mögliche Entlastungsschritte →</button>
+            <button className="btn btn-primary" onClick={() => goto('unterstuetzung')}>Unterstützung und Ressourcen <Icon name="arrow-right" /></button>
+            <button className="selbsttest-secondary" onClick={() => goto('modul4', 's7')}>Mögliche Entlastungsschritte <Icon name="arrow-right" /></button>
           </div>
           <div className="selbsttest-foot">
             <button className="tool-quiet-btn" onClick={start}>Fragen erneut ansehen</button>
@@ -370,7 +371,7 @@ function KrisenplanTool({ onClose, onNavigate }) {
           <p>Diese Vorlage füllen Sie gemeinsam aus. Besprechen Sie dabei, welche Aufgaben gewünscht und für Sie tragbar sind, was Sie mit einer Fachperson klären müssen und wann Sie die Absprachen erneut prüfen.</p>
           <p>Alle Angaben sind freiwillig. Halten Sie nur fest, was Sie gemeinsam vereinbaren möchten. Die Vorlage begründet weder eine Pflicht zur Überwachung noch eine Befugnis, Entscheidungen der anderen Person zu erzwingen.</p>
           <EvidenceCitation keys={['niceBipolar']} />
-          <button className="tool-quiet-btn no-print" onClick={() => { onClose(); onNavigate('modul6', 's2'); }}>Plan gemeinsam vorbereiten · Modul 6 →</button>
+          <button className="tool-quiet-btn no-print" onClick={() => { onClose(); onNavigate('modul6', 's2'); }}>Plan gemeinsam vorbereiten · Modul 6 <Icon name="arrow-right" /></button>
           <div className="tool-intro-notes krisenplan-intro-notes" data-storage-key={KRISENPLAN_STORAGE_KEY}>
             <p data-storage-notice="memory-only">Ihre Eingaben können persönliche Gesundheits- und Kontaktdaten enthalten. Sie werden nicht automatisch gespeichert oder versendet. Beim Schliessen des Werkzeugs oder Neuladen der Seite gehen sie verloren. Sichern Sie den ausgefüllten Plan bei Bedarf vor dem Schliessen.</p>
             <p data-storage-notice="legacy-deletion">Entwürfe aus früheren Versionen werden nicht wieder geöffnet. Mit «Entwurf löschen» können Sie aktuelle Eingaben und frühere Kopien dieses Werkzeugs aus dem Browser entfernen.</p>
@@ -586,7 +587,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
             <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu dem, was Sie im Alltag unterstützt: Körper, Beziehungen, eigene Welt und fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie können überlegen, was Sie bewahren möchten und wo Sie Unterstützung wünschen. Ihre gesundheitliche Stabilität oder Tragfähigkeit lässt sich damit nicht messen.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Die Reflexion dauert etwa drei Minuten und findet anonym im Browser statt. Sie liefert keine klinische Auswertung mit wissenschaftlich bestätigter Aussagekraft und keine Diagnose. Bei starkem oder anhaltendem Unterstützungsbedarf ist fachliche Beratung sinnvoll.</p>
             <div style={{ marginTop: 24 }}>
-              <button className="btn btn-primary" onClick={start}>Beginnen →</button>
+              <button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button>
             </div>
           </>
         )}
@@ -607,7 +608,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
               ))}
             </div>
             {answers.length > 0 && (
-              <button className="tool-quiet-btn" onClick={back}>← Frage zurück</button>
+              <button className="tool-quiet-btn" onClick={back}><Icon name="arrow-left" /> Frage zurück</button>
             )}
           </div>
         )}
@@ -652,10 +653,10 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
 
             <div className="selbsttest-actions">
               <button className="btn btn-primary" onClick={() => { onClose(); onNavigate('modul7', 's4'); }}>
-                Modul 7 — Langfristige Tragfähigkeit →
+                Modul 7 — Langfristige Tragfähigkeit <Icon name="arrow-right" />
               </button>
               <button className="selbsttest-secondary" onClick={() => { onClose(); onNavigate('unterstuetzung'); }}>
-                Unterstützung und Ressourcen →
+                Unterstützung und Ressourcen <Icon name="arrow-right" />
               </button>
             </div>
 
@@ -791,7 +792,7 @@ function EisbergTool({ onClose, onNavigate }) {
             <p className="lede" style={{ maxWidth: '46ch' }}>Der Eisberg ist eine Metapher, keine Messung: Manche Belastungen sind sichtbar, andere bleiben verborgen. Die Begriffe sind mögliche Erfahrungen; nicht alle müssen auf Sie zutreffen.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Wählen Sie einen Begriff, um mehr über diese mögliche Erfahrung zu lesen. Markieren Sie, was Sie wiedererkennen. Am Ende sehen Sie Ihre Auswahl im Überblick.</p>
             <div style={{ marginTop: 24 }}>
-              <button className="btn btn-primary" onClick={start}>Eisberg ansehen →</button>
+              <button className="btn btn-primary" onClick={start}>Eisberg ansehen <Icon name="arrow-right" /></button>
             </div>
           </>
         )}
@@ -853,7 +854,7 @@ function EisbergTool({ onClose, onNavigate }) {
                     onClick={() => toggleMark(sel.key)}
                     aria-pressed={marked.has(sel.key)}
                   >
-                    {marked.has(sel.key) ? '✓ Markiert' : 'Trifft auf mich zu'}
+                    {marked.has(sel.key) ? <><Icon name="check" /> Markiert</> : 'Trifft auf mich zu'}
                   </button>
                 </>
               ) : (
@@ -866,7 +867,7 @@ function EisbergTool({ onClose, onNavigate }) {
                 {marked.size === 0 ? 'Nichts markiert' : marked.size === 1 ? '1 Begriff markiert' : `${marked.size} Begriffe markiert`}
               </span>
               <button className="btn btn-primary" onClick={goResult} disabled={marked.size === 0}>
-                Übersicht ansehen →
+                Übersicht ansehen <Icon name="arrow-right" />
               </button>
             </div>
           </div>
@@ -897,7 +898,7 @@ function EisbergTool({ onClose, onNavigate }) {
 
             <div className="selbsttest-actions">
               <button className="btn btn-primary" onClick={() => { onClose(); onNavigate('modul2', 's2'); }}>
-                Modul 2 — Die eigene Belastung verstehen →
+                Modul 2 — Die eigene Belastung verstehen <Icon name="arrow-right" />
               </button>
             </div>
 
@@ -1021,7 +1022,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               <p>Dieses Werkzeug dient der Gesprächsvorbereitung; es ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht.</p>
             </div>
             <div style={{ marginTop: 18 }}>
-              <button className="btn btn-primary" onClick={start}>Beginnen →</button>
+              <button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button>
             </div>
           </>
         )}
@@ -1044,8 +1045,8 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               ))}
             </div>
             <div className="kommunikation-nav">
-              <button className="tool-quiet-btn" onClick={() => setStep('intro')}>← Zurück</button>
-              <button className="btn btn-primary" onClick={() => setStep('beobachtung')} disabled={!data.anlass}>Weiter →</button>
+              <button className="tool-quiet-btn" onClick={() => setStep('intro')}><Icon name="arrow-left" /> Zurück</button>
+              <button className="btn btn-primary" onClick={() => setStep('beobachtung')} disabled={!data.anlass}>Weiter <Icon name="arrow-right" /></button>
             </div>
           </div>
         )}
@@ -1065,8 +1066,8 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
             />
             <p className="kommunikation-print-value">{data.beobachtung || '— noch nicht ausgefüllt —'}</p>
             <div className="kommunikation-nav no-print">
-              <button className="tool-quiet-btn" onClick={() => setStep('anlass')}>← Zurück</button>
-              <button className="btn btn-primary" onClick={() => setStep('wirkung')}>Weiter →</button>
+              <button className="tool-quiet-btn" onClick={() => setStep('anlass')}><Icon name="arrow-left" /> Zurück</button>
+              <button className="btn btn-primary" onClick={() => setStep('wirkung')}>Weiter <Icon name="arrow-right" /></button>
             </div>
           </div>
         )}
@@ -1086,8 +1087,8 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
             />
             <p className="kommunikation-print-value">{data.wirkung || '— noch nicht ausgefüllt —'}</p>
             <div className="kommunikation-nav no-print">
-              <button className="tool-quiet-btn" onClick={() => setStep('beobachtung')}>← Zurück</button>
-              <button className="btn btn-primary" onClick={() => setStep('bitte')}>Weiter →</button>
+              <button className="tool-quiet-btn" onClick={() => setStep('beobachtung')}><Icon name="arrow-left" /> Zurück</button>
+              <button className="btn btn-primary" onClick={() => setStep('bitte')}>Weiter <Icon name="arrow-right" /></button>
             </div>
           </div>
         )}
@@ -1122,8 +1123,8 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               </>
             )}
             <div className="kommunikation-nav no-print">
-              <button className="tool-quiet-btn" onClick={() => setStep('wirkung')}>← Zurück</button>
-              <button className="btn btn-primary" onClick={() => setStep('result')} disabled={isBoundary && !data.grenze.trim()}>Skript ansehen →</button>
+              <button className="tool-quiet-btn" onClick={() => setStep('wirkung')}><Icon name="arrow-left" /> Zurück</button>
+              <button className="btn btn-primary" onClick={() => setStep('result')} disabled={isBoundary && !data.grenze.trim()}>Skript ansehen <Icon name="arrow-right" /></button>
             </div>
           </div>
         )}
@@ -1180,7 +1181,7 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
               <button className="btn btn-primary" onClick={copyToClipboard} data-data-export="clipboard" data-storage-key={KOMMUNIKATION_STORAGE_KEY}>Skript kopieren</button>
               <button className="btn btn-primary" onClick={() => window.print()} data-data-export="print-pdf" data-storage-key={KOMMUNIKATION_STORAGE_KEY}>Drucken / als PDF speichern</button>
               <button className="selbsttest-secondary" onClick={() => { onClose(); onNavigate('modul6', 's4'); }}>
-                Modul 6 — Was Sie konkret tun können →
+                Modul 6 — Was Sie konkret tun können <Icon name="arrow-right" />
               </button>
             </div>
             {copyHint.text && (
@@ -1318,10 +1319,10 @@ function EeKreislaufTool({ onClose, onNavigate }) {
 
         <div className="selbsttest-actions">
           <button className="btn btn-primary" onClick={() => { onClose(); onNavigate('modul5', 's3'); }}>
-            Modul 5 — Loyalitätskonflikte →
+            Modul 5 — Loyalitätskonflikte <Icon name="arrow-right" />
           </button>
           <button className="selbsttest-secondary" onClick={() => { onClose(); onNavigate('modul2', 's3'); }}>
-            Modul 2 — Eigene Belastung →
+            Modul 2 — Eigene Belastung <Icon name="arrow-right" />
           </button>
         </div>
 
@@ -1453,7 +1454,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
 
         <div className="selbsttest-actions">
           <button className="btn btn-primary" onClick={() => { onClose(); onNavigate('modul1', 's5'); }}>
-            Bipolar I und II unterscheiden · Modul 1 →
+            Bipolar I und II unterscheiden · Modul 1 <Icon name="arrow-right" />
           </button>
         </div>
     </ToolOverlay>
@@ -1598,10 +1599,10 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
 
         <div className="selbsttest-actions">
           <button className="btn btn-primary" onClick={() => { onClose(); onNavigate('modul4', 's2'); }}>
-            Modul 4 — Wenn die Kraft nachlässt →
+            Modul 4 — Wenn die Kraft nachlässt <Icon name="arrow-right" />
           </button>
           <button className="selbsttest-secondary" onClick={() => { onClose(); onNavigate('unterstuetzung'); }}>
-            Unterstützung und Ressourcen →
+            Unterstützung und Ressourcen <Icon name="arrow-right" />
           </button>
         </div>
     </ToolOverlay>

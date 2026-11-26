@@ -77,7 +77,7 @@ function App() {
         e.preventDefault();
         const m = document.getElementById('main-content');
         if (m) { m.focus(); m.scrollIntoView({ behavior: 'instant' }); }
-      }}>Zum Inhalt springen</a>
+      }}>Zum Hauptinhalt</a>
       <SenderLine />
       <Nav page={page} onNavigate={onNavigate} />
       <main id="main-content" tabIndex={-1}>

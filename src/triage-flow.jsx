@@ -1,5 +1,6 @@
 import React from 'react';
 import { navHandler, navHref } from './nav-handler.js';
+import { Icon } from './icon.jsx';
 
 const TRIAGE_RESULTS = {
   'q1b-yes': { label: 'Empfehlung', text: 'Modul 1 — Die bipolare Störung verstehen', target: 'modul1' },
@@ -195,7 +196,7 @@ function TriageFlow({ onNavigate }) {
               href={navHref(link.target, link.anchor)}
               onClick={navHandler(link.target, onNavigate, link.anchor)}
             >
-              {link.text} →
+              {link.text} <Icon name="arrow-right" />
             </a>
           ))}
           {result.secondary && <p>Sie können sich direkt beraten lassen. Wenn Sie auch etwas zu Ihrer Situation lesen möchten: <a href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>Wenn die Kraft nachlässt</a>.</p>}

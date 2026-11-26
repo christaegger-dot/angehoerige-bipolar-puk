@@ -28,7 +28,7 @@ describe('Tool step accessibility', () => {
     const Tool = TOOL_COMPONENTS[tool];
     render(<Tool onClose={vi.fn()} onNavigate={vi.fn()} />);
     const dialog = screen.getByRole('dialog');
-    await user.click(within(dialog).getByRole('button', { name: 'Beginnen →' }));
+    await user.click(within(dialog).getByRole('button', { name: 'Beginnen' }));
 
     for (let question = 0; question < count; question += 1) {
       const heading = within(dialog).getByRole('heading', { level: 2 });
@@ -39,7 +39,7 @@ describe('Tool step accessibility', () => {
       await user.keyboard('{Enter}');
 
       if (question === 0) {
-        await user.click(within(dialog).getByRole('button', { name: '← Frage zurück' }));
+        await user.click(within(dialog).getByRole('button', { name: 'Frage zurück' }));
         expect(within(dialog).getByRole('heading', { level: 2 })).toHaveFocus();
         await user.tab();
         await user.keyboard('{Enter}');
@@ -57,7 +57,7 @@ describe('Tool step accessibility', () => {
     const Tool = TOOL_COMPONENTS.kommunikation;
     render(<Tool onClose={vi.fn()} onNavigate={vi.fn()} />);
     const dialog = screen.getByRole('dialog');
-    await user.click(within(dialog).getByRole('button', { name: 'Beginnen →' }));
+    await user.click(within(dialog).getByRole('button', { name: 'Beginnen' }));
     expect(within(dialog).getByRole('heading', { name: 'Worum geht es im Gespräch?' })).toHaveFocus();
     await user.tab();
     expect(dialog.querySelector('.kommunikation-anlass')).toHaveFocus();
@@ -68,12 +68,12 @@ describe('Tool step accessibility', () => {
       'Wie geht es Ihnen damit?',
       'Was wäre Ihr Anliegen oder Ihre Bitte?',
     ]) {
-      await user.click(within(dialog).getByRole('button', { name: 'Weiter →' }));
+      await user.click(within(dialog).getByRole('button', { name: 'Weiter' }));
       expect(within(dialog).getByRole('heading', { name: label })).toHaveFocus();
       await user.tab();
       expect(within(dialog).getByRole('textbox', { name: label })).toHaveFocus();
     }
-    await user.click(within(dialog).getByRole('button', { name: 'Skript ansehen →' }));
+    await user.click(within(dialog).getByRole('button', { name: 'Skript ansehen' }));
     expect(within(dialog).getByRole('heading', { level: 2 })).toHaveFocus();
     await user.click(within(dialog).getByRole('button', { name: 'Skript bearbeiten' }));
     expect(within(dialog).getByRole('heading', { name: 'Worum geht es im Gespräch?' })).toHaveFocus();
@@ -86,7 +86,7 @@ describe('Tool step accessibility', () => {
     render(<Tool onClose={vi.fn()} />);
     const announcement = screen.getByRole('status');
     expect(announcement).toBeEmptyDOMElement();
-    fireEvent.click(screen.getByRole('button', { name: 'Beginnen →' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Beginnen' }));
     expect(screen.getByRole('group', { name: 'Geführte Atemübung' })).toHaveFocus();
     expect(screen.getByRole('status')).toBe(announcement);
     expect(screen.getByRole('status')).toHaveTextContent('Einatmen');
@@ -112,14 +112,14 @@ describe('Tool step accessibility', () => {
     const Tool = TOOL_COMPONENTS.eisberg;
     render(<Tool onClose={vi.fn()} onNavigate={vi.fn()} />);
     const dialog = screen.getByRole('dialog');
-    await user.click(within(dialog).getByRole('button', { name: 'Eisberg ansehen →' }));
+    await user.click(within(dialog).getByRole('button', { name: 'Eisberg ansehen' }));
     expect(within(dialog).getByRole('heading', { name: 'Der Eisberg Ihrer Belastung' })).toHaveFocus();
     await user.tab();
     const firstTerm = dialog.querySelector('.eisberg-tool-btn');
     expect(firstTerm).toHaveFocus();
     await user.keyboard('{Enter}');
     await user.click(within(dialog).getByRole('button', { name: 'Trifft auf mich zu' }));
-    await user.click(within(dialog).getByRole('button', { name: 'Übersicht ansehen →' }));
+    await user.click(within(dialog).getByRole('button', { name: 'Übersicht ansehen' }));
     expect(within(dialog).getByRole('heading', { name: 'Ein Begriff wiedererkannt' })).toHaveFocus();
     await user.click(within(dialog).getByRole('button', { name: 'Erneut ansehen' }));
     expect(within(dialog).getByRole('heading', { name: 'Der Eisberg Ihrer Belastung' })).toHaveFocus();

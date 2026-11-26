@@ -6,6 +6,7 @@ import { Eisberg } from './eisberg.jsx';
 import { ModuleQuickStart, EvidenceSources, EvidenceCitation, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { SITE, SENDER_MAILTO } from './site-config.js';
+import { Icon } from './icon.jsx';
 
 
 function EisbergFigur() {
@@ -244,7 +245,7 @@ function Modul2Page({ onNavigate }) {
             </nav>
             <div className="module-detail-meta">
               <span className="module-detail-num">02</span>
-              <span className="module-detail-meta-time">⏱ 12–15 Minuten · 8 Abschnitte</span>
+              <span className="module-detail-meta-time">12–15 Minuten · 8 Abschnitte</span>
             </div>
             <h1>Die eigene <em>Belastung</em> verstehen</h1>
             <p className="lede">Als Angehörige können Sie belastet sein, ohne dass andere es bemerken. Nach schwierigen Erfahrungen bleiben Sie möglicherweise besonders wachsam. Wissen kann helfen, dies einzuordnen; für Entlastung braucht es manchmal auch konkrete Hilfe im Alltag.</p>
@@ -266,7 +267,7 @@ function Modul2Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}><Icon name="arrow-left" /> Alle Module</a>
             </div>
           </aside>
 
@@ -450,10 +451,10 @@ function Modul2Page({ onNavigate }) {
 
               <div className="module-nav-footer">
                 <a className="puk-link--action module-nav-btn" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)}>
-                  ← Modul 01 — Die bipolare Störung verstehen
+                  <Icon name="arrow-left" /> Modul 01 — Die bipolare Störung verstehen
                 </a>
                 <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul3')} onClick={navHandler('modul3', onNavigate)}>
-                  Modul 03 — Wie Beziehungen unter Druck geraten →
+                  Modul 03 — Wie Beziehungen unter Druck geraten <Icon name="arrow-right" />
                 </a>
               </div>
             </footer>

@@ -5,6 +5,7 @@ import React from 'react';
 import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { ResponsibilityInline } from './shared.jsx';
+import { Icon } from './icon.jsx';
 
 function ZweiLinien() {
   // Konzept: Zwei Linien beginnen ruhig parallel, geraten unter Druck,
@@ -187,7 +188,7 @@ function Modul3Page({ onNavigate }) {
             </nav>
             <div className="module-detail-meta">
               <span className="module-detail-num">03</span>
-              <span className="module-detail-meta-time">⏱ 10–12 Minuten · 7 Abschnitte</span>
+              <span className="module-detail-meta-time">10–12 Minuten · 7 Abschnitte</span>
             </div>
             <h1>Wie Beziehungen unter <em>Druck</em> geraten</h1>
             <p className="lede">Wiederholte Krisen können Aufgabenverteilung, Vertrauen und Nähe unterschiedlich stark und lange belasten. Neue Absprachen und Entlastung können Ihnen mehr Raum füreinander geben. Auch schwer ansprechbare Erfahrungen wie Gewalt, Geldverlust oder sexuelle Enthemmung haben hier Platz.</p>
@@ -209,7 +210,7 @@ function Modul3Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}><Icon name="arrow-left" /> Alle Module</a>
             </div>
           </aside>
 
@@ -388,10 +389,10 @@ function Modul3Page({ onNavigate }) {
 
               <div className="module-nav-footer">
                 <a className="puk-link--action module-nav-btn" href={navHref('modul2')} onClick={navHandler('modul2', onNavigate)}>
-                  ← Modul 02 — Die eigene Belastung verstehen
+                  <Icon name="arrow-left" /> Modul 02 — Die eigene Belastung verstehen
                 </a>
                 <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
-                  Modul 04 — Wenn die Kraft nachlässt →
+                  Modul 04 — Wenn die Kraft nachlässt <Icon name="arrow-right" />
                 </a>
               </div>
             </footer>

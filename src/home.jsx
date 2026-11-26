@@ -5,6 +5,7 @@ import { Ill } from './illustrations.jsx';
 import { ANLAUFSTELLEN_ENTRY, TOOLS } from './site-content.js';
 import { TriageFlow } from './triage-flow.jsx';
 import { SITE, SENDER_MAILTO } from './site-config.js';
+import { Icon } from './icon.jsx';
 
 function HomePage({ onNavigate }) {
   return (
@@ -18,7 +19,7 @@ function HomePage({ onNavigate }) {
           <p className="hero-lede animate-in delay-2">Informationen und Anregungen für Partnerinnen und Partner, Eltern, Geschwister, erwachsene Kinder, Freundinnen und Freunde. Hier geht es um die Erkrankung und um Ihre eigenen Bedürfnisse als Angehörige oder nahestehende Person.</p>
           <div className="hero-actions animate-in delay-3">
             <a className="hero-cta puk-link--action" href={navHref('start', 'triage')} onClick={navHandler('start', onNavigate, 'triage')}>
-              Wo soll ich anfangen? →
+              Wo soll ich anfangen? <Icon name="arrow-right" />
             </a>
             <a className="hero-cta-secondary puk-link--action" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)}>Direkt zu Modul 1</a>
             <a className="hero-cta-secondary puk-link--action" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Konkrete Hilfen für den Alltag</a>
@@ -62,10 +63,10 @@ function HomePage({ onNavigate }) {
                   <p>Wenn Sie systematisch lesen oder gezielt ein Thema auswählen möchten.</p>
                   <div className="module-meta">
                     <span>Sieben Module</span>
-                    <span>· Lernpfad öffnen →</span>
+                    <span>· Lernpfad öffnen <Icon name="arrow-right" /></span>
                   </div>
                 </div>
-                <div className="module-row-arrow" aria-hidden="true">→</div>
+                <div className="module-row-arrow" aria-hidden="true"><Icon name="arrow-right" /></div>
               </a>
             </li>
             <li>
@@ -77,10 +78,10 @@ function HomePage({ onNavigate }) {
                   <p>Wenn Sie lieber reflektieren, planen oder ein Gespräch vorbereiten möchten.</p>
                   <div className="module-meta">
                     <span>Neun Werkzeuge</span>
-                    <span>· Werkzeuge öffnen →</span>
+                    <span>· Werkzeuge öffnen <Icon name="arrow-right" /></span>
                   </div>
                 </div>
-                <div className="module-row-arrow" aria-hidden="true">→</div>
+                <div className="module-row-arrow" aria-hidden="true"><Icon name="arrow-right" /></div>
               </a>
             </li>
             <li>
@@ -91,11 +92,11 @@ function HomePage({ onNavigate }) {
                   <h3>{ANLAUFSTELLEN_ENTRY.title}</h3>
                   <p>{ANLAUFSTELLEN_ENTRY.desc}</p>
                   <div className="module-meta">
-                    <span>⏱ {ANLAUFSTELLEN_ENTRY.time}</span>
-                    <span>· Hilfe, Material und Kontakt →</span>
+                    <span>{ANLAUFSTELLEN_ENTRY.time}</span>
+                    <span>· Hilfe, Material und Kontakt <Icon name="arrow-right" /></span>
                   </div>
                 </div>
-                <div className="module-row-arrow" aria-hidden="true">→</div>
+                <div className="module-row-arrow" aria-hidden="true"><Icon name="arrow-right" /></div>
               </a>
             </li>
           </ul>
@@ -127,7 +128,7 @@ function HomePage({ onNavigate }) {
               <span className="kicker">Werkzeuge</span>
               <h2>Werkzeuge direkt ausprobieren.</h2>
             </div>
-            <a className="tools-teaser-link" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>Alle neun Werkzeuge →</a>
+            <a className="tools-teaser-link" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>Alle neun Werkzeuge <Icon name="arrow-right" /></a>
           </div>
           <ul className="tools-row" role="list" aria-label="Ausgewählte Werkzeuge">
             {[TOOLS[0], TOOLS[3], TOOLS[1]].map((t) =>
@@ -136,7 +137,7 @@ function HomePage({ onNavigate }) {
                   <span className="tools-row-tag">{t.tag}</span>
                   <h3>{t.title}</h3>
                   <p>{t.desc}</p>
-                  <span className="tools-row-item-arrow">Öffnen →</span>
+                  <span className="tools-row-item-arrow">Öffnen <Icon name="arrow-right" /></span>
                 </a>
               </li>
             )}

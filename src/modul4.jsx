@@ -4,6 +4,7 @@
 import React from 'react';
 import { ModuleQuickStart, EvidenceSources, EvidenceCitation, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
+import { Icon } from './icon.jsx';
 
 function Reservoir() {
   const w = 560, h = 380;
@@ -164,7 +165,7 @@ function Modul4Page({ onNavigate }) {
             </nav>
             <div className="module-detail-meta">
               <span className="module-detail-num">04</span>
-              <span className="module-detail-meta-time">⏱ 14–16 Minuten · 8 Abschnitte</span>
+              <span className="module-detail-meta-time">14–16 Minuten · 8 Abschnitte</span>
             </div>
             <h1>Wenn die Kraft <em>nachlässt</em></h1>
             <p className="lede">Anhaltende Belastung kann Ihre Kraft und Gesundheit beeinträchtigen, auch zwischen Krankheitsphasen. Wie lange und wie stark Sie belastet sind, ist von Mensch zu Mensch unterschiedlich. Auch Erholung und mehr Spielraum im Alltag sind möglich. Im Mittelpunkt dieses Moduls steht, wie es Ihnen selbst unter dieser Belastung geht.</p>
@@ -186,7 +187,7 @@ function Modul4Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}><Icon name="arrow-left" /> Alle Module</a>
             </div>
           </aside>
 
@@ -435,10 +436,10 @@ function Modul4Page({ onNavigate }) {
 
               <div className="module-nav-footer">
                 <a className="puk-link--action module-nav-btn" href={navHref('modul3')} onClick={navHandler('modul3', onNavigate)}>
-                  ← Modul 03 — Wie Beziehungen unter Druck geraten
+                  <Icon name="arrow-left" /> Modul 03 — Wie Beziehungen unter Druck geraten
                 </a>
                 <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul5')} onClick={navHandler('modul5', onNavigate)}>
-                  Modul 05 — Loyalitätskonflikte →
+                  Modul 05 — Loyalitätskonflikte <Icon name="arrow-right" />
                 </a>
               </div>
             </footer>

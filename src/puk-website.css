@@ -105,7 +105,6 @@ h3 { font-size: var(--web-size-h3-fluid); line-height: 1.15; }
 .tools-grid { padding: 0; list-style: none; }
 .tools-grid > li { min-width: 0; }
 .tools-grid .tool-card-lg { width: 100%; height: 100%; }
-.module-toc-inner { top: calc(var(--nav-height, 68px) + 16px); }
 .figure-text { margin-block: 24px; padding-block: 20px; border-block: 1px solid var(--border-hairline); max-width: var(--web-content-measure); }
 .figure-text h3 { margin-top: 0 !important; font-size: var(--size-body); }
 .figure-text .figure-source { font-size: var(--size-body-sm); color: var(--text-muted); }
@@ -125,25 +124,39 @@ h3 { font-size: var(--web-size-h3-fluid); line-height: 1.15; }
 .module-body :is(p, li, dd, blockquote) { max-width: var(--web-content-measure); }
 .module-body .figure-text .module-credits { max-width: var(--web-content-measure); }
 .module-body ul.key-points li { max-width: var(--web-content-measure); }
-/* Canonical ring for actions; field focus uses a blue border plus inner ring. */
-:is(a[href], button, summary, input[type="checkbox"], input[type="radio"], [tabindex]):focus-visible {
+/* Ein Fokussystem (Fachstellen-Profil 2026.10.2, Karte «Fokus»; alle früheren Einzelregeln entfallen).
+   Bedienelemente tragen focus-ring: 2 px Weiss, dann 2 px PUK-Blau. Die Umrandung zeichnet dasselbe
+   Blau deckungsgleich nach; sie bleibt sichtbar, wo eine Zustandsregel den Schatten überschreibt. */
+:is(a[href], button, summary, [role="button"], [role="tab"], [role="switch"], [role="link"],
+    input[type="checkbox"], input[type="radio"], [tabindex]:not([tabindex="-1"])):focus-visible {
   outline: 2px solid var(--puk-blue-100);
   outline-offset: 2px;
   box-shadow: var(--focus-ring);
 }
-:is(input:not([type="checkbox"]):not([type="radio"]), textarea, select):focus-visible,
-.krisenplan-input:focus-visible {
-  outline: 2px solid var(--puk-blue-100);
-  outline-offset: 2px;
+/* Felder färben stattdessen ihren Rahmen blau und tragen einen 1-px-Innenring. */
+:is(input:not([type="checkbox"]):not([type="radio"]), textarea, select):focus-visible {
+  outline: none;
   border-color: var(--puk-blue-100);
   box-shadow: inset 0 0 0 1px var(--puk-blue-100);
+}
+/* Sprungziele (Profil 2026.10.2, P-16): Abschnitte und Überschriften, die nach einem Sprung oder
+   Seitenwechsel den Fokus erhalten, zeigen das Fokusbild. main ist ausgenommen, damit der Skip-Link
+   den Inhaltsbereich nicht mit einem seitenbreiten Ring umgibt. */
+:where(section, h2, h3, h4)[tabindex="-1"]:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+/* Erzwungene Farben: Der Browser entfernt Schatten; dort gilt eine Umrandung in CanvasText. */
+@media (forced-colors: active) {
+  :focus-visible:not([tabindex="-1"]) { outline: 2px solid CanvasText !important; outline-offset: 2px !important; }
+  :where(section, h2, h3, h4)[tabindex="-1"]:focus { outline: 2px solid CanvasText; outline-offset: 2px; box-shadow: none; }
 }
 @media (max-width: 900px) {
   .module-layout { grid-template-columns: minmax(0, 1fr); }
   .module-toc-inner { position: static; }
 }
 @media (max-width: 760px) {
-  .nav { position: relative; }
   .nav-inner { align-items: flex-start; padding-block: 20px 12px; }
   .nav-brand { width: 100%; gap: 12px; }
   .nav-brand-mark { width: 100%; }
@@ -336,4 +349,23 @@ small { font-size: var(--size-body-sm); }
 @media print {
   .site-sender { display: none !important; }
   .puk-site-inline-ref { background: none; border-left: 2px solid var(--print-rule); }
+}
+
+/* ── Fachstellen-Profil 2026.10.2, Etappe 3 (26.11.2026) ──
+   Icons des Profils statt Unicode-Symbolen (src/icon.jsx). Sie stehen in Textgrösse und Textfarbe. */
+.puk-icon {
+  display: inline-block;
+  inline-size: 1em;
+  block-size: 1em;
+  flex: none;
+  vertical-align: -0.125em;
+  overflow: visible;
+}
+/* In Flex-Containern (z. B. Aktionslinks) fällt der Leerraum zwischen Text und Icon weg;
+   ein kleiner Abstand ersetzt ihn. Ausdrücklich gesetzte Abstände gehen vor (:where ohne Gewicht). */
+:where(a, button, span, div):has(> .puk-icon) { column-gap: .35em; }
+/* Im Windows-Kontrastmodus folgen die Icons über currentColor der Systemfarbe des Textes.
+   Der Haken der Listen ist eine Hintergrundfläche mit Maske; sie würde sonst zur Seitenfarbe. */
+@media (forced-colors: active) {
+  .module-body ul.key-points li::before { background-color: CanvasText; forced-color-adjust: none; }
 }
