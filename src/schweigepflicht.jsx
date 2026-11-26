@@ -16,7 +16,7 @@ function SchweigepflichtPage({ onNavigate }) {
             <span className="sep">/</span>
             <a href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a>
             <span className="sep">/</span>
-            <span>Schweigepflicht</span>
+            <span aria-current="page">Schweigepflicht</span>
           </div>
           <div className="eyebrow animate-in reference-eyebrow"><span className="dot"></span>Informationen fürs Gespräch</div>
           <h1 className="animate-in delay-1 reference-title">Schweigepflicht bei Angehörigen&shy;gesprächen.</h1>

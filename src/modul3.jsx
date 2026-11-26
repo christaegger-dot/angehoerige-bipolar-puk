@@ -182,7 +182,7 @@ function Modul3Page({ onNavigate }) {
               <span className="sep">/</span>
               <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
               <span className="sep">/</span>
-              <span>Modul 3</span>
+              <span aria-current="page">Modul 3</span>
             </div>
             <div className="module-detail-meta">
               <span className="module-detail-num">03</span>

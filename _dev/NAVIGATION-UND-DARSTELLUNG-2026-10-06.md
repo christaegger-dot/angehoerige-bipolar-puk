@@ -35,3 +35,13 @@ Reproduzierbare Regressionen: `src/test/navigation-history.test.jsx`, `src/test/
 ## Verbleibende Grenze
 
 Es wurden keine neuen Release-Blocker bestätigt. Der bestehende P1-01 mit tatsächlichen VoiceOver/Safari- und NVDA/Windows-Prüfungen bleibt offen; automatisierte Chromium- und axe-Prüfungen ersetzen ihn nicht. Dieser Durchgang bestätigt keine vollständige Produktionsfreigabe.
+
+## Nachtrag 26. November 2026 · Aktueller Navigationsort auf Unterseiten
+
+Seit der obigen P3-Korrektur trug auf den sieben Moduldetailseiten und der Schweigepflichtseite kein Element mehr `aria-current="page"`. Der kanonische PUK-Auditor (`npm run audit:puk`) verlangt pro Seite genau einen semantisch und sichtbar aktiven Navigationsort und meldete deshalb 32 Befunde (8 Seiten × 4 Breiten).
+
+Korrektur: Der letzte Brotkrumen dieser acht Seiten («Modul N» bzw. «Schweigepflicht») ist mit `aria-current="page"` ausgezeichnet und unterstrichen (`src/puk-website.css`). Damit bezeichnet die Auszeichnung die tatsächlich aktuelle Seite; der Link «Module» bleibt wie zuvor nur visuell als Themenbereich markiert. Regression: `src/test/app.test.jsx`.
+
+Verifikation am neuen Build: `audit:puk` bestanden (16 Routen), `audit:website` 697/697, `audit:tools` 225/225, `audit:print` 72/72, Lint, App-Tests mit Coverage-Gate und `npm audit` ohne Befund.
+
+Release-Nachweise: Der Release-Fingerprint hat sich durch diese Änderung und die gleichzeitige Abhängigkeitsaktualisierung geändert. Die begrenzte technische Datenschutz-Acceptance und die vorbereiteten AT-Läufe sind im Auftrag der Projektverantwortlichen an den neuen Fingerprint gebunden (`_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md`). Die menschlichen Screenreader-Läufe bleiben nicht ausgeführt.

@@ -75,6 +75,10 @@ describe('App navigation', () => {
     expect(await screen.findByRole('heading', { level: 1, name: /schweigepflicht bei angehörigen.*gesprächen/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Module' })).not.toHaveAttribute('aria-current');
     expect(screen.getByRole('link', { name: 'Module' })).toHaveClass('active');
+    const current = document.querySelectorAll('[aria-current="page"]');
+    expect(current).toHaveLength(1);
+    expect(current[0]).toHaveTextContent('Schweigepflicht');
+    expect(current[0].closest('.breadcrumb')).not.toBeNull();
     expect(document.title).toMatch(/schweigepflicht bei angehörigengesprächen/i);
     expect(document.querySelector('meta[name="description"]')).toHaveAttribute(
       'content',
