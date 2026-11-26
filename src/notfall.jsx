@@ -83,7 +83,12 @@ function NotfallPage({ onNavigate }) {
     <div className="notfall-page">
       <header className="notfall-hero notfall-compact-hero">
         <div className="col">
-          <div className="breadcrumb"><a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a><span className="sep">/</span><span>SOS Krise</span></div>
+          <nav className="breadcrumb" aria-label="Brotkrumen">
+            <ol>
+              <li><a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a></li>
+              <li><span>SOS Krise</span></li>
+            </ol>
+          </nav>
           <h1>SOS Krise — wenn jetzt nichts anderes Vorrang hat.</h1>
           <p className="notfall-scope">Rufnummern in der Schweiz · direkt anrufen</p>
           <div className="numbers-row notfall-immediate-calls">

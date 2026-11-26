@@ -52,3 +52,14 @@ Release-Nachweise: Der Release-Fingerprint hat sich durch diese Änderung und di
 - `src/test/current-page-marker.test.jsx` prüft für alle 16 Routen aus `src/routes.js`, dass genau ein Link als aktuelle Seite ausgezeichnet ist.
 - `scripts/audit-print.mjs` verlangt erwarteten Text wieder mit exakten Wortabständen, und zwar in mindestens einem der beiden Poppler-Auszüge (`-raw` oder `-layout`); nur die Abwesenheitsprüfung vergleicht ohne Leerzeichen.
 - Die Release-Nachweise sind an den dadurch erneut geänderten Fingerprint gebunden; `lastTechnicalPreparation` der Screenreader-Vorlage ist nachgeführt.
+
+### Brotkrumen als geordnete Liste (26. November 2026)
+
+Abgleich mit dem Leitfaden `breadcrumbs` aus `modern-web-guidance`:
+
+- Alle neun Brotkrumen (sieben Module, Schweigepflicht, Notfall) sind `<nav aria-label="Brotkrumen">` mit geordneter Liste; die Reihenfolge trägt die Hierarchie.
+- Trennzeichen werden per CSS erzeugt (`content: "/" / ""`, mit `content: "/"` als Rückfall) und erscheinen nicht mehr im Accessibility-Tree.
+- Brotkrumen-Links sind bei Hover und Tastaturfokus unterstrichen und damit nicht nur über Farbe erkennbar.
+- Auf der Notfallseite bleibt der letzte Eintrag Text ohne `aria-current`, weil die aktuelle Seite dort am Link «SOS Krise» der Hauptnavigation ausgezeichnet ist und der PUK-Auditor genau eine Auszeichnung je Seite verlangt.
+
+Die Darstellung ist bei 1440 und 320 px geometrisch unverändert (Position und Grösse von Brotkrumen, Einträgen und H1 gemessen). `src/test/current-page-marker.test.jsx` prüft Liste, Anzahl Einträge und das Fehlen von Trennertext auf allen neun Seiten. Die Screenreader-Ansage bleibt in den ausstehenden Läufen zu prüfen.

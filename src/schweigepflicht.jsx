@@ -12,11 +12,11 @@ function SchweigepflichtPage({ onNavigate }) {
       <header className="about-hero reference-hero">
         <div className="container">
           <nav className="breadcrumb animate-in" aria-label="Brotkrumen">
-            <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
-            <span className="sep">/</span>
-            <a href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a>
-            <span className="sep">/</span>
-            <a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)} aria-current="page">Schweigepflicht</a>
+            <ol>
+              <li><a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a></li>
+              <li><a href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Modul 6</a></li>
+              <li><a href={navHref('schweigepflicht')} onClick={navHandler('schweigepflicht', onNavigate)} aria-current="page">Schweigepflicht</a></li>
+            </ol>
           </nav>
           <div className="eyebrow animate-in reference-eyebrow"><span className="dot"></span>Informationen fürs Gespräch</div>
           <h1 className="animate-in delay-1 reference-title">Schweigepflicht bei Angehörigen&shy;gesprächen.</h1>

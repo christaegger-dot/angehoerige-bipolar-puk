@@ -721,7 +721,12 @@ section + section { padding-top: 0; }
 }
 .breadcrumb a { color: var(--ink-mute); min-height: var(--touch-target); min-width: var(--touch-target); display: inline-flex; align-items: center; }
 .breadcrumb a:hover { color: var(--ink); }
-.breadcrumb .sep { margin: 0 8px; opacity: 1; }
+.breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; list-style: none; }
+.breadcrumb li { display: flex; align-items: center; margin: 0; padding: 0; }
+/* Trenner sind dekorativ: Der leere Alternativtext hält sie aus dem Accessibility-Tree;
+   die erste Deklaration bleibt für Browser ohne Alternativtext-Syntax. */
+.breadcrumb li + li::before { content: "/"; content: "/" / ""; margin: 0 8px; }
+.breadcrumb a:hover, .breadcrumb a:focus-visible { text-decoration: underline; text-underline-offset: .22em; }
 
 .page-header h1 {
   max-width: 22ch;

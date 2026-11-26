@@ -79,6 +79,12 @@ Die Nachkorrektur vom selben Tag macht den Brotkrumen der sieben Moduldetailseit
 
 Am neu gebauten Stand bestanden erneut die 225 Werkzeugchecks, die 697 Website-Browserchecks, die 72 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird deshalb im Auftrag der Projektverantwortlichen an den neuen App-/Build-Fingerprint gebunden; die vorbereiteten Screenreader-Läufe erhalten denselben Prüfstand und bleiben nicht ausgeführt. Das Prüfdatum der Acceptance (`technicalAcceptance.reviewedAt`) ist der 26. November 2026. Das Datum der Datenpolicy selbst (`reviewedAt` auf oberster Ebene) bleibt der 7. Oktober 2026, weil Inventar und Datenschutzerklärung («Stand: Oktober 2026») seither nicht geändert wurden.
 
+### Abgleich nach der Listenstruktur des Brotkrumens (26. November 2026, dritter Durchgang)
+
+Die dritte Anpassung vom selben Tag zeichnet den Brotkrumen der sieben Moduldetailseiten, der Schweigepflichtseite und der Notfallseite als geordnete Liste aus (`<nav aria-label="Brotkrumen"><ol><li>…`). Die Schrägstriche stehen nicht mehr als Text im Markup, sondern werden per CSS mit leerem Alternativtext erzeugt; Brotkrumen-Links sind bei Hover und Tastaturfokus unterstrichen. Der Quellvergleich mit dem gemergten Stand `eab3968` zeigt im Anwendungscode ausschliesslich diese Auszeichnung und die zugehörigen CSS-Regeln. Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; auf der Notfallseite sind Rufnummern und `tel:`-Links unberührt.
+
+Am neu gebauten Stand bestanden erneut die 225 Werkzeugchecks, die 697 Website-Browserchecks, die 72 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird im ausdrücklichen Auftrag der Projektverantwortlichen an den neuen App-/Build-Fingerprint gebunden; die vorbereiteten Screenreader-Läufe erhalten denselben Prüfstand und bleiben nicht ausgeführt.
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

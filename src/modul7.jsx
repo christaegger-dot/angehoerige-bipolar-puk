@@ -182,11 +182,11 @@ function Modul7Page({ onNavigate }) {
         <header className="module-detail-header">
           <div className="col">
             <nav className="breadcrumb" aria-label="Brotkrumen">
-              <a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a>
-              <span className="sep">/</span>
-              <a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
-              <span className="sep">/</span>
-              <a href={navHref('modul7')} onClick={navHandler('modul7', onNavigate)} aria-current="page">Modul 7</a>
+              <ol>
+                <li><a href={navHref('start')} onClick={navHandler('start', onNavigate)}>Start</a></li>
+                <li><a href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a></li>
+                <li><a href={navHref('modul7')} onClick={navHandler('modul7', onNavigate)} aria-current="page">Modul 7</a></li>
+              </ol>
             </nav>
             <div className="module-detail-meta">
               <span className="module-detail-num">07</span>
