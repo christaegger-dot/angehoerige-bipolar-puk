@@ -6,7 +6,6 @@ import { NOT_FOUND_PAGE } from './routes.js';
 
 const ModulePage = React.lazy(() => preloadPage('module').then(m => ({ default: m.ModulePage })));
 const WerkzeugePage = React.lazy(() => preloadPage('werkzeuge').then(m => ({ default: m.WerkzeugePage })));
-const NotfallPage = React.lazy(() => preloadPage('notfall').then(m => ({ default: m.NotfallPage })));
 const UnterstuetzungPage = React.lazy(() => preloadPage('unterstuetzung').then(m => ({ default: m.UnterstuetzungPage })));
 const Modul1Page = React.lazy(() => preloadPage('modul1').then(m => ({ default: m.Modul1Page })));
 const Modul2Page = React.lazy(() => preloadPage('modul2').then(m => ({ default: m.Modul2Page })));
@@ -24,7 +23,6 @@ const PAGE_RENDERERS = {
   start: (props) => React.createElement(HomePage, { onNavigate: props.onNavigate }),
   module: (props) => React.createElement(ModulePage, { onNavigate: props.onNavigate }),
   werkzeuge: (props) => React.createElement(WerkzeugePage, { onNavigate: props.onNavigate, anchor: props.anchor }),
-  notfall: (props) => React.createElement(NotfallPage, { onNavigate: props.onNavigate }),
   unterstuetzung: (props) => React.createElement(UnterstuetzungPage, { onNavigate: props.onNavigate, anchor: props.anchor }),
   modul1: (props) => React.createElement(Modul1Page, { onNavigate: props.onNavigate }),
   modul2: (props) => React.createElement(Modul2Page, { onNavigate: props.onNavigate }),

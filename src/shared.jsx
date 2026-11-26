@@ -1,19 +1,34 @@
-// Shared chrome — editorial nav, crisis bar, footer
+// Shared chrome — Absenderzeile, Navigation, Fusszeile
 
 // Helper: navigationaler Link mit Tastatur-Support (Tab + Enter/Space) durch echtes href.
 
 import React from 'react';
 import { navHandler, navHref } from './nav-handler.js';
+import { SITE, SENDER_MAILTO } from './site-config.js';
 
-function CrisisBar() {
+// Absenderin im Kopf jeder Seite (Profil 2026.10.2). Die Adresse ist der Kontaktweg
+// der Fachstelle, kein Krisen- oder Notfallweg.
+function SenderLine() {
   return (
-    <nav className="crisis-bar" aria-label="Krisenkontakte" data-safety-variant="direct">
-      <span>Jetzt Hilfe anrufen:</span>
-      <a href="tel:144">144 · Sanität</a>
-      <a href="tel:117">117 · Polizei</a>
-      <a href="tel:143">143 · Gespräch</a>
-    </nav>
+    <header className="site-sender">
+      {/* Kein <p>: Die Zeile ist eine Angabe, kein Lesetext; der kanonische Auditor misst Absätze
+          ab 100 Zeichen als Lesetext. Der Link steht in einem <span>, damit er inline bleibt. */}
+      <div className="puk-site-sender col-wide" data-sender>
+        <span className="puk-site-sender__label">Absenderin</span>
+        <span className="puk-site-sender__name" data-sender-unit>{SITE.sender.orgUnit}</span>
+        <span aria-hidden="true">·</span>
+        <span data-sender-institution>{SITE.sender.institution}</span>
+        <span aria-hidden="true">·</span>
+        <span><a className="puk-link--inline" data-sender-email href={SENDER_MAILTO}>{SITE.sender.email}</a></span>
+      </div>
+    </header>
   );
+}
+
+// Verweis im Text auf die zuständigen Stellen: nur direkt nach einer Handlungsanleitung
+// für akute Lagen, höchstens einmal je Abschnitt, immer im geprüften Wortlaut.
+function ResponsibilityInline() {
+  return <p className="puk-site-inline-ref" data-responsibility-inline>{SITE.responsibility.inline.text}</p>;
 }
 
 function Nav({ page, onNavigate }) {
@@ -53,7 +68,6 @@ function Nav({ page, onNavigate }) {
             <span className="nav-label-full">Unterstützung und Ressourcen</span>
             <span className="nav-label-compact" aria-hidden="true">Unterstützung</span>
           </a>
-          {page === 'notfall' && <a href={navHref('notfall')} className="nav-sos puk-web-nav__link" aria-current="page" onClick={navHandler('notfall', onNavigate)}>SOS Krise</a>}
         </div>
       </div>
     </nav>
@@ -86,7 +100,7 @@ function MobileModuleNav({ onNavigate }) {
 
 function Footer({ page, onNavigate }) {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" data-safety-variant="responsibility">
       <div className="footer-inner">
         <div className="footer-row">
           <div className="footer-credit">
@@ -98,15 +112,21 @@ function Footer({ page, onNavigate }) {
             <a className="puk-web-nav__link" aria-current={page === 'impressum' ? 'page' : undefined} href={navHref('impressum')} onClick={navHandler('impressum', onNavigate)}>Impressum</a>
             <a className="puk-web-nav__link" aria-current={page === 'datenschutz' ? 'page' : undefined} href={navHref('datenschutz')} onClick={navHandler('datenschutz', onNavigate)}>Datenschutz</a>
             <a className="puk-web-nav__link" aria-current={page === 'barrierefreiheit' ? 'page' : undefined} href={navHref('barrierefreiheit')} onClick={navHandler('barrierefreiheit', onNavigate)}>Barrierefreiheit</a>
-            <a className="footer-link-alert" data-safety-variant="persistent-subdued" href={navHref('notfall')} onClick={navHandler('notfall', onNavigate)}>Notfall &amp; Krisenhilfe</a>
           </div>
         </div>
-        <p className="footer-disclaimer">
-          Die Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) bietet Beratung und Psychoedukation für Angehörige. Die Inhalte ersetzen keine ärztliche oder psychotherapeutische Beratung. Bei akuten Krisen wenden Sie sich an die behandelnde Stelle oder die zuständigen Notfalldienste.
-        </p>
+        <div className="footer-notes">
+          <section className="puk-site-safety puk-site-safety--responsibility" data-safety-access="responsibility" data-review-status={SITE.responsibility.reviewStatus} aria-labelledby="puk-safety-title">
+            <h2 className="footer-heading" id="puk-safety-title">{SITE.responsibility.label}</h2>
+            <p>{SITE.responsibility.text}</p>
+          </section>
+          <section aria-labelledby="puk-site-info-title">
+            <h2 className="footer-heading" id="puk-site-info-title">Über diese Seiten</h2>
+            <p data-disclaimer>{SITE.disclaimer}</p>
+          </section>
+        </div>
       </div>
     </footer>
   );
 }
 
-export { CrisisBar, Nav, MobileModuleNav, Footer };
+export { SenderLine, ResponsibilityInline, Nav, MobileModuleNav, Footer };

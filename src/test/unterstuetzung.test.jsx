@@ -3,6 +3,7 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { UnterstuetzungPage } from '../unterstuetzung.jsx';
 import { SchweigepflichtPage } from '../schweigepflicht.jsx';
+import { SITE } from '../site-config.js';
 
 describe('UnterstuetzungPage accessibility', () => {
   it('uses buttons for materials and FAQ disclosures', async () => {
@@ -33,17 +34,26 @@ describe('UnterstuetzungPage accessibility', () => {
 });
 
 describe('UnterstuetzungPage counselling and material boundaries', () => {
-  const crisisNumbers = /\b(?:144|117|143|147)\b|0800\s*33\s*66\s*55|058\s*384\s*(?:20\s*00|46\s*82|66\s*66)/;
+  // Dieselben Muster wie im Gate des PUK Website-Profils 2026.10.2.
+  const phoneNumbers = /(?:\+41|0041|\b0)\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}\b|\b0800\s?\d{2,3}\s?\d{2,3}/;
+  const shortNumbers = /(?:^|[^\d.,:/-])(112|117|118|143|144|145|147)(?![\d]|[.,:/-]\d)/;
 
-  it('offers ordinary counselling contacts without an acute-help block or guaranteed round-the-clock availability', () => {
+  it('offers counselling contacts by e-mail or website, without phone numbers or an acute-help block', () => {
     const { container } = render(<UnterstuetzungPage onNavigate={() => {}} />);
 
-    expect(screen.getByRole('link', { name: /Fachstelle Angehörigenarbeit PUK Zürich anrufen/i }))
-      .toHaveAttribute('href', 'tel:+41583843800');
-    expect(screen.getByRole('link', { name: /Opferhilfe Zürich anrufen/i }))
-      .toHaveAttribute('href', 'tel:+41444552142');
-    expect(container.textContent).not.toMatch(crisisNumbers);
+    expect(screen.getByRole('link', { name: /Fachstelle Angehörigenarbeit PUK Zürich — E-Mail schreiben/i }))
+      .toHaveAttribute('href', `mailto:${SITE.sender.email}`);
+    // Ohne bestätigte Webadresse bleiben diese Einträge Zeilen ohne Link.
+    for (const title of ['Pro Mente Sana — Beratungstelefon', 'Opferhilfe Zürich']) {
+      const row = screen.getByText(title).closest('.resource-row');
+      expect(row.tagName).toBe('DIV');
+      expect(row.querySelector('a')).toBeNull();
+    }
+    expect(container.querySelectorAll('a[href^="tel:"]')).toHaveLength(0);
+    expect(container.textContent).not.toMatch(phoneNumbers);
+    expect(container.textContent).not.toMatch(shortNumbers);
     expect(container.textContent).not.toMatch(/AKUTE LAGE|24\/7|Dargebotene Hand/);
+    expect(screen.queryByRole('button', { name: /Notfallkarte/i })).not.toBeInTheDocument();
   });
 
   it('makes the programme-effectiveness statement traceable to the shared sources and their different review scopes', () => {
@@ -58,33 +68,47 @@ describe('UnterstuetzungPage counselling and material boundaries', () => {
 
   it.each([
     'Erste Orientierung als Angehörige',
+    'Umgang mit Suizidgedanken',
+    'Umgang mit Psychose / Wahn',
     'Umgang mit Manie',
     'Umgang mit Depression',
     'Fragen für das Arztgespräch',
-  ])('keeps the psychoeducative material %s free of crisis-number blocks', async (title) => {
+  ])('keeps the material %s free of phone numbers and phone links', async (title) => {
     const user = userEvent.setup();
     render(<UnterstuetzungPage onNavigate={() => {}} />);
     await user.click(screen.getByRole('button', { name: new RegExp(title, 'i') }));
 
     const dialog = await screen.findByRole('dialog', { name: title });
-    expect(dialog.textContent).not.toMatch(crisisNumbers);
+    expect(dialog.querySelectorAll('a[href^="tel:"]')).toHaveLength(0);
+    expect(dialog.textContent).not.toMatch(phoneNumbers);
+    expect(dialog.textContent).not.toMatch(shortNumbers);
     expect(dialog.querySelector('.handout-phonelist')).toBeNull();
     expect(dialog.textContent).not.toContain('In akuten Lagen hat der Notfallweg Vorrang.');
   });
 
   it.each([
-    ['Notfallkarte fürs Portemonnaie', ['144', '117', '143', '0800 33 66 55', '058 384 20 00', '058 384 46 82', '058 384 66 66', '058 384 38 00']],
-    ['Umgang mit Suizidgedanken', ['144', '143', '0800 33 66 55', '058 384 20 00', '058 384 46 82', '058 384 66 66']],
-    ['Umgang mit Psychose / Wahn', ['058 384 20 00', '058 384 46 82', '058 384 66 66', '144', '117']],
-  ])('preserves the crisis-orientation contacts in the excluded material %s', async (title, numbers) => {
+    'Umgang mit Suizidgedanken',
+    'Umgang mit Psychose / Wahn',
+  ])('closes the material %s with the reviewed referral instead of a list of numbers', async (title) => {
     const user = userEvent.setup();
     render(<UnterstuetzungPage onNavigate={() => {}} />);
     await user.click(screen.getByRole('button', { name: new RegExp(title, 'i') }));
 
     const dialog = await screen.findByRole('dialog', { name: title });
-    const contacts = dialog.querySelector('.handout-phonelist');
-    expect(within(contacts).getAllByRole('link').map(link => link.textContent)).toEqual(numbers);
-    expect(dialog.textContent).toContain('In akuten Lagen hat der Notfallweg Vorrang.');
+    const referrals = dialog.querySelectorAll('[data-responsibility-inline]');
+    expect(referrals).toHaveLength(1);
+    expect(referrals[0].textContent).toBe(SITE.responsibility.inline.text);
+    expect(referrals[0].closest('details, figure')).toBeNull();
+  });
+
+  it('gives the e-mail address of the Fachstelle in the first-orientation material', async () => {
+    const user = userEvent.setup();
+    render(<UnterstuetzungPage onNavigate={() => {}} />);
+    await user.click(screen.getByRole('button', { name: /Erste Orientierung als Angehörige/i }));
+
+    const dialog = await screen.findByRole('dialog', { name: 'Erste Orientierung als Angehörige' });
+    expect(within(dialog).getByRole('link', { name: SITE.sender.email })).toHaveAttribute('href', `mailto:${SITE.sender.email}`);
+    expect(dialog.querySelector('[data-responsibility-inline]')).toBeNull();
   });
 
   it('separates sharing observations from receiving confidential treatment information', async () => {
@@ -100,19 +124,19 @@ describe('UnterstuetzungPage counselling and material boundaries', () => {
 });
 
 describe('UnterstuetzungPage targeted entries', () => {
-  it('offers the compact wallet export while retaining the detailed reading version and sources', async () => {
-    const user = userEvent.setup();
-    const print = vi.spyOn(window, 'print').mockImplementation(() => {});
+  it('opens no material at the address of the removed wallet card', () => {
     render(<UnterstuetzungPage anchor="dl-02" onNavigate={vi.fn()} />);
 
-    const dialog = screen.getByRole('dialog', { name: 'Notfallkarte fürs Portemonnaie' });
-    expect(within(dialog).getByText(/kompakte Karte auf einer A4-Seite/)).toBeInTheDocument();
-    expect(dialog.querySelector('.wallet-reading').textContent).toContain('Bekannte Allergien / Unverträglichkeiten');
-    expect(dialog.querySelector('.wallet-reading').textContent).toContain('Quellen und Grenzen');
-    const compactCard = dialog.querySelector('.wallet-print');
-    expect(compactCard.textContent).toContain('Gefaltet: 85 × 55 mm.');
-    expect(compactCard.textContent).toContain('Tatsächliche Grösse');
-    expect(compactCard.querySelector('a[href$="/unterstuetzung#dl-02"]')).not.toBeNull();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it('prints a material from its dialog', async () => {
+    const user = userEvent.setup();
+    const print = vi.spyOn(window, 'print').mockImplementation(() => {});
+    render(<UnterstuetzungPage anchor="dl-01" onNavigate={vi.fn()} />);
+
+    const dialog = screen.getByRole('dialog', { name: 'Erste Orientierung als Angehörige' });
+    expect(dialog.textContent).toContain('Quellen und Grenzen');
     await user.click(within(dialog).getByRole('button', { name: 'Drucken / als PDF speichern' }));
     expect(print).toHaveBeenCalledTimes(1);
   });

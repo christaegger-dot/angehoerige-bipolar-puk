@@ -145,9 +145,10 @@ describe('KrisenplanTool privacy', () => {
     expect(window.localStorage.getItem('puk-krisenplan-v1')).toContain('Private old draft');
   });
 
-  it('keeps regular counselling contact separate from crisis orientation', () => {
-    render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
-    expect(screen.getByRole('link', { name: '058 384 38 00' })).toHaveAttribute('href', 'tel:+41583843800');
+  it('names the counselling contact by e-mail and offers no phone or crisis link', () => {
+    const { container } = render(<KrisenplanTool onClose={() => {}} onNavigate={() => {}} />);
+    expect(screen.getByRole('link', { name: 'angehoerigenarbeit@pukzh.ch' })).toHaveAttribute('href', 'mailto:angehoerigenarbeit@pukzh.ch');
+    expect(container.querySelectorAll('a[href^="tel:"]')).toHaveLength(0);
     expect(screen.queryByRole('link', { name: /Notfallweg/i })).not.toBeInTheDocument();
   });
 });

@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
 import { stripVTControlCharacters } from 'node:util';
 import { chromium } from 'playwright';
@@ -11,7 +11,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const port = Number(process.env.AUDIT_PORT || 4520);
 const baseURL = `http://127.0.0.1:${port}`;
 const output = path.resolve(root, process.env.AUDIT_OUTPUT || 'qa/output/website-audit.json');
-const routes = ['/', '/module', ...Array.from({ length: 7 }, (_, i) => `/module/${i + 1}`), '/werkzeuge', '/unterstuetzung', '/notfall', '/schweigepflicht', '/datenschutz', '/impressum', '/barrierefreiheit'];
+const routes = ['/', '/module', ...Array.from({ length: 7 }, (_, i) => `/module/${i + 1}`), '/werkzeuge', '/unterstuetzung', '/schweigepflicht', '/datenschutz', '/impressum', '/barrierefreiheit'];
 const report = {
   startedAt: new Date().toISOString(),
   profileTarget: '1.10.1',
@@ -215,27 +215,56 @@ try {
     record('brand/single-static-logo', { reducedMotion, gifRequests, initialHeight, settledHeight },
       await brandPage.locator('.nav-logo img').count() === 1 && await brandPage.locator('[data-motion="logo-statisch"]').isVisible()
       && gifRequests.length === 0 && Math.abs(initialHeight - settledHeight) <= 1);
-    await open(brandPage, '/notfall');
-    for (const number of ['144', '117', '143']) {
-      const contact = brandPage.locator(`a[href="tel:${number}"]`).first();
-      const position = await contact.boundingBox();
-      record('sos/immediate-call', { reducedMotion, number, position }, await contact.isVisible()
-        && position.y >= 0 && position.y + position.height <= 900);
-    }
-    if (reducedMotion === 'reduce') {
-      // The first step, what to avoid and the acute instruction must not be set smaller than the list between them.
-      const emphasis = await brandPage.evaluate(() => {
-        const size = selector => Number.parseFloat(getComputedStyle(document.querySelector(selector)).fontSize);
-        return {
-          reading: size('.guide-body li'), firstStep: size('.guide-do'), avoid: size('.guide-dont'), acute: size('.guide-sos'),
-          tileHyphens: getComputedStyle(document.querySelector('.number-tile')).hyphens,
-        };
-      });
-      record('sos/critical-steps-reading-size', emphasis,
-        [emphasis.firstStep, emphasis.avoid, emphasis.acute].every(value => value >= emphasis.reading) && emphasis.tileHyphens === 'auto');
-    }
     await context.close();
   }
+  // Fachstellen-Profil 2026.10.2: Absenderin im Kopf, ein Zuständigkeitsverweis in der Fusszeile,
+  // keine Telefonnummern, keine Telefonlinks, kein Notfallblock (Muster wie im Gate des Profils).
+  const profilePage = await browser.newPage({ viewport: { width: 360, height: 900 }, reducedMotion: 'reduce' });
+  const siteConfig = (await import(pathToFileURL(path.join(root, 'src/site-config.js')).href)).SITE;
+  for (const route of routes) {
+    await open(profilePage, route);
+    const facts = await profilePage.evaluate(() => {
+      const visible = el => { const box = el?.getBoundingClientRect(); return Boolean(box && box.width > 0 && box.height > 0 && getComputedStyle(el).visibility !== 'hidden'); };
+      const sender = document.querySelectorAll('[data-sender]');
+      const mail = sender[0]?.querySelector('a[data-sender-email]');
+      const responsibility = document.querySelectorAll('[data-safety-access="responsibility"]');
+      const text = document.body.innerText;
+      return {
+        senderCount: sender.length, senderVisible: visible(sender[0]), senderText: sender[0]?.innerText || '',
+        senderBeforeMain: Boolean(sender[0] && (sender[0].compareDocumentPosition(document.querySelector('main')) & Node.DOCUMENT_POSITION_FOLLOWING)),
+        mailHref: mail?.getAttribute('href') || '', mailVisible: visible(mail),
+        responsibilityCount: responsibility.length, responsibilityInFooter: Boolean(responsibility[0]?.closest('footer')),
+        responsibilityText: responsibility[0]?.querySelector('p')?.textContent || '',
+        disclaimer: document.querySelector('footer [data-disclaimer]')?.textContent || '',
+        telLinks: [...document.querySelectorAll('a[href^="tel:"]')].map(a => a.getAttribute('href')),
+        phoneNumber: (text.match(/(?:\+41|0041|\b0)\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}\b|\b0800\s?\d{2,3}\s?\d{2,3}/) || [null])[0],
+        shortNumber: (text.match(/(?:^|[^\d.,:/-])(112|117|118|143|144|145|147)(?![\d]|[.,:/-]\d)/) || [null, null])[1],
+        emergencyBlocks: document.querySelectorAll('[data-safety-variant="direct"], [data-safety-variant="persistent-subdued"], [data-safety-access="direct"], a[href="/notfall"]').length,
+        inlineReferences: [...document.querySelectorAll('[data-responsibility-inline]')].map(el => ({
+          text: el.textContent, inMain: Boolean(el.closest('main')), hiddenPlace: Boolean(el.closest('figure, details')),
+        })),
+        inlineSections: new Set([...document.querySelectorAll('[data-responsibility-inline]')].map(el => el.closest('section'))).size,
+      };
+    });
+    record('profile/sender', { route, senderText: facts.senderText, mailHref: facts.mailHref },
+      facts.senderCount === 1 && facts.senderVisible && facts.senderBeforeMain && facts.mailVisible
+      && facts.senderText.includes(siteConfig.sender.orgUnit) && facts.senderText.includes(siteConfig.sender.institution)
+      && facts.mailHref === `mailto:${siteConfig.sender.email}`);
+    record('profile/responsibility', { route, count: facts.responsibilityCount },
+      facts.responsibilityCount === 1 && facts.responsibilityInFooter && facts.responsibilityText === siteConfig.responsibility.text
+      && facts.disclaimer === siteConfig.disclaimer);
+    record('profile/no-crisis-access', { route, telLinks: facts.telLinks, phoneNumber: facts.phoneNumber, shortNumber: facts.shortNumber, emergencyBlocks: facts.emergencyBlocks },
+      facts.telLinks.length === 0 && !facts.phoneNumber && !facts.shortNumber && facts.emergencyBlocks === 0);
+    record('profile/inline-referral', { route, count: facts.inlineReferences.length },
+      facts.inlineReferences.every(ref => ref.text === siteConfig.responsibility.inline.text && ref.inMain && !ref.hiddenPlace)
+      && facts.inlineSections === facts.inlineReferences.length);
+  }
+  // Die frühere Krisenseite gibt es nicht mehr; ihre Adresse zeigt die Seite «Nicht gefunden».
+  await profilePage.goto(`${baseURL}/notfall`, { waitUntil: 'networkidle' });
+  await profilePage.locator('#main-content h1').waitFor();
+  record('profile/removed-crisis-page', {}, await profilePage.locator('#main-content h1').innerText() === 'Diese Seite gibt es nicht'
+    && await profilePage.locator('a[href^="tel:"]').count() === 0);
+  await profilePage.close();
   // The main action of the start page must be reachable without scrolling on a common phone and laptop.
   for (const viewport of [{ width: 375, height: 812 }, { width: 1366, height: 768 }]) {
     const foldPage = await browser.newPage({ viewport, reducedMotion: 'reduce' });

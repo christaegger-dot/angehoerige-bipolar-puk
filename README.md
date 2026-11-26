@@ -1,6 +1,6 @@
 # Angehörige bipolarer Störung · PUK Zürich
 
-Browserbasierte Lese-Begleitung für Angehörige und Nahestehende von Menschen mit bipolarer Störung. Die Anwendung kombiniert sieben Module, interaktive Werkzeuge, Handouts und einen Notfallweg.
+Browserbasierte Lese-Begleitung für Angehörige und Nahestehende von Menschen mit bipolarer Störung. Die Anwendung kombiniert sieben Module, interaktive Werkzeuge und Handouts.
 
 ## Stack
 
@@ -20,6 +20,15 @@ oder Referenz-Falldaten. Die vorhandene React-Anwendung bleibt erhalten und nutz
 eine gemeinsame Seitenhülle und den dokumentierten SPA-Auditadapter.
 `_dev/PUK-VISUALISIERUNGSPLAN.md` beschreibt die vorhandenen Erklärgrafiken und ihre
 sichtbaren Textfassungen. Das Profil ersetzt keine menschlichen Freigaben.
+
+Darüber gilt seit dem 26. November 2026 das **Fachstellen-Profil 2026.10.2** der
+Fachstelle Angehörigenarbeit («PUK Zürich Website-Profil»). Umgesetzt ist die erste
+Etappe: Zuständigkeit statt Krisenzugang, Absenderin im Kopf jeder Seite, ein Schwarz
+und Buttons mit 3 px. Entscheide, geänderte Wortlaute und die noch offenen Abweichungen
+stehen in `_dev/PROFILWECHSEL-2026-10-2.md`; der Stand der Prüfstufen steht in
+`PRUEFBERICHT.md`. Die Website bleibt eine React-Anwendung und wird nicht auf den
+statischen Starter des Profils umgebaut; dessen Regeln sind in Tests und Prüfskripten
+nachgebildet.
 
 ## Voraussetzungen
 
@@ -73,7 +82,7 @@ Eine ausgelöste Druckfunktion bestätigt keinen physischen Ausdruck.
 `AUDIT_TOOLS_OUTPUT` überschreibt `qa/output/tools.json`;
 `AUDIT_TOOLS_PORT` überschreibt den Standardport 4525.
 
-Der Druckaudit erzeugt echte Chromium-PDFs und prüft sie mit den Poppler-Werkzeugen `pdfinfo` und `pdftotext` (Debian/Ubuntu: `apt-get install poppler-utils`). Er prüft Modul 4, Kommunikationsschritte und ausgefülltes Resultat, alle sieben Handouts sowie einen langen Krisenplan. Die Notfallkarte muss auf genau einer A4-Seite bleiben; die Faltflächen werden auf 85 × 55 mm und Überlauf geprüft. Dies bestätigt die PDF-Ausgabe, keinen physischen Druck und keine Barrierefreiheit des PDFs mit echten Hilfsmitteln.
+Der Druckaudit erzeugt echte Chromium-PDFs und prüft sie mit den Poppler-Werkzeugen `pdfinfo` und `pdftotext` (Debian/Ubuntu: `apt-get install poppler-utils`). Er prüft Modul 4, Kommunikationsschritte und ausgefülltes Resultat, alle sechs Handouts sowie einen langen Krisenplan. Kein Ausdruck darf eine Telefonnummer enthalten; die Handouts zu Suizidgedanken und Psychose müssen den Verweis auf die zuständigen Stellen im geprüften Wortlaut tragen. Dies bestätigt die PDF-Ausgabe, keinen physischen Druck und keine Barrierefreiheit des PDFs mit echten Hilfsmitteln.
 
 Der kanonische Projektauditor und das verbindliche Websiteprofil 1.10.1 liegen als unveränderte, über SHA256 nachgewiesene Auszüge des bereitgestellten PUK-Vollsystems vor:
 
@@ -98,7 +107,9 @@ Der Produktionslauf verlangt mindestens zwei bestandene reale Screenreader-Läuf
 - `src/module.jsx` und `src/modul*.jsx` — Lernpfad und einzelne Module
 - `src/werkzeuge.jsx` — interaktive Werkzeuge und Overlay-Infrastruktur
 - `src/unterstuetzung.jsx` — Ressourcen, Materialien, FAQ und Handouts
-- `src/shared.jsx` — globale Navigation, Footer und Krisenleiste
+- `src/shared.jsx` — Absenderzeile, globale Navigation, Fusszeile mit Zuständigkeitsverweis und der Verweis im Text
+- `src/site-config.js` — Absenderin, Zuständigkeitsverweis und Hinweis im Wortlaut des Fachstellen-Profils 2026.10.2; einzige Quelle dieser Texte
+- `PRUEFBERICHT.md` — Stand der Prüfstufen nach dem Profil (W1 bis R3) und Selbstprüfung der bauenden Sitzung
 - `src/not-found.jsx` — Seite für unbekannte Adressen (statt stiller Weiterleitung auf die Startseite)
 - `src/toc-current.js` — markiert im Inhaltsverzeichnis eines Moduls den Abschnitt, der gerade gelesen wird
 - `public/social-preview.png` — Vorschaubild für geteilte Links; ein Abbild des Kopfs der Startseite, bei Änderungen dort mit `scripts/make-social-preview.mjs` neu erzeugen
@@ -107,13 +118,14 @@ Der Produktionslauf verlangt mindestens zwei bestandene reale Screenreader-Läuf
 
 ## Inhalts- und Sicherheitsentscheidungen
 
+- **Zuständigkeit statt Krisenzugang** (Fachstellen-Profil 2026.10.2, Entscheid der Fachstelle vom 26. November 2026): Die Website nennt keine Telefonnummern und hat keine Telefonlinks, keine Krisenseite, keine Krisenleiste und keine Notfallkarte. Die Fusszeile jeder Seite trägt den Zuständigkeitsverweis im Standardwortlaut; drei Module und zwei Handouts tragen direkt nach einer Handlungsanleitung für akute Lagen den Verweis im Text. Kontaktweg der Fachstelle ist die E-Mail-Adresse in der Absenderzeile. Tests (`src/test/fachstellen-profil.test.jsx`) und Prüfskripte (`profile/*` in `scripts/audit-website.mjs`, `no-phone-numbers` in `scripts/audit-print.mjs`) prüfen das auf jeder Seite und in jedem Ausdruck.
 - Die Seite ist aktuell nicht für öffentliche Suchmaschinen-Auffindbarkeit freigegeben (`noindex, nofollow`; `robots.txt` blockiert Crawling mit `Disallow: /`).
 - Eingaben in den Werkzeugen bleiben nur im flüchtigen Arbeitsspeicher. Beim Schliessen oder Neuladen gehen sie verloren. Browser-Persistenz und Wiederherstellung älterer Entwürfe sind deaktiviert.
 - Historische Browser-Schlüssel, bestätigte Löschung, frühere Fristen und Exporte stehen in `public/website-data-policy.json`. Sichtbare Hinweise erklären den aktuellen flüchtigen Zustand und die Bereinigung alter Browser-Kopien.
 - Die 25 redaktionellen Fallbeispiele sind sichtbar als fiktiv gekennzeichnet und im `_dev/ZITATREGISTER-2026-10-05.md` einzeln erfasst. Sie sind keine belegten Angehörigenzitate.
 - Eine externe fachlich-rechtliche Freigabe der Schweigepflichtseite wird gemäss ausdrücklicher Projektentscheidung vom 6. Oktober 2026 nicht eingeholt und nicht als ausstehende Releasevoraussetzung geführt. `_dev/FREIGABE-SCHWEIGEPFLICHT.md` dokumentiert diese Entscheidung und archiviert die vorbereitete Anfrage. Eine institutionelle oder juristische Prüfung wird damit nicht bestätigt; der amtliche Quellen-/Formularabgleich ist davon getrennt.
 - Der anschliessende Quellenabgleich bestätigt das verlinkte PUK-Formular als PDF, Version 2026, und kennzeichnet die kantonale Patientenrechtsbroschüre als Ausgabe 2018. BAG und Zürcher Webseite waren nicht abrufbar; Umfang und Belege stehen in `_dev/SCHWEIGEPFLICHT-QUELLENABGLEICH-2026-10-06.md`. Die P3-Umsetzung und ihre technischen Prüfungen sind in `_dev/P3-RELEASE-POLISH-2026-10-06.md` dokumentiert.
-- Das Evidenzaudit vom 7. Oktober ergänzt WHO-Angehörigenempfehlungen, aktuelle Swissmedic-Materialien, körperliche Kontrollen, freiwillige Sicherheitsabsprachen, Nachsorge und PUK-Kontakte nach Altersgruppe. Direkte Absatzbelege und Quellenarten machen Aussagen nachvollziehbarer. Geprüfte Originale, Umsetzung und weiterhin nicht zugängliche diagnostische bzw. rechtliche Nachweise stehen in [_dev/EVIDENZAUDIT-UMSETZUNG-2026-10-07.md](_dev/EVIDENZAUDIT-UMSETZUNG-2026-10-07.md); eine vollständige ICD-11-CDDR-Kriterienprüfung oder neue juristische Freigabe wird nicht behauptet.
+- Das Evidenzaudit vom 7. Oktober ergänzt WHO-Angehörigenempfehlungen, aktuelle Swissmedic-Materialien, körperliche Kontrollen, freiwillige Sicherheitsabsprachen und Nachsorge (die damals ergänzten PUK-Kontakte nach Altersgruppe sind mit dem Fachstellen-Profil 2026.10.2 entfallen). Direkte Absatzbelege und Quellenarten machen Aussagen nachvollziehbarer. Geprüfte Originale, Umsetzung und weiterhin nicht zugängliche diagnostische bzw. rechtliche Nachweise stehen in [_dev/EVIDENZAUDIT-UMSETZUNG-2026-10-07.md](_dev/EVIDENZAUDIT-UMSETZUNG-2026-10-07.md); eine vollständige ICD-11-CDDR-Kriterienprüfung oder neue juristische Freigabe wird nicht behauptet.
 - Die anschliessende [Codeprüfung vom 7. Oktober](_dev/CODE-AUDIT-2026-10-07.md) dokumentiert fünf reproduzierte Fehler, ihre Korrekturen und die Regressionstests: frühe Importfehler, Doppelklick-Antworten, erste Atemanimation, Absatzdarstellung und fehlende Modulquellen.
 - Der frühere Editor für alternative Farbpaletten ist mit der Übernahme des festen PUK-Profils entfernt.
 

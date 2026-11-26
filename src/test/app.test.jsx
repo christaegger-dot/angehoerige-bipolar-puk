@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { render, screen, within, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../app.jsx';
+import { SITE } from '../site-config.js';
 
 describe('App navigation', () => {
   it('shows a not-found page for an unknown address and leads back into the site', async () => {
@@ -9,43 +10,54 @@ describe('App navigation', () => {
     window.history.replaceState({}, '', '/gibt-es-nicht');
     render(<App />);
 
-    expect(await screen.findByRole('heading', { level: 1, name: 'Diese Seite gibt es nicht.' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 1, name: 'Diese Seite gibt es nicht' })).toBeInTheDocument();
+    expect(screen.getByText('Fehler 404')).toBeInTheDocument();
     expect(window.location.pathname).toBe('/gibt-es-nicht');
     expect(document.title).toBe('Seite nicht gefunden | PUK Zürich');
     expect(document.querySelectorAll('[aria-current="page"]')).toHaveLength(0);
-    const onward = screen.getByRole('navigation', { name: 'Weiter auf der Website' });
-    expect(within(onward).getAllByRole('link').map(link => link.getAttribute('href')))
-      .toEqual(['/', '/module', '/werkzeuge', '/unterstuetzung']);
+    const main = within(screen.getByRole('main'));
+    expect(main.getAllByRole('link').map(link => link.getAttribute('href'))).toEqual(['/']);
 
-    await user.click(within(onward).getByRole('link', { name: 'Zur Startseite' }));
+    await user.click(main.getByRole('link', { name: 'Zur Startseite' }));
     expect(await screen.findByRole('heading', { level: 1, name: /wenn jemand in ihrem umfeld/i })).toBeInTheDocument();
     expect(window.location.pathname).toBe('/');
   });
 
-  it('keeps numbered crisis guidance on the dedicated crisis page across navigation', async () => {
+  it('names the sender in the header and offers no crisis access (Fachstellen-Profil 2026.10.2)', async () => {
     const user = userEvent.setup();
     render(<App />);
 
     await screen.findByRole('heading', { name: /wenn jemand in ihrem umfeld/i });
-    expect(screen.queryByRole('link', { name: '144 · Sanität' })).not.toBeInTheDocument();
-    expect(within(screen.getByRole('main')).queryByText(/akute Gefahr/i)).not.toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: 'SOS Krise' })).not.toBeInTheDocument();
+    // The testing library also counts page headers inside main as banners; browsers do not.
+    const sender = within(document.querySelector('header.site-sender [data-sender]'));
+    expect(sender.getByText(SITE.sender.orgUnit)).toBeVisible();
+    expect(sender.getByText(SITE.sender.institution)).toBeVisible();
+    expect(sender.getByRole('link', { name: SITE.sender.email })).toHaveAttribute('href', `mailto:${SITE.sender.email}`);
 
-    await user.click(screen.getByRole('link', { name: 'Notfall & Krisenhilfe' }));
-    expect(await screen.findByRole('link', { name: '144 · Sanität' })).toHaveAttribute('href', 'tel:144');
-    expect(screen.getByRole('link', { name: '117 · Polizei' })).toHaveAttribute('href', 'tel:117');
-    expect(screen.getByRole('link', { name: '143 · Gespräch' })).toHaveAttribute('href', 'tel:143');
-    await screen.findByRole('heading', { level: 1, name: /SOS Krise — wenn jetzt/i });
-    expect(within(screen.getByRole('main')).getAllByText(/144/).length).toBeGreaterThan(0);
+    const footer = within(screen.getByRole('contentinfo'));
+    expect(footer.getByRole('heading', { name: 'Zuständigkeit' })).toBeInTheDocument();
+    expect(footer.getByText(SITE.responsibility.text)).toBeInTheDocument();
+    expect(footer.getByText(SITE.disclaimer)).toBeInTheDocument();
+    expect(document.querySelectorAll('[data-safety-access="responsibility"]')).toHaveLength(1);
 
-    await user.click(screen.getByRole('link', { name: 'Module' }));
+    expect(document.querySelectorAll('a[href^="tel:"]')).toHaveLength(0);
+    expect(screen.queryByRole('link', { name: /SOS Krise|Notfall/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('navigation', { name: 'Krisenkontakte' })).not.toBeInTheDocument();
+
+    const mainNav = within(screen.getByRole('navigation', { name: 'Hauptnavigation' }));
+    await user.click(mainNav.getByRole('link', { name: 'Module' }));
     await screen.findByRole('heading', { level: 1, name: /Alle sieben Module im Überblick/i });
-    expect(screen.getByRole('link', { name: 'Module', exact: true })).toHaveAttribute('aria-current', 'page');
-    expect(screen.queryByRole('link', { name: '144 · Sanität' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: '117 · Polizei' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: '143 · Gespräch' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: 'SOS Krise' })).not.toBeInTheDocument();
-    expect(within(screen.getByRole('main')).queryByText(/akute Gefahr/i)).not.toBeInTheDocument();
+    expect(mainNav.getByRole('link', { name: 'Module' })).toHaveAttribute('aria-current', 'page');
+    expect(within(document.querySelector('header.site-sender')).getByRole('link', { name: SITE.sender.email })).toBeVisible();
+    expect(document.querySelectorAll('a[href^="tel:"]')).toHaveLength(0);
+  });
+
+  it('shows the not-found page at the address of the removed crisis page', async () => {
+    window.history.replaceState({}, '', '/notfall');
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { level: 1, name: 'Diese Seite gibt es nicht' })).toBeInTheDocument();
+    expect(document.querySelectorAll('a[href^="tel:"]')).toHaveLength(0);
   });
 
   it('navigates between main pages through the shared navigation', async () => {

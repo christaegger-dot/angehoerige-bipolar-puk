@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { execFile, spawn } from 'node:child_process';
 import { promisify, stripVTControlCharacters } from 'node:util';
 import { chromium } from 'playwright';
@@ -169,37 +169,13 @@ function excludes(name, text, forbidden) {
   record(`${name}/underlying-page-removed`, found.length === 0, { found });
 }
 
-async function walletGeometry(page) {
-  const measurement = await page.locator('.wallet-print').evaluate(card => {
-    const mm = pixels => pixels * 25.4 / 96;
-    const bounds = element => {
-      const rect = element.getBoundingClientRect();
-      return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, width: rect.width, height: rect.height };
-    };
-    const panels = [...card.querySelectorAll('.wallet-panel')].map(panel => {
-      const panelBounds = bounds(panel);
-      const children = [...panel.querySelectorAll('*')].filter(element => element.getClientRects().length);
-      const outside = children.filter(element => {
-        const rect = bounds(element);
-        return rect.left < panelBounds.left - 1 || rect.top < panelBounds.top - 1 || rect.right > panelBounds.right + 1 || rect.bottom > panelBounds.bottom + 1;
-      }).map(element => ({ className: element.className, text: element.textContent.trim().slice(0, 100), bounds: bounds(element) }));
-      const textElements = [panel, ...children].filter(element => [...element.childNodes].some(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim()));
-      return {
-        title: panel.querySelector('h3')?.textContent,
-        widthMm: mm(panelBounds.width), heightMm: mm(panelBounds.height),
-        clientWidth: panel.clientWidth, scrollWidth: panel.scrollWidth,
-        clientHeight: panel.clientHeight, scrollHeight: panel.scrollHeight,
-        minFontPt: Math.min(...textElements.map(element => Number.parseFloat(getComputedStyle(element).fontSize) * 72 / 96)),
-        fields: panel.querySelectorAll('.wallet-field').length, outside,
-      };
-    });
-    const frame = bounds(card.querySelector('.wallet-card-panels'));
-    return { panels, frameMm: { width: mm(frame.width), height: mm(frame.height) } };
-  });
-  record('wallet/panel-size', measurement.panels.length === 6 && measurement.panels.every(panel => Math.abs(panel.widthMm - 85) < 1 && Math.abs(panel.heightMm - 55) < 1), measurement);
-  record('wallet/no-panel-overflow', measurement.panels.every(panel => panel.scrollWidth <= panel.clientWidth + 1 && panel.scrollHeight <= panel.clientHeight + 1 && panel.outside.length === 0), measurement);
-  record('wallet/minimum-9pt', measurement.panels.every(panel => panel.minFontPt >= 8.99), { panels: measurement.panels.map(({ title, minFontPt }) => ({ title, minFontPt })) });
-  record('wallet/eleven-fields-contained', measurement.panels.reduce((sum, panel) => sum + panel.fields, 0) === 11 && measurement.panels.every(panel => panel.outside.length === 0), measurement);
+// Fachstellen-Profil 2026.10.2: Auch der Ausdruck nennt keine Telefonnummern
+// (Muster wie im Gate des Profils; Kurznummern nur als ganze Zahl).
+const PHONE_NUMBER = /(?:\+41|0041|\b0)\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}\b|\b0800\s?\d{2,3}\s?\d{2,3}/;
+const SHORT_NUMBER = /(?:^|[^\d.,:/-])(112|117|118|143|144|145|147)(?![\d]|[.,:/-]\d)/;
+function noPhoneNumbers(name, text) {
+  const found = [text.readingOrder, text.layout].flatMap(value => [value.match(PHONE_NUMBER)?.[0], value.match(SHORT_NUMBER)?.[1]]).filter(Boolean);
+  record(`${name}/no-phone-numbers`, found.length === 0, { found: [...new Set(found)] });
 }
 
 async function crisisContrast(page, name, selector) {
@@ -292,9 +268,11 @@ try {
   await scenario('communication', page => communication(page));
   await scenario('communication-boundary', page => communication(page, true));
 
+  const { SITE } = await import(pathToFileURL(path.join(root, 'src/site-config.js')).href);
+  const referral = SITE.responsibility.inline.text;
+  const senderEmail = SITE.sender.email;
   const handouts = [
     ['dl-01', 'Erste Orientierung als Angehörige', 'Was diese Erkrankung bedeutet'],
-    ['dl-02', 'Notfallkarte fürs Portemonnaie', 'Medizinische Angaben'],
     ['dl-04', 'Umgang mit Suizidgedanken', 'SUIZIDGEDANKEN ANSPRECHEN'],
     ['dl-05', 'Umgang mit Psychose / Wahn', 'EIGENE SICHERHEIT ZUERST'],
     ['dl-06', 'Umgang mit Manie', 'Mögliche Frühsignale'],
@@ -304,25 +282,14 @@ try {
   for (const [id, title, content] of handouts) {
     await scenario(id, async page => {
       await open(page, `/unterstuetzung#${id}`, title);
-      if (id === 'dl-02') record('wallet/print-layout-hidden-on-screen', await page.locator('.wallet-print').isHidden());
       await printButton(page, id);
       const result = await pdf(page, id);
       contains(id, result.text, [title, content]);
       excludes(id, result.text, supportPageText);
-      if (id !== 'dl-02') return;
-      record('wallet/one-a4-page', result.count === 1 && result.a4, { pages: result.count });
-      contains('wallet', result.text, [
-        '144 Sanität · Lebensgefahr · 24 h', '117 Polizei · Gewalt / Bedrohung',
-        '143 Anonyme Beratung · 24 h', '0800 33 66 55 Ärztefon ZH · 24 h',
-        '058 384 20 00 PUK ab 18 · 24 h', '058 384 46 82 PUK ab 65',
-        '058 384 66 66 PUK Kinder / Jugendliche', '058 384 38 00 Angehörigenarbeit · werktags',
-        'Vertrauensperson · Name / Telefon', 'Hausärztin / Hausarzt · Name / Telefon', 'Psychiaterin / Klinik · Name / Telefon',
-        'Medikation · Wirkstoff / Dosis', 'Allergien / Unverträglichkeiten', 'Klinikwunsch im Ernstfall',
-        'Ausweichkontakt, wenn niemand erreichbar ist', 'Vorsorgeauftrag / Patientenverfügung hinterlegt bei',
-        'Betreuung für Kinder / abhängige Personen', 'Wer entlastet mich, wenn ich nicht begleiten kann?', 'Zuletzt geprüft am',
-        '100 %', 'ausschneiden', 'falten', '85 × 55 mm',
-      ]);
-      await walletGeometry(page);
+      noPhoneNumbers(id, result.text);
+      // Die beiden Handouts zu akuten Lagen schliessen mit dem geprüften Verweis auf die zuständigen Stellen.
+      if (['dl-04', 'dl-05'].includes(id)) contains(`${id}/referral`, result.text, [referral]);
+      if (id === 'dl-01') contains(`${id}/contact`, result.text, [senderEmail]);
     });
   }
 
@@ -344,6 +311,8 @@ try {
     const result = await pdf(page, 'crisis-plan');
     contains('crisis-plan', result.text, ['Krisenplan', 'Plan für', 'Frühwarnzeichen', name, ...lines, ...safetyAgreements.map(([, value]) => value)]);
     excludes('crisis-plan', result.text, toolsPageText);
+    noPhoneNumbers('crisis-plan', result.text);
+    contains('crisis-plan/contact', result.text, [senderEmail]);
     await crisisContrast(page, 'crisis-plan/print-border-contrast', '.krisenplan-card .krisenplan-print-value');
   });
   if (serverFailure) throw serverFailure;

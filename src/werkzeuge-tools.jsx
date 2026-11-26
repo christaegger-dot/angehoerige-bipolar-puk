@@ -3,6 +3,7 @@ import { Eisberg } from './eisberg.jsx';
 import { clearStoredDraft } from './storage.js';
 import { ToolOverlay } from './tool-overlay.jsx';
 import { EvidenceCitation } from './module-guidance.jsx';
+import { SITE, SENDER_MAILTO } from './site-config.js';
 
 // Announce a user-selected step through its focused heading. The dialog itself
 // owns initial focus; timed breathing phases must not repeatedly move it.
@@ -234,7 +235,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
           )}
           <p className="selbsttest-body">Was fällt Ihnen besonders auf? Was tut Ihnen gut, und was fehlt Ihnen? Beratung können Sie auch dann nutzen, wenn vieles noch gelingt. Bei anhaltenden Schlafproblemen, Erschöpfung oder anderen Beschwerden ist eine fachliche Abklärung sinnvoll.</p>
           <div className="selbsttest-phone">
-            <a href="tel:+41583843800" className="selbsttest-phone-num">058 384 38 00</a>
+            <a href={SENDER_MAILTO} className="selbsttest-phone-num">{SITE.sender.email}</a>
             <span className="selbsttest-phone-label">Fachstelle Angehörigenarbeit PUK · werktags · kostenlos</span>
           </div>
           <div className="selbsttest-actions">
@@ -413,7 +414,7 @@ function KrisenplanTool({ onClose, onNavigate }) {
           ))}
         </div>
 
-        <p>Beratung für Angehörige: Fachstelle Angehörigenarbeit PUK · <a href="tel:+41583843800">058 384 38 00</a> · werktags.</p>
+        <p>Beratung für Angehörige: Fachstelle Angehörigenarbeit PUK · <a href={SENDER_MAILTO}>{SITE.sender.email}</a> · werktags.</p>
 
         <div className="krisenplan-actions no-print">
           <div className="krisenplan-actions-left">

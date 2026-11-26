@@ -265,9 +265,9 @@
     "releaseFingerprint": {
       "version": 1,
       "algorithm": "sha256",
-      "sourceSha256": "f631e534832610be30f59d563cac6eb0c4889c0a3903e675ad492684f58003e5",
-      "buildSha256": "bce785e7c5e07a03e97c10f7ffe8c47ff236b25044ff70d68b38f7aa003c45c9",
-      "sha256": "90825a0a2dac69fd783a4a93c0cae778297211d931604fe9e48b2fd814f15a48"
+      "sourceSha256": "9d3788c156534080d06a6913e22d7227f583864305e1bbb5d11176063df7cbf1",
+      "buildSha256": "a8b04fe4e6268089721041a0ec003845e4e1e328ae64d9474bfbefce633b0020",
+      "sha256": "ffda27a067f851727178ecb2632a84b658104900fdab24631c6caa0873021bee"
     },
     "evidence": [
       "_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md",

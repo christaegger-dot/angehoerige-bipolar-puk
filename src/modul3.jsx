@@ -4,6 +4,7 @@
 import React from 'react';
 import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
+import { ResponsibilityInline } from './shared.jsx';
 
 function ZweiLinien() {
   // Konzept: Zwei Linien beginnen ruhig parallel, geraten unter Druck,
@@ -323,6 +324,7 @@ function Modul3Page({ onNavigate }) {
 
               <h3>Verbale und körperliche Gewalt</h3>
               <p>Verbale oder körperliche Gewalt verletzt, auch wenn sie mit der Erkrankung zusammenhängt. Wenn Sie Gewalt erfahren, haben Sie das Recht, sich in Sicherheit zu bringen.</p>
+              <ResponsibilityInline />
 
               <blockquote className="module-quote" id="quote-m3-04">
                 <p>«Ich dachte lange, dass ich niemandem erzählen darf, was passiert ist. Das fühlte sich wie Verrat an. Als ich endlich darüber gesprochen habe, konnte ich mir Hilfe holen.»</p>

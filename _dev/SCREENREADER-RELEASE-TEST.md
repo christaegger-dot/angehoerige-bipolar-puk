@@ -25,7 +25,7 @@ In jedem System die Website vollständig ohne Maus bedienen und zusätzlich mit 
 
 Ein Prüfschritt besteht, wenn Inhalt und Zweck verständlich hörbar sind, Name/Rolle/Zustand von Bedienelementen zutreffen, eine sinnvolle Reihenfolge und ein nachvollziehbarer Fokus bestehen und die vorgesehene Aktion ohne Maus erfolgreich möglich ist. Änderungen und Fehler müssen wahrnehmbar sein, ohne dass der Benutzer ihren Ort erraten muss. Sichtbarer Tastaturfokus darf nicht durch feste Elemente verdeckt sein. Wenn ein Fehler auftritt, den konkreten Schritt und die tatsächliche Ansage/Fokusposition festhalten, `failed` eintragen und den Lauf nicht freigeben.
 
-### Alle 16 Routen in jedem Lauf
+### Alle 15 Routen in jedem Lauf
 
 Jede Route direkt öffnen **und** über die Website-Navigation erreichen. Seitentitel, genau eine inhaltliche H1, Hauptbereich, Navigationsname/aktuellen Eintrag, verständliche Linktexte und die Überschriftenfolge prüfen. Mit Tab den Skip-Link aktivieren, danach den Hauptinhalt lesen. Auf längeren Seiten mindestens einen Abschnitt und vorhandene interaktive Elemente bis zum Ende bedienen. Der Prüfer verlangt je Route eine eigene konkrete Beobachtung in `routeChecks`.
 
@@ -34,8 +34,7 @@ Jede Route direkt öffnen **und** über die Website-Navigation erreichen. Seiten
 | `/` | Einstiege zu Modulen, Werkzeugen und Hilfe; verständliche nächste Schritte. |
 | `/module` | Sieben Module als Liste; jedes Modul erreichbar. |
 | `/werkzeuge` | Vier Zweckgruppen mit Sprunglinks und neun Werkzeugauslösern; verständliche Überschriften/Dialogzwecke, Speicherhinweis und globale Löschaktion. |
-| `/notfall` | Akute Hilfe ohne Öffnen eines Filters oder Dialogs; eindeutig benannte Telefonlinks. Keine realen Notrufe auslösen. |
-| `/unterstuetzung` | Beratungsangebote, FAQ, sieben Handouts mit Quellen und Druckaktionen. |
+| `/unterstuetzung` | Beratungsangebote (E-Mail- und Weblinks, zwei Einträge ohne Link), FAQ, sechs Handouts mit Quellen und Druckaktionen. |
 | `/module/1` | Inhaltsnavigation, Figuren/Textalternativen, Quellen-Details und Modulfolge. |
 | `/module/2` | Inhaltsnavigation, Krisenbezug, Quellen-Details und Modulfolge. |
 | `/module/3` | Fiktive Verläufe/Zitate hörbar als Beispiele erkennbar; Quellen-Details. |
@@ -52,7 +51,7 @@ Jede Route direkt öffnen **und** über die Website-Navigation erreichen. Seiten
 
 Für **jedes** Werkzeug einen eigenen Eintrag in `toolChecks` ausfüllen: `selbsttest`, `phasenverlauf`, `eisberg`, `krisenplan`, `kommunikation`, `saeulen`, `ee`, `belastungsverlauf`, `atem`. Auslöser aktivieren, Dialogname und Startfokus hören, vorwärts/rückwärts durch alle erreichbaren Controls navigieren, mindestens einen inhaltlichen Schritt bedienen, mit Escape schliessen und den zurückgegebenen Fokus/benannten Auslöser dokumentieren. Direktaufruf und normale Öffnung dürfen keinen Zugang zum wesentlichen Inhalt verhindern.
 
-Für **jedes** Handout einen eigenen Eintrag in `handoutChecks` ausfüllen: `dl-01`, `dl-02`, `dl-04`, `dl-05`, `dl-06`, `dl-07`, `dl-08`. Unter `/unterstuetzung` öffnen; vollständigen Text, immer sichtbare Quellen, Stand, Quellenlinks und Druckaktion erkunden. Den echten Browser-Druckdialog öffnen, abbrechen und die erneute Bedienbarkeit/Fokusposition prüfen. Mindestens einen PDF-Ausdruck pro System erzeugen und auf vollständigen Text/Quellen prüfen. DL-02 bietet zusätzlich zur ausführlichen Lesefassung eine eigene kompakte Karten-PDF: eine A4-Seite mit Faltflächen und Link zur Lesefassung samt Quellen. Prüfen, dass nur die Lesefassung im Screenreader-Lesemodus erscheint. Eine PDF-Datei allein ist keine Abnahme als barrierefreies PDF. Export nur mit erfundenen Daten; Dateien separat löschen.
+Für **jedes** Handout einen eigenen Eintrag in `handoutChecks` ausfüllen: `dl-01`, `dl-04`, `dl-05`, `dl-06`, `dl-07`, `dl-08`. Unter `/unterstuetzung` öffnen; vollständigen Text, immer sichtbare Quellen, Stand, Quellenlinks und Druckaktion erkunden. Den echten Browser-Druckdialog öffnen, abbrechen und die erneute Bedienbarkeit/Fokusposition prüfen. Mindestens einen PDF-Ausdruck pro System erzeugen und auf vollständigen Text/Quellen prüfen. In DL-04 und DL-05 den Verweis auf die zuständigen Stellen am Ende des Textes hören; er nennt keine Nummern. Eine PDF-Datei allein ist keine Abnahme als barrierefreies PDF. Export nur mit erfundenen Daten; Dateien separat löschen.
 
 ### Zustandsprüfliste in jedem Lauf
 
@@ -65,7 +64,7 @@ Die IDs entsprechen `scenarioChecks` der Vorlage. Für jeden Schritt mindestens 
 | `back-forward-navigation` | Von `/module/4#s6` zu `/werkzeuge`, Browser-Zurück und Vorwärts; zusätzlich einen Dialog öffnen und über Zurück/Vorwärts wechseln. Visuelle Position und hörbarer/Fokusort passen zum Ziel; kein unbemerkter Fokusverlust. |
 | `module-sequence-and-source-disclosures` | Vorheriges/nächstes Modul benutzen, Inhaltslink und Quellen-Details mit Tastatur öffnen/schliessen. Direkte Absatzbelege, Quellenarten, geprüfte gegenüber offenen Nachweisen und Links zu zusätzlichen Originalabschnitten erkunden. Zustand wird angesagt; geöffnete Links erreichbar, geschlossene Inhalte nicht irrtümlich als offen angekündigt. |
 | `fictional-example-and-graph-alternatives` | Fiktive Zitate und die Zwei-Linien-Grafik in M3 sowie gemischte Symptome im Phasenwerkzeug erkunden. Beispielcharakter und wesentliche Aussage ohne Erkennen von Farben/Formen verständlich. |
-| `crisis-contact-links` | `/notfall` mit Regionen-/Linkliste und Tab erkunden. Telefonnummer, Zweck und Dringlichkeit vor Aktivierung verständlich. Alle acht Situationssprünge sowie den Link zu weiteren Kontakten prüfen: sichtbarer Zielabschnitt und nachvollziehbarer Fokus. Neue starke Verwirrung wird medizinisch offen eingeordnet; PUK-Kontakte für Erwachsene ab 18, Erwachsene ab 65 sowie Kinder/Jugendliche sind unterscheidbar. Reale Nummern nicht anrufen. |
+| `sender-line-and-responsibility-referral` | Auf `/`, einer Modulseite und `/unterstuetzung` den Kopf mit Regionen-/Linkliste erkunden: Die Absenderzeile nennt Fachstelle, Klinik und E-Mail-Adresse; der E-Mail-Link ist als Link mit der Adresse als Name hörbar und per Tab erreichbar. In der Fusszeile die Überschrift «Zuständigkeit» ansteuern und den Verweis sowie den Hinweis unter «Über diese Seiten» vollständig hören. In Modul 3 (Gewalt), Modul 6 (Medikamente abgesetzt) und Modul 7 (Nachsorge) den Verweis im Text im Lesefluss hören. Auf keiner Seite sind Telefonnummern oder Telefonlinks vorhanden; `/notfall` zeigt die Seite «Diese Seite gibt es nicht». |
 | `dialog-focus-trap-escape-return` | Alle Werkzeug-/Handoutdialoge vorwärts/rückwärts durchtabben, Escape/Schliessen benutzen. Hintergrund nicht versehentlich bedienbar; Fokus bleibt im offenen Dialog und kehrt zum sichtbaren Auslöser zurück. |
 | `crisisplan-labels-and-print` | Krisenplan starten, alle Feldlabels/Hinweise lesen und Beispieldaten eingeben, auch in Fahren/gefährliche Maschinen, finanzielle Sicherheit und sexuelle Selbstbestimmung/Gesundheit. Freiwilligkeit und gewünschte Kontakte sind verständlich; keine intimen Angaben eingeben. Druck/PDF öffnen und abbrechen; alle Feldwerte und Fokus bleiben bedienbar. Löschaktion unterscheidet Eingaben, Altbestand und Exporte. |
 | `communication-form-validation` | Kommunikations-Trainer ohne Anlass fortsetzen versuchen, danach «Grenze» auswählen. Leere und nur aus Leerzeichen bestehende Grenze prüfen; mit eigener umsetzbarer Grenze fortfahren. Erforderliche Auswahl/Grund für deaktivierte Aktion nachvollziehbar; keine unerwartete Ergebnisansicht. |
@@ -77,7 +76,7 @@ Die IDs entsprechen `scenarioChecks` der Vorlage. Für jeden Schritt mindestens 
 | `reflection-results-and-announcements` | Selbstreflexion und Stützen vollständig mit Tastatur bearbeiten; vor/zurück und Ergebnis bedienen. Frage, Auswahl/Zustand, Fortschritt und neue Ergebnisansicht verständlich; Ergebnis ist keine Diagnose. |
 | `tabs-keyboard-and-selected-state` | Im Phasenwerkzeug und EE-Werkzeug Tabs mit vorgesehenen Pfeiltasten/Tab bedienen. Name, ausgewählter Zustand und zugehöriger Inhalt passen zusammen; Inhalt ohne Maus erreichbar. |
 | `breathing-live-announcements-and-stop` | Atemübung beginnen, mindestens einmal 70 Sekunden vollständig durchlaufen und zusätzlich abbrechen. Bei tatsächlicher Vorlesegeschwindigkeit sind Phasen/Ende verständlich, kein unbrauchbarer Ansagestau; Abbrechen jederzeit erreichbar. |
-| `handout-dialog-sources-print` | Alle sieben Handouts öffnen, Quellen lesen, Linkzwecke prüfen und echten Druckdialog öffnen/abbrechen. Keine fehlenden Pflichtinformationen; danach wieder vollständig bedienbar. |
+| `handout-dialog-sources-print` | Alle sechs Handouts öffnen, Quellen lesen, Linkzwecke prüfen und echten Druckdialog öffnen/abbrechen. Keine fehlenden Pflichtinformationen; danach wieder vollständig bedienbar. |
 | `handout-return-module-focus` | Handout DL06 öffnen und Fortsetzung zum Modul/Abschnitt aktivieren, danach Browser-Zurück. Zielinhalt und Fokus sind nachvollziehbar; wieder geöffneter Dialog hat brauchbaren Fokus. |
 | `faq-disclosures` | Unter `/unterstuetzung` FAQ mit Space/Enter öffnen/schliessen. Frage, Zustand und Antwort hörbar; keine versteckte Antwort als weiterhin offen ausgegeben. |
 | `page-loading-and-recovery` | Mit frischer Sitzung und gedrosseltem Netzwerk eine noch nicht geladene Modulseite öffnen; dann gezielt ihren JavaScript-Chunk scheitern lassen. Ladehinweis bzw. Fehler und Reload/Startseite verständlich; der feste Zuständigkeitsverweis in der Fusszeile bleibt erreichbar. Auf der gesonderten Krisenseite direkte Kontakte auch bei Ladefehler prüfen. Nach Recovery Inhalt/Fokus nutzbar. |
@@ -112,7 +111,7 @@ Nun mit dem echten Screenreader die Löschaktion bestätigen und die Warnung wah
 
 ## Nachweise eintragen und Freigabe prüfen
 
-Ein Lauf darf nur `passed` erhalten, wenn **alle** seine Routen, neun Werkzeuge, sieben Handouts und Zustände tatsächlich bestanden sind. Pro Checklisteneintrag `result`, eine konkrete `observation` und den Pfad zum eigenen Bericht in `evidence` eintragen. Ein pauschaler Bericht ohne beobachtete Details genügt nicht. Reale Versionen, Datum, `performedBy: "human"`, Rolle und Initialen ausfüllen. Der Lauf enthält den Fingerprint des getesteten Builds in `releaseFingerprintSha256`.
+Ein Lauf darf nur `passed` erhalten, wenn **alle** seine Routen, neun Werkzeuge, sechs Handouts und Zustände tatsächlich bestanden sind. Pro Checklisteneintrag `result`, eine konkrete `observation` und den Pfad zum eigenen Bericht in `evidence` eintragen. Ein pauschaler Bericht ohne beobachtete Details genügt nicht. Reale Versionen, Datum, `performedBy: "human"`, Rolle und Initialen ausfüllen. Der Lauf enthält den Fingerprint des getesteten Builds in `releaseFingerprintSha256`.
 
 Nach Abschluss den SHA256 jedes Berichts ermitteln, zum Beispiel:
 

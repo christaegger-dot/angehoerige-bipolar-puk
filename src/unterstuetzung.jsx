@@ -7,7 +7,8 @@ import { loadWerkzeugTool } from './werkzeug-loader.js';
 import { LoadErrorBoundary } from './load-error-boundary.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { EvidenceCitation, EvidenceSourceList, HandoutSources } from './module-guidance.jsx';
-import { getPageMetadata } from './page-metadata.js';
+import { ResponsibilityInline } from './shared.jsx';
+import { SITE, SENDER_MAILTO } from './site-config.js';
 
 const HANDOUTS = {
   'DL-01': {
@@ -37,7 +38,7 @@ const HANDOUTS = {
         dontTitle: 'Was in den ersten Tagen zusätzlich belasten kann',
         do: [
           'Mit einer Person sprechen, der Sie vertrauen',
-          'Die Fachstelle anrufen — auch wenn Sie noch nicht wissen, was Sie fragen sollen',
+          'Sich bei der Fachstelle melden — auch wenn Sie noch nicht wissen, was Sie fragen sollen',
           'Einen kleinen nächsten Schritt wählen',
           'Sich erlauben, noch nicht alles zu wissen',
         ],
@@ -61,61 +62,9 @@ const HANDOUTS = {
         ],
       },
       {
-        kind: 'phone',
-        number: '058 384 38 00',
+        kind: 'contact',
         label: 'Fachstelle Angehörigenarbeit PUK Zürich',
         sub: 'Kostenlos, vertraulich, auch wenn Sie noch nicht wissen, was Sie fragen sollen.',
-      },
-    ],
-  },
-
-  'DL-02': {
-    title: 'Notfallkarte fürs Portemonnaie',
-    sub: 'Kompakte Karte zum Ausschneiden und Falten — wichtige Nummern und persönliche Angaben',
-    lede: 'Eine Karte, die Sie ausdrucken, ausfüllen und einstecken können. Im Krisenfall haben Sie die wichtigsten Informationen auf einen Griff parat.',
-    sections: [
-      {
-        kind: 'h',
-        text: 'Notrufnummern',
-      },
-      {
-        kind: 'phonelist',
-        items: [
-          { num: '144', label: 'Sanität · Lebensgefahr · 24 h' },
-          { num: '117', label: 'Polizei · bei Gewalt oder Bedrohung' },
-          { num: '143', label: 'Dargebotene Hand · anonyme Beratung · 24 h' },
-          { num: '0800 33 66 55', label: 'Ärztefon Notfalldienst ZH · 24 h' },
-          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h · ab 18 Jahren' },
-          { num: '058 384 46 82', label: 'PUK Notfall Alterspsychiatrie · ab 65 Jahren' },
-          { num: '058 384 66 66', label: 'PUK Notfall Kinder und Jugendliche' },
-          { num: '058 384 38 00', label: 'Fachstelle Angehörigenarbeit · werktags' },
-        ],
-        sourceKeys: ['pukEmergency'],
-      },
-      {
-        kind: 'h',
-        text: 'Persönliche Angaben — bitte ausfüllen',
-      },
-      {
-        kind: 'fields',
-        items: [
-          { label: 'Vertrauensperson · Name & Telefon' },
-          { label: 'Hausärztin / Hausarzt · Name & Telefon' },
-          { label: 'Behandelnde Psychiaterin / Klinik' },
-          { label: 'Aktuelle Medikation (Wirkstoff, Dosis)' },
-          { label: 'Bekannte Allergien / Unverträglichkeiten' },
-          { label: 'Klinikwunsch im Ernstfall' },
-          { label: 'Ausweichkontakt, wenn die behandelnde Stelle nicht erreichbar ist' },
-          { label: 'Betreuung für Kinder oder andere abhängige Personen' },
-          { label: 'Wer entlastet mich, wenn ich nicht begleiten kann?' },
-          { label: 'Zuletzt geprüft am' },
-          { label: 'Vorsorgeauftrag / Patientenverfügung hinterlegt bei' },
-        ],
-      },
-      {
-        kind: 'callout',
-        label: 'Wie Sie diese Karte nutzen',
-        text: 'Drucken — falten — einstecken. Aktualisieren Sie die Angaben, wenn sich Medikation, Behandlungsteam oder Vertrauensperson ändert. Eine Kopie bei der erkrankten Person, eine bei sich selbst.',
       },
     ],
   },
@@ -156,7 +105,7 @@ const HANDOUTS = {
           'Nur bleiben, solange Ihre eigene Sicherheit gewährleistet ist; Hilfeübergabe organisieren.',
           'Ehrlich Sorge zeigen: «Ich mache mir Sorgen um dich.»',
           'Gefährliche Gegenstände nicht gegen Widerstand wegnehmen und sich nicht selbst gefährden.',
-          'Bei unmittelbarer Gefahr 144; zur Notfallaufnahme nur fahren, wenn dies sicher möglich ist.',
+          'Bei unmittelbarer Gefahr die Sanität rufen; zur Notfallaufnahme nur fahren, wenn dies sicher möglich ist.',
           'Nach der akuten Phase: behandelnde Stelle informieren, eigene Beratung holen.',
         ],
         dont: [
@@ -167,20 +116,7 @@ const HANDOUTS = {
         ],
       },
       {
-        kind: 'h',
-        text: 'Notrufnummern',
-      },
-      {
-        kind: 'phonelist',
-        items: [
-          { num: '144', label: 'Sanität · Lebensgefahr · 24 h' },
-          { num: '143', label: 'Dargebotene Hand · anonyme Beratung · 24 h' },
-          { num: '0800 33 66 55', label: 'Ärztefon Notfalldienst ZH · 24 h' },
-          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h · ab 18 Jahren' },
-          { num: '058 384 46 82', label: 'PUK Notfall Alterspsychiatrie · ab 65 Jahren' },
-          { num: '058 384 66 66', label: 'PUK Notfall Kinder und Jugendliche' },
-        ],
-        sourceKeys: ['pukEmergency'],
+        kind: 'responsibility',
       },
     ],
   },
@@ -224,22 +160,10 @@ const HANDOUTS = {
       {
         kind: 'callout',
         label: 'Eigene Sicherheit zuerst',
-        text: 'Wenn die Lage eskaliert oder Sie sich bedroht fühlen: gehen Sie hinaus. Holen Sie Hilfe von aussen. 117 (Polizei) oder 144 (Sanität) sind die richtigen Nummern.',
+        text: 'Wenn die Lage eskaliert oder Sie sich bedroht fühlen: gehen Sie hinaus. Holen Sie Hilfe von aussen. Polizei oder Sanität sind die richtigen Stellen.',
       },
       {
-        kind: 'h',
-        text: 'Notfall',
-      },
-      {
-        kind: 'phonelist',
-        items: [
-          { num: '058 384 20 00', label: 'PUK Notfall Erwachsene · 24 h · ab 18 Jahren' },
-          { num: '058 384 46 82', label: 'PUK Notfall Alterspsychiatrie · ab 65 Jahren' },
-          { num: '058 384 66 66', label: 'PUK Notfall Kinder und Jugendliche' },
-          { num: '144', label: 'Sanität · bei akuter Gefahr' },
-          { num: '117', label: 'Polizei · bei Gewalt oder Bedrohung' },
-        ],
-        sourceKeys: ['pukEmergency'],
+        kind: 'responsibility',
       },
     ],
   },
@@ -451,13 +375,6 @@ const HANDOUTS = {
   },
 };
 
-function toTelUri(num) {
-  const digits = num.replace(/\s/g, '');
-  if (digits.length <= 4) return `tel:${digits}`;
-  if (digits.startsWith('0')) return `tel:+41${digits.slice(1)}`;
-  return `tel:${digits}`;
-}
-
 function HandoutSection({ section }) {
   switch (section.kind) {
     case 'h':
@@ -497,28 +414,16 @@ function HandoutSection({ section }) {
           {section.sourceKeys && <EvidenceCitation keys={section.sourceKeys} />}
         </aside>
       );
-    case 'phone':
+    case 'contact':
       return (
-        <div className="handout-phone">
-          <a href={toTelUri(section.number)} className="handout-phone-num">{section.number}</a>
+        <div className="handout-phone handout-contact">
+          <a href={SENDER_MAILTO} className="handout-phone-num">{SITE.sender.email}</a>
           <span className="handout-phone-label">{section.label}</span>
           {section.sub && <span className="handout-phone-sub">{section.sub}</span>}
         </div>
       );
-    case 'phonelist':
-      return (
-        <>
-          <ul className="handout-phonelist">
-            {section.items.map((it, i) => (
-              <li key={i}>
-                <a href={toTelUri(it.num)} className="handout-phonelist-num">{it.num}</a>
-                <span className="handout-phonelist-label">{it.label}</span>
-              </li>
-            ))}
-          </ul>
-          {section.sourceKeys && <><p className="handout-p">PUK-Kontakte nach Altersgruppe, geprüft am 7. Oktober 2026.</p><EvidenceCitation keys={section.sourceKeys} /></>}
-        </>
-      );
+    case 'responsibility':
+      return <ResponsibilityInline />;
     case 'fields':
       return (
         <dl className="handout-fields">
@@ -544,7 +449,6 @@ const HANDOUT_CONTINUATIONS = {
 
 const HANDOUT_TOPICS = {
   'DL-01': 'orientation',
-  'DL-02': 'crisis',
   'DL-04': 'suicide',
   'DL-05': ['crisis', 'communication'],
   'DL-06': 'mania',
@@ -552,105 +456,19 @@ const HANDOUT_TOPICS = {
   'DL-08': 'medicationQuestions',
 };
 
-function WalletField({ label, lines = 1 }) {
-  return (
-    <div className="wallet-field">
-      <dt>{label}</dt>
-      <dd aria-hidden="true">{Array.from({ length: lines }, (_, i) => <span key={i} />)}</dd>
-    </div>
-  );
-}
-
-function WalletEmergencyCard() {
-  const contacts = HANDOUTS['DL-02'].sections.find(section => section.kind === 'phonelist').items;
-  const compactLabels = {
-    '144': 'Sanität · Lebensgefahr · 24 h',
-    '117': 'Polizei · Gewalt / Bedrohung',
-    '143': 'Anonyme Beratung · 24 h',
-    '0800 33 66 55': 'Ärztefon ZH · 24 h',
-    '058 384 20 00': 'PUK ab 18 · 24 h',
-    '058 384 46 82': 'PUK ab 65',
-    '058 384 66 66': 'PUK Kinder / Jugendliche',
-    '058 384 38 00': 'Angehörigenarbeit · werktags',
-  };
-  const readingUrl = `${getPageMetadata('unterstuetzung').canonical}#dl-02`;
-
-  return (
-    <section className="wallet-print" aria-label="Kompakte Notfallkarte zum Drucken">
-      <h2>Notfallkarte fürs Portemonnaie</h2>
-      <p className="wallet-instructions">Auf A4 bei 100 % / «Tatsächliche Grösse» drucken. Erst ausfüllen, dann den äusseren durchgezogenen Rahmen ausschneiden. An den beiden waagrechten gestrichelten Linien nach innen falten, dann an der senkrechten Linie halbieren. Gefaltet: 85 × 55 mm.</p>
-      <div className="wallet-card-panels">
-        {[['Notfallkarte · Soforthilfe', contacts.slice(0, 4)], ['Weitere Unterstützung', contacts.slice(4)]].map(([title, numbers]) => (
-          <section className="wallet-panel" key={title}>
-            <h3>{title}</h3>
-            <ul className="wallet-contacts">
-              {numbers.map(contact => (
-                <li key={contact.num}>
-                  <a href={toTelUri(contact.num)}>{contact.num}</a>
-                  <span>{compactLabels[contact.num]}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="wallet-reminder">{title.includes('Soforthilfe') ? 'Eigene Sicherheit zuerst. In akuten Lagen hat der Notfallweg Vorrang.' : 'Angaben bei Änderungen aktualisieren. Eine Kopie für die erkrankte Person, eine für Sie.'}</p>
-          </section>
-        ))}
-        <section className="wallet-panel">
-          <h3>Meine Kontakte</h3>
-          <dl>
-            <WalletField label="Vertrauensperson · Name / Telefon" />
-            <WalletField label="Hausärztin / Hausarzt · Name / Telefon" />
-            <WalletField label="Psychiaterin / Klinik · Name / Telefon" />
-          </dl>
-        </section>
-        <section className="wallet-panel">
-          <h3>Medizinische Angaben</h3>
-          <dl>
-            <WalletField label="Medikation · Wirkstoff / Dosis" lines={2} />
-            <WalletField label="Allergien / Unverträglichkeiten" />
-            <WalletField label="Klinikwunsch im Ernstfall" />
-          </dl>
-        </section>
-        <section className="wallet-panel">
-          <h3>Absprachen für den Ernstfall</h3>
-          <dl>
-            <WalletField label="Ausweichkontakt, wenn niemand erreichbar ist" lines={2} />
-            <WalletField label="Vorsorgeauftrag / Patientenverfügung hinterlegt bei" lines={2} />
-          </dl>
-        </section>
-        <section className="wallet-panel">
-          <h3>Betreuung und Entlastung</h3>
-          <dl>
-            <WalletField label="Betreuung für Kinder / abhängige Personen" lines={2} />
-            <WalletField label="Wer entlastet mich, wenn ich nicht begleiten kann?" />
-            <WalletField label="Zuletzt geprüft am" />
-          </dl>
-        </section>
-      </div>
-      <div className="wallet-print-notes">
-        <p>Die Karte ersetzt keine fachliche Beratung. In akuten Lagen hat der Notfallweg Vorrang. Bei umfangreicher Medikation zusätzlich den aktuellen Medikationsplan mitnehmen.</p>
-        <p>Fachstelle Angehörigenarbeit PUK Zürich · Inhaltliche Verantwortung: Ch. Egger · Stand Oktober 2026. Ausführliche Hinweise und Quellen in der Lesefassung:<br /><a href={readingUrl}>{readingUrl}</a></p>
-      </div>
-    </section>
-  );
-}
-
 function HandoutOverlay({ id, onClose, onNavigate }) {
   const handout = HANDOUTS[id];
   if (!handout) return null;
-  const crisisOrientation = ['DL-02', 'DL-04', 'DL-05'].includes(id);
   const continuation = HANDOUT_CONTINUATIONS[id];
-  const walletCard = id === 'DL-02';
 
   return (
-    <ToolOverlay onClose={onClose} ariaLabel={handout.title} overlayClass={`handout-overlay${walletCard ? ' wallet-overlay' : ''}`} cardClass="handout-card" noPrint={true}>
-      {walletCard && <WalletEmergencyCard />}
-      <div className={walletCard ? 'wallet-reading no-print' : 'handout-reading'}>
+    <ToolOverlay onClose={onClose} ariaLabel={handout.title} overlayClass="handout-overlay" cardClass="handout-card" noPrint={true}>
+      <div className="handout-reading">
         <header className="handout-head">
           <span className="kicker">Handout · {id}</span>
           <h2>{handout.title}</h2>
           {handout.sub && <p className="handout-sub">{handout.sub}</p>}
           {handout.lede && <p className="handout-lede">{handout.lede}</p>}
-          {walletCard && <p className="wallet-screen-note">Beim Drucken erhalten Sie eine kompakte Karte auf einer A4-Seite mit Anleitung zum Ausschneiden und Falten. Die ausführliche Lesefassung und ihre Quellen finden Sie hier darunter.</p>}
         </header>
 
         <div className="handout-body">
@@ -676,7 +494,7 @@ function HandoutOverlay({ id, onClose, onNavigate }) {
 
         <footer className="handout-foot">
           <p className="handout-credits">
-            Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) · Inhaltliche Verantwortung: Ch. Egger · Redaktioneller Abgleich: Oktober 2026 · Diese Inhalte ersetzen keine fachliche Beratung.{crisisOrientation && ' In akuten Lagen hat der Notfallweg Vorrang.'}
+            Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) · Inhaltliche Verantwortung: Ch. Egger · Redaktioneller Abgleich: Oktober 2026 · Diese Inhalte ersetzen keine fachliche Beratung.
           </p>
         </footer>
       </div>
@@ -693,7 +511,6 @@ function HandoutOverlay({ id, onClose, onNavigate }) {
 // kind: 'handout' rendert HandoutOverlay, 'tool' öffnet das interaktive Werkzeug.
 const MATERIAL_CARDS = [
   { id: 'DL-01', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Erste Orientierung als Angehörige*r', desc: 'Die Erkrankung verstehen und erste Schritte für sich finden.' },
-  { id: 'DL-02', kind: 'handout', metaLabel: 'NOTFALLKARTE', title: 'Notfallkarte fürs Portemonnaie', desc: 'Wichtige Nummern und persönliche Angaben — zum Drucken, Ausfüllen, Falten und Einstecken.' },
   { id: 'DL-04', kind: 'handout', metaLabel: 'GESPRÄCHSHILFE', title: 'Umgang mit Suizidgedanken', desc: 'Anleitung für das direkte Gespräch und Schritte bei akuter Gefährdung.' },
   { id: 'DL-05', kind: 'handout', metaLabel: 'GESPRÄCHSHILFE', title: 'Umgang mit Psychose / Wahn', desc: 'Was Sie sagen können, was Sie nicht sagen sollten, wann professionelle Hilfe nötig ist.' },
   { id: 'DL-06', kind: 'handout', metaLabel: 'KURZFASSUNG', title: 'Umgang mit Manie', desc: 'Veränderungen wahrnehmen, Gespräche führen und Schutzschritte gemeinsam vorbereiten.' },
@@ -736,7 +553,7 @@ function MaterialToolLoadError({ onClose }) {
 const FAQS = [
   { q: 'Kann ich als Angehörige oder nahestehende Person selbst Beratung erhalten?', a: 'Ja. Die Fachstelle Angehörigenarbeit berät Sie zu Ihren eigenen Fragen. Sie bietet auch Informationen und Gespräche zum Umgang mit der Erkrankung, die sogenannte Psychoedukation. Sie können Unterstützung für sich suchen, ohne die erkrankte Person erst davon zu überzeugen.' },
   { q: 'Ist die Beratung kostenpflichtig?', a: 'Nein. Die Beratung der Fachstelle Angehörigenarbeit der PUK Zürich ist kostenlos und vertraulich.' },
-  { q: 'Muss ich wissen, was ich sagen will, bevor ich anrufe?', a: 'Nein. Sie brauchen noch keine klar formulierte Frage. Im Gespräch können Sie gemeinsam klären, was Sie beschäftigt und welche Unterstützung Sie suchen.' },
+  { q: 'Muss ich wissen, was ich sagen will, bevor ich mich melde?', a: 'Nein. Sie brauchen noch keine klar formulierte Frage. Im Gespräch können Sie gemeinsam klären, was Sie beschäftigt und welche Unterstützung Sie suchen.' },
   { q: 'Was, wenn die erkrankte Person nicht in der PUK behandelt wird?', a: 'Die Beratung steht auch Angehörigen offen, deren Familienmitglied anderswo behandelt wird oder gar nicht in Behandlung ist. Wir vermitteln bei Bedarf weiter.' },
   { q: 'Wie ist es mit der Schweigepflicht?', a: 'Die Angehörigenberatung ist vertraulich. Eine Weitergabe wird grundsätzlich mit Ihnen besprochen und benötigt Ihre Zustimmung; gesetzliche Ausnahmen bleiben vorbehalten. Wenn Sie Beobachtungen direkt einem Behandlungsteam mitteilen, können diese Teil der Behandlungsdokumentation werden. Klären Sie dort vorab, wie damit umgegangen wird.', link: { target: 'schweigepflicht', label: 'Schweigepflicht beim Behandlungsteam vertiefen' } },
 ];
@@ -820,16 +637,26 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
 
           <div className="resource-list">
             {[
-              { num: '01', title: 'Fachstelle Angehörigenarbeit PUK Zürich', desc: 'Beratung speziell für Angehörige psychisch erkrankter Menschen. Telefonisch, per Mail oder im persönlichen Gespräch.', tag: '058 384 38 00', href: 'tel:+41583843800', kind: 'tel' },
-              { num: '02', title: 'Pro Mente Sana — Beratungstelefon', desc: 'Rechtsberatung zu Fürsorgerischer Unterbringung (FU), Vorsorgeauftrag, Beistandschaften und Patientenrechten. Werktags.', tag: '0848 800 858', href: 'tel:+41848800858', kind: 'tel' },
+              { num: '01', title: 'Fachstelle Angehörigenarbeit PUK Zürich', desc: 'Beratung speziell für Angehörige psychisch erkrankter Menschen. Telefonisch, per Mail oder im persönlichen Gespräch.', tag: SITE.sender.email, href: SENDER_MAILTO, kind: 'mail' },
+              { num: '02', title: 'Pro Mente Sana — Beratungstelefon', desc: 'Rechtsberatung zu Fürsorgerischer Unterbringung (FU), Vorsorgeauftrag, Beistandschaften und Patientenrechten. Werktags.', kind: 'plain' },
               { num: '03', title: 'EQUILIBRIUM', desc: 'Verein der Schweizer Selbsthilfegruppen für Menschen mit Erkrankungen der Stimmung (affektiven Störungen) und ihre Angehörigen.', tag: 'depressionen.ch', href: 'https://www.depressionen.ch/', kind: 'web' },
               { num: '04', title: 'VASK Schweiz', desc: 'Vereinigung der Angehörigen von schizophrenie- und psychisch Kranken — Selbsthilfegruppen in vielen Kantonen.', tag: 'vask.ch', href: 'https://www.vask.ch/', kind: 'web' },
               { num: '05', title: 'Selbsthilfe Zürich', desc: 'Vermittelt regionale Selbsthilfegruppen — auch für Angehörige von Menschen mit bipolarer Störung.', tag: 'selbsthilfezuerich.ch', href: 'https://www.selbsthilfezuerich.ch/', kind: 'web' },
-              { num: '06', title: 'Opferhilfe Zürich', desc: 'Unterstützung, wenn Sie Gewalt durch Angehörige erleben — kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', tag: '044 455 21 42', href: 'tel:+41444552142', kind: 'tel' },
+              { num: '06', title: 'Opferhilfe Zürich', desc: 'Unterstützung, wenn Sie Gewalt durch Angehörige erleben — kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', kind: 'plain' },
             ].map(r => {
               const external = r.kind === 'web';
-              const ariaLabel = r.kind === 'tel'
-                ? `${r.title} anrufen unter ${r.tag}`
+              // Ohne bestätigte Webadresse bleibt der Eintrag eine Zeile ohne Link (Profil 2026.10.2: keine Telefonnummern).
+              if (r.kind === 'plain') {
+                return (
+                  <div key={r.num} className="resource-row resource-row--plain">
+                    <div className="num">{r.num}</div>
+                    <div className="title">{r.title}</div>
+                    <div className="desc">{r.desc}</div>
+                  </div>
+                );
+              }
+              const ariaLabel = r.kind === 'mail'
+                ? `${r.title} — E-Mail schreiben an ${r.tag}`
                 : `${r.title} — Website öffnen (${r.tag})`;
               return (
                 <a
@@ -907,13 +734,8 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
 
           <div className="contact-grid">
             <div className="contact-info-block">
-              <div className="label">TELEFON</div>
-              <div className="value"><a className="link-underline" href="tel:+41583843800">058 384 38 00</a></div>
-              <div className="sub">Werktags. Wenn Sie niemanden erreichen, hinterlassen Sie eine Nachricht mit Ihrer Telefonnummer.</div>
-            </div>
-            <div className="contact-info-block">
               <div className="label">E-MAIL</div>
-              <div className="value"><a className="link-underline" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a></div>
+              <div className="value"><a className="link-underline" href={SENDER_MAILTO}>{SITE.sender.email}</a></div>
               <div className="sub">Für Beratungsanfragen.</div>
             </div>
             <div className="contact-info-block">

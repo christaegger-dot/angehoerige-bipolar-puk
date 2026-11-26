@@ -4,6 +4,7 @@ import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 import { ANLAUFSTELLEN_ENTRY, TOOLS } from './site-content.js';
 import { TriageFlow } from './triage-flow.jsx';
+import { SITE, SENDER_MAILTO } from './site-config.js';
 
 function HomePage({ onNavigate }) {
   return (
@@ -11,11 +12,6 @@ function HomePage({ onNavigate }) {
       {/* HERO */}
       <header className="hero">
         <div className="hero-inner">
-          <div className="hero-meta animate-in">
-            Fachstelle Angehörigenarbeit
-            <span className="hero-meta-dot">·</span>
-            Psychiatrische Universitätsklinik Zürich
-          </div>
           <h1 className="animate-in delay-1">
             Wenn jemand in Ihrem Umfeld eine <em>bipolare Störung</em> hat.
           </h1>
@@ -155,8 +151,7 @@ function HomePage({ onNavigate }) {
           <h2>Auch ohne vorbereitete Fragen.</h2>
           <p>Die Fachstelle Angehörigenarbeit bietet Beratung und Psychoedukation für Angehörige – auch wenn Sie noch nicht sicher sind, ob Sie Unterstützung brauchen.</p>
           <div className="invitation-contact">
-            <a className="invitation-phone" href="tel:+41583843800">058 384 38 00</a>
-            <a className="invitation-email" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a>
+            <a className="invitation-email" href={SENDER_MAILTO}>{SITE.sender.email}</a>
           </div>
         </div>
       </section>

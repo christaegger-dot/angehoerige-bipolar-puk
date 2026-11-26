@@ -26,7 +26,7 @@ function DatenschutzPage() {
             </p>
             <p>
               <a className="link-underline" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a><br/>
-              Lenggstrasse 31, Postfach, 8032 Zürich · 058 384 38 00
+              Lenggstrasse 31, Postfach, 8032 Zürich
             </p>
 
             <h2>Welche Daten erhoben werden</h2>
