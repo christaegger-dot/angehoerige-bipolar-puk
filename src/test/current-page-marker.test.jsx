@@ -4,7 +4,7 @@ import App from '../app.jsx';
 import { ROUTES } from '../routes.js';
 
 const moduleDetailOrReference = /^(modul[1-7]|schweigepflicht)$/;
-const breadcrumbRoutes = ROUTES.filter(({ page }) => moduleDetailOrReference.test(page) || page === 'notfall');
+const breadcrumbRoutes = ROUTES.filter(({ page }) => moduleDetailOrReference.test(page));
 
 describe('current page marker', () => {
   it.each(ROUTES.map(({ page, path }) => [path, page]))(
@@ -29,7 +29,7 @@ describe('current page marker', () => {
 
   it.each(breadcrumbRoutes.map(({ page, path }) => [path, page]))(
     'renders the breadcrumb on %s as an ordered list without separator text',
-    async (path, page) => {
+    async (path) => {
       window.history.replaceState({}, '', path);
       render(<App />);
 
@@ -37,12 +37,11 @@ describe('current page marker', () => {
       const list = within(breadcrumb).getByRole('list');
       expect(list.tagName).toBe('OL');
       const items = within(list).getAllByRole('listitem');
-      expect(items).toHaveLength(page === 'notfall' ? 2 : 3);
+      expect(items).toHaveLength(3);
       expect(within(items[0]).getByRole('link', { name: 'Start' })).toHaveAttribute('href', '/');
       // Separators are generated in CSS so screen readers do not read them.
       expect(breadcrumb.textContent).not.toContain('/');
-      // The crisis page keeps its current-page marker in the main navigation.
-      expect(within(breadcrumb).queryAllByRole('link', { current: 'page' })).toHaveLength(page === 'notfall' ? 0 : 1);
+      expect(within(breadcrumb).queryAllByRole('link', { current: 'page' })).toHaveLength(1);
     },
   );
 });

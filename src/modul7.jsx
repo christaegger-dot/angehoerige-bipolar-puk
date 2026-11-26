@@ -4,6 +4,7 @@
 import React from 'react';
 import { ModuleQuickStart, EvidenceSources, EvidenceCitation, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
+import { ResponsibilityInline } from './shared.jsx';
 
 function SaeulenFigur() {
   const w = 600, h = 400;
@@ -261,6 +262,7 @@ function Modul7Page({ onNavigate }) {
               </ul>
               <p>Wenn nach einer Suizid- oder Selbstverletzungskrise weiterhin Sorgen um die Sicherheit bestehen, braucht es zeitnahe professionelle Einschätzung und Nachsorge. Warten Sie damit nicht auf ein späteres Gespräch zur Aufarbeitung. Zeitpunkt und Zuständigkeit werden mit den behandelnden Fachpersonen geklärt; Angehörige übernehmen keine alleinige Sicherheitsbeurteilung.</p>
               <EvidenceCitation keys={['niceBipolar', 'suicide']} />
+              <ResponsibilityInline />
               <p>Die gemeinsam angepassten Absprachen können Sie im <a href={navHref('werkzeuge', 'krisenplan')} onClick={navHandler('werkzeuge', onNavigate, 'krisenplan')}>Krisenplan</a> festhalten. Der Plan ergänzt die fachliche Nachsorge und ersetzt sie nicht.</p>
 
               <h3>Das Gespräch nach der Krise</h3>

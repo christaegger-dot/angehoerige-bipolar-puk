@@ -103,6 +103,21 @@ Die fünfte Anpassung vom selben Tag setzt die übrigen Befunde der Seitenprüfu
 
 Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; die Hinweise zu Speicherung und Löschung stehen unverändert vor den Werkzeugen und in den Dialogen. Am neu gebauten Stand bestanden die 225 Werkzeugchecks, die nun 700 Website-Browserchecks einschliesslich der Prüfung auf externe Laufzeitanfragen, die 72 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird wie in den vorangehenden Durchgängen an den neuen App-/Build-Fingerprint gebunden; die vorbereiteten Screenreader-Läufe erhalten denselben Prüfstand und bleiben nicht ausgeführt.
 
+### Abgleich nach dem Wechsel auf das Fachstellen-Profil 2026.10.2 (26. November 2026, sechster Durchgang)
+
+Die sechste Anpassung vom selben Tag setzt die erste Etappe des Profilwechsels um (Entscheide der Fachstelle und alle geänderten Wortlaute in `_dev/PROFILWECHSEL-2026-10-2.md`). Die Fachstelle hat der neuen Bindung am 26. November 2026 zugestimmt. Datenschutzrelevant geprüft wurden:
+
+- **Absenderzeile im Kopf jeder Seite** (`SenderLine` in `src/shared.jsx`): Text und ein `mailto:`-Link auf die bereits genannte Adresse der Fachstelle. Eine E-Mail entsteht erst, wenn jemand sie im eigenen Mailprogramm schreibt und sendet; die Website überträgt dabei nichts. Der Abschnitt «Kontaktaufnahme per E-Mail» der Datenschutzseite beschreibt diesen Weg unverändert.
+- **E-Mail-Adresse statt Telefonnummer** in Modul 1 und 2, im Selbsttest, im Krisenplan, im Handout «Erste Orientierung», auf der Startseite und in der Liste «Hilfe»: dieselbe Adresse, derselbe `mailto:`-Link. Sämtliche `tel:`-Links sind entfallen.
+- **Entfernt:** die Seite «SOS Krise», die Krisenleiste, die Notfallkarte fürs Portemonnaie samt ihrer Druckkarte und die Quelle «PUK Zürich: Notfallkontakte». Dabei entfällt kein Speicher- oder Löschmechanismus; die Notfallkarte war eine unausgefüllte Druckvorlage ohne Eingabe im Browser. Der Eintrag `support-handout-print` der Datenpolicy gilt für die verbleibenden sechs Handouts unverändert.
+- **Zuständigkeitsverweis, Hinweis und Verweis im Text** (`src/site-config.js`): statischer Text ohne Link.
+- **Seite «Nicht gefunden»:** statt vier interner Links noch einer.
+- **Übrige Änderungen** sind CSS (Textfarbe, Radius der Buttons, Absenderzeile, Fusszeile, Telefon-Kopf, entfernte Regeln der Krisenteile) und das neu erzeugte Vorschaubild `public/social-preview.png`, das jetzt die Absenderzeile mit der E-Mail-Adresse der Fachstelle zeigt und keine personenbezogenen Inhalte enthält.
+
+Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; die Hinweise zu Speicherung und Löschung stehen unverändert vor den Werkzeugen und in den Dialogen. Am neu gebauten Stand bestanden die 225 Werkzeugchecks, die nun 716 Website-Browserchecks einschliesslich der Prüfung auf externe Laufzeitanfragen, die 71 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird wie in den vorangehenden Durchgängen an den neuen Fingerprint gebunden (`sourceSha256` `9d3788c156534080d06a6913e22d7227f583864305e1bbb5d11176063df7cbf1`, `buildSha256` `a8b04fe4e6268089721041a0ec003845e4e1e328ae64d9474bfbefce633b0020`, `sha256` `ffda27a067f851727178ecb2632a84b658104900fdab24631c6caa0873021bee`).
+
+Die Screenreader-Vorlage `website-screenreader-test.json` ist neu erzeugt, weil sich ihr Umfang geändert hat: 15 statt 16 Routen, 6 statt 7 Handouts, und das Szenario `crisis-contact-links` ist durch `sender-line-and-responsibility-referral` ersetzt. Die bisherige Vorlage enthielt keine Ergebnisse; alle Einträge stehen weiter auf `pending`.
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

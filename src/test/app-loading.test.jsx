@@ -7,6 +7,7 @@ const fixture = vi.hoisted(() => ({ renderers: {} }));
 vi.mock('../page-registry.js', () => ({ PAGE_RENDERERS: fixture.renderers }));
 
 import App from '../app.jsx';
+import { SITE } from '../site-config.js';
 
 function delayedPage() {
   let resolve;
@@ -194,7 +195,8 @@ describe('committed page navigation', () => {
     expect(screen.getByRole('button', { name: 'Seite neu laden' })).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: '144 · Sanität' })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: '117 · Polizei' })).not.toBeInTheDocument();
-    expect(within(screen.getByRole('contentinfo')).getByRole('link', { name: 'Notfall & Krisenhilfe' })).toHaveAttribute('href', '/notfall');
+    expect(within(screen.getByRole('contentinfo')).getByText(SITE.responsibility.text)).toBeInTheDocument();
+    expect(document.querySelectorAll('a[href^="tel:"]')).toHaveLength(0);
     expect(screen.getByRole('main')).toHaveFocus();
 
     await user.click(screen.getByRole('link', { name: 'Zur Startseite' }));
@@ -203,19 +205,4 @@ describe('committed page navigation', () => {
     expect(window.location.pathname).toBe('/');
   });
 
-  it('keeps direct crisis contacts available when the dedicated crisis page fails to load', async () => {
-    const lazy = delayedPage();
-    fixture.renderers.notfall = () => <lazy.Page />;
-    vi.spyOn(console, 'error').mockImplementation(() => {});
-    window.history.replaceState({}, '', '/notfall');
-    render(<App />);
-    await act(async () => lazy.reject(new Error('Crisis chunk could not be loaded')));
-
-    await screen.findByRole('heading', { name: 'Die Seite konnte nicht geöffnet werden.' });
-    const main = within(screen.getByRole('main'));
-    expect(main.getByRole('link', { name: '144 · Sanität' })).toHaveAttribute('href', 'tel:144');
-    expect(main.getByRole('link', { name: '117 · Polizei' })).toHaveAttribute('href', 'tel:117');
-    expect(within(screen.getByRole('navigation', { name: 'Krisenkontakte' })).getByRole('link', { name: '143 · Gespräch' })).toHaveAttribute('href', 'tel:143');
-    expect(main.getByRole('button', { name: 'Seite neu laden' })).toBeInTheDocument();
-  });
 });

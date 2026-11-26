@@ -1,4 +1,4 @@
-/* PUK Website 1.10.1 / Website Kit 1.10.1-r4.
+/* PUK Website 1.10.1 / Website Kit 1.10.1-r4, Fachstellen-Profil 2026.10.2.
    Existing React pages use the canonical tokens through compatibility aliases.
    rem-based type preserves user text enlargement with the app's 16px root. */
 html { font-size: 100%; }
@@ -8,7 +8,7 @@ body {
   font-weight: var(--fw-light);
   line-height: var(--web-lh-body);
   font-synthesis: none;
-  color: var(--puk-web-text);
+  color: var(--text-default);
   background: var(--surface-page);
 }
 button, input, textarea, select { font-family: var(--font-core); }
@@ -62,13 +62,9 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
 .nav-links a:hover { color: var(--puk-blue-100); text-decoration: underline; text-underline-offset: .22em; }
 .nav-links a[aria-current="page"] { color: var(--puk-blue-100); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; }
 .nav-links a.active::after { content: none; }
-.nav-sos { color: var(--puk-red-text) !important; }
-.nav-sos:hover { color: var(--puk-black-100) !important; }
 .module-mobile-nav { display: none; }
 .triage-controls { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-block-start: 1rem; }
 .triage-opt[aria-pressed="true"] { color: var(--puk-black-100); background: var(--accent-bg); box-shadow: inset 0 0 0 2px var(--puk-blue-100); }
-.crisis-bar { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0 20px; background: var(--puk-black-100); color: var(--puk-white); font-size: .9375rem; padding: 4px 20px; }
-.crisis-bar a { display: inline-flex; align-items: center; min-height: var(--web-touch-target); color: var(--puk-white); }
 .hero {
   background: var(--surface-brand);
   color: var(--text-on-dark);
@@ -81,20 +77,18 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
 }
 .hero .hero-lede { max-width: 52ch; margin-bottom: 36px; }
 .hero-meta, .hero-micro-nav a { color: inherit; }
-.hero-cta, .btn-primary { background: var(--action-primary-bg); color: var(--action-primary-fg); border-radius: var(--web-radius-btn); }
+.hero-cta, .btn-primary { background: var(--action-primary-bg); color: var(--action-primary-fg); border-radius: var(--radius-sm); }
 .hero-cta:hover { background: var(--puk-white); color: var(--puk-black-100); }
 .hero-cta-secondary { color: inherit; }
 .hero-cta-secondary:hover { color: inherit; text-decoration: underline; }
 .hero-illustration { margin-top: 48px; }
 .hero-illustration svg { max-width: 320px; }
-.btn { border-radius: var(--web-radius-btn); }
+.btn { border-radius: var(--radius-sm); }
 .btn-primary:hover { background: var(--action-primary-bg-hover); }
-.triage-opt { border-radius: var(--web-radius-btn); font-size: 1.0625rem; }
+.triage-opt { border-radius: var(--radius-sm); font-size: 1.0625rem; }
 .triage-result-link { display: inline-flex; align-items: center; min-height: var(--web-touch-target); font-style: normal; }
-.guide-head { cursor: default; }
-.guide-head h3 { font-size: 1.5rem; }
 .site-footer { font-size: .9375rem; line-height: 1.5; }
-.footer-credit, .footer-disclaimer { max-width: var(--web-content-measure); }
+.footer-credit { max-width: var(--web-content-measure); }
 .footer-links a { font-size: .9375rem; }
 .module-list, .tools-row { padding: 0; list-style: none; }
 .module-list { max-width: var(--web-content-measure); }
@@ -190,7 +184,7 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
 .hero-cta-secondary {
   padding: var(--space-2) var(--space-4);
   border: 1px solid currentColor;
-  border-radius: var(--web-radius-btn);
+  border-radius: var(--radius-sm);
   font-size: .9375rem;
 }
 .hero-cta-secondary:hover { border-style: solid; }
@@ -218,7 +212,6 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
 .not-found .eyebrow { margin-bottom: 24px; }
 .not-found .lede { margin-top: 28px; max-width: 54ch; }
 .not-found-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 0; padding: 0; list-style: none; }
-.not-found-links li { margin: 0; }
 
 /* Lesbarkeit */
 /* Kästen tragen Kernaussagen und Kontakte und stehen deshalb in Lesegrösse. */
@@ -232,22 +225,18 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
     .do-col h4, .dont-col h4, .druckpunkt-num, .druckpunkt-sub, .stimme cite, .module-quote cite, .zeit-jahre,
     .label, .download-pdf-label, .mono, .tag, .num, .mythos-strich, .skript-num, .skript-warum, .skript-rolle-label,
     .krisen-feld-num, .krisen-feld-sub, .krisen-feld-beispiel, .kipppunkt-sub, .handlungsfeld-sub, .warnzeichen-sub,
-    .schluss-leitsatz, .eisberg-zone-kicker, .about-hero-function, .about-hero-function a, .footer-disclaimer,
-    .grauzone-card-action, .number-sub, .number-label, .page-loading-kicker
+    .schluss-leitsatz, .eisberg-zone-kicker, .about-hero-function, .about-hero-function a, .page-loading-kicker
   ) { font-size: max(.8125rem, 13px) !important; }
   :is(
     .module-credits, .module-credits :is(li, a, p, small, summary), .module-meta, .module-meta span,
     .module-row-numlabel, .toc-num, .module-toc-inner a, .toc-back, .module-detail-meta-time,
     .story-attribution, .story-attribution-note, .triage-progress, .tools-row-tag, .tools-row-item-arrow,
-    .tools-teaser-link, .btn-arrow, .invitation-email, .guide-sub, .number-sub, .sub, .mono, .tag, .num,
+    .tools-teaser-link, .btn-arrow, .sub, .mono, .tag, .num,
     .druckpunkt-num, .druckpunkt-sub, .zeit-jahre, .zeit-phase p, .mythos-strich, .skript-num, .skript-warum,
     .krisen-feld-num, .krisen-feld-sub, .krisen-feld-beispiel, .kipppunkt-sub, .handlungsfeld-sub,
     .warnzeichen-sub, .stuetze-num, .next-module p, .module-quote cite, .footer-credit, .footer-credit-attr,
-    .footer-disclaimer, figure figcaption, .reference-status
+    figure figcaption, .reference-status
   ) { font-weight: var(--fw-regular) !important; }
-  /* Die Kacheln der Notfallseite setzen eigene, grössere Werte; diese bleiben. */
-  .notfall-immediate-calls .number-label { font-size: 1rem !important; }
-  .notfall-immediate-calls .number-sub { font-size: .875rem !important; }
 }
 
 /* Werkzeuge und Module */
@@ -280,5 +269,73 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
 /* Bei 200 % Textgrösse und 320 px Breite dürfen der Werkzeug-Link und die Untertitel der
    Krisensituationen umbrechen; lange Wörter werden nach Silben getrennt. */
 .tools-teaser-link { white-space: normal; }
-.guide-head > div { min-width: 0; }
-.guide-title, .guide-sub { overflow-wrap: anywhere; -webkit-hyphens: auto; hyphens: auto; }
+
+/* ── Fachstellen-Profil 2026.10.2 (Umstellung 26.11.2026) ──
+   Zuständigkeit statt Krisenzugang, Absenderin im Kopf, ein Schwarz (text-default),
+   Buttons mit radius-sm. Wortlaute stehen in src/site-config.js. */
+
+/* Absenderin im Kopf jeder Seite. Sie ist eine Textzeile: Der E-Mail-Link bleibt inline. */
+.site-sender { background: var(--surface-page); border-bottom: 1px solid var(--border-hairline); }
+.puk-site-sender {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3);
+  margin-block: 0; padding-block: var(--space-3);
+  font-size: .9375rem; font-weight: var(--fw-regular); line-height: 1.5; color: var(--text-default);
+  min-width: 0;
+}
+.puk-site-sender > * { min-width: 0; }
+.puk-site-sender__label { font-size: .8125rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.puk-site-sender__name { font-weight: var(--fw-medium); }
+.puk-site-sender a { overflow-wrap: anywhere; }
+
+/* Zuständigkeitsverweis und Hinweis in der Fusszeile: eine feste Stelle auf jeder Seite. */
+.footer-notes {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-6) var(--space-10);
+  padding-top: var(--space-6); border-top: 1px solid var(--border-hairline);
+}
+.footer-notes section { min-width: 0; padding: 0; }
+.footer-heading { margin: 0 0 var(--space-2); font-size: 1.0625rem; font-weight: var(--fw-medium); line-height: 1.3; letter-spacing: 0; max-width: none; }
+.footer-notes p { margin: 0; max-width: var(--web-content-measure); font-size: 1rem; line-height: 1.5; color: var(--text-default); overflow-wrap: break-word; }
+
+/* Verweis im Text auf die zuständigen Stellen: in Lesegrösse, im Fliesstext. */
+.puk-site-inline-ref {
+  max-width: var(--web-content-measure);
+  margin-block: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  border-left: 3px solid var(--puk-blue-100);
+  background: var(--status-info-bg);
+  color: var(--text-default);
+  font-weight: var(--fw-regular);
+}
+
+/* Einträge ohne bestätigte Webadresse sind Zeilen ohne Link. */
+.resource-row--plain { cursor: default; }
+.resource-row .title { overflow-wrap: anywhere; -webkit-hyphens: auto; hyphens: auto; }
+.resource-row--plain:hover .title { color: var(--text-default); }
+
+/* Die E-Mail-Adresse ersetzt die Telefonnummer; sie ist länger und darf umbrechen. */
+.invitation-email { font-size: clamp(1.0625rem, 4.6vw, 1.5rem); color: var(--text-link); overflow-wrap: anywhere; }
+.selbsttest-phone-num, .handout-contact .handout-phone-num { font-size: clamp(1.0625rem, 4.6vw, 1.375rem); overflow-wrap: anywhere; }
+
+/* Im Handout steht der Verweis linksbündig in der Lesegrösse des Handouts. */
+.handout-card .puk-site-inline-ref { max-width: none; margin-inline: 0; font-size: 1.0625rem; line-height: 1.5; text-align: left; }
+
+@media (max-width: 760px) {
+  /* Schmal steht jede Angabe auf einer eigenen Zeile; die Trennpunkte entfallen. */
+  .puk-site-sender { gap: 0 var(--space-3); padding-block: 6px; }
+  .puk-site-sender > [aria-hidden="true"] { display: none; }
+  /* Die Absenderzeile braucht oben Platz; Kopf und Einstieg rücken dafür enger zusammen,
+     damit die Hauptaktion der Startseite auf dem Telefon ohne Scrollen erreichbar bleibt. */
+  .nav-inner { padding-block: 12px 8px; }
+  .nav-brand { gap: 8px 12px; }
+  /* Der Name der Website steht neben dem Logo, solange beide in eine Zeile passen (ab 360 px). */
+  .nav-brand-mark { width: auto; font-size: .9375rem; }
+  .hero { padding-block-start: 16px; }
+  .hero h1 { margin-bottom: 14px; }
+  .hero .hero-lede { margin-bottom: 16px; }
+}
+
+@media print {
+  .site-sender { display: none !important; }
+  .puk-site-inline-ref { background: none; border-left: 2px solid var(--print-rule); }
+}

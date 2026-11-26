@@ -5,7 +5,6 @@ import { Modul4Page } from '../modul4.jsx';
 import { Modul5Page } from '../modul5.jsx';
 import { Modul6Page } from '../modul6.jsx';
 import { Modul7Page } from '../modul7.jsx';
-import { NotfallPage } from '../notfall.jsx';
 import { ImpressumPage } from '../impressum.jsx';
 import { DatenschutzPage } from '../datenschutz.jsx';
 import { BarrierefreiheitPage } from '../barrierefreiheit.jsx';
@@ -70,21 +69,4 @@ describe('content pages', () => {
     expect(screen.getByRole('heading', { level: 1, name: /langfristige tragfähigkeit/i })).toBeInTheDocument();
   });
 
-  it('keeps crisis first steps and safety instructions visible without an accordion', () => {
-    render(<NotfallPage onNavigate={() => {}} />);
-
-    expect(
-      screen.getByRole('heading', { level: 1, name: /sos krise — wenn jetzt nichts anderes vorrang hat/i }),
-    ).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /144.*sanität.*lebensgefahr/i })).toHaveAttribute('href', 'tel:144');
-    expect(screen.getAllByText(/auch ohne genannten plan/i).length).toBeGreaterThan(0);
-
-    ['Suizidale Krise', 'Akute Manie', 'Psychotische Episode', 'Tiefe depressive Krise', 'Drohende Gewalt'].forEach(name => {
-      expect(screen.getByRole('heading', { level: 3, name })).toBeVisible();
-    });
-    screen.getAllByText('Erster Schritt:').forEach(label => expect(label.parentElement).toBeVisible());
-    screen.getAllByText('Vermeiden:').forEach(label => expect(label.parentElement).toBeVisible());
-    expect(screen.getByText(/polizei 117/i)).toBeVisible();
-    expect(screen.queryByRole('button', { name: /suizidale krise/i })).not.toBeInTheDocument();
-  });
 });

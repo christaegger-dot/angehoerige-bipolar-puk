@@ -5,7 +5,7 @@ const SITE_ORIGIN = 'https://angehoerige-bipolar-puk.netlify.app';
 
 const DEFAULT_METADATA = {
   title: 'Bipolare Störung — Psychoedukation für Angehörige | PUK Zürich',
-  description: 'Website für Angehörige und nahestehende Personen von Menschen mit bipolarer Störung. Sieben Module, neun interaktive Werkzeuge, druckbare Handouts und Notfallweg. Fachstelle Angehörigenarbeit der PUK Zürich.',
+  description: 'Website für Angehörige und nahestehende Personen von Menschen mit bipolarer Störung. Sieben Module, neun interaktive Werkzeuge und druckbare Handouts. Fachstelle Angehörigenarbeit der PUK Zürich.',
 };
 
 const PAGE_METADATA = {
@@ -25,10 +25,6 @@ const PAGE_METADATA = {
   unterstuetzung: {
     title: `${ANLAUFSTELLEN_ENTRY.title} | PUK Zürich`,
     description: ANLAUFSTELLEN_ENTRY.desc,
-  },
-  notfall: {
-    title: 'SOS Krise — Notfallweg | PUK Zürich',
-    description: 'In akuten Lagen hat dieser Weg Vorrang. Sie müssen hier nichts lesen, was nicht jetzt hilft.',
   },
   impressum: {
     title: 'Impressum | PUK Zürich',

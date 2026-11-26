@@ -24,7 +24,13 @@ describe('route helpers', () => {
     expect(parseRouteLocation({ pathname: '/index.html', hash: '' })).toEqual({ page: 'start', anchor: null });
     expect(parseRouteLocation({ pathname: '', hash: '' })).toEqual({ page: 'start', anchor: null });
     expect(parseRouteLocation({ pathname: '/module/', hash: '' })).toEqual({ page: 'module', anchor: null });
-    expect(parseRouteLocation({ pathname: '/gibt-es-nicht', hash: '#notfall' })).toEqual({ page: 'notfall', anchor: null });
+    expect(parseRouteLocation({ pathname: '/gibt-es-nicht', hash: '#module' })).toEqual({ page: 'module', anchor: null });
+  });
+
+  it('no longer knows the removed crisis page', () => {
+    expect(ROUTES.some(route => route.page === 'notfall' || route.path === '/notfall')).toBe(false);
+    expect(parseRouteLocation({ pathname: '/notfall', hash: '' })).toEqual({ page: NOT_FOUND_PAGE, anchor: null });
+    expect(parseRouteLocation({ pathname: '/gibt-es-nicht', hash: '#notfall' })).toEqual({ page: NOT_FOUND_PAGE, anchor: null });
   });
 
   it('recognizes when client-side navigation should be handled', () => {

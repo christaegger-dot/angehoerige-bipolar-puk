@@ -12,7 +12,7 @@
   --paper-edge: var(--border-default);
   --rule: var(--border-hairline);
 
-  --ink: var(--puk-web-text);
+  --ink: var(--text-default);
   --ink-2: var(--text-default);
   --ink-3: var(--text-muted);
   --ink-soft: var(--text-muted);

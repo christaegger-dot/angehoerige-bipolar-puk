@@ -1,7 +1,7 @@
 // Main app — routing in the PUK website profile.
 
 import React from 'react';
-import { CrisisBar, Nav, MobileModuleNav, Footer } from './shared.jsx';
+import { SenderLine, Nav, MobileModuleNav, Footer } from './shared.jsx';
 import { scrollToAnchorWhenReady } from './anchor-scroll.js';
 import { PAGE_RENDERERS } from './page-registry.js';
 import { useBrowserNavigation } from './use-browser-navigation.js';
@@ -36,7 +36,6 @@ function PageLoadError({ navigation, onNavigate, onReady }) {
       <p>Laden Sie die Seite erneut oder wechseln Sie zur Startseite.</p>
       <p><button type="button" className="btn btn-primary" onClick={() => window.location.reload()}>Seite neu laden</button></p>
       <p><a className="link-underline" href={navHref('start')} onClick={navHandler('start', onNavigate)}>Zur Startseite</a></p>
-      {navigation.page === 'notfall' && <p>Bei Lebensgefahr: <a className="link-underline" href="tel:144">144 · Sanität</a>. Bei Gewalt oder Bedrohung: <a className="link-underline" href="tel:117">117 · Polizei</a>.</p>}
     </div>
   );
 }
@@ -79,7 +78,7 @@ function App() {
         const m = document.getElementById('main-content');
         if (m) { m.focus(); m.scrollIntoView({ behavior: 'instant' }); }
       }}>Zum Inhalt springen</a>
-      {page === 'notfall' && <CrisisBar onNavigate={onNavigate} />}
+      <SenderLine />
       <Nav page={page} onNavigate={onNavigate} />
       <main id="main-content" tabIndex={-1}>
         {/^modul[1-7]$/.test(page) && <MobileModuleNav onNavigate={onNavigate} />}

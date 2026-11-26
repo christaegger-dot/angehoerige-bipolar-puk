@@ -8,14 +8,14 @@ import { TOOLS } from '../src/site-content.js';
 const PROJECT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SHA256 = /^[a-f0-9]{64}$/;
 const GOVERNANCE_FILES = new Set(['website-data-policy.json', 'website-screenreader-test.json']);
-const REQUIRED_HANDOUTS = ['dl-01', 'dl-02', 'dl-04', 'dl-05', 'dl-06', 'dl-07', 'dl-08'];
+const REQUIRED_HANDOUTS = ['dl-01', 'dl-04', 'dl-05', 'dl-06', 'dl-07', 'dl-08'];
 const REQUIRED_SCENARIOS = [
   'skip-link-and-landmarks',
   'route-and-anchor-focus',
   'back-forward-navigation',
   'module-sequence-and-source-disclosures',
   'fictional-example-and-graph-alternatives',
-  'crisis-contact-links',
+  'sender-line-and-responsibility-referral',
   'dialog-focus-trap-escape-return',
   'crisisplan-labels-and-print',
   'communication-form-validation',
@@ -312,15 +312,15 @@ export function createPendingScreenreaderTemplate(fingerprint) {
   });
   return {
     status: 'prepared-not-executed', releaseEvidenceVersion: 1,
-    profileTarget: 'PUK Websiteprofil 1.10.1',
+    profileTarget: 'PUK Websiteprofil 1.10.1, Fachstellen-Profil 2026.10.2',
     lastTechnicalPreparation: new Date().toISOString().slice(0, 10),
-    scope: 'Alle 16 Routen, 9 Werkzeuge, 7 Handouts sowie Fokus-, Formular-, Lade- und Fehlerzustände; reale menschliche AT-Prüfung',
+    scope: `Alle ${ROUTES.length} Routen, ${TOOLS.length} Werkzeuge, ${REQUIRED_HANDOUTS.length} Handouts sowie Fokus-, Formular-, Lade- und Fehlerzustände; reale menschliche AT-Prüfung`,
     releaseFingerprint: fingerprint, testedWith: [], manualApproval: null,
     requiredSystems: ['VoiceOver with Safari on macOS or iOS', 'NVDA with Firefox or Chrome on Windows'],
     scenarios: [
       'Skip link, main landmark and keyboard focus after navigation',
       'Module navigation, headings, source details and fictional-example labels',
-      'Crisis contact links, crisis plan fields and visible storage notices',
+      'Sender line, responsibility referral, crisis plan fields and visible storage notices',
       'Tool overlay focus trap, Escape and return focus',
       'Memory-only tool drafts, reset feedback and removal of historical drafts from both browser stores',
       'Reflection questions, mixed-symptom graph text alternative and result announcements',

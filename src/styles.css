@@ -135,23 +135,6 @@ section + section { padding-top: 0; }
 .rule-center { margin-left: auto; margin-right: auto; }
 
 /* CRISIS BAR — minimal, top-fixed */
-.crisis-bar {
-  background: var(--ink);
-  color: var(--on-alert-muted);
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  letter-spacing: 0;
-  padding: 8px 0;
-  text-align: center;
-}
-.crisis-bar a {
-  color: var(--on-alert);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--on-alert-rule);
-}
-.crisis-bar a:hover { text-decoration-color: var(--on-alert); }
-.crisis-bar .sep { margin: 0 14px; opacity: 1; }
 
 /* NAV — quiet, no underlines, single line */
 .nav {
@@ -220,12 +203,6 @@ section + section { padding-top: 0; }
   height: 1px;
   background: var(--accent);
 }
-.nav-sos {
-  color: var(--alert) !important;
-  font-weight: 500 !important;
-}
-.nav-sos:hover { color: var(--alert) !important; }
-.nav-sos::after { display: none !important; }
 
 /* HERO — editorial, single column, illustration sits below */
 .hero {
@@ -312,7 +289,7 @@ section + section { padding-top: 0; }
   background: var(--accent);
   color: var(--bg);
   padding: 14px 28px;
-  border-radius: var(--web-radius-btn);
+  border-radius: var(--radius-sm);
   text-decoration: none;
   border: 0;
   cursor: pointer;
@@ -392,7 +369,7 @@ section + section { padding-top: 0; }
   background: transparent;
   border: 1px solid var(--ink-mute);
   color: var(--ink);
-  border-radius: var(--web-radius-btn);
+  border-radius: var(--radius-sm);
   transition: background-color var(--t-fast) var(--easing), color var(--t-fast) var(--easing), border-color var(--t-fast) var(--easing);
 }
 .triage-opt:hover {
@@ -684,17 +661,6 @@ section + section { padding-top: 0; }
   align-items: center;
   font-family: var(--font-core);
 }
-.invitation-phone {
-  font-size: 2rem;
-  font-style: normal;
-  color: var(--accent);
-  letter-spacing: 0;
-  min-height: var(--touch-target);
-  min-width: var(--touch-target);
-  display: inline-flex;
-  align-items: center;
-}
-.invitation-phone:hover { text-decoration: underline; text-decoration-color: var(--paper-edge); text-underline-offset: 6px; }
 .invitation-email {
   font-family: var(--sans);
   font-size: 0.875rem;
@@ -886,161 +852,8 @@ section + section { padding-top: 0; }
 }
 
 /* NOTFALL PAGE */
-.notfall-hero {
-  padding: clamp(56px, 9vh, 110px) 0 clamp(40px, 6vh, 64px);
-  background: var(--alert-soft);
-}
-.notfall-illu {
-  display: flex;
-  margin-bottom: 32px;
-}
-.notfall-hero h1 {
-  color: var(--alert);
-  max-width: 24ch;
-}
-.numbers-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  margin-top: 40px;
-  background: var(--paper-edge);
-  border-top: 1px solid var(--paper-edge);
-  border-bottom: 1px solid var(--paper-edge);
-}
-.number-tile {
-  background: var(--bg);
-  padding: 24px 20px;
-  text-decoration: none;
-  color: inherit;
-  transition: background 0.15s;
-  /* Lange Wörter in schmalen Kacheln nach Silben trennen statt mitten im Wort
-     umbrechen. Kurze Wörter bleiben ganz, wo der Browser die Grenze kennt. */
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  hyphenate-limit-chars: 10 4 4;
-}
-.number-tile:hover { background: var(--alert-soft); }
-.number-num {
-  font-family: var(--font-core);
-  font-size: 2rem;
-  font-style: normal;
-  color: var(--alert);
-  letter-spacing: 0;
-  display: block;
-  line-height: 1;
-}
-.number-label {
-  font-family: var(--sans);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin-top: 8px;
-  display: block;
-}
-.number-sub {
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  color: var(--ink-mute);
-  margin-top: 2px;
-  display: block;
-}
-
-.guides { margin-top: 16px; }
-.guide {
-  border-top: 1px solid var(--paper-edge);
-  padding: 28px 0;
-}
-.guide:last-of-type { border-bottom: 1px solid var(--paper-edge); }
-.guide-head {
-  display: grid;
-  grid-template-columns: 60px 1fr auto;
-  gap: 24px;
-  align-items: baseline;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-}
-.guide-letter {
-  font-family: var(--font-core);
-  font-size: 2.2rem;
-  font-style: normal;
-  color: var(--alert);
-  letter-spacing: 0;
-  line-height: 1;
-}
-.guide.amber .guide-letter { color: var(--sand); }
-.guide.blue .guide-letter { color: var(--accent); }
-.guide-title { font-size: 1.3rem; margin-bottom: 4px; }
-.guide-sub { font-family: var(--sans); font-size: 0.8125rem; color: var(--ink-mute); }
-.guide-toggle {
-  font-family: var(--sans); font-size: 0.75rem;
-  color: var(--ink-mute);
-  letter-spacing: 0;
-  text-transform: uppercase;
-  white-space: nowrap;
-  align-self: center;
-}
-.guide-body { display: none; padding: 24px 0 0 84px; }
-.guide.open .guide-body { display: block; }
-.guide-body ul { margin: 0 0 18px; padding-left: 22px; max-width: 56ch; }
-.guide-body li { margin-bottom: 10px; line-height: 1.6; }
 /* Erster Schritt, Vermeiden und «Wenn akut» stehen in Lesegrösse wie die Liste
    dazwischen: Sie enthalten die wichtigsten Anweisungen der Seite. */
-.guide-do, .guide-dont, .guide-sos {
-  padding: 14px 18px;
-  font-size: inherit;
-  line-height: 1.55;
-  margin-bottom: 10px;
-  max-width: 60ch;
-}
-.guide-do  { background: var(--accent-faint); border-left: 2px solid var(--accent); color: var(--ink); }
-.guide-dont { background: var(--alert-soft); border-left: 2px solid var(--alert); color: var(--ink); }
-.guide-sos { background: var(--bg-alt); border-left: 2px solid var(--ink); color: var(--ink); }
-.guide-do strong, .guide-dont strong, .guide-sos strong { font-weight: 500; }
-
-.grauzone {
-  margin: 56px 0;
-  padding: 32px 0;
-  border-top: 1px solid var(--paper-edge);
-  border-bottom: 1px solid var(--paper-edge);
-}
-.grauzone h2 { margin-bottom: 24px; font-style: normal; }
-.grauzone-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-.grauzone-card { padding-left: 20px; border-left: 2px solid var(--paper-edge); }
-.grauzone-card-quote {
-  font-family: var(--font-core);
-  font-style: normal;
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-.grauzone-card p {
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-  margin-bottom: 16px;
-}
-.grauzone-card-action {
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  color: var(--accent);
-  display: block;
-}
-.grauzone-rule {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--paper-edge);
-  font-family: var(--font-core);
-  font-style: normal;
-  font-size: 1.3rem;
-  text-align: center;
-  color: var(--ink-soft);
-}
 
 /* FOOTER */
 .site-footer {
@@ -1067,15 +880,6 @@ section + section { padding-top: 0; }
 .footer-links { display: flex; flex-direction: column; gap: 8px; }
 .footer-links a { color: var(--ink-soft); }
 .footer-links a:hover { color: var(--ink); }
-.footer-link-alert { color: var(--alert) !important; }
-.footer-disclaimer {
-  font-size: 0.75rem;
-  color: var(--ink-mute);
-  line-height: 1.6;
-  padding-top: 28px;
-  border-top: 1px solid var(--paper-edge);
-  max-width: 80ch;
-}
 
 /* Animations */
 @keyframes fadeUp { from { opacity: 0.42; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
@@ -1092,15 +896,11 @@ section + section { padding-top: 0; }
   .module-row, .tool-row { grid-template-columns: 60px 1fr; }
   .module-illu, .tool-arrow { display: none; }
   .module-num { font-size: 2.2rem; }
-  .tools-row, .grauzone-grid { grid-template-columns: 1fr; gap: 24px; }
-  .numbers-row { grid-template-columns: 1fr 1fr; }
+  .tools-row { grid-template-columns: 1fr; gap: 24px; }
   .downloads-grid { grid-template-columns: 1fr; }
   .footer-row { grid-template-columns: 1fr; }
   .tools-teaser-head { grid-template-columns: 1fr; align-items: start; }
   .resource-row { grid-template-columns: 1fr; gap: 6px; }
-  .guide-head { grid-template-columns: 40px 1fr; gap: 16px; }
-  .guide-toggle { display: none; }
-  .guide-body { padding-left: 0; }
 }
 
 @media (max-width: 640px) {
@@ -2996,7 +2796,7 @@ section + section { padding-top: 0; }
   background: transparent;
   border: 1px solid var(--ink-mute);
   color: var(--ink);
-  border-radius: var(--web-radius-btn);
+  border-radius: var(--radius-sm);
   text-align: left;
   transition: background-color var(--t-fast) var(--easing), color var(--t-fast) var(--easing), border-color var(--t-fast) var(--easing);
   cursor: pointer;
@@ -3283,7 +3083,7 @@ section + section { padding-top: 0; }
   font-weight: 500;
   padding: 12px 24px;
   cursor: pointer;
-  border-radius: var(--web-radius-btn);
+  border-radius: var(--radius-sm);
   transition: background-color var(--t-fast) var(--easing), color var(--t-fast) var(--easing), border-color var(--t-fast) var(--easing);
   border: 1px solid transparent;
 }
@@ -3627,7 +3427,7 @@ section + section { padding-top: 0; }
   background: transparent;
   border: 1px solid var(--ink-mute);
   color: var(--ink);
-  border-radius: var(--web-radius-btn);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: background-color var(--t-fast) var(--easing), color var(--t-fast) var(--easing), border-color var(--t-fast) var(--easing);
   line-height: 1.4;
@@ -3927,7 +3727,7 @@ section + section { padding-top: 0; }
   background: transparent;
   border: 1px solid var(--accent);
   color: var(--accent);
-  border-radius: var(--web-radius-btn);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: background-color var(--t-fast) var(--easing), color var(--t-fast) var(--easing), border-color var(--t-fast) var(--easing);
   min-height: var(--touch-target);
@@ -4445,7 +4245,7 @@ section + section { padding-top: 0; }
   border: 0;
   color: var(--ink-soft);
   cursor: pointer;
-  border-radius: var(--web-radius-btn);
+  border-radius: var(--radius-sm);
   /* Simultaneously fading white/blue into grey/white loses text contrast. */
   transition: none;
   min-height: var(--touch-target);
@@ -4658,36 +4458,6 @@ section + section { padding-top: 0; }
   margin-top: 4px;
 }
 
-.handout-phonelist {
-  list-style: none;
-  padding: 0;
-  margin: 12px 0 22px;
-  border-top: 1px solid var(--paper-edge);
-  border-bottom: 1px solid var(--paper-edge);
-}
-.handout-phonelist li {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 20px;
-  align-items: baseline;
-  padding: 14px 0;
-  border-top: 1px dotted var(--paper-edge);
-}
-.handout-phonelist li:first-child { border-top: 0; }
-.handout-phonelist-num {
-  font-family: var(--font-core);
-  font-style: normal;
-  font-size: 1.15rem;
-  color: var(--alert);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.handout-phonelist-label {
-  font-family: var(--sans);
-  font-size: 0.88rem;
-  color: var(--ink);
-}
-
 /* Fillable fields — z.B. Notfallkarte. Wird nach Druck handschriftlich ausgefüllt. */
 .handout-fields {
   margin: 14px 0 6px;
@@ -4735,16 +4505,10 @@ section + section { padding-top: 0; }
   border-top: 1px solid var(--paper-edge);
 }
 
-.wallet-print,
 .kommunikation-print-value { display: none; }
-.wallet-screen-note {
-  margin-top: 16px !important;
-  text-align: left !important;
-}
 
 @media (max-width: 700px) {
   .handout-do-dont { grid-template-columns: 1fr; gap: 18px; }
-  .handout-phonelist li { grid-template-columns: 1fr; gap: 4px; }
 }
 
 /* Druckansicht für Handout & Krisenplan: weiter unten konsolidiert. */
@@ -4843,52 +4607,6 @@ section + section { padding-top: 0; }
   opacity: 1;
 }
 
-.krisenplan-notruf {
-  margin: 32px 0 24px;
-  padding: 22px 24px;
-  background: var(--alert-soft);
-  border-left: 2px solid var(--alert);
-  border-radius: 0;
-}
-.krisenplan-notruf-kicker {
-  font-family: var(--sans);
-  font-size: 0.7rem;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  color: var(--alert);
-  font-weight: 500;
-  display: block;
-  margin-bottom: 14px;
-}
-.krisenplan-notruf ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px 24px;
-}
-.krisenplan-notruf li {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding: 4px 0;
-}
-.krisenplan-notruf-num {
-  font-family: var(--font-core);
-  font-style: normal;
-  font-size: 1.05rem;
-  color: var(--alert);
-  font-weight: 500;
-  min-width: 110px;
-  white-space: nowrap;
-}
-.krisenplan-notruf-label {
-  font-family: var(--sans);
-  font-size: 0.82rem;
-  color: var(--ink);
-}
-
 .krisenplan-actions {
   display: flex;
   align-items: center;
@@ -4925,7 +4643,6 @@ section + section { padding-top: 0; }
 }
 
 @media (max-width: 700px) {
-  .krisenplan-notruf ul { grid-template-columns: 1fr; }
   .krisenplan-actions { flex-direction: column; align-items: stretch; }
   .krisenplan-actions-left { flex-direction: column; align-items: stretch; }
 }
@@ -4984,7 +4701,7 @@ section + section { padding-top: 0; }
 
   /* No-print-Elemente und globaler Site-Chrome härter ausblenden */
   .no-print, .no-print * { display: none !important; visibility: hidden !important; }
-  .crisis-bar, .nav, .site-footer { display: none !important; visibility: hidden !important; }
+  .nav, .site-footer { display: none !important; visibility: hidden !important; }
 
   .tool-overlay {
     position: static !important;
@@ -5018,8 +4735,7 @@ section + section { padding-top: 0; }
   .handout-head h2,
   .handout-h,
   .handout-callout-label,
-  .handout-phone-num,
-  .handout-phonelist-num { color: black !important; }
+  .handout-phone-num { color: black !important; }
   .handout-h { color: var(--print-ink) !important; font-style: normal !important; }
   .handout-callout,
   .handout-phone {
@@ -5027,66 +4743,8 @@ section + section { padding-top: 0; }
     border-left: 2px solid var(--print-rule) !important;
     page-break-inside: avoid;
   }
-  .handout-phonelist,
   .handout-do-dont { page-break-inside: avoid; }
   .handout-field-row { break-inside: avoid; }
-
-  .wallet-print { display: block !important; padding: 0 !important; color: var(--puk-black-100); }
-  .wallet-print > h2 { margin: 0 0 4mm; font-size: 17pt !important; text-align: left; }
-  .wallet-print .wallet-instructions,
-  .wallet-print-notes p {
-    margin: 0 0 5mm;
-    font-size: 10pt !important;
-    line-height: 1.4 !important;
-    text-align: left !important;
-    max-width: none !important;
-  }
-  .wallet-card-panels {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    width: 170mm;
-    height: 165mm;
-    margin: 0 auto 5mm;
-    border: 0.3mm solid var(--puk-black-100);
-    break-inside: avoid;
-  }
-  .wallet-panel {
-    min-width: 0;
-    padding: 3mm;
-    break-inside: avoid;
-    font-size: 9pt;
-    line-height: 1.15;
-  }
-  .wallet-panel:nth-child(odd) { border-right: 0.2mm dashed var(--puk-black-75); }
-  .wallet-panel:nth-child(-n + 4) { border-bottom: 0.2mm dashed var(--puk-black-75); }
-  .wallet-panel h3 {
-    margin: 0 0 2mm !important;
-    font-size: 11pt !important;
-    line-height: 1.15;
-    color: var(--puk-black-100);
-  }
-  .wallet-panel dl,
-  .wallet-contacts { padding: 0; margin: 0; list-style: none; }
-  .wallet-contacts li {
-    display: grid;
-    grid-template-columns: 29mm minmax(0, 1fr);
-    gap: 1mm;
-    margin-bottom: 2mm;
-    font-size: 9pt;
-    line-height: 1.15;
-  }
-  .wallet-contacts a {
-    font-size: 10pt;
-    color: var(--puk-black-100);
-    white-space: nowrap;
-  }
-  .wallet-field { margin-bottom: 1mm; break-inside: avoid; }
-  .wallet-field dt { font-size: 9pt; line-height: 1.15; }
-  .wallet-field dd { margin: 0; }
-  .wallet-field dd span { display: block; height: 5mm; border-bottom: 0.2mm solid var(--puk-black-75); }
-  .wallet-panel .wallet-reminder { margin: 2mm 0 0; font-size: 9pt !important; line-height: 1.2 !important; text-align: left; }
-  .wallet-print-notes a { color: var(--puk-black-100); overflow-wrap: anywhere; }
 
   .kommunikation-overlay .krisenplan-textarea { display: none !important; }
   .kommunikation-print-value { display: block !important; }
@@ -5098,9 +4756,7 @@ section + section { padding-top: 0; }
 
   /* KRISENPLAN — Farben, Eingabefelder als Druck-Boxen, Notruf-Block */
   .krisenplan-head h2,
-  .krisenplan-label-main,
-  .krisenplan-notruf-num,
-  .krisenplan-notruf-kicker { color: black !important; }
+  .krisenplan-label-main { color: black !important; }
   .kicker { color: var(--print-muted) !important; }
   .krisenplan-intro { color: var(--print-ink) !important; }
   .krisenplan-label-sub { color: var(--print-caption) !important; }
@@ -5127,14 +4783,6 @@ section + section { padding-top: 0; }
   .krisenplan-feld { display: block; page-break-inside: auto; margin-bottom: 14px !important; }
   .krisenplan-label { display: block; break-after: avoid-page; }
   .krisenplan-print-value { break-before: avoid-page; }
-  .krisenplan-notruf {
-    background: var(--print-paper) !important;
-    border-left: 2px solid var(--print-rule) !important;
-    page-break-inside: avoid;
-    margin-top: 18px !important;
-  }
-  .krisenplan-notruf ul { grid-template-columns: 1fr 1fr !important; }
-  .krisenplan-notruf-label { color: var(--print-strong) !important; }
 }
 
 /* RESPONSIVE */
@@ -5184,7 +4832,6 @@ section + section { padding-top: 0; }
 .nav-inner { flex-wrap: wrap; }
 .nav-brand, .nav-links, .module-body, .prose { min-width: 0; }
 h1, h2, h3, h4, p, a, button, summary { overflow-wrap: anywhere; }
-.crisis-bar a { display: inline-flex; align-items: center; min-height: var(--touch-target); }
 .field-input:focus-visible, .field-select:focus-visible, .field-textarea:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;

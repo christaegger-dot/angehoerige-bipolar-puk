@@ -40,11 +40,6 @@ function ImpressumPage() {
               <div className="label">E-MAIL</div>
               <div className="value"><a className="link-underline" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a></div>
             </div>
-            <div className="contact-info-block">
-              <div className="label">TELEFON</div>
-              <div className="value">058 384 38 00</div>
-              <div className="sub">Werktags.</div>
-            </div>
 
             <h2>Haftungsausschluss</h2>
             <p>

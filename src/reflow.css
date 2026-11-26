@@ -3,8 +3,7 @@
 .module-body,
 .prose,
 .about-hero-copy,
-.contact-info-block,
-.guide-body {
+.contact-info-block {
   overflow-wrap: anywhere;
 }
 

@@ -1,7 +1,6 @@
 const PAGE_LOADERS = {
   module: () => import('./module.jsx'),
   werkzeuge: () => import('./werkzeuge.jsx'),
-  notfall: () => import('./notfall.jsx'),
   unterstuetzung: () => import('./unterstuetzung.jsx'),
   modul1: () => import('./modul1.jsx'),
   modul2: () => import('./modul2.jsx'),

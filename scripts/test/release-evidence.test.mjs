@@ -106,9 +106,13 @@ test('pending template always contains the complete current scope and does not a
   const f = await fixture(t);
   const pending = createPendingScreenreaderTemplate(f.fingerprint);
   assert.equal(pending.status, 'prepared-not-executed');
-  assert.equal(pending.runs[0].routeChecks.length, 16);
+  assert.equal(pending.runs[0].routeChecks.length, 15);
+  assert.equal(pending.runs[0].routeChecks.some(({ route }) => route === '/notfall'), false);
   assert.equal(pending.runs[0].toolChecks.length, 9);
-  assert.equal(pending.runs[0].handoutChecks.length, 7);
+  assert.equal(pending.runs[0].handoutChecks.length, 6);
+  assert.equal(pending.runs[0].handoutChecks.some(({ handout }) => handout === 'dl-02'), false);
+  assert.equal(pending.runs[0].scenarioChecks.some(({ scenario }) => scenario === 'sender-line-and-responsibility-referral'), true);
+  assert.equal(pending.runs[0].scenarioChecks.some(({ scenario }) => scenario === 'crisis-contact-links'), false);
   assert.equal((await validateScreenreaderEvidence(pending, f.options)).passed, false);
 });
 

@@ -136,15 +136,6 @@ export const EVIDENCE_SOURCES = {
       }
     ]
   },
-  pukEmergency: {
-    "sourceType": "serviceInformation",
-    "shortTitle": "PUK Zürich: Notfallkontakte",
-    "title": "PUK Zürich: aktuelle Notfallkontakte für Kinder, Jugendliche und Erwachsene",
-    "url": "https://www.pukzh.ch/ueber-uns/kontakt/notfall/",
-    "status": "official",
-    "checkedAt": "7. Oktober 2026",
-    "note": "Offizielle Kontaktübersicht gelesen: Kinder/Jugendliche 058 384 66 66, Erwachsene ab 18 Jahren 058 384 20 00, Erwachsene ab 65 Jahren 058 384 46 82. Altersgruppen und Nummern sind gegen den amtlichen Webtext geprüft; keine Wirksamkeits- oder Erreichbarkeitsmessung."
-  },
   pukConfidentialityForm: {
     "sourceType": "officialForm",
     "shortTitle": "PUK-Schweigepflichtformular (Version 2026)",
@@ -281,14 +272,12 @@ export const HANDOUT_SOURCE_KEYS = {
   ],
   "crisis": [
     "suicide",
-    "niceBipolar",
-    "pukEmergency"
+    "niceBipolar"
   ],
   "suicide": [
     "suicideInquiry",
     "suicideInquiryYouth",
-    "suicide",
-    "pukEmergency"
+    "suicide"
   ],
   "medication": [
     "niceBipolar",
@@ -300,8 +289,7 @@ export const HANDOUT_SOURCE_KEYS = {
   ],
   "communication": [
     "qualitative",
-    "sharedDecisionMaking",
-    "pukEmergency"
+    "sharedDecisionMaking"
   ],
   "children": [
     "childrenCommunication",

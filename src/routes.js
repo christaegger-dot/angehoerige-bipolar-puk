@@ -2,7 +2,6 @@ const ROUTES = [
   { page: 'start', path: '/' },
   { page: 'module', path: '/module', legacyHash: 'module' },
   { page: 'werkzeuge', path: '/werkzeuge', legacyHash: 'werkzeuge' },
-  { page: 'notfall', path: '/notfall', legacyHash: 'notfall' },
   { page: 'unterstuetzung', path: '/unterstuetzung', legacyHash: 'unterstuetzung' },
   { page: 'modul1', path: '/module/1', legacyHash: 'modul1' },
   { page: 'modul2', path: '/module/2', legacyHash: 'modul2' },
