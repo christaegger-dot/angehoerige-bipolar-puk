@@ -44,4 +44,4 @@ Korrektur: Der letzte Brotkrumen dieser acht Seiten («Modul N» bzw. «Schweige
 
 Verifikation am neuen Build: `audit:puk` bestanden (16 Routen), `audit:website` 697/697, `audit:tools` 225/225, `audit:print` 72/72, Lint, App-Tests mit Coverage-Gate und `npm audit` ohne Befund.
 
-Offen: Der Release-Fingerprint hat sich durch diese Änderung und die gleichzeitige Abhängigkeitsaktualisierung geändert. Die technische Datenschutz-Acceptance in `public/website-data-policy.json` und die vorbereiteten AT-Läufe in `website-screenreader-test.json` sind bewusst **nicht** neu gebunden worden; das bleibt eine Entscheidung der Projektverantwortlichen.
+Release-Nachweise: Der Release-Fingerprint hat sich durch diese Änderung und die gleichzeitige Abhängigkeitsaktualisierung geändert. Die begrenzte technische Datenschutz-Acceptance und die vorbereiteten AT-Läufe sind im Auftrag der Projektverantwortlichen an den neuen Fingerprint gebunden (`_dev/DATENSCHUTZ-ENTSCHEID-2026-10-06.md`). Die menschlichen Screenreader-Läufe bleiben nicht ausgeführt.

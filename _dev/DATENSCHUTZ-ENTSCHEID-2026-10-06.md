@@ -67,6 +67,12 @@ Die ergänzende Fassung vom 6. Oktober stellt nach interner Zurück-/Vorwärtsna
 
 Die Korrekturen an Inhaltsverzeichnissen, aktiver Seitensemantik, Diagrammbeschriftungen und Dialog-Feldsichtbarkeit ergänzen weder Übermittlung noch Werkzeug-Persistenz. Die technische Entscheidung bezieht sich nach Quellabgleich und den ergänzenden Browserprüfungen auf diesen neuen Datenumfang. Die Acceptance und die vorbereiteten menschlichen Screenreader-Läufe werden an den neuen App-/Build-Fingerprint gebunden; die menschlichen Läufe bleiben nicht ausgeführt.
 
+### Abgleich nach Abhängigkeitsaktualisierung und Brotkrumen-Auszeichnung (26. November 2026)
+
+Die Fassung vom 26. November aktualisiert Entwicklungs- und Build-Abhängigkeiten (unter anderem Vite 8.4.0, Vitest 4.1.12) und zeichnet auf den sieben Moduldetailseiten und der Schweigepflichtseite den letzten Brotkrumen mit `aria-current="page"` samt Unterstreichung aus. Der Quellvergleich mit dem gemergten Stand `d661008` zeigt im Anwendungscode ausschliesslich dieses Attribut und eine CSS-Regel. An Eingabeverarbeitung, Speicher-, Lösch-, Export- oder Übermittlungslogik wurde nichts geändert; die Laufzeitabhängigkeiten `react` und `react-dom` sind unverändert.
+
+Am neu gebauten Stand bestanden die 225 Werkzeugchecks einschliesslich der Speicher- und Netzwerkproben mit synthetischen Werten, die 697 Website-Browserchecks, die 72 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird deshalb im ausdrücklichen Auftrag der Projektverantwortlichen an den neuen App-/Build-Fingerprint gebunden. Die vorbereiteten menschlichen Screenreader-Läufe erhalten denselben Prüfstand und bleiben ausdrücklich nicht ausgeführt.
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.
