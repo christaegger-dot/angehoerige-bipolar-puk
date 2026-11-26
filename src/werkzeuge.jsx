@@ -5,6 +5,7 @@ import { ToolOverlay } from './tool-overlay.jsx';
 import { loadWerkzeugTool } from './werkzeug-loader.js';
 import { clearStoredDraft } from './storage.js';
 import { LoadErrorBoundary } from './load-error-boundary.jsx';
+import { Icon } from './icon.jsx';
 
 const LEGACY_DRAFT_KEYS = ['puk-krisenplan-v1', 'puk-kommunikation-v1'];
 
@@ -120,7 +121,7 @@ function WerkzeugePage({ onNavigate, anchor }) {
                         <h3>{t.title}</h3>
                         <p>{t.desc}</p>
                         <div className="tool-card-foot">
-                          <span className="btn-arrow">{t.cta} →</span>
+                          <span className="btn-arrow">{t.cta} <Icon name="arrow-right" /></span>
                         </div>
                       </button>
                     </li>

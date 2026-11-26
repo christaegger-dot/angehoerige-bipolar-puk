@@ -5,6 +5,7 @@ import React from 'react';
 import { ModuleQuickStart, EvidenceSources, EvidenceCitation, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { ResponsibilityInline } from './shared.jsx';
+import { Icon } from './icon.jsx';
 
 function SaeulenFigur() {
   const w = 600, h = 400;
@@ -191,7 +192,7 @@ function Modul7Page({ onNavigate }) {
             </nav>
             <div className="module-detail-meta">
               <span className="module-detail-num">07</span>
-              <span className="module-detail-meta-time">⏱ 12–14 Minuten · 9 Abschnitte</span>
+              <span className="module-detail-meta-time">12–14 Minuten · 9 Abschnitte</span>
             </div>
             <h1>Langfristige <em>Tragfähigkeit</em></h1>
             <p className="lede">Nach einer belastenden Phase können unterschiedliche Gefühle bleiben, ohne festen Ablauf. In diesem Modul geht es um Ihre Bedürfnisse, mögliche Entlastung und darum, wie Sie die andere Person über längere Zeit begleiten möchten.</p>
@@ -213,7 +214,7 @@ function Modul7Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}><Icon name="arrow-left" /> Alle Module</a>
             </div>
           </aside>
 
@@ -270,11 +271,11 @@ function Modul7Page({ onNavigate }) {
               <p>Manchmal erinnert sich die erkrankte Person an Teile der Manie oder schweren Depression nur lückenhaft. Ein Gespräch kann dennoch sinnvoll sein. Rechnen Sie dabei nicht damit, dass die andere Person alles weiss, was Sie erlebt haben.</p>
 
               <h3>So könnten Sie ein Gespräch beginnen</h3>
-              <p>✓ «Ich würde gern über letzten Monat reden, wenn du bereit bist. Es muss nicht heute sein.»</p>
-              <p>✓ «Einige Dinge beschäftigen mich noch. Ich würde gern mit dir darüber sprechen, wenn es für uns beide passt.»</p>
-              <p>✓ «Du erinnerst dich vielleicht nicht an alles. Mir ist es trotzdem wichtig, dass du weisst, was ich erlebt habe.»</p>
-              <p>✗ «Du weisst nicht, was du mir angetan hast.» — spricht den Schmerz aus, lädt aber nicht zum Gespräch ein.</p>
-              <p>✗ «Lass uns jetzt alles aufarbeiten.» — kann direkt nach einer Krise zu viel auf einmal verlangen.</p>
+              <p><Icon name="check" label="Vorschlag" /> «Ich würde gern über letzten Monat reden, wenn du bereit bist. Es muss nicht heute sein.»</p>
+              <p><Icon name="check" label="Vorschlag" /> «Einige Dinge beschäftigen mich noch. Ich würde gern mit dir darüber sprechen, wenn es für uns beide passt.»</p>
+              <p><Icon name="check" label="Vorschlag" /> «Du erinnerst dich vielleicht nicht an alles. Mir ist es trotzdem wichtig, dass du weisst, was ich erlebt habe.»</p>
+              <p><Icon name="x" label="Weniger hilfreich" /> «Du weisst nicht, was du mir angetan hast.» — spricht den Schmerz aus, lädt aber nicht zum Gespräch ein.</p>
+              <p><Icon name="x" label="Weniger hilfreich" /> «Lass uns jetzt alles aufarbeiten.» — kann direkt nach einer Krise zu viel auf einmal verlangen.</p>
 
               <blockquote className="module-quote" id="quote-m7-02">
               <p>«Er hat immer noch Episoden, und vieles ist schwierig. Trotzdem ist es besser als vor drei Jahren. Damals konnte ich nicht mehr schlafen, arbeiten oder richtig fühlen. Heute schlafe ich meistens durch. Das bedeutet mir viel. Ich bin stolz darauf, dass es besser geworden ist, auch wenn nicht alles gut ist.»</p>
@@ -432,7 +433,7 @@ function Modul7Page({ onNavigate }) {
 
               <div className="next-modules">
                 <a className="next-module" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
-                  <span className="next-module-num next-module-num-resource">→</span>
+                  <span className="next-module-num next-module-num-resource"><Icon name="arrow-right" /></span>
                   <div>
                     <h3>Unterstützung und Ressourcen</h3>
                     <p>Hilfsangebote, Materialien und Kontakte für Ihre nächsten Schritte.</p>
@@ -455,10 +456,10 @@ function Modul7Page({ onNavigate }) {
 
               <div className="module-nav-footer">
                 <a className="puk-link--action module-nav-btn" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
-                  ← Modul 06 — Was Sie konkret tun können
+                  <Icon name="arrow-left" /> Modul 06 — Was Sie konkret tun können
                 </a>
                 <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
-                  Unterstützung und Ressourcen →
+                  Unterstützung und Ressourcen <Icon name="arrow-right" />
                 </a>
               </div>
             </footer>

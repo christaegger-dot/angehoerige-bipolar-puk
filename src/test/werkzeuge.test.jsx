@@ -169,7 +169,7 @@ describe('Kommunikations-Trainer privacy', () => {
     fireEvent.change(screen.getByRole('textbox', { name: 'Wie geht es Ihnen damit?' }), { target: { value: 'Meine eigene Erfahrung.' } });
     await user.click(screen.getByRole('button', { name: /Weiter/ }));
     fireEvent.change(screen.getByRole('textbox', { name: 'Was wäre Ihr Anliegen oder Ihre Bitte?' }), { target: { value: 'Meine konkrete Bitte.' } });
-    await user.click(screen.getByRole('button', { name: 'Skript ansehen →' }));
+    await user.click(screen.getByRole('button', { name: 'Skript ansehen' }));
     await user.click(screen.getByRole('button', { name: 'Drucken / als PDF speichern' }));
 
     expect(print).toHaveBeenCalledTimes(1);
@@ -193,7 +193,7 @@ describe('Kommunikations-Trainer privacy', () => {
     await user.type(screen.getByRole('textbox', { name: 'Wie geht es Ihnen damit?' }), 'Current feeling');
     await user.click(screen.getByRole('button', { name: /Weiter/ }));
     await user.type(screen.getByRole('textbox', { name: 'Was wäre Ihr Anliegen oder Ihre Bitte?' }), 'Current request');
-    await user.click(screen.getByRole('button', { name: 'Skript ansehen →' }));
+    await user.click(screen.getByRole('button', { name: 'Skript ansehen' }));
 
     expect(screen.getByText('«Current observation»')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Skript kopieren' })).toBeInTheDocument();
@@ -235,10 +235,10 @@ describe('personal boundary preparation', () => {
       await user.type(screen.getByRole('textbox', { name: 'Wie geht es Ihnen damit?' }), 'Ich fühle mich angespannt.');
       await user.click(screen.getByRole('button', { name: /Weiter/ }));
 
-      expect(screen.getByRole('button', { name: 'Skript ansehen →' })).toBeDisabled();
+      expect(screen.getByRole('button', { name: 'Skript ansehen' })).toBeDisabled();
       const action = 'Wenn das Gespräch laut wird, gehe ich für heute nach Hause.';
       await user.type(screen.getByRole('textbox', { name: 'Welche eigene Grenze können Sie umsetzen?' }), action);
-      await user.click(screen.getByRole('button', { name: 'Skript ansehen →' }));
+      await user.click(screen.getByRole('button', { name: 'Skript ansehen' }));
       expect(screen.getByText(`«${action}»`)).toBeInTheDocument();
       await user.click(screen.getByRole('button', { name: 'Skript kopieren' }));
       expect(writeText).toHaveBeenLastCalledWith(expect.stringContaining(action));
@@ -248,7 +248,7 @@ describe('personal boundary preparation', () => {
       await user.click(screen.getByRole('button', { name: /Ein anderes Anliegen/ }));
       for (let step = 0; step < 3; step++) await user.click(screen.getByRole('button', { name: /Weiter/ }));
       expect(screen.queryByRole('textbox', { name: 'Welche eigene Grenze können Sie umsetzen?' })).not.toBeInTheDocument();
-      await user.click(screen.getByRole('button', { name: 'Skript ansehen →' }));
+      await user.click(screen.getByRole('button', { name: 'Skript ansehen' }));
       await user.click(screen.getByRole('button', { name: 'Skript kopieren' }));
       expect(writeText.mock.lastCall[0]).not.toContain(action);
       expect(screen.queryByText(`«${action}»`)).not.toBeInTheDocument();

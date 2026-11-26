@@ -1,4 +1,4 @@
-# Wechsel auf das Fachstellen-Profil 2026.10.2 · Etappen 1 und 2
+# Wechsel auf das Fachstellen-Profil 2026.10.2 · Etappen 1 bis 3
 
 Stand: 26. November 2026. Massgebend ist das Design-System «PUK Zürich Website-Profil»
 (Fachstellen-Profil 2026.10.2, Stand 15.10.2026) auf Basis des PUK Zürich Design Systems
@@ -156,14 +156,14 @@ Diese Etappe deckt «Absenderin», «Zuständigkeit statt Krisenzugang», «ein 
 | Regel | Stand |
 | --- | --- |
 | Starter mit `site.config.json`, Gate und Prüfbericht-Gate | nicht verwendet; Regeln in eigenen Tests und Prüfskripten nachgebildet |
-| Kopf nicht fixiert | Navigation bleibt ab 761 px beim Scrollen stehen |
-| Skip-Link «Zum Hauptinhalt» | heisst «Zum Inhalt springen» |
-| Name des Logo-Links «Psychiatrische Universitätsklinik Zürich – zur Startseite dieser Website» | heisst «Startseite — Bipolar & Angehörige · PUK Zürich» |
+| Kopf nicht fixiert | umgesetzt in Etappe 3 |
+| Skip-Link «Zum Hauptinhalt» | umgesetzt in Etappe 3 |
+| Name des Logo-Links «Psychiatrische Universitätsklinik Zürich – zur Startseite dieser Website» | umgesetzt in Etappe 3, ergänzt um den sichtbaren Namen der Website (siehe unten) |
 | Eine Seite «Impressum und Datenschutz» | zwei Seiten, dazu «Barrierefreiheit»; die Datenschutzseite nennt Links auf andere Websites nicht (die Vorlage des Profils hat dazu einen Satz) |
 | Veröffentlichte `404.html` | Seite «Nicht gefunden» nur als Route; Netlify antwortet mit Status 200 |
 | Redaktionsstatus «Fachlich freigegeben am TT.MM.JJJJ» | Fusszeile nennt «Redaktioneller Stand: Oktober 2026» |
-| Keine Unicode-Symbole als Icons | Pfeile, Uhr, Haken und Kreuze im Text |
-| Ein Fokussystem | globale Regel stimmt, dazu zehn Einzelregeln |
+| Keine Unicode-Symbole als Icons | umgesetzt in Etappe 3; offen bleibt der Pfeil in der Achsenbeschriftung der Figur «Belastungsverlauf» |
+| Ein Fokussystem | umgesetzt in Etappe 3 |
 | Nur semantische Tokens | Alt-Aliasse und Primitiven im App-CSS |
 | Schriftgrade aus der Skala | umgesetzt in Etappe 2 (siehe unten); offen bleiben die Beschriftungen in den SVG-Figuren |
 | Lesetext in Seitenschrift (21 px, schmal 19 px) | umgesetzt für Fliesstext der Module und die Fusszeile; Karten, Listen, Fragen und Handouts stehen weiter in UI-Grösse |
@@ -171,7 +171,87 @@ Diese Etappe deckt «Absenderin», «Zuständigkeit statt Krisenzugang», «ein 
 | Keine `style`-Attribute | Inline-Styles im JSX |
 | Visualisierungsplan je Abschnitt, drei Ebenen je Figur | nur der ältere `_dev/PUK-VISUALISIERUNGSPLAN.md` |
 | Erzwungene Farben, Theme «Hoher Kontrast» | nicht geprüft |
-| Tokenwerte `surface-brand`, `action-accent-bg` | #2B4FE0 statt #3C64FF |
+| Tokenwerte `surface-brand`, `action-accent-bg` | umgesetzt in Etappe 3 (#3C64FF wie im Profil) |
+
+## Etappe 3: kleine Profilregeln (26. November 2026)
+
+Auf Vorschlag umgesetzt, von der Fachstelle am 26. November 2026 bestätigt («ja»), samt neuer
+Fingerprint-Bindung.
+
+### Kopf, Skip-Link und Logo-Link
+
+- **Kopf nicht fixiert:** Die Navigation scrollt mit (`position: relative` statt `sticky`). Die
+  gemessene Kopfhöhe (`--nav-height`) entfällt; Sprungziele und das Inhaltsverzeichnis der
+  Module halten nur noch 16 bzw. 24 px Abstand zum oberen Rand. Die kurze Modulnavigation auf
+  dem Telefon («Alle Module», «Eigene Beratung») bleibt beim Scrollen stehen; sie gehört zum
+  Inhalt, nicht zum Kopf (Prüfbedarf für die Stufe «Bedienung»).
+- **Skip-Link:** «Zum Hauptinhalt» statt «Zum Inhalt springen».
+- **Logo-Link:** «Psychiatrische Universitätsklinik Zürich · Bipolar & Angehörige – zur
+  Startseite dieser Website». Das Profil sieht «Psychiatrische Universitätsklinik Zürich – zur
+  Startseite dieser Website» vor. Auf dieser Website steht im selben Link zusätzlich der Name
+  «Bipolar & Angehörige»; nach WCAG 2.5.3 gehört sichtbarer Text in den Namen, darum steht er
+  zwischen Logotext und Ziel.
+
+### Ein Fokussystem
+
+- Die elf Fokusregeln aus `src/styles.css` sind entfernt (darunter ein schwarzer Ring auf der
+  Hauptaktion, Abstände von 3 und 4 px und eine Regel, die fokussierten Elementen Rundungen gab).
+- Es gilt nur noch der Block in `src/puk-website.css`: Bedienelemente mit `focus-ring`
+  (2 px Weiss, 2 px PUK-Blau) und einer deckungsgleichen blauen Umrandung; Felder mit blauem
+  Rahmen und 1-px-Innenring, ohne Umrandung (wie im Profil); Sprungziele (Abschnitte und
+  Überschriften mit `tabindex="-1"`) mit `focus-ring`; `main` ohne Ring; bei erzwungenen
+  Farben eine 2-px-Umrandung in `CanvasText`.
+- **Abweichung in der Umsetzung, nicht im Bild:** Das Profil setzt bei Bedienelementen
+  `outline: none` und zeichnet nur den Schatten. Hier bleibt die Umrandung zusätzlich, weil
+  mehrere ältere Zustandsregeln (ausgewählt, gedrückt) den Schatten überschreiben; der
+  Fokus bliebe dort sonst unsichtbar. Umrandung und Schatten liegen übereinander.
+
+### Blauwerte
+
+`surface-brand` und `action-accent-bg` verwenden wieder `puk-blue-100` (#3C64FF) wie im Profil.
+Das dunklere `puk-blue-125` war am 5. Oktober 2026 wegen eines Kontrastbefunds auf dem blauen
+Einstieg gesetzt worden (`60b64f7`). Die Kontrastprüfung (axe, `color-contrast`) meldet mit dem
+Profilwert auf keiner der 16 Seiten bei 375 und 1366 px einen Fehler; weiss auf #3C64FF ergibt
+4,7:1. Die Datei `src/puk-design/tokens/colors.tokens.css` ist damit wieder byte-identisch mit
+der gelieferten Datei und mit `tokens/colors.css` des Profils; `provenance.json` und
+`src/puk-design/README.md` sind nachgeführt.
+
+### Icons statt Unicode-Symbolen
+
+- Neue Komponente `src/icon.jsx` mit den Pfaden des Profils (Lucide 0.446.0, ISC-Lizenz,
+  Lizenztext in `public/assets/puk/icons/LICENSE.txt`). Verwendet werden `arrow-right`,
+  `check` und `x`; «zurück» und «extern» sind der gespiegelte bzw. gedrehte Pfeil, wie es die
+  Komponenten des Profils tun. Icons stehen in Textgrösse und Textfarbe.
+- 100 Symbole ersetzt (vorher 103 im Quelltext, nachher 3: zwei in Code-Kommentaren und der
+  Pfeil in der Figur «Belastungsverlauf»): 48 «→», 20 «←», 1 «↗», 2 «↪», 1 «▸», 8 «✓»,
+  9 «✗», 1 «×» und 10 «⏱».
+- **Stoppuhr entfällt** vor den Lesezeiten («12–15 Minuten · 10 Abschnitte»): Der Text sagt
+  bereits, dass es um Zeit geht; das Subset des Profils hat kein Uhr-Icon.
+- **Haken der Listen «Worauf es ankommt»:** als Maske in Textfarbe statt als Zeichen; mit
+  erzwungenen Farben in `CanvasText`.
+- **Neue Wörter für Hilfsmittel (Prüfbedarf S):** Wo Haken und Kreuz eine Bedeutung tragen
+  (Gesprächsbeispiele in Modul 6, «Drei Beispiele zum Anpassen», und Modul 7, «So könnten Sie
+  ein Gespräch beginnen»), haben die Icons einen Namen: Kreuz «Weniger hilfreich», Haken
+  «Vorschlag» (11 Stellen). Bisher lasen Screenreader die Zeichen als Symbolnamen vor.
+  Alle übrigen Icons sind für Hilfsmittel ausgeblendet; Namen von Links und Schaltflächen
+  enthalten damit keine Pfeile mehr («Weiter» statt «Weiter →»).
+- **Offen:** Die Achsenbeschriftung «Zeit →» in der Figur «Belastungsverlauf» ist Text in
+  einer Zeichnung und gehört zur Überarbeitung der Visualisierungen.
+
+### Prüfskripte
+
+- `scripts/audit-website.mjs` prüft neu auf jeder Route: Kopf nicht fixiert, Namen von
+  Skip-Link und Logo-Link, keine Unicode-Symbole, Icons benannt oder ausgeblendet; dazu das
+  gerenderte Fokusbild eines Links, eines Sprungziels und von `main` sowie den Feldfokus
+  (Rahmen und Innenring statt Umrandung).
+- **Geänderte Prüfung «Leseposition nach Zurück»:** Bei 1440 px verliess der Test das Modul
+  bisher über «Werkzeuge» im Kopf. Weil der Kopf nicht mehr mitläuft, scrollt ein Klick dort
+  die Seite zuerst nach oben; zurück kam man deshalb oben an. Der Test verlässt das Modul jetzt
+  über «Alle Module» im mitlaufenden Inhaltsverzeichnis, das an der Leseposition sichtbar
+  ist. Wer im Kopf auf einen Link klickt, hat vorher selbst nach oben gescrollt und kehrt
+  dorthin zurück; das ist das erwartete Verhalten des Browsers.
+- Neue Tests: `src/test/focus-system.test.js` (Fokusbild nur an einer Stelle) und weitere
+  Fälle in `src/test/fachstellen-profil.test.jsx` (Icons, Skip-Link, Logo-Link).
 
 ## Vorschlag zu den Webadressen (nicht eingebaut)
 

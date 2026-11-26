@@ -49,7 +49,7 @@ describe('ModulePage', () => {
 
     expect(screen.getByRole('link', { name: 'Start' })).toHaveAttribute('href', '/');
     expect(screen.getAllByRole('link', { name: 'Module' })[0]).toHaveAttribute('href', '/module');
-    screen.getAllByRole('link', { name: /← Alle Module/i }).forEach((link) => {
+    screen.getAllByRole('link', { name: /^Alle Module$/i }).forEach((link) => {
       expect(link).toHaveAttribute('href', '/module');
     });
     expect(screen.getByRole('link', { name: 'Konkrete Hilfen' })).toHaveAttribute('href', '/module/6');

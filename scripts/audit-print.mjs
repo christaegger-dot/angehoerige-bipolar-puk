@@ -228,9 +228,9 @@ async function communication(page, boundary = false) {
     excludes('communication-intro', intro.text, toolsPageText);
     await page.emulateMedia({ media: 'screen' });
   }
-  await page.getByRole('button', { name: 'Beginnen →', exact: true }).click();
+  await page.getByRole('button', { name: 'Beginnen', exact: true }).click();
   await page.getByRole('button', { name: boundary ? /Ich möchte eine Grenze setzen/ : /Ein anderes Anliegen/ }).click();
-  await page.getByRole('button', { name: 'Weiter →', exact: true }).click();
+  await page.getByRole('button', { name: 'Weiter', exact: true }).click();
   const lines = boundary ? ['COMM_BOUNDARY_OBSERVATION: Eine kurze synthetische Beobachtung.'] : observation;
   await page.locator('#kommunikation-beobachtung').fill(lines.join('\n'));
   if (!boundary) {
@@ -239,12 +239,12 @@ async function communication(page, boundary = false) {
     excludes('communication-observation', intermediate.text, toolsPageText);
     await page.emulateMedia({ media: 'screen' });
   }
-  await page.getByRole('button', { name: 'Weiter →', exact: true }).click();
+  await page.getByRole('button', { name: 'Weiter', exact: true }).click();
   await page.locator('#kommunikation-wirkung').fill(feeling);
-  await page.getByRole('button', { name: 'Weiter →', exact: true }).click();
+  await page.getByRole('button', { name: 'Weiter', exact: true }).click();
   if (boundary) await page.locator('#kommunikation-grenze').fill('COMM_BOUNDARY_CURRENT: Ich beende das Gespraech fuer heute.');
   else await page.locator('#kommunikation-bitte').fill(request);
-  await page.getByRole('button', { name: 'Skript ansehen →', exact: true }).click();
+  await page.getByRole('button', { name: 'Skript ansehen', exact: true }).click();
   const name = boundary ? 'communication-boundary' : 'communication-result';
   await printButton(page, name);
   const result = await pdf(page, name);

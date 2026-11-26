@@ -22,11 +22,13 @@ eine gemeinsame Seitenhülle und den dokumentierten SPA-Auditadapter.
 sichtbaren Textfassungen. Das Profil ersetzt keine menschlichen Freigaben.
 
 Darüber gilt seit dem 26. November 2026 das **Fachstellen-Profil 2026.10.2** der
-Fachstelle Angehörigenarbeit («PUK Zürich Website-Profil»). Umgesetzt sind zwei
+Fachstelle Angehörigenarbeit («PUK Zürich Website-Profil»). Umgesetzt sind drei
 Etappen: erstens Zuständigkeit statt Krisenzugang, Absenderin im Kopf jeder Seite, ein
 Schwarz und Buttons mit 3 px; zweitens Schriftgrade aus der Skala des Profils, in rem und
 über die Tokens `--size-*` und `--web-size-*` (`src/design-tokens.css`). Neue Angaben zu
-Schriftgraden im CSS verwenden nur diese Tokens. Entscheide, geänderte Wortlaute, die
+Schriftgraden im CSS verwenden nur diese Tokens. Drittens: Kopf nicht fixiert, ein
+Fokussystem (nur in `src/puk-website.css`), Blauwerte wie im Profil und Icons des Profils
+statt Unicode-Symbolen (`src/icon.jsx`). Entscheide, geänderte Wortlaute, die
 Zuordnung der Schriftgrade und die noch offenen Abweichungen
 stehen in `_dev/PROFILWECHSEL-2026-10-2.md`; der Stand der Prüfstufen steht in
 `PRUEFBERICHT.md`. Die Website bleibt eine React-Anwendung und wird nicht auf den
@@ -111,6 +113,7 @@ Der Produktionslauf verlangt mindestens zwei bestandene reale Screenreader-Läuf
 - `src/werkzeuge.jsx` — interaktive Werkzeuge und Overlay-Infrastruktur
 - `src/unterstuetzung.jsx` — Ressourcen, Materialien, FAQ und Handouts
 - `src/shared.jsx` — Absenderzeile, globale Navigation, Fusszeile mit Zuständigkeitsverweis und der Verweis im Text
+- `src/icon.jsx` — Icons des Profils (Lucide-Subset, Lizenz in `public/assets/puk/icons/LICENSE.txt`); Pfeile, Haken und Kreuze nur über diese Komponente
 - `src/site-config.js` — Absenderin, Zuständigkeitsverweis und Hinweis im Wortlaut des Fachstellen-Profils 2026.10.2; einzige Quelle dieser Texte
 - `PRUEFBERICHT.md` — Stand der Prüfstufen nach dem Profil (W1 bis R3) und Selbstprüfung der bauenden Sitzung
 - `src/not-found.jsx` — Seite für unbekannte Adressen (statt stiller Weiterleitung auf die Startseite)

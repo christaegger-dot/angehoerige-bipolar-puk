@@ -4,6 +4,7 @@
 import React from 'react';
 import { ModuleQuickStart, EvidenceSources, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
+import { Icon } from './icon.jsx';
 
 function KnotenFigur() {
   const w = 560, h = 360;
@@ -186,7 +187,7 @@ function Modul5Page({ onNavigate }) {
             </nav>
             <div className="module-detail-meta">
               <span className="module-detail-num">05</span>
-              <span className="module-detail-meta-time">⏱ 14–16 Minuten · 10 Abschnitte</span>
+              <span className="module-detail-meta-time">14–16 Minuten · 10 Abschnitte</span>
             </div>
             <h1>Zwischen <em>Treue</em> und <em>Selbstschutz</em></h1>
             <p className="lede">Vielleicht möchten Sie einem Menschen nahe bleiben und spüren zugleich, dass Sie mehr Raum für sich brauchen. Diese widersprüchlichen Bedürfnisse können es schwer machen, Grenzen zu setzen oder über die Beziehung zu entscheiden. Das Modul bietet Fragen, mit denen Sie Ihre Lage und Ihre eigenen Wünsche besser verstehen können.</p>
@@ -208,7 +209,7 @@ function Modul5Page({ onNavigate }) {
                 ))}
               </ol>
               <div className="toc-divider"></div>
-              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}>← Alle Module</a>
+              <a className="toc-back" href={navHref('module')} onClick={navHandler('module', onNavigate)}><Icon name="arrow-left" /> Alle Module</a>
             </div>
           </aside>
 
@@ -417,10 +418,10 @@ function Modul5Page({ onNavigate }) {
 
               <div className="module-nav-footer">
                 <a className="puk-link--action module-nav-btn" href={navHref('modul4')} onClick={navHandler('modul4', onNavigate)}>
-                  ← Modul 04 — Wenn die Kraft nachlässt
+                  <Icon name="arrow-left" /> Modul 04 — Wenn die Kraft nachlässt
                 </a>
                 <a className="puk-link--action module-nav-btn module-nav-next" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>
-                  Modul 06 — Was Sie konkret tun können →
+                  Modul 06 — Was Sie konkret tun können <Icon name="arrow-right" />
                 </a>
               </div>
             </footer>

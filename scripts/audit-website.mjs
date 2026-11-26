@@ -196,7 +196,11 @@ try {
   await field.focus();
   await page.keyboard.press('Tab');
   await page.keyboard.press('Shift+Tab');
-  record('keyboard/input-focus', {}, await field.evaluate(el => getComputedStyle(el).outlineStyle !== 'none'));
+  // Felder zeigen den Fokus nach dem Profil mit blauem Rahmen und 1-px-Innenring (Karte «Fokus»).
+  // Kurz warten, damit der Farbübergang des Rahmens abgeschlossen ist.
+  await page.waitForTimeout(300);
+  const fieldFocus = await field.evaluate(el => { const cs = getComputedStyle(el); return { border: cs.borderTopColor, shadow: cs.boxShadow }; });
+  record('keyboard/input-focus', fieldFocus, fieldFocus.border === 'rgb(60, 100, 255)' && /inset/.test(fieldFocus.shadow) && /60, 100, 255/.test(fieldFocus.shadow));
   await page.keyboard.press('Escape');
   record('keyboard/dialog-close', {}, await page.getByRole('dialog').count() === 0);
   await page.getByRole('button', { name: /Krisenplan öffnen/ }).click();
@@ -244,6 +248,11 @@ try {
           text: el.textContent, inMain: Boolean(el.closest('main')), hiddenPlace: Boolean(el.closest('figure, details')),
         })),
         inlineSections: new Set([...document.querySelectorAll('[data-responsibility-inline]')].map(el => el.closest('section'))).size,
+        navPosition: getComputedStyle(document.querySelector('.nav')).position,
+        skipText: document.querySelector('.skip-link')?.textContent || '',
+        logoName: document.querySelector('.nav-brand')?.getAttribute('aria-label') || '',
+        unicodeIcon: (text.match(/[→←↗↪▸⏱✓✗×]/) || [null])[0],
+        unlabelledIcons: [...document.querySelectorAll('svg.puk-icon')].filter(icon => icon.getAttribute('aria-hidden') !== 'true' && !(icon.getAttribute('role') === 'img' && icon.getAttribute('aria-label'))).length,
       };
     });
     record('profile/sender', { route, senderText: facts.senderText, mailHref: facts.mailHref },
@@ -255,10 +264,32 @@ try {
       && facts.disclaimer === siteConfig.disclaimer);
     record('profile/no-crisis-access', { route, telLinks: facts.telLinks, phoneNumber: facts.phoneNumber, shortNumber: facts.shortNumber, emergencyBlocks: facts.emergencyBlocks },
       facts.telLinks.length === 0 && !facts.phoneNumber && !facts.shortNumber && facts.emergencyBlocks === 0);
+    // Etappe 3: Kopf nicht fixiert, Skip-Link und Logo-Link nach Profil, Icons statt Unicode-Symbolen.
+    record('profile/header-not-fixed', { route, position: facts.navPosition }, !['sticky', 'fixed'].includes(facts.navPosition));
+    record('profile/skip-and-logo-names', { route, skip: facts.skipText, logo: facts.logoName },
+      facts.skipText === 'Zum Hauptinhalt' && facts.logoName.startsWith(siteConfig.sender.institution)
+      && facts.logoName.endsWith('zur Startseite dieser Website'));
+    record('profile/icons', { route, unicodeIcon: facts.unicodeIcon, unlabelledIcons: facts.unlabelledIcons },
+      !facts.unicodeIcon && facts.unlabelledIcons === 0);
     record('profile/inline-referral', { route, count: facts.inlineReferences.length },
       facts.inlineReferences.every(ref => ref.text === siteConfig.responsibility.inline.text && ref.inMain && !ref.hiddenPlace)
       && facts.inlineSections === facts.inlineReferences.length);
   }
+  // Ein Fokussystem: Ein per Tastatur fokussierter Link zeigt focus-ring (2 px Weiss, 2 px Blau) samt
+  // deckungsgleicher Umrandung; ein angesprungener Abschnitt zeigt das Fokusbild, main dagegen keinen Ring.
+  await open(profilePage, '/module/4');
+  await profilePage.locator('.module-toc a').first().focus();
+  await profilePage.keyboard.press('Shift+Tab');
+  await profilePage.keyboard.press('Tab');
+  const ring = await profilePage.evaluate(() => { const cs = getComputedStyle(document.activeElement); return { tag: document.activeElement.tagName, shadow: cs.boxShadow, outline: `${cs.outlineStyle} ${cs.outlineColor} ${cs.outlineWidth}` }; });
+  record('profile/focus-ring', ring, /255, 255, 255/.test(ring.shadow) && /60, 100, 255/.test(ring.shadow) && ring.outline === 'solid rgb(60, 100, 255) 2px');
+  await profilePage.goto(`${baseURL}/module/4#s6`, { waitUntil: 'networkidle' });
+  await profilePage.locator('#s6 h2').waitFor();
+  await profilePage.waitForTimeout(600);
+  const jump = await profilePage.evaluate(() => ({ focused: document.activeElement?.tagName + '#' + (document.activeElement?.closest('section')?.id || ''), shadow: getComputedStyle(document.activeElement).boxShadow }));
+  record('profile/jump-target-focus', jump, jump.focused === 'H2#s6' && /60, 100, 255/.test(jump.shadow));
+  const mainRing = await profilePage.evaluate(() => { const main = document.getElementById('main-content'); main.focus(); const cs = getComputedStyle(main); return { outline: cs.outlineStyle, shadow: cs.boxShadow }; });
+  record('profile/main-without-ring', mainRing, mainRing.outline === 'none' && mainRing.shadow === 'none');
   // Die frühere Krisenseite gibt es nicht mehr; ihre Adresse zeigt die Seite «Nicht gefunden».
   await profilePage.goto(`${baseURL}/notfall`, { waitUntil: 'networkidle' });
   await profilePage.locator('#main-content h1').waitFor();
@@ -315,9 +346,12 @@ try {
     await navigationPage.locator('#s6 h2').waitFor();
     await navigationPage.waitForFunction(() => Math.abs(window.scrollY - 4300) <= 1);
     record('navigation/fresh-scroll-reload-position', { width, scrollY: await navigationPage.evaluate(() => window.scrollY) }, true);
+    // Der Kopf ist nicht fixiert (Profil 2026.10.2). Verlassen wird das Modul deshalb über einen Link,
+    // der an der Leseposition sichtbar ist: schmal die kurze Modulnavigation, breit das mitlaufende
+    // Inhaltsverzeichnis. Ein Klick auf einen Link im Kopf würde die Seite zuerst nach oben scrollen.
     const exit = width < 760
       ? navigationPage.getByRole('navigation', { name: 'Kurze Modulnavigation' }).getByRole('link', { name: 'Alle Module', exact: true })
-      : navigationPage.getByRole('navigation', { name: 'Hauptnavigation' }).getByRole('link', { name: 'Werkzeuge', exact: true });
+      : navigationPage.locator('.module-toc .toc-back');
     await exit.click();
     await navigationPage.locator('h1').waitFor();
     await navigationPage.goBack();
@@ -331,7 +365,7 @@ try {
     await navigationPage.goForward();
     await navigationPage.locator('h1').waitFor();
     await navigationPage.waitForFunction(() => window.scrollY === 0);
-    record('navigation/forward-position', { width, url: navigationPage.url() }, new URL(navigationPage.url()).pathname === (width < 760 ? '/module' : '/werkzeuge'));
+    record('navigation/forward-position', { width, url: navigationPage.url() }, new URL(navigationPage.url()).pathname === '/module');
     await navigationPage.close();
   }
   const contentsPage = await browser.newPage({ viewport: { width: 360, height: 900 }, reducedMotion: 'reduce' });

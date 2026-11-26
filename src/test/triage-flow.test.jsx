@@ -16,8 +16,8 @@ describe('TriageFlow own support access', () => {
     await user.click(screen.getByRole('button', { name: 'Ja, die Diagnose ist neu' }));
 
     expect(screen.getByRole('status')).toHaveFocus();
-    expect(screen.getByRole('link', { name: 'Modul 1 — Die bipolare Störung verstehen →' })).toHaveAttribute('href', '/module/1');
-    const support = screen.getByRole('link', { name: 'Beratung und Entlastung →' });
+    expect(screen.getByRole('link', { name: 'Modul 1 — Die bipolare Störung verstehen' })).toHaveAttribute('href', '/module/1');
+    const support = screen.getByRole('link', { name: 'Beratung und Entlastung' });
     expect(support).toHaveAttribute('href', '/unterstuetzung');
     expect(screen.getAllByRole('link')).toHaveLength(2);
     expect(screen.getByText(/Beratung und Entlastung für Ihre eigene Situation/)).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe('TriageFlow own support access', () => {
     await user.click(screen.getByRole('button', { name: 'Nein, schon länger' }));
     await user.click(screen.getByRole('button', { name: 'Ja' }));
 
-    expect(screen.getByRole('link', { name: 'Beratung und Entlastung →' })).toHaveAttribute('href', '/unterstuetzung');
+    expect(screen.getByRole('link', { name: 'Beratung und Entlastung' })).toHaveAttribute('href', '/unterstuetzung');
     expect(screen.getByRole('link', { name: 'Wenn die Kraft nachlässt' })).toHaveAttribute('href', '/module/4');
     expect(screen.queryByRole('link', { name: /Die bipolare Störung verstehen/ })).not.toBeInTheDocument();
   });
@@ -94,7 +94,7 @@ describe('TriageFlow answer correction', () => {
     await user.click(screen.getByRole('button', { name: 'Vorherige Frage' }));
     await user.click(screen.getByRole('button', { name: 'Vorherige Frage' }));
     await user.click(screen.getByRole('button', { name: 'Ja' }));
-    expect(screen.getByRole('link', { name: 'Beratung und Entlastung →' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Beratung und Entlastung' })).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: 'Antwort ändern' }));
     await user.click(screen.getByRole('button', { name: 'Nein' }));
 
@@ -126,12 +126,12 @@ describe('TriageFlow answer correction', () => {
     render(<TriageFlow onNavigate={vi.fn()} />);
     await user.click(screen.getByRole('button', { name: 'Ja, die Diagnose ist neu' }));
     expect(screen.getByRole('status')).toHaveFocus();
-    expect(screen.getByRole('link', { name: 'Beratung und Entlastung →' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Beratung und Entlastung' })).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: 'Antwort ändern' }));
     expect(screen.getByRole('button', { name: 'Ja, die Diagnose ist neu' })).toHaveFocus();
     await user.click(screen.getByRole('button', { name: 'Nein, schon länger' }));
     expect(screen.getByText('Frage 2 von höchstens 4')).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /Die bipolare Störung verstehen/ })).not.toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: 'Beratung und Entlastung →' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Beratung und Entlastung' })).not.toBeInTheDocument();
   });
 });

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from './icon.jsx';
 
 const FOCUSABLE_SELECTOR =
   'button:not([disabled]):not([tabindex="-1"]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -88,7 +89,7 @@ function ToolOverlay({ onClose, ariaLabel, cardClass = '', overlayClass = '', no
     <div className={overlayCls} role="dialog" aria-modal="true" aria-label={ariaLabel}>
       <button className={`tool-overlay-bg${printClass}`} onClick={onClose} aria-label="Dialog schliessen" tabIndex={-1}></button>
       <div className={cardCls} onFocus={revealFocusedField}>
-        <button className={`tool-close${printClass}`} onClick={onClose} aria-label="Dialog schliessen">×</button>
+        <button className={`tool-close${printClass}`} onClick={onClose} aria-label="Dialog schliessen"><Icon name="x" /></button>
         {children}
       </div>
     </div>

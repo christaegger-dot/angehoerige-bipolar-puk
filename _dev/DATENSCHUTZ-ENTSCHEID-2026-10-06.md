@@ -127,6 +127,16 @@ Die siebte Anpassung vom selben Tag setzt die zweite Etappe des Profilwechsels u
 
 Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; die Hinweise zu Speicherung und Löschung stehen unverändert vor den Werkzeugen und in den Dialogen. Am neu gebauten Stand bestanden die 225 Werkzeugchecks, die 716 Website-Browserchecks einschliesslich der Prüfung auf externe Laufzeitanfragen, die 71 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird wie in den vorangehenden Durchgängen an den neuen Fingerprint gebunden (`sourceSha256` `b4f088557883710c0856ab2a1918d57b1dd80a06f913e5145cdfcf75e8fe7cd9`, `buildSha256` `163f302ed2eee134a002c6c3d755f01d1c4d3a2b4c7663c6e456ee5bb2f5a1c4`, `sha256` `b28e26e3a59b79c374a132ac554f2b5024343ff263bd26e15ece1c3995443bc2`).
 
+### Abgleich nach den kleinen Profilregeln (26. November 2026, achter Durchgang)
+
+Die achte Anpassung vom selben Tag setzt die dritte Etappe des Profilwechsels um (Einzelheiten in `_dev/PROFILWECHSEL-2026-10-2.md`, Abschnitt «Etappe 3»). Die Fachstelle hat der neuen Bindung am 26. November 2026 zugestimmt. Datenschutzrelevant geprüft wurden:
+
+- **Icons:** Die Komponente `src/icon.jsx` zeichnet eingebettete SVG-Pfade; der Haken der Listen ist eine Maske aus einer `data:`-Adresse im CSS. Es wird nichts nachgeladen; die Content-Security-Policy erlaubt `data:` für Bilder bereits. Die Lizenzdatei `public/assets/puk/icons/LICENSE.txt` ist statischer Text.
+- **Kopf, Fokus, Blauwerte, Skip-Link, Logo-Link:** nur CSS und Beschriftungen. Die bisher per Skript gemessene Kopfhöhe (`--nav-height`) entfällt; sie wurde nur als Stilwert gesetzt.
+- **Vorschaubild:** `public/social-preview.png` neu erzeugt (neues Blau, Pfeil-Icon); weiterhin ohne personenbezogene Inhalte.
+
+Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; die Hinweise zu Speicherung und Löschung stehen unverändert vor den Werkzeugen und in den Dialogen. Am neu gebauten Stand bestanden die 225 Werkzeugchecks, die nun 764 Website-Browserchecks einschliesslich der Prüfung auf externe Laufzeitanfragen, die 71 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird wie in den vorangehenden Durchgängen an den neuen Fingerprint gebunden (`sourceSha256` `97fea24d0441e762eca12d1ae8047baf130e615866bfb9927eb818f48708c2f5`, `buildSha256` `4f90932fc73d1f2ab7c67ccce7e3bd8f74f645557f4306287d64893f07e09dad`, `sha256` `f7088a0e5e7e93d80d9653ca650daa38a669bf702cd4557e2a01975566055b1c`).
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

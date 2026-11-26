@@ -31,24 +31,14 @@ function ResponsibilityInline() {
   return <p className="puk-site-inline-ref" data-responsibility-inline>{SITE.responsibility.inline.text}</p>;
 }
 
+// Der Kopf ist nicht fixiert (Fachstellen-Profil 2026.10.2); er braucht deshalb keine gemessene Höhe mehr.
 function Nav({ page, onNavigate }) {
-  const navRef = React.useRef(null);
-  React.useEffect(() => {
-    const updateHeight = () => {
-      document.documentElement.style.setProperty('--nav-height', `${navRef.current?.getBoundingClientRect().height || 68}px`);
-    };
-    updateHeight();
-    const observer = typeof window.ResizeObserver === 'function' ? new window.ResizeObserver(updateHeight) : null;
-    if (navRef.current) observer?.observe(navRef.current);
-    window.addEventListener('resize', updateHeight);
-    return () => { observer?.disconnect(); window.removeEventListener('resize', updateHeight); };
-  }, []);
   const moduleActive = page === 'module' || /^modul[1-7]$/.test(page) || page === 'schweigepflicht';
 
   return (
-    <nav ref={navRef} className="nav" aria-label="Hauptnavigation">
+    <nav className="nav" aria-label="Hauptnavigation">
       <div className="col-wide nav-inner">
-        <a className="nav-brand puk-web-nav__link" aria-current={page === 'start' ? 'page' : undefined} href={navHref('start')} onClick={navHandler('start', onNavigate)} aria-label="Startseite — Bipolar &amp; Angehörige · PUK Zürich">
+        <a className="nav-brand puk-web-nav__link" aria-current={page === 'start' ? 'page' : undefined} href={navHref('start')} onClick={navHandler('start', onNavigate)} aria-label={`${SITE.sender.institution} · Bipolar & Angehörige – zur Startseite dieser Website`}>
           <span className="nav-logo">
             <img src="/assets/puk/PUK_Logo_statisch_positiv_de.svg" width="214" height="85" alt="Psychiatrische Universitätsklinik Zürich" data-motion="logo-statisch" />
           </span>

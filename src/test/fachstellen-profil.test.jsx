@@ -61,6 +61,29 @@ describe('Fachstellen-Profil 2026.10.2', () => {
     expect(new Set(sections).size).toBe(referrals.length);
   });
 
+  it.each(ROUTES.map(({ page, path }) => [path, page]))('uses the profile icons instead of Unicode symbols on %s', async (path) => {
+    await renderRoute(path);
+
+    // Ausnahmen des Profils: Mittelpunkt « · » und «#» vor Themen-Chips.
+    expect(document.body.textContent).not.toMatch(/[→←↗↪▸⏱✓✗×]/);
+    for (const icon of document.querySelectorAll('svg.puk-icon')) {
+      const labelled = icon.getAttribute('role') === 'img' && Boolean(icon.getAttribute('aria-label'));
+      expect(labelled || icon.getAttribute('aria-hidden') === 'true').toBe(true);
+    }
+  });
+
+  it('names the skip link and the logo link as the profile does', async () => {
+    await renderRoute('/module');
+
+    expect(document.querySelector('.skip-link').textContent).toBe('Zum Hauptinhalt');
+    const logo = document.querySelector('.nav-brand');
+    const name = logo.getAttribute('aria-label');
+    // WCAG 2.5.3: Der Name beginnt mit dem sichtbaren Logotext, enthält den sichtbaren Namen der Website und nennt das Ziel.
+    expect(name.startsWith(SITE.sender.institution)).toBe(true);
+    expect(name).toContain(logo.querySelector('.nav-brand-mark').textContent);
+    expect(name.endsWith('zur Startseite dieser Website')).toBe(true);
+  });
+
   it('takes both referral wordings from the profile without change', () => {
     expect(SITE.responsibility.text).toBe('Die Fachstelle Angehörigenarbeit der PUK berät Angehörige kostenlos und vertraulich: angehoerigenarbeit@pukzh.ch. Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.');
     expect(SITE.responsibility.inline.text).toBe('Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.');
