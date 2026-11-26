@@ -85,6 +85,12 @@ Die dritte Anpassung vom selben Tag zeichnet den Brotkrumen der sieben Moduldeta
 
 Am neu gebauten Stand bestanden erneut die 225 Werkzeugchecks, die 697 Website-Browserchecks, die 72 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird im ausdrücklichen Auftrag der Projektverantwortlichen an den neuen App-/Build-Fingerprint gebunden; die vorbereiteten Screenreader-Läufe erhalten denselben Prüfstand und bleiben nicht ausgeführt.
 
+### Abgleich nach Korrektur der Notfallseite und zweier Hilfe-Links (26. November 2026, vierter Durchgang)
+
+Die vierte Anpassung vom selben Tag setzt auf der Notfallseite die Kästen «Erster Schritt», «Vermeiden» und «Wenn akut» in Lesegrösse und trennt lange Wörter in den Rufnummern-Kacheln nach Silben (`hyphens: auto`). Auf der Seite «Unterstützung» verweisen die Einträge EQUILIBRIUM und Selbsthilfe Zürich neu auf `https://www.depressionen.ch/` und `https://www.selbsthilfezuerich.ch/`; die Projektverantwortliche hat beide Adressen am 26. November 2026 bestätigt. Der Quellvergleich mit dem gemergten Stand `2787eb3` zeigt im Anwendungscode ausschliesslich diese CSS-Regeln und die zwei Linkadressen samt angezeigtem Domainnamen. Beide Links öffnen wie bisher erst nach einem Klick in einem neuen Tab mit `rel="noopener noreferrer"`; die Website selbst lädt weiterhin nichts von Dritten. Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert, ebenso Rufnummern und `tel:`-Links.
+
+Am neu gebauten Stand bestanden erneut die 225 Werkzeugchecks, die nun 698 Website-Browserchecks (einschliesslich der Prüfung auf externe Laufzeitanfragen), die 72 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird im ausdrücklichen Auftrag der Projektverantwortlichen an den neuen App-/Build-Fingerprint gebunden; die vorbereiteten Screenreader-Läufe erhalten denselben Prüfstand und bleiben nicht ausgeführt.
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

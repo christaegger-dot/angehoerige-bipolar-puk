@@ -913,6 +913,11 @@ section + section { padding-top: 0; }
   text-decoration: none;
   color: inherit;
   transition: background 0.15s;
+  /* Lange Wörter in schmalen Kacheln nach Silben trennen statt mitten im Wort
+     umbrechen. Kurze Wörter bleiben ganz, wo der Browser die Grenze kennt. */
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 10 4 4;
 }
 .number-tile:hover { background: var(--alert-soft); }
 .number-num {
@@ -979,9 +984,11 @@ section + section { padding-top: 0; }
 .guide.open .guide-body { display: block; }
 .guide-body ul { margin: 0 0 18px; padding-left: 22px; max-width: 56ch; }
 .guide-body li { margin-bottom: 10px; line-height: 1.6; }
+/* Erster Schritt, Vermeiden und «Wenn akut» stehen in Lesegrösse wie die Liste
+   dazwischen: Sie enthalten die wichtigsten Anweisungen der Seite. */
 .guide-do, .guide-dont, .guide-sos {
   padding: 14px 18px;
-  font-size: 0.95rem;
+  font-size: inherit;
   line-height: 1.55;
   margin-bottom: 10px;
   max-width: 60ch;

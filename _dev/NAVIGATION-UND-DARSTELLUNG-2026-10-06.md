@@ -63,3 +63,14 @@ Abgleich mit dem Leitfaden `breadcrumbs` aus `modern-web-guidance`:
 - Auf der Notfallseite bleibt der letzte Eintrag Text ohne `aria-current`, weil die aktuelle Seite dort am Link «SOS Krise» der Hauptnavigation ausgezeichnet ist und der PUK-Auditor genau eine Auszeichnung je Seite verlangt.
 
 Die Darstellung ist bei 1440 und 320 px geometrisch unverändert (Position und Grösse von Brotkrumen, Einträgen und H1 gemessen). `src/test/current-page-marker.test.jsx` prüft Liste, Anzahl Einträge und das Fehlen von Trennertext auf allen neun Seiten. Die Screenreader-Ansage bleibt in den ausstehenden Läufen zu prüfen.
+
+### Notfallseite und Hilfe-Links nach der Seitenprüfung (26. November 2026)
+
+Eine Durchsicht der gerenderten Website bei 375, 768 und 1440 px ergab zwei Befunde, die Menschen behindern können:
+
+- **Notfallseite:** Die Kästen «Erster Schritt», «Vermeiden» und «Wenn akut» standen in 15,2 px, die Liste dazwischen in 19–21 px. Sie stehen jetzt in derselben Lesegrösse. In den Rufnummern-Kacheln brachen «Dargebotene», «Lebensgefahr» und «Alterspsychiatrie» bei 320–390 px mitten im Wort um; sie werden jetzt nach Silben getrennt («Dargebo-tene»), kurze Wörter bleiben ganz. `scripts/audit-website.mjs` prüft beides neu (`sos/critical-steps-reading-size`); ohne die Korrektur schlägt die Prüfung fehl.
+- **Hilfe-Links:** `www.equilibrium-ch.ch` und `www.selbsthilfezentrum-zh.ch` waren am 26. November 2026 nicht erreichbar. Nach Bestätigung durch die Projektverantwortliche verweist EQUILIBRIUM neu auf `www.depressionen.ch` (Selbstbezeichnung dort: «Verein EQUILIBRIUM – Verein zur Bewältigung von Depressionen») und Selbsthilfe Zürich auf `www.selbsthilfezuerich.ch`. `www.equilibrium.ch` ist eine geparkte Domain und wurde nicht verwendet. Regression: `src/test/unterstuetzung.test.jsx`.
+
+Prüfbedarf für die Fachstelle: Der Beschreibungstext zu EQUILIBRIUM («Verein der Schweizer Selbsthilfegruppen für Menschen mit Erkrankungen der Stimmung …») weicht von der Selbstbezeichnung auf der Website des Vereins ab; er wurde nicht geändert.
+
+Die übrigen Befunde der Durchsicht (unter anderem Hauptaktion unter dem Falz, Layout-Sprung beim Laden, fehlende Fehlerseite, kleine Schrift, lange Zeilen) sind offen.

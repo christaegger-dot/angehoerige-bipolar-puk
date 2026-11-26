@@ -822,9 +822,9 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
             {[
               { num: '01', title: 'Fachstelle Angehörigenarbeit PUK Zürich', desc: 'Beratung speziell für Angehörige psychisch erkrankter Menschen. Telefonisch, per Mail oder im persönlichen Gespräch.', tag: '058 384 38 00', href: 'tel:+41583843800', kind: 'tel' },
               { num: '02', title: 'Pro Mente Sana — Beratungstelefon', desc: 'Rechtsberatung zu Fürsorgerischer Unterbringung (FU), Vorsorgeauftrag, Beistandschaften und Patientenrechten. Werktags.', tag: '0848 800 858', href: 'tel:+41848800858', kind: 'tel' },
-              { num: '03', title: 'EQUILIBRIUM', desc: 'Verein der Schweizer Selbsthilfegruppen für Menschen mit Erkrankungen der Stimmung (affektiven Störungen) und ihre Angehörigen.', tag: 'equilibrium-ch.ch', href: 'https://www.equilibrium-ch.ch/', kind: 'web' },
+              { num: '03', title: 'EQUILIBRIUM', desc: 'Verein der Schweizer Selbsthilfegruppen für Menschen mit Erkrankungen der Stimmung (affektiven Störungen) und ihre Angehörigen.', tag: 'depressionen.ch', href: 'https://www.depressionen.ch/', kind: 'web' },
               { num: '04', title: 'VASK Schweiz', desc: 'Vereinigung der Angehörigen von schizophrenie- und psychisch Kranken — Selbsthilfegruppen in vielen Kantonen.', tag: 'vask.ch', href: 'https://www.vask.ch/', kind: 'web' },
-              { num: '05', title: 'Selbsthilfe Zürich', desc: 'Vermittelt regionale Selbsthilfegruppen — auch für Angehörige von Menschen mit bipolarer Störung.', tag: 'selbsthilfezentrum-zh.ch', href: 'https://www.selbsthilfezentrum-zh.ch/', kind: 'web' },
+              { num: '05', title: 'Selbsthilfe Zürich', desc: 'Vermittelt regionale Selbsthilfegruppen — auch für Angehörige von Menschen mit bipolarer Störung.', tag: 'selbsthilfezuerich.ch', href: 'https://www.selbsthilfezuerich.ch/', kind: 'web' },
               { num: '06', title: 'Opferhilfe Zürich', desc: 'Unterstützung, wenn Sie Gewalt durch Angehörige erleben — kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', tag: '044 455 21 42', href: 'tel:+41444552142', kind: 'tel' },
             ].map(r => {
               const external = r.kind === 'web';

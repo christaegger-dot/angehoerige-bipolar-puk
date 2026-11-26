@@ -222,6 +222,18 @@ try {
       record('sos/immediate-call', { reducedMotion, number, position }, await contact.isVisible()
         && position.y >= 0 && position.y + position.height <= 900);
     }
+    if (reducedMotion === 'reduce') {
+      // The first step, what to avoid and the acute instruction must not be set smaller than the list between them.
+      const emphasis = await brandPage.evaluate(() => {
+        const size = selector => Number.parseFloat(getComputedStyle(document.querySelector(selector)).fontSize);
+        return {
+          reading: size('.guide-body li'), firstStep: size('.guide-do'), avoid: size('.guide-dont'), acute: size('.guide-sos'),
+          tileHyphens: getComputedStyle(document.querySelector('.number-tile')).hyphens,
+        };
+      });
+      record('sos/critical-steps-reading-size', emphasis,
+        [emphasis.firstStep, emphasis.avoid, emphasis.acute].every(value => value >= emphasis.reading) && emphasis.tileHyphens === 'auto');
+    }
     await context.close();
   }
   const historyPage = await browser.newPage({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
