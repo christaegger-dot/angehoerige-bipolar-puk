@@ -218,7 +218,7 @@ function Modul5Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Wenn Sie hin- und hergerissen sind</h2>
-              <p className="dropcap">Vielleicht kennen Sie beide Gedanken: «Ich will diesen Menschen nicht im Stich lassen» und «Ich kann so nicht mehr weitermachen.» Sie können nebeneinander bestehen, auch wenn das widersprüchlich erscheint. Wie viel Nähe Sie möchten und was Sie selbst brauchen, ist nicht immer sofort klar.</p>
+              <p>Vielleicht kennen Sie beide Gedanken: «Ich will diesen Menschen nicht im Stich lassen» und «Ich kann so nicht mehr weitermachen.» Sie können nebeneinander bestehen, auch wenn das widersprüchlich erscheint. Wie viel Nähe Sie möchten und was Sie selbst brauchen, ist nicht immer sofort klar.</p>
               <p>Welche Aufgaben übernehmen Sie? Welche Grenze ist Ihnen wichtig? Welche Unterstützung wünschen Sie? Solche Fragen können Ihnen helfen, Ihre Lage zu klären. Die Entscheidung, ob Sie bleiben, Abstand nehmen oder gehen möchten, bleibt bei Ihnen.</p>
 
               <StimmenBlock />

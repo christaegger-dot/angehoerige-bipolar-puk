@@ -224,7 +224,7 @@ function Modul3Page({ onNavigate }) {
 
             <section id="s1">
               <h2>Wenn Aufgaben die Beziehung bestimmen</h2>
-              <p className="dropcap">Die Erkrankung kann die Aufgabenverteilung in einer Beziehung verändern: Wer organisiert, erinnert oder übernimmt zusätzliche Verantwortung? Bei manchen Paaren nehmen diese Aufgaben viel Raum ein. Andere finden tragbare Absprachen und erhalten sich gemeinsame Zeit und Gegenseitigkeit. Wie sich Ihre Beziehung verändert, ist nicht vorgegeben.</p>
+              <p>Die Erkrankung kann die Aufgabenverteilung in einer Beziehung verändern: Wer organisiert, erinnert oder übernimmt zusätzliche Verantwortung? Bei manchen Paaren nehmen diese Aufgaben viel Raum ein. Andere finden tragbare Absprachen und erhalten sich gemeinsame Zeit und Gegenseitigkeit. Wie sich Ihre Beziehung verändert, ist nicht vorgegeben.</p>
               <p>Das kann beeinflussen, wie Sie Nähe, Streit und Vertrauen erleben. Dieses Modul hilft Ihnen, Ihre Erfahrungen und Wünsche in der Beziehung zu beschreiben. Ihre eigene Erschöpfung und die Frage nach Bleiben oder Abstand stehen in den folgenden Modulen im Mittelpunkt.</p>
 
               <aside className="callout callout-soft">

@@ -10,9 +10,9 @@ function ModulePage({ onNavigate }) {
     <>
       <header className="about-hero">
         <div className="container">
-          <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Lernpfad · Psychoedukation</div>
+          <div className="eyebrow animate-in" style={{ marginBottom: 'var(--space-6)' }}><span className="dot"></span>Lernpfad · Psychoedukation</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '20ch' }}>Alle sieben Module im Überblick.</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '60ch' }}>Die sieben Module behandeln die Erkrankung, das Leben als Angehörige und mögliche Hilfen im Alltag. Sie können sie der Reihe nach lesen oder ein Thema auswählen, das Sie gerade beschäftigt. Beratung, Materialien und Kontaktangaben finden Sie unter Unterstützung und Ressourcen.</p>
+          <p className="lede animate-in delay-2" style={{ marginTop: 'var(--space-8)', maxWidth: '60ch' }}>Die sieben Module behandeln die Erkrankung, das Leben als Angehörige und mögliche Hilfen im Alltag. Sie können sie der Reihe nach lesen oder ein Thema auswählen, das Sie gerade beschäftigt. Beratung, Materialien und Kontaktangaben finden Sie unter Unterstützung und Ressourcen.</p>
         </div>
       </header>
 
@@ -66,7 +66,7 @@ function ModulePage({ onNavigate }) {
               <h2>Welcher Einstieg passt zu Ihrer Frage?</h2>
             </div>
           </div>
-          <p className="triage-intro" style={{ maxWidth: '50ch', marginTop: 16 }}>
+          <p className="triage-intro" style={{ maxWidth: '50ch', marginTop: 'var(--space-4)' }}>
             Wenn Sie unsicher sind, wo Sie beginnen möchten, können Sie die kurze Orientierung nutzen. Die Fragen führen zu einem passenden Modul, Werkzeug oder Beratungsangebot.
           </p>
           <TriageFlow onNavigate={onNavigate} />

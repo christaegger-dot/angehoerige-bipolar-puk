@@ -17,8 +17,6 @@ const ALLOWED = [
   /^clamp\(var\(--size-[\w-]+\), [\d.]+vw, var\(--size-[\w-]+\)\)$/,
   // Seitenüberschrift: Grenzen des Kits (44 bis 114 px), zusätzlich an die Fensterhöhe gebunden.
   /^clamp\(2\.75rem, min\(8vw, 11vh\), 7\.125rem\)$/,
-  // Überdeckte Altregel der Initiale; die Website setzt keine Initialen mehr.
-  /^4\.6em$/,
 ];
 
 function fontSizes(css) {

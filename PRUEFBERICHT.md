@@ -22,7 +22,7 @@ hier nicht. Die Regeln der umgesetzten Abschnitte prüfen `npm test`,
 
 ## Status
 
-Stand der Website: Etappen 1 bis 3 des Wechsels auf das Fachstellen-Profil 2026.10.2
+Stand der Website: Etappen 1 bis 4 des Wechsels auf das Fachstellen-Profil 2026.10.2
 (26. November 2026). Entscheide und geänderte Wortlaute: `_dev/PROFILWECHSEL-2026-10-2.md`.
 
 | Stufe | Status | Datum | Geprüft durch | Ergebnis |
@@ -130,6 +130,32 @@ Arbeitsstand vom 26. November 2026, keine Prüfstufe. Geprüft ist nur, was Etap
 | `npm run audit:puk` (kanonischer Auditor 1.10.1, Entwurf) | bestanden, 15 gerenderte Routen |
 | `npm run test:release-evidence` | 22 von 22 |
 
+### Etappe 4: Abstände im 4-px-Raster
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | Abstände im App-CSS stammen aus dem Raster des Profils | erfüllt für 854 von 869 Angaben | Zählung im App-CSS (Bildschirm): 652 über eine Stufe, 183 nur `0` oder `auto`, 19 über Seitenrand oder Abschnittsabstand des Kits; 15 Ausnahmen (14 Linienwerte unter 4 px, 1 Icon-Abstand in em). Test `src/test/spacing-scale.test.js` führt die Ausnahmen einzeln. Tabelle in `_dev/PROFILWECHSEL-2026-10-2.md`, «Etappe 4» |
+| 2 | Abstände in px, keine freien Pixelwerte im JSX | erfüllt | 40 Inline-Angaben verwenden die Stufen; Test «uses the grid for spacing in inline styles» |
+| 3 | Gemessene Abstände liegen im Raster | erfüllt bis auf Kit, Linien und fluide Werte | 62 Ansichten: 890 statt 4 532 von rund 12 600 Werten ausserhalb des Rasters; davon 362 Linienwerte unter 4 px, 256 aus dem Kit (6 px), 114 fluide Werte zwischen zwei Stufen, 82 Icon-Abstände in em, 64 Browser-Vorgaben für Listen, 12 zentrierte Blöcke |
+| 4 | Änderungen klein und erklärbar | erfüllt | 37,2 % der 12 614 verglichenen Werte geändert, 96 % davon um höchstens 4 px; 34 Werte um mehr als 8 px (Abstand unter dem Inhalt 120 auf 96 px, Ränder eines zentrierten Hinweises) |
+| 5 | Kein seitliches Scrollen, Hauptaktion der Startseite auf dem Telefon sichtbar | erfüllt | 62 Ansichten ohne Überlauf; Hauptaktion bei 375 × 812 px endet bei 781 px (vorher 775); `npm run audit:website` 764 Prüfungen ohne Fehler, auch bei 200 % Schrift |
+| 6 | Seitenlänge | geändert | 50 Ansichten länger, 12 kürzer, −1,8 bis +2,6 % |
+| 7 | Sichtprüfung | teilweise | Vorher und nachher angesehen: Startseite bei 1366 und 375 px, Modul 3 bei 1366 und 375 px, «Unterstützung» bei 1366 px, «Werkzeuge» bei 375 px, Krisenplan bei 1366 px, Handout DL-04 bei 375 px. Im Handout ist die Textspalte des blauen Kastens auf dem Telefon mindestens 8 px schmaler (Seitenabstand der Karte 28 auf 32 px je Seite). Die übrigen Ansichten sind nur gemessen |
+| 8 | Positionen von Markierungen und Werte des Kits | nicht Gegenstand | `top`/`left` an Haken, Linien und Zeitachsen in px; `.puk-web-nav__link` mit 6 px im gelieferten Kit |
+
+### Kennzahlen der Etappe 4 (zum Nachrechnen)
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm test` | 297 Tests in 34 Dateien bestanden |
+| `npm run lint` | ohne Befund |
+| `npm run audit:website` | 764 Prüfungen, 0 Fehler |
+| `npm run audit:tools` | 225 Prüfungen, 0 Befunde |
+| `npm run audit:print` | 71 von 71 Prüfungen |
+| `npm run audit:puk` (kanonischer Auditor 1.10.1, Entwurf) | bestanden, 15 gerenderte Routen |
+| `npm run test:release-evidence` | 22 von 22 |
+| `npm audit --audit-level=high` | 0 Schwachstellen |
+
 ## Visualisierungs-Check
 
 In Etappe 1 wurde keine Figur gebaut oder geändert. Der Check der ganzen Website nach dem
@@ -186,9 +212,11 @@ Einzelheiten stehen in `_dev/PROFILWECHSEL-2026-10-2.md`.
 
 - Absenderzeile bei 320, 360, 768 und 1440 px; E-Mail-Link als Textlink ohne 44 px.
 - Telefon-Kopf: Name der Website neben dem Logo ab 360 px.
+- Etappe 4: Abstände nach der Umstellung, besonders der schmalere Textkasten in Handouts auf dem Telefon und der Einstieg auf hohen Bildschirmen (fluide Abstände jetzt bis 96 px).
 
 ### W3 Code-Review
 
+- Etappe 4: Zuordnung der Abstände (Skript-Ergebnis in vier Stylesheets, 638 Deklarationen), Ausnahmenliste in `src/test/spacing-scale.test.js`, eigene Abstände der Quellenangaben, entfernte Initialen-Regel und Altaliasse `--space-7`/`--space-9`.
 - Etappe 2: Zuordnung der Schriftgrade (Skript-Ergebnis in `src/styles.css`, 311 Angaben), Token-Überschreibungen in `src/design-tokens.css`, entfernte Notregeln mit `!important`.
 - `src/site-config.js` als einzige Quelle der Wortlaute; `SenderLine` und
   `ResponsibilityInline` in `src/shared.jsx`.

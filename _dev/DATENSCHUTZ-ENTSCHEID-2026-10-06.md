@@ -137,6 +137,16 @@ Die achte Anpassung vom selben Tag setzt die dritte Etappe des Profilwechsels um
 
 Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; die Hinweise zu Speicherung und Löschung stehen unverändert vor den Werkzeugen und in den Dialogen. Am neu gebauten Stand bestanden die 225 Werkzeugchecks, die nun 764 Website-Browserchecks einschliesslich der Prüfung auf externe Laufzeitanfragen, die 71 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird wie in den vorangehenden Durchgängen an den neuen Fingerprint gebunden (`sourceSha256` `97fea24d0441e762eca12d1ae8047baf130e615866bfb9927eb818f48708c2f5`, `buildSha256` `4f90932fc73d1f2ab7c67ccce7e3bd8f74f645557f4306287d64893f07e09dad`, `sha256` `f7088a0e5e7e93d80d9653ca650daa38a669bf702cd4557e2a01975566055b1c`).
 
+### Abgleich nach der Umstellung der Abstände (26. November 2026, neunter Durchgang)
+
+Die neunte Anpassung vom selben Tag setzt die vierte Etappe des Profilwechsels um (Einzelheiten in `_dev/PROFILWECHSEL-2026-10-2.md`, Abschnitt «Etappe 4»). Die Fachstelle hat der neuen Bindung am 26. November 2026 zugestimmt. Datenschutzrelevant geprüft wurden:
+
+- **Abstände:** nur Werte in den Stylesheets und in Inline-Angaben (`style`) des JSX; keine neuen Dateien, Schriften, Bilder oder Adressen.
+- **Entfernt:** die überdeckte Initialen-Regel samt Klasse in sieben Modulen und zwei ungenutzte Alias-Tokens.
+- **Vorschaubild:** `public/social-preview.png` neu erzeugt; es ist pixelgleich mit dem bisherigen Bild und bleibt unverändert.
+
+Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; die Hinweise zu Speicherung und Löschung stehen unverändert vor den Werkzeugen und in den Dialogen. Am neu gebauten Stand bestanden die 225 Werkzeugchecks, die 764 Website-Browserchecks einschliesslich der Prüfung auf externe Laufzeitanfragen, die 71 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird wie in den vorangehenden Durchgängen an den neuen Fingerprint gebunden (`sourceSha256` `6fc40e1f96fead9bddaa02991c3461a3cbc6e1e034a87353cb94a0947593e558`, `buildSha256` `44a494f56289648539dce047520895525d78d7f402907832f4a3888c98f5ca66`, `sha256` `2d02bb0de43bcf50bdeffb24cbc4a3ec4435b8657d3025adeda08f1f31fcab2c`).
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

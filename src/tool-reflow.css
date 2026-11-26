@@ -28,7 +28,7 @@
   .ee-stage {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
-    gap: 8px;
+    gap: var(--space-2);
     max-width: none;
     aspect-ratio: auto;
   }
@@ -39,7 +39,7 @@
     width: 100%;
     height: auto;
     min-height: var(--web-touch-target);
-    padding: 12px 16px;
+    padding: var(--space-3) var(--space-4);
   }
 }
 
@@ -60,9 +60,9 @@
 /* Native controls retain their 44px target size as the SVG scales down. */
 .belastung-marker-actions {
   display: grid;
-  gap: 8px;
+  gap: var(--space-2);
   padding: 0;
-  margin: 16px 0 24px;
+  margin: var(--space-4) 0 var(--space-6);
   list-style: none;
 }
 .belastung-marker-actions li { min-width: 0; }
@@ -70,7 +70,7 @@
   display: block;
   width: 100%;
   min-height: var(--web-touch-target);
-  padding: 12px 16px;
+  padding: var(--space-3) var(--space-4);
   border: 1px solid var(--border-default);
   background: var(--surface-page);
   color: var(--text-default);
@@ -96,7 +96,7 @@
   .eisberg-tool-stage {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: var(--space-4);
     aspect-ratio: auto;
     background: none;
   }
@@ -110,7 +110,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     flex: 1 1 100%;
-    gap: 8px;
+    gap: var(--space-2);
     min-width: 0;
     max-width: 100%;
   }

@@ -81,10 +81,10 @@ function AtemuebungTool({ onClose }) {
 
         {phase === 'intro' && (
           <>
-            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Durchatmen</h2>
+            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Durchatmen</h2>
             <p className="lede" style={{ maxWidth: '40ch' }}>Wenn Ihnen gerade alles zu viel ist, können Sie mit fünf geführten Atemzügen eine Pause machen. Atmen Sie so, wie es sich für Sie angenehm anfühlt.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '40ch' }}>Der Rhythmus ist: 4 Sekunden einatmen, 2 Sekunden halten, 6 Sekunden ausatmen und 2 Sekunden Pause. Er wiederholt sich fünfmal und dauert etwa 70 Sekunden. Das Atemhalten können Sie auslassen. Stoppen Sie bei Unwohlsein und atmen Sie normal weiter. Als Alternative können Sie den Kontakt zum Boden spüren und drei Dinge im Raum anschauen.</p>
-            <div style={{ marginTop: 24 }}>
+            <div style={{ marginTop: 'var(--space-6)' }}>
               <button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button>
             </div>
           </>
@@ -114,8 +114,8 @@ function AtemuebungTool({ onClose }) {
               <div className="atem-circle" style={{ transform: 'scale(0.7)' }} />
               <div className="atem-label">Fertig</div>
             </div>
-            <p className="lede" style={{ maxWidth: '36ch', textAlign: 'center', margin: '0 auto 24px' }}>Sie können die Übung wiederholen oder hier beenden.</p>
-            <div style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
+            <p className="lede" style={{ maxWidth: '36ch', textAlign: 'center', margin: '0 auto var(--space-6)' }}>Sie können die Übung wiederholen oder hier beenden.</p>
+            <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center' }}>
               <button className="btn btn-primary" onClick={start}>Wiederholen</button>
               <button className="tool-quiet-btn" onClick={onClose}>Schliessen</button>
             </div>
@@ -195,10 +195,10 @@ function SelbsttestTool({ onClose, onNavigate }) {
       <span className="kicker">Werkzeug · Persönliche Reflexion</span>
       {phase === 'intro' && (
         <>
-          <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Meine Belastung wahrnehmen</h2>
+          <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Meine Belastung wahrnehmen</h2>
           <p className="lede" style={{ maxWidth: '44ch' }}>Mit fünf Fragen können Sie Ihren Schlaf, Alltag, Ihre Kontakte und Ihr Befinden anschauen. Danach sehen Sie Ihre eigenen Antworten und können überlegen, welche Unterstützung Sie brauchen.</p>
           <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Die Fragen dienen der persönlichen Reflexion und sind kein Test mit wissenschaftlich bestätigter Aussagekraft. Sie erhalten weder eine Gesamtpunktzahl noch eine Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert.</p>
-          <div style={{ marginTop: 24 }}><button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button></div>
+          <div style={{ marginTop: 'var(--space-6)' }}><button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button></div>
         </>
       )}
       {phase === 'running' && (
@@ -224,7 +224,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
             {SELBSTTEST_FRAGEN.map((question, index) => (
               <React.Fragment key={question.q}>
                 <dt><strong>{question.q}</strong></dt>
-                <dd style={{ margin: '4px 0 20px' }}>{question.opts[answers[index]].label}</dd>
+                <dd style={{ margin: 'var(--space-1) 0 var(--space-5)' }}>{question.opts[answers[index]].label}</dd>
               </React.Fragment>
             ))}
           </dl>
@@ -583,10 +583,10 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
 
         {phase === 'intro' && (
           <>
-            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Säulen-Check</h2>
+            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Säulen-Check</h2>
             <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu dem, was Sie im Alltag unterstützt: Körper, Beziehungen, eigene Welt und fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie können überlegen, was Sie bewahren möchten und wo Sie Unterstützung wünschen. Ihre gesundheitliche Stabilität oder Tragfähigkeit lässt sich damit nicht messen.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Die Reflexion dauert etwa drei Minuten und findet anonym im Browser statt. Sie liefert keine klinische Auswertung mit wissenschaftlich bestätigter Aussagekraft und keine Diagnose. Bei starkem oder anhaltendem Unterstützungsbedarf ist fachliche Beratung sinnvoll.</p>
-            <div style={{ marginTop: 24 }}>
+            <div style={{ marginTop: 'var(--space-6)' }}>
               <button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button>
             </div>
           </>
@@ -788,10 +788,10 @@ function EisbergTool({ onClose, onNavigate }) {
 
         {phase === 'intro' && (
           <>
-            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Der Eisberg Ihrer Belastung</h2>
+            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Der Eisberg Ihrer Belastung</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>Der Eisberg ist eine Metapher, keine Messung: Manche Belastungen sind sichtbar, andere bleiben verborgen. Die Begriffe sind mögliche Erfahrungen; nicht alle müssen auf Sie zutreffen.</p>
             <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Wählen Sie einen Begriff, um mehr über diese mögliche Erfahrung zu lesen. Markieren Sie, was Sie wiedererkennen. Am Ende sehen Sie Ihre Auswahl im Überblick.</p>
-            <div style={{ marginTop: 24 }}>
+            <div style={{ marginTop: 'var(--space-6)' }}>
               <button className="btn btn-primary" onClick={start}>Eisberg ansehen <Icon name="arrow-right" /></button>
             </div>
           </>
@@ -799,7 +799,7 @@ function EisbergTool({ onClose, onNavigate }) {
 
         {phase === 'explore' && (
           <div className="eisberg-tool">
-            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Der Eisberg Ihrer Belastung</h2>
+            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Der Eisberg Ihrer Belastung</h2>
             <div className="eisberg-tool-zones">
               <div className="eisberg-zone-top">
                 <span className="eisberg-zone-kicker">Was andere sehen</span>
@@ -1015,13 +1015,13 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
         {step === 'intro' && (
           <>
-            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 8 }}>Kommunikations-Trainer</h2>
+            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Kommunikations-Trainer</h2>
             <p className="lede" style={{ maxWidth: '46ch' }}>In vier kurzen Schritten bereiten Sie ein schwieriges Gespräch vor. Sie formulieren Ihr Anliegen, eine konkrete Bitte und bei Bedarf eine eigene Grenze. Daraus entsteht ein Skript in Ihren Worten. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
             <div className="tool-intro-notes kommunikation-intro-notes">
               <p>Ein vorbereitetes Skript kann helfen, Ihr Anliegen auch in einem angespannten Gespräch im Blick zu behalten. Die Beispielsätze sind Anregungen: Passen Sie Inhalt und Anrede an Ihre Beziehung an.</p>
               <p>Dieses Werkzeug dient der Gesprächsvorbereitung; es ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht.</p>
             </div>
-            <div style={{ marginTop: 18 }}>
+            <div style={{ marginTop: 'var(--space-5)' }}>
               <button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button>
             </div>
           </>
@@ -1254,7 +1254,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Wenn Belastung Gespräche verändert" cardClass="ee-card">
       <span className="kicker">Werkzeug · Beziehung</span>
-        <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Wenn Belastung Gespräche verändert</h2>
+        <h2 style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Wenn Belastung Gespräche verändert</h2>
         <p className="ee-intro">Hier finden Sie vier mögliche Erfahrungen, mit denen Sie Ihre eigene Belastung anschauen können. Sie sind keine Testfragen und geben keine feste Reihenfolge vor. Wählen Sie, was Sie wiedererkennen.</p>
 
         <div className="ee-stage">
@@ -1378,7 +1378,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Bipolarer Phasenverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Interaktiv</span>
-        <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Bipolarer Phasenverlauf</h2>
+        <h2 style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Bipolarer Phasenverlauf</h2>
         <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Wählen Sie eine der fiktiven Skizzen und lesen Sie dazu mögliche Erfahrungen von Angehörigen. Wie sich die Diagnosen Bipolar I und II unterscheiden, erklärt Modul 1. Die Skizzen haben keinen Zeitmassstab und erlauben weder eine Diagnose noch eine Vorhersage des Verlaufs einer bestimmten Person.</p>
 
         <div className="phasen-tabs" role="tablist" aria-label="Fiktive bipolare Verläufe">
@@ -1479,7 +1479,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Belastungsverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Verlauf</span>
-        <h2 style={{ fontStyle: 'normal', marginTop: 8 }}>Mögliche Belastungsverläufe</h2>
+        <h2 style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Mögliche Belastungsverläufe</h2>
         <p className="ee-intro">Die eigene Kraft kann nach Krisen abnehmen, sich erholen oder weitgehend stabil bleiben. Drei fiktive Beispiele zeigen diese Unterschiede. Die Linien sind keine Messwerte und belegen nicht die Wirkung einer bestimmten Behandlung. Wählen Sie eine der nummerierten Stellen, um eine mögliche Erfahrung zu lesen.</p>
 
         <div className="belastung-toggle">

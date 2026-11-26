@@ -4,9 +4,9 @@ function BarrierefreiheitPage() {
     <>
       <header className="about-hero">
         <div className="container">
-          <div className="eyebrow animate-in" style={{ marginBottom: 24 }}><span className="dot"></span>Barrierefreiheit</div>
+          <div className="eyebrow animate-in" style={{ marginBottom: 'var(--space-6)' }}><span className="dot"></span>Barrierefreiheit</div>
           <h1 className="animate-in delay-1" style={{ maxWidth: '22ch' }}>Erklärung zur Barrierefreiheit.</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 28, maxWidth: '54ch' }}>
+          <p className="lede animate-in delay-2" style={{ marginTop: 'var(--space-8)', maxWidth: '54ch' }}>
             Diese Website soll für alle Angehörigen zugänglich sein, auch wenn sie unter Stress lesen,
             eine Sehhilfe brauchen, die Tastatur statt der Maus oder ein Vorleseprogramm (Screenreader)
             nutzen oder eine langsame Internetverbindung haben.
@@ -69,7 +69,7 @@ function BarrierefreiheitPage() {
               Für Fragen zu einem rechtlichen Verfahren klären Sie mit der PUK, welche Stelle zuständig ist.
             </p>
 
-            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: 'var(--size-body-sm)' }}>
+            <p style={{ marginTop: 'var(--space-16)', color: 'var(--ink-3)', fontSize: 'var(--size-body-sm)' }}>
               Redaktioneller Stand: Oktober 2026 · Selbstbewertung
             </p>
           </article>

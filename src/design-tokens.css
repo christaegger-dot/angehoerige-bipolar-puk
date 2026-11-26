@@ -45,10 +45,6 @@
   --pad-x: var(--web-gutter-inline);
   --touch-target: var(--web-touch-target);
 
-  /* Legacy spacing aliases; canonical --space-* values remain unchanged. */
-  --space-7: var(--space-12);
-  --space-9: var(--space-24);
-
   /* Schriftgrade in rem (Profilentscheid 11.10.2026 des Fachstellen-Profils): Die Werte
      des Kits sind Messwerte in px. Auf Websites werden sie durch gleich grosse rem-Werte
      überschrieben, damit die Browser-Einstellung «Schriftgrösse» wirkt (1 rem = 16 px).
