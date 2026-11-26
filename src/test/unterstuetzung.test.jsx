@@ -203,3 +203,18 @@ describe('SchweigepflichtPage follow-up paths', () => {
     expect(onNavigate).toHaveBeenLastCalledWith('unterstuetzung', 'kontakt');
   });
 });
+
+describe('UnterstuetzungPage external help offers', () => {
+  it('links the self-help organisations to the addresses confirmed on 26 November 2026', () => {
+    render(<UnterstuetzungPage onNavigate={() => {}} />);
+
+    const equilibrium = screen.getByRole('link', { name: /EQUILIBRIUM — Website öffnen/ });
+    expect(equilibrium).toHaveAttribute('href', 'https://www.depressionen.ch/');
+    const selbsthilfe = screen.getByRole('link', { name: /Selbsthilfe Zürich — Website öffnen/ });
+    expect(selbsthilfe).toHaveAttribute('href', 'https://www.selbsthilfezuerich.ch/');
+    for (const link of [equilibrium, selbsthilfe]) {
+      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    }
+  });
+});
