@@ -69,7 +69,7 @@ function BarrierefreiheitPage() {
               Für Fragen zu einem rechtlichen Verfahren klären Sie mit der PUK, welche Stelle zuständig ist.
             </p>
 
-            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: '0.875rem' }}>
+            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: 'var(--size-body-sm)' }}>
               Redaktioneller Stand: Oktober 2026 · Selbstbewertung
             </p>
           </article>

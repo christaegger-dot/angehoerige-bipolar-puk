@@ -22,9 +22,12 @@ eine gemeinsame Seitenhülle und den dokumentierten SPA-Auditadapter.
 sichtbaren Textfassungen. Das Profil ersetzt keine menschlichen Freigaben.
 
 Darüber gilt seit dem 26. November 2026 das **Fachstellen-Profil 2026.10.2** der
-Fachstelle Angehörigenarbeit («PUK Zürich Website-Profil»). Umgesetzt ist die erste
-Etappe: Zuständigkeit statt Krisenzugang, Absenderin im Kopf jeder Seite, ein Schwarz
-und Buttons mit 3 px. Entscheide, geänderte Wortlaute und die noch offenen Abweichungen
+Fachstelle Angehörigenarbeit («PUK Zürich Website-Profil»). Umgesetzt sind zwei
+Etappen: erstens Zuständigkeit statt Krisenzugang, Absenderin im Kopf jeder Seite, ein
+Schwarz und Buttons mit 3 px; zweitens Schriftgrade aus der Skala des Profils, in rem und
+über die Tokens `--size-*` und `--web-size-*` (`src/design-tokens.css`). Neue Angaben zu
+Schriftgraden im CSS verwenden nur diese Tokens. Entscheide, geänderte Wortlaute, die
+Zuordnung der Schriftgrade und die noch offenen Abweichungen
 stehen in `_dev/PROFILWECHSEL-2026-10-2.md`; der Stand der Prüfstufen steht in
 `PRUEFBERICHT.md`. Die Website bleibt eine React-Anwendung und wird nicht auf den
 statischen Starter des Profils umgebaut; dessen Regeln sind in Tests und Prüfskripten

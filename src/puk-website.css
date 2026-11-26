@@ -4,7 +4,7 @@
 html { font-size: 100%; }
 body {
   font-family: var(--font-core);
-  font-size: 1.3125rem;
+  font-size: var(--web-size-body);
   font-weight: var(--fw-light);
   line-height: var(--web-lh-body);
   font-synthesis: none;
@@ -18,22 +18,22 @@ strong, b { font-weight: var(--fw-medium); }
 em, i, cite { font-style: normal; }
 h1, h2, h3, h4 { font-family: var(--font-core); font-style: normal; font-weight: var(--fw-regular); }
 h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
-  font-size: clamp(2.75rem, 8vw, 7.125rem);
+  font-size: var(--web-size-h1-fluid);
   font-weight: var(--fw-light);
   line-height: var(--web-lh-heading);
   letter-spacing: -.02em;
   max-width: 18ch;
 }
 h2, .module-body h2 {
-  font-size: clamp(2rem, 4.5vw, 3.5625rem);
+  font-size: var(--web-size-h2-fluid);
   font-weight: var(--fw-regular);
   line-height: 1.05;
   letter-spacing: -.02em;
 }
-h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
-.module-body h3 { font-size: 1.5rem; line-height: 1.3; text-transform: none; }
+h3 { font-size: var(--web-size-h3-fluid); line-height: 1.15; }
+.module-body h3 { font-size: var(--size-title-3); line-height: 1.3; text-transform: none; }
 .lede, .hero-lede, .module-detail-header .lede {
-  font-size: 1.640625rem;
+  font-size: var(--web-size-lead);
   font-weight: var(--fw-light);
   font-style: normal;
   line-height: var(--web-lh-body);
@@ -43,8 +43,8 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
 .module-layout { max-width: var(--web-container-max); grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
 .module-body li { line-height: 1.45; }
 .module-body .dropcap::first-letter { float: none; font: inherit; color: inherit; margin: 0; padding: 0; }
-.kicker, .eyebrow, .hero-meta { font-size: .875rem; font-weight: var(--fw-regular); letter-spacing: .08em; }
-.breadcrumb { font-size: .9375rem; letter-spacing: 0; }
+.kicker, .eyebrow, .hero-meta { font-size: var(--size-body-sm); font-weight: var(--fw-regular); letter-spacing: .08em; }
+.breadcrumb { font-size: var(--size-body-sm); letter-spacing: 0; }
 /* Auf Unterseiten ohne eigenen Hauptnavigationspunkt bezeichnet der letzte Brotkrumen-Link die aktuelle Seite (wie in der Hauptnavigation unterstrichen). */
 .breadcrumb [aria-current="page"] { color: var(--puk-black-100); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; }
 .container, .col-wide, .hero-inner, .footer-inner { max-width: var(--web-container-max); padding-inline: var(--web-gutter-inline); }
@@ -53,11 +53,11 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
 .nav { background: var(--puk-white); }
 .nav-inner { flex-wrap: wrap; padding-block: 24px; gap: 16px 32px; }
 .nav-brand { align-items: center; gap: 24px; flex-wrap: wrap; }
-.nav-brand-mark { font-size: 1.0625rem; font-weight: var(--fw-regular); letter-spacing: 0; }
+.nav-brand-mark { font-size: var(--size-body); font-weight: var(--fw-regular); letter-spacing: 0; }
 .nav-brand-mark::before { content: none; }
 .nav-logo { flex: 0 0 auto; }
 .nav-logo img { display: block; width: var(--web-logo-width); height: auto; }
-.nav-links { font-size: 1.0625rem; gap: 4px 12px; }
+.nav-links { font-size: var(--size-body); gap: 4px 12px; }
 .nav-links a { color: var(--puk-black-100); font-size: inherit; font-weight: var(--fw-regular); overflow-wrap: anywhere; }
 .nav-links a:hover { color: var(--puk-blue-100); text-decoration: underline; text-underline-offset: .22em; }
 .nav-links a[aria-current="page"] { color: var(--puk-blue-100); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; }
@@ -85,11 +85,16 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
 .hero-illustration svg { max-width: 320px; }
 .btn { border-radius: var(--radius-sm); }
 .btn-primary:hover { background: var(--action-primary-bg-hover); }
-.triage-opt { border-radius: var(--radius-sm); font-size: 1.0625rem; }
+.triage-opt { border-radius: var(--radius-sm); font-size: var(--size-body); }
 .triage-result-link { display: inline-flex; align-items: center; min-height: var(--web-touch-target); font-style: normal; }
-.site-footer { font-size: .9375rem; line-height: 1.5; }
-.footer-credit { max-width: var(--web-content-measure); }
-.footer-links a { font-size: .9375rem; }
+/* Fusszeile (Fachstellen-Profil, «Präzisierung der Fusszeile»): Absender-, Zuständigkeits- und
+   Abgrenzungstexte sind Lesetext in Seitenschrift; die Links sind Bedienelemente in UI-Grösse. */
+.site-footer, .footer-inner { font-size: var(--web-size-body); line-height: var(--web-lh-body); }
+.footer-credit { max-width: var(--web-content-measure); line-height: var(--web-lh-body); }
+.footer-links a { font-size: var(--size-body); }
+/* In Seitenschrift und bei 200 % Schrift müssen lange Wörter der Fusszeile umbrechen dürfen. */
+.footer-row > * { min-width: 0; }
+.footer-credit, .footer-links a, .footer-heading { overflow-wrap: anywhere; -webkit-hyphens: auto; hyphens: auto; }
 .module-list, .tools-row { padding: 0; list-style: none; }
 .module-list { max-width: var(--web-content-measure); }
 .module-list > li { margin: 0; }
@@ -102,8 +107,8 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
 .tools-grid .tool-card-lg { width: 100%; height: 100%; }
 .module-toc-inner { top: calc(var(--nav-height, 68px) + 16px); }
 .figure-text { margin-block: 24px; padding-block: 20px; border-block: 1px solid var(--border-hairline); max-width: var(--web-content-measure); }
-.figure-text h3 { margin-top: 0 !important; font-size: 1.0625rem; }
-.figure-text .figure-source { font-size: .9375rem; color: var(--text-muted); }
+.figure-text h3 { margin-top: 0 !important; font-size: var(--size-body); }
+.figure-text .figure-source { font-size: var(--size-body-sm); color: var(--text-muted); }
 /* On tinted reading surfaces, the supplied darker blue retains AA contrast. */
 :is(.bg-paper, .triage, .tools-teaser, .site-footer, .callout, .skript, .kontrast-rechts, .schluss-block) {
   --accent: var(--puk-blue-125);
@@ -138,12 +143,11 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
   .module-toc-inner { position: static; }
 }
 @media (max-width: 760px) {
-  body { font-size: 1.1875rem; }
   .nav { position: relative; }
   .nav-inner { align-items: flex-start; padding-block: 20px 12px; }
   .nav-brand { width: 100%; gap: 12px; }
   .nav-brand-mark { width: 100%; }
-  .nav-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; font-size: .9375rem; gap: 2px 12px; }
+  .nav-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; font-size: var(--size-body-sm); gap: 2px 12px; }
   .nav-links a { border-top: 1px solid var(--border-hairline); justify-content: flex-start; }
   .nav-label-full { display: none; }
   .nav-label-compact { display: inline; }
@@ -154,7 +158,7 @@ h3 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
     display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
     position: sticky; top: 0; z-index: 45; padding: 0 var(--web-gutter-inline);
     background: var(--puk-white); border-bottom: 1px solid var(--border-hairline);
-    font-size: 1rem; font-weight: var(--fw-regular);
+    font-size: var(--size-body); font-weight: var(--fw-regular);
   }
   .module-mobile-nav a { display: flex; align-items: center; justify-content: center; min-height: var(--web-touch-target); padding: 8px; color: var(--puk-black-100); text-align: center; overflow-wrap: anywhere; }
   .module-mobile-nav a:hover { text-decoration: underline; text-underline-offset: .22em; }
@@ -185,7 +189,7 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
   padding: var(--space-2) var(--space-4);
   border: 1px solid currentColor;
   border-radius: var(--radius-sm);
-  font-size: .9375rem;
+  font-size: var(--size-body-sm);
 }
 .hero-cta-secondary:hover { border-style: solid; }
 /* styles.css nimmt aufeinanderfolgenden Abschnitten den oberen Abstand; nach dem
@@ -197,7 +201,6 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
   .module-row-arrow { display: none; }
 }
 @media (max-width: 760px) {
-  .lede, .hero-lede, .module-detail-header .lede { font-size: 1.3125rem; }
   .hero { padding-block-start: 32px; }
   .hero h1 { margin-bottom: 20px; }
   .hero .hero-lede { margin-bottom: 24px; }
@@ -220,14 +223,6 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
    älteren Regeln in styles.css setzen ihre Grösse mit !important; deshalb hier ebenso. */
 @media screen {
   :is(
-    .callout-label, .module-credits small, .module-meta, .module-meta span, .module-row-numlabel, .toc-num,
-    .story-attribution-note, .triage-progress, .tools-row-tag, .tool-tag, .hero-micro-nav, .hero-micro-nav a,
-    .do-col h4, .dont-col h4, .druckpunkt-num, .druckpunkt-sub, .stimme cite, .module-quote cite, .zeit-jahre,
-    .label, .download-pdf-label, .mono, .tag, .num, .mythos-strich, .skript-num, .skript-warum, .skript-rolle-label,
-    .krisen-feld-num, .krisen-feld-sub, .krisen-feld-beispiel, .kipppunkt-sub, .handlungsfeld-sub, .warnzeichen-sub,
-    .schluss-leitsatz, .eisberg-zone-kicker, .about-hero-function, .about-hero-function a, .page-loading-kicker
-  ) { font-size: max(.8125rem, 13px) !important; }
-  :is(
     .module-credits, .module-credits :is(li, a, p, small, summary), .module-meta, .module-meta span,
     .module-row-numlabel, .toc-num, .module-toc-inner a, .toc-back, .module-detail-meta-time,
     .story-attribution, .story-attribution-note, .triage-progress, .tools-row-tag, .tools-row-item-arrow,
@@ -249,7 +244,6 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
 .tool-overlay-card > p, .tool-overlay-card .ee-intro, .krisenplan-head > p, .phasen-legend { text-align: left; }
 @media screen {
   :is(.phasen-tab span, .phasen-figure figcaption, .ee-detail-num, .krisenplan-label-sub, .krisenplan-disclaimer) {
-    font-size: max(.8125rem, 13px) !important;
     font-weight: var(--fw-regular) !important;
   }
 }
@@ -265,7 +259,7 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
 .module-meta { flex-wrap: wrap; row-gap: 2px; }
 /* Vor/Zurück am Modulende: Die ältere Regel setzte den seitlichen Innenabstand der Aktionslinks auf 0. */
 .module-nav-btn { padding-inline: var(--space-4); }
-.not-found-links a { font-size: 1.0625rem; }
+.not-found-links a { font-size: var(--size-body); }
 /* Bei 200 % Textgrösse und 320 px Breite dürfen der Werkzeug-Link und die Untertitel der
    Krisensituationen umbrechen; lange Wörter werden nach Silben getrennt. */
 .tools-teaser-link { white-space: normal; }
@@ -279,11 +273,11 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
 .puk-site-sender {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3);
   margin-block: 0; padding-block: var(--space-3);
-  font-size: .9375rem; font-weight: var(--fw-regular); line-height: 1.5; color: var(--text-default);
+  font-size: var(--size-body-sm); font-weight: var(--fw-regular); line-height: 1.5; color: var(--text-default);
   min-width: 0;
 }
 .puk-site-sender > * { min-width: 0; }
-.puk-site-sender__label { font-size: .8125rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.puk-site-sender__label { font-size: var(--size-caption); color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
 .puk-site-sender__name { font-weight: var(--fw-medium); }
 .puk-site-sender a { overflow-wrap: anywhere; }
 
@@ -294,8 +288,8 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
   padding-top: var(--space-6); border-top: 1px solid var(--border-hairline);
 }
 .footer-notes section { min-width: 0; padding: 0; }
-.footer-heading { margin: 0 0 var(--space-2); font-size: 1.0625rem; font-weight: var(--fw-medium); line-height: 1.3; letter-spacing: 0; max-width: none; }
-.footer-notes p { margin: 0; max-width: var(--web-content-measure); font-size: 1rem; line-height: 1.5; color: var(--text-default); overflow-wrap: break-word; }
+.footer-heading { margin: 0 0 var(--space-2); font-size: inherit; font-weight: var(--fw-medium); line-height: var(--web-lh-body); letter-spacing: 0; max-width: none; }
+.footer-notes p { margin: 0; max-width: var(--web-content-measure); font-size: inherit; line-height: var(--web-lh-body); color: var(--text-default); overflow-wrap: break-word; }
 
 /* Verweis im Text auf die zuständigen Stellen: in Lesegrösse, im Fliesstext. */
 .puk-site-inline-ref {
@@ -308,17 +302,21 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
   font-weight: var(--fw-regular);
 }
 
-/* Einträge ohne bestätigte Webadresse sind Zeilen ohne Link. */
-.resource-row--plain { cursor: default; }
+/* Lange Titel in der Liste «Hilfe» dürfen bei grosser Schrift umbrechen. */
 .resource-row .title { overflow-wrap: anywhere; -webkit-hyphens: auto; hyphens: auto; }
-.resource-row--plain:hover .title { color: var(--text-default); }
 
 /* Die E-Mail-Adresse ersetzt die Telefonnummer; sie ist länger und darf umbrechen. */
-.invitation-email { font-size: clamp(1.0625rem, 4.6vw, 1.5rem); color: var(--text-link); overflow-wrap: anywhere; }
-.selbsttest-phone-num, .handout-contact .handout-phone-num { font-size: clamp(1.0625rem, 4.6vw, 1.375rem); overflow-wrap: anywhere; }
+.invitation-email { font-size: var(--size-title-3); color: var(--text-link); overflow-wrap: anywhere; }
+.selbsttest-phone-num, .handout-contact .handout-phone-num { font-size: var(--size-lead); overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .invitation-email, .selbsttest-phone-num, .handout-contact .handout-phone-num { font-size: var(--size-body); }
+}
+/* Angaben zu Quellenart und Prüfumfang: kleiner als der Text, aber auf einer Stufe der Skala. */
+small { font-size: var(--size-body-sm); }
+.module-credits small { font-size: var(--size-caption); }
 
 /* Im Handout steht der Verweis linksbündig in der Lesegrösse des Handouts. */
-.handout-card .puk-site-inline-ref { max-width: none; margin-inline: 0; font-size: 1.0625rem; line-height: 1.5; text-align: left; }
+.handout-card .puk-site-inline-ref { max-width: none; margin-inline: 0; font-size: var(--size-body); line-height: 1.5; text-align: left; }
 
 @media (max-width: 760px) {
   /* Schmal steht jede Angabe auf einer eigenen Zeile; die Trennpunkte entfallen. */
@@ -329,7 +327,7 @@ h1, .hero h1, .page-header h1, .about-hero h1, .module-detail-header h1 {
   .nav-inner { padding-block: 12px 8px; }
   .nav-brand { gap: 8px 12px; }
   /* Der Name der Website steht neben dem Logo, solange beide in eine Zeile passen (ab 360 px). */
-  .nav-brand-mark { width: auto; font-size: .9375rem; }
+  .nav-brand-mark { width: auto; font-size: var(--size-body-sm); }
   .hero { padding-block-start: 16px; }
   .hero h1 { margin-bottom: 14px; }
   .hero .hero-lede { margin-bottom: 16px; }

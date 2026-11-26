@@ -1,4 +1,4 @@
-# Wechsel auf das Fachstellen-Profil 2026.10.2 · Etappe 1
+# Wechsel auf das Fachstellen-Profil 2026.10.2 · Etappen 1 und 2
 
 Stand: 26. November 2026. Massgebend ist das Design-System «PUK Zürich Website-Profil»
 (Fachstellen-Profil 2026.10.2, Stand 15.10.2026) auf Basis des PUK Zürich Design Systems
@@ -125,8 +125,10 @@ Bewusst nicht gesetzt (zur Prüfung in W1):
 
 ## Prüfbedarf für die Fachstelle
 
-1. **Webadressen bestätigen:** Pro Mente Sana und Opferhilfe Zürich stehen ohne Link in
-   der Liste, bis die Fachstelle die Adressen bestätigt hat.
+1. **Webadressen:** erledigt. Die Fachstelle hat am 26. November 2026 bestätigt:
+   Pro Mente Sana `https://promentesana.ch/`, Opferhilfe Zürich
+   `https://www.zh.ch/de/sicherheit-justiz/opferhilfe.html`. Beide Einträge sind wieder
+   Weblinks (Etappe 2).
 2. **Titel «Pro Mente Sana — Beratungstelefon»:** Er nennt ein Telefonangebot, zu dem die
    Website keine Nummer mehr führt.
 3. **Beschreibung der Fachstelle:** «Telefonisch, per Mail oder im persönlichen Gespräch»
@@ -137,8 +139,12 @@ Bewusst nicht gesetzt (zur Prüfung in W1):
 5. **Handout «Fragen für das Arztgespräch»:** «Wen rufen wir wann an — Sie, die
    Notfallnummer, die Klinik?» bleibt als Frage ans Behandlungsteam stehen; sie nennt keine
    Nummer.
-6. **Selbsttest:** Er rechnet Punktwerte je Säule. Das Profil sagt: «Anwendungen
-   diagnostizieren nicht, berechnen keine Scores, triagieren nicht automatisch.»
+6. **Werkzeug «Säulen-Check»:** Es zählt Punktwerte je Säule und zeigt sie im Ergebnis als
+   «x/y». Das Profil sagt: «Anwendungen diagnostizieren nicht, berechnen keine Scores,
+   triagieren nicht automatisch.» Der Selbsttest «Meine Belastung wahrnehmen» ist nicht
+   betroffen; er gibt laut seiner Einleitung «weder eine Gesamtpunktzahl noch eine Diagnose
+   oder Risikoeinstufung». (Korrektur vom 26. November 2026: Eine frühere Fassung dieses
+   Dokuments nannte hier fälschlich den Selbsttest.)
 7. **Einstieg der Startseite** («Wo soll ich anfangen?»): als Situationsnavigator nach dem
    Profil zu prüfen (pro Zustand genau ein primärer nächster Schritt, keine Triage).
 
@@ -153,13 +159,15 @@ Diese Etappe deckt «Absenderin», «Zuständigkeit statt Krisenzugang», «ein 
 | Kopf nicht fixiert | Navigation bleibt ab 761 px beim Scrollen stehen |
 | Skip-Link «Zum Hauptinhalt» | heisst «Zum Inhalt springen» |
 | Name des Logo-Links «Psychiatrische Universitätsklinik Zürich – zur Startseite dieser Website» | heisst «Startseite — Bipolar & Angehörige · PUK Zürich» |
-| Eine Seite «Impressum und Datenschutz» | zwei Seiten, dazu «Barrierefreiheit» |
+| Eine Seite «Impressum und Datenschutz» | zwei Seiten, dazu «Barrierefreiheit»; die Datenschutzseite nennt Links auf andere Websites nicht (die Vorlage des Profils hat dazu einen Satz) |
 | Veröffentlichte `404.html` | Seite «Nicht gefunden» nur als Route; Netlify antwortet mit Status 200 |
 | Redaktionsstatus «Fachlich freigegeben am TT.MM.JJJJ» | Fusszeile nennt «Redaktioneller Stand: Oktober 2026» |
 | Keine Unicode-Symbole als Icons | Pfeile, Uhr, Haken und Kreuze im Text |
 | Ein Fokussystem | globale Regel stimmt, dazu zehn Einzelregeln |
 | Nur semantische Tokens | Alt-Aliasse und Primitiven im App-CSS |
-| Schriftgrade und Abstände aus der Skala | 76 Schriftgrade, 211 Abstände ausserhalb des 4-px-Rasters |
+| Schriftgrade aus der Skala | umgesetzt in Etappe 2 (siehe unten); offen bleiben die Beschriftungen in den SVG-Figuren |
+| Lesetext in Seitenschrift (21 px, schmal 19 px) | umgesetzt für Fliesstext der Module und die Fusszeile; Karten, Listen, Fragen und Handouts stehen weiter in UI-Grösse |
+| Abstände aus der Skala | 211 Abstände ausserhalb des 4-px-Rasters |
 | Keine `style`-Attribute | Inline-Styles im JSX |
 | Visualisierungsplan je Abschnitt, drei Ebenen je Figur | nur der ältere `_dev/PUK-VISUALISIERUNGSPLAN.md` |
 | Erzwungene Farben, Theme «Hoher Kontrast» | nicht geprüft |
@@ -174,6 +182,94 @@ Diese Etappe deckt «Absenderin», «Zuständigkeit statt Krisenzugang», «ein 
   Zürich») war erreichbar, nennt auf der Startseite aber nicht die Nummer des bisherigen
   Eintrags; ob es dieselbe Stelle ist, ist offen. Die Seiten des Kantons waren aus der
   Arbeitsumgebung nicht erreichbar.
+
+## Etappe 2: Schriftgrade auf der Skala (26. November 2026)
+
+Punkt 2 des Design-System-Audits. Die Fachstelle hat der neuen Fingerprint-Bindung am
+26. November 2026 zugestimmt und die beiden Webadressen bestätigt (siehe oben).
+
+### Regel
+
+Das Profil kennt eine UI-Skala (13, 15, 17, 20, 24, 28, 36, 48, 64 px), die Seitenschrift
+für Lesetext (21 px, unter 760 px 19 px), den Lead (26,25 px) und fluide Überschriften H1
+bis H3. Alle Grade stehen in rem (Profilentscheid 11.10.2026).
+
+### Tokens
+
+`src/design-tokens.css` überschreibt die Messwerte des Kits (px) mit gleich grossen
+rem-Werten unter denselben Namen, wie es das Profil für Websites vorsieht:
+`--size-caption` bis `--size-display-1`, `--web-size-body`, `--web-size-lead` und die drei
+fluiden Tokens `--web-size-h1-fluid` bis `--web-size-h3-fluid`. Unter 760 px gilt
+`--web-size-body` 19 px und `--web-size-lead` 21 px. Die ungenutzten Alias-Namen `--fs-xs`
+bis `--fs-xl` sind entfallen.
+
+### Zuordnung
+
+Jede Angabe in rem oder px wurde der nächsten Stufe zugeordnet; liegt ein Wert genau in der
+Mitte, gilt die grössere Stufe. Der Druck (pt) ist unverändert.
+
+| Bisheriger Wert | Stufe | Angaben |
+| --- | --- | --- |
+| unter 14 px (10 bis 13,6 px, 13 verschiedene Werte) | `size-caption` 13 px | 109 |
+| 14 bis unter 16 px (9 Werte) | `size-body-sm` 15 px | 75 |
+| 16 bis unter 18,5 px (10 Werte) | `size-body` 17 px | 62 |
+| 18,5 bis unter 22 px, Überschriften und Marken (4 Werte) | `size-lead` 20 px | 18 |
+| 19 bis 21,8 px, Lesetext und Leads | `web-size-body` 21 px bzw. `web-size-lead` | 8 |
+| 22 bis unter 26 px (4 Werte) | `size-title-3` 24 px | 29 |
+| 26,25 px | `web-size-lead` | 1 |
+| 28 und 29,4 px | `size-title-2` 28 px | 2 |
+| 32 bis 38,4 px (3 Werte) | `size-title-1` 36 px | 6 |
+| 48 px | `size-display-2` | 1 |
+
+Dazu von Hand:
+
+- **Fluide Überschriften:** H1 bis H3 und vier ältere, überdeckte Regeln verwenden die
+  fluiden Tokens. Die Seitenüberschrift behält ihre eigene Formel mit der Fensterhöhe
+  (`clamp(2.75rem, min(8vw, 11vh), 7.125rem)`, Nachkorrektur vom 26.11.2026).
+- **Zwei fluide Zwischenüberschriften** (Zitat der Startseite, Gruppenüberschriften der
+  Werkzeugseite) laufen jetzt zwischen zwei Stufen der Skala (24 bis 28 px, 20 bis 28 px).
+- **E-Mail-Adresse** in Einladung, Selbsttest und Handout: feste Stufen statt einer fluiden
+  Formel (24 bzw. 20 px, unter 760 px 17 px).
+- **`small`** (Quellenart und Prüfumfang): 15 px, in den Quellenlisten der Module 13 px.
+  Vorher ergab die Browser-Vorgabe 15,8 bzw. 17,5 px.
+- **Fusszeile** nach der «Präzisierung der Fusszeile» des Profils: Absender-,
+  Zuständigkeits- und Abgrenzungstexte in Seitenschrift (21 px, schmal 19 px), die Links in
+  UI-Grösse (17 px). Vorher 13,5 bis 17 px.
+- **Vier Inline-Angaben im JSX** (`fontSize`) verwenden die Tokens.
+- **Zwei Notregeln entfallen:** Die Regeln aus der Nachkorrektur vom 26.11.2026, die 44
+  Selektoren mit `!important` auf mindestens 13 px hoben, sind überflüssig. Eine Messung mit
+  und ohne sie ergab denselben Stand, nachdem die Quellenlisten eine eigene Regel erhielten.
+
+### Messung vorher und nachher
+
+62 Ansichten (16 Seiten, 9 Werkzeug-Dialoge, 6 Handouts, je bei 1366 und 375 px), jeweils
+die berechnete Grösse jedes Textelements:
+
+| Kennzahl | Vorher | Nachher |
+| --- | --- | --- |
+| Schriftgrad-Angaben im App-CSS | 336 | 335 |
+| davon über ein Token | 0 | 320, dazu 2 fluide Formeln mit Tokens als Grenzen |
+| verschiedene Werte im App-CSS | 75 | 23 |
+| verschiedene berechnete Grade auf dem Bildschirm | 56 | 21 |
+| Ansichten mit seitlichem Scrollen | 0 | 0 |
+
+Die 21 verbleibenden Grade: 11 Stufen der Skala (13, 15, 17, 19, 20, 21, 24, 26,25, 28, 36,
+48 px), 6 Werte der fluiden Überschriften (26 und 40, 32 und 57, 44 und 99 px bei den zwei
+gemessenen Breiten) und 4 Werte aus den SVG-Figuren (9, 10, 11 und 14 px).
+
+Von 555 383 gemessenen Zeichen haben 39,7 % einen anderen Grad als vorher: 34,3 % um
+höchstens 1 px, 2,4 % um 1 bis 2 px, 3,1 % um mehr als 2 px. Die grösseren Sprünge sind die
+Fusszeile (gewollt), `small` auf breiten Bildschirmen (17,5 auf 15 px) und die grossen
+Modulnummern (38,4 und 32 auf 36 px). Die Seiten werden um 0,2 bis 5,8 % länger.
+
+### Offen nach Etappe 2
+
+- **Beschriftungen in SVG-Figuren** stehen als `fontSize` in Einheiten der Zeichnung im JSX
+  (34 Stellen) und ergeben 9 bis 14 px. Das Profil will Beschriftungen als HTML-Text; das
+  gehört zur Visualisierung.
+- **Lesetext in Seitenschrift** ist nicht durchgehend umgesetzt: Beschreibungen in Karten
+  und Listen, Antworten der Fragen und der Text der Handouts stehen in 15 oder 17 px.
+- **Zeilenhöhen und Schriftschnitte** sind unverändert (21 verschiedene Zeilenhöhen).
 
 ## Nachweise
 

@@ -595,7 +595,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
           <div className="selbsttest-q-block">
             <div className="selbsttest-progress">
               <span style={{ color: 'var(--accent)' }}>Säule · {curSaeule.label}</span>
-              <span style={{ color: 'var(--ink-mute)', fontSize: '0.72rem' }}>Frage {qIdx + 1} von {SAEULEN_ALL_QUESTIONS.length}</span>
+              <span style={{ color: 'var(--ink-mute)', fontSize: 'var(--size-caption)' }}>Frage {qIdx + 1} von {SAEULEN_ALL_QUESTIONS.length}</span>
               <span className="selbsttest-progress-bar"><span style={{ width: `${(qIdx / SAEULEN_ALL_QUESTIONS.length) * 100}%` }}></span></span>
             </div>
             <h2 ref={stepRef} tabIndex={-1} className="selbsttest-q">{cur.q}</h2>
