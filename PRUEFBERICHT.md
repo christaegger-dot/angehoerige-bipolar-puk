@@ -22,7 +22,7 @@ hier nicht. Die Regeln der umgesetzten Abschnitte prüfen `npm test`,
 
 ## Status
 
-Stand der Website: Etappe 1 des Wechsels auf das Fachstellen-Profil 2026.10.2
+Stand der Website: Etappen 1 und 2 des Wechsels auf das Fachstellen-Profil 2026.10.2
 (26. November 2026). Entscheide und geänderte Wortlaute: `_dev/PROFILWECHSEL-2026-10-2.md`.
 
 | Stufe | Status | Datum | Geprüft durch | Ergebnis |
@@ -65,13 +65,38 @@ Arbeitsstand vom 26. November 2026, keine Prüfstufe. Geprüft ist nur, was Etap
 | 15 | Tastatur, Fokus, axe | erfüllt, soweit automatisch prüfbar | `axe/*`, `keyboard/*` und `navigation/*` in `qa/output/website-audit.json` ohne Befund |
 | 16 | Screenreader (VoiceOver, NVDA) | nicht geprüft | Kein realer Lauf; `website-screenreader-test.json` steht auf «pending» |
 | 17 | Erzwungene Farben, Theme «Hoher Kontrast» | nicht geprüft | Keine Messung in dieser Etappe |
-| 18 | Webadressen der Einträge ohne Link bestätigt | nicht erfüllt | Pro Mente Sana und Opferhilfe Zürich stehen ohne Link (`src/unterstuetzung.jsx`, Liste unter «Hilfe») |
+| 18 | Webadressen für Pro Mente Sana und Opferhilfe Zürich | erfüllt in Etappe 2 | Von der Fachstelle am 26.11.2026 bestätigt; Test «offers counselling contacts by e-mail or website …» prüft beide Adressen (`src/test/unterstuetzung.test.jsx`). Die Kantonsseite war aus der Arbeitsumgebung nicht abrufbar; ihre Erreichbarkeit ist nicht gemessen |
 
-### Kennzahlen dieser Etappe (zum Nachrechnen)
+### Kennzahlen der Etappe 1 (zum Nachrechnen, Stand vor Etappe 2)
 
 | Prüfung | Ergebnis |
 | --- | --- |
 | `npm test` | 266 Tests in 31 Dateien bestanden |
+| `npm run lint` | ohne Befund |
+| `npm run audit:website` | 716 Prüfungen, 0 Fehler |
+| `npm run audit:tools` | 225 Prüfungen, 0 Befunde |
+| `npm run audit:print` | 71 von 71 Prüfungen |
+| `npm run audit:puk` (kanonischer Auditor 1.10.1, Entwurf) | bestanden, 15 gerenderte Routen |
+| `npm run test:release-evidence` | 22 von 22 |
+
+### Etappe 2: Schriftgrade auf der Skala
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | Schriftgrade im App-CSS stammen aus der Skala des Profils | erfüllt für 320 von 335 Angaben | Zählung im App-CSS: 320 über ein Token, 2 fluide Formeln mit Tokens als Grenzen, 1 eigene Formel der Seitenüberschrift, 5 `inherit`, 1 `100%`, 1 überdeckte Angabe in `em`, 5 Druckangaben in pt. Tabelle in `_dev/PROFILWECHSEL-2026-10-2.md`, «Etappe 2» |
+| 2 | Alle Grade in rem | erfüllt | Die Tokens stehen in `src/design-tokens.css` in rem; im App-CSS gibt es keine Schriftgrad-Angabe in px mehr (Suche: 0 Treffer ausserhalb des Drucks) |
+| 3 | Berechnete Grade auf dem Bildschirm liegen auf der Skala | erfüllt bis auf die SVG-Figuren | Messung in 62 Ansichten: 21 verschiedene Grade statt 56; davon 11 Stufen der Skala, 6 Werte fluider Überschriften, 4 Werte aus SVG-Beschriftungen (9, 10, 11, 14 px) |
+| 4 | Kein Text unter 13 px | nicht erfüllt in den SVG-Figuren | 606 von 555 383 gemessenen Zeichen stehen in 9 bis 11 px; es sind Beschriftungen in Figuren der Module 3 und 5 und im Werkzeug «Belastungsverlauf» |
+| 5 | Lesetext in Seitenschrift (21 px, schmal 19 px) | erfüllt für Fliesstext der Module und die Fusszeile; sonst nicht | Fusszeile gemessen: Zuständigkeitsverweis und Hinweis 21 px bei 1366 px, 19 px bei 375 px. Karten, Listen, Antworten der Fragen und Handouts stehen in 15 oder 17 px |
+| 6 | Kein seitliches Scrollen, kein abgeschnittener Text | erfüllt nach einer Korrektur | 62 Ansichten ohne Überlauf bei 100 %. Bei 200 % Schrift liefen zunächst alle Seiten bei 320 und 360 px über (366 px), weil lange Wörter der Fusszeile in der grösseren Schrift nicht umbrachen; nach der Korrektur 51 Ansichten (17 Seiten und Dialoge bei 320, 360, 768 px) ohne Überlauf. `route/reflow` und `route/text-bounds` siehe Kennzahlen |
+| 7 | Sichtprüfung | teilweise | Angesehen: Krisenplan-Dialog vorher und nachher bei 1366 px, Selbsttest-Dialog bei 375 px, Fusszeile bei 1366 und 375 px, Liste «Hilfe» bei 1366 px. Die übrigen Ansichten sind nur gemessen, nicht angesehen |
+| 8 | Zeilenhöhen und Schriftschnitte | nicht Gegenstand | unverändert; 21 verschiedene Zeilenhöhen |
+
+### Kennzahlen der Etappe 2 (zum Nachrechnen)
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm test` | 271 Tests in 32 Dateien bestanden |
 | `npm run lint` | ohne Befund |
 | `npm run audit:website` | 716 Prüfungen, 0 Fehler |
 | `npm run audit:tools` | 225 Prüfungen, 0 Befunde |
@@ -115,8 +140,7 @@ Einzelheiten stehen in `_dev/PROFILWECHSEL-2026-10-2.md`.
 
 - 14 geänderte Sätze (Nummern durch «Sanität», «Polizei» oder die E-Mail-Adresse ersetzt).
 - Orte des Verweises im Text, auch die drei bewusst ausgelassenen Stellen.
-- Selbsttest rechnet Punktwerte; Einstieg der Startseite als Situationsnavigator prüfen.
-- Webadressen für Pro Mente Sana und Opferhilfe Zürich.
+- Das Werkzeug «Säulen-Check» zählt Punktwerte je Säule (das Profil lässt keine Scores zu); der Selbsttest ist nicht betroffen. Einstieg der Startseite als Situationsnavigator prüfen.
 
 ### W2 Gesamtkohärenz
 
@@ -135,10 +159,10 @@ Einzelheiten stehen in `_dev/PROFILWECHSEL-2026-10-2.md`.
 
 - Absenderzeile bei 320, 360, 768 und 1440 px; E-Mail-Link als Textlink ohne 44 px.
 - Telefon-Kopf: Name der Website neben dem Logo ab 360 px.
-- Einträge ohne Link in der Liste «Hilfe» (keine Schaltfläche, kein Fokus).
 
 ### W3 Code-Review
 
+- Etappe 2: Zuordnung der Schriftgrade (Skript-Ergebnis in `src/styles.css`, 311 Angaben), Token-Überschreibungen in `src/design-tokens.css`, entfernte Notregeln mit `!important`.
 - `src/site-config.js` als einzige Quelle der Wortlaute; `SenderLine` und
   `ResponsibilityInline` in `src/shared.jsx`.
 - Entfernte Dateien; 99 entfernte CSS-Regeln und 7 gekürzte Selektorlisten.

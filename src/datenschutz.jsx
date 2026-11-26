@@ -145,7 +145,7 @@ function DatenschutzPage() {
               inhaltlich ändert. Massgeblich ist jeweils die aktuelle, hier abrufbare Fassung.
             </p>
 
-            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: '0.875rem' }}>
+            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: 'var(--size-body-sm)' }}>
               Stand: Oktober 2026
             </p>
           </article>

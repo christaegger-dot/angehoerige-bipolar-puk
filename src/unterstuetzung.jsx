@@ -638,23 +638,13 @@ function UnterstuetzungPage({ onNavigate, anchor }) {
           <div className="resource-list">
             {[
               { num: '01', title: 'Fachstelle Angehörigenarbeit PUK Zürich', desc: 'Beratung speziell für Angehörige psychisch erkrankter Menschen. Telefonisch, per Mail oder im persönlichen Gespräch.', tag: SITE.sender.email, href: SENDER_MAILTO, kind: 'mail' },
-              { num: '02', title: 'Pro Mente Sana — Beratungstelefon', desc: 'Rechtsberatung zu Fürsorgerischer Unterbringung (FU), Vorsorgeauftrag, Beistandschaften und Patientenrechten. Werktags.', kind: 'plain' },
+              { num: '02', title: 'Pro Mente Sana — Beratungstelefon', desc: 'Rechtsberatung zu Fürsorgerischer Unterbringung (FU), Vorsorgeauftrag, Beistandschaften und Patientenrechten. Werktags.', tag: 'promentesana.ch', href: 'https://promentesana.ch/', kind: 'web' },
               { num: '03', title: 'EQUILIBRIUM', desc: 'Verein der Schweizer Selbsthilfegruppen für Menschen mit Erkrankungen der Stimmung (affektiven Störungen) und ihre Angehörigen.', tag: 'depressionen.ch', href: 'https://www.depressionen.ch/', kind: 'web' },
               { num: '04', title: 'VASK Schweiz', desc: 'Vereinigung der Angehörigen von schizophrenie- und psychisch Kranken — Selbsthilfegruppen in vielen Kantonen.', tag: 'vask.ch', href: 'https://www.vask.ch/', kind: 'web' },
               { num: '05', title: 'Selbsthilfe Zürich', desc: 'Vermittelt regionale Selbsthilfegruppen — auch für Angehörige von Menschen mit bipolarer Störung.', tag: 'selbsthilfezuerich.ch', href: 'https://www.selbsthilfezuerich.ch/', kind: 'web' },
-              { num: '06', title: 'Opferhilfe Zürich', desc: 'Unterstützung, wenn Sie Gewalt durch Angehörige erleben — kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', kind: 'plain' },
+              { num: '06', title: 'Opferhilfe Zürich', desc: 'Unterstützung, wenn Sie Gewalt durch Angehörige erleben — kostenlos, vertraulich, auf Wunsch auch ohne Anzeige.', tag: 'zh.ch', href: 'https://www.zh.ch/de/sicherheit-justiz/opferhilfe.html', kind: 'web' },
             ].map(r => {
               const external = r.kind === 'web';
-              // Ohne bestätigte Webadresse bleibt der Eintrag eine Zeile ohne Link (Profil 2026.10.2: keine Telefonnummern).
-              if (r.kind === 'plain') {
-                return (
-                  <div key={r.num} className="resource-row resource-row--plain">
-                    <div className="num">{r.num}</div>
-                    <div className="title">{r.title}</div>
-                    <div className="desc">{r.desc}</div>
-                  </div>
-                );
-              }
               const ariaLabel = r.kind === 'mail'
                 ? `${r.title} — E-Mail schreiben an ${r.tag}`
                 : `${r.title} — Website öffnen (${r.tag})`;

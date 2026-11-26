@@ -49,13 +49,25 @@
   --space-7: var(--space-12);
   --space-9: var(--space-24);
 
-  /* UI screen grades 13/15/17/20/24 px at the browser's normal 16 px basis.
-     rem preserves the user's text enlargement preference. */
-  --fs-xs: 0.8125rem;
-  --fs-sm: 0.9375rem;
-  --fs-base: 1.0625rem;
-  --fs-lg: 1.25rem;
-  --fs-xl: 1.5rem;
+  /* Schriftgrade in rem (Profilentscheid 11.10.2026 des Fachstellen-Profils): Die Werte
+     des Kits sind Messwerte in px. Auf Websites werden sie durch gleich grosse rem-Werte
+     überschrieben, damit die Browser-Einstellung «Schriftgrösse» wirkt (1 rem = 16 px).
+     Das App-CSS verwendet für Schriftgrade nur diese Tokens. */
+  --size-caption: .8125rem;      /* 13 px */
+  --size-body-sm: .9375rem;      /* 15 px */
+  --size-body: 1.0625rem;        /* 17 px, Bedienelemente */
+  --size-lead: 1.25rem;          /* 20 px */
+  --size-title-3: 1.5rem;        /* 24 px */
+  --size-title-2: 1.75rem;       /* 28 px */
+  --size-title-1: 2.25rem;       /* 36 px */
+  --size-display-2: 3rem;        /* 48 px */
+  --size-display-1: 4rem;        /* 64 px */
+  --web-size-body: 1.3125rem;    /* 21 px, Lesetext */
+  --web-size-lead: 1.640625rem;  /* 26,25 px */
+  /* Fluide Überschriften: dieselben Grenzen wie im Kit (44–114, 32–57, 26–40 px), in rem. */
+  --web-size-h1-fluid: clamp(2.75rem, 8vw, 7.125rem);
+  --web-size-h2-fluid: clamp(2rem, 4.5vw, 3.5625rem);
+  --web-size-h3-fluid: clamp(1.625rem, 3vw, 2.5rem);
 
   --t-fast: var(--dur-fast);
   --t-base: var(--dur-base);
@@ -83,4 +95,12 @@
   --print-rule: var(--puk-black-25);
   --print-paper: var(--ui-wash);
   --print-strong: var(--puk-black-100);
+}
+
+/* Lesetext steht unter 760 px in 19 px, der Lead in 21 px (Fachstellen-Profil 2026.10.2). */
+@media (max-width: 760px) {
+  :root {
+    --web-size-body: 1.1875rem;
+    --web-size-lead: 1.3125rem;
+  }
 }

@@ -43,11 +43,13 @@ describe('UnterstuetzungPage counselling and material boundaries', () => {
 
     expect(screen.getByRole('link', { name: /Fachstelle Angehörigenarbeit PUK Zürich — E-Mail schreiben/i }))
       .toHaveAttribute('href', `mailto:${SITE.sender.email}`);
-    // Ohne bestätigte Webadresse bleiben diese Einträge Zeilen ohne Link.
-    for (const title of ['Pro Mente Sana — Beratungstelefon', 'Opferhilfe Zürich']) {
-      const row = screen.getByText(title).closest('.resource-row');
-      expect(row.tagName).toBe('DIV');
-      expect(row.querySelector('a')).toBeNull();
+    // Von der Fachstelle am 26.11.2026 bestätigte Webadressen statt der früheren Telefonnummern.
+    expect(screen.getByRole('link', { name: /Pro Mente Sana — Beratungstelefon — Website öffnen \(promentesana\.ch\)/ }))
+      .toHaveAttribute('href', 'https://promentesana.ch/');
+    expect(screen.getByRole('link', { name: /Opferhilfe Zürich — Website öffnen \(zh\.ch\)/ }))
+      .toHaveAttribute('href', 'https://www.zh.ch/de/sicherheit-justiz/opferhilfe.html');
+    for (const link of container.querySelectorAll('.resource-list a[target="_blank"]')) {
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     }
     expect(container.querySelectorAll('a[href^="tel:"]')).toHaveLength(0);
     expect(container.textContent).not.toMatch(phoneNumbers);

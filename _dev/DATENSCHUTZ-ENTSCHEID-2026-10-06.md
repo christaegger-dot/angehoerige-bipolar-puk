@@ -118,6 +118,15 @@ Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind un
 
 Die Screenreader-Vorlage `website-screenreader-test.json` ist neu erzeugt, weil sich ihr Umfang geändert hat: 15 statt 16 Routen, 6 statt 7 Handouts, und das Szenario `crisis-contact-links` ist durch `sender-line-and-responsibility-referral` ersetzt. Die bisherige Vorlage enthielt keine Ergebnisse; alle Einträge stehen weiter auf `pending`.
 
+### Abgleich nach der Umstellung der Schriftgrade (26. November 2026, siebter Durchgang)
+
+Die siebte Anpassung vom selben Tag setzt die zweite Etappe des Profilwechsels um (Schriftgrade aus der Skala des Profils; Einzelheiten in `_dev/PROFILWECHSEL-2026-10-2.md`, Abschnitt «Etappe 2»). Die Fachstelle hat der neuen Bindung am 26. November 2026 zugestimmt. Datenschutzrelevant geprüft wurden:
+
+- **Zwei Weblinks** in der Liste «Hilfe»: Pro Mente Sana (`https://promentesana.ch/`) und Opferhilfe Zürich (`https://www.zh.ch/de/sicherheit-justiz/opferhilfe.html`), beide von der Fachstelle bestätigt, beide mit `target="_blank"` und `rel="noopener noreferrer"`. Die Website ruft diese Adressen nicht selbst ab; eine Verbindung entsteht erst, wenn jemand dem Link folgt. Die Datenschutzseite hat keinen eigenen Abschnitt zu Links auf andere Websites; das Profil sieht einen solchen Satz vor (offen, siehe `_dev/PROFILWECHSEL-2026-10-2.md`).
+- **Schriftgrade:** nur CSS (Tokens in `src/design-tokens.css`, 311 umgestellte Angaben, entfernte Notregeln) und vier Inline-Angaben im JSX. Keine neue Schriftdatei, keine externe Quelle.
+
+Eingabeverarbeitung, Speicher-, Lösch-, Export- und Übermittlungslogik sind unverändert; die Hinweise zu Speicherung und Löschung stehen unverändert vor den Werkzeugen und in den Dialogen. Am neu gebauten Stand bestanden die 225 Werkzeugchecks, die 716 Website-Browserchecks einschliesslich der Prüfung auf externe Laufzeitanfragen, die 71 PDF-Prüfungen und der kanonische PUK-Audit im Entwurfsmodus. Die begrenzte technische Acceptance wird wie in den vorangehenden Durchgängen an den neuen Fingerprint gebunden (`sourceSha256` `b4f088557883710c0856ab2a1918d57b1dd80a06f913e5145cdfcf75e8fe7cd9`, `buildSha256` `163f302ed2eee134a002c6c3d755f01d1c4d3a2b4c7663c6e456ee5bb2f5a1c4`, `sha256` `b28e26e3a59b79c374a132ac554f2b5024343ff263bd26e15ece1c3995443bc2`).
+
 ## Grenzen und weiterhin erforderliche Zuständigkeiten
 
 Nicht Gegenstand dieser technischen Acceptance sind institutionelle PUK-Verträge oder Genehmigungen, Hosting-/Auftragsbearbeitungsverträge, die rechtliche Bewertung internationaler Verbindungsdatenbearbeitung, E-Mail-Aufbewahrung und extern erzeugte Kopien. Der bestehende Hinweis auf Netlify und die öffentliche Datenschutzerklärung bleiben erhalten.

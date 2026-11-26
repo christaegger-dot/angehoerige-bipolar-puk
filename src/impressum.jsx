@@ -62,7 +62,7 @@ function ImpressumPage() {
               Zustimmung.
             </p>
 
-            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: '0.875rem' }}>
+            <p style={{ marginTop: 56, color: 'var(--ink-3)', fontSize: 'var(--size-body-sm)' }}>
               Redaktioneller Stand: Oktober 2026
             </p>
           </article>
