@@ -8,6 +8,7 @@ import { useBrowserNavigation } from './use-browser-navigation.js';
 import { applyPageMetadata } from './page-metadata.js';
 import { LoadErrorBoundary } from './load-error-boundary.jsx';
 import { navHandler, navHref } from './nav-handler.js';
+import { trackCurrentSection } from './toc-current.js';
 
 function PageLoadingFallback() {
   return (
@@ -21,6 +22,8 @@ function PageLoadingFallback() {
 function PageContent({ navigation, onNavigate, onReady }) {
   React.useEffect(() => onReady(navigation), [navigation, onReady]);
   const { page, anchor } = navigation;
+  // Runs once the lazily loaded page has committed, like the ready effect above.
+  React.useEffect(() => trackCurrentSection(), [page]);
   const renderPage = PAGE_RENDERERS[page] || PAGE_RENDERERS.start;
   return renderPage({ onNavigate, anchor });
 }

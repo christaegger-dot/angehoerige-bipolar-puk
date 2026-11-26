@@ -381,7 +381,7 @@ function Modul2Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Auch für Eltern</span>
-                <p>In einer Angehörigenberatung können Sie auch besprechen, wie viel Unterstützung oder Abstand für Sie und Ihr erwachsenes Kind passt. Ebenso kann ein Austausch mit anderen Eltern in ähnlichen Situationen hilfreich sein. Die Fachstelle Angehörigenarbeit PUK Zürich ist auch für Eltern da: <strong>058 384 38 00</strong>.</p>
+                <p>In einer Angehörigenberatung können Sie auch besprechen, wie viel Unterstützung oder Abstand für Sie und Ihr erwachsenes Kind passt. Ebenso kann ein Austausch mit anderen Eltern in ähnlichen Situationen hilfreich sein. Die Fachstelle Angehörigenarbeit PUK Zürich ist auch für Eltern da: <a className="puk-link--inline" href="tel:+41583843800"><strong>058 384 38 00</strong></a>.</p>
               </aside>
             </section>
 

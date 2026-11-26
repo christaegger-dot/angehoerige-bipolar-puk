@@ -130,7 +130,7 @@ describe('TriageFlow answer correction', () => {
     await user.click(screen.getByRole('button', { name: 'Antwort ändern' }));
     expect(screen.getByRole('button', { name: 'Ja, die Diagnose ist neu' })).toHaveFocus();
     await user.click(screen.getByRole('button', { name: 'Nein, schon länger' }));
-    expect(screen.getByText('Frage 2 von bis zu 4')).toBeInTheDocument();
+    expect(screen.getByText('Frage 2 von höchstens 4')).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /Die bipolare Störung verstehen/ })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'Beratung und Entlastung →' })).not.toBeInTheDocument();
   });

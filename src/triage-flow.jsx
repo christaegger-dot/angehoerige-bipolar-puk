@@ -12,7 +12,7 @@ const TRIAGE_RESULTS = {
 
 const TRIAGE_STEPS = {
   q1b: {
-    progress: 'Frage 1 von bis zu 4',
+    progress: 'Frage 1 von höchstens 4',
     question: 'Ist die Diagnose für Sie neu?',
     options: [
       { action: 'q1b-yes', label: 'Ja, die Diagnose ist neu' },
@@ -20,7 +20,7 @@ const TRIAGE_STEPS = {
     ],
   },
   q2: {
-    progress: 'Frage 2 von bis zu 4',
+    progress: 'Frage 2 von höchstens 4',
     question: 'Sind Sie gerade so erschöpft oder überfordert, dass Sie an Ihre Grenzen kommen?',
     options: [
       { action: 'q2-yes', label: 'Ja' },
@@ -28,7 +28,7 @@ const TRIAGE_STEPS = {
     ],
   },
   q3: {
-    progress: 'Frage 3 von bis zu 4',
+    progress: 'Frage 3 von höchstens 4',
     question: 'Möchten Sie vor allem mehr über die Erkrankung erfahren?',
     options: [
       { action: 'q3-yes', label: 'Ja' },
@@ -37,7 +37,7 @@ const TRIAGE_STEPS = {
     ],
   },
   q4: {
-    progress: 'Frage 4 von bis zu 4',
+    progress: 'Frage 4 von höchstens 4',
     question: 'Was steht bei Ihnen gerade am meisten im Vordergrund?',
     options: [
       { action: 'q4-beziehung', label: 'Beziehung, Vertrauen, Nähe' },

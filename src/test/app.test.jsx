@@ -4,6 +4,24 @@ import userEvent from '@testing-library/user-event';
 import App from '../app.jsx';
 
 describe('App navigation', () => {
+  it('shows a not-found page for an unknown address and leads back into the site', async () => {
+    const user = userEvent.setup();
+    window.history.replaceState({}, '', '/gibt-es-nicht');
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { level: 1, name: 'Diese Seite gibt es nicht.' })).toBeInTheDocument();
+    expect(window.location.pathname).toBe('/gibt-es-nicht');
+    expect(document.title).toBe('Seite nicht gefunden | PUK Zürich');
+    expect(document.querySelectorAll('[aria-current="page"]')).toHaveLength(0);
+    const onward = screen.getByRole('navigation', { name: 'Weiter auf der Website' });
+    expect(within(onward).getAllByRole('link').map(link => link.getAttribute('href')))
+      .toEqual(['/', '/module', '/werkzeuge', '/unterstuetzung']);
+
+    await user.click(within(onward).getByRole('link', { name: 'Zur Startseite' }));
+    expect(await screen.findByRole('heading', { level: 1, name: /wenn jemand in ihrem umfeld/i })).toBeInTheDocument();
+    expect(window.location.pathname).toBe('/');
+  });
+
   it('keeps numbered crisis guidance on the dedicated crisis page across navigation', async () => {
     const user = userEvent.setup();
     render(<App />);

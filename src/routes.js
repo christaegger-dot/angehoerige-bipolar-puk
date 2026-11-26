@@ -17,6 +17,9 @@ const ROUTES = [
   { page: 'schweigepflicht', path: '/schweigepflicht', legacyHash: 'schweigepflicht' },
 ];
 
+// Not part of ROUTES: it has no address of its own and is shown in place of an unknown one.
+const NOT_FOUND_PAGE = 'nicht-gefunden';
+
 const ROUTE_BY_PAGE = Object.fromEntries(ROUTES.map((route) => [route.page, route]));
 const ROUTE_BY_PATH = Object.fromEntries(ROUTES.map((route) => [route.path, route]));
 const ROUTE_BY_HASH = Object.fromEntries(
@@ -53,10 +56,8 @@ function parseRouteLocation(locationLike) {
     return { page: directRoute.page, anchor: hash || null };
   }
 
-  return {
-    page: ROUTE_BY_PATH[pathname]?.page || 'start',
-    anchor: hash || null,
-  };
+  // Unknown addresses get their own page instead of silently showing the start page.
+  return { page: NOT_FOUND_PAGE, anchor: null };
 }
 
 function shouldHandleClientNavigation(event) {
@@ -70,4 +71,4 @@ function shouldHandleClientNavigation(event) {
   );
 }
 
-export { ROUTES, buildRouteHref, parseRouteLocation, shouldHandleClientNavigation };
+export { NOT_FOUND_PAGE, ROUTES, buildRouteHref, parseRouteLocation, shouldHandleClientNavigation };

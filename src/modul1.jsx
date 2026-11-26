@@ -125,7 +125,7 @@ function Modul1Page({ onNavigate }) {
 
               <aside className="callout">
                 <span className="callout-label">Kontakt zur Angehörigenberatung</span>
-                <p>Die Fachstelle Angehörigenarbeit PUK Zürich bietet kostenlose, vertrauliche Beratung unter <strong>058 384 38 00</strong>. Sie können auch anrufen, wenn Sie Ihre Fragen erst im Gespräch sortieren möchten.</p>
+                <p>Die Fachstelle Angehörigenarbeit PUK Zürich bietet kostenlose, vertrauliche Beratung unter <a className="puk-link--inline" href="tel:+41583843800"><strong>058 384 38 00</strong></a>. Sie können auch anrufen, wenn Sie Ihre Fragen erst im Gespräch sortieren möchten.</p>
               </aside>
             </section>
 
@@ -330,7 +330,7 @@ function Modul1Page({ onNavigate }) {
               <p>Falls Sie eine frühere deutliche Verschlechterung miterlebt haben: Was war zuerst auffällig? Weniger Schlaf? Gereiztheit? Rückzug? Übermässige Energie? Schreiben Sie eine bis drei Beobachtungen auf, ohne daraus eine Diagnose abzuleiten. Wenn Ihnen solche Erfahrungen fehlen, notieren Sie stattdessen eine offene Frage für das Behandlungsteam.</p>
 
               <h3>2. Professionelle Beratung nutzen</h3>
-              <p>Wenn Sie nach diesem Modul merken, wie viel Unsicherheit Sie mittragen, ist das bereits ein guter Grund für Beratung. Die Fachstelle Angehörigenarbeit PUK Zürich bietet kostenlose Unterstützung — auch unabhängig davon, ob die erkrankte Person selbst Hilfe sucht. Telefon: <strong>058 384 38 00</strong>.</p>
+              <p>Wenn Sie nach diesem Modul merken, wie viel Unsicherheit Sie mittragen, ist das bereits ein guter Grund für Beratung. Die Fachstelle Angehörigenarbeit PUK Zürich bietet kostenlose Unterstützung — auch unabhängig davon, ob die erkrankte Person selbst Hilfe sucht. Telefon: <a className="puk-link--inline" href="tel:+41583843800"><strong>058 384 38 00</strong></a>.</p>
 
               <h3>3. Passend weiterlesen</h3>
               <p>Wenn Sie vor allem sich selbst besser verstehen wollen, ist Modul 2 der richtige nächste Schritt. Wenn Sie eher konkrete Hilfen brauchen, gehen Sie direkt zu Modul 6. Sie müssen die Website nicht streng linear lesen.</p>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { buildRouteHref, parseRouteLocation } from './routes.js';
+import { NOT_FOUND_PAGE, buildRouteHref, parseRouteLocation } from './routes.js';
 
 const HISTORY_STATE_KEY = '__pukNavigation';
 let nextEntryId = 0;
@@ -154,7 +154,8 @@ function useBrowserNavigation() {
 
     const initial = parseRouteLocation(window.location);
     const canonical = buildRouteHref(initial.page, initial.anchor);
-    if (canonical !== buildCurrentRelativeUrl()) {
+    // An unknown address stays in the address bar so the visitor can see and correct it.
+    if (initial.page !== NOT_FOUND_PAGE && canonical !== buildCurrentRelativeUrl()) {
       window.history.replaceState(window.history.state, '', canonical);
       lastHistoryWrite.current = window.performance.now();
     }

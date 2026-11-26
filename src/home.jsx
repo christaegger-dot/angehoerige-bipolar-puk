@@ -16,12 +16,6 @@ function HomePage({ onNavigate }) {
             <span className="hero-meta-dot">·</span>
             Psychiatrische Universitätsklinik Zürich
           </div>
-          <div className="hero-micro-nav animate-in delay-1" aria-label="Schnelle Einstiege">
-            <a href={navHref('modul4', 's6')} onClick={navHandler('modul4', onNavigate, 's6')}>Kinder unterstützen</a>
-            <a aria-label="Schnelleinstieg Module" href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
-            <a aria-label="Schnelleinstieg Werkzeuge" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>Werkzeuge</a>
-            <a aria-label="Schnelleinstieg Unterstützung" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung</a>
-          </div>
           <h1 className="animate-in delay-1">
             Wenn jemand in Ihrem Umfeld eine <em>bipolare Störung</em> hat.
           </h1>
@@ -32,6 +26,12 @@ function HomePage({ onNavigate }) {
             </a>
             <a className="hero-cta-secondary puk-link--action" href={navHref('modul1')} onClick={navHandler('modul1', onNavigate)}>Direkt zu Modul 1</a>
             <a className="hero-cta-secondary puk-link--action" href={navHref('modul6')} onClick={navHandler('modul6', onNavigate)}>Konkrete Hilfen für den Alltag</a>
+          </div>
+          <div className="hero-micro-nav animate-in delay-3" aria-label="Schnelle Einstiege">
+            <a href={navHref('modul4', 's6')} onClick={navHandler('modul4', onNavigate, 's6')}>Kinder unterstützen</a>
+            <a aria-label="Schnelleinstieg Module" href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>
+            <a aria-label="Schnelleinstieg Werkzeuge" href={navHref('werkzeuge')} onClick={navHandler('werkzeuge', onNavigate)}>Werkzeuge</a>
+            <a aria-label="Schnelleinstieg Unterstützung" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>Unterstützung</a>
           </div>
           <div className="hero-illustration animate-in delay-3">
             <Ill.Hero size={420} />
@@ -88,8 +88,8 @@ function HomePage({ onNavigate }) {
               </a>
             </li>
             <li>
-              <a className="module-row module-row-resource" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
-                <div className="module-num module-num-resource">→</div>
+              <a className="module-row" href={navHref('unterstuetzung')} onClick={navHandler('unterstuetzung', onNavigate)}>
+                <div className="module-num">U</div>
                 <div className="module-content">
                   <div className="module-row-numlabel">Hilfe finden</div>
                   <h3>{ANLAUFSTELLEN_ENTRY.title}</h3>
