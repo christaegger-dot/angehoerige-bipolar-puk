@@ -91,6 +91,7 @@ describe('ToolOverlay', () => {
     const close = screen.getAllByRole('button', { name: 'Dialog schliessen' })
       .find(button => button.classList.contains('tool-close'));
     await waitFor(() => expect(close).toHaveFocus());
+    expect(document.body).toHaveClass('tool-overlay-open');
     await user.tab();
     expect(screen.getByRole('textbox', { name: 'Notizen' })).toHaveFocus();
     await user.tab();
@@ -99,5 +100,6 @@ describe('ToolOverlay', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     expect(opener).toHaveFocus();
     expect(document.body.style.overflow).toBe('');
+    expect(document.body).not.toHaveClass('tool-overlay-open');
   });
 });

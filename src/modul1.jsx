@@ -1,30 +1,13 @@
 // Modul 1 — Die bipolare Störung verstehen · Volles Lese-Layout
 
-import React from 'react';
 import { ModuleQuickStart, EvidenceCitation, EvidenceSources } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { Ill } from './illustrations.jsx';
 import { SITE, SENDER_MAILTO } from './site-config.js';
 import { Icon } from './icon.jsx';
+import { ReadingProgress } from './shared.jsx';
 
 function Modul1Page({ onNavigate }) {
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    const onScroll = () => {
-      const el = document.querySelector('.module-article');
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const total = rect.height - window.innerHeight;
-      const scrolled = -rect.top;
-      const pct = Math.max(0, Math.min(100, (scrolled / total) * 100));
-      setProgress(pct);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const sections = [
     { id: 's1', label: 'Wenn die Diagnose neu ist' },
     { id: 's2', label: 'Was beim Verstehen hilft' },
@@ -40,8 +23,7 @@ function Modul1Page({ onNavigate }) {
 
   return (
     <>
-      {/* Reading progress bar */}
-      <div className="reading-progress" style={{width: `${progress}%`}}></div>
+      <ReadingProgress />
 
       <article className="module-article">
         {/* Header */}

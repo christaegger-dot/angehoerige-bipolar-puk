@@ -51,8 +51,8 @@ function HomePage({ onNavigate }) {
       <section>
         <div className="col-wide">
           <span className="kicker">Drei Wege zum Einstieg</span>
-          <h2 style={{ maxWidth: '20ch', marginBottom: 'var(--space-2)' }}>Wählen Sie den Zugang, der gerade passt.</h2>
-          <p style={{ color: 'var(--ink-soft)', maxWidth: '52ch', marginBottom: 'var(--space-8)' }}>Sie können ein Thema lesen, ein Werkzeug ausprobieren oder Beratung suchen. Alle sieben Module finden Sie unter <a className="link-underline puk-link--inline" href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>.</p>
+          <h2 className="entry-paths-title">Wählen Sie den Zugang, der gerade passt.</h2>
+          <p className="entry-paths-intro">Sie können ein Thema lesen, ein Werkzeug ausprobieren oder Beratung suchen. Alle sieben Module finden Sie unter <a className="link-underline puk-link--inline" href={navHref('module')} onClick={navHandler('module', onNavigate)}>Module</a>.</p>
           <ul className="module-list" role="list" aria-label="Drei Wege zum Einstieg">
             <li>
               <a className="module-row" href={navHref('module')} onClick={navHandler('module', onNavigate)}>

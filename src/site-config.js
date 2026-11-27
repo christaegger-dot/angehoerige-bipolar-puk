@@ -26,8 +26,21 @@ const SITE = {
       reviewedAt: '09.10.2026',
     },
   },
+  // Redaktionsstatus im Format des Profils («Fachlich freigegeben am TT.MM.JJJJ»). Das Datum trägt
+  // nur die Fachstelle ein, wenn sie die Inhalte fachlich freigegeben hat. Bis dahin zeigt die
+  // Fusszeile den Entwurf, und die Release-Prüfung (scripts/verify-release-evidence.mjs) blockiert.
+  editorial: {
+    approvedOn: null,
+  },
 };
 
 const SENDER_MAILTO = `mailto:${SITE.sender.email}`;
 
-export { SITE, SENDER_MAILTO };
+const EDITORIAL_DRAFT_LABEL = 'Entwurf, fachliche Freigabe ausstehend';
+
+function editorialStatusLabel(site = SITE) {
+  const approvedOn = site.editorial?.approvedOn;
+  return approvedOn ? `Fachlich freigegeben am ${approvedOn}` : EDITORIAL_DRAFT_LABEL;
+}
+
+export { SITE, SENDER_MAILTO, EDITORIAL_DRAFT_LABEL, editorialStatusLabel };

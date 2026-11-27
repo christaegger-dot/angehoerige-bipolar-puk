@@ -368,3 +368,99 @@ small { font-size: var(--size-body-sm); }
 @media (forced-colors: active) {
   .module-body ul.key-points li::before { background-color: CanvasText; forced-color-adjust: none; }
 }
+
+/* ── Etappe 5: Klassen statt style-Attribute (Fachstellen-Profil 2026.10.2, «keine style-Attribute») ──
+   Die Werte stammen unverändert aus den früheren style-Attributen im JSX. Die Selektoren tragen
+   ein :is(…) mit der Elementklasse, damit sie wie vorher die Regeln für .lede, h1 usw. überstimmen. */
+:is(div, p, h1, h2).hero-eyebrow { margin-bottom: var(--space-6); }
+:is(div, p).hero-after-title { margin-top: var(--space-8); }
+:is(p, h1, h2).measure-20 { max-width: 20ch; }
+:is(p, h1, h2).measure-22 { max-width: 22ch; }
+:is(p, h1, h2).measure-34 { max-width: 34ch; }
+:is(p, h1, h2).measure-40 { max-width: 40ch; }
+:is(p, h1, h2).measure-44 { max-width: 44ch; }
+:is(p, h1, h2).measure-46 { max-width: 46ch; }
+:is(p, h1, h2).measure-54 { max-width: 54ch; }
+:is(p, h1, h2).measure-60 { max-width: 60ch; }
+section.section-flush { padding-top: 0; }
+div.container-text { max-width: 720px; }
+p.page-stand { margin-top: var(--space-16); color: var(--ink-3); font-size: var(--size-body-sm); }
+ul.list-after-heading { margin-top: var(--space-2); }
+h2.tool-step-title { font-style: normal; margin-top: var(--space-2); }
+p.tool-note { color: var(--ink-soft); }
+div.tool-actions { margin-top: var(--space-6); }
+div.tool-actions-tight { margin-top: var(--space-5); }
+h2.entry-paths-title { max-width: 20ch; margin-bottom: var(--space-2); }
+p.entry-paths-intro { color: var(--ink-soft); max-width: 52ch; margin-bottom: var(--space-8); }
+p.triage-intro-lead { max-width: 50ch; margin-top: var(--space-4); }
+strong.footer-credit-name { color: var(--ink); font-weight: var(--fw-medium); }
+dd.selbsttest-answer { margin: var(--space-1) 0 var(--space-5); }
+span.saeulen-progress-pillar { color: var(--accent); }
+span.saeulen-progress-count { color: var(--ink-mute); font-size: var(--size-caption); }
+strong.saeulen-emphasis { color: var(--accent); }
+
+/* Atemübung: Grösse und Dauer je Phase. Die Dauern stimmen mit ATEM_PHASEN in
+   src/werkzeuge-tools.jsx überein (Test «breathing phases»). */
+.atem-circle.atem-einatmen { transform: scale(1); transition-duration: 4000ms; animation-duration: 4000ms; }
+.atem-circle.atem-halten { transform: scale(1); transition-duration: 2000ms; animation-duration: 2000ms; }
+.atem-circle.atem-ausatmen { transform: scale(.4); transition-duration: 6000ms; animation-duration: 6000ms; }
+.atem-circle.atem-pause { transform: scale(.4); transition-duration: 2000ms; animation-duration: 2000ms; }
+.atem-done .atem-circle { transform: scale(.7); }
+p.atem-done-text { max-width: 36ch; text-align: center; margin: 0 auto var(--space-6); }
+div.atem-done-actions { display: flex; gap: var(--space-4); justify-content: center; }
+
+/* Fortschrittsbalken als natives <progress> (Lesefortschritt, Selbsttest, Säulen-Check). */
+progress.reading-progress,
+progress.selbsttest-progress-bar {
+  appearance: none;
+  border: 0;
+  width: 100%;
+  color: var(--accent);
+  background: transparent;
+}
+progress.reading-progress { display: block; }
+progress.selbsttest-progress-bar { background: var(--paper-edge); }
+progress.reading-progress::-webkit-progress-bar { background: transparent; }
+progress.selbsttest-progress-bar::-webkit-progress-bar { background: var(--paper-edge); }
+progress.reading-progress::-webkit-progress-value,
+progress.selbsttest-progress-bar::-webkit-progress-value { background: var(--accent); }
+progress.reading-progress::-moz-progress-bar,
+progress.selbsttest-progress-bar::-moz-progress-bar { background: var(--accent); }
+
+/* Säulen-Check: Balken als SVG-Rechteck; die Höhe steht als Attribut im Markup. */
+svg.saeulen-result-bar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+svg.saeulen-result-bar rect { fill: var(--accent); stroke: var(--ink); stroke-width: 1px; vector-effect: non-scaling-stroke; }
+
+/* Lage der Wörter im Eisberg (Modul 2 und Werkzeug) und der Knoten im Teufelskreis, in Prozent der Bühne. */
+.eisberg-word[data-word="sorge"] { left: 50%; top: 18%; }
+.eisberg-word[data-word="geduld"] { left: 72%; top: 28%; }
+.eisberg-word[data-word="hilfsbereitschaft"] { left: 28%; top: 30%; }
+.eisberg-word[data-word="erschoepfung"] { left: 50%; top: 64%; }
+.eisberg-word[data-word="wut"] { left: 26%; top: 52%; }
+.eisberg-word[data-word="scham"] { left: 74%; top: 50%; }
+.eisberg-word[data-word="einsamkeit"] { left: 30%; top: 76%; }
+.eisberg-word[data-word="schuld"] { left: 70%; top: 76%; }
+.eisberg-word[data-word="trauer"] { left: 50%; top: 88%; }
+.eisberg-word[data-word="angst"] { left: 22%; top: 90%; }
+.eisberg-word[data-word="erstarrung"] { left: 78%; top: 90%; }
+.ee-node[data-node="schuld"] { left: 50%; top: 14%; }
+.ee-node[data-node="engagement"] { left: 86%; top: 50%; }
+.ee-node[data-node="erschoepfung"] { left: 50%; top: 86%; }
+.ee-node[data-node="kritik"] { left: 14%; top: 50%; }
+
+/* Offener Werkzeug-Dialog: Die Seite darunter scrollt nicht mit (vorher per style am body). */
+body.tool-overlay-open { overflow: hidden; }
+
+/* Belastungsverlauf: Linie A tritt zurück, Linie B erscheint. */
+path.bv-line-a { transition: opacity .4s; }
+path.bv-line-b { animation: fadeUp .6s; }
+
+/* Impressum und Datenschutz auf einer Seite: Abschnitt (h2), Unterabschnitt (h3), Punkt (h4).
+   h4 sieht hier aus wie h3 im Fliesstext, nicht wie die kleine Versalzeile der übrigen Seiten. */
+.legal-text h3 { font-size: var(--size-title-3); line-height: 1.3; margin-top: var(--space-12); margin-bottom: var(--space-3); }
+.legal-text h4 { font-family: var(--font-core); font-size: var(--size-lead); font-weight: var(--fw-regular); line-height: 1.3; letter-spacing: 0; text-transform: none; color: var(--ink); margin-top: var(--space-8); margin-bottom: var(--space-2); }

@@ -22,7 +22,7 @@ hier nicht. Die Regeln der umgesetzten Abschnitte prüfen `npm test`,
 
 ## Status
 
-Stand der Website: Etappen 1 bis 4 des Wechsels auf das Fachstellen-Profil 2026.10.2
+Stand der Website: Etappen 1 bis 5 des Wechsels auf das Fachstellen-Profil 2026.10.2
 (26. November 2026). Entscheide und geänderte Wortlaute: `_dev/PROFILWECHSEL-2026-10-2.md`.
 
 | Stufe | Status | Datum | Geprüft durch | Ergebnis |
@@ -156,6 +156,33 @@ Arbeitsstand vom 26. November 2026, keine Prüfstufe. Geprüft ist nur, was Etap
 | `npm run test:release-evidence` | 22 von 22 |
 | `npm audit --audit-level=high` | 0 Schwachstellen |
 
+### Etappe 5: style-Attribute, 404-Seite, Impressum und Datenschutz, Redaktionsstatus
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | Keine `style`-Attribute | erfüllt im Markup | Test `src/test/inline-styles.test.js` (kein `style=` im JSX), Test «renders no style attribute» je Route, `profile/no-style-attributes` in 30 Ansichten (Seiten, Werkzeuge, Handouts). Zur Laufzeit bleiben `--mobile-module-nav-height` am Wurzelelement auf dem Telefon und das kurze Ausblenden durch React beim Werkzeugwechsel (CSSOM) |
+| 2 | Darstellung unverändert | erfüllt bis auf zwei Übergänge | 230 Elemente in 66 Zuständen verglichen: 228 mit gleichen berechneten Werten und gleicher Lage, 2 nur im Zwischenstand der Atemanimation verschieden. 30 ersetzte Balken per Bildschirmfoto: Atemkreis, Eisberg, Teufelskreis pixelgleich, Säulenbalken bis auf Subpixel gleich; Fortschrittsbalken ohne Übergang |
+| 3 | CSP ohne `'unsafe-inline'` | erfüllt | `netlify.toml`; `security/csp-no-violation` in 30 Ansichten bei 360 px, eigener Lauf bei 375 und 1366 px ohne Verstoss; Gegenprobe mit eingefügtem `style` meldet den Verstoss |
+| 4 | Echte 404-Seite | erfüllt im Build, bei Netlify nicht geprüft | `dist/404.html` = `index.html` (`profile/404-file`), Seite unter `/404.html` mit H1 «Diese Seite gibt es nicht» (`profile/404-page`), Regeln in `netlify.toml` per Test `src/test/netlify-redirects.test.js`. Status 404 und die 301-Weiterleitungen sind auf dem Vorschau-Deploy nachzuprüfen |
+| 5 | Eine Seite «Impressum und Datenschutz» | erfüllt | `/impressum-datenschutz` mit H2 «Impressum» und «Datenschutz»; `/datenschutz` öffnet bei 1366 und 375 px den Abschnitt, setzt die Adresse auf `/impressum-datenschutz#datenschutz` und fokussiert die Überschrift; Route-Test für alle früheren Adressen |
+| 6 | Wortlaut übernommen | erfüllt, mit Ergänzungen | Inhalt beider Seiten unverändert; neu: Kopf, Abschnittstitel, Punkt «Links auf andere Websites» (Wortlaut der Vorlage). Liste in `_dev/PROFILWECHSEL-2026-10-2.md`, «Etappe 5» |
+| 7 | Redaktionsstatus im Format des Profils | erfüllt als Entwurf | Fusszeile «Entwurf, fachliche Freigabe ausstehend» (`data-editorial-status="draft"`); `editorial` in `scripts/verify-release-evidence.mjs` blockiert ohne gültiges Datum (Test «production needs the editorial approval date of the Fachstelle») |
+| 8 | Sichtprüfung | teilweise | Angesehen: neue Seite bei 1366 px (ganze Länge), Sprung von `/datenschutz` bei 1366 und 375 px, Fusszeile, Balken der Werkzeuge vorher und nachher. Die neue Seite bei 375 px ist nur gemessen |
+
+### Kennzahlen der Etappe 5 (zum Nachrechnen)
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm test` | 338 Tests in 36 Dateien bestanden |
+| `npm run lint` | ohne Befund |
+| `npm run audit:website` | 782 Prüfungen, 0 Fehler |
+| `npm run audit:tools` | 225 Prüfungen, 0 Befunde |
+| `npm run audit:print` | 71 von 71 Prüfungen |
+| `npm run audit:puk` (kanonischer Auditor 1.10.1, Entwurf) | bestanden, 14 gerenderte Routen |
+| `npm run test:release-evidence` | 23 von 23 |
+| `npm audit --audit-level=high` | 0 Schwachstellen |
+| `npm run audit:release:evidence` | nicht bestanden: Screenreader-Läufe fehlen (wie bisher) und neu der Redaktionsstatus (Entwurf) |
+
 ## Visualisierungs-Check
 
 In Etappe 1 wurde keine Figur gebaut oder geändert. Der Check der ganzen Website nach dem
@@ -193,6 +220,7 @@ Einzelheiten stehen in `_dev/PROFILWECHSEL-2026-10-2.md`.
 - 14 geänderte Sätze (Nummern durch «Sanität», «Polizei» oder die E-Mail-Adresse ersetzt).
 - Orte des Verweises im Text, auch die drei bewusst ausgelassenen Stellen.
 - Das Werkzeug «Säulen-Check» zählt Punktwerte je Säule (das Profil lässt keine Scores zu); der Selbsttest ist nicht betroffen. Einstieg der Startseite als Situationsnavigator prüfen.
+- Etappe 5: Seite «Impressum und Datenschutz»: neuer Kopf, Abschnittstitel und der Punkt «Links auf andere Websites» aus der Vorlage des Profils. Datum der fachlichen Freigabe für den Redaktionsstatus (`src/site-config.js`).
 
 ### W2 Gesamtkohärenz
 
@@ -203,6 +231,7 @@ Einzelheiten stehen in `_dev/PROFILWECHSEL-2026-10-2.md`.
 
 ### S Sprach-Review
 
+- Etappe 5: Kopf der Seite «Impressum und Datenschutz», Punkt «Links auf andere Websites», Fusszeile «Entwurf, fachliche Freigabe ausstehend».
 - Etappe 3: Namen für Hilfsmittel «Vorschlag» und «Weniger hilfreich» (Module 6 und 7), Name des Logo-Links.
 - Seite «Nicht gefunden» im Standardwortlaut des Profils, mit «Startseite» statt «Übersicht».
 - «Sich bei der Fachstelle melden», «bevor ich mich melde», Zusatz «werktags» neben der
@@ -212,10 +241,12 @@ Einzelheiten stehen in `_dev/PROFILWECHSEL-2026-10-2.md`.
 
 - Absenderzeile bei 320, 360, 768 und 1440 px; E-Mail-Link als Textlink ohne 44 px.
 - Telefon-Kopf: Name der Website neben dem Logo ab 360 px.
+- Etappe 5: Überschriftenfolge der Seite «Impressum und Datenschutz» (H2, H3, H4); Sprung von `/impressum` und `/datenschutz`; 404-Status und 301 bei Netlify.
 - Etappe 4: Abstände nach der Umstellung, besonders der schmalere Textkasten in Handouts auf dem Telefon und der Einstieg auf hohen Bildschirmen (fluide Abstände jetzt bis 96 px).
 
 ### W3 Code-Review
 
+- Etappe 5: Klassen statt `style` in `src/puk-website.css`, `ReadingProgress`, Lage der Eisberg-Wörter und Teufelskreis-Knoten im CSS, Plugin für `404.html` in `vite.config.js`, Regeln in `netlify.toml`, CSP ohne `'unsafe-inline'`, Adressen in `src/routes.js` (`MOVED`), Prüfung `editorial` in `scripts/verify-release-evidence.mjs`, Ausschluss von `404.html` im Adapter `scripts/puk-audit/run.mjs`.
 - Etappe 4: Zuordnung der Abstände (Skript-Ergebnis in vier Stylesheets, 638 Deklarationen), Ausnahmenliste in `src/test/spacing-scale.test.js`, eigene Abstände der Quellenangaben, entfernte Initialen-Regel und Altaliasse `--space-7`/`--space-9`.
 - Etappe 2: Zuordnung der Schriftgrade (Skript-Ergebnis in `src/styles.css`, 311 Angaben), Token-Überschreibungen in `src/design-tokens.css`, entfernte Notregeln mit `!important`.
 - `src/site-config.js` als einzige Quelle der Wortlaute; `SenderLine` und

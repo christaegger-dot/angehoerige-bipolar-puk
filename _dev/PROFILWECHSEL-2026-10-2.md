@@ -1,4 +1,4 @@
-# Wechsel auf das Fachstellen-Profil 2026.10.2 · Etappen 1 bis 4
+# Wechsel auf das Fachstellen-Profil 2026.10.2 · Etappen 1 bis 5
 
 Stand: 26. November 2026. Massgebend ist das Design-System «PUK Zürich Website-Profil»
 (Fachstellen-Profil 2026.10.2, Stand 15.10.2026) auf Basis des PUK Zürich Design Systems
@@ -159,16 +159,16 @@ Diese Etappe deckt «Absenderin», «Zuständigkeit statt Krisenzugang», «ein 
 | Kopf nicht fixiert | umgesetzt in Etappe 3 |
 | Skip-Link «Zum Hauptinhalt» | umgesetzt in Etappe 3 |
 | Name des Logo-Links «Psychiatrische Universitätsklinik Zürich – zur Startseite dieser Website» | umgesetzt in Etappe 3, ergänzt um den sichtbaren Namen der Website (siehe unten) |
-| Eine Seite «Impressum und Datenschutz» | zwei Seiten, dazu «Barrierefreiheit»; die Datenschutzseite nennt Links auf andere Websites nicht (die Vorlage des Profils hat dazu einen Satz) |
-| Veröffentlichte `404.html` | Seite «Nicht gefunden» nur als Route; Netlify antwortet mit Status 200 |
-| Redaktionsstatus «Fachlich freigegeben am TT.MM.JJJJ» | Fusszeile nennt «Redaktioneller Stand: Oktober 2026» |
+| Eine Seite «Impressum und Datenschutz» | umgesetzt in Etappe 5 (`/impressum-datenschutz`, mit dem Punkt der Vorlage zu Links auf andere Websites); «Barrierefreiheit» bleibt eine eigene Seite |
+| Veröffentlichte `404.html` | umgesetzt in Etappe 5; Netlify antwortet für unbekannte Adressen mit Status 404 (am Vorschau-Deploy zu prüfen) |
+| Redaktionsstatus «Fachlich freigegeben am TT.MM.JJJJ» | Format umgesetzt in Etappe 5; bis zur fachlichen Freigabe steht «Entwurf, fachliche Freigabe ausstehend», und die Release-Prüfung blockiert |
 | Keine Unicode-Symbole als Icons | umgesetzt in Etappe 3; offen bleibt der Pfeil in der Achsenbeschriftung der Figur «Belastungsverlauf» |
 | Ein Fokussystem | umgesetzt in Etappe 3 |
 | Nur semantische Tokens | Alt-Aliasse und Primitiven im App-CSS |
 | Schriftgrade aus der Skala | umgesetzt in Etappe 2 (siehe unten); offen bleiben die Beschriftungen in den SVG-Figuren |
 | Lesetext in Seitenschrift (21 px, schmal 19 px) | umgesetzt für Fliesstext der Module und die Fusszeile; Karten, Listen, Fragen und Handouts stehen weiter in UI-Grösse |
 | Abstände aus der Skala | umgesetzt in Etappe 4 (siehe unten); offen bleiben Positionen von Markierungen und die Werte des Kits |
-| Keine `style`-Attribute | Inline-Styles im JSX |
+| Keine `style`-Attribute | umgesetzt in Etappe 5; die CSP kommt ohne `'unsafe-inline'` aus. Zur Laufzeit bleibt die gemessene Höhe der Modulnavigation auf dem Telefon als CSS-Variable am Wurzelelement |
 | Visualisierungsplan je Abschnitt, drei Ebenen je Figur | nur der ältere `_dev/PUK-VISUALISIERUNGSPLAN.md` |
 | Erzwungene Farben, Theme «Hoher Kontrast» | nicht geprüft |
 | Tokenwerte `surface-brand`, `action-accent-bg` | umgesetzt in Etappe 3 (#3C64FF wie im Profil) |
@@ -367,6 +367,106 @@ bleibt ohne Scrollen sichtbar.
   Zeitachsen) stehen weiter in px.
 - **Browser-Vorgaben:** Listen ohne eigene Regel haben 1 em Abstand oben und unten.
 - **Inline-Styles** im JSX (Profilregel «keine `style`-Attribute») gehören zur Etappe «Struktur».
+
+## Etappe 5: Struktur (26. November 2026)
+
+Auf Vorschlag umgesetzt («einverstanden. leg los»). Die Fachstelle hat am 26. November 2026
+entschieden: Impressum und Datenschutz zusammenlegen, den Punkt der Vorlage zu Links auf andere
+Websites im Wortlaut ergänzen, den Redaktionsstatus im Format des Profils mit Entwurf und Sperre
+führen, den Fingerprint neu binden.
+
+### Keine `style`-Attribute
+
+- **89 `style`-Attribute im JSX entfernt**, dazu die Scroll-Sperre per `style` am `body` des
+  Werkzeug-Dialogs (jetzt Klasse `tool-overlay-open`).
+- **Feste Werte** stehen als Klassen in `src/puk-website.css` (Block «Etappe 5: Klassen statt
+  style-Attribute»), mit unveränderten Werten. Die Selektoren tragen das Element (`p.tool-note`,
+  `:is(p, h1, h2).measure-44`), damit sie wie vorher die Regeln für `.lede`, `h1` usw. überstimmen.
+- **Werte aus Daten:**
+  - Lesefortschritt der Module: gemeinsame Komponente `ReadingProgress` in `src/shared.jsx` mit
+    einem `<progress>` (für Hilfsmittel ausgeblendet) statt sieben Kopien mit `style`. Die Module 5
+    bis 7 messen jetzt wie die Module 1 bis 4 den Artikel statt der ganzen Seite.
+  - Fortschritt im Selbsttest und im Säulen-Check: `<progress>`, ebenfalls ausgeblendet; die Zeile
+    «Frage x von n» nennt den Stand.
+  - Balken im Ergebnis des Säulen-Checks: SVG-Rechteck mit der Höhe als Attribut.
+  - Lage der Wörter im Eisberg (Modul 2 und Werkzeug) und der Knoten im Teufelskreis: im CSS über
+    `data-word` bzw. `data-node`; die Werte `x`/`y` bzw. `pos` sind aus den Daten entfernt.
+  - Atemübung: Grösse und Dauer je Phase als Klassen; ein Test prüft, dass die Dauern im CSS mit
+    `ATEM_PHASEN` übereinstimmen.
+- **Prüfung vorher und nachher:** In 66 Zuständen (15 Seiten und 9 Werkzeuge mit Einstieg,
+  Fragen und Ergebnis, je bei 1366 und 375 px) hatten 260 Elemente ein `style`-Attribut. Von den
+  230 gleich gebliebenen Elementen haben 228 dieselben berechneten Werte (Abstände, Breiten,
+  Farben, Schrift, Lage, Animation) und dieselbe Lage; 2 weichen nur im Zwischenstand der
+  laufenden Atemanimation ab. Die 30 ersetzten Elemente (Fortschritts- und Säulenbalken) sind
+  per Bildschirmfoto verglichen: Atemkreis, Eisberg und Teufelskreis pixelgleich, Säulenbalken
+  bis auf Bruchteile eines Pixels gleich. Fortschrittsbalken springen jetzt ohne den kurzen
+  Übergang (0,1 bzw. 0,32 s).
+- **Content-Security-Policy:** `style-src 'self'` ohne `'unsafe-inline'` (`netlify.toml`). Ein
+  Lauf mit dieser CSP über alle Seiten, Werkzeuge und Handouts bei 375 und 1366 px ergab keinen
+  Verstoss; ein absichtlich eingefügtes `style` wurde erkannt. React setzt Stile über das CSSOM,
+  das die CSP nicht sperrt; deshalb lief auch der Stand vor Etappe 5 ohne Verstoss.
+- **Was zur Laufzeit bleibt:** Auf dem Telefon misst die Modulnavigation ihre Höhe und setzt sie
+  als `--mobile-module-nav-height` am Wurzelelement (`html`), damit Sprungziele nicht darunter
+  verschwinden. Beim direkten Wechsel zwischen zwei Werkzeugen blendet React den alten Dialog
+  während des Nachladens kurz per `display: none` aus. Beides läuft über das CSSOM, ist mit der
+  CSP vereinbar und gehört nicht zum Markup der Seiten.
+
+### 404-Seite
+
+- Der Build schreibt `dist/404.html` als Kopie von `index.html` (Plugin in `vite.config.js`); die
+  App zeigt an jeder unbekannten Adresse «Diese Seite gibt es nicht».
+- `netlify.toml`: Die 13 Adressen der App (ausser `/`) liefern `index.html` mit Status 200, die
+  früheren Adressen `/impressum` und `/datenschutz` leiten mit 301 in den passenden Abschnitt,
+  alle übrigen Adressen erhalten `404.html` mit Status 404. Bisher antwortete Netlify überall
+  mit 200. Ein Test hält die Liste mit `src/routes.js` gleich.
+- Der kanonische Auditor 1.10.1 bekommt `404.html` nicht mit: Er prüft gerenderte Routen, die
+  ungerenderte Hülle hätte weder Skip-Link noch H1. Die Fehlerseite prüfen das Website-Audit
+  (`profile/404-file`, `profile/404-page`) und die Tests.
+
+### Impressum und Datenschutz
+
+- Neue Seite `/impressum-datenschutz` (`src/impressum-datenschutz.jsx`) mit den Abschnitten
+  «Impressum» (`#impressum`) und «Datenschutz» (`#datenschutz`). `src/impressum.jsx` und
+  `src/datenschutz.jsx` entfallen. Die Fusszeile hat einen Link «Impressum und Datenschutz»
+  statt zwei.
+- Der Wortlaut beider Seiten ist unverändert übernommen. Die Überschriften rücken eine Stufe
+  tiefer (H2 wird H3, H3 wird H4); damit die Punkte des Datenschutzes nicht als kleine
+  Versalzeile erscheinen, sieht H4 auf dieser Seite aus wie H3 im Fliesstext.
+- Die Einleitungen der beiden früheren Seiten stehen jetzt als erster Absatz ihres Abschnitts.
+- Frühere Adressen: `/impressum`, `/datenschutz` und die alten Hash-Adressen `#impressum`,
+  `#datenschutz` öffnen den passenden Abschnitt und setzen die Adresse auf die neue Seite.
+
+| Ort | Vorher | Nachher |
+| --- | --- | --- |
+| Kopf der Seite | Kicker «Impressum», H1 «Impressum.» bzw. Kicker «Datenschutz», H1 «Was passiert mit Ihren Daten?» | Kicker «Über diese Website», H1 «Impressum und Datenschutz.», Einleitung «Wer diese Website herausgibt und welche Daten bei Ihrem Besuch anfallen.» (Vorlage des Profils) |
+| Abschnitte | — | H2 «Impressum» und H2 «Datenschutz» (Vorlage des Profils) |
+| Datenschutz, neuer Punkt vor «Was wir nicht tun» | — | H4 «Links auf andere Websites»: «Wenn Sie einem Link auf eine andere Website folgen, gelten dort deren Regeln zum Datenschutz.» (Wortlaut der Vorlage) |
+| Fusszeile, Link | «Impressum», «Datenschutz» | «Impressum und Datenschutz» |
+| Seitentitel und Beschreibung | «Impressum \| PUK Zürich», «Angaben zur Trägerschaft, inhaltlichen Verantwortung und zum Kontakt.»; «Datenschutz — Was passiert mit Ihren Daten? \| PUK Zürich», «Wie diese Website Daten verarbeitet, was mit Ihren Eingaben in den Werkzeugen passiert und wie Sie frühere Entwürfe aus dem Browser entfernen.» | «Impressum und Datenschutz \| PUK Zürich», «Wer diese Website herausgibt und welche Daten bei Ihrem Besuch anfallen.» |
+
+Entfallen sind damit die Überschriften «Impressum.» und «Was passiert mit Ihren Daten?», die
+beiden Kicker und die beiden Seitenbeschreibungen. Prüfbedarf W1 und S: Kopf, Abschnittstitel
+und der neue Punkt zu Links.
+
+### Redaktionsstatus
+
+- `src/site-config.js` › `editorial.approvedOn`: Datum der fachlichen Freigabe (TT.MM.JJJJ),
+  zurzeit `null`. Die Fusszeile zeigt bis dahin «Entwurf, fachliche Freigabe ausstehend», danach
+  «Fachlich freigegeben am TT.MM.JJJJ»; vorher stand dort «Redaktioneller Stand: Oktober 2026».
+- `scripts/verify-release-evidence.mjs` prüft den Status (`editorial`): Ohne gültiges Datum, das
+  nicht in der Zukunft liegt, ist die Release-Prüfung nicht bestanden. Sie läuft im
+  Produktions-Build bei Netlify und im Workflow «Production release readiness».
+- Die Zeilen «Redaktioneller Stand: Oktober 2026» (Impressum) und «Stand: Oktober 2026»
+  (Datenschutz) auf der neuen Seite bleiben unverändert.
+- Das Datum trägt nur die Fachstelle ein, wenn sie die Inhalte fachlich freigegeben hat; eine
+  Freigabe ist zurzeit nicht dokumentiert (alle Prüfstufen offen).
+
+### Offen nach Etappe 5
+
+- Netlify: Status 404 und die beiden 301-Weiterleitungen am Vorschau-Deploy nachprüfen; die
+  Prüfungen hier laufen auf `vite preview`, das `netlify.toml` nicht liest.
+- Im Säulen-Check bricht die Bezeichnung «Beziehungen» in der schmalen Spalte des Ergebnisses
+  mitten im Wort um («Beziehunge / n»), vorher wie nachher.
 
 ## Vorschlag zu den Webadressen (nicht eingebaut)
 

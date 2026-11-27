@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { ROUTES } from '../src/routes.js';
 import { TOOLS } from '../src/site-content.js';
 
@@ -279,6 +279,26 @@ export async function validatePrivacyAcceptance(policy, { root = PROJECT_ROOT, f
   return { passed: errors.length === 0, errors };
 }
 
+// Redaktionsstatus des Fachstellen-Profils 2026.10.2: «Fachlich freigegeben am TT.MM.JJJJ»
+// (src/site-config.js › editorial.approvedOn). Ohne gültiges Datum der Fachstelle keine Produktion.
+export async function validateEditorialStatus({ root = PROJECT_ROOT, now = new Date() } = {}) {
+  const errors = [];
+  let approvedOn = null;
+  try {
+    const file = path.join(root, 'src/site-config.js');
+    const module = await import(`${pathToFileURL(file).href}?sha256=${digest(await fs.readFile(file))}`);
+    approvedOn = module.SITE?.editorial?.approvedOn ?? null;
+  } catch (error) {
+    errors.push(`Redaktionsstatus nicht lesbar: ${error.message}`);
+  }
+  if (!errors.length) {
+    const match = typeof approvedOn === 'string' ? /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(approvedOn) : null;
+    if (!match) errors.push('Redaktionsstatus: Die fachliche Freigabe fehlt. Die Fachstelle trägt das Datum in src/site-config.js ein (editorial.approvedOn, TT.MM.JJJJ).');
+    else if (!validDate(`${match[3]}-${match[2]}-${match[1]}`, now)) errors.push(`Redaktionsstatus: ${approvedOn} ist kein gültiges Datum oder liegt in der Zukunft.`);
+  }
+  return { passed: errors.length === 0, approvedOn, errors };
+}
+
 export async function verifyReleaseEvidence({ root = PROJECT_ROOT, distDirectory = 'dist', evidenceFile = 'website-screenreader-test.json', now = new Date() } = {}) {
   const errors = [];
   let fingerprint;
@@ -295,7 +315,8 @@ export async function verifyReleaseEvidence({ root = PROJECT_ROOT, distDirectory
   }
   const screenreader = await validateScreenreaderEvidence(evidence, { root, fingerprint, profile, now });
   const privacy = await validatePrivacyAcceptance(policy, { root, fingerprint, now });
-  return { passed: !errors.length && screenreader.passed && privacy.passed, fingerprint, screenreader, privacy, errors };
+  const editorial = await validateEditorialStatus({ root, now });
+  return { passed: !errors.length && screenreader.passed && privacy.passed && editorial.passed, fingerprint, screenreader, privacy, editorial, errors };
 }
 
 export function createPendingScreenreaderTemplate(fingerprint) {

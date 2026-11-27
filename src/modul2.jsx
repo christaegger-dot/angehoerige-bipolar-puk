@@ -1,12 +1,12 @@
 // Modul 2 — Die eigene Belastung verstehen · Volles Lese-Layout
 // Zentrales Bild: Eisberg-Figur (sichtbar / verborgen) in der Bildmarke der Seite.
 
-import React from 'react';
 import { Eisberg } from './eisberg.jsx';
 import { ModuleQuickStart, EvidenceSources, EvidenceCitation, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { SITE, SENDER_MAILTO } from './site-config.js';
 import { Icon } from './icon.jsx';
+import { ReadingProgress } from './shared.jsx';
 
 
 function EisbergFigur() {
@@ -14,21 +14,21 @@ function EisbergFigur() {
   //   primary = das eine Hauptwort (gross, kursiv)
   //   secondary = mittel
   //   tertiary = klein
-  // Positionen sind in Prozent des Containers, damit es responsiv bleibt.
+  // Die Lage der Wörter steht im CSS (`.eisberg-word[data-word]`), in Prozent der Bühne.
   const above = [
-    { label: 'Sorge', kind: 'primary', x: 50, y: 18 },
-    { label: 'Geduld', kind: 'tertiary', x: 72, y: 28 },
-    { label: 'Hilfsbereitschaft', kind: 'secondary', x: 28, y: 30 },
+    { key: 'sorge', label: 'Sorge', kind: 'primary' },
+    { key: 'geduld', label: 'Geduld', kind: 'tertiary' },
+    { key: 'hilfsbereitschaft', label: 'Hilfsbereitschaft', kind: 'secondary' },
   ];
   const below = [
-    { label: 'Erschöpfung', kind: 'primary', x: 50, y: 64 },
-    { label: 'Wut', kind: 'secondary', x: 26, y: 52 },
-    { label: 'Scham', kind: 'tertiary', x: 74, y: 50 },
-    { label: 'Einsamkeit', kind: 'secondary', x: 30, y: 76 },
-    { label: 'Schuldgefühle', kind: 'tertiary', x: 70, y: 76 },
-    { label: 'Trauer', kind: 'tertiary', x: 50, y: 88 },
-    { label: 'Angst', kind: 'tertiary', x: 22, y: 90 },
-    { label: 'Erstarrung', kind: 'tertiary', x: 78, y: 90 },
+    { key: 'erschoepfung', label: 'Erschöpfung', kind: 'primary' },
+    { key: 'wut', label: 'Wut', kind: 'secondary' },
+    { key: 'scham', label: 'Scham', kind: 'tertiary' },
+    { key: 'einsamkeit', label: 'Einsamkeit', kind: 'secondary' },
+    { key: 'schuld', label: 'Schuldgefühle', kind: 'tertiary' },
+    { key: 'trauer', label: 'Trauer', kind: 'tertiary' },
+    { key: 'angst', label: 'Angst', kind: 'tertiary' },
+    { key: 'erstarrung', label: 'Erstarrung', kind: 'tertiary' },
   ];
 
   return (
@@ -46,20 +46,20 @@ function EisbergFigur() {
       <div className="eisberg-stage" aria-hidden="true">
         <Eisberg />
 
-        {above.map((item, i) => (
+        {above.map((item) => (
           <span
-            key={'a' + i}
+            key={item.key}
             className={`eisberg-word eisberg-${item.kind} eisberg-above-word`}
-            style={{ left: `${item.x}%`, top: `${item.y}%` }}
+            data-word={item.key}
           >
             {item.label}
           </span>
         ))}
-        {below.map((item, i) => (
+        {below.map((item) => (
           <span
-            key={'b' + i}
+            key={item.key}
             className={`eisberg-word eisberg-${item.kind} eisberg-below-word`}
-            style={{ left: `${item.x}%`, top: `${item.y}%` }}
+            data-word={item.key}
           >
             {item.label}
           </span>
@@ -201,23 +201,6 @@ function SchritteBlock() {
 }
 
 function Modul2Page({ onNavigate }) {
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    const onScroll = () => {
-      const el = document.querySelector('.module-article');
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const total = rect.height - window.innerHeight;
-      const scrolled = -rect.top;
-      const pct = Math.max(0, Math.min(100, (scrolled / total) * 100));
-      setProgress(pct);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const sections = [
     { id: 's1', label: 'Was belasten kann' },
     { id: 's2', label: 'Der Belastungs-Eisberg' },
@@ -231,7 +214,7 @@ function Modul2Page({ onNavigate }) {
 
   return (
     <>
-      <div className="reading-progress" style={{width: `${progress}%`}}></div>
+      <ReadingProgress />
 
       <article className="module-article">
         <header className="module-detail-header">

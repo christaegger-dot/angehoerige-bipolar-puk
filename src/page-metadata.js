@@ -26,13 +26,9 @@ const PAGE_METADATA = {
     title: `${ANLAUFSTELLEN_ENTRY.title} | PUK Zürich`,
     description: ANLAUFSTELLEN_ENTRY.desc,
   },
-  impressum: {
-    title: 'Impressum | PUK Zürich',
-    description: 'Angaben zur Trägerschaft, inhaltlichen Verantwortung und zum Kontakt.',
-  },
-  datenschutz: {
-    title: 'Datenschutz — Was passiert mit Ihren Daten? | PUK Zürich',
-    description: 'Wie diese Website Daten verarbeitet, was mit Ihren Eingaben in den Werkzeugen passiert und wie Sie frühere Entwürfe aus dem Browser entfernen.',
+  'impressum-datenschutz': {
+    title: 'Impressum und Datenschutz | PUK Zürich',
+    description: 'Wer diese Website herausgibt und welche Daten bei Ihrem Besuch anfallen.',
   },
   barrierefreiheit: {
     title: 'Erklärung zur Barrierefreiheit | PUK Zürich',

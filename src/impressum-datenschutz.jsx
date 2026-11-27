@@ -1,24 +1,91 @@
+// Impressum und Datenschutz auf einer Seite (Fachstellen-Profil 2026.10.2, Etappe 5).
+// Der Wortlaut stammt unverändert aus den früheren Seiten /impressum und /datenschutz; neu sind die
+// Überschriften der Seite und der Abschnitte, die Einleitung der Profilvorlage und der Punkt
+// «Links auf andere Websites» aus der Vorlage (Prüfbedarf W1 und S).
 
-function DatenschutzPage() {
+function ImpressumDatenschutzPage() {
   return (
     <>
       <header className="about-hero">
         <div className="container">
-          <div className="eyebrow animate-in" style={{ marginBottom: 'var(--space-6)' }}><span className="dot"></span>Datenschutz</div>
-          <h1 className="animate-in delay-1" style={{ maxWidth: '22ch' }}>Was passiert mit Ihren Daten?</h1>
-          <p className="lede animate-in delay-2" style={{ marginTop: 'var(--space-8)', maxWidth: '54ch' }}>
-            Diese Website verarbeitet möglichst wenige Daten. Es gibt keine Tracking-Tools, keine
-            Werbe-Cookies und keine Reichweitenmessung (Analytics). Hier erfahren Sie, welche Daten
-            dennoch verarbeitet werden und wofür sie gebraucht werden.
+          <div className="eyebrow animate-in hero-eyebrow"><span className="dot"></span>Über diese Website</div>
+          <h1 className="animate-in delay-1 measure-22">Impressum und Datenschutz.</h1>
+          <p className="lede animate-in delay-2 hero-after-title measure-54">
+            Wer diese Website herausgibt und welche Daten bei Ihrem Besuch anfallen.
           </p>
         </div>
       </header>
 
-      <section style={{ paddingTop: 0 }}>
-        <div className="container" style={{ maxWidth: 720 }}>
-          <article className="prose">
+      <section className="section-flush" id="impressum" aria-labelledby="impressum-title">
+        <div className="container container-text">
+          <article className="prose legal-text">
+            <h2 id="impressum-title">Impressum</h2>
+            <p>Angaben zur Trägerschaft, inhaltlichen Verantwortung und zum Kontakt.</p>
 
-            <h2>Ansprechstelle für Datenschutzfragen</h2>
+            <h3>Trägerschaft</h3>
+            <p>
+              Diese Website ist ein Angebot der <strong>Fachstelle Angehörigenarbeit</strong> der
+              Psychiatrischen Universitätsklinik Zürich (PUK). Die Fachstelle stellt sie Angehörigen im
+              Beratungskontext zur Verfügung. Die private Weitergabe an andere Angehörige ist ausdrücklich
+              erwünscht. Die Website ist über direkte Links ohne Anmeldung erreichbar; sie wird nicht
+              öffentlich beworben und soll nicht in Suchmaschinen erscheinen.
+            </p>
+
+            <h3>Inhaltliche Verantwortung</h3>
+            <div className="contact-info-block">
+              <div className="value">Ch. Egger</div>
+              <div className="sub">Fachstelle Angehörigenarbeit · PUK Zürich</div>
+            </div>
+
+            <h3>Kontakt</h3>
+            <div className="contact-info-block">
+              <div className="label">POSTANSCHRIFT</div>
+              <div className="value">Psychiatrische Universitätsklinik Zürich</div>
+              <div className="sub">Fachstelle Angehörigenarbeit · Lenggstrasse 31, Postfach, 8032 Zürich</div>
+            </div>
+            <div className="contact-info-block">
+              <div className="label">E-MAIL</div>
+              <div className="value"><a className="link-underline" href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a></div>
+            </div>
+
+            <h3>Haftungsausschluss</h3>
+            <p>
+              Die Inhalte dieser Website bieten Angehörigen Informationen und Orientierung zur Erkrankung
+              und zum eigenen Alltag.
+              Sie ersetzen keine ärztliche, psychotherapeutische oder rechtliche Beratung. Eine
+              Haftung für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte sowie für Schäden, die
+              aus der Nutzung der Inhalte entstehen, wird — soweit gesetzlich zulässig — ausgeschlossen.
+            </p>
+            <p>
+              Die Website verlinkt auf externe Anlaufstellen und Hilfsangebote. Für die Inhalte dieser
+              externen Seiten ist ausschliesslich deren Betreiber verantwortlich.
+            </p>
+
+            <h3>Urheberrecht</h3>
+            <p>
+              Sämtliche Texte, Illustrationen und Werkzeuge sind urheberrechtlich geschützt. Die Weitergabe an
+              andere Angehörige im persönlichen Umfeld ist ausdrücklich erwünscht. Eine Verwendung in
+              Publikationen, Schulungen oder für kommerzielle Zwecke braucht die vorherige schriftliche
+              Zustimmung.
+            </p>
+
+            <p className="page-stand">
+              Redaktioneller Stand: Oktober 2026
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="datenschutz" aria-labelledby="datenschutz-title">
+        <div className="container container-text">
+          <article className="prose legal-text">
+            <h2 id="datenschutz-title">Datenschutz</h2>
+            <p>
+              Diese Website verarbeitet möglichst wenige Daten. Es gibt keine Tracking-Tools, keine Werbe-Cookies und keine Reichweitenmessung (Analytics). Hier erfahren Sie, welche Daten dennoch verarbeitet werden und wofür sie gebraucht werden.
+            </p>
+
+
+            <h3>Ansprechstelle für Datenschutzfragen</h3>
             <p>
               Bei Fragen zur Bearbeitung Ihrer Personendaten können Sie sich an die
               <strong> Fachstelle Angehörigenarbeit</strong> der Psychiatrischen Universitätsklinik
@@ -29,9 +96,9 @@ function DatenschutzPage() {
               Lenggstrasse 31, Postfach, 8032 Zürich
             </p>
 
-            <h2>Welche Daten erhoben werden</h2>
+            <h3>Welche Daten erhoben werden</h3>
 
-            <h3>Verbindungsdaten beim Hostingdienst</h3>
+            <h4>Verbindungsdaten beim Hostingdienst</h4>
             <p>
               Die Website wird bei <strong>Netlify, Inc.</strong> (USA) betrieben. Beim Aufruf verarbeitet
               der Hostingdienst technisch notwendige Verbindungsdaten und protokolliert sie in sogenannten
@@ -45,7 +112,7 @@ function DatenschutzPage() {
               Die beim Website-Aufruf verarbeiteten Verbindungsdaten können auch in den USA bearbeitet werden.
             </p>
 
-            <h3>Daten in den Werkzeugen</h3>
+            <h4>Daten in den Werkzeugen</h4>
             <div data-storage-policy="browser-drafts">
               <p data-storage-notice="memory-only">
                 Die interaktiven Werkzeuge arbeiten <strong>lokal in Ihrem Browser</strong>. Ihre Eingaben bleiben
@@ -86,7 +153,7 @@ function DatenschutzPage() {
               </p>
             </div>
 
-            <h3>Leseposition beim Zurückgehen</h3>
+            <h4>Leseposition beim Zurückgehen</h4>
             <p>
               Damit Sie mit «Zurück» und «Vorwärts» im Browser an Ihrer bisherigen Leseposition
               weiterlesen können, merkt sich die Website die Scrollposition im Verlauf des jeweiligen Tabs.
@@ -94,28 +161,31 @@ function DatenschutzPage() {
               Verlauf beim Wiederherstellen eines Tabs erhalten.
             </p>
 
-            <h3>Auffindbarkeit über Suchmaschinen</h3>
+            <h4>Auffindbarkeit über Suchmaschinen</h4>
             <p>
               Die Website ist derzeit bewusst <strong>nicht</strong> für Suchmaschinen indexiert. Sie ist
               über direkte Links erreichbar, soll aber nicht aktiv in öffentlichen Suchergebnissen erscheinen.
             </p>
 
-            <h3>Schriften und Bilder</h3>
+            <h4>Schriften und Bilder</h4>
             <p>
               Die verwendete Schrift Rubik und alle Bilder werden
               direkt von dieser Website geladen. Dabei entsteht <strong>keine Verbindung zu Google Fonts
               oder anderen externen Netzwerken zur Bereitstellung von Inhalten (CDN)</strong>.
             </p>
 
-            <h3>Was wir nicht tun</h3>
-            <ul style={{ marginTop: 'var(--space-2)' }}>
+            <h4>Links auf andere Websites</h4>
+            <p>Wenn Sie einem Link auf eine andere Website folgen, gelten dort deren Regeln zum Datenschutz.</p>
+
+            <h4>Was wir nicht tun</h4>
+            <ul className="list-after-heading">
               <li>Keine Tracking-Cookies, keine Werbe-Cookies und keine Analytics.</li>
               <li>Keine Übermittlung Ihrer Werkzeug-Eingaben an Server der PUK oder an Dritte.</li>
               <li>Keine Werbung und keine Social-Media-Plugins.</li>
               <li>Wir verwenden Ihre Werkzeug-Eingaben weder für Profilbildung noch für Werbung und übermitteln sie nicht an Dritte. Verbindungsdaten werden durch unseren Hostingdienst verarbeitet, wie oben beschrieben.</li>
             </ul>
 
-            <h2>Kontaktaufnahme per E-Mail</h2>
+            <h3>Kontaktaufnahme per E-Mail</h3>
             <p>
               Wenn Sie uns eine E-Mail schreiben, speichern wir Ihre Angaben (Name, E-Mail-Adresse und
               Nachricht), um Ihre Anfrage zu beantworten. Sie werden im
@@ -125,7 +195,7 @@ function DatenschutzPage() {
               welche Grenzen der Vertraulichkeit gelten.
             </p>
 
-            <h2>Ihre Rechte</h2>
+            <h3>Ihre Rechte</h3>
             <p>
               Sie können sich mit Fragen und Anliegen zu Ihren Personendaten an die Fachstelle wenden,
               insbesondere wenn Sie Auskunft erhalten oder Angaben berichtigen lassen möchten.
@@ -139,13 +209,13 @@ function DatenschutzPage() {
               und dem vorgesehenen Vorgehen.
             </p>
 
-            <h2>Änderungen dieser Erklärung</h2>
+            <h3>Änderungen dieser Erklärung</h3>
             <p>
               Wir passen diese Datenschutzerklärung an, wenn sich die Website technisch oder
               inhaltlich ändert. Massgeblich ist jeweils die aktuelle, hier abrufbare Fassung.
             </p>
 
-            <p style={{ marginTop: 'var(--space-16)', color: 'var(--ink-3)', fontSize: 'var(--size-body-sm)' }}>
+            <p className="page-stand">
               Stand: Oktober 2026
             </p>
           </article>
@@ -155,4 +225,4 @@ function DatenschutzPage() {
   );
 }
 
-export { DatenschutzPage };
+export { ImpressumDatenschutzPage };

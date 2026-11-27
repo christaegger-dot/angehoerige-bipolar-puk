@@ -5,25 +5,23 @@ import { Modul4Page } from '../modul4.jsx';
 import { Modul5Page } from '../modul5.jsx';
 import { Modul6Page } from '../modul6.jsx';
 import { Modul7Page } from '../modul7.jsx';
-import { ImpressumPage } from '../impressum.jsx';
-import { DatenschutzPage } from '../datenschutz.jsx';
+import { ImpressumDatenschutzPage } from '../impressum-datenschutz.jsx';
 import { BarrierefreiheitPage } from '../barrierefreiheit.jsx';
 import { SchweigepflichtPage } from '../schweigepflicht.jsx';
 
 describe('content pages', () => {
   it('renders the legal and accessibility pages with their primary headings', () => {
-    const { rerender } = render(<ImpressumPage />);
-    expect(screen.getByRole('heading', { level: 1, name: /impressum/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /angehoerigenarbeit@pukzh.ch/i })).toHaveAttribute(
-      'href',
-      'mailto:angehoerigenarbeit@pukzh.ch',
-    );
-
-    rerender(<DatenschutzPage />);
-    expect(
-      screen.getByRole('heading', { level: 1, name: /was passiert mit ihren daten/i }),
-    ).toBeInTheDocument();
+    const { rerender } = render(<ImpressumDatenschutzPage />);
+    expect(screen.getByRole('heading', { level: 1, name: /impressum und datenschutz/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Impressum' }).closest('section')).toHaveAttribute('id', 'impressum');
+    expect(screen.getByRole('heading', { level: 2, name: 'Datenschutz' }).closest('section')).toHaveAttribute('id', 'datenschutz');
+    for (const link of screen.getAllByRole('link', { name: /angehoerigenarbeit@pukzh.ch/i })) {
+      expect(link).toHaveAttribute('href', 'mailto:angehoerigenarbeit@pukzh.ch');
+    }
     expect(screen.getByText(/keine tracking-tools, keine/i)).toBeInTheDocument();
+    // Punkt aus der Vorlage des Profils (Prüfbedarf W1 und S).
+    expect(screen.getByRole('heading', { level: 4, name: 'Links auf andere Websites' })).toBeInTheDocument();
+    expect(screen.getByText('Wenn Sie einem Link auf eine andere Website folgen, gelten dort deren Regeln zum Datenschutz.')).toBeInTheDocument();
 
     rerender(<BarrierefreiheitPage />);
     expect(

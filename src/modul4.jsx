@@ -1,10 +1,10 @@
 // Modul 4 — Wenn die Kraft nachlässt · Volles Lese-Layout
 // Zentrales Bild: Kraft-Reservoir als ausdrücklich nicht messende Metapher.
 
-import React from 'react';
 import { ModuleQuickStart, EvidenceSources, EvidenceCitation, FigureText } from './module-guidance.jsx';
 import { navHandler, navHref } from './nav-handler.js';
 import { Icon } from './icon.jsx';
+import { ReadingProgress } from './shared.jsx';
 
 function Reservoir() {
   const w = 560, h = 380;
@@ -121,23 +121,6 @@ function Warnzeichen() {
 }
 
 function Modul4Page({ onNavigate }) {
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    const onScroll = () => {
-      const el = document.querySelector('.module-article');
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const total = rect.height - window.innerHeight;
-      const scrolled = -rect.top;
-      const pct = Math.max(0, Math.min(100, (scrolled / total) * 100));
-      setProgress(pct);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const sections = [
     { id: 's1', label: 'Trauer ohne klaren Abschied' },
     { id: 's2', label: 'Wie sich Belastung verändern kann' },
@@ -151,7 +134,7 @@ function Modul4Page({ onNavigate }) {
 
   return (
     <>
-      <div className="reading-progress" style={{width: `${progress}%`}}></div>
+      <ReadingProgress />
 
       <article className="module-article">
         <header className="module-detail-header">

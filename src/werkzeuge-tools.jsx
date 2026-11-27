@@ -39,10 +39,10 @@ function handleTabKeyDown(e) {
 }
 
 const ATEM_PHASEN = [
-  { name: 'einatmen', label: 'Einatmen', duration: 4000, scale: 1 },
-  { name: 'halten',   label: 'Halten',   duration: 2000, scale: 1 },
-  { name: 'ausatmen', label: 'Ausatmen', duration: 6000, scale: 0.4 },
-  { name: 'pause',    label: 'Pause',    duration: 2000, scale: 0.4 },
+  { name: 'einatmen', label: 'Einatmen', duration: 4000 },
+  { name: 'halten',   label: 'Halten',   duration: 2000 },
+  { name: 'ausatmen', label: 'Ausatmen', duration: 6000 },
+  { name: 'pause',    label: 'Pause',    duration: 2000 },
 ];
 const ATEM_ZYKLEN = 5;
 
@@ -70,8 +70,6 @@ function AtemuebungTool({ onClose }) {
   const stop  = () => { setPhase('intro'); setZyklus(0); };
 
   const aktiv = ATEM_PHASEN.find(p => p.name === phase);
-  const scale = aktiv ? aktiv.scale : 0.4;
-  const dur   = aktiv ? aktiv.duration : 0;
   const label = aktiv ? aktiv.label : '';
 
   return (
@@ -81,10 +79,10 @@ function AtemuebungTool({ onClose }) {
 
         {phase === 'intro' && (
           <>
-            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Durchatmen</h2>
-            <p className="lede" style={{ maxWidth: '40ch' }}>Wenn Ihnen gerade alles zu viel ist, können Sie mit fünf geführten Atemzügen eine Pause machen. Atmen Sie so, wie es sich für Sie angenehm anfühlt.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '40ch' }}>Der Rhythmus ist: 4 Sekunden einatmen, 2 Sekunden halten, 6 Sekunden ausatmen und 2 Sekunden Pause. Er wiederholt sich fünfmal und dauert etwa 70 Sekunden. Das Atemhalten können Sie auslassen. Stoppen Sie bei Unwohlsein und atmen Sie normal weiter. Als Alternative können Sie den Kontakt zum Boden spüren und drei Dinge im Raum anschauen.</p>
-            <div style={{ marginTop: 'var(--space-6)' }}>
+            <h2 ref={stepRef} tabIndex={-1} className="tool-step-title">Durchatmen</h2>
+            <p className="lede measure-40">Wenn Ihnen gerade alles zu viel ist, können Sie mit fünf geführten Atemzügen eine Pause machen. Atmen Sie so, wie es sich für Sie angenehm anfühlt.</p>
+            <p className="tool-note measure-40">Der Rhythmus ist: 4 Sekunden einatmen, 2 Sekunden halten, 6 Sekunden ausatmen und 2 Sekunden Pause. Er wiederholt sich fünfmal und dauert etwa 70 Sekunden. Das Atemhalten können Sie auslassen. Stoppen Sie bei Unwohlsein und atmen Sie normal weiter. Als Alternative können Sie den Kontakt zum Boden spüren und drei Dinge im Raum anschauen.</p>
+            <div className="tool-actions">
               <button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button>
             </div>
           </>
@@ -93,14 +91,7 @@ function AtemuebungTool({ onClose }) {
         {(phase !== 'intro' && phase !== 'done') && (
           <>
             <div ref={stepRef} tabIndex={-1} role="group" aria-label="Geführte Atemübung" className="atem-stage">
-              <div
-                className={`atem-circle atem-${phase}${phase === 'einatmen' && zyklus === 0 ? ' atem-first-inhale' : ''}`}
-                style={{
-                  transform: `scale(${scale})`,
-                  transitionDuration: `${dur}ms`,
-                  animationDuration: `${dur}ms`,
-                }}
-              />
+              <div className={`atem-circle atem-${phase}${phase === 'einatmen' && zyklus === 0 ? ' atem-first-inhale' : ''}`} />
               <div className="atem-label" aria-hidden="true">{label}</div>
             </div>
             <div className="atem-meta">Atemzug {Math.min(zyklus + 1, ATEM_ZYKLEN)} von {ATEM_ZYKLEN}</div>
@@ -111,11 +102,11 @@ function AtemuebungTool({ onClose }) {
         {phase === 'done' && (
           <>
             <div ref={stepRef} tabIndex={-1} role="group" aria-label="Atemübung beendet" className="atem-stage atem-done">
-              <div className="atem-circle" style={{ transform: 'scale(0.7)' }} />
+              <div className="atem-circle" />
               <div className="atem-label">Fertig</div>
             </div>
-            <p className="lede" style={{ maxWidth: '36ch', textAlign: 'center', margin: '0 auto var(--space-6)' }}>Sie können die Übung wiederholen oder hier beenden.</p>
-            <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center' }}>
+            <p className="lede atem-done-text">Sie können die Übung wiederholen oder hier beenden.</p>
+            <div className="atem-done-actions">
               <button className="btn btn-primary" onClick={start}>Wiederholen</button>
               <button className="tool-quiet-btn" onClick={onClose}>Schliessen</button>
             </div>
@@ -195,17 +186,17 @@ function SelbsttestTool({ onClose, onNavigate }) {
       <span className="kicker">Werkzeug · Persönliche Reflexion</span>
       {phase === 'intro' && (
         <>
-          <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Meine Belastung wahrnehmen</h2>
-          <p className="lede" style={{ maxWidth: '44ch' }}>Mit fünf Fragen können Sie Ihren Schlaf, Alltag, Ihre Kontakte und Ihr Befinden anschauen. Danach sehen Sie Ihre eigenen Antworten und können überlegen, welche Unterstützung Sie brauchen.</p>
-          <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Die Fragen dienen der persönlichen Reflexion und sind kein Test mit wissenschaftlich bestätigter Aussagekraft. Sie erhalten weder eine Gesamtpunktzahl noch eine Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert.</p>
-          <div style={{ marginTop: 'var(--space-6)' }}><button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button></div>
+          <h2 ref={stepRef} tabIndex={-1} className="tool-step-title">Meine Belastung wahrnehmen</h2>
+          <p className="lede measure-44">Mit fünf Fragen können Sie Ihren Schlaf, Alltag, Ihre Kontakte und Ihr Befinden anschauen. Danach sehen Sie Ihre eigenen Antworten und können überlegen, welche Unterstützung Sie brauchen.</p>
+          <p className="tool-note measure-44">Die Fragen dienen der persönlichen Reflexion und sind kein Test mit wissenschaftlich bestätigter Aussagekraft. Sie erhalten weder eine Gesamtpunktzahl noch eine Diagnose oder Risikoeinstufung. Ihre Antworten bleiben während der Nutzung im Browser und werden nicht gespeichert.</p>
+          <div className="tool-actions"><button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button></div>
         </>
       )}
       {phase === 'running' && (
         <div className="selbsttest-q-block">
           <div className="selbsttest-progress">
             Frage {qIdx + 1} von {SELBSTTEST_FRAGEN.length}
-            <span className="selbsttest-progress-bar"><span style={{ width: `${(qIdx / SELBSTTEST_FRAGEN.length) * 100}%` }} /></span>
+            <progress className="selbsttest-progress-bar" max={SELBSTTEST_FRAGEN.length} value={qIdx} aria-hidden="true" />
           </div>
           <h2 ref={stepRef} tabIndex={-1} className="selbsttest-q">{SELBSTTEST_FRAGEN[qIdx].q}</h2>
           <div className="selbsttest-options">
@@ -224,7 +215,7 @@ function SelbsttestTool({ onClose, onNavigate }) {
             {SELBSTTEST_FRAGEN.map((question, index) => (
               <React.Fragment key={question.q}>
                 <dt><strong>{question.q}</strong></dt>
-                <dd style={{ margin: 'var(--space-1) 0 var(--space-5)' }}>{question.opts[answers[index]].label}</dd>
+                <dd className="selbsttest-answer">{question.opts[answers[index]].label}</dd>
               </React.Fragment>
             ))}
           </dl>
@@ -583,10 +574,10 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
 
         {phase === 'intro' && (
           <>
-            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Säulen-Check</h2>
-            <p className="lede" style={{ maxWidth: '44ch' }}>Acht kurze Fragen zu dem, was Sie im Alltag unterstützt: Körper, Beziehungen, eigene Welt und fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie können überlegen, was Sie bewahren möchten und wo Sie Unterstützung wünschen. Ihre gesundheitliche Stabilität oder Tragfähigkeit lässt sich damit nicht messen.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '44ch' }}>Die Reflexion dauert etwa drei Minuten und findet anonym im Browser statt. Sie liefert keine klinische Auswertung mit wissenschaftlich bestätigter Aussagekraft und keine Diagnose. Bei starkem oder anhaltendem Unterstützungsbedarf ist fachliche Beratung sinnvoll.</p>
-            <div style={{ marginTop: 'var(--space-6)' }}>
+            <h2 ref={stepRef} tabIndex={-1} className="tool-step-title">Säulen-Check</h2>
+            <p className="lede measure-44">Acht kurze Fragen zu dem, was Sie im Alltag unterstützt: Körper, Beziehungen, eigene Welt und fachlicher Halt. Die Darstellung fasst Ihre eigenen Einschätzungen zusammen. Sie können überlegen, was Sie bewahren möchten und wo Sie Unterstützung wünschen. Ihre gesundheitliche Stabilität oder Tragfähigkeit lässt sich damit nicht messen.</p>
+            <p className="tool-note measure-44">Die Reflexion dauert etwa drei Minuten und findet anonym im Browser statt. Sie liefert keine klinische Auswertung mit wissenschaftlich bestätigter Aussagekraft und keine Diagnose. Bei starkem oder anhaltendem Unterstützungsbedarf ist fachliche Beratung sinnvoll.</p>
+            <div className="tool-actions">
               <button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button>
             </div>
           </>
@@ -595,9 +586,9 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
         {phase === 'running' && cur && (
           <div className="selbsttest-q-block">
             <div className="selbsttest-progress">
-              <span style={{ color: 'var(--accent)' }}>Säule · {curSaeule.label}</span>
-              <span style={{ color: 'var(--ink-mute)', fontSize: 'var(--size-caption)' }}>Frage {qIdx + 1} von {SAEULEN_ALL_QUESTIONS.length}</span>
-              <span className="selbsttest-progress-bar"><span style={{ width: `${(qIdx / SAEULEN_ALL_QUESTIONS.length) * 100}%` }}></span></span>
+              <span className="saeulen-progress-pillar">Säule · {curSaeule.label}</span>
+              <span className="saeulen-progress-count">Frage {qIdx + 1} von {SAEULEN_ALL_QUESTIONS.length}</span>
+              <progress className="selbsttest-progress-bar" max={SAEULEN_ALL_QUESTIONS.length} value={qIdx} aria-hidden="true" />
             </div>
             <h2 ref={stepRef} tabIndex={-1} className="selbsttest-q">{cur.q}</h2>
             <div className="selbsttest-options">
@@ -627,7 +618,9 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
                 return (
                   <div className="saeulen-result-col" key={s.key}>
                     <div className="saeulen-result-bar-wrap">
-                      <div className="saeulen-result-bar" style={{ height: `${Math.max(pct, 6)}%` }}></div>
+                      <svg className="saeulen-result-bar" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                        <rect x="20" y={100 - Math.max(pct, 6)} width="60" height={Math.max(pct, 6)} />
+                      </svg>
                     </div>
                     <div className="saeulen-result-label">{s.label}</div>
                     <div className="saeulen-result-score">{s.score}/{s.max}</div>
@@ -642,7 +635,7 @@ function SaeulenCheckTool({ onClose, onNavigate }) {
                   <>Ihre Einschätzungen sind in allen vier Bereichen gleich hoch. Es gibt keine stärkste oder schwächste Säule. Welchen Bereich möchten Sie näher anschauen?</>
                 ) : (
                   <>
-                    Nach Ihren Antworten gibt es derzeit weniger Raum für <strong style={{ color: 'var(--accent)' }}>{leastRoom.map(s => s.label).join(', ')}</strong> und mehr für <strong style={{ color: 'var(--accent)' }}>{mostRoom.map(s => s.label).join(', ')}</strong>.
+                    Nach Ihren Antworten gibt es derzeit weniger Raum für <strong className="saeulen-emphasis">{leastRoom.map(s => s.label).join(', ')}</strong> und mehr für <strong className="saeulen-emphasis">{mostRoom.map(s => s.label).join(', ')}</strong>.
                     {(leastRoom.length > 1 || mostRoom.length > 1) && <> Gleich hoch eingeschätzte Bereiche stehen nebeneinander; ihre Reihenfolge ist keine Rangfolge.</>}
                     {' '}Was möchten Sie bewahren, und wo wünschen Sie sich Unterstützung? Sie entscheiden, welcher Bereich für Sie gerade wichtig ist.
                   </>
@@ -676,21 +669,18 @@ const EISBERG_LABELS = {
       key: 'sorge',
       label: 'Sorge',
       kind: 'primary',
-      x: 50, y: 18,
       desc: 'Aufmerksamkeit und Mitgefühl zeigen sich zum Beispiel darin, dass Sie fragen, wie es der anderen Person geht. Andere sehen darin oft eine Stärke und übersehen, wie viel Kraft das kostet.',
     },
     {
       key: 'geduld',
       label: 'Geduld',
       kind: 'tertiary',
-      x: 72, y: 28,
       desc: 'Geduld kann heissen, nicht sofort zu reagieren, eine Viertelstunde durchzuatmen oder sich in einem Streit mit einer Antwort Zeit zu lassen. Das kostet Energie, auch wenn andere es kaum bemerken.',
     },
     {
       key: 'hilfsbereitschaft',
       label: 'Hilfsbereitschaft',
       kind: 'secondary',
-      x: 28, y: 30,
       desc: 'Wenn es gewünscht ist, können Sie zu Terminen begleiten, an Medikamente erinnern oder versuchen, die andere Person zu beruhigen. Von aussen wirkt solche Hilfe manchmal selbstverständlich. Sie braucht aber Zeit und Kraft.',
     },
   ],
@@ -699,56 +689,48 @@ const EISBERG_LABELS = {
       key: 'erschoepfung',
       label: 'Erschöpfung',
       kind: 'primary',
-      x: 50, y: 64,
       desc: 'Anhaltende Erschöpfung kann mit langer Belastung und ständiger Aufmerksamkeit zusammenhängen. Sie kann auch andere Ursachen haben. Wenn Erschöpfung anhält oder Ihren Alltag beeinträchtigt, ist eine eigene fachliche Abklärung sinnvoll.',
     },
     {
       key: 'wut',
       label: 'Wut',
       kind: 'secondary',
-      x: 26, y: 52,
       desc: 'Wut kann sich auf die Erkrankung, auf die andere Person oder auf sich selbst richten. Sie kann ein Anlass sein, auf eigene Bedürfnisse und Grenzen zu schauen.',
     },
     {
       key: 'scham',
       label: 'Scham',
       kind: 'tertiary',
-      x: 74, y: 50,
       desc: 'Scham kann sich auf eigene Bedürfnisse, Müdigkeit oder Wut beziehen. Sie kann es erschweren, über eigene Bedürfnisse oder Belastungen zu sprechen. Sie entscheiden, wem Sie etwas erzählen möchten.',
     },
     {
       key: 'einsamkeit',
       label: 'Einsamkeit',
       kind: 'secondary',
-      x: 30, y: 76,
       desc: 'Einsamkeit lässt sich auch in einer Beziehung erleben: Sie tragen vieles allein und finden niemanden, mit dem Sie offen darüber sprechen können.',
     },
     {
       key: 'schuld',
       label: 'Schuldgefühle',
       kind: 'tertiary',
-      x: 70, y: 76,
       desc: 'Vielleicht fühlen Sie sich wegen eigener Pausen, Freude oder Abstand schuldig. Schuldgefühle allein zeigen nicht, ob Sie etwas falsch gemacht haben.',
     },
     {
       key: 'trauer',
       label: 'Trauer',
       kind: 'tertiary',
-      x: 50, y: 88,
       desc: 'Trauer kann sich auf vergangene gemeinsame Zeiten, unerfüllte Pläne oder veränderte Nähe und Erwartungen beziehen. «Ambiguous Loss» bezeichnet einen uneindeutigen Verlust. Dieses Bild erklärt weder die ganze Person noch jede Erfahrung von Angehörigen.',
     },
     {
       key: 'angst',
       label: 'Angst',
       kind: 'tertiary',
-      x: 22, y: 90,
       desc: 'Angst kann die nächste Episode oder einen Anruf in der Nacht betreffen. Manchmal richtet sie sich auch auf die eigenen Reaktionen, wenn die Belastung nicht mehr zu tragen ist.',
     },
     {
       key: 'erstarrung',
       label: 'Erstarrung',
       kind: 'tertiary',
-      x: 78, y: 90,
       desc: 'Manche Angehörige beschreiben das Gefühl, innerlich kaum noch etwas zu spüren. Sie vergleichen es mit einer Glaswand: Sie sehen, was passiert, fühlen sich aber davon getrennt.',
     },
   ],
@@ -788,10 +770,10 @@ function EisbergTool({ onClose, onNavigate }) {
 
         {phase === 'intro' && (
           <>
-            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Der Eisberg Ihrer Belastung</h2>
-            <p className="lede" style={{ maxWidth: '46ch' }}>Der Eisberg ist eine Metapher, keine Messung: Manche Belastungen sind sichtbar, andere bleiben verborgen. Die Begriffe sind mögliche Erfahrungen; nicht alle müssen auf Sie zutreffen.</p>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '46ch' }}>Wählen Sie einen Begriff, um mehr über diese mögliche Erfahrung zu lesen. Markieren Sie, was Sie wiedererkennen. Am Ende sehen Sie Ihre Auswahl im Überblick.</p>
-            <div style={{ marginTop: 'var(--space-6)' }}>
+            <h2 ref={stepRef} tabIndex={-1} className="tool-step-title">Der Eisberg Ihrer Belastung</h2>
+            <p className="lede measure-46">Der Eisberg ist eine Metapher, keine Messung: Manche Belastungen sind sichtbar, andere bleiben verborgen. Die Begriffe sind mögliche Erfahrungen; nicht alle müssen auf Sie zutreffen.</p>
+            <p className="tool-note measure-46">Wählen Sie einen Begriff, um mehr über diese mögliche Erfahrung zu lesen. Markieren Sie, was Sie wiedererkennen. Am Ende sehen Sie Ihre Auswahl im Überblick.</p>
+            <div className="tool-actions">
               <button className="btn btn-primary" onClick={start}>Eisberg ansehen <Icon name="arrow-right" /></button>
             </div>
           </>
@@ -799,7 +781,7 @@ function EisbergTool({ onClose, onNavigate }) {
 
         {phase === 'explore' && (
           <div className="eisberg-tool">
-            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Der Eisberg Ihrer Belastung</h2>
+            <h2 ref={stepRef} tabIndex={-1} className="tool-step-title">Der Eisberg Ihrer Belastung</h2>
             <div className="eisberg-tool-zones">
               <div className="eisberg-zone-top">
                 <span className="eisberg-zone-kicker">Was andere sehen</span>
@@ -814,7 +796,7 @@ function EisbergTool({ onClose, onNavigate }) {
                 <button
                   key={item.key}
                   className={`eisberg-word eisberg-${item.kind} eisberg-above-word eisberg-tool-btn ${selected === item.key ? 'is-selected' : ''} ${marked.has(item.key) ? 'is-marked' : ''}`}
-                  style={{ left: `${item.x}%`, top: `${item.y}%` }}
+                  data-word={item.key}
                   onClick={() => setSelected(item.key)}
                   aria-pressed={selected === item.key}
                 >
@@ -828,7 +810,7 @@ function EisbergTool({ onClose, onNavigate }) {
                 <button
                   key={item.key}
                   className={`eisberg-word eisberg-${item.kind} eisberg-below-word eisberg-tool-btn ${selected === item.key ? 'is-selected' : ''} ${marked.has(item.key) ? 'is-marked' : ''}`}
-                  style={{ left: `${item.x}%`, top: `${item.y}%` }}
+                  data-word={item.key}
                   onClick={() => setSelected(item.key)}
                   aria-pressed={selected === item.key}
                 >
@@ -1015,13 +997,13 @@ function KommunikationsTrainerTool({ onClose, onNavigate }) {
 
         {step === 'intro' && (
           <>
-            <h2 ref={stepRef} tabIndex={-1} style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Kommunikations-Trainer</h2>
-            <p className="lede" style={{ maxWidth: '46ch' }}>In vier kurzen Schritten bereiten Sie ein schwieriges Gespräch vor. Sie formulieren Ihr Anliegen, eine konkrete Bitte und bei Bedarf eine eigene Grenze. Daraus entsteht ein Skript in Ihren Worten. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
+            <h2 ref={stepRef} tabIndex={-1} className="tool-step-title">Kommunikations-Trainer</h2>
+            <p className="lede measure-46">In vier kurzen Schritten bereiten Sie ein schwieriges Gespräch vor. Sie formulieren Ihr Anliegen, eine konkrete Bitte und bei Bedarf eine eigene Grenze. Daraus entsteht ein Skript in Ihren Worten. Wie die andere Person reagiert, können Sie nicht vollständig beeinflussen.</p>
             <div className="tool-intro-notes kommunikation-intro-notes">
               <p>Ein vorbereitetes Skript kann helfen, Ihr Anliegen auch in einem angespannten Gespräch im Blick zu behalten. Die Beispielsätze sind Anregungen: Passen Sie Inhalt und Anrede an Ihre Beziehung an.</p>
               <p>Dieses Werkzeug dient der Gesprächsvorbereitung; es ist nicht für akute Manie, Psychose, Gewalt oder akute Suizidalität gedacht.</p>
             </div>
-            <div style={{ marginTop: 'var(--space-5)' }}>
+            <div className="tool-actions tool-actions-tight">
               <button className="btn btn-primary" onClick={start}>Beginnen <Icon name="arrow-right" /></button>
             </div>
           </>
@@ -1216,28 +1198,24 @@ const EE_ASPEKTE = [
   {
     key: 'schuld',
     label: 'Schuldgefühle',
-    pos: { left: '50%', top: '14%' },
     desc: '«Hätte ich die Warnzeichen früher erkannt? Mache ich genug?» Schuldgefühle können zusätzliche Kontrolle oder Aufmerksamkeit auslösen; andere Reaktionen sind ebenso möglich.',
     unterbrechen: 'Nehmen Sie Schuldgefühle wahr, ohne daraus zu schliessen, dass Sie etwas falsch gemacht haben. Wie Modul 5 erklärt, können Schuldgefühle auch dann auftreten, wenn Sie etwas Richtiges tun.',
   },
   {
     key: 'engagement',
     label: 'Zusätzliche Verantwortung',
-    pos: { left: '86%', top: '50%' },
     desc: 'Vielleicht begleiten Sie zu Terminen, unterstützen im Alltag oder teilen Beobachtungen, wie Sie es gemeinsam vereinbart haben. Prüfen Sie gemeinsam, welche Hilfe gewünscht und für Sie tragbar ist, was die andere Person selbst übernehmen möchte und wo Sie Entlastung brauchen. Diagnose und Behandlung bleiben fachliche Aufgaben.',
     unterbrechen: 'Wählen Sie eine Aufgabe, die Sie neu besprechen möchten: Was können und möchten Sie übernehmen, wo liegt Ihre eigene Grenze und wer könnte Sie entlasten? Vereinbaren Sie eine neue Aufgabenverteilung gemeinsam. Dadurch übernehmen Sie keine Verantwortung für den Krankheitsverlauf.',
   },
   {
     key: 'erschoepfung',
     label: 'Erschöpfung',
-    pos: { left: '50%', top: '86%' },
     desc: 'Unter Belastung können Energie und Geduld nachlassen, ohne dass daraus zwangsläufig Gereiztheit entsteht. Entlastung können Sie früh suchen.',
     unterbrechen: 'Sprechen Sie Ihre eigene Belastung an. Mit den Fragen «Meine Belastung wahrnehmen» oder dem Säulen-Check können Sie Ihre Situation anschauen. Ob für Sie eine Grenze erreicht ist, können diese Werkzeuge nicht messen.',
   },
   {
     key: 'kritik',
     label: 'Kritik',
-    pos: { left: '14%', top: '50%' },
     desc: 'Unter Belastung können verletzende Sätze fallen. Das muss keinen festen Kreislauf auslösen. Eine Pause, eine spätere Klärung oder Unterstützung können helfen.',
     unterbrechen: 'Eine Pause kann helfen, nicht sofort zu reagieren. So könnte es klingen: «Ich brauche eine Pause.» Sie können das Gespräch auch beenden. Ob Sie es später fortsetzen, bleibt Ihre Entscheidung.',
   },
@@ -1254,7 +1232,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Wenn Belastung Gespräche verändert" cardClass="ee-card">
       <span className="kicker">Werkzeug · Beziehung</span>
-        <h2 style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Wenn Belastung Gespräche verändert</h2>
+        <h2 className="tool-step-title">Wenn Belastung Gespräche verändert</h2>
         <p className="ee-intro">Hier finden Sie vier mögliche Erfahrungen, mit denen Sie Ihre eigene Belastung anschauen können. Sie sind keine Testfragen und geben keine feste Reihenfolge vor. Wählen Sie, was Sie wiedererkennen.</p>
 
         <div className="ee-stage">
@@ -1272,7 +1250,7 @@ function EeKreislaufTool({ onClose, onNavigate }) {
             <button
               key={p.key}
               className={`ee-node ${selected === p.key ? 'is-selected' : ''}`}
-              style={{ left: p.pos.left, top: p.pos.top }}
+              data-node={p.key}
               onClick={() => setSelected(p.key)}
               aria-pressed={selected === p.key}
             >
@@ -1378,7 +1356,7 @@ function PhasenverlaufTool({ onClose, onNavigate }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Bipolarer Phasenverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Interaktiv</span>
-        <h2 style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Bipolarer Phasenverlauf</h2>
+        <h2 className="tool-step-title">Bipolarer Phasenverlauf</h2>
         <p className="ee-intro">Bipolare Verläufe sehen selten gleich aus. Wählen Sie eine der fiktiven Skizzen und lesen Sie dazu mögliche Erfahrungen von Angehörigen. Wie sich die Diagnosen Bipolar I und II unterscheiden, erklärt Modul 1. Die Skizzen haben keinen Zeitmassstab und erlauben weder eine Diagnose noch eine Vorhersage des Verlaufs einer bestimmten Person.</p>
 
         <div className="phasen-tabs" role="tablist" aria-label="Fiktive bipolare Verläufe">
@@ -1479,7 +1457,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
   return (
     <ToolOverlay onClose={onClose} ariaLabel="Belastungsverlauf" cardClass="phasen-card">
       <span className="kicker">Werkzeug · Verlauf</span>
-        <h2 style={{ fontStyle: 'normal', marginTop: 'var(--space-2)' }}>Mögliche Belastungsverläufe</h2>
+        <h2 className="tool-step-title">Mögliche Belastungsverläufe</h2>
         <p className="ee-intro">Die eigene Kraft kann nach Krisen abnehmen, sich erholen oder weitgehend stabil bleiben. Drei fiktive Beispiele zeigen diese Unterschiede. Die Linien sind keine Messwerte und belegen nicht die Wirkung einer bestimmten Behandlung. Wählen Sie eine der nummerierten Stellen, um eine mögliche Erfahrung zu lesen.</p>
 
         <div className="belastung-toggle">
@@ -1527,7 +1505,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
               strokeWidth="2"
               strokeLinejoin="round"
               opacity={showSupport ? 0.25 : 1}
-              style={{ transition: 'opacity 0.4s' }}
+              className="bv-line-a"
             />
             <text x="380" y="158" textAnchor="end" fontFamily="var(--sans)" fontSize="9" fill="var(--alert)" opacity={showSupport ? 0.5 : 1}>
               A: länger belastet
@@ -1542,7 +1520,7 @@ function BelastungsverlaufTool({ onClose, onNavigate }) {
                   stroke="var(--accent)"
                   strokeWidth="2.2"
                   strokeLinejoin="round"
-                  style={{ animation: 'fadeUp 0.6s' }}
+                  className="bv-line-b"
                 />
                 <text x="380" y="62" textAnchor="end" fontFamily="var(--sans)" fontSize="9" fill="var(--accent)" fontWeight="500">
                   B: erneute Erholung

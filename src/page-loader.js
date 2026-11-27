@@ -9,8 +9,7 @@ const PAGE_LOADERS = {
   modul5: () => import('./modul5.jsx'),
   modul6: () => import('./modul6.jsx'),
   modul7: () => import('./modul7.jsx'),
-  impressum: () => import('./impressum.jsx'),
-  datenschutz: () => import('./datenschutz.jsx'),
+  'impressum-datenschutz': () => import('./impressum-datenschutz.jsx'),
   barrierefreiheit: () => import('./barrierefreiheit.jsx'),
   schweigepflicht: () => import('./schweigepflicht.jsx'),
 };
